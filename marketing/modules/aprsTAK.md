@@ -2,7 +2,9 @@
 
 # TAK on the air. Internet not required.
 
-**Federate two or more TAK sites over amateur radio. Add a site, grow the operating area. Built for EmComm, SAR, and any team that needs to coordinate when the WAN is gone.**
+**Federate two or more TAK networks over amateur radio. Add a site, grow the operating area. Built for EmComm, SAR, and any team that needs to coordinate when the WAN is gone.**
+
+> **About TAK:** aprsTAK joins the same multicast network that ATAK (Android), WinTAK (Windows), and iTAK (iOS) speak — adding the worldwide APRS network as a first-class participant. Your existing TAK clients see APRS stations as native TAK contacts, and aprsTAK does the protocol translation on the wire. [More about the TAK ecosystem →](../about-tak.md)
 
 ---
 
@@ -10,7 +12,7 @@
 
 It's day two of a multi-day SAR exercise. The forward team is up a fire road with no cell, no Starlink, no LTE. Base camp is forty miles back. Both teams need to be looking at the same map — markers, search assignments, evacuation routes, last-known-positions.
 
-You drop an aprsTAK at each site. A VHF antenna on a mast. The map at base camp shows the forward team's markers within seconds. The forward team sees the IC's search grid the moment it's drawn. When a volunteer with an APRS rig drives in from the highway, their callsign appears on both maps as a chat-able contact. The IC can DM them from ATAK and the message lands on RF.
+You drop an aprsTAK at each site. A VHF antenna on a mast. The map on the IC's WinTAK at base camp shows the forward team's markers within seconds. The forward team's ATAK tablets see the IC's search grid the moment it's drawn. When a volunteer with an APRS rig drives in from the highway, their callsign appears on every TAK client on the network as a chat-able contact. The IC can DM them from WinTAK and the message lands on RF.
 
 No internet. No TAK Server. No cellular. Just amateur radio and a Pi at each end.
 
@@ -20,13 +22,13 @@ That's aprsTAK.
 
 ## What you can do
 
-### Run a shared TAK map across two, three, or N sites
+### Run a shared TAK picture across two, three, or N sites
 
-In **bridge mode**, multiple aprsTAK gateways form a federated mesh over RF or APRS-IS. Markers placed at one site appear at every site with full TAK fidelity — team color, role, COT type, custom icons all preserved. Add a digipeater between sites to extend RF reach. Add another aprsTAK to grow the operating area. The network coordinates, it doesn't echo: any number of sibling gateways coexist on the same RF channel without packet collisions.
+In **bridge mode**, multiple aprsTAK gateways form a federated mesh over RF or APRS-IS. Markers placed in ATAK at site A appear in WinTAK at site B with full TAK fidelity — team color, role, COT type, custom icons all preserved. Add a digipeater between sites to extend RF reach. Add another aprsTAK to grow the operating area. The network coordinates, it doesn't echo: any number of sibling gateways coexist on the same RF channel without packet collisions.
 
-### Put every APRS station on your TAK map
+### Put every APRS station on your TAK clients
 
-In **standalone mode**, a single aprsTAK gateway puts every APRS station within reach — on the air or on the internet — onto your team's TAK map as a chat-able contact. Weather stations, NWS bulletins, vehicle trackers, beacon stations — they all appear as native TAK overlays. DM a callsign from ATAK and your message lands on RF or APRS-IS, wherever that operator is hearing. Replies come back on the same path.
+In **standalone mode**, a single aprsTAK gateway puts every APRS station within reach — on the air or on the internet — onto your team's ATAK / WinTAK / iTAK / baseTAK clients as a chat-able contact. Weather stations, NWS bulletins, vehicle trackers, beacon stations — they all appear as native TAK overlays. DM a callsign from ATAK and your message lands on RF or APRS-IS, wherever that operator is hearing. Replies come back on the same path.
 
 ### Be a first-class citizen of the APRS network
 
@@ -48,7 +50,7 @@ aprsTAK isn't a tunneled emulator. It's a real ham station: full WIDE digipeater
 
 For the engineer screening this before adoption:
 
-- **Lossless cross-gateway fidelity.** Team affiliation, role, COT type, custom icons, and chat attribution survive every round-trip through the APRS wire and render correctly on the peer's WinTAK / baseTAK.
+- **Lossless cross-gateway fidelity.** Team affiliation, role, COT type, custom icons, and chat attribution survive every round-trip through the APRS wire and render correctly on the peer's WinTAK, ATAK, or baseTAK.
 - **Three-layer echo prevention** by `(callsign+SSID, station_number, gateway_uid)` tuple — own packets, peer-bridged-edit packets, and sibling-gateway packets each handled distinctly. No echo loops, even on busy multicast.
 - **CRC16 wire-identity** on every marker — round-trip recognition survives gateway restarts.
 - **Raw AX.25 dispatched byte-exact to KISS** — no text-decode mangling, no path-byte corruption.
@@ -66,7 +68,7 @@ For the engineer screening this before adoption:
 ## What you don't need
 
 - **No internet.** Bridge-mode-over-RF works entirely off-grid.
-- **No TAK Server.** aprsTAK speaks TAK multicast directly to your ATAK/WinTAK clients.
+- **No TAK Server.** aprsTAK speaks TAK multicast directly to ATAK, WinTAK, and iTAK clients on the LAN.
 - **No cellular.** Solar and a battery is enough.
 - **No subscription.** Offline install — every Python wheel ships in the tarball.
 
@@ -102,12 +104,12 @@ Admin UI on port 5101. Open `http://<host>:5101` to set callsign, SSID, gateway 
 **TAK on the air. Internet not required.**
 
 ### Social pitch — 50 words
-Two teams. Two sites. No internet. One shared TAK map. aprsTAK federates TAK networks over amateur radio — markers, team color, chat, and DMs all round-trip with full fidelity. Runs on a Pi. Bring your callsign. EmComm, SAR, and public-safety auxcomm finally have a no-internet TAK backbone.
+Two teams. Two sites. No internet. One shared TAK picture. aprsTAK federates ATAK, WinTAK, and iTAK networks over amateur radio — markers, team color, chat, and DMs all round-trip with full fidelity. Runs on a Pi. Bring your callsign. EmComm, SAR, and public-safety auxcomm finally have a no-internet TAK backbone.
 
 ### Long pitch — 200 words
-aprsTAK is the bridge between the TAK ecosystem and the worldwide APRS network. Run two or more aprsTAK sites and they form a federated mesh over RF or APRS-IS — markers, team color, custom icons, chat, and DMs all round-trip with full TAK fidelity. Markers placed at one site appear at every federated site with attribution and symbology preserved. Add a digipeater between sites to extend RF reach. Add another aprsTAK to grow the operating area. No internet required.
+aprsTAK is the bridge between the TAK ecosystem (ATAK, WinTAK, iTAK) and the worldwide APRS network. Run two or more aprsTAK sites and they form a federated mesh over RF or APRS-IS — markers, team color, custom icons, chat, and DMs all round-trip with full TAK fidelity. Markers placed in ATAK at one site appear in WinTAK at every federated site with attribution and symbology preserved. Add a digipeater between sites to extend RF reach. Add another aprsTAK to grow the operating area. No internet required.
 
-In single-site mode, every APRS station within reach — on the air or on APRS-IS — appears on your team's TAK map as a chat-able contact. DM a callsign from ATAK; the message lands on RF. Weather stations, NWS bulletins, and vehicle trackers all become native TAK overlays.
+In single-site mode, every APRS station within reach — on the air or on APRS-IS — appears on every TAK client on your LAN as a chat-able contact. DM a callsign from ATAK; the message lands on RF. Weather stations, NWS bulletins, and vehicle trackers all become native TAK overlays.
 
 aprsTAK is a real ham station: full WIDE digipeater, RX+TX IGate, SmartBeacon, Part 97 compliance gates. Runs on a Pi. Offline install. Open wire spec for third-party interop. Built for EmComm, SAR, and any team that needs to coordinate when the WAN is gone.
 
