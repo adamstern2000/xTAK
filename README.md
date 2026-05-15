@@ -6,6 +6,9 @@
 
 > **About TAK:** TAK is the family of situational-awareness clients used by defense, public safety, search and rescue, and amateur radio — **ATAK** (Android), **WinTAK** (Windows), and **iTAK** (iOS), maintained by the U.S. Government's TAK Product Center. xTAK is an independent suite that participates in the standard TAK protocol on the same local network. [More about the TAK ecosystem →](marketing/about-tak.md)
 
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+
+
 ---
 
 ## The scenario
@@ -17,7 +20,7 @@ A regional disaster response. The state EOC has lost the WAN. Cellular is interm
 - A **[loraTAK](marketing/modules/loraTAK.md)** at a remote staging site puts every volunteer's Meshtastic node on the IC's map as a chat-able TAK contact.
 - A **[chatTAK](marketing/modules/chatTAK.md)** in the parking lot at a shelter checks in walk-up volunteers in sixty seconds. Each becomes a first-class TAK contact, no app install.
 - An **[sdrTAK](marketing/modules/sdrTAK.md)** at the airport feeds inbound mutual-aid helicopter positions onto every map in the network.
-- A **[netTAK](marketing/modules/netTAK.md)** *(in development)* at a forward camp eighty miles into the operating area extends the LAN over Wi-Fi HaLow and serves preloaded county maps to every tablet that joins.
+- A **[netTAK](marketing/modules/netTAK.md)** *(future release)* at a forward camp eighty miles into the operating area extends the LAN over Wi-Fi HaLow and serves preloaded county maps to every tablet that joins.
 
 One TAK picture. Seven products. No TAK Server. No cloud. No internet uplink.
 
@@ -52,25 +55,25 @@ None of this lives in a server rack. **baseTAK** runs on a device the size of a 
 ## The products
 
 ### 🗺️ [baseTAK](marketing/modules/baseTAK.md) — Run the operation from a browser
-A full TAK map, chat, and SA hub in a browser tab. Faster to operate than WinTAK by design (two clicks to broadcast). Built-in tileserver distributes offline maps to every ATAK tablet on the LAN. Multi-user — every laptop in the EOC is a first-class TAK operator. **Shipping.**
+A full TAK map, chat, and SA hub in a browser tab. Faster to operate than WinTAK by design (two clicks to broadcast). Built-in tileserver distributes offline maps to every ATAK tablet on the LAN. Multi-user — every laptop in the EOC is a first-class TAK operator. **Beta — shipping soon.**
 
 ### 📻 [digiTAK](marketing/modules/digiTAK.md) — TAK on the air
-A bidirectional amateur-radio gateway. Federate two or more TAK networks over RF and APRS-IS — VHF for regional reach, HF for the continent. Markers, chat, and DMs round-trip with full TAK fidelity. Run all transports simultaneously from one Pi. **Shipping VHF + APRS-IS; HF in development.**
+A bidirectional amateur-radio gateway. Federate two or more TAK networks over RF and APRS-IS — VHF for regional reach, HF for the continent. Markers, chat, and DMs round-trip with full TAK fidelity. Run all transports simultaneously from one Pi. **Beta — shipping soon (VHF + APRS-IS); HF transport future release.**
 
 ### 🌲 [loraTAK](marketing/modules/loraTAK.md) — Your Meshtastic mesh, now a TAK network
-A bidirectional Meshtastic LoRa gateway. Every mesh node appears on ATAK, WinTAK, iTAK, and baseTAK as a first-class SA contact with team color and telemetry. Chat round-trips between mesh and TAK in both directions. **Shipping.**
+A bidirectional Meshtastic LoRa gateway. Every mesh node appears on ATAK, WinTAK, iTAK, and baseTAK as a first-class SA contact with team color and telemetry. Chat round-trips between mesh and TAK in both directions. **Beta — shipping soon.**
 
 ### 💬 [chatTAK](marketing/modules/chatTAK.md) — Comms-forward TAK, no app required
-A Pi appliance with its own Wi-Fi network and a browser-based chat UI. Multi-user — the whole command staff runs from one Pi, each on their own phone, each as a first-class TAK identity. **Shipping.**
+A Pi appliance with its own Wi-Fi network and a browser-based chat UI. Multi-user — the whole command staff runs from one Pi, each on their own phone, each as a first-class TAK identity. **Beta — shipping soon.**
 
 ### ✈️ [sdrTAK](marketing/modules/sdrTAK.md) — Every aircraft in the sky. Every ship in the bay.
-SDR-decoded ADS-B, UAT 978, and AIS rendered as native TAK contacts. Military hex / callsign auto-flagging. 520k-entry aircraft database. Works with any SoapySDR-supported dongle. **Shipping ADS-B + UAT; AIS imminent.**
+SDR-decoded ADS-B, UAT 978, and AIS rendered as native TAK contacts. Military hex / callsign auto-flagging. 520k-entry aircraft database. Works with any SoapySDR-supported dongle. **Beta — shipping soon (ADS-B + UAT); AIS future release.**
 
 ### 🌐 [netTAK](marketing/modules/netTAK.md) — A self-healing LAN that follows you into the field
-Pi-based field nodes that auto-form a self-healing 802.11s + BATMAN mesh, using both standard Wi-Fi and Wi-Fi HaLow. Carries the full xTAK service stack across miles of terrain. Includes baseTAK Lite with a built-in tileserver so forward sites distribute maps locally. **In active development.**
+Pi-based field nodes that auto-form a self-healing 802.11s + BATMAN mesh, using both standard Wi-Fi and Wi-Fi HaLow. Carries the full xTAK service stack across miles of terrain. Includes baseTAK Lite with a built-in tileserver so forward sites distribute maps locally. **Future release.**
 
 ### 🤖 [aiTAK](marketing/modules/aiTAK.md) — An AI assistant inside your TAK network
-An LLM-backed operator's helper that joins your TAK network as a peer. Answers natural-language questions about the operational picture, drafts SITREPs, flags rule-matched conditions in chat. Local-first; runs on your hardware against open-weights models you choose. **In active development.**
+An LLM-backed operator's helper that joins your TAK network as a peer. Answers natural-language questions about the operational picture, drafts SITREPs, flags rule-matched conditions in chat. Local-first; runs on your hardware against open-weights models you choose. **Future release.**
 
 ---
 
@@ -134,8 +137,8 @@ Each product ships as an independent install — offline tarball, single install
 | TAK over Meshtastic LoRa mesh | [loraTAK](marketing/modules/loraTAK.md) |
 | Browser chat for non-ATAK users | [chatTAK](marketing/modules/chatTAK.md) |
 | Live aircraft / ships on the map | [sdrTAK](marketing/modules/sdrTAK.md) |
-| A deployable mesh LAN for the field | [netTAK](marketing/modules/netTAK.md) *(in development)* |
-| AI augmentation for the IC | [aiTAK](marketing/modules/aiTAK.md) *(in development)* |
+| A deployable mesh LAN for the field | [netTAK](marketing/modules/netTAK.md) *(future release)* |
+| AI augmentation for the IC | [aiTAK](marketing/modules/aiTAK.md) *(future release)* |
 
 ---
 
@@ -153,13 +156,13 @@ Each product ships as an independent install — offline tarball, single install
 
 | Product | Status | Notes |
 |---|---|---|
-| [baseTAK](marketing/modules/baseTAK.md) | Shipping | Battle-tested in production |
-| [digiTAK](marketing/modules/digiTAK.md) | Shipping (VHF + APRS-IS) | HF transport in development |
-| [loraTAK](marketing/modules/loraTAK.md) | Shipping (Meshtastic backend) | LoRa-stack pluggability (Reticulum, custom firmware) on roadmap |
-| [chatTAK](marketing/modules/chatTAK.md) | Shipping | Pi appliance production-ready |
-| [sdrTAK](marketing/modules/sdrTAK.md) | Shipping (ADS-B + UAT) | AIS imminent |
-| [netTAK](marketing/modules/netTAK.md) | In development | First public release expected later this year |
-| [aiTAK](marketing/modules/aiTAK.md) | In development | First release timing TBD |
+| [baseTAK](marketing/modules/baseTAK.md) | Beta — shipping soon | Validated in pilot deployments |
+| [digiTAK](marketing/modules/digiTAK.md) | Beta — shipping soon (VHF + APRS-IS) | HF transport — future release |
+| [loraTAK](marketing/modules/loraTAK.md) | Beta — shipping soon (Meshtastic backend) | LoRa-stack pluggability (Reticulum, custom firmware) on roadmap |
+| [chatTAK](marketing/modules/chatTAK.md) | Beta — shipping soon | Pi-appliance Beta tested |
+| [sdrTAK](marketing/modules/sdrTAK.md) | Beta — shipping soon (ADS-B + UAT) | AIS — future release (imminent) |
+| [netTAK](marketing/modules/netTAK.md) | Future release | First public release expected later this year |
+| [aiTAK](marketing/modules/aiTAK.md) | Future release | First release timing TBD |
 
 ---
 
@@ -176,7 +179,7 @@ xTAK is a suite of seven services that extend ATAK, WinTAK, and iTAK to where th
 ### Long pitch — 200 words
 xTAK is a suite of seven independent TAK services for the team that has to coordinate when the WAN is down, the cell network is dark, and TAK Server is not available. Every product joins the same TAK network that ATAK, WinTAK, and iTAK speak — appearing as a peer alongside the official clients with 100% protocol fidelity. Run just the ones you need; they discover each other and compose without glue.
 
-baseTAK runs the operation from a browser. digiTAK bridges your TAK network to amateur radio — regional VHF/UHF or continental HF, all simultaneously. loraTAK puts every Meshtastic node on the map. chatTAK turns a Pi into a multi-user chat appliance with its own Wi-Fi. sdrTAK pulls aircraft and ships off the air with a $30 dongle. netTAK *(in development)* deploys self-healing field nodes with built-in offline tileservers. aiTAK *(in development)* joins the network as an LLM-backed operator's helper.
+baseTAK runs the operation from a browser. digiTAK bridges your TAK network to amateur radio — regional VHF/UHF or continental HF, all simultaneously. loraTAK puts every Meshtastic node on the map. chatTAK turns a Pi into a multi-user chat appliance with its own Wi-Fi. sdrTAK pulls aircraft and ships off the air with a $30 dongle. netTAK *(future release)* deploys self-healing field nodes with built-in offline tileservers. aiTAK *(future release)* joins the network as an LLM-backed operator's helper.
 
 Self-hosted. Off-grid by design. Open standards. No vendor lock-in. Built by and for the people who actually run operations.
 
