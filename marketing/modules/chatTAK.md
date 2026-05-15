@@ -28,7 +28,7 @@ That's chatTAK.
 
 ### 1. Add anyone with a phone to your TAK network
 
-chatTAK is a self-contained TAK endpoint, not a forwarding tunnel. Every browser user enrolled in chatTAK gets a real TAK identity — UID, callsign, team, color, position — and broadcasts a periodic SA heartbeat onto the multicast network exactly like an ATAK device would.
+chatTAK is a self-contained TAK endpoint, not a forwarding tunnel. Every browser user enrolled in chatTAK gets a real TAK identity — UID, callsign, team, color, position — and broadcasts a periodic SA heartbeat onto the TAK network exactly like an ATAK device would.
 
 - **Native TAK chat** — every message is byte-identical to ATAK GeoChat; WinTAK and ATAK clients can't tell chatTAK users from "real" TAK clients
 - **Per-user periodic SA** — each enrolled browser broadcasts position + metadata on a configurable cadence (default 30 s)
@@ -48,11 +48,11 @@ chatTAK is a fully offline-strict appliance. Every dependency is vendored. The i
 
 ### 3. Compose with the rest of the xTAK suite
 
-chatTAK is the lightweight endpoint counterpart to baseTAK. The chat wire format is byte-identical between them — `cot_chat` is the same shared Python package that powers both. Drop a chatTAK on a LAN that also has baseTAK, aprsTAK, meshTAK, or sdrTAK and they all see each other.
+chatTAK is the lightweight endpoint counterpart to baseTAK. The chat wire format is byte-identical between them — `cot_chat` is the same shared Python package that powers both. Drop a chatTAK on a LAN that also has baseTAK, digiTAK, meshTAK, or sdrTAK and they all see each other.
 
 - **chatTAK browser user can DM an ATAK device** — and vice versa
 - **chatTAK chat reaches a Meshtastic node** via meshTAK on the same LAN
-- **chatTAK chat reaches a ham operator** via aprsTAK on the same LAN
+- **chatTAK chat reaches a ham operator** via digiTAK on the same LAN
 - **A logged-in volunteer's position** flows to every TAK client and bridge on the network
 
 ---
@@ -92,7 +92,7 @@ For the engineer screening this before adoption:
 
 - **No app install.** Anything with a browser works.
 - **No internet.** chatTAK runs its own Wi-Fi network and resolves its own hostname.
-- **No TAK Server.** chatTAK speaks TAK multicast directly.
+- **No TAK Server.** chatTAK talks to TAK clients directly.
 - **No accounts.** Pick a callsign on first connect; that's it.
 - **No per-device licensing.** Self-hosted, no subscription.
 
@@ -134,7 +134,7 @@ chatTAK turns a Pi Zero 2 W into a self-contained TAK endpoint. Plug it in, hand
 
 It's built for events and operations where part of the team is on tactical apps and part of the team is on a phone they brought from home: race aid stations, festival volunteer posts, SAR base check-in tents, CERT activations, shelter EOCs, anywhere fast onboarding matters more than feature depth.
 
-The product is offline-strict: every Python wheel vendored, zero network calls during install, self-contained Wi-Fi AP for parking-lot deployment. The chat wire format is byte-identical with baseTAK — they share the same `cot_chat` package — and chatTAK composes cleanly with every other xTAK product on the same multicast LAN. Sub-$30 hardware. Day-long battery life. Sixty-second onboarding.
+The product is offline-strict: every Python wheel vendored, zero network calls during install, self-contained Wi-Fi AP for parking-lot deployment. The chat wire format is byte-identical with baseTAK — they share the same `cot_chat` package — and chatTAK composes cleanly with every other xTAK product on the same TAK network. Sub-$30 hardware. Day-long battery life. Sixty-second onboarding.
 
 ### Soul quote
 > Each enrolled browser user becomes a first-class TAK endpoint with its own periodic SA heartbeat.
