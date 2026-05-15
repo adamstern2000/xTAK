@@ -6,6 +6,8 @@
 
 > **About TAK:** sdrTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS) — and feeds decoded aircraft and ship contacts onto the map alongside your team's positions and markers. [More about the TAK ecosystem →](../about-tak.md)
 
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+
 ---
 
 ## The scenario
@@ -120,7 +122,7 @@ Admin UI on port 5100 — gain/stale-time, decoder enable/disable, device discov
 
 ## Status
 
-**Shipping** (v1.4.0). Production-ready; 65 passing tests.
+**Beta — shipping soon** (v1.4.0). Beta-ready; 65 passing tests.
 
 **On the roadmap:**
 - AIS (162 MHz ship tracking) — decoder stub in tree; release imminent
