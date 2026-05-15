@@ -158,7 +158,7 @@ For RF transmission, yes — digiTAK transmits on amateur frequencies and you ne
 Yes. Each gets its own tactical callsign and station number; they coordinate, they don't collide.
 
 ### Does it work alongside the other xTAK products?
-Yes. baseTAK, meshTAK, sdrTAK, and chatTAK all share the same TAK network by design. Drop them on the same LAN and they compose.
+Yes. baseTAK, loraTAK, sdrTAK, and chatTAK all share the same TAK network by design. Drop them on the same LAN and they compose.
 
 ### What happens if I lose internet mid-operation?
 If you're running bridge mode over RF, nothing — bridge-mode-over-RF is fully off-grid. If you're running APRS-IS only and lose internet, your APRS gateway goes quiet but local TAK clients keep working normally.
@@ -187,7 +187,7 @@ Admin UI opens on port 5101. Set your callsign, SSID, and RF mode, and you're on
 <!-- PRODUCT CARDS: small panels with title + 1-liner each -->
 
 - **[baseTAK](/products/baseTAK)** — the map, chat, and hub of the xTAK suite. A browser-based TAK client and SA hub for fixed installations.
-- **[meshTAK](/products/meshTAK)** — Meshtastic LoRa mesh gateway. The same federation story as digiTAK, but over LoRa.
+- **[loraTAK](/products/loraTAK)** — Meshtastic LoRa mesh gateway. The same federation story as digiTAK, but over LoRa.
 - **[sdrTAK](/products/sdrTAK)** — SDR-decoded aircraft (ADS-B 1090, UAT 978) and ships (AIS) as native TAK contacts.
 - **[chatTAK](/products/chatTAK)** — chat-only Pi appliance. Browser users become first-class TAK endpoints with no app install.
 - **[netTAK](/products/netTAK)** *(in development)* — self-healing Wi-Fi HaLow + 802.11s + BATMAN mesh field platform.
@@ -197,3 +197,8 @@ Admin UI opens on port 5101. Set your callsign, SSID, and RF mode, and you're on
 <!-- FOOTER CTA -->
 
 **Have a deployment in mind?** [Get in touch](/contact) or [open an issue](https://github.com/adamstern2000/xTAK/issues) on GitHub.
+
+
+---
+
+*© 2026 xTAK Project. All rights reserved. xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, and aiTAK are trademarks of the xTAK Project. ATAK, WinTAK, iTAK, and TAK are products of the U.S. Government via the TAK Product Center; the xTAK Project is not affiliated with the TAK Product Center. [Full copyright and trademark notice →](../COPYRIGHT.md)*
