@@ -31,6 +31,10 @@ TAK — **Team Awareness Kit** — is the family of situational-awareness client
 
 ---
 
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+
+---
+
 ## The scenario
 
 <!-- IMAGE: split-frame — left side wildland fire IC tent with WinTAK; right side ridge-top netTAK node with directional HaLow Yagi pointed across a valley -->
@@ -234,7 +238,7 @@ A Raspberry Pi 5 (or Pi 4) is the starting point. For long-range mesh, plan for 
 | | |
 |---|---|
 | **Working now (lab)** | 802.11s + BATMAN mesh between Pi nodes · Wi-Fi HaLow point-to-point links with directional antennas · xTAK services running on the platform |
-| **In active development** | Multi-radio coexistence tuning (short-haul Wi-Fi + long-haul HaLow on one node) · Automated mesh provisioning (zero-touch node onboarding) · Power management and solar-friendly deployment profiles · The hardened install + admin UI |
+| **Future release** | Multi-radio coexistence tuning (short-haul Wi-Fi + long-haul HaLow on one node) · Automated mesh provisioning (zero-touch node onboarding) · Power management and solar-friendly deployment profiles · The hardened install + admin UI |
 | **Coming with first release** | Offline-tarball install · Settings-driven configuration · Fleet management across meshed nodes · First-cut docs and bill-of-materials |
 | **Public release** | Expected later this year |
 
@@ -266,7 +270,7 @@ Until then, the best ways to follow progress and get ready:
 - **[loraTAK](/products/loraTAK)** — Meshtastic LoRa mesh gateway. Runs as a managed service on netTAK.
 - **[sdrTAK](/products/sdrTAK)** — SDR-decoded aircraft (ADS-B 1090, UAT 978) and ships (AIS) as native TAK contacts. Runs as a managed service on netTAK.
 - **[chatTAK](/products/chatTAK)** — chat-only Pi appliance; browser users become first-class TAK endpoints with no app install. Runs as a managed service on netTAK.
-- **[aiTAK](/products/aiTAK)** *(in development)* — local-first LLM that joins your TAK network as an operations assistant.
+- **[aiTAK](/products/aiTAK)** *(future release)* — local-first LLM that joins your TAK network as an operations assistant.
 
 ---
 
