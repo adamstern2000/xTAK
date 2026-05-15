@@ -16,7 +16,7 @@ A wildland fire crew is operating in mountainous terrain over a five-day deploym
 
 The crew deploys a netTAK node at every site — five nodes in total, each in a Pelican case, each running on a 12V battery. The nodes auto-form a self-healing 802.11s + BATMAN mesh. Some hops are short-haul 2.4 / 5 GHz Wi-Fi between adjacent sites; others are 802.11ah HaLow with a small Yagi pointed up a ridge for the long-haul links. A directional antenna on the IC's node lets him reach the logistics camp four miles away.
 
-Every netTAK runs the xTAK services the crew needs in the field: a baseTAK Lite serving a tactical map browser to anyone on the mesh, an digiTAK feeding the regional ham network into the mesh-wide TAK picture, a chatTAK letting volunteers join via their phones at any site, and an sdrTAK at the IC's node watching for inbound mutual-aid helicopters.
+Every netTAK runs the xTAK services the crew needs in the field: a baseTAK Lite serving a tactical map browser to anyone on the mesh, a digiTAK feeding the regional ham network into the mesh-wide TAK picture, a chatTAK letting volunteers join via their phones at any site, and an sdrTAK at the IC's node watching for inbound mutual-aid helicopters.
 
 When one of the squad sites' uplink fails — antenna knocked over by a branch, battery low — the mesh re-routes around it within seconds. The squad's view of the TAK picture stays current. Their chat lands at the IC's tent without anyone touching a config.
 
@@ -44,7 +44,7 @@ netTAK is a platform, not a single product. Every node can run the xTAK services
 
 - **baseTAK Lite** — a multi-user map and chat hub for the site's browser users, with a built-in tileserver for the local ATAK / WinTAK tablets (see outcome #3)
 - **digiTAK** — APRS gateway from a remote site into the mesh-wide TAK picture, with VHF and optional HF
-- **meshTAK** — Meshtastic LoRa gateway bridging short-range mesh teams into the netTAK backbone
+- **loraTAK** — Meshtastic LoRa gateway bridging short-range mesh teams into the netTAK backbone
 - **chatTAK** — multi-user, comms-forward TAK endpoint; the field command element runs from one node
 - **sdrTAK** — ADS-B / UAT / AIS receivers at any node with line-of-sight to the sky or sea
 
@@ -120,7 +120,7 @@ For the engineer screening this before adoption:
 
 ## Status
 
-**In active development.** Hardware platform is being validated on Pi 4 and Pi 5 with multiple HaLow chipsets. The xTAK service stack (baseTAK Lite, digiTAK, meshTAK, chatTAK, sdrTAK on a netTAK node) is being shaken out in lab testing.
+**In active development.** Hardware platform is being validated on Pi 4 and Pi 5 with multiple HaLow chipsets. The xTAK service stack (baseTAK Lite, digiTAK, loraTAK, chatTAK, sdrTAK on a netTAK node) is being shaken out in lab testing.
 
 **What's working now:**
 - 802.11s + BATMAN mesh between Pi nodes
