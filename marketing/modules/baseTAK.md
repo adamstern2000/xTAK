@@ -72,6 +72,8 @@ baseTAK has a built-in tileserver. Pre-load it with any terrain you'll be operat
 
 For SAR coordinators, wildland fire ops, and disaster-response ICs arriving at an operating area with no cell coverage: bring a baseTAK preloaded with the regional maps, plug in the LAN, and every tablet that joins the network gets the same map the IC is looking at.
 
+**And it extends to the field.** baseTAK Lite — the same tileserver capability, running on a [netTAK](netTAK.md) field node — distributes maps to every ATAK tablet at a forward site, no backhaul to the EOC required. Pre-load the netTAK before you deploy; operators arriving at a remote staging area sync their tablets from the local node. The map workflow is the same at the EOC and a hundred miles into the operating area.
+
 ### 5. Compose with the rest of the xTAK suite, no glue required
 
 Drop any other xTAK product on the same LAN and it just shows up.
