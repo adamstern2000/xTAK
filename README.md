@@ -39,7 +39,7 @@ Every product is built to run without internet, without cellular, and without TA
 What xTAK emits on the wire is byte-identical to what WinTAK emits. ATAK, WinTAK, and iTAK clients can't tell xTAK participants apart from "real" TAK clients on the network. Markers, chat, SA, team color, custom icons — all round-trip with full fidelity through every product in the suite.
 
 ### 4. Self-hosted, no vendor lock-in
-Open standards (TAK, COT, APRS, Meshtastic, 802.11s, BATMAN, Wi-Fi HaLow, JS8Call, ADS-B). Open source on the wire. No subscription, no per-device licensing, no cloud account. The data is yours and the boxes are yours.
+Open standards (TAK, COT, APRS, Meshtastic, 802.11s, BATMAN, Wi-Fi HaLow, ADS-B). Open source on the wire. No subscription, no per-device licensing, no cloud account. The data is yours and the boxes are yours.
 
 ### 5. Built for the operator
 Designed by and for people who actually run operations: incident commanders, SAR base teams, EmComm operators, ham radio volunteers. Faster click paths, fewer menus, less clutter, the map gets the screen.
@@ -154,7 +154,7 @@ Each product ships as an independent install — offline tarball, single install
 | Product | Status | Notes |
 |---|---|---|
 | [baseTAK](marketing/modules/baseTAK.md) | Shipping | Battle-tested in production |
-| [digiTAK](marketing/modules/digiTAK.md) | Shipping (VHF + APRS-IS) | HF transport via JS8Call in development |
+| [digiTAK](marketing/modules/digiTAK.md) | Shipping (VHF + APRS-IS) | HF transport in development |
 | [loraTAK](marketing/modules/loraTAK.md) | Shipping (Meshtastic backend) | LoRa-stack pluggability (Reticulum, custom firmware) on roadmap |
 | [chatTAK](marketing/modules/chatTAK.md) | Shipping | Pi appliance production-ready |
 | [sdrTAK](marketing/modules/sdrTAK.md) | Shipping (ADS-B + UAT) | AIS imminent |
