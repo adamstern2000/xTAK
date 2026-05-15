@@ -153,3 +153,8 @@ The product is decoder-agnostic: 13 SoapySDR driver modules bundled, every Soapy
 ### Audience tags
 **Primary:** airshow safety teams, public-safety aviation units, SAR aircraft coordinators, aviation hobbyists, ADS-B enthusiasts, SDR hackers.
 **Secondary:** coastal/harbor SAR (AIS), EmComm operators tracking aviation in disasters, amateur radio operators, integrators evaluating low-cost regional air picture.
+
+
+---
+
+*© 2026 xTAK Project. All rights reserved. xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, and aiTAK are trademarks of the xTAK Project. ATAK, WinTAK, iTAK, and TAK are products of the U.S. Government via the TAK Product Center; the xTAK Project is not affiliated with the TAK Product Center. [Full copyright and trademark notice →](../COPYRIGHT.md)*
