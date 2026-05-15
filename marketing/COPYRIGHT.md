@@ -31,7 +31,7 @@ References to ATAK, WinTAK, iTAK, TAK, TAK Server, and the TAK ecosystem in xTAK
 
 ## Third-Party Trademarks
 
-Other product, company, organization, and standards names referenced in xTAK marketing materials — including but not limited to **Meshtastic**, **Reticulum**, **JS8Call**, **Direwolf**, **Raspberry Pi**, **OpenStreetMap**, **MapLibre**, **FEMA**, **USGS**, **AirSpy**, **HackRF**, **RTL-SDR**, **SoapySDR**, **LimeSDR**, **Ettus USRP**, **Digirig**, **SignaLink**, **Wi-Fi HaLow**, **BATMAN**, **802.11s**, **IEEE**, **APRS**, **APRS-IS**, **SATERN**, **MARS**, **ARES**, **RACES**, **ACS**, **CERT**, and **ICS** — are the property of their respective owners.
+Other product, company, organization, and standards names referenced in xTAK marketing materials — including but not limited to **Meshtastic**, **Reticulum**, **Direwolf**, **Raspberry Pi**, **OpenStreetMap**, **MapLibre**, **FEMA**, **USGS**, **AirSpy**, **HackRF**, **RTL-SDR**, **SoapySDR**, **LimeSDR**, **Ettus USRP**, **Digirig**, **SignaLink**, **Wi-Fi HaLow**, **BATMAN**, **802.11s**, **IEEE**, **APRS**, **APRS-IS**, **SATERN**, **MARS**, **ARES**, **RACES**, **ACS**, **CERT**, and **ICS** — are the property of their respective owners.
 
 References to these are made for descriptive, interoperability, or use-case-context purposes only and do not imply endorsement, affiliation, or sponsorship.
 
