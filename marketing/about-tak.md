@@ -35,3 +35,8 @@ xTAK works **alongside** ATAK, WinTAK, and iTAK on the same network. A marker pl
 ## A note on trademarks
 
 ATAK, WinTAK, iTAK, and TAK are products and trademarks of the U.S. Government, made available through the TAK Product Center. xTAK is an independent, open suite of services that complements the TAK ecosystem — we are not affiliated with the TAK Product Center.
+
+
+---
+
+*© 2026 xTAK Project. All rights reserved. xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, and aiTAK are trademarks of the xTAK Project. ATAK, WinTAK, iTAK, and TAK are products of the U.S. Government via the TAK Product Center; the xTAK Project is not affiliated with the TAK Product Center. [Full copyright and trademark notice →](./COPYRIGHT.md)*
