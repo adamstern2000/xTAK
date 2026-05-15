@@ -8,6 +8,8 @@
 
 > **About TAK:** netTAK extends your TAK network across the kind of terrain where regular Wi-Fi gives up. Every node runs ATAK-compatible TAK services and bridges them across the mesh. [More about the TAK ecosystem →](../about-tak.md)
 
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+
 ---
 
 ## The scenario
@@ -154,7 +156,7 @@ For the engineer screening this before adoption:
 **The platform under your field xTAK. The mesh between every device.**
 
 ### Social pitch — 50 words
-netTAK is the base layer on every mobile xTAK device — sdrTAK, chatTAK, loraTAK, digiTAK, baseTAK Lite. Run a netTAK standalone for a remote outpost, or mesh multiple together over Wi-Fi, Ethernet, or Wi-Fi HaLow for ridge-to-ridge field deployments. One install workflow, one admin surface, the whole xTAK suite. *(in development)*
+netTAK is the base layer on every mobile xTAK device — sdrTAK, chatTAK, loraTAK, digiTAK, baseTAK Lite. Run a netTAK standalone for a remote outpost, or mesh multiple together over Wi-Fi, Ethernet, or Wi-Fi HaLow for ridge-to-ridge field deployments. One install workflow, one admin surface, the whole xTAK suite. *(future release)*
 
 ### Long pitch — 200 words
 netTAK is the operating layer for every mobile xTAK device. It runs each xTAK service as a managed unit — sdrTAK, chatTAK, loraTAK, digiTAK, baseTAK Lite — and exposes a unified admin surface for the device. Use a netTAK standalone for a remote outpost, single-site role, or fixed install. Or mesh multiple netTAKs together: over the Pi's built-in Wi-Fi and Ethernet for sites in close proximity, or over 802.11ah Wi-Fi HaLow with directional antennas to span miles of terrain. The mesh is self-organizing, self-healing, and layer-2 transparent — standard TAK traffic crosses without translation.
