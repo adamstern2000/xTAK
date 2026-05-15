@@ -79,7 +79,7 @@ For SAR coordinators, wildland fire ops, and disaster-response ICs arriving at a
 Drop any other xTAK product on the same LAN and it just shows up.
 
 - **digiTAK** feeds APRS stations and bridged sites onto your map
-- **meshTAK** feeds Meshtastic LoRa node positions and chat
+- **loraTAK** feeds Meshtastic LoRa node positions and chat
 - **sdrTAK** feeds decoded aircraft (1090 ES, UAT 978) and ships (AIS)
 - **chatTAK** browser users appear as their own first-class TAK endpoints
 - **netTAK** *(in development)* extends the LAN over a self-healing 802.11s + BATMAN mesh
