@@ -118,7 +118,7 @@ For the engineer screening this before adoption:
 
 ## What you need
 
-- A **Linux server** (3.5 GB RAM, ~500 MB disk for the codebase + SQLite). A fanless mini-PC is plenty.
+- A **small Linux device** — a Raspberry Pi 4 or 5, a fanless mini-PC, or any handheld Linux box (yes, even one the size of a Game Boy). 3.5 GB RAM and ~500 MB disk is plenty. Battery-powered or solar-viable. No rack, no fans, no server room.
 - A **LAN** that your TAK clients share.
 - **Modern browser** on every client — Chrome, Firefox, Safari, Edge. No app install.
 
