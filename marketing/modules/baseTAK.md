@@ -6,6 +6,8 @@
 
 > **About TAK:** baseTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS) — and renders the full TAK picture in any modern browser. A marker placed in baseTAK appears in ATAK and vice versa, with byte-identical wire format. [More about the TAK ecosystem →](../about-tak.md)
 
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+
 ---
 
 ## The scenario
@@ -82,7 +84,7 @@ Drop any other xTAK product on the same LAN and it just shows up.
 - **loraTAK** feeds Meshtastic LoRa node positions and chat
 - **sdrTAK** feeds decoded aircraft (1090 ES, UAT 978) and ships (AIS)
 - **chatTAK** browser users appear as their own first-class TAK endpoints
-- **netTAK** *(in development)* extends the LAN over a self-healing 802.11s + BATMAN mesh
+- **netTAK** *(future release)* extends the LAN over a self-healing 802.11s + BATMAN mesh
 
 Every product speaks the same TAK protocol on the same network. There is no glue. There is no integration tax. Add a product, and baseTAK sees it.
 
@@ -139,7 +141,7 @@ baseTAK ships as the cot_bridge package; the takmap UI is bundled. Standard inst
 
 ## Status
 
-**Shipping** (current production builds). Battle-tested through cot_bridge v0.45.x.
+**Beta — shipping soon**. In Beta through cot_bridge v0.45.x.
 
 **On the roadmap:**
 - TCP relay / federation for inter-EOC TAK bridging without TAK Server
