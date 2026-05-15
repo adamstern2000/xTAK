@@ -51,11 +51,11 @@ The whole interface is built around the same principle:
 
 An IC reacts at the speed of the incident, not at the speed of the menu.
 
-### 3. Be the authoritative SA source for the deployment
+### 3. Be the authoritative SA source for the deployment, even on imperfect networks
 
-baseTAK is designed to be the *durable* picture of the operation — not a passive viewer that mirrors whichever ATAK device shouted last.
+baseTAK is designed for the **imperfect networks** that operations actually run on — Wi-Fi APs that drop packets, mesh hops that flake out, devices that come and go. Not a passive viewer that mirrors whichever ATAK device shouted last; not a system that requires every packet to arrive intact.
 
-- **Heartbeat re-transmission** every 30 seconds keeps owned markers alive on the network even if a contributing device drops off
+- **Heartbeat re-broadcast, configurable per type.** By default, every marker, icon, drawing, and shape is re-transmitted on a timer — and the cadence is configurable **per item type**. Markers at one rate, drawings at another, range rings at a third, all set to what your operation needs. When the network drops a packet, the next heartbeat catches the missing client up; maps stay current through packet loss, brief outages, and device dropouts. Operators who prefer single-shot transmission can disable heartbeats per type.
 - **Per-field echo filtering** — when the same COT comes back from a different bridge (APRS round-trip, mesh ingest), only genuine field changes update the record; the rest is dropped silently
 - **Per-COT broadcast control** — for the items that *shouldn't* go on the wire by default. Disable broadcast per-COT; the item lives in the database and on this map but never on the network.
 - **SQLite-backed persistence** — the picture survives a restart, a power cycle, a swap of the laptop, a swap of the IC
@@ -163,7 +163,7 @@ baseTAK is the home base of the xTAK suite — a full TAK map, chat, and SA hub 
 
 baseTAK has a built-in tileserver. Pre-load it with the terrain you'll be operating in, and every ATAK tablet, WinTAK install, and browser client on the LAN gets its maps from you — no internet required. For wildland fire, SAR, and disaster-response teams arriving at an operating area without cell coverage, this is the difference between every-tablet-has-a-current-map and nobody-can-see-their-AOR.
 
-Built to be the durable SA source for the deployment, not a passive viewer: heartbeat re-transmission, per-field echo filtering, SQLite persistence. Composes by network with the rest of the xTAK suite. Self-hosted on any Linux box. No TAK Server, no cloud, no per-device licensing.
+Built to be the durable SA source for the deployment, **designed for imperfect networks**: per-type heartbeat re-broadcast (configurable, or disable-able), per-field echo filtering, and SQLite persistence keep the picture current through packet loss, device dropouts, and shift changes. Composes by network with the rest of the xTAK suite. Self-hosted on any Linux box. No TAK Server, no cloud, no per-device licensing.
 
 ### Soul quote
 > The operator reacts at the speed of the incident, not the speed of the menu.
