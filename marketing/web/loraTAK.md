@@ -28,6 +28,10 @@ TAK — **Team Awareness Kit** — is the family of situational-awareness client
 
 ---
 
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+
+---
+
 ## The scenario
 
 <!-- IMAGE: split-frame — left side a volunteer SAR team sweeping brushy hillside with Meshtastic nodes clipped to their packs; right side IC's WinTAK tablet at base camp showing the team as moving SA markers in team color -->
@@ -194,7 +198,7 @@ Liveness windowing, keepalive cadence, and a configurable silence timeout keep s
 
 | | |
 |---|---|
-| **Shipping today** | Meshtastic backend, v1.3.0 — production-stable, no pending blockers |
+| **Beta — shipping soon** | Meshtastic backend, v1.3.0 — Beta-stable, no pending blockers |
 | **On the roadmap** | TAK chat protobuf RX (currently XML; protobuf path implemented but operator-gated); per-message-type observability counters in the admin dashboard; gateway live coordinates auto-updated from the radio's first GPS fix |
 | **Future direction** | The product is named for the LoRa radio layer, not a specific firmware. The shipping backend is Meshtastic, but the architecture leaves room for alternate LoRa stacks — Reticulum (RNS), custom Meshtastic forks, or future LoRa transports — without changing the TAK-facing surface. Operators who pick loraTAK today get Meshtastic; tomorrow they may have more choice in radio firmware on the same gateway |
 
@@ -228,8 +232,8 @@ Put your Pi on the same LAN as your ATAK / WinTAK / iTAK clients and your mesh a
 - **[digiTAK](/products/digiTAK)** — TAK over amateur radio. VHF for the region, HF for the continent. Compose with loraTAK to bridge mesh chat onto APRS.
 - **[sdrTAK](/products/sdrTAK)** — SDR-decoded aircraft (ADS-B 1090, UAT 978) and ships (AIS) as native TAK contacts.
 - **[chatTAK](/products/chatTAK)** — chat-only Pi appliance. Browser users become first-class TAK endpoints with no app install.
-- **[netTAK](/products/netTAK)** *(in development)* — base operating layer for every mobile xTAK device; self-healing field mesh.
-- **[aiTAK](/products/aiTAK)** *(in development)* — local-first LLM that joins your TAK network as an operations assistant.
+- **[netTAK](/products/netTAK)** *(future release)* — base operating layer for every mobile xTAK device; self-healing field mesh.
+- **[aiTAK](/products/aiTAK)** *(future release)* — local-first LLM that joins your TAK network as an operations assistant.
 
 ---
 
