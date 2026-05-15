@@ -140,3 +140,8 @@ The product is 100% standalone — no shared code with any other xTAK product. T
 ### Audience tags
 **Primary:** SAR teams, outdoor/wilderness ops, mountain rescue, EmComm with Meshtastic adoption.
 **Secondary:** volunteer fire, CERT, neighborhood-watch, preppers and off-grid groups, public-safety agencies evaluating low-cost personnel tracking.
+
+
+---
+
+*© 2026 xTAK Project. All rights reserved. xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, and aiTAK are trademarks of the xTAK Project. ATAK, WinTAK, iTAK, and TAK are products of the U.S. Government via the TAK Product Center; the xTAK Project is not affiliated with the TAK Product Center. [Full copyright and trademark notice →](../COPYRIGHT.md)*
