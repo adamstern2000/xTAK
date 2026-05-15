@@ -92,29 +92,34 @@ An LLM-backed operator's helper that joins your TAK network as a peer. Answers n
 ## How the suite composes
 
 ```
-                       ┌──────────────────────────────────────────┐
-                       │     TAK network on the LAN               │
-                       │     ATAK ⇄ WinTAK ⇄ iTAK ⇄ xTAK suite    │
-                       └──────────────────────┬───────────────────┘
-                                              │
-       ┌────────────┬────────────┬────────────┼────────────┬────────────┬────────────┐
-       │            │            │            │            │            │            │
-  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐
-  │ baseTAK │  │ digiTAK │  │ loraTAK │  │ chatTAK │  │ sdrTAK  │  │ netTAK  │  │ aiTAK   │
-  │  map +  │  │ amateur │  │ Mesh-   │  │ Pi chat │  │ ADS-B / │  │ field   │  │ LLM     │
-  │  chat + │  │ radio   │  │ tastic  │  │ appliance│ │ UAT /   │  │ mesh    │  │ helper  │
-  │  hub    │  │ gateway │  │ gateway │  │         │  │ AIS     │  │ platform│  │         │
-  └─────────┘  └────┬────┘  └────┬────┘  └─────────┘  └─────────┘  └─────────┘  └─────────┘
-                    │            │
-              VHF/UHF/HF    Meshtastic
-              APRS-IS        LoRa mesh
-                    │            │
-              Worldwide      Field
-              amateur        teams
-              radio
+                  TAK network on the LAN
+              ATAK ⇄ WinTAK ⇄ iTAK ⇄ xTAK suite
+                            │
+       ┌────────────────────┼────────────────────┐
+       │                                          │
+  ┌────┴─────┐                              ┌────┴────┐
+  │ baseTAK  │                              │  aiTAK  │
+  │ EOC hub  │                              │ LLM     │
+  │ map+chat │                              │ helper  │
+  └──────────┘                              └─────────┘
+                            │
+  ┌─────────────────────────┴─────────────────────────────────┐
+  │  netTAK — base operating layer for every mobile device     │
+  │                                                             │
+  │  Each netTAK runs ONE of:                                  │
+  │   sdrTAK | loraTAK | digiTAK | chatTAK | baseTAK Lite      │
+  │                                                             │
+  │  Standalone, OR meshed over Wi-Fi / Ethernet / Wi-Fi HaLow │
+  └─────────────────────────────────────────────────────────────┘
+                            │
+              ┌─────────────┼─────────────┐
+              │             │             │
+        Amateur          LoRa /        ADS-B / UAT /
+        radio (RF,     Meshtastic     AIS off the air
+        APRS-IS, HF)
 ```
 
-Every product talks to every TAK client on the LAN. Add or remove a product without touching the others. Compose what your operation needs.
+baseTAK and aiTAK are fixed-install products (EOC, compute room). The mobile xTAK products (sdrTAK, loraTAK, digiTAK, chatTAK, baseTAK Lite) run on **netTAK** as the base operating layer — one platform, one admin surface, optionally meshed together when devices are in radio range. Every product talks to every TAK client on the LAN.
 
 ---
 
