@@ -4,7 +4,7 @@
 
 **sdrTAK is an SDR-powered radio decoder that pulls aircraft (ADS-B 1090 ES, UAT 978) and ships (AIS) off the air and renders them as native TAK contacts. Aviation situational awareness, in your ATAK / WinTAK / baseTAK, for the cost of a $30 dongle.**
 
-> **About TAK:** sdrTAK joins the same multicast network that ATAK (Android), WinTAK (Windows), and iTAK (iOS) speak — and feeds decoded aircraft and ship contacts onto the map alongside your team's positions and markers. [More about the TAK ecosystem →](../about-tak.md)
+> **About TAK:** sdrTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS) — and feeds decoded aircraft and ship contacts onto the map alongside your team's positions and markers. [More about the TAK ecosystem →](../about-tak.md)
 
 ---
 
@@ -55,7 +55,7 @@ The same architecture that handles ADS-B decodes any SoapySDR-driven radio strea
 
 ### 4. Compose with the rest of the xTAK suite
 
-sdrTAK is 100% standalone — no shared code, database, or process with any other xTAK product. The only shared interface is UDP multicast.
+sdrTAK is 100% standalone — no shared code, database, or process with any other xTAK product. The only shared interface is the TAK network itself.
 
 - **Aircraft feeds onto baseTAK** alongside your operational markers
 - **Aircraft visible on every ATAK / WinTAK / iTAK client** on the LAN
@@ -95,12 +95,12 @@ For the engineer screening this before adoption:
 - A **Raspberry Pi 4/5** or any Debian Bookworm / Ubuntu 22.04+ host.
 - One or two **SDR dongles** — RTL-SDR for 1090 (~$30), a second RTL-SDR for UAT 978, an AirSpy R2 for better sensitivity, HackRF for general-purpose work.
 - A **ground-plane or discone antenna** for 1090 / 978. (AIS is 162 MHz — different antenna.)
-- A **LAN with multicast** the same one your ATAK / WinTAK clients are on.
+- A **LAN** — the same one your ATAK / WinTAK clients are on.
 
 ## What you don't need
 
 - **No internet at install time.** Aircraft database can pull updates later if available, but install runs offline.
-- **No TAK Server.** sdrTAK speaks TAK multicast directly.
+- **No TAK Server.** sdrTAK talks to TAK clients directly on the LAN.
 - **No subscription** — not to ADS-B Exchange, not to Flightradar24, not to any commercial aircraft feed. Your antenna, your receiver, your data.
 - **No specific dongle brand.** Any SoapySDR-supported hardware works.
 
@@ -141,11 +141,11 @@ Admin UI on port 5100 — gain/stale-time, decoder enable/disable, device discov
 sdrTAK pulls aircraft off the air with a $30 SDR dongle and renders them on ATAK, WinTAK, iTAK, and baseTAK as native TAK contacts. ADS-B 1090 and UAT 978. 520k-entry aircraft database. Military hex / callsign auto-flagging. AIS ships on the roadmap. Offline install. Runs on a Pi.
 
 ### Long pitch — 200 words
-sdrTAK is the radio side of situational awareness — an SDR-powered decoder that pulls aircraft (ADS-B 1090 ES, UAT 978) and ships (AIS) directly off the air and emits each as a native TAK contact onto your team's multicast network. Built for airshow safety teams, aviation public-safety units, SAR aircraft coordinators, harbor and coastal ops, and aviation enthusiasts who want their existing dongle feeding their own TAK setup instead of pushing to a commercial service.
+sdrTAK is the radio side of situational awareness — an SDR-powered decoder that pulls aircraft (ADS-B 1090 ES, UAT 978) and ships (AIS) directly off the air and emits each as a native TAK contact onto your team's TAK network. Built for airshow safety teams, aviation public-safety units, SAR aircraft coordinators, harbor and coastal ops, and aviation enthusiasts who want their existing dongle feeding their own TAK setup instead of pushing to a commercial service.
 
 The product is decoder-agnostic: 13 SoapySDR driver modules bundled, every SoapySDR-supported device works out-of-the-box. The aircraft database (520k entries) adds tail number, type, manufacturer, and operator to every contact's remarks. Built-in military hex ranges and callsign prefixes (RCH, DUSTOFF, SAM, and 25+ more) flag military aircraft automatically and flip the affiliation to friendly. Aircraft type icons map ADS-B emitter categories to 2525C/D symbology.
 
-100% offline install — every dependency vendored, no network calls at install time. 100% standalone — no shared state with other xTAK products. Composes by multicast with baseTAK, aprsTAK, meshTAK, and chatTAK. 65 passing tests. One Pi. One $30 dongle. Every aircraft in the region.
+100% offline install — every dependency vendored, no network calls at install time. 100% standalone — no shared state with other xTAK products. Composes naturally with baseTAK, digiTAK, meshTAK, and chatTAK on the same LAN. 65 passing tests. One Pi. One $30 dongle. Every aircraft in the region.
 
 ### Soul quote
 > Any SoapySDR-supported SDR in Debian Bookworm main works out-of-the-box.
