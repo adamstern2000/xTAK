@@ -43,7 +43,7 @@ Hook a 2-meter rig to digiTAK and you reach the next county over VHF. Hook an HF
 HF is a narrower channel by physics: positions for participants and chat, not the full marker/icon/symbology fidelity available on VHF. digiTAK encodes HF traffic with a binary compression codec (~20 bytes per position vs. full COT XML) so it actually fits the band. But it carries far enough that two WinTAK installs a thousand miles apart can share each other's team positions and trade chat over the air. State EOC sees state EOC. ARES district sees ARES region. National mutual-aid coordinators see all of them. WinTAK islands stop being islands.
 
 - **Multi-transport, one box** — APRS-IS, VHF/UHF, and HF all from a single digiTAK
-- **HF as the continental backbone** — positions and chat across hundreds to thousands of miles via JS8Call over HF
+- **HF as the continental backbone** — positions and chat across hundreds to thousands of miles via HF digital modes
 - **Compressed for the band** — binary codec fits a position update into ~20 bytes; HF gating has its own rate limits separate from APRS
 - **Narrower feature set on HF, by design** — markers, shapes, and icons stay on VHF and APRS-IS; positions and chat cross HF
 - **All transports concurrent** — local APRS stations on VHF, regional peer on VHF/UHF, distant peer on HF, internet stations via APRS-IS — same digiTAK, same moment
@@ -97,7 +97,7 @@ For the engineer screening this before adoption:
 
 - A **Raspberry Pi 4/5** (4 GB+) or any modern Linux box. Python 3.8+, systemd.
 - A **VHF/UHF rig** for regional reach (~30–100 mi), driven by a USB audio interface (Digirig, SignaLink) or any **KISS-compatible TNC** over serial or TCP. Direwolf modem is bundled.
-- An **HF rig** *(optional)* for continental reach (hundreds to thousands of miles), driven via JS8Call over USB audio. Both radios can be connected to the same digiTAK at once.
+- An **HF rig** *(optional)* for continental reach (hundreds to thousands of miles), driven via USB audio interface. Both radios can be connected to the same digiTAK at once.
 - An **amateur callsign** with APRS-IS passcode and HF privileges for the bands you intend to use.
 
 ## What you don't need
@@ -123,7 +123,7 @@ Admin UI on port 5101. Open `http://<host>:5101` to set callsign, SSID, gateway 
 **Shipping today** (v2.1.12, VHF/UHF + APRS-IS): production-ready.
 
 **In active development:**
-- **HF transport via JS8Call** — binary compression codec, separate gating, positions + chat fidelity. Design complete (FR-081); implementation in progress.
+- **HF transport** — binary compression codec, separate gating, positions + chat fidelity. Design complete (FR-081); implementation in progress.
 
 **Also on the roadmap:**
 - APRS DM ack/rej with retry queue
@@ -155,7 +155,7 @@ In single-site mode, every APRS station within reach appears on every TAK client
 > Lossless cross-gateway TAK fidelity. Team, role, icons, attribution — all of it survives the round-trip through the APRS wire.
 
 ### Audience tags
-**Primary:** amateur radio operators, EmComm, ARES/RACES, ACS, packet-radio enthusiasts, HF digital-modes operators (JS8Call, FT8, PSK communities).
+**Primary:** amateur radio operators, EmComm, ARES/RACES, ACS, packet-radio enthusiasts, HF digital-modes operators.
 **Secondary:** state and national EmComm coordinators, SATERN, MARS-affiliated operators, SAR teams with ham resources, EOCs running off-grid drills, first responders with ham volunteers, preppers running multi-state networks.
 
 
