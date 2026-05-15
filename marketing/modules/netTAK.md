@@ -40,15 +40,27 @@ netTAK nodes auto-form an 802.11s + BATMAN mesh using both standard Wi-Fi (2.4 /
 
 ### 2. Run xTAK services at the edge
 
-netTAK is a platform, not a single product. Every node can run the xTAK services that make sense for its role.
+netTAK is a platform, not a single product. Every node can run the xTAK services that make sense for its role — and the services that have multi-user / multi-tablet endpoints (baseTAK Lite, chatTAK) serve every browser and tablet on the local mesh.
 
-- **baseTAK Lite** — a stripped-down map and chat hub for a single site's browser users
-- **digiTAK** — APRS gateway from a remote site into the mesh-wide TAK picture
+- **baseTAK Lite** — a multi-user map and chat hub for the site's browser users, with a built-in tileserver for the local ATAK / WinTAK tablets (see outcome #3)
+- **digiTAK** — APRS gateway from a remote site into the mesh-wide TAK picture, with VHF and optional HF
 - **meshTAK** — Meshtastic LoRa gateway bridging short-range mesh teams into the netTAK backbone
-- **chatTAK** — let volunteers at any site join the network from a phone
+- **chatTAK** — multi-user, comms-forward TAK endpoint; the field command element runs from one node
 - **sdrTAK** — ADS-B / UAT / AIS receivers at any node with line-of-sight to the sky or sea
 
-### 3. Add surveillance and ISR feeds
+### 3. Distribute maps in the field, no Operations Center required
+
+Every netTAK node running baseTAK Lite includes the same tileserver that baseTAK runs at the EOC — so a forward site can distribute maps locally, without backhauling to headquarters and without an internet uplink in the field.
+
+- **Pre-load the netTAK node** with the regional terrain you'll be operating in (MBTiles, XYZ tile sets, or other standard formats)
+- **Live distribution to EUDs** — every ATAK and WinTAK tablet that joins the local mesh pulls tiles directly from the netTAK node it can reach
+- **Sync from any forward site** — operators arriving at a remote staging area can download local map sets straight from the netTAK there, without ever connecting to the operations center
+- **Resilient to long deployments** — if the mesh hop back to the EOC fails, the local node keeps serving maps; field teams stay current
+- **Same tile format everywhere** — what baseTAK serves at the EOC, baseTAK Lite serves at every forward site. One pre-load workflow.
+
+For wildland fire crews up a fire road, SAR teams at a remote staging area, or any forward team operating beyond the reach of the EOC's LAN: maps go with the netTAK node and serve out from there.
+
+### 4. Add surveillance and ISR feeds
 
 netTAK's higher bandwidth (compared to LoRa or APRS) makes it practical to carry video and other rich feeds across a deployment.
 
