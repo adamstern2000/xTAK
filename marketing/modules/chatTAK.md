@@ -6,6 +6,8 @@
 
 > **About TAK:** chatTAK is a TAK endpoint — every browser user enrolled in chatTAK becomes a first-class TAK participant alongside ATAK (Android), WinTAK (Windows), and iTAK (iOS) clients, with their own periodic SA heartbeat and native TAK chat. [More about the TAK ecosystem →](../about-tak.md)
 
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+
 ---
 
 ## The scenario
@@ -123,7 +125,7 @@ Connect to the Pi's Wi-Fi AP (configured in production-image setup) and open `ht
 
 ## Status
 
-**Shipping** (v1.0.x). Pi appliance production-ready.
+**Beta — shipping soon** (v1.0.x). Pi appliance Beta-ready.
 
 **On the roadmap:**
 - Settings GUI (port 5103 reserved; current model is JSON + restart)
