@@ -160,3 +160,8 @@ Built for wildland fire, multi-day SAR, EmComm disaster response, and any team t
 ### Audience tags
 **Primary:** wildland fire, multi-day SAR, deployable EmComm, county/state EM deployable comms.
 **Secondary:** tactical teams, training environments, public-safety auxcomm, large-event safety teams, anyone running multi-site ops without commercial infrastructure.
+
+
+---
+
+*© 2026 xTAK Project. All rights reserved. xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, and aiTAK are trademarks of the xTAK Project. ATAK, WinTAK, iTAK, and TAK are products of the U.S. Government via the TAK Product Center; the xTAK Project is not affiliated with the TAK Product Center. [Full copyright and trademark notice →](../COPYRIGHT.md)*
