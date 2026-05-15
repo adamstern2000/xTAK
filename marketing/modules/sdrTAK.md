@@ -145,7 +145,7 @@ sdrTAK is the radio side of situational awareness — an SDR-powered decoder tha
 
 The product is decoder-agnostic: 13 SoapySDR driver modules bundled, every SoapySDR-supported device works out-of-the-box. The aircraft database (520k entries) adds tail number, type, manufacturer, and operator to every contact's remarks. Built-in military hex ranges and callsign prefixes (RCH, DUSTOFF, SAM, and 25+ more) flag military aircraft automatically and flip the affiliation to friendly. Aircraft type icons map ADS-B emitter categories to 2525C/D symbology.
 
-100% offline install — every dependency vendored, no network calls at install time. 100% standalone — no shared state with other xTAK products. Composes naturally with baseTAK, digiTAK, meshTAK, and chatTAK on the same LAN. 65 passing tests. One Pi. One $30 dongle. Every aircraft in the region.
+100% offline install — every dependency vendored, no network calls at install time. 100% standalone — no shared state with other xTAK products. Composes naturally with baseTAK, digiTAK, loraTAK, and chatTAK on the same LAN. 65 passing tests. One Pi. One $30 dongle. Every aircraft in the region.
 
 ### Soul quote
 > Any SoapySDR-supported SDR in Debian Bookworm main works out-of-the-box.
