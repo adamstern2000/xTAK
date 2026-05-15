@@ -173,3 +173,8 @@ Built to be the durable SA source for the deployment, not a passive viewer: hear
 ### Audience tags
 **Primary:** incident commanders, EOC operators, SAR base coordinators, fire/EMS operations, EmComm net controls, public-safety EM offices.
 **Secondary:** amateur radio operators running base stations, preppers and off-grid teams, integrators evaluating TAK without committing to TAK Server.
+
+
+---
+
+*© 2026 xTAK Project. All rights reserved. xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, and aiTAK are trademarks of the xTAK Project. ATAK, WinTAK, iTAK, and TAK are products of the U.S. Government via the TAK Product Center; the xTAK Project is not affiliated with the TAK Product Center. [Full copyright and trademark notice →](../COPYRIGHT.md)*
