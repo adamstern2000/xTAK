@@ -32,6 +32,10 @@ In **bridge mode**, multiple digiTAK gateways form a federated mesh over RF or A
 
 In **standalone mode**, a single digiTAK gateway puts every APRS station within reach — on the air or on the internet — onto your team's ATAK / WinTAK / iTAK / baseTAK clients as a chat-able contact. Weather stations, NWS bulletins, vehicle trackers, beacon stations — they all appear as native TAK overlays. DM a callsign from ATAK and your message lands on RF or APRS-IS, wherever that operator is hearing. Replies come back on the same path.
 
+**The reach is bigger than your antenna.** On standard APRS frequencies (144.39 MHz in North America, regional equivalents elsewhere), your digiTAK joins a global network of volunteer-operated **APRS digipeaters** that relay WIDE-tagged packets onward. Your TAK network's reach becomes whatever the digipeater infrastructure can carry — often dozens or hundreds of miles beyond your own antenna's line of sight, with zero additional hardware on your end.
+
+**Any ham with an APRS rig joins without new gear.** Whether digiTAK is running in bridge or standalone mode, every APRS-capable ham within radio range or APRS-IS reach is a TAK participant the moment they key up. Their position appears on the IC's WinTAK. Their bulletins appear in TAK chat. The IC can DM them by callsign from any TAK client. For EmComm activations, SAR call-outs, exercises, and ad-hoc events: ham volunteers show up with the rig they already own, beacon their position, and they're on the operation. No app install, no special configuration, no second device.
+
 ### Bridge WinTAK islands across the continent on HF
 
 Hook a 2-meter rig to digiTAK and you reach the next county over VHF. Hook an HF rig to the *same* digiTAK and you reach the next state — or the next country — over the ionosphere. Both transports run simultaneously from one box.
@@ -46,6 +50,17 @@ HF is a narrower channel by physics: positions for participants and chat, not th
 
 *HF transport is in active development — see Status below.*
 
+### Modernize your APRS station with a TAK client interface
+
+For ham operators tired of UI-View32, AGW, YAAC, or any other legacy APRS software — old UIs, often unsupported on modern operating systems, increasingly hard to keep running — digiTAK is the modern replacement. The user interface is *any* TAK client: ATAK on your phone, WinTAK on your laptop, iTAK on your tablet, baseTAK in any browser. Same map, same chat, same symbology that first responders use, now as your APRS UI.
+
+- **Modern map providers and UI** — current basemaps, click-to-message, fast click paths, real symbology
+- **Connect a USB GPS** to the digiTAK and it becomes a mobile APRS tracker — beacon your vehicle from the dashboard, your pack from a hike, your shack from a fixed install
+- **Every APRS station as a TAK contact** — DM by callsign, send and receive bulletins, monitor weather stations, watch the local APRS net
+- **Run alongside or in place of your legacy software** — digiTAK speaks the standard APRS wire format on the air; keep your favorite legacy client if you want, or retire it
+
+For the ham who's been quietly running UI-View32 on a Windows XP VM for the last decade: there's finally a modern path forward, with no loss of the APRS station you've built.
+
 ### Be a first-class citizen of the APRS network
 
 digiTAK isn't a tunneled emulator. It's a real ham station: full WIDE digipeater with loop suppression, RX+TX IGate, SmartBeacon adaptive cadence, NWS weather ingest, addressable direct messages, Part 97 compliance gates with failure-safe TX disable. Your callsign. Your beacons. Your APRS identity.
@@ -59,7 +74,8 @@ digiTAK isn't a tunneled emulator. It's a real ham station: full WIDE digipeater
 - **SAR teams** with ham radio resources who already use APRS for vehicle tracking — promote those positions to first-class TAK markers, and add a shared map across the exercise area.
 - **County / city EOCs** running off-grid drills where cell and WAN are assumed dark — federate your tabletop and field sites over a 2-meter link, and link to neighboring counties' EOCs on HF.
 - **Public safety agencies** with ham volunteers — the bridge between your TAK ops and your auxcomm team isn't a phone call anymore. It's the same TAK picture.
-- **Amateur radio operators** who want their APRS station to be a real participant in a TAK network, not a separate world.
+- **Amateur radio operators replacing legacy APRS software** (UI-View32, AGW, YAAC, and others) — keep your APRS station, retire the old UI, run any TAK client as the front end. Add a USB GPS and your digiTAK is a mobile APRS tracker too.
+- **Any licensed ham with an APRS rig** — your existing handheld, mobile, or base station appears on the TAK map and in TAK chat the moment you key up. No new gear, no new configuration. Show up to a search, an exercise, or an EmComm activation; beacon your callsign; you're a TAK participant.
 
 ---
 
