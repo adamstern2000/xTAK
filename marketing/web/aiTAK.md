@@ -31,6 +31,10 @@ TAK — **Team Awareness Kit** — is the family of situational-awareness client
 
 ---
 
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+
+---
+
 ## The scenario
 
 <!-- IMAGE: IC at a folding command post, WinTAK on a laptop dense with markers, an aiTAK chat thread visible in the corner; a small GPU box humming next to the laptop; smoke and air assets in the background -->
@@ -243,7 +247,7 @@ We're publishing the design now, before the implementation is complete, because 
 
 | | |
 |---|---|
-| **In active development** | Local-first architecture, COT ingest + event log, rule engine, Q&A handler, audit log |
+| **Future release** | Local-first architecture, COT ingest + event log, rule engine, Q&A handler, audit log |
 | **Design target — subset likely at v1** | Full natural-language Q&A breadth, IAP/SITREP drafting templates, full rule DSL, every backend and hardware variant on this page |
 | **On the roadmap** | Multi-tenant deployments, fine-tune support for unit-specific terminology, exercise-replay mode for training |
 
@@ -274,7 +278,7 @@ To follow progress:
 - **[loraTAK](/products/loraTAK)** — Meshtastic LoRa mesh gateway. Same federation story as digiTAK, but over LoRa.
 - **[sdrTAK](/products/sdrTAK)** — SDR-decoded aircraft (ADS-B 1090, UAT 978) and ships (AIS) as native TAK contacts.
 - **[chatTAK](/products/chatTAK)** — chat-only Pi appliance. Browser users become first-class TAK endpoints with no app install.
-- **[netTAK](/products/netTAK)** *(in development)* — base operating layer for every mobile xTAK device; self-healing field mesh.
+- **[netTAK](/products/netTAK)** *(future release)* — base operating layer for every mobile xTAK device; self-healing field mesh.
 
 ---
 
