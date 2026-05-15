@@ -28,6 +28,10 @@ TAK — **Team Awareness Kit** — is the family of situational-awareness client
 
 ---
 
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+
+---
+
 ## The scenario
 
 <!-- IMAGE: split-frame — left side a race director with ATAK on a phone in her car; right side a volunteer station captain handing a chatTAK Pi to a group of aid-station volunteers as they connect their phones -->
@@ -175,7 +179,7 @@ Every browser that connects to chatTAK's Wi-Fi, opens the page, and picks a call
 | **Upgrades** | Deep-merged config preservation; chat database and runtime state survive tarball upgrades with timestamped backups |
 | **Logout** | Proper TAK delete (`t-x-d-d`) — participants prune from baseTAK, ATAK, and WinTAK immediately |
 | **License** | (TBD — link to LICENSE) |
-| **Version** | v1.0.x — shipping; Pi appliance production-ready |
+| **Version** | v1.0.x — shipping; Pi appliance Beta-ready |
 
 ---
 
@@ -214,7 +218,7 @@ Yes. chatTAK is a TAK endpoint and joins the network as a peer — it doesn't re
 
 | | |
 |---|---|
-| **Shipping today** | v1.0.x — Pi appliance production-ready |
+| **Beta — shipping soon** | v1.0.x — Pi appliance Beta-ready |
 | **In active development / on the roadmap** | Settings GUI (port 5103 reserved; current model is JSON + restart), standalone takmap-style frontend for non-chat use cases, TCP protobuf full parity with baseTAK |
 
 ---
@@ -245,8 +249,8 @@ Connect to the Pi's Wi-Fi AP (configured in production-image setup) and open `ht
 - **[digiTAK](/products/digiTAK)** — TAK over amateur radio. VHF for the region, HF for the continent. Bridges a chatTAK browser user's chat to a ham operator.
 - **[loraTAK](/products/loraTAK)** — Meshtastic LoRa mesh gateway. Bridges a chatTAK browser user's chat to a Meshtastic node.
 - **[sdrTAK](/products/sdrTAK)** — SDR-decoded aircraft (ADS-B 1090, UAT 978) and ships (AIS) as native TAK contacts.
-- **[netTAK](/products/netTAK)** *(in development)* — base operating layer for every mobile xTAK device; self-healing field mesh.
-- **[aiTAK](/products/aiTAK)** *(in development)* — local-first LLM that joins your TAK network as an operations assistant.
+- **[netTAK](/products/netTAK)** *(future release)* — base operating layer for every mobile xTAK device; self-healing field mesh.
+- **[aiTAK](/products/aiTAK)** *(future release)* — local-first LLM that joins your TAK network as an operations assistant.
 
 ---
 
