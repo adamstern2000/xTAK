@@ -153,3 +153,8 @@ aiTAK is the most experimental product in the xTAK suite; first public release t
 ### Audience tags
 **Primary:** incident commanders, planning section chiefs, SAR operations chiefs, EOC staff at multi-day activations.
 **Secondary:** training coordinators (AAR-quality records), agencies with data-sovereignty requirements who can't use cloud LLM services, large-event ops, public-safety analysts.
+
+
+---
+
+*© 2026 xTAK Project. All rights reserved. xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, and aiTAK are trademarks of the xTAK Project. ATAK, WinTAK, iTAK, and TAK are products of the U.S. Government via the TAK Product Center; the xTAK Project is not affiliated with the TAK Product Center. [Full copyright and trademark notice →](../COPYRIGHT.md)*
