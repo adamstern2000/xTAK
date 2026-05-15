@@ -141,3 +141,8 @@ In single-site mode, every APRS station within reach appears on every TAK client
 ### Audience tags
 **Primary:** amateur radio operators, EmComm, ARES/RACES, ACS, packet-radio enthusiasts, HF digital-modes operators (JS8Call, FT8, PSK communities).
 **Secondary:** state and national EmComm coordinators, SATERN, MARS-affiliated operators, SAR teams with ham resources, EOCs running off-grid drills, first responders with ham volunteers, preppers running multi-state networks.
+
+
+---
+
+*© 2026 xTAK Project. All rights reserved. xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, and aiTAK are trademarks of the xTAK Project. ATAK, WinTAK, iTAK, and TAK are products of the U.S. Government via the TAK Product Center; the xTAK Project is not affiliated with the TAK Product Center. [Full copyright and trademark notice →](../COPYRIGHT.md)*
