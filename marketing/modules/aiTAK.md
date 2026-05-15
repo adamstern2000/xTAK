@@ -2,11 +2,11 @@
 
 # An AI operations assistant that lives inside your TAK network.
 
-**aiTAK is an LLM-backed operator's helper that joins your TAK multicast network like any other xTAK service, watches the picture as it evolves, and answers questions, summarizes activity, drafts chat, and flags conditions that match operator-defined rules — running on your own hardware, in your own deployment, never on someone else's cloud.**
+**aiTAK is an LLM-backed operator's helper that joins your TAK network like any other xTAK service, watches the picture as it evolves, and answers questions, summarizes activity, drafts chat, and flags conditions that match operator-defined rules — running on your own hardware, in your own deployment, never on someone else's cloud.**
 
 > **Status: in active development.** Architecture is being prototyped; first public release timing TBD.
 
-> **About TAK:** aiTAK joins the same multicast network that ATAK (Android), WinTAK (Windows), and iTAK (iOS) speak. It reads the TAK picture in real time and participates as a TAK contact — answering DMs, posting summaries, flagging conditions. [More about the TAK ecosystem →](../about-tak.md)
+> **About TAK:** aiTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS). It reads the TAK picture in real time and participates as a TAK contact — answering DMs, posting summaries, flagging conditions. [More about the TAK ecosystem →](../about-tak.md)
 
 ---
 
@@ -40,7 +40,7 @@ That's aiTAK.
 
 ### 1. Ask questions about the operational picture in natural language
 
-aiTAK has been on the multicast network since the start of the deployment. It has the full COT history, the chat log, the marker placements, the team movements, and the timestamps.
+aiTAK has been on the TAK network since the start of the deployment. It has the full COT history, the chat log, the marker placements, the team movements, and the timestamps.
 
 - **"Summarize the last hour by sector"**
 - **"When was the structure marker at Smith Road first dropped? By whom?"**
@@ -106,14 +106,14 @@ For the engineer screening this before adoption:
 
 - A **workstation or server** with a GPU capable of running your chosen LLM (RTX 3090 / 4090 / 5090, or a server with H100 / A100 / L40S class hardware).
 - Or a **CPU-only deployment** for small models and modest workloads (Llama 3.1 8B class).
-- A **TAK multicast LAN** the same one your ATAK / WinTAK / baseTAK is on.
+- A **TAK LAN** — the same one your ATAK / WinTAK / baseTAK is on.
 - An **open-weights LLM** of your choice, served through any OpenAI-compatible local inference server.
 
 ## What you don't need
 
 - **No cloud LLM service.** No OpenAI, no Anthropic, no Google — unless you choose to use one.
 - **No internet** (once the model is downloaded).
-- **No TAK Server.** aiTAK joins the multicast network like every other xTAK product.
+- **No TAK Server.** aiTAK joins the TAK network like every other xTAK product.
 - **No subscription.** Your hardware, your model, your data.
 
 ## Install
@@ -138,10 +138,10 @@ aiTAK is the most experimental product in the xTAK suite. The positioning and ca
 **An AI operations assistant that lives inside your TAK network.**
 
 ### Social pitch — 50 words
-aiTAK is an LLM-backed operator's helper that joins your TAK multicast network like any other xTAK service. It watches the picture, summarizes activity, drafts SITREPs, and flags rule-matched conditions in chat. Runs on your own hardware, your own model. Local-first, no cloud. *(in development)*
+aiTAK is an LLM-backed operator's helper that joins your TAK network like any other xTAK service. It watches the picture, summarizes activity, drafts SITREPs, and flags rule-matched conditions in chat. Runs on your own hardware, your own model. Local-first, no cloud. *(in development)*
 
 ### Long pitch — 200 words
-aiTAK is the xTAK suite's AI augmentation layer — an LLM-backed assistant that joins your TAK multicast network as a peer and helps the operator handle a busy picture. It can answer natural-language questions about the operational state ("summarize the last hour by sector," "where is Engine 3 right now"), draft SITREPs and IAP sections from observed activity, and run operator-defined rules to flag conditions the IC shouldn't have to watch personally (stationary teams in hazard zones, geofence breaches, comms-silence alerts).
+aiTAK is the xTAK suite's AI augmentation layer — an LLM-backed assistant that joins your team's TAK network as a peer and helps the operator handle a busy picture. It can answer natural-language questions about the operational state ("summarize the last hour by sector," "where is Engine 3 right now"), draft SITREPs and IAP sections from observed activity, and run operator-defined rules to flag conditions the IC shouldn't have to watch personally (stationary teams in hazard zones, geofence breaches, comms-silence alerts).
 
 The design priority is **local-first**: aiTAK runs on your hardware against an open-weights LLM you choose, via any OpenAI-compatible local inference server. Sensitive operational data never leaves the deployment. No cloud LLM service required. No subscription. Bring your own GPU and your own model.
 
