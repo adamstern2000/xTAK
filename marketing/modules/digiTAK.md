@@ -6,6 +6,8 @@
 
 > **About TAK:** digiTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS) — adding the worldwide APRS network as a first-class participant. Your existing TAK clients see APRS stations as native TAK contacts, and digiTAK does the protocol translation on the wire. [More about the TAK ecosystem →](../about-tak.md)
 
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+
 ---
 
 ## The scenario
@@ -120,7 +122,7 @@ Admin UI on port 5101. Open `http://<host>:5101` to set callsign, SSID, gateway 
 
 ## Status
 
-**Shipping today** (v2.1.12, VHF/UHF + APRS-IS): production-ready.
+**Beta — shipping soon** (v2.1.12, VHF/UHF + APRS-IS): Beta-ready.
 
 **In active development:**
 - **HF transport** — binary compression codec, separate gating, positions + chat fidelity. Design complete (FR-081); implementation in progress.
