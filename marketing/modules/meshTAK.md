@@ -4,7 +4,7 @@
 
 **meshTAK puts every Meshtastic LoRa node on your TAK map as a first-class contact. Position, telemetry, and chat round-trip in both directions. Cheap, off-grid, mesh-resilient situational awareness for teams that already carry mesh radios.**
 
-> **About TAK:** meshTAK joins the same multicast network that ATAK (Android), WinTAK (Windows), and iTAK (iOS) speak — and bridges your Meshtastic LoRa mesh in both directions. Mesh node positions appear on TAK clients as SA markers; TAK chat reaches mesh devices as text messages; mesh users can DM TAK callsigns. [More about the TAK ecosystem →](../about-tak.md)
+> **About TAK:** meshTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS) — and bridges your Meshtastic LoRa mesh in both directions. Mesh node positions appear on TAK clients as SA markers; TAK chat reaches mesh devices as text messages; mesh users can DM TAK callsigns. [More about the TAK ecosystem →](../about-tak.md)
 
 ---
 
@@ -47,11 +47,11 @@ Mesh chat lands in TAK chat. TAK chat lands on mesh devices. DMs work both ways.
 
 ### 3. Work alongside the rest of the xTAK suite
 
-meshTAK is 100% standalone — no shared code, database, or process with any other xTAK product. The only shared interface is UDP multicast. Drop it on a LAN with baseTAK, aprsTAK, sdrTAK, or chatTAK and they all see each other.
+meshTAK is 100% standalone — no shared code, database, or process with any other xTAK product. The only shared interface is the TAK network itself. Drop it on a LAN with baseTAK, digiTAK, sdrTAK, or chatTAK and they all see each other.
 
 - **Run a Meshtastic gateway and an APRS gateway side-by-side** with no port collisions or echo loops
-- **A mesh node's chat reaches a SAR volunteer with an APRS rig** — across LoRa, into TAK multicast, out through aprsTAK to APRS-IS or RF
-- **Multi-NIC Pi-as-AP setups handled correctly** — meshTAK enumerates all up interfaces and binds separate multicast sockets per NIC
+- **A mesh node's chat reaches a SAR volunteer with an APRS rig** — across LoRa, into your TAK network, out through digiTAK to APRS-IS or RF
+- **Multi-NIC Pi-as-AP setups handled correctly** — meshTAK works correctly when the gateway has a wired LAN and a WiFi AP on the same Pi
 
 ---
 
@@ -75,7 +75,7 @@ For the engineer screening this before adoption:
 - **Multi-NIC bind.** Enumerates all up IPv4 interfaces and binds separate multicast sockets per interface — solves real-world Pi-as-AP setups (wired LAN + WiFi AP) that single-bind implementations get wrong.
 - **TCP endpoint auto-detection.** Picks the right IP for WinTAK DM callbacks on multi-interface hosts, or lets the operator pin it manually.
 - **Echo prevention by UID prefix.** Mesh-originated COTs carry a deterministic UID prefix; the relay drops anything with that prefix on inbound TAK chat — no feedback loops.
-- **No shared state with any other xTAK product.** 100% standalone. Compose by multicast, not by shared modules.
+- **No shared state with any other xTAK product.** 100% standalone. Compose by network, not by shared modules.
 
 ---
 
@@ -83,12 +83,12 @@ For the engineer screening this before adoption:
 
 - A **Raspberry Pi** (4 or 5, even a Zero 2 W works) or any Linux/macOS box with Python 3.10+.
 - A **Meshtastic radio** connected over USB serial or TCP — any model the Meshtastic firmware supports (Heltec V3, T-Beam, RAK 4631, T-Echo, station-G2, etc.).
-- A **LAN with multicast** (the same LAN your ATAK/WinTAK clients are on).
+- A **LAN** — the same one your ATAK/WinTAK clients are on.
 
 ## What you don't need
 
 - **No internet.** Mesh ↔ TAK works entirely off-grid.
-- **No TAK Server.** meshTAK speaks TAK multicast directly to ATAK, WinTAK, and iTAK clients on the LAN.
+- **No TAK Server.** meshTAK talks to ATAK, WinTAK, and iTAK clients directly on the LAN.
 - **No Meshtastic firmware modifications.** Stock firmware, stock channels.
 - **No subscription, no cloud.** Self-hosted.
 
@@ -130,7 +130,7 @@ meshTAK is the bridge between Meshtastic LoRa mesh radios and the TAK ecosystem.
 
 meshTAK is built for outdoor and off-grid ops: SAR teams sweeping terrain where cellular doesn't reach, EmComm crews running drills off the grid, volunteer teams with $40 Meshtastic nodes on every pack. Synthetic-position handling keeps silent (GPS-off) nodes chat-able. Liveness-window keepalives keep stationary nodes visible on the map even when they only beacon every few hours.
 
-The product is 100% standalone — no shared code with any other xTAK product. The only shared interface is UDP multicast, which means meshTAK composes cleanly with baseTAK, aprsTAK, sdrTAK, and chatTAK on a single LAN. A mesh user's chat can reach a SAR volunteer with an APRS rig: across LoRa, into TAK multicast, out through aprsTAK to RF. Cheap, off-grid, mesh-resilient SA.
+The product is 100% standalone — no shared code with any other xTAK product. The only shared interface is the TAK network itself, which means meshTAK composes cleanly with baseTAK, digiTAK, sdrTAK, and chatTAK on a single LAN. A mesh user's chat can reach a SAR volunteer with an APRS rig: across LoRa, into your TAK network, out through digiTAK to RF. Cheap, off-grid, mesh-resilient SA.
 
 ### Soul quote
 > Mesh users are full participants in the comms domain.
