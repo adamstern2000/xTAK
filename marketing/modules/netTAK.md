@@ -1,8 +1,8 @@
 # netTAK
 
-# A self-healing LAN that follows you into the field.
+# The operating layer for every mobile xTAK device.
 
-**netTAK is a sub-$200 Pi-based field node that meshes with every other netTAK in radio range — Wi-Fi for short-haul, Wi-Fi HaLow (sub-GHz, miles-class) for long-haul. The mesh is self-organizing, self-healing, and carries your full TAK network — chat, map, SA, video, and any xTAK service you want to run on it.**
+**netTAK is the base platform that runs on every Pi-class mobile xTAK device — sdrTAK, chatTAK, loraTAK, digiTAK, baseTAK Lite. It manages each device's services and exposes a unified admin surface. Use a netTAK standalone for a remote single-site role, or mesh multiple netTAKs together over Wi-Fi, Ethernet, and (optionally) Wi-Fi HaLow for ridge-to-ridge ranges.**
 
 > **Status: in active development. Hardware platform validated. First public release expected later this year.**
 
@@ -28,25 +28,33 @@ That's netTAK.
 
 ## What you can do
 
-### 1. Bring a real LAN to terrain that doesn't have one
+### 1. Run xTAK on every field device
 
-netTAK nodes auto-form an 802.11s + BATMAN mesh using both standard Wi-Fi (2.4 / 5 / 6 GHz, whatever the Pi platform supports) and Wi-Fi HaLow (802.11ah, sub-GHz). The mesh is self-organizing — drop a new node within radio range and it joins.
-
-- **Self-healing** — when a node drops, traffic re-routes around it
-- **Self-organizing** — no central controller, no manual mesh configuration
-- **Dual-radio** — short-haul fast Wi-Fi for adjacent nodes, long-haul HaLow for ridge-to-ridge links
-- **Directional-antenna ready** — pair a HaLow radio with a Yagi or panel antenna to bridge miles between sites
-- **Layer-2 transparent** — the mesh looks like a single LAN to everything on it
-
-### 2. Run xTAK services at the edge
-
-netTAK is a platform, not a single product. Every node can run the xTAK services that make sense for its role — and the services that have multi-user / multi-tablet endpoints (baseTAK Lite, chatTAK) serve every browser and tablet on the local mesh.
+netTAK is the base operating layer for every mobile xTAK device. Pick the service that fits the role; netTAK runs it as a managed service and gives you one unified admin surface to operate the device.
 
 - **baseTAK Lite** — a multi-user map and chat hub for the site's browser users, with a built-in tileserver for the local ATAK / WinTAK tablets (see outcome #3)
-- **digiTAK** — APRS gateway from a remote site into the mesh-wide TAK picture, with VHF and optional HF
-- **loraTAK** — Meshtastic LoRa gateway bridging short-range mesh teams into the netTAK backbone
+- **digiTAK** — APRS gateway from a remote site, VHF and optional HF
+- **loraTAK** — Meshtastic LoRa gateway bridging mesh teams into the local TAK network
 - **chatTAK** — multi-user, comms-forward TAK endpoint; the field command element runs from one node
 - **sdrTAK** — ADS-B / UAT / AIS receivers at any node with line-of-sight to the sky or sea
+
+**One install workflow for the whole suite.** Each xTAK service runs as a managed unit on netTAK. The same products you'd install on a bare Pi today, with lifecycle, config, logging, and admin handled by the platform.
+
+**Fleet management when nodes mesh.** When netTAKs see each other, every netTAK can see the status of every other netTAK on the mesh — restart services, push config, check status across the entire field deployment from one node's admin UI.
+
+### 2. Mesh them together — or run a single node standalone
+
+netTAK supports three deployment patterns. Pick the one your operation needs; mix and match across sites.
+
+- **Standalone** — a single netTAK running its xTAK services, no mesh required. The right move for remote outposts, single-site deployments, or any role that doesn't need peer-to-peer routing. Joins the local TAK LAN like a fixed install.
+- **Local mesh (Wi-Fi + Ethernet)** — multiple netTAKs auto-mesh over the Pi's built-in Wi-Fi and/or wired Ethernet. No specialty radios, no licensed spectrum, no cost beyond the Pis. For sites in close proximity or wired together.
+- **Long-range mesh (with Wi-Fi HaLow)** — add 802.11ah HaLow radios to span miles between sites. Pair with directional antennas (Yagi, panel) for ridge-to-ridge and watershed-to-watershed bridges.
+
+All three patterns share the same management surface and the same TAK protocol fidelity. Mesh behavior:
+
+- **Self-healing** — when a node drops, traffic re-routes around it within seconds
+- **Self-organizing** — no central controller, no manual mesh configuration
+- **Layer-2 transparent** — the mesh appears as one LAN; standard TAK traffic crosses without translation
 
 ### 3. Distribute maps in the field, no Operations Center required
 
@@ -85,12 +93,13 @@ netTAK's higher bandwidth (compared to LoRa or APRS) makes it practical to carry
 
 For the engineer screening this before adoption:
 
+- **Base operating layer for every mobile xTAK device** — sdrTAK, chatTAK, loraTAK, digiTAK, baseTAK Lite all run as managed services on netTAK. Same code, same wire output, lifecycle managed by the platform.
+- **Three deployment patterns** — standalone (no mesh), local mesh over Wi-Fi/Ethernet, long-range mesh adding 802.11ah Wi-Fi HaLow. Same software stack, same management UI across all three.
 - **802.11s mesh** — IEEE standard wireless mesh networking; mature, debugged, deployed in production at scale.
 - **BATMAN** — Better Approach to Mobile Ad-hoc Networking; mesh routing protocol that scales to large numbers of nodes with rapid convergence.
-- **Wi-Fi HaLow (802.11ah)** — sub-GHz IEEE Wi-Fi for long-range, low-power, miles-class links; complements standard Wi-Fi for the long-haul hops.
-- **Layer-2 transparency** — the mesh appears as one LAN; standard TAK multicast traffic crosses without translation.
-- **Pi-based platform** — power-efficient, rugged with the right enclosure, cheap to replace, runs the same xTAK services as a fixed install.
-- **Modular service stack** — node configuration selects which xTAK services run; nothing required, everything optional.
+- **Wi-Fi HaLow (802.11ah)** *(optional)* — sub-GHz IEEE Wi-Fi for long-range, low-power, miles-class links. Use when you need to bridge across terrain; skip when you don't.
+- **Layer-2 transparency** — the mesh appears as one LAN; standard TAK traffic crosses without translation.
+- **Pi-based platform** — power-efficient, rugged with the right enclosure, cheap to replace.
 
 ---
 
@@ -98,12 +107,12 @@ For the engineer screening this before adoption:
 
 *(Specs firming up as the platform is validated.)*
 
-- A **Raspberry Pi** (Pi 5 likely; Pi 4 for lower-cost nodes).
-- A **standard Wi-Fi radio** (the Pi's built-in radio, optionally upgraded with a USB Wi-Fi 6E adapter).
-- A **Wi-Fi HaLow radio** — USB or HAT module (Newracom NRC7292 is a common HaLow chipset).
-- **Antennas** sized for the link distance — omnidirectional for nearby nodes, directional Yagi / panel for the long hops.
+- A **Raspberry Pi** (Pi 5 recommended; Pi 4 works for lower-cost nodes).
+- For **standalone** or **local-mesh** deployments: the Pi's built-in Wi-Fi (optionally Ethernet, optionally a USB Wi-Fi 6E adapter for higher throughput).
+- For **long-range mesh**: add a **Wi-Fi HaLow radio** — USB or HAT module (Newracom NRC7292 is a common HaLow chipset). Optional; only needed when you need miles-class links between sites.
+- **Antennas** sized for the link distance — omnidirectional for nearby nodes, directional Yagi / panel for the long hops (HaLow only).
 - A **12V battery, solar, or generator** for power.
-- An **enclosure** — Pelican case, ammo can, or 3D-printed weatherproof box.
+- An **enclosure** — Pelican case, ammo can, or 3D-printed weatherproof box for field deployments; bare Pi is fine for fixed standalone roles.
 
 ## What you don't need
 
@@ -142,20 +151,20 @@ For the engineer screening this before adoption:
 *Derived from the page above; for use in social, web, video, and other channels.*
 
 ### Tagline
-**A self-healing LAN that follows you into the field.**
+**The platform under your field xTAK. The mesh between every device.**
 
 ### Social pitch — 50 words
-netTAK is a Pi-based field node that meshes with every other netTAK in radio range — short-haul Wi-Fi, long-haul Wi-Fi HaLow with directional antennas. Self-healing. Self-organizing. Carries your full TAK network across miles of terrain — map, chat, SA, video. Coming later this year. *(in development)*
+netTAK is the base layer on every mobile xTAK device — sdrTAK, chatTAK, loraTAK, digiTAK, baseTAK Lite. Run a netTAK standalone for a remote outpost, or mesh multiple together over Wi-Fi, Ethernet, or Wi-Fi HaLow for ridge-to-ridge field deployments. One install workflow, one admin surface, the whole xTAK suite. *(in development)*
 
 ### Long pitch — 200 words
-netTAK is the xTAK suite's answer to "what if my operating area doesn't have a LAN?" Every netTAK node is a Pi-based field deployable that auto-forms an 802.11s + BATMAN mesh with every other netTAK in radio range — short-haul standard Wi-Fi for adjacent sites, long-haul Wi-Fi HaLow (802.11ah, sub-GHz) for ridge-to-ridge bridges. Pair a HaLow radio with a directional antenna and the mesh spans miles of fire ground or search area.
+netTAK is the operating layer for every mobile xTAK device. It runs each xTAK service as a managed unit — sdrTAK, chatTAK, loraTAK, digiTAK, baseTAK Lite — and exposes a unified admin surface for the device. Use a netTAK standalone for a remote outpost, single-site role, or fixed install. Or mesh multiple netTAKs together: over the Pi's built-in Wi-Fi and Ethernet for sites in close proximity, or over 802.11ah Wi-Fi HaLow with directional antennas to span miles of terrain. The mesh is self-organizing, self-healing, and layer-2 transparent — standard TAK traffic crosses without translation.
 
-Every node is also a host for xTAK services. A netTAK at the IC's tent runs baseTAK Lite serving browser-based TAK clients. A netTAK at a remote watering point runs digiTAK bridging the regional ham network into the mesh. A netTAK at a parking lot runs chatTAK for the volunteers showing up to help. The mesh carries the full TAK picture between them all.
+A wildland fire crew's IC tent runs baseTAK Lite on a netTAK; the same node serves preloaded county maps to every tablet on the mesh. A netTAK at a remote watering point runs digiTAK to bring the regional ham network in. A netTAK at a parking lot runs chatTAK for walk-up volunteers. The mesh carries the full TAK picture between them all.
 
-Built for wildland fire, multi-day SAR, EmComm disaster response, and any team that needs a real LAN across terrain that doesn't have one. Standards-based: 802.11s, BATMAN, Wi-Fi HaLow, all on Linux, all on a Pi. Hardware platform validated. First public release expected later this year.
+Built for wildland fire, multi-day SAR, EmComm disaster response, and any operation that needs the xTAK suite where the infrastructure doesn't reach. Standards-based, all on a Pi.
 
 ### Soul quote
-> A real LAN across miles of fire ground.
+> One platform under every mobile device. One mesh between all of them.
 
 ### Audience tags
 **Primary:** wildland fire, multi-day SAR, deployable EmComm, county/state EM deployable comms.
