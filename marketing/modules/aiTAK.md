@@ -104,10 +104,10 @@ For the engineer screening this before adoption:
 
 ## What you need
 
-- A **workstation or server** with a GPU capable of running your chosen LLM (RTX 3090 / 4090 / 5090, or a server with H100 / A100 / L40S class hardware).
-- Or a **CPU-only deployment** for small models and modest workloads (Llama 3.1 8B class).
+- **A small mini-PC, an Apple Silicon Mac mini, a Jetson, or any consumer machine with enough VRAM for your chosen open-weights model.** An **8B-class model** (Llama 3.1 8B, Qwen-class, Mistral) runs comfortably on consumer hardware — typically sub-150 W draw — staying power-modest enough to be **solar-viable for multi-day field deployments**.
+- **Heavier models** (70B-class) run on workstation hardware (RTX 4090 / 5090, dual-3090, M-series Mac Studio) when the operation can spare the power budget. Server hardware (H100 / A100 / L40S) is supported but not required.
 - A **TAK LAN** — the same one your ATAK / WinTAK / baseTAK is on.
-- An **open-weights LLM** of your choice, served through any OpenAI-compatible local inference server.
+- An **open-weights LLM** of your choice, served through any OpenAI-compatible local inference server (llama.cpp, vLLM, Ollama, LM Studio, TGI).
 
 ## What you don't need
 
