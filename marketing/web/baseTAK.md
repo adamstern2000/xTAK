@@ -28,6 +28,10 @@ TAK — **Team Awareness Kit** — is the family of situational-awareness client
 
 ---
 
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+
+---
+
 ## The scenario
 
 <!-- IMAGE: split-frame — left side EOC table with twelve people on laptops all showing the same TAK map; right side a sheriff's ATAK tablet in a cruiser with the same markers; background winter-storm operations -->
@@ -116,7 +120,7 @@ Drop any other xTAK product on the same LAN and it just shows up.
 - **loraTAK** feeds Meshtastic LoRa node positions and chat
 - **sdrTAK** feeds decoded aircraft (1090 ES, UAT 978) and ships (AIS)
 - **chatTAK** browser users appear as their own first-class TAK endpoints
-- **netTAK** *(in development)* extends the LAN over a self-healing 802.11s + BATMAN mesh
+- **netTAK** *(future release)* extends the LAN over a self-healing 802.11s + BATMAN mesh
 
 Every product speaks the same TAK protocol on the same network. There is no glue. There is no integration tax. Add a product, and baseTAK sees it.
 
@@ -255,8 +259,8 @@ No. baseTAK is self-hosted. No subscription, no licensing, no per-device fees.
 
 | | |
 |---|---|
-| **Shipping today** | baseTAK on cot_bridge v0.45.x — production builds, battle-tested |
-| **In active development** | TCP relay / federation for inter-EOC TAK bridging without TAK Server |
+| **Beta — shipping soon** | baseTAK on cot_bridge v0.45.x — validated in pilot deployments |
+| **Future release** | TCP relay / federation for inter-EOC TAK bridging without TAK Server |
 | **On the roadmap** | AI agent integration ([aiTAK](/products/aiTAK)) as a planning and SA assistant inside baseTAK; cross-gateway APRS object round-trip operational test |
 
 ---
@@ -288,8 +292,8 @@ Open a browser to `https://<host>.local` and you're operating. Drop MBTiles into
 - **[loraTAK](/products/loraTAK)** — Meshtastic LoRa mesh gateway. Feeds LoRa node positions and chat onto your baseTAK map.
 - **[chatTAK](/products/chatTAK)** — chat-only Pi appliance. Browser users become first-class TAK endpoints on the same network as baseTAK.
 - **[sdrTAK](/products/sdrTAK)** — SDR-decoded aircraft (ADS-B 1090, UAT 978) and ships (AIS) as native TAK contacts feeding your baseTAK picture.
-- **[netTAK](/products/netTAK)** *(in development)* — self-healing 802.11s + BATMAN field mesh, with baseTAK Lite tileserver at each forward node.
-- **[aiTAK](/products/aiTAK)** *(in development)* — local-first LLM that joins your TAK network as an operations assistant inside baseTAK.
+- **[netTAK](/products/netTAK)** *(future release)* — self-healing 802.11s + BATMAN field mesh, with baseTAK Lite tileserver at each forward node.
+- **[aiTAK](/products/aiTAK)** *(future release)* — local-first LLM that joins your TAK network as an operations assistant inside baseTAK.
 
 ---
 
