@@ -157,3 +157,8 @@ The product is offline-strict: every Python wheel vendored, zero network calls d
 ### Audience tags
 **Primary:** field incident command elements, mobile command vehicles, pop-up ICPs, event coordinators, SAR base teams, CERT leads, volunteer fire/ambulance corps, EmComm teams running pop-up EOCs.
 **Secondary:** public-safety agencies onboarding non-TAK volunteers, training programs, exercise/drill organizers, anyone running mixed ATAK / non-ATAK ops or comms-heavy / map-light operations.
+
+
+---
+
+*© 2026 xTAK Project. All rights reserved. xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, and aiTAK are trademarks of the xTAK Project. ATAK, WinTAK, iTAK, and TAK are products of the U.S. Government via the TAK Product Center; the xTAK Project is not affiliated with the TAK Product Center. [Full copyright and trademark notice →](../COPYRIGHT.md)*
