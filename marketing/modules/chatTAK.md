@@ -59,10 +59,10 @@ This is the move when an EOC has to deploy — when the building has to be evacu
 
 ### 4. Compose with the rest of the xTAK suite
 
-chatTAK is the lightweight endpoint counterpart to baseTAK. The chat wire format is byte-identical between them — `cot_chat` is the same shared Python package that powers both. Drop a chatTAK on a LAN that also has baseTAK, digiTAK, meshTAK, or sdrTAK and they all see each other.
+chatTAK is the lightweight endpoint counterpart to baseTAK. The chat wire format is byte-identical between them — `cot_chat` is the same shared Python package that powers both. Drop a chatTAK on a LAN that also has baseTAK, digiTAK, loraTAK, or sdrTAK and they all see each other.
 
 - **chatTAK browser user can DM an ATAK device** — and vice versa
-- **chatTAK chat reaches a Meshtastic node** via meshTAK on the same LAN
+- **chatTAK chat reaches a Meshtastic node** via loraTAK on the same LAN
 - **chatTAK chat reaches a ham operator** via digiTAK on the same LAN
 - **A logged-in volunteer's position** flows to every TAK client and bridge on the network
 
