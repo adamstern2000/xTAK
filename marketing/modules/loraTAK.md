@@ -6,6 +6,8 @@
 
 > **About TAK:** loraTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS) — and bridges your Meshtastic LoRa mesh in both directions. Mesh node positions appear on TAK clients as SA markers; TAK chat reaches mesh devices as text messages; mesh users can DM TAK callsigns. [More about the TAK ecosystem →](../about-tak.md)
 
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+
 ---
 
 ## The scenario
@@ -106,7 +108,7 @@ sudo systemctl start cot-mesh
 
 ## Status
 
-**Shipping** (v1.3.0, Meshtastic backend). Production-stable; no pending blockers.
+**Beta — shipping soon** (v1.3.0, Meshtastic backend). Beta-stable; no pending blockers.
 
 **On the roadmap:**
 - TAK chat protobuf RX (currently XML; protobuf path implemented but operator-gated)
