@@ -63,8 +63,8 @@ A bidirectional Meshtastic LoRa gateway. Every mesh node appears on ATAK, WinTAK
 ### 💬 [chatTAK](marketing/modules/chatTAK.md) — Comms-forward TAK, no app required
 A Pi appliance with its own Wi-Fi network and a browser-based chat UI. Multi-user — the whole command staff runs from one Pi, each on their own phone, each as a first-class TAK identity. **Shipping.**
 
-### ✈️ [sdrTAK](marketing/modules/sdrTAK.md) — Every aircraft in the sky, on your TAK map
-SDR-decoded ADS-B, UAT 978, and AIS rendered as native TAK contacts. Military hex / callsign auto-flagging. 520k-entry aircraft database. Works with any SoapySDR-supported dongle. **Shipping.**
+### ✈️ [sdrTAK](marketing/modules/sdrTAK.md) — Every aircraft in the sky. Every ship in the bay.
+SDR-decoded ADS-B, UAT 978, and AIS rendered as native TAK contacts. Military hex / callsign auto-flagging. 520k-entry aircraft database. Works with any SoapySDR-supported dongle. **Shipping ADS-B + UAT; AIS imminent.**
 
 ### 🌐 [netTAK](marketing/modules/netTAK.md) — A self-healing LAN that follows you into the field
 Pi-based field nodes that auto-form a self-healing 802.11s + BATMAN mesh, using both standard Wi-Fi and Wi-Fi HaLow. Carries the full xTAK service stack across miles of terrain. Includes baseTAK Lite with a built-in tileserver so forward sites distribute maps locally. **In active development.**
