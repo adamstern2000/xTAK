@@ -4,7 +4,7 @@
 
 **A full TAK map, chat, and SA hub in a tab. baseTAK is the home base of the xTAK suite — every team member with a laptop becomes a first-class TAK operator, alongside any ATAK, WinTAK, and iTAK device on the network.**
 
-> **About TAK:** baseTAK joins the same multicast network that ATAK (Android), WinTAK (Windows), and iTAK (iOS) speak — and renders the full TAK picture in any modern browser. A marker placed in baseTAK appears in ATAK and vice versa, with byte-identical wire format. [More about the TAK ecosystem →](../about-tak.md)
+> **About TAK:** baseTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS) — and renders the full TAK picture in any modern browser. A marker placed in baseTAK appears in ATAK and vice versa, with byte-identical wire format. [More about the TAK ecosystem →](../about-tak.md)
 
 ---
 
@@ -14,7 +14,7 @@ A winter storm has knocked out power across three counties. The Emergency Operat
 
 The IC opens a browser tab to `https://eoc.local`. The map fills the screen — terrain shading, county overlays, the warming-shelter polygon she drew yesterday, the staging areas she imported from a KML the state sent over. She drops a new marker for the shelter that just opened in the high school. Within seconds, every laptop in the EOC sees it. So does the sheriff's ATAK tablet in his cruiser. So does the WinTAK on the EM director's desktop two doors down.
 
-A SAR team a hundred miles away has aprsTAK and a 2-meter rig. Their markers appear on the EOC map. The IC DMs their team lead from her browser. The message lands on RF.
+A SAR team a hundred miles away has digiTAK and a 2-meter rig. Their markers appear on the EOC map. The IC DMs their team lead from her browser. The message lands on RF.
 
 **Twelve operators. One shared picture. No tablets distributed. No TAK Server. No cloud.**
 
@@ -49,13 +49,13 @@ baseTAK is designed to be the *durable* picture of the operation — not a passi
 
 Drop any other xTAK product on the same LAN and it just shows up.
 
-- **aprsTAK** feeds APRS stations and bridged sites onto your map
+- **digiTAK** feeds APRS stations and bridged sites onto your map
 - **meshTAK** feeds Meshtastic LoRa node positions and chat
 - **sdrTAK** feeds decoded aircraft (1090 ES, UAT 978) and ships (AIS)
 - **chatTAK** browser users appear as their own first-class TAK endpoints
-- **halowTAK** *(in development)* extends the LAN over a self-healing 802.11s + BATMAN mesh
+- **netTAK** *(in development)* extends the LAN over a self-healing 802.11s + BATMAN mesh
 
-Every product speaks the same TAK multicast protocol. There is no glue. There is no integration tax. Add a product, and baseTAK sees it.
+Every product speaks the same TAK protocol on the same network. There is no glue. There is no integration tax. Add a product, and baseTAK sees it.
 
 ---
 
@@ -86,12 +86,12 @@ For the engineer screening this before adoption:
 ## What you need
 
 - A **Linux server** (3.5 GB RAM, ~500 MB disk for the codebase + SQLite). A fanless mini-PC is plenty.
-- A **LAN** with multicast enabled.
+- A **LAN** that your TAK clients share.
 - **Modern browser** on every client — Chrome, Firefox, Safari, Edge. No app install.
 
 ## What you don't need
 
-- **No TAK Server.** baseTAK speaks TAK multicast directly.
+- **No TAK Server.** baseTAK talks to your TAK clients directly on the LAN.
 - **No cloud.** Everything runs on the LAN; the SQLite database is yours.
 - **No tablets.** Works with ATAK / WinTAK / iTAK, also works without.
 - **No subscription, no licensing.** Self-hosted.
@@ -128,7 +128,7 @@ A full TAK map, chat, and SA hub in a browser tab. baseTAK turns every laptop in
 ### Long pitch — 200 words
 baseTAK is the home base of the xTAK suite — a full TAK map, chat, and situational-awareness hub that runs in any browser. Every laptop on the LAN becomes a first-class TAK operator alongside ATAK, WinTAK, and iTAK clients, with native COT creation, telestrations, range rings, bullseyes, geofences, KML/GPX import, and 3D terrain.
 
-baseTAK is built to be the durable, authoritative SA source for the deployment — not a passive viewer. Heartbeat re-transmission, per-field echo filtering, per-COT broadcast control, and SQLite persistence mean the picture survives device dropouts, network blips, and shift changes. When aprsTAK, meshTAK, sdrTAK, or chatTAK is on the same LAN, baseTAK sees them; there is no integration tax.
+baseTAK is built to be the durable, authoritative SA source for the deployment — not a passive viewer. Heartbeat re-transmission, per-field echo filtering, per-COT broadcast control, and SQLite persistence mean the picture survives device dropouts, network blips, and shift changes. When digiTAK, meshTAK, sdrTAK, or chatTAK is on the same LAN, baseTAK sees them; there is no integration tax.
 
 Web-originated markers are byte-identical to what WinTAK produces, rendered with sub-second latency over SSE — not polling. Self-hosted on any Linux box. No TAK Server, no cloud, no per-device licensing. Built for ICs, EOCs, SAR base coordinators, and anyone running a real deployment without ATAK tablets in everyone's hands.
 
