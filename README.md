@@ -44,6 +44,9 @@ Open standards (TAK, COT, APRS, Meshtastic, 802.11s, BATMAN, Wi-Fi HaLow, JS8Cal
 ### 5. Built for the operator
 Designed by and for people who actually run operations: incident commanders, SAR base teams, EmComm operators, ham radio volunteers. Faster click paths, fewer menus, less clutter, the map gets the screen.
 
+### 6. Portable, pocketable, battery-powered
+None of this lives in a server rack. **baseTAK** runs on a device the size of a Game Boy. **chatTAK** fits in a 3D-printed case smaller than a deck of cards. **loraTAK**, **digiTAK**, and **sdrTAK** run on a Raspberry Pi with one USB peripheral. **netTAK** nodes ride in Pelican cases. Even **aiTAK** — the heaviest part of the suite — runs an 8B-class open-weights LLM on a small mini-PC, power-modest enough to be solar-viable for multi-day deployments. The whole suite fits in a backpack.
+
 ---
 
 ## The products
