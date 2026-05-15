@@ -1,8 +1,8 @@
 # sdrTAK
 
-# Every aircraft in the sky, on your TAK map.
+# Every aircraft in the sky. Every ship in the bay.
 
-**sdrTAK is an SDR-powered radio decoder that pulls aircraft (ADS-B 1090 ES, UAT 978) and ships (AIS) off the air and renders them as native TAK contacts. Aviation situational awareness, in your ATAK / WinTAK / baseTAK, for the cost of a $30 dongle.**
+**sdrTAK is an SDR-powered radio decoder that pulls aircraft (ADS-B 1090 ES, UAT 978) and ships (AIS) off the air and renders them as native TAK contacts. Air and surface situational awareness, in your ATAK / WinTAK / baseTAK, for the cost of a $30 dongle and an antenna.**
 
 > **About TAK:** sdrTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS) — and feeds decoded aircraft and ship contacts onto the map alongside your team's positions and markers. [More about the TAK ecosystem →](../about-tak.md)
 
@@ -135,10 +135,10 @@ Admin UI on port 5100 — gain/stale-time, decoder enable/disable, device discov
 *Derived from the page above; for use in social, web, video, and other channels.*
 
 ### Tagline
-**Every aircraft in the sky, on your TAK map.**
+**Every aircraft in the sky. Every ship in the bay.**
 
 ### Social pitch — 50 words
-sdrTAK pulls aircraft off the air with a $30 SDR dongle and renders them on ATAK, WinTAK, iTAK, and baseTAK as native TAK contacts. ADS-B 1090 and UAT 978. 520k-entry aircraft database. Military hex / callsign auto-flagging. AIS ships on the roadmap. Offline install. Runs on a Pi.
+sdrTAK pulls aircraft and ships off the air with a $30 SDR dongle and renders them on ATAK, WinTAK, iTAK, and baseTAK as native TAK contacts. ADS-B 1090 and UAT 978 shipping; AIS ship tracking imminent. 520k-entry aircraft database. Military hex / callsign auto-flagging. Offline install. Runs on a Pi.
 
 ### Long pitch — 200 words
 sdrTAK is the radio side of situational awareness — an SDR-powered decoder that pulls aircraft (ADS-B 1090 ES, UAT 978) and ships (AIS) directly off the air and emits each as a native TAK contact onto your team's TAK network. Built for airshow safety teams, aviation public-safety units, SAR aircraft coordinators, harbor and coastal ops, and aviation enthusiasts who want their existing dongle feeding their own TAK setup instead of pushing to a commercial service.
