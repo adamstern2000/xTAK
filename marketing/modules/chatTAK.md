@@ -2,7 +2,7 @@
 
 # A TAK endpoint in everyone's pocket. No app required.
 
-**chatTAK is a self-contained Pi Zero that hosts a Wi-Fi network, a browser-based TAK chat UI, and a real TAK identity for every phone or laptop that joins. Plug it in, hand out the SSID, and your volunteers are on the team's TAK network in 60 seconds.**
+**chatTAK is a comms-forward TAK endpoint: a self-contained Pi appliance that hosts a Wi-Fi network and a browser-based chat UI. Multiple users — phones, laptops, tablets — connect at once, each as their own first-class TAK identity. Plug it in, hand out the SSID, and your whole team is on the network in 60 seconds. No app install. No ATAK clutter.**
 
 > **About TAK:** chatTAK is a TAK endpoint — every browser user enrolled in chatTAK becomes a first-class TAK participant alongside ATAK (Android), WinTAK (Windows), and iTAK (iOS) clients, with their own periodic SA heartbeat and native TAK chat. [More about the TAK ecosystem →](../about-tak.md)
 
@@ -46,7 +46,18 @@ chatTAK is a fully offline-strict appliance. Every dependency is vendored. The i
 - **Battery-powered operation** — USB power bank lasts a day
 - **One-tarball install** — everything ships in the offline release archive
 
-### 3. Compose with the rest of the xTAK suite
+### 3. Run a comms-forward command element from a single Pi
+
+When the priority is *talk, decide, coordinate* — not stare at a map — chatTAK is the TAK endpoint of choice. One Pi, one Wi-Fi network, and your whole command staff is on the same TAK chat from their phones.
+
+- **Multi-user from one device** — every browser that joins chatTAK gets its own TAK identity. The IC, ops chief, planning chief, and logistics officer can all be on one Pi at once, each as their own callsign with their own team color, role, and SA heartbeat.
+- **The WinTAK chat feature set, in a browser** — All Chat, team chat, addressable DMs, group chat, attachments. The full GeoChat surface, on any device, no app.
+- **No ATAK cognitive load** — for staff who don't need the tactical map every second, chatTAK gives them the comms layer of TAK without the rest of the client. The chat pane is the primary interface.
+- **Field command, no infrastructure** — a four-person command element can run an incident from a single chatTAK Pi powered by a USB battery. No tablets to provision. No apps to install. No licenses. Connect to the SSID, pick a callsign, you're a TAK participant.
+
+This is the move when an EOC has to deploy — when the building has to be evacuated, when the field has to come up to a remote ICP, when an exercise needs a portable command cell. Carry a chatTAK in a sleeve, run command from a phone.
+
+### 4. Compose with the rest of the xTAK suite
 
 chatTAK is the lightweight endpoint counterpart to baseTAK. The chat wire format is byte-identical between them — `cot_chat` is the same shared Python package that powers both. Drop a chatTAK on a LAN that also has baseTAK, digiTAK, meshTAK, or sdrTAK and they all see each other.
 
@@ -59,6 +70,8 @@ chatTAK is the lightweight endpoint counterpart to baseTAK. The chat wire format
 
 ## Who runs chatTAK
 
+- **Field incident command elements** — IC, ops chief, planning chief, logistics, finance — running a command post or remote ICP from a single Pi, each on their own phone, all on the same TAK network.
+- **Mobile command vehicles and pop-up ICPs** that need to come up fast without provisioning hardware for every staff member.
 - **Event coordinators** running mass-participation events (races, festivals, fairs, parades) who need volunteer comms without distributing apps or licenses.
 - **Search-and-rescue base teams** who staff aid stations and command posts with volunteers who don't carry ATAK.
 - **CERT and neighborhood-watch leads** running drills or live activations where most participants are untrained civilians.
@@ -124,21 +137,23 @@ Connect to the Pi's Wi-Fi AP (configured in production-image setup) and open `ht
 *Derived from the page above; for use in social, web, video, and other channels.*
 
 ### Tagline
-**A TAK endpoint in everyone's pocket. No app required.**
+**Comms-forward TAK. Multi-user. No app required.**
 
 ### Social pitch — 50 words
-chatTAK is a Pi Zero appliance that hosts a Wi-Fi network, a browser-based TAK chat UI, and a real TAK identity for every phone that joins. Plug it in. Hand out the SSID. Your volunteers are on the team's TAK network in 60 seconds. No app install. No cellular. No TAK Server.
+chatTAK is a Pi appliance that hosts a Wi-Fi network and a browser-based TAK chat UI. Multiple users — your whole command staff, your volunteer team — connect at once, each with their own TAK identity. Plug it in. Hand out the SSID. Sixty seconds later your team's on the network. No app. No cloud.
 
 ### Long pitch — 200 words
-chatTAK turns a Pi Zero 2 W into a self-contained TAK endpoint. Plug it in, hand out the Wi-Fi SSID, and any phone or laptop that joins becomes a first-class TAK participant — with their own callsign, team color, position heartbeat, and native TAK chat. ATAK and WinTAK clients on the same network can't tell chatTAK users apart from "real" TAK clients on the wire.
+chatTAK turns a Pi into a self-contained, comms-forward TAK endpoint. Plug it in, hand out the Wi-Fi SSID, and any phone, tablet, or laptop that joins becomes a first-class TAK participant — with its own callsign, team color, position heartbeat, and native TAK chat. ATAK and WinTAK clients on the same network can't tell chatTAK users apart from "real" TAK clients on the wire.
 
-It's built for events and operations where part of the team is on tactical apps and part of the team is on a phone they brought from home: race aid stations, festival volunteer posts, SAR base check-in tents, CERT activations, shelter EOCs, anywhere fast onboarding matters more than feature depth.
+It's the right tool for two distinct kinds of deployment. First, **comms-forward field command**: a four-person command element running an incident from a single Pi, each staff member on their own phone, full TAK chat without the cognitive load of a full tactical client. Second, **fast-onboard volunteer ops**: race aid stations, festival posts, SAR check-in tents, CERT activations, shelter EOCs — anywhere people show up to help and need to be on comms in sixty seconds.
 
-The product is offline-strict: every Python wheel vendored, zero network calls during install, self-contained Wi-Fi AP for parking-lot deployment. The chat wire format is byte-identical with baseTAK — they share the same `cot_chat` package — and chatTAK composes cleanly with every other xTAK product on the same TAK network. Sub-$30 hardware. Day-long battery life. Sixty-second onboarding.
+The product is offline-strict: every Python wheel vendored, zero network calls during install, self-contained Wi-Fi AP for parking-lot deployment. Byte-identical chat wire format with baseTAK. Composes with every other xTAK product on the same TAK network. Sub-$30 hardware. Day-long battery life.
 
 ### Soul quote
-> Each enrolled browser user becomes a first-class TAK endpoint with its own periodic SA heartbeat.
+> Carry a chatTAK in a sleeve, run command from a phone.
+
+*(Alternate, technical):* Each enrolled browser user becomes a first-class TAK endpoint with its own periodic SA heartbeat.
 
 ### Audience tags
-**Primary:** event coordinators, SAR base teams, CERT leads, volunteer fire/ambulance corps, EmComm teams running pop-up EOCs.
-**Secondary:** public-safety agencies onboarding non-TAK volunteers, training programs, exercise/drill organizers, anyone running mixed ATAK / non-ATAK ops.
+**Primary:** field incident command elements, mobile command vehicles, pop-up ICPs, event coordinators, SAR base teams, CERT leads, volunteer fire/ambulance corps, EmComm teams running pop-up EOCs.
+**Secondary:** public-safety agencies onboarding non-TAK volunteers, training programs, exercise/drill organizers, anyone running mixed ATAK / non-ATAK ops or comms-heavy / map-light operations.
