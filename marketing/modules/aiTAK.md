@@ -8,6 +8,8 @@
 
 > **About TAK:** aiTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS). It reads the TAK picture in real time and participates as a TAK contact — answering DMs, posting summaries, flagging conditions. [More about the TAK ecosystem →](../about-tak.md)
 
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+
 ---
 
 ## The scenario
@@ -138,7 +140,7 @@ aiTAK is the most experimental product in the xTAK suite. The positioning and ca
 **An AI operations assistant that lives inside your TAK network.**
 
 ### Social pitch — 50 words
-aiTAK is an LLM-backed operator's helper that joins your TAK network like any other xTAK service. It watches the picture, summarizes activity, drafts SITREPs, and flags rule-matched conditions in chat. Runs on your own hardware, your own model. Local-first, no cloud. *(in development)*
+aiTAK is an LLM-backed operator's helper that joins your TAK network like any other xTAK service. It watches the picture, summarizes activity, drafts SITREPs, and flags rule-matched conditions in chat. Runs on your own hardware, your own model. Local-first, no cloud. *(future release)*
 
 ### Long pitch — 200 words
 aiTAK is the xTAK suite's AI augmentation layer — an LLM-backed assistant that joins your team's TAK network as a peer and helps the operator handle a busy picture. It can answer natural-language questions about the operational state ("summarize the last hour by sector," "where is Engine 3 right now"), draft SITREPs and IAP sections from observed activity, and run operator-defined rules to flag conditions the IC shouldn't have to watch personally (stationary teams in hazard zones, geofence breaches, comms-silence alerts).
