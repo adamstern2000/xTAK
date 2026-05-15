@@ -28,6 +28,10 @@ TAK — **Team Awareness Kit** — is the family of situational-awareness client
 
 ---
 
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+
+---
+
 ## The scenario
 
 <!-- IMAGE: split-frame — left side a WinTAK in an airshow safety tent showing 2525C aircraft icons across the region; right side the safety officer with a tripod-mounted antenna and a Pi on a folding table -->
@@ -233,7 +237,7 @@ Yes. baseTAK, digiTAK, loraTAK, and chatTAK all share the same TAK network by de
 
 | | |
 |---|---|
-| **Shipping today** | ADS-B 1090 ES and UAT 978 MHz decoders, v1.4.0 — production-ready, 65 passing tests |
+| **Beta — shipping soon** | ADS-B 1090 ES and UAT 978 MHz decoders, v1.4.0 — Beta-ready, 65 passing tests |
 | **Imminent** | AIS (162 MHz ship tracking) — decoder stub in tree, full release pending |
 | **On the roadmap** | rtl_433 ISM-band sensor decoding; SDRplay proprietary driver path; readsb backend option for 1090 (alternative to dump1090-fa) |
 
@@ -267,8 +271,8 @@ Admin UI opens on port 5100 — gain/stale-time, decoder enable/disable, device 
 - **[digiTAK](/products/digiTAK)** — TAK over amateur radio. VHF for the region, HF for the continent. Every APRS station as a native TAK contact.
 - **[loraTAK](/products/loraTAK)** — Meshtastic LoRa mesh gateway. Off-grid TAK federation over LoRa.
 - **[chatTAK](/products/chatTAK)** — chat-only Pi appliance. Browser users become first-class TAK endpoints with no app install.
-- **[netTAK](/products/netTAK)** *(in development)* — base operating layer for every mobile xTAK device; self-healing field mesh.
-- **[aiTAK](/products/aiTAK)** *(in development)* — local-first LLM that joins your TAK network as an operations assistant.
+- **[netTAK](/products/netTAK)** *(future release)* — base operating layer for every mobile xTAK device; self-healing field mesh.
+- **[aiTAK](/products/aiTAK)** *(future release)* — local-first LLM that joins your TAK network as an operations assistant.
 
 ---
 
