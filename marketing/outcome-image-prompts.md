@@ -6,6 +6,27 @@ Per-outcome images for each product page. Three image sources:
 - **🖥️ baseTAK agent** — TAK UI screenshots (same approach you used for the Devil's Gate Fire hero images)
 - **📐 Diagram** — schematic / stylized infographic (either Nano Banana with diagram prompt, or hand-drawn in Figma / Excalidraw)
 
+---
+
+## Status legend
+
+- **✅ DONE** — image generated and wired into the site
+- **⏳ TODO** — still needs generation
+
+## Progress
+
+```
+baseTAK   ⏳⏳✅✅⏳   (2/5)
+digiTAK   ✅⏳⏳⏳⏳   (1/5)
+loraTAK   ⏳⏳⏳         (0/3)
+chatTAK   ⏳⏳⏳⏳        (0/4)
+sdrTAK    ⏳⏳⏳⏳        (0/4)
+netTAK    ⏳⏳⏳⏳        (0/4)
+aiTAK     ⏳⏳⏳⏳        (0/4)
+                       ─────
+                        3/29 outcome images complete
+```
+
 **Style notes (Nano Banana prompts):**
 - Cinematic widescreen 21:9
 - Documentary realism, no sci-fi glow / hexagons / neural-net cliches
@@ -36,7 +57,7 @@ Scenario to set up: ESRI World Imagery basemap centered on a fictional EOC opera
 
 Either: (a) a close-up of the baseTAK icon picker showing the curated symbol library, OR (b) a 2-panel composite showing the broadcast-by-default toggle and a marker appearing on a second device. Goal is to communicate the two-click flow visually.
 
-### Outcome 03 — Be the authoritative SA source, even on imperfect networks
+### Outcome 03 — Be the authoritative SA source, even on imperfect networks ✅ DONE
 **📐 Diagram** (Nano Banana with diagram prompt, OR Figma/Excalidraw)
 
 ```
@@ -50,7 +71,7 @@ Aesthetic: dark charcoal background, TAK cyan accent, JetBrains-Mono-style
 labels, tactical HUD vibe. Flat 2D schematic, no gradients, no 3D.
 ```
 
-### Outcome 04 — Be the offline map server for every TAK device in the field
+### Outcome 04 — Be the offline map server for every TAK device in the field ✅ DONE
 **🎬 Nano Banana Pro**
 
 ```
@@ -73,7 +94,7 @@ Scenario: baseTAK web map showing a composed picture — APRS station icons (via
 
 # digiTAK · 5 outcomes
 
-### Outcome 01 — Run a shared TAK picture across two, three, or N sites
+### Outcome 01 — Run a shared TAK picture across two, three, or N sites ✅ DONE
 **📐 Diagram** (Nano Banana with diagram prompt OR Figma)
 
 ```
