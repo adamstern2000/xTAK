@@ -17,14 +17,14 @@ Per-outcome images for each product page. Three image sources:
 
 ```
 baseTAK   ⏳⏳✅✅⏳   (2/5)
-digiTAK   ✅⏳⏳⏳⏳   (1/5)
-loraTAK   ⏳⏳⏳         (0/3)
-chatTAK   ⏳⏳⏳⏳        (0/4)
-sdrTAK    ⏳⏳⏳⏳        (0/4)
+digiTAK   ✅⏳✅✅⏳   (3/5)
+loraTAK   ⏳✅✅         (2/3)
+chatTAK   ✅✅✅✅        (4/4)  🎉
+sdrTAK    ⏳⏳✅⏳        (1/4)
 netTAK    ⏳⏳⏳⏳        (0/4)
 aiTAK     ⏳⏳⏳⏳        (0/4)
                        ─────
-                        3/29 outcome images complete
+                       12/29 outcome images complete
 ```
 
 **Style notes (Nano Banana prompts):**
@@ -113,7 +113,7 @@ Aesthetic: dark charcoal background, TAK cyan accent, mono labels, flat
 
 Scenario: ESRI / Mapbox satellite basemap zoomed to a state-sized region. Populate ~30 APRS station markers (a mix of weather stations, vehicle trackers, beacon stations) scattered across the map. Side pane showing the marker list grouped under "APRSPrimary" and "APRSSecondary." Mix of small cyan/blue icons on terrain.
 
-### Outcome 03 — APRS-only operators are full participants — in both directions
+### Outcome 03 — APRS-only operators are full participants — in both directions ✅ DONE
 **🎬 Nano Banana Pro**
 
 ```
@@ -136,7 +136,7 @@ participant in the TAK operation — seeing the team and being seen.
 DO NOT include: military gear, weapons, futuristic UI, cyberpunk.
 ```
 
-### Outcome 04 — Bridge WinTAK islands across the continent on HF
+### Outcome 04 — Bridge WinTAK islands across the continent on HF ✅ DONE
 **📐 Stylized illustration** (Nano Banana or vector illustration)
 
 ```
@@ -171,7 +171,7 @@ If side-by-side feels too literal, alternative: a single Nano Banana cinematic p
 
 Scenario: ESRI satellite imagery basemap zoomed to a forested SAR sweep area (~5 sq mi). Place ~12-15 Meshtastic node markers spread across the trail network and ridgelines (cyan icons, each with a callsign like "MESH-A1" through "MESH-A12"). Add a few drawn search-sector polygons. Side pane visible showing the team list with team colors per searcher.
 
-### Outcome 02 — Run a real chat bridge in both directions
+### Outcome 02 — Run a real chat bridge in both directions ✅ DONE
 **🎬 Nano Banana Pro**
 
 ```
@@ -187,7 +187,7 @@ ambiance, very real and operational.
 DO NOT include: military gear, weapons, glow, neon, futuristic UI.
 ```
 
-### Outcome 03 — Work alongside the rest of the xTAK suite
+### Outcome 03 — Work alongside the rest of the xTAK suite ✅ DONE
 **📐 Diagram**
 
 ```
@@ -205,7 +205,7 @@ gradients.
 
 # chatTAK · 4 outcomes
 
-### Outcome 01 — Add anyone with a phone to your TAK network
+### Outcome 01 — Add anyone with a phone to your TAK network ✅ DONE
 **🎬 Nano Banana Pro**
 
 ```
@@ -221,7 +221,7 @@ is sharp and readable.
 DO NOT include: military gear, glow effects, futuristic UI, cyberpunk.
 ```
 
-### Outcome 02 — Drop into any operation without infrastructure
+### Outcome 02 — Drop into any operation without infrastructure ✅ DONE
 **🎬 Nano Banana Pro**
 
 ```
@@ -236,7 +236,7 @@ style, late afternoon natural light, real community-ops ambiance.
 DO NOT include: military gear, glow, neon, futuristic UI.
 ```
 
-### Outcome 03 — Run a comms-forward command element from a single Pi
+### Outcome 03 — Run a comms-forward command element from a single Pi ✅ DONE
 **🎬 Nano Banana Pro**
 
 ```
@@ -252,7 +252,7 @@ mountain light, slight wildfire haze, very real and operational.
 DO NOT include: military combat gear, weapons, glow effects, futuristic UI.
 ```
 
-### Outcome 04 — Compose with the rest of the xTAK suite
+### Outcome 04 — Compose with the rest of the xTAK suite ✅ DONE
 **📐 Diagram** (same style as loraTAK O3)
 
 ```
@@ -279,7 +279,7 @@ Scenario: WinTAK or baseTAK at a major airport (LAX, SFO, ORD) zoomed out to sho
 
 Scenario: Same regional view as O1 but filter to show only military aircraft. ~6-8 aircraft with friendly (cyan) 2525C affiliation symbology — show a C-130 (callsign "RCH-XXX"), a CH-47 (callsign "DUSTOFF-XX"), an SAM-prefixed VIP transport, and a few others. Tooltips visible showing the callsign prefix being matched and the affiliation flipped.
 
-### Outcome 03 — Add ships and (optionally) ISM sensors
+### Outcome 03 — Add ships and (optionally) ISM sensors ✅ DONE
 **🎬 Nano Banana Pro**
 
 ```
