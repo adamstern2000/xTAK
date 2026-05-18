@@ -17,31 +17,30 @@ Per-outcome images for each product page. Three image sources:
 
 ```
 baseTAK   ✅✅✅✅✅   (5/5)  🎉
-digiTAK   ✅✅✅✅⏳   (4/5)
+digiTAK   ✅✅✅✅✅   (5/5)  🎉
 loraTAK   ✅✅✅         (3/3)  🎉
 chatTAK   ✅✅✅✅        (4/4)  🎉
 sdrTAK    ✅✅✅✅        (4/4)  🎉
 netTAK    ⏳✅✅✅        (3/4)
 aiTAK     ⏳⏳⏳✅        (1/4)
                        ─────
-                       24/29 outcome images complete
+                       25/29 outcome images complete
 ```
 
 ## What's still missing
 
-**5 outcomes remaining.** All are 🖥️ baseTAK-agent UI screenshots or composite diagrams.
+**4 outcomes remaining.** All are 🖥️ baseTAK-agent UI screenshots.
 
 | Page | Outcome | Type | Description |
 |---|---|---|---|
-| digiTAK | O5 — Modernize your APRS station with a TAK client | 📐 Composite | UI-View32 vs WinTAK split |
 | netTAK | O1 — Run xTAK on every field device | 🖥️ baseTAK agent (or Figma) | netTAK admin/dashboard UI |
 | aiTAK | O1 — Ask questions about the operational picture | 🖥️ baseTAK agent | Q&A chat thread w/ aiTAK |
 | aiTAK | O2 — Run as a watchful background participant | 🖥️ baseTAK agent | Rule editor + alert in chat |
 | aiTAK | O3 — Draft, summarize, translate | 🖥️ baseTAK agent | IAP draft in chat panel |
 
 **Type counts:**
-- 🖥️ baseTAK agent: 4 (all aiTAK + netTAK)
-- 📐 Diagram / composite: 1
+- 🖥️ baseTAK agent: 4
+- 📐 Diagram / composite: 0
 - 🎬 Nano Banana Pro: 0 (all photos done 🎉)
 
 All the 🎬 photographic prompts are done — every remaining slot is either a TAK UI screenshot or a composite/diagram. Your baseTAK agent should be able to knock these out the same way it produced the Devil's Gate Fire hero images.
@@ -170,7 +169,7 @@ DO NOT include: bright sci-fi neon, hexagons, cartoonish military
 imagery, lens flares.
 ```
 
-### Outcome 05 — Modernize your APRS station with a TAK client interface
+### Outcome 05 — Modernize your APRS station with a TAK client ✅ DONE interface
 **📐 Side-by-side composite** (Figma / Photoshop split panel)
 
 Composite of two screenshots side-by-side:
