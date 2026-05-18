@@ -322,16 +322,68 @@ Scenario: baseTAK web map showing a composed picture similar to baseTAK O5, with
 # netTAK · 4 outcomes
 
 ### Outcome 01 — Run xTAK on every field device
-**🖥️ baseTAK agent screenshot** (or Figma admin-UI mockup)
+**🎬 Nano Banana Pro**
 
-A baseTAK-style dashboard/admin UI screenshot showing a list of 5-6 netTAK field devices, each with:
-- A name (e.g., "NETTAK-ICP-01", "NETTAK-SQUAD-2", "NETTAK-LOGS-1")
-- A status indicator (green=online)
-- Running services (chips showing "sdrTAK", "loraTAK", "digiTAK", "chatTAK", or "baseTAK Lite")
-- Battery / power indicator
-- Last-seen timestamp
+```
+Cinematic widescreen photograph, 21:9 aspect ratio. A multi-agency forward
+operating site at the edge of a mountain meadow during a wildland-fire or
+SAR response, late-afternoon golden-hour light.
 
-Side panel showing the mesh topology between the nodes. Tactical HUD aesthetic with TAK cyan accents.
+FOREGROUND CENTER (subject of the frame): a small Pi-based netTAK appliance
+in a 3D-printed case sitting on an open black Pelican hard case on a
+folding camp table. Two short whip antennas attached. One status LED
+glowing soft cyan. A USB power bank wired in. The device should read as
+unmistakably "the one box that makes everything else work."
+
+AROUND THE TABLE — TEN operators arranged in a loose semicircle, some
+close in (foreground), some standing further back (mid-ground / background),
+each visibly using a DIFFERENT type of TAK-capable device, naturally engaged
+in coordination — looking at their own screens, pointing at each other's,
+gesturing toward the terrain:
+
+  FOREGROUND (close to the table):
+  1. A USFS firefighter in yellow Nomex holding a rugged Android tablet
+     running ATAK, leaning over the table.
+  2. An Incident Commander in a green vest with a printed IAP map and a
+     Windows tablet running WinTAK on the table edge.
+  3. A SAR volunteer in an orange vest crouched at the table looking at
+     a phone showing a browser-based TAK map.
+
+  MID-GROUND (standing a step back):
+  4. A sheriff's deputy in tan uniform with an iPad showing iTAK.
+  5. A paramedic in navy blue at a rugged Toughbook laptop on a
+     secondary folding table.
+  6. A licensed amateur radio operator in a reflective ARES vest holding
+     an APRS-capable handheld (Kenwood TH-D75 / Yaesu FT-3 style) with a
+     small color map screen visible.
+  7. A volunteer firefighter at a second Toughbook plugged into the
+     netTAK over a short ethernet run.
+
+  BACKGROUND (further back, partly silhouetted by golden light):
+  8. A CAL FIRE captain with a Samsung phone, talking on the radio.
+  9. A National Park Service ranger with a small ruggedized handheld
+     tablet.
+ 10. An EOC liaison in a windbreaker with a Windows tablet, walking
+     toward the group.
+
+BACKGROUND ENVIRONMENT: a wildland fire-engine truck and a UTV partially
+visible at the edge of frame, distant smoke column rising from a ridgeline,
+conifers and grass. A second small antenna mast off to one side, cleanly
+wired.
+
+Color grading: warm amber sunlight catching the operators and the device,
+cool teal in the shadows. Slight shallow depth of field — the netTAK in
+sharp focus, the most distant operators slightly softened. Documentary
+realism — like a national newspaper photo, not a stock-photo composition.
+
+The visual story: ONE small Pi-based netTAK in the center of a busy ops
+table, TEN different operators each on a DIFFERENT device, ALL coordinating
+through that one box.
+
+DO NOT include: military combat aesthetic, weapons, plate-carrier vests,
+sci-fi UI glow, futuristic interfaces, neon, hexagons, cyberpunk, Tom-Clancy
+cover-art vibe.
+```
 
 ### Outcome 02 — Mesh them together — or run a single node standalone ✅ DONE
 **📐 Diagram** (Nano Banana or Figma)
