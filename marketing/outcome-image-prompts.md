@@ -16,41 +16,36 @@ Per-outcome images for each product page. Three image sources:
 ## Progress
 
 ```
-baseTAK   ⏳⏳✅✅⏳   (2/5)
+baseTAK   ✅✅✅✅⏳   (4/5)
 digiTAK   ✅⏳✅✅⏳   (3/5)
 loraTAK   ⏳✅✅         (2/3)
 chatTAK   ✅✅✅✅        (4/4)  🎉
-sdrTAK    ⏳⏳✅⏳        (1/4)
+sdrTAK    ✅✅✅✅        (4/4)  🎉
 netTAK    ⏳✅✅✅        (3/4)
 aiTAK     ⏳⏳⏳✅        (1/4)
                        ─────
-                       16/29 outcome images complete
+                       21/29 outcome images complete
 ```
 
 ## What's still missing
 
-**13 outcomes remaining.** Most are 🖥️ baseTAK-agent UI screenshots (your agent's specialty); a few are 🎬 Nano Banana Pro photos or 📐 diagrams.
+**8 outcomes remaining.** All are 🖥️ baseTAK-agent UI screenshots or composite diagrams.
 
 | Page | Outcome | Type | Description |
 |---|---|---|---|
-| baseTAK | O1 — Put a real TAK client on every laptop | 🖥️ baseTAK agent | EOC view, ~25 markers, side panes |
-| baseTAK | O2 — Operate at the speed of the incident | 🖥️ baseTAK agent | Icon picker + 2-click workflow |
-| baseTAK | O5 — Compose with the rest of the xTAK suite | 🖥️ baseTAK agent | Composed map: APRS + mesh + aircraft + chatTAK |
-| digiTAK | O2 — Put every APRS station on your TAK clients | 🖥️ baseTAK agent | State-wide region with ~30 APRS markers |
+| baseTAK | O5 — Compose with the rest of the xTAK suite | 🖥️ baseTAK agent | Composed map: APRS + mesh + aircraft + chatTAK (YAML: `basetak-o5-boulder-composed.yaml`) |
+| digiTAK | O2 — Put every APRS station on your TAK clients | 🖥️ baseTAK agent | State-wide region with ~30 APRS markers (YAML: `digitak-o2-newengland-aprs.yaml`) |
 | digiTAK | O5 — Modernize your APRS station with a TAK client | 📐 Composite | UI-View32 vs WinTAK split |
-| loraTAK | O1 — Make every mesh node a TAK contact | 🖥️ baseTAK agent | SAR sweep, ~12 mesh nodes on satellite imagery |
-| sdrTAK | O1 — See every transponder-equipped aircraft | 🖥️ baseTAK agent | Major airport, 50+ aircraft contacts |
-| sdrTAK | O2 — Flag military and government aircraft | 🖥️ baseTAK agent | Same region, military aircraft highlighted |
-| sdrTAK | O4 — Compose with the rest of the xTAK suite | 🖥️ baseTAK agent | sdrTAK aircraft + other xTAK feeds combined |
+| loraTAK | O1 — Make every mesh node a TAK contact | 🖥️ baseTAK agent | SAR sweep, ~12 mesh nodes on satellite imagery (YAML: `loratak-o1-smokies-sar.yaml`) |
 | netTAK | O1 — Run xTAK on every field device | 🖥️ baseTAK agent (or Figma) | netTAK admin/dashboard UI |
 | aiTAK | O1 — Ask questions about the operational picture | 🖥️ baseTAK agent | Q&A chat thread w/ aiTAK |
 | aiTAK | O2 — Run as a watchful background participant | 🖥️ baseTAK agent | Rule editor + alert in chat |
 | aiTAK | O3 — Draft, summarize, translate | 🖥️ baseTAK agent | IAP draft in chat panel |
 
 **Type counts:**
-- 🖥️ baseTAK agent: 12 (most of the remaining)
+- 🖥️ baseTAK agent: 7 (most of the remaining)
 - 📐 Diagram / composite: 1
-- 🎬 Nano Banana Pro: 0 (all photos are done! 🎉)
+- 🎬 Nano Banana Pro: 0 (all photos done 🎉)
 
 All the 🎬 photographic prompts are done — every remaining slot is either a TAK UI screenshot or a composite/diagram. Your baseTAK agent should be able to knock these out the same way it produced the Devil's Gate Fire hero images.
 
@@ -74,12 +69,12 @@ Naming: `<product>-01-<short-slug>.png` (e.g. `basetak-01-browser-ui.png`)
 
 # baseTAK · 5 outcomes
 
-### Outcome 01 — Put a real TAK client on every laptop in the room
+### Outcome 01 — Put a real TAK client on every laptop in the room ✅ DONE
 **🖥️ baseTAK agent screenshot**
 
 Scenario to set up: ESRI World Imagery basemap centered on a fictional EOC operating area. Drop ~25 markers across the map (mix of friendly team positions, drawn shapes, range rings, a bullseye, a route with waypoints, and a polygon evacuation zone). Open the side panes (Overlays + Markers + Alerts). Capture a clean wide-frame view with the panes visible on the left and the map dominating the right.
 
-### Outcome 02 — Operate at the speed of the incident
+### Outcome 02 — Operate at the speed of the incident ✅ DONE
 **🖥️ baseTAK agent screenshot** (or a Figma mockup)
 
 Either: (a) a close-up of the baseTAK icon picker showing the curated symbol library, OR (b) a 2-panel composite showing the broadcast-by-default toggle and a marker appearing on a second device. Goal is to communicate the two-click flow visually.
@@ -296,12 +291,12 @@ cyan accent, mono labels.
 
 # sdrTAK · 4 outcomes
 
-### Outcome 01 — See every transponder-equipped aircraft in your operating area
+### Outcome 01 — See every transponder-equipped aircraft ✅ DONE in your operating area
 **🖥️ baseTAK agent screenshot**
 
 Scenario: WinTAK or baseTAK at a major airport (LAX, SFO, ORD) zoomed out to show 50+ aircraft contacts across a regional view. Use proper 2525C symbology — fixed-wing icons for airliners, rotorcraft icons for helicopters, civilian neutral affiliation. Hover tooltips visible on a few showing tail number + type + altitude. Dense, information-rich screenshot showing the air picture.
 
-### Outcome 02 — Flag military and government aircraft automatically
+### Outcome 02 — Flag military and government aircraft ✅ DONE automatically
 **🖥️ baseTAK agent screenshot**
 
 Scenario: Same regional view as O1 but filter to show only military aircraft. ~6-8 aircraft with friendly (cyan) 2525C affiliation symbology — show a C-130 (callsign "RCH-XXX"), a CH-47 (callsign "DUSTOFF-XX"), an SAM-prefixed VIP transport, and a few others. Tooltips visible showing the callsign prefix being matched and the affiliation flipped.
@@ -321,7 +316,7 @@ Cinematic documentary style. Mid-afternoon natural light.
 DO NOT include: military naval gear, weapons, futuristic UI, neon.
 ```
 
-### Outcome 04 — Compose with the rest of the xTAK suite
+### Outcome 04 — Compose with the rest of the xTAK suite ✅ DONE
 **🖥️ baseTAK agent screenshot**
 
 Scenario: baseTAK web map showing a composed picture similar to baseTAK O5, with sdrTAK aircraft contacts (aviation symbols) prominently displayed alongside ground-team markers from operators, APRS stations from digiTAK, and Meshtastic nodes from loraTAK. Show the visual layering of multiple data sources on one map.
