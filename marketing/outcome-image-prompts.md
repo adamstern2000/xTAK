@@ -17,24 +17,23 @@ Per-outcome images for each product page. Three image sources:
 
 ```
 baseTAK   ✅✅✅✅⏳   (4/5)
-digiTAK   ✅⏳✅✅⏳   (3/5)
+digiTAK   ✅✅✅✅⏳   (4/5)
 loraTAK   ⏳✅✅         (2/3)
 chatTAK   ✅✅✅✅        (4/4)  🎉
 sdrTAK    ✅✅✅✅        (4/4)  🎉
 netTAK    ⏳✅✅✅        (3/4)
 aiTAK     ⏳⏳⏳✅        (1/4)
                        ─────
-                       21/29 outcome images complete
+                       22/29 outcome images complete
 ```
 
 ## What's still missing
 
-**8 outcomes remaining.** All are 🖥️ baseTAK-agent UI screenshots or composite diagrams.
+**7 outcomes remaining.** All are 🖥️ baseTAK-agent UI screenshots or composite diagrams.
 
 | Page | Outcome | Type | Description |
 |---|---|---|---|
 | baseTAK | O5 — Compose with the rest of the xTAK suite | 🖥️ baseTAK agent | Composed map: APRS + mesh + aircraft + chatTAK (YAML: `basetak-o5-boulder-composed.yaml`) |
-| digiTAK | O2 — Put every APRS station on your TAK clients | 🖥️ baseTAK agent | State-wide region with ~30 APRS markers (YAML: `digitak-o2-newengland-aprs.yaml`) |
 | digiTAK | O5 — Modernize your APRS station with a TAK client | 📐 Composite | UI-View32 vs WinTAK split |
 | loraTAK | O1 — Make every mesh node a TAK contact | 🖥️ baseTAK agent | SAR sweep, ~12 mesh nodes on satellite imagery (YAML: `loratak-o1-smokies-sar.yaml`) |
 | netTAK | O1 — Run xTAK on every field device | 🖥️ baseTAK agent (or Figma) | netTAK admin/dashboard UI |
@@ -43,7 +42,7 @@ aiTAK     ⏳⏳⏳✅        (1/4)
 | aiTAK | O3 — Draft, summarize, translate | 🖥️ baseTAK agent | IAP draft in chat panel |
 
 **Type counts:**
-- 🖥️ baseTAK agent: 7 (most of the remaining)
+- 🖥️ baseTAK agent: 6 (most of the remaining)
 - 📐 Diagram / composite: 1
 - 🎬 Nano Banana Pro: 0 (all photos done 🎉)
 
@@ -130,7 +129,7 @@ Aesthetic: dark charcoal background, TAK cyan accent, mono labels, flat
 2D schematic, no gradients.
 ```
 
-### Outcome 02 — Put every APRS station on your TAK clients
+### Outcome 02 — Put every APRS station on your TAK clients ✅ DONE
 **🖥️ baseTAK agent screenshot**
 
 Scenario: ESRI / Mapbox satellite basemap zoomed to a state-sized region. Populate ~30 APRS station markers (a mix of weather stations, vehicle trackers, beacon stations) scattered across the map. Side pane showing the marker list grouped under "APRSPrimary" and "APRSSecondary." Mix of small cyan/blue icons on terrain.
