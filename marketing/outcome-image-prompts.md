@@ -21,25 +21,24 @@ digiTAK   ✅✅✅✅✅   (5/5)  🎉
 loraTAK   ✅✅✅         (3/3)  🎉
 chatTAK   ✅✅✅✅        (4/4)  🎉
 sdrTAK    ✅✅✅✅        (4/4)  🎉
-netTAK    ⏳✅✅✅        (3/4)
+netTAK    ✅✅✅✅        (4/4)  🎉
 aiTAK     ⏳⏳⏳✅        (1/4)
                        ─────
-                       25/29 outcome images complete
+                       26/29 outcome images complete
 ```
 
 ## What's still missing
 
-**4 outcomes remaining.** All are 🖥️ baseTAK-agent UI screenshots.
+**3 outcomes remaining.** All are 🖥️ baseTAK-agent / aiTAK UI screenshots.
 
 | Page | Outcome | Type | Description |
 |---|---|---|---|
-| netTAK | O1 — Run xTAK on every field device | 🖥️ baseTAK agent (or Figma) | netTAK admin/dashboard UI |
 | aiTAK | O1 — Ask questions about the operational picture | 🖥️ baseTAK agent | Q&A chat thread w/ aiTAK |
 | aiTAK | O2 — Run as a watchful background participant | 🖥️ baseTAK agent | Rule editor + alert in chat |
 | aiTAK | O3 — Draft, summarize, translate | 🖥️ baseTAK agent | IAP draft in chat panel |
 
 **Type counts:**
-- 🖥️ baseTAK agent: 4
+- 🖥️ baseTAK agent: 3
 - 📐 Diagram / composite: 0
 - 🎬 Nano Banana Pro: 0 (all photos done 🎉)
 
@@ -321,7 +320,7 @@ Scenario: baseTAK web map showing a composed picture similar to baseTAK O5, with
 
 # netTAK · 4 outcomes
 
-### Outcome 01 — Run xTAK on every field device
+### Outcome 01 — Run xTAK on every field device ✅ DONE
 **🎬 Nano Banana Pro**
 
 ```
