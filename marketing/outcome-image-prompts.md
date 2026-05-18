@@ -16,33 +16,31 @@ Per-outcome images for each product page. Three image sources:
 ## Progress
 
 ```
-baseTAK   ✅✅✅✅⏳   (4/5)
+baseTAK   ✅✅✅✅✅   (5/5)  🎉
 digiTAK   ✅✅✅✅⏳   (4/5)
-loraTAK   ⏳✅✅         (2/3)
+loraTAK   ✅✅✅         (3/3)  🎉
 chatTAK   ✅✅✅✅        (4/4)  🎉
 sdrTAK    ✅✅✅✅        (4/4)  🎉
 netTAK    ⏳✅✅✅        (3/4)
 aiTAK     ⏳⏳⏳✅        (1/4)
                        ─────
-                       22/29 outcome images complete
+                       24/29 outcome images complete
 ```
 
 ## What's still missing
 
-**7 outcomes remaining.** All are 🖥️ baseTAK-agent UI screenshots or composite diagrams.
+**5 outcomes remaining.** All are 🖥️ baseTAK-agent UI screenshots or composite diagrams.
 
 | Page | Outcome | Type | Description |
 |---|---|---|---|
-| baseTAK | O5 — Compose with the rest of the xTAK suite | 🖥️ baseTAK agent | Composed map: APRS + mesh + aircraft + chatTAK (YAML: `basetak-o5-boulder-composed.yaml`) |
 | digiTAK | O5 — Modernize your APRS station with a TAK client | 📐 Composite | UI-View32 vs WinTAK split |
-| loraTAK | O1 — Make every mesh node a TAK contact | 🖥️ baseTAK agent | SAR sweep, ~12 mesh nodes on satellite imagery (YAML: `loratak-o1-smokies-sar.yaml`) |
 | netTAK | O1 — Run xTAK on every field device | 🖥️ baseTAK agent (or Figma) | netTAK admin/dashboard UI |
 | aiTAK | O1 — Ask questions about the operational picture | 🖥️ baseTAK agent | Q&A chat thread w/ aiTAK |
 | aiTAK | O2 — Run as a watchful background participant | 🖥️ baseTAK agent | Rule editor + alert in chat |
 | aiTAK | O3 — Draft, summarize, translate | 🖥️ baseTAK agent | IAP draft in chat panel |
 
 **Type counts:**
-- 🖥️ baseTAK agent: 6 (most of the remaining)
+- 🖥️ baseTAK agent: 4 (all aiTAK + netTAK)
 - 📐 Diagram / composite: 1
 - 🎬 Nano Banana Pro: 0 (all photos done 🎉)
 
@@ -106,7 +104,7 @@ screen content is sharp and readable.
 DO NOT include: military gear, weapons, glow effects, futuristic UI.
 ```
 
-### Outcome 05 — Compose with the rest of the xTAK suite
+### Outcome 05 — Compose with the rest of the xTAK suite ✅ DONE
 **🖥️ baseTAK agent screenshot**
 
 Scenario: baseTAK web map showing a composed picture — APRS station icons (via digiTAK), Meshtastic node icons (via loraTAK), aircraft icons (via sdrTAK), a couple of chatTAK browser-user contacts, plus operator-placed markers. Mixed across the basemap with cyan markers on a satellite view. Side pane visible showing the Markers list grouped by source (APRSPrimary, APRSSecondary, Meshtastic, Aircraft, Friendly).
@@ -187,7 +185,7 @@ If side-by-side feels too literal, alternative: a single Nano Banana cinematic p
 
 # loraTAK · 3 outcomes
 
-### Outcome 01 — Make every mesh node a TAK contact
+### Outcome 01 — Make every mesh node a TAK contact ✅ DONE
 **🖥️ baseTAK agent screenshot**
 
 Scenario: ESRI satellite imagery basemap zoomed to a forested SAR sweep area (~5 sq mi). Place ~12-15 Meshtastic node markers spread across the trail network and ridgelines (cyan icons, each with a callsign like "MESH-A1" through "MESH-A12"). Add a few drawn search-sector polygons. Side pane visible showing the team list with team colors per searcher.
