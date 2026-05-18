@@ -36,7 +36,13 @@ In **standalone mode**, a single digiTAK gateway puts every APRS station within 
 
 **The reach is bigger than your antenna.** On standard APRS frequencies (144.39 MHz in North America, regional equivalents elsewhere), your digiTAK joins a global network of volunteer-operated **APRS digipeaters** that relay WIDE-tagged packets onward. Your TAK network's reach becomes whatever the digipeater infrastructure can carry — often dozens or hundreds of miles beyond your own antenna's line of sight, with zero additional hardware on your end.
 
-**Any ham with an APRS rig joins without new gear.** Whether digiTAK is running in bridge or standalone mode, every APRS-capable ham within radio range or APRS-IS reach is a TAK participant the moment they key up. Their position appears on the IC's WinTAK. Their bulletins appear in TAK chat. The IC can DM them by callsign from any TAK client. For EmComm activations, SAR call-outs, exercises, and ad-hoc events: ham volunteers show up with the rig they already own, beacon their position, and they're on the operation. No app install, no special configuration, no second device.
+**APRS-only operators are full participants — in both directions.** An operator with nothing more than an APRS-capable radio sees the picture, is seen, and chats with the operation — all over APRS, no TAK client required.
+
+- They appear on TAK clients as native TAK contacts (position, bulletins, callsign attribution preserved).
+- They see the TAK operation on their APRS gear — TAK users' positions are broadcast out to APRS as standard objects, so the ham with just a handheld and an APRS map display sees the team on their screen, no TAK install.
+- They chat across the bridge — an APRS message addressed to a TAK callsign lands in TAK chat. The IC's reply comes back to the ham's APRS rig. Bulletins, NWS alerts, group messages all reach across.
+- The auxcomm net stops being parallel infrastructure — APRS hams aren't a separate radio room hanging off the side of the operation; they're first-class participants on the same shared picture as the ATAK / WinTAK clients.
+- For EmComm activations, SAR call-outs, and ad-hoc events: volunteers show up with the rig they already own, beacon their callsign, and they're on the operation. **No app. No new gear. No new training.**
 
 ### Bridge WinTAK islands across the continent on HF
 
