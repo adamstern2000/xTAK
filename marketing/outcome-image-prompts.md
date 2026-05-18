@@ -113,19 +113,26 @@ Aesthetic: dark charcoal background, TAK cyan accent, mono labels, flat
 
 Scenario: ESRI / Mapbox satellite basemap zoomed to a state-sized region. Populate ~30 APRS station markers (a mix of weather stations, vehicle trackers, beacon stations) scattered across the map. Side pane showing the marker list grouped under "APRSPrimary" and "APRSSecondary." Mix of small cyan/blue icons on terrain.
 
-### Outcome 03 — Welcome any ham volunteer to the operation
+### Outcome 03 — APRS-only operators are full participants — in both directions
 **🎬 Nano Banana Pro**
 
 ```
 Cinematic widescreen photograph, 21:9 aspect ratio. A licensed amateur
 radio operator (man or woman, mid-50s, casual outdoor clothing, ARES
 volunteer vest with reflective trim) standing at the back of his SUV at a
-fire-staging area, holding a VHF handheld radio (Yaesu/Icom-style) to his
-mouth in mid-transmission. A magnetic mount whip antenna visible on the
-roof of the vehicle. In the background, mid-ground, a TAK laptop visible
-on a folding table with his callsign appearing on the map as a small cyan
-contact icon. Documentary-realism style, golden-hour light, dust in the
-air. Real EmComm vibe.
+fire-staging area, holding a modern APRS-capable handheld radio
+(Yaesu FT-3 / Kenwood TH-D75 style with a small color map display). The
+handheld's screen is clearly showing an APRS map with several callsign
+labels and position dots visible — visualizing the TAK operation's units
+appearing on his rig. A magnetic mount whip antenna visible on the roof
+of the vehicle. In the background, mid-ground, a TAK laptop visible on a
+folding table with his own callsign appearing on the map as a small cyan
+contact icon — showing the bidirectional bridge. Documentary-realism
+style, golden-hour light, dust in the air. Real EmComm vibe.
+
+The emphasis: he has NOTHING but an APRS handheld, and he is a full
+participant in the TAK operation — seeing the team and being seen.
+
 DO NOT include: military gear, weapons, futuristic UI, cyberpunk.
 ```
 
