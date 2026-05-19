@@ -22,22 +22,21 @@ loraTAK   ✅✅✅         (3/3)  🎉
 chatTAK   ✅✅✅✅        (4/4)  🎉
 sdrTAK    ✅✅✅✅        (4/4)  🎉
 netTAK    ✅✅✅✅        (4/4)  🎉
-aiTAK     ✅⏳⏳✅        (2/4)
+aiTAK     ✅✅⏳✅        (3/4)
                        ─────
-                       27/29 outcome images complete
+                       28/29 outcome images complete
 ```
 
 ## What's still missing
 
-**2 outcomes remaining.** Both are aiTAK chat-panel captures.
+**1 outcome remaining.** aiTAK chat-panel capture.
 
 | Page | Outcome | Type | Description |
 |---|---|---|---|
-| aiTAK | O2 — Run as a watchful background participant | 🖥️ baseTAK agent | Rule editor + alert in chat |
-| aiTAK | O3 — Draft, summarize, translate | 🖥️ baseTAK agent | IAP draft in chat panel |
+| aiTAK | O3 — Draft, summarize, translate | 🖥️ chatTAK render | IAP / hand-off / radio-traffic / Spanish draft in chat panel. Script live at `marketing/aitak-o3-drafts-script.md` |
 
 **Type counts:**
-- 🖥️ baseTAK agent: 2
+- 🖥️ chatTAK render: 1
 - 📐 Diagram / composite: 0
 - 🎬 Nano Banana Pro: 0 (all photos done 🎉)
 
@@ -449,7 +448,7 @@ A screenshot showing a baseTAK or WinTAK interface with the right-side chat pane
 
 Some of aiTAK's responses include small map-marker references that appear highlighted on the map view to the left. Tactical HUD aesthetic.
 
-### Outcome 02 — Run as a watchful background participant
+### Outcome 02 — Run as a watchful background participant ✅ DONE
 **🖥️ baseTAK agent screenshot** (admin/rule-editor view)
 
 Split-view screenshot showing:
