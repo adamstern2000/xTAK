@@ -80,7 +80,7 @@ membership query*, *historical/audit query*, *generative draft*.
 
 ## Turn 4 — Historical / audit query
 
-**[14:18:32] @ops-chief**
+**[14:18:32] @ic-base**
 > When was the marker for Mt. Wilson Observatory first placed, and by whom?
 
 **[14:18:34] @aiTAK**
@@ -131,6 +131,8 @@ membership query*, *historical/audit query*, *generative draft*.
 
 ## Voice / style notes for the rendered panel
 
+- **All turns use only two callsigns: `@ic-base` and `@aiTAK`** — matches
+  the two-window incognito render workflow.
 - aiTAK responses are **structured** (headers, bullets, distinct sections) —
   not chatbot-prose. The point is fast-scan utility for an IC, not
   conversation.
