@@ -97,16 +97,16 @@ fit the panel better than 4 cramped ones.
 
 ## Turn 3 — Chat-to-radio translation
 
-**[16:14:51] @air-ops**
-> hey @ops-chief tanker 96 inbound 2 mins, gonna want her to drop on the
-> south flank like we talked, not the east — east is too close to the
-> dome and we got the no retardant advisory there.
+**[16:15:02] @ic-base**
+> @aiTAK air ops just sent me this:
+>
+> "tanker 96 inbound 2 mins, gonna want her to drop south flank like we
+> talked, not east — east is too close to the dome and we got the no
+> retardant advisory there"
+>
+> Clean it up for me to read out on command net.
 
-**[16:15:09] @ops-chief**
-> @aiTAK translate the above into clean radio traffic for me to read out
-> on command net.
-
-**[16:15:11] @aiTAK**
+**[16:15:05] @aiTAK**
 > **Radio traffic — Command Net · standby**
 >
 > > "Command, Air Ops. Tanker 96 inbound, ETA two mikes. Be advised:
@@ -121,7 +121,7 @@ fit the panel better than 4 cramped ones.
 
 ## Turn 4 — Translation into Spanish (community evac notice)
 
-**[16:32:18] @ops-chief**
+**[16:32:18] @ic-base**
 > @aiTAK draft the mandatory-evac notice in English and Spanish for the
 > Altadena PIO push. Two sentences each.
 
@@ -146,6 +146,8 @@ fit the panel better than 4 cramped ones.
 
 ## Voice / style notes for the rendered panel
 
+- **All four turns use only two callsigns: `@ic-base` and `@aiTAK`** —
+  matches the two-window incognito render workflow used in O1 and O2.
 - Every aiTAK draft closes with a small **"*Draft.*"** line — reinforces
   that aiTAK is producing copy for the operator to review and send, not
   taking action itself.
