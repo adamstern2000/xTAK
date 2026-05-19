@@ -22,23 +22,22 @@ loraTAK   ✅✅✅         (3/3)  🎉
 chatTAK   ✅✅✅✅        (4/4)  🎉
 sdrTAK    ✅✅✅✅        (4/4)  🎉
 netTAK    ✅✅✅✅        (4/4)  🎉
-aiTAK     ⏳⏳⏳✅        (1/4)
+aiTAK     ✅⏳⏳✅        (2/4)
                        ─────
-                       26/29 outcome images complete
+                       27/29 outcome images complete
 ```
 
 ## What's still missing
 
-**3 outcomes remaining.** All are 🖥️ baseTAK-agent / aiTAK UI screenshots.
+**2 outcomes remaining.** Both are aiTAK chat-panel captures.
 
 | Page | Outcome | Type | Description |
 |---|---|---|---|
-| aiTAK | O1 — Ask questions about the operational picture | 🖥️ baseTAK agent | Q&A chat thread w/ aiTAK |
 | aiTAK | O2 — Run as a watchful background participant | 🖥️ baseTAK agent | Rule editor + alert in chat |
 | aiTAK | O3 — Draft, summarize, translate | 🖥️ baseTAK agent | IAP draft in chat panel |
 
 **Type counts:**
-- 🖥️ baseTAK agent: 3
+- 🖥️ baseTAK agent: 2
 - 📐 Diagram / composite: 0
 - 🎬 Nano Banana Pro: 0 (all photos done 🎉)
 
