@@ -1,149 +1,187 @@
-# loraTAK
+# loraTAK — Marketing Module
 
-# Your Meshtastic mesh is now a TAK network.
-
-**loraTAK puts every Meshtastic LoRa node on your TAK map as a first-class contact. Position, telemetry, and chat round-trip in both directions. Cheap, off-grid, mesh-resilient situational awareness for teams that already carry mesh radios.**
-
-> **About TAK:** loraTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS) — and bridges your Meshtastic LoRa mesh in both directions. Mesh node positions appear on TAK clients as SA markers; TAK chat reaches mesh devices as text messages; mesh users can DM TAK callsigns. [More about the TAK ecosystem →](../about-tak.md)
-
-> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtak)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtak)
+**Status:** Beta — shipping soon (v 1.3.0, Meshtastic backend)
+**Last updated:** 2026-05-19
+**Use this for:** social posts, video scripts, SAR / outdoor / prepper podcasts, Meshtastic community content.
 
 ---
 
-## The scenario
+## TL;DR (the 60-second pitch)
 
-A volunteer SAR team is sweeping a hundred-acre property looking for a missing hiker. Twelve searchers in two-person teams, fanned out across thick brush and steep terrain. The base camp ATAK tablet at the trailhead can't reach the far side of the ridge over Wi-Fi. The handheld VHF radios are working but voice-only — base has no idea where any of the search teams actually *are*.
-
-Every searcher carries a $40 Meshtastic node clipped to their pack. The team lead drops one more node at base camp, plugs it into a Pi running loraTAK, and powers the Pi off a battery. Within a minute, every Meshtastic node appears on the base camp's WinTAK map as a moving icon with the searcher's name, team color, and battery level. The IC drops a search-sector polygon in WinTAK; loraTAK pushes a one-line summary to every mesh device in the field. The searchers see the new sector on their Meshtastic display and reroute.
-
-When a team finds a sign of the hiker, they type a chat message on their Meshtastic. It appears in the IC's WinTAK chat panel with the team's callsign and position attached. The IC DMs back.
-
-**No cell. No Wi-Fi. No internet. Mesh radios and a Pi.**
-
-That's loraTAK.
+loraTAK is a bidirectional gateway between Meshtastic LoRa mesh radios and the TAK ecosystem. Field teams running stock $40 Heltec / T-Beam / RAK Meshtastic radios appear on ATAK, WinTAK, iTAK, and baseTAK maps as first-class TAK contacts with positions, telemetry, and chat — both directions. License-free RF, multi-day battery life, and full TAK protocol fidelity end-to-end. Pair with digiTAK and Meshtastic users chat with APRS users on the same TAK thread.
 
 ---
 
-## What you can do
+## Taglines — pick the angle
 
-### 1. Make every mesh node a TAK contact
-
-Mesh node positions flow onto ATAK, WinTAK, iTAK, and baseTAK maps in real time as SA markers. The mesh device doesn't need any TAK awareness — it just beacons its position normally, and loraTAK translates.
-
-- **Per-node team color, role, and icon** — assign team color and 2525C symbology per Meshtastic node
-- **Position liveness** — keepalive beacons keep mesh markers visible every 60 seconds even when stationary radios beacon every few hours
-- **Operator-chosen icons** — assign any team color, role, and icon to each Meshtastic user: full MIL-STD-2525C symbology, or any standard ATAK iconset (firefighter, SAR, medic, etc.). Icons reflect the role on the team, not the radio model.
-- **Synthetic positions** — mesh devices that disable GPS for privacy or battery still appear at the gateway location with a "noGPS" marker so they're chat-able
-- **Telemetry on the map** — battery, voltage, channel utilization, temperature, SNR all appear in TAK position details
-
-### 2. Run a real chat bridge in both directions
-
-Mesh chat lands in TAK chat. TAK chat lands on mesh devices. DMs work both ways.
-
-- **Mesh primary channel → TAK All Chat Rooms** — broadcast text from any mesh device reaches every TAK client on the network
-- **TAK chat → mesh** — broadcast TAK chat relays to the mesh primary channel
-- **Addressable DMs** — TAK users can DM individual mesh nodes by name; mesh users can DM TAK team names or callsigns
-- **LoRa-aware truncation** — long chat messages auto-trim to fit the LoRa payload limit with a "…" suffix
-- **Read receipts** — TAK clients get acknowledgment checkmarks when mesh nodes confirm delivery over LoRa
-- **Echo prevention by UID prefix** — mesh-originated messages don't loop back through the mesh
-
-### 3. Work alongside the rest of the xTAK suite
-
-loraTAK is 100% standalone — no shared code, database, or process with any other xTAK product. The only shared interface is the TAK network itself. Drop it on a LAN with baseTAK, digiTAK, sdrTAK, or chatTAK and they all see each other.
-
-- **Run a Meshtastic gateway and an APRS gateway side-by-side** with no port collisions or echo loops
-- **A mesh node's chat reaches a SAR volunteer with an APRS rig** — across LoRa, into your TAK network, out through digiTAK to APRS-IS or RF
-- **Multi-NIC Pi-as-AP setups handled correctly** — loraTAK works correctly when the gateway has a wired LAN and a WiFi AP on the same Pi
+- **"Your Meshtastic mesh, now a TAK network."** *(headline)*
+- **"Twelve $40 nodes. One TAK picture."** *(scale / cost angle)*
+- **"License-free RF, multi-day battery, mesh-resilient SA."** *(infrastructure angle)*
+- **"Make every mesh node a TAK contact."** *(simplest reduction)*
+- **"Full mesh partner with digiTAK and the rest of the xTAK suite."** *(suite angle)*
 
 ---
 
-## Who runs loraTAK
+## Audience-by-audience framings
 
-- **Search-and-rescue teams** who already carry Meshtastic for low-bandwidth backup comms — turn those devices into live SA contacts on the IC's TAK picture.
-- **Outdoor / wilderness ops** (trail SAR, mountain rescue, swiftwater) where LoRa propagates and cellular doesn't.
-- **EmComm teams** who use Meshtastic in addition to amateur radio for short-range mesh resilience.
-- **Volunteer fire, CERT, neighborhood-watch teams** with off-grid drill needs and a small hardware budget.
-- **Preppers and off-grid groups** running a permanent Meshtastic mesh who want to see their nodes on a real situational-awareness map.
-- **Public safety operations** evaluating Meshtastic as a low-cost personnel-tracking layer.
-
----
-
-## Under the hood
-
-For the engineer screening this before adoption:
-
-- **Three-guard synthetic-position safety.** When a silent (GPS-off) mesh node gets a synthetic position at the gateway, three independent checks prevent overwriting a real GPS fix if one ever arrives: opt-in flag, in-process tracker, and inspection of the radio's persistent node database.
-- **Liveness window with timeout.** Keepalive cadence is 60 seconds; markers stop emitting after a configurable silence (default 4 hours), so stale nodes age out cleanly.
-- **Multi-NIC bind.** Enumerates all up IPv4 interfaces and binds separate multicast sockets per interface — solves real-world Pi-as-AP setups (wired LAN + WiFi AP) that single-bind implementations get wrong.
-- **TCP endpoint auto-detection.** Picks the right IP for WinTAK DM callbacks on multi-interface hosts, or lets the operator pin it manually.
-- **Echo prevention by UID prefix.** Mesh-originated COTs carry a deterministic UID prefix; the relay drops anything with that prefix on inbound TAK chat — no feedback loops.
-- **No shared state with any other xTAK product.** 100% standalone. Compose by network, not by shared modules.
+| Audience | Lead with |
+|---|---|
+| **SAR teams** | "Every searcher carries a $40 Meshtastic node clipped to their pack. Base camp sees every searcher's position, name, team color, and battery on the WinTAK map. When a team finds sign of the missing person, they type a chat on their Meshtastic — it lands in the IC's TAK chat panel." |
+| **Outdoor / wilderness ops** | "Mesh radios work where cell doesn't. loraTAK turns the mesh into the SA wire — base camp, trail crews, helo coordinator all on the same map." |
+| **EmComm / ARES** | "When you've already got Meshtastic radios for off-grid comms, loraTAK lets you keep that infrastructure AND get TAK-level situational awareness. No replacement, just bridging." |
+| **CERT / volunteer fire** | "License-free spectrum. Hand out $40 radios on event day. Volunteers don't need ham licenses to participate." |
+| **Preppers / off-grid** | "No infrastructure required. The mesh IS the network. loraTAK is the bridge to operator-grade situational awareness." |
+| **Public safety event ops** | "Mass events (marathons, festivals, charity rides) — every aid station gets a Meshtastic node, the race director sees every position on TAK." |
+| **Meshtastic community** | "You already have the radios. Add a Pi + loraTAK and your mesh becomes a TAK network alongside ATAK / WinTAK / iTAK." |
 
 ---
 
-## What you need
+## Killer features
 
-- A **Raspberry Pi** (4 or 5, even a Zero 2 W works) or any Linux/macOS box with Python 3.10+.
-- A **Meshtastic radio** connected over USB serial or TCP — any model the Meshtastic firmware supports (Heltec V3, T-Beam, RAK 4631, T-Echo, station-G2, etc.).
-- A **LAN** — the same one your ATAK/WinTAK clients are on.
-
-## What you don't need
-
-- **No internet.** Mesh ↔ TAK works entirely off-grid.
-- **No TAK Server.** loraTAK talks to ATAK, WinTAK, and iTAK clients directly on the LAN.
-- **No Meshtastic firmware modifications.** Stock firmware, stock channels.
-- **No subscription, no cloud.** Self-hosted.
-
-## Install
-
-```bash
-pip3 install meshtastic markdown
-sudo bash install.sh
-# plug in Meshtastic radio (USB)
-# edit settings.json — set serial port and team name
-sudo systemctl start cot-mesh
-```
+1. **Bidirectional position + chat** — full round-trip between TAK clients and the mesh. Not one-way ingest.
+2. **Operator-chosen icons** — assign team color, role, and icon per Meshtastic user: MIL-STD-2525C or any standard ATAK iconset. **Icons reflect the role on the team, not the radio model.**
+3. **Mesh telemetry on the map** — battery %, voltage, channel utilization, SNR — emitted as `<__mesh_telem>` JSON in every beacon. Visible in TAK position details.
+4. **60-second keepalive beacons** anchor mesh-node presence in TAK even when stationary radios beacon every few hours.
+5. **Synthetic positions** for GPS-off mesh devices — anchored from gateway location so they stay chat-able.
+6. **Multi-NIC Pi-as-AP mode** — eth0 for upstream, wlan0 as a soft AP for the mesh team to associate with. One Pi, no second router.
+7. **Hardware-flexible** — works with stock Meshtastic firmware. Heltec V3, T-Beam, RAK 4631, T-Echo, Station-G2.
 
 ---
 
-## Status
+## Suite-level pairings (1 + 1 = 3 stories)
 
-**Beta — shipping soon** (v1.3.0, Meshtastic backend). Beta-stable; no pending blockers.
-
-**On the roadmap:**
-- TAK chat protobuf RX (currently XML; protobuf path implemented but operator-gated)
-- Per-message-type observability counters in admin dashboard
-- Gateway live coordinates auto-updated from the radio's first GPS fix
-
-**Future direction:** the product is named for the LoRa radio layer, not a specific firmware. The shipping backend is Meshtastic, but the architecture leaves room for alternate LoRa stacks — Reticulum (RNS), custom Meshtastic forks tuned for specific deployments, or future LoRa transports — without changing the TAK-facing surface. Operators who pick loraTAK today get Meshtastic; tomorrow they may have more choice in radio firmware on the same gateway.
+- **loraTAK + digiTAK** = full mesh partners on the TAK chat thread. A SAR volunteer with a $40 mesh radio can DM a ham operator with an APRS handheld. Both speak standard TAK on the wire. *Lead pitch for SAR / EmComm.*
+- **loraTAK + baseTAK** = mesh contacts on a modern map, with role-based icons and live telemetry. *Lead pitch for outdoor ops with a base-camp laptop.*
+- **loraTAK + chatTAK** = walk-up volunteers on phones AND searchers on mesh in the same TAK chat thread. *Lead pitch for event / mass-volunteer scenarios.*
 
 ---
 
-## Channel adapters
+## Honest disclosures
 
-*Derived from the page above; for use in social, web, video, and other channels.*
-
-### Tagline
-**Your Meshtastic mesh is now a TAK network.**
-
-### Social pitch — 50 words
-loraTAK puts every Meshtastic LoRa node on your TAK map as a first-class contact. Position, telemetry, and chat round-trip in both directions. ATAK ↔ mesh ↔ ATAK. No cell, no Wi-Fi, no internet. Runs on a Pi with a USB Meshtastic radio. Cheap, off-grid, mesh-resilient SA for SAR, EmComm, and outdoor ops.
-
-### Long pitch — 200 words
-loraTAK is the bridge between Meshtastic LoRa mesh radios and the TAK ecosystem. Every mesh node appears on ATAK, WinTAK, iTAK, and baseTAK maps as a first-class SA contact with team color, role, telemetry, and operator-chosen iconography. Mesh chat round-trips into TAK chat in both directions — broadcast, team channel, and addressable DM all supported.
-
-loraTAK is built for outdoor and off-grid ops: SAR teams sweeping terrain where cellular doesn't reach, EmComm crews running drills off the grid, volunteer teams with $40 Meshtastic nodes on every pack. Synthetic-position handling keeps silent (GPS-off) nodes chat-able. Liveness-window keepalives keep stationary nodes visible on the map even when they only beacon every few hours.
-
-The product is 100% standalone — no shared code with any other xTAK product. The only shared interface is the TAK network itself, which means loraTAK composes cleanly with baseTAK, digiTAK, sdrTAK, and chatTAK on a single LAN. A mesh user's chat can reach a SAR volunteer with an APRS rig: across LoRa, into your TAK network, out through digiTAK to RF. Cheap, off-grid, mesh-resilient SA.
-
-### Soul quote
-> Mesh users are full participants in the comms domain.
-
-### Audience tags
-**Primary:** SAR teams, outdoor/wilderness ops, mountain rescue, EmComm with Meshtastic adoption.
-**Secondary:** volunteer fire, CERT, neighborhood-watch, preppers and off-grid groups, public-safety agencies evaluating low-cost personnel tracking.
-
+- **Status:** Beta — shipping soon. Current version v 1.3.0.
+- **Multi-part outbound to LoRa** — *in development*. Currently long messages truncate with a "…" suffix. The coming feature will split long outbound messages across multiple LoRa packets so the receiving mesh user gets the full message.
+- **Hardware-aware icons:** we do NOT render icons based on Meshtastic device model. Operators choose icons per user.
+- **Reticulum / RNS:** not currently a loraTAK backend. Shipping backend is Meshtastic. Compatible architecture on roadmap.
 
 ---
 
-*© 2026 xTAK Project. All rights reserved. xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, and aiTAK are trademarks of the xTAK Project. ATAK, WinTAK, iTAK, and TAK are products of the U.S. Government via the TAK Product Center; the xTAK Project is not affiliated with the TAK Product Center. [Full copyright and trademark notice →](../COPYRIGHT.md)*
+## Sample social posts
+
+### X / Twitter (≤ 240 chars)
+
+> **POST 1 — the $40 SAR hook**
+> A volunteer SAR team sweeping a hundred-acre property. Twelve searchers, two-person teams.
+>
+> Every searcher carries a $40 Meshtastic node clipped to their pack.
+>
+> Base camp sees every searcher on the WinTAK map. Mesh chat lands in the IC's TAK chat panel.
+>
+> No cell. No Wi-Fi.
+
+> **POST 2 — the icon-choice hook**
+> Every mesh user picks an icon that matches their role on the team.
+>
+> Firefighter symbol, SAR symbol, medic, K9 handler, comms lead — full MIL-STD-2525C or any ATAK iconset.
+>
+> Icons reflect the role, not the radio model.
+
+> **POST 3 — the cross-mode chat hook**
+> loraTAK on the LAN + digiTAK on the LAN = a ham with an APRS HT can DM a SAR volunteer with a $40 Meshtastic radio.
+>
+> Same TAK chat thread. Different RF. Both speak standard TAK on the wire.
+
+> **POST 4 — the license-free angle**
+> No FCC license required.
+>
+> Hand out Meshtastic radios on event day. Every aid station, every marshal, every volunteer becomes a TAK contact.
+>
+> loraTAK is the bridge. Pi + Meshtastic + a battery = your team's mesh-resilient SA wire.
+
+### LinkedIn (400–800 chars)
+
+> **POST A — the SAR scenario**
+> A hundred-acre property. Twelve searchers in two-person teams. The base-camp ATAK tablet can't reach the far side of the ridge over Wi-Fi. The handheld VHF radios are working but voice-only — base has no idea where any of the search teams actually are.
+>
+> Every searcher carries a $40 Meshtastic node clipped to their pack. The team lead drops one more node at base camp, plugs it into a Pi running loraTAK, powers the Pi off a battery.
+>
+> Within a minute, every Meshtastic node appears on the base camp's WinTAK map as a moving icon with the searcher's name, team color, and battery level.
+>
+> When a team finds sign of the hiker, they type a chat on their Meshtastic. It appears in the IC's WinTAK chat panel with the team's callsign and position attached.
+>
+> No cell. No Wi-Fi. No internet. Mesh radios and a Pi. Beta now: https://buymeacoffee.com/xtak
+
+---
+
+## Video script outlines
+
+### 30-second cinematic
+
+| 0:00–0:06 | Wide shot of a forest trailhead. SAR volunteers in orange vests checking packs, each with a small Meshtastic device clipped. |
+| 0:06–0:14 | Cut to base camp: Pi on a folding table next to a rugged laptop. The laptop's TAK map populates with mesh-node icons spreading out from the camp. |
+| 0:14–0:22 | Close-up on a Meshtastic handheld — searcher types a quick chat. Cut to IC's laptop — message appears in TAK chat panel. |
+| 0:22–0:27 | Wide of the team in the field, no cell tower visible. |
+| 0:27–0:30 | Title card: **loraTAK. Your Meshtastic mesh, now a TAK network.** |
+
+### 60-second demo
+
+1. **Setup (0:00–0:12):** Hand setting up a Meshtastic node clipped to a vest. Same operator plugging a second node into a Pi at the base camp. VO: "License-free RF. Battery-powered. Mesh-resilient."
+2. **Mesh in (0:12–0:25):** TAK map fills with mesh contacts — each labeled by name + role icon + battery percentage. VO: "Every mesh node, a first-class TAK contact."
+3. **Chat both ways (0:25–0:42):** Demo of typing on the Meshtastic handheld and seeing it land in TAK chat. Then reverse — type in TAK chat, it appears on the mesh device. VO: "Bidirectional. No app on the mesh device."
+4. **Suite composition (0:42–0:55):** APRS user on the same chat thread, ham operator on an HT. VO: "Pair with digiTAK and Meshtastic users chat with APRS users — same TAK thread."
+5. **Close (0:55–0:60):** Title + URL.
+
+### 2-minute deep dive
+
+- 0:00–0:20 Why mesh matters: license-free, off-grid, low-cost
+- 0:20–0:50 What loraTAK is: bridge to TAK, bidirectional, telemetry on the map
+- 0:50–1:20 The icon-choice story: operator-chosen, role-based, not radio-based
+- 1:20–1:45 Suite composition: loraTAK + digiTAK = cross-RF chat, loraTAK + baseTAK = base-camp laptop
+- 1:45–2:00 Beta access link
+
+---
+
+## Live-demo talking points
+
+- **Hold up the Meshtastic.** "Stock firmware. No custom build. This costs $30-40."
+- **Show base-camp Pi.** "Same Meshtastic radio, plus a Pi running loraTAK. Connected via USB. That's the whole gateway."
+- **Open the TAK map.** "Every mesh node, populated on the map. Each one's a first-class TAK contact with operator-chosen icon and live telemetry."
+- **Click a contact.** "Battery 73%. Voltage 3.91. Channel utilization 4%. SNR 12.4 dB. Last beacon 22 seconds ago."
+- **Type a chat on the handheld.** "Watch the IC's screen." (Show it arriving.)
+- **Reverse it.** "Now I type on the laptop. Watch the handheld." (Show arrival.)
+- **Stress-test the network:** "Walk away with the handheld. Range depends on RF — but at 1 watt with no antenna upgrade, expect a few hundred meters of brush, a few miles line-of-sight."
+
+---
+
+## Objections + responses
+
+| Objection | Response |
+|---|---|
+| "Why not just use APRS?" | "Different audience. APRS requires a ham license; Meshtastic uses license-free spectrum. For event volunteers, CERT, prepper teams, kids — Meshtastic is the lower-friction onboarding." |
+| "What about goTenna Pro?" | "Meshtastic radios start at $30 vs $300+. Stock firmware, open hardware, global licence-free spectrum. Different price point, different audience." |
+| "How does it handle long messages?" | "Inbound — multi-part messages reassemble cleanly. Outbound — current build truncates with '…'. Multi-part outbound is in development." |
+| "Is GPS required on the mesh radio?" | "No. GPS-off devices get synthetic positions anchored to the gateway location, so they stay chat-able even without GPS." |
+| "Does loraTAK depend on baseTAK?" | "No. loraTAK is standalone. Joins any TAK network on the LAN — works with ATAK / WinTAK / iTAK / baseTAK in any combination." |
+
+---
+
+## Visual / image cues
+
+- **Mesh node clipped to a pack** — clear shot of a small Heltec or T-Beam unit clipped to a SAR volunteer's vest.
+- **Base camp setup** — Pi + Meshtastic + Toughbook on a folding table, forest trailhead in the background.
+- **The map populating** — animated time-lapse of mesh contacts appearing across a topographic basemap.
+- **Cross-modal chat** — Meshtastic handheld in one frame, ATAK tablet in another, same chat thread visible on both.
+
+Avoid: military / defense imagery, weapons, plate carriers.
+
+---
+
+## Key terms
+
+- **Meshtastic** — open-source mesh networking firmware for LoRa radios. Stock firmware on commodity Heltec / T-Beam / RAK hardware.
+- **LoRa** — long-range, low-power radio modulation. Sub-GHz license-free spectrum globally.
+- **Mesh** — self-organizing radio network where nodes relay traffic for each other. Resilient to node loss.
+- **Heltec / T-Beam / RAK / Station-G2** — common Meshtastic hardware vendors.
+
+---
+
+*Related: [`PROJECT-LEARNINGS-2026-05-19.md`](../PROJECT-LEARNINGS-2026-05-19.md), live site at `site/products/loraTAK.html`.*

@@ -1,182 +1,201 @@
-# baseTAK
+# baseTAK — Marketing Module
 
-# Run the operation from a browser.
-
-**A full TAK map, chat, and SA hub in a tab — built for the operator, faster than WinTAK by design. baseTAK is the home base of the xTAK suite, turning every laptop in your EOC into a first-class TAK operator alongside ATAK, WinTAK, and iTAK. With a built-in tileserver, every tablet in the field gets its maps from you, no internet required.**
-
-> **About TAK:** baseTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS) — and renders the full TAK picture in any modern browser. A marker placed in baseTAK appears in ATAK and vice versa, with byte-identical wire format. [More about the TAK ecosystem →](../about-tak.md)
-
-> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtak)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtak)
+**Status:** Beta — shipping soon (v 0.45.x)
+**Last updated:** 2026-05-19
+**Use this for:** social posts, video scripts, demo talking points, sales conversations, podcast briefs.
 
 ---
 
-## The scenario
+## TL;DR (the 60-second pitch)
 
-A winter storm has knocked out power across three counties. The Emergency Operations Center is staffed by twelve people — a planning section chief, two GIS analysts, three operations leads, a finance officer, and the rest support. None of them have ATAK tablets. They have laptops.
+baseTAK is a full TAK situational-awareness picture — map, chat, drawing, file transfer, the works — that runs in a browser tab. No app install, no Play Store, no MDM. Every laptop in your EOC becomes a first-class TAK operator alongside ATAK, WinTAK, and iTAK. **A 1 TB MBTiles file holds satellite imagery for the entire continental US**, so the maps are already on board when you arrive at the incident — no pre-cache step, no per-state download. Open the laptop, hand out the SSID, your team is on a TAK picture of the whole country at satellite detail. Instant.
 
-The IC opens a browser tab to `https://eoc.local`. The map fills the screen — terrain shading, county overlays, the warming-shelter polygon she drew yesterday, the staging areas she imported from a KML the state sent over. She drops a new marker for the shelter that just opened in the high school. Two clicks: pick the icon, click the spot. No "send" button. No "are you sure" dialog. Within seconds, every laptop in the EOC sees it. So does the sheriff's ATAK tablet in his cruiser. So does the WinTAK on the EM director's desktop two doors down.
-
-A SAR team a hundred miles away has digiTAK and a 2-meter rig. Their markers appear on the EOC map. The IC DMs their team lead from her browser. The message lands on RF.
-
-When deputies start checking in from rural patrol with spotty cell coverage, their ATAK tablets pull terrain tiles straight from baseTAK over the EOC's LAN. The IC pre-loaded regional aerial imagery from county GIS last week, before the storm. Nobody in the field needs cell coverage to get a current map.
-
-**Twelve operators. One shared picture. No tablets distributed. No TAK Server. No cloud.**
-
-That's baseTAK.
+**The two-pillar selling point**: how easy it is to deploy, and how fast you can react to fast-moving situations.
 
 ---
 
-## What you can do
+## Taglines — pick the angle
 
-### 1. Put a real TAK client on every laptop in the room
-
-baseTAK is a full TAK map in a browser — no app to install, no per-device licensing, no tablet requirement. Anyone on the LAN with Chrome, Firefox, or Safari is a participant.
-
-- **Native COT creation** — markers, routes with waypoints, polygons, rectangles, ellipses, circles, range rings with distance labels, bullseyes, bearing-distance lines
-- **Telestrations and freehand drawings** — sketch on the map and broadcast the strokes to every TAK client
-- **Editing parity** — rename, recolor, move, and re-broadcast any marker (yours or anyone else's) with original creator attribution preserved
-- **Geofences on shapes** with entry/exit/elevation alerts
-- **3D terrain** with EGM96 geoid elevation accuracy — meters HAE-to-MSL conversion, not approximated
-- **KML / GPX / KMZ import** preserving symbology, names, and geometry
-- **Data package export** (GeoJSON, KML, GPX, ZIP)
-
-### 2. Operate at the speed of the incident
-
-WinTAK takes four or more clicks to drop a marker and broadcast it. In a fast-moving incident, that's a tax on every decision. baseTAK is built around the operator: turn on **broadcast-by-default** and every new marker, drawing, icon, or shape is on the wire to every TAK client the moment you place it. **Two clicks. Done.**
-
-The whole interface is built around the same principle:
-
-- **Broadcast-by-default mode** — toggle on; every new entity is broadcast immediately. No "send" button. No "are you sure" dialog. Place it, it's shared.
-- **A curated icon set** — the symbol library has been pruned down to what operators actually use in the field. Less scrolling, faster selection, lower cognitive load on the worst day of the year.
-- **Working panes designed around the map** — UI chrome is collapsible and minimal so the map gets the screen. You see more of what matters.
-- **Keyboard shortcuts** for every common action — drop a marker, draw a route, send chat without leaving the keys.
-
-An IC reacts at the speed of the incident, not at the speed of the menu.
-
-### 3. Be the authoritative SA source for the deployment, even on imperfect networks
-
-baseTAK is designed for the **imperfect networks** that operations actually run on — Wi-Fi APs that drop packets, mesh hops that flake out, devices that come and go. Not a passive viewer that mirrors whichever ATAK device shouted last; not a system that requires every packet to arrive intact.
-
-- **Heartbeat re-broadcast, configurable per type.** By default, every marker, icon, drawing, and shape is re-transmitted on a timer — and the cadence is configurable **per item type**. Markers at one rate, drawings at another, range rings at a third, all set to what your operation needs. When the network drops a packet, the next heartbeat catches the missing client up; maps stay current through packet loss, brief outages, and device dropouts. Operators who prefer single-shot transmission can disable heartbeats per type.
-- **Per-field echo filtering** — when the same COT comes back from a different bridge (APRS round-trip, mesh ingest), only genuine field changes update the record; the rest is dropped silently
-- **Per-COT broadcast control** — for the items that *shouldn't* go on the wire by default. Disable broadcast per-COT; the item lives in the database and on this map but never on the network.
-- **SQLite-backed persistence** — the picture survives a restart, a power cycle, a swap of the laptop, a swap of the IC
-
-### 4. Be the offline map server for every TAK device in the field
-
-baseTAK has a built-in tileserver. Pre-load it with any terrain you'll be operating in — county, state, national forest, watershed, port complex — at any zoom level you need. Tiles serve locally over the LAN, so every ATAK tablet, WinTAK install, or browser client points at *your* baseTAK for its maps.
-
-- **Preload any area** — drop MBTiles, standard XYZ tile sets, or other common formats into baseTAK and they're served on the LAN immediately
-- **EUD map distribution on-site** — ATAK and WinTAK clients on the same LAN download their map tiles from baseTAK. No need to provision tablets at headquarters before deployment, no need for an internet uplink in the field.
-- **Any zoom level** — overview down to street level, or higher if you have the source data
-- **Multiple basemaps** — aerial imagery, USGS topo, OpenStreetMap, FEMA hazard layers, anything in standard tile formats
-- **Fully offline** — no internet at install, no internet at deployment, no internet ever after the first map prep
-
-For SAR coordinators, wildland fire ops, and disaster-response ICs arriving at an operating area with no cell coverage: bring a baseTAK preloaded with the regional maps, plug in the LAN, and every tablet that joins the network gets the same map the IC is looking at.
-
-**And it extends to the field.** baseTAK Lite — the same tileserver capability, running on a [netTAK](netTAK.md) field node — distributes maps to every ATAK tablet at a forward site, no backhaul to the EOC required. Pre-load the netTAK before you deploy; operators arriving at a remote staging area sync their tablets from the local node. The map workflow is the same at the EOC and a hundred miles into the operating area.
-
-### 5. Compose with the rest of the xTAK suite, no glue required
-
-Drop any other xTAK product on the same LAN and it just shows up.
-
-- **digiTAK** feeds APRS stations and bridged sites onto your map
-- **loraTAK** feeds Meshtastic LoRa node positions and chat
-- **sdrTAK** feeds decoded aircraft (1090 ES, UAT 978) and ships (AIS)
-- **chatTAK** browser users appear as their own first-class TAK endpoints
-- **netTAK** *(future release)* extends the LAN over a self-healing 802.11s + BATMAN mesh
-
-Every product speaks the same TAK protocol on the same network. There is no glue. There is no integration tax. Add a product, and baseTAK sees it.
+- **"Run the operation from a browser."** *(headline)*
+- **"The whole country, pre-loaded."** *(scale / deploy angle)*
+- **"Two-click broadcast. The whole team sees it."** *(speed angle)*
+- **"A full TAK picture in any browser tab."** *(simplest reduction)*
+- **"Faster than WinTAK by design."** *(competitive — use sparingly; see PROJECT-LEARNINGS)*
 
 ---
 
-## Who runs baseTAK
+## Audience-by-audience framings
 
-- **Incident commanders running fast-moving incidents** — fires, mass-casualty, active threats, severe weather. The two-click marker workflow turns hours of clicks into seconds of decisions.
-- **EOC and command post staff** running coordination cells from laptops — get full TAK SA without distributing tablets to every section chief.
-- **Wildland fire and forest-service ops** running multi-day deployments in remote operating areas — preload baseTAK with the regional maps before you leave; every tablet on the LAN at base camp gets them.
-- **Search-and-rescue base coordinators** managing assignments, ICS-204s, and team tracking from a fixed laptop while the field uses ATAK.
-- **Fire and EMS operations** running shift-long incidents who want a wall-mounted map a whole room can see, not a 10-inch tablet.
-- **EmComm net controls** running ARES/RACES/ACS missions who need TAK ground truth in front of every position at the EOC table.
-- **County and city EM offices** doing tabletop and full-scale exercises with mixed ATAK/laptop participation.
-- **Anyone running an off-grid deployment** who wants a shared map without TAK Server, cellular, or cloud dependencies.
-
----
-
-## Under the hood
-
-For the engineer screening this before adoption:
-
-- **100% TAK protocol fidelity.** Every emitted COT is byte-identical to what WinTAK produces. The codebase references WinTAK packet captures for wire-format validation; when our implementation diverges, we change our implementation, not the protocol.
-- **Sub-second latency at scale** — designed to handle dozens of concurrent TAK devices and web clients with SSE delivery (not polling). Database-level filtering, server-side stale cleanup.
-- **EGM96 geoid** for precise WGS84 HAE ↔ MSL conversion. Stores HAE, displays MSL — ATAK parity for elevation.
-- **GPU-rendered labels** via MapLibre GL symbol layers — labels move in lockstep with the map on touch devices (iPad, Android tablets) where DOM overlays lag.
-- **Web-originated COTs are first-class.** "[A marker placed from the web] looks and behaves identically to one placed from WinTAK." No second-class citizen on the wire, in the UI, or in the database.
-- **Echo prevention designed in**, not bolted on. Cross-gateway round-trips (APRS, mesh) don't accumulate duplicate or drift entries.
-- **Built-in tileserver** — bundled tileserver-gl serves MBTiles and standard XYZ tile sets to ATAK, WinTAK, and browser clients over the LAN. Preload terrain at install time; field tablets fetch tiles without any uplink.
-- **Two-click broadcast workflow** — UI is designed around minimum-click placement. Operator preferences include broadcast-by-default, keyboard-shortcut-everything, and a curated symbol library, all configurable per-operator.
+| Audience | Lead with |
+|---|---|
+| **EOC / EM directors** | "Every laptop in the EOC becomes a TAK operator. No tablet inventory, no MDM, no app deployment. Operators already know browsers." |
+| **Incident Commanders** | "Open the laptop, the country's map is already there. Drop markers in two clicks. Every device in the network sees them within seconds." |
+| **SAR Coordinators** | "The base-camp laptop runs the whole picture. Every searcher's tablet pulls maps from the laptop over Wi-Fi. No internet at the trailhead." |
+| **Fire / Wildland** | "The mobile EOC truck runs baseTAK on a Toughbook. Every engine's iPad / ATAK tablet pulls tiles directly. CAL FIRE / USFS interop preserved — every marker is byte-identical." |
+| **EmComm / ARES** | "baseTAK is the home base of the whole xTAK suite. Pair with digiTAK for APRS, loraTAK for mesh, sdrTAK for air. All on the same network, no integration." |
+| **Public safety LE/EMS** | "Browser-native means iPads, Chromebooks, Toughbooks — anything in the fleet works. Multi-user with team color, role, presence — built for shift handoffs." |
+| **Ham radio operators** | "The TAK client your APRS station has always needed. Modern map, search by address, filter the picture by APRS device type. Pair with digiTAK and your station shows up on every TAK client too." |
 
 ---
 
-## What you need
+## Killer features (the headline bullets)
 
-- A **small Linux device** — a Raspberry Pi 4 or 5, a fanless mini-PC, or any handheld Linux box (yes, even one the size of a Game Boy). 3.5 GB RAM and ~500 MB disk is plenty. Battery-powered or solar-viable. No rack, no fans, no server room.
-- A **LAN** that your TAK clients share.
-- **Modern browser** on every client — Chrome, Firefox, Safari, Edge. No app install.
-
-## What you don't need
-
-- **No TAK Server.** baseTAK talks to your TAK clients directly on the LAN.
-- **No cloud.** Everything runs on the LAN; the SQLite database is yours.
-- **No tablets.** Works with ATAK / WinTAK / iTAK, also works without.
-- **No subscription, no licensing.** Self-hosted.
-
-## Install
-
-baseTAK ships as the cot_bridge package; the takmap UI is bundled. Standard install on a Linux box gets you the backend service, nginx HTTPS termination, and the web UI on the host's domain.
-
-*Detailed install docs: see the [cot_bridge repository](https://github.com/adamstern2000/cot_bridge).*
+1. **The whole country, pre-loaded** — 1 TB MBTiles = full CONUS satellite imagery on a 2 TB laptop. No "download tiles for the area" step.
+2. **Two-click broadcast** — pick the icon, click the spot. No "send" button. No "are you sure" dialog. Curated icon set tuned for fire / SAR / EOC / EmComm workflows.
+3. **3-burst initial broadcast + per-COT-type re-broadcast cadence** — every marker is emitted 3× at 30-second intervals on creation; each COT type has its own admin-set ongoing cadence. The picture stays current even on flaky Wi-Fi.
+4. **Built-in TAK file server** — send files up to 50 MB to any WinTAK / ATAK / iTAK client. Standard `b-f-t-r` fileshare CoT, SHA-256 validation, SQLite audit trail. No TAK Server required.
+5. **Standard tileserver** — serves the same map stack to baseTAK browsers, ATAK, WinTAK, iTAK, and any other tileserver-compatible app. EUDs download tiles directly when connected.
+6. **Map filter by icon type** — paired with digiTAK, filter by APRS device type; paired with sdrTAK, filter aircraft by emitter category and ships by AIS type.
+7. **Address + business search** — open-source geocoding, no Google API key, no per-query fees, no third-party tracking.
 
 ---
 
-## Status
+## Suite-level pairings (1 + 1 = 3 stories)
 
-**Beta — shipping soon**. In Beta through cot_bridge v0.45.x.
-
-**On the roadmap:**
-- TCP relay / federation for inter-EOC TAK bridging without TAK Server
-- AI agent integration ([aiTAK](aiTAK.md)) as a planning and SA assistant inside baseTAK
-- Cross-gateway APRS object round-trip operational test
+- **baseTAK + digiTAK** = the best APRS map experience. Full APRS icon set rendered as proper TAK icons + filter by device type with a click. *Lead pitch for ham audiences.*
+- **baseTAK + sdrTAK** = the best aircraft picture. 14 emitter categories with proper 2525 symbology + filter by military / heavy / rotorcraft / glider with a click. *Lead pitch for aviation / airshow / TFR audiences.*
+- **baseTAK + the suite** = drop any other xTAK product on the LAN and it shows up. APRS via digiTAK, Meshtastic via loraTAK, aircraft via sdrTAK, browser-user chat via chatTAK, mesh fabric via netTAK. *Lead pitch for "I need a complete stack" audiences.*
 
 ---
 
-## Channel adapters
+## Honest disclosures
 
-*Derived from the page above; for use in social, web, video, and other channels.*
-
-### Tagline
-**Run the operation from a browser.**
-
-### Social pitch — 50 words
-A full TAK map, chat, and SA hub in a browser tab — and faster to operate than WinTAK by design. Two clicks to drop a marker and broadcast. Built-in tileserver pushes offline maps to every ATAK tablet on the LAN. The home base of the xTAK suite. Self-hosted. No TAK Server. No cloud.
-
-### Long pitch — 200 words
-baseTAK is the home base of the xTAK suite — a full TAK map, chat, and SA hub that runs in any browser, and is *faster to operate* than WinTAK by design. Where WinTAK takes four or more clicks to drop a marker and broadcast it, baseTAK does it in two. Broadcast-by-default mode, a curated icon set, collapsible UI chrome, and keyboard shortcuts everywhere: the operator reacts at the speed of the incident, not the speed of the menu.
-
-baseTAK has a built-in tileserver. Pre-load it with the terrain you'll be operating in, and every ATAK tablet, WinTAK install, and browser client on the LAN gets its maps from you — no internet required. For wildland fire, SAR, and disaster-response teams arriving at an operating area without cell coverage, this is the difference between every-tablet-has-a-current-map and nobody-can-see-their-AOR.
-
-Built to be the durable SA source for the deployment, **designed for imperfect networks**: per-type heartbeat re-broadcast (configurable, or disable-able), per-field echo filtering, and SQLite persistence keep the picture current through packet loss, device dropouts, and shift changes. Composes by network with the rest of the xTAK suite. Self-hosted on any Linux box. No TAK Server, no cloud, no per-device licensing.
-
-### Soul quote
-> The operator reacts at the speed of the incident, not the speed of the menu.
-
-*(Alternate, original):* A marker placed from the web looks and behaves identically to one placed from WinTAK.
-
-### Audience tags
-**Primary:** incident commanders, EOC operators, SAR base coordinators, fire/EMS operations, EmComm net controls, public-safety EM offices.
-**Secondary:** amateur radio operators running base stations, preppers and off-grid teams, integrators evaluating TAK without committing to TAK Server.
-
+- **Status:** Beta — shipping soon. Current version v 0.45.x. Early Adopters get the build now.
+- **Take ownership of other users' COTs** — *in development*. Lets a designated user re-broadcast markers placed by operators who've since gone off-net. Not promised as shipped; phrased as "in development" on the live site.
+- **Tileserver:** does not auto-ingest dropped files instantly — that earlier claim was overstated. Real value is **standard format, every TAK client + any compatible app, direct EUD download over the network.**
+- **netTAK / aiTAK pairings:** netTAK is design phase (first ship 2026Q3 estimated); aiTAK release timing TBD. Don't promise those as available today.
 
 ---
 
-*© 2026 xTAK Project. All rights reserved. xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, and aiTAK are trademarks of the xTAK Project. ATAK, WinTAK, iTAK, and TAK are products of the U.S. Government via the TAK Product Center; the xTAK Project is not affiliated with the TAK Product Center. [Full copyright and trademark notice →](../COPYRIGHT.md)*
+## Sample social posts
+
+### X / Twitter (≤ 240 chars)
+
+> **POST 1 — the deploy hook**
+> Open the laptop. The country is already there.
+>
+> 1 TB MBTiles = satellite imagery for the entire continental US, pre-loaded.
+>
+> No "download tiles for the area" step. baseTAK is ready the moment you sit down. #TAK #SAR #EmComm
+
+> **POST 2 — the two-click hook**
+> Most TAK clients take four clicks to drop a marker and broadcast it.
+>
+> baseTAK takes two.
+>
+> Every marker fires on the network the moment you click. The whole team sees it within seconds.
+>
+> Browser-native TAK. Now in Beta.
+
+> **POST 3 — the multi-user hook**
+> Every laptop in your EOC becomes a TAK operator.
+>
+> No app install. No MDM. No Play Store. Chrome, Firefox, Safari, Edge — anything modern.
+>
+> A full TAK picture in a tab, byte-identical to ATAK on the wire.
+
+> **POST 4 — the suite hook**
+> baseTAK + digiTAK = every APRS station on the map with proper APRS icons. Filter by device type with a click.
+>
+> baseTAK + sdrTAK = every transponder-equipped aircraft, filter by emitter category.
+>
+> One LAN. No integration. Just standard TAK.
+
+> **POST 5 — the "proof on the page" hook**
+> Every screenshot on https://xtak.io was rendered from the same 1 TB MBTiles file.
+> California wildfire. Colorado race. New York SAR. Tennessee mountains. Illinois airport. DC airspace. Washington Sound.
+>
+> One file. The whole country. On a laptop.
+
+### LinkedIn (400–800 chars)
+
+> **POST A — the EOC deploy story**
+> If you run an EOC, you've probably hit this: you bought ATAK tablets for the field teams, but the people in the EOC are on laptops. They can't run ATAK. They're stuck on whichever spreadsheet or chat tool you have, while the live TAK picture lives in a side room on a single WinTAK desktop.
+>
+> baseTAK is the fix. It's a full TAK situational-awareness picture — map, chat, drawing, geofencing, file transfer — that runs in a browser tab. Every laptop becomes a first-class TAK operator with team color, role, presence. Markers go onto the same shared picture every ATAK and WinTAK on the network already sees.
+>
+> Two-click broadcast. Built-in tileserver. 1 TB MBTiles = the whole country on board, ready the moment you open the laptop.
+>
+> In Beta now. Free for Early Adopters: https://buymeacoffee.com/xtak
+
+> **POST B — the "no internet at the trailhead" story**
+> SAR coordinators know this problem. You're at a remote trailhead. There's no cell. Your team has ATAK tablets that work great — when they have a map.
+>
+> Most teams pre-cache map tiles before the operation. It takes time. It's manual. You have to know what area you'll be in.
+>
+> baseTAK changes the math. A single laptop, 1 TB SSD, the entire continental US satellite imagery loaded once. When you set up at the trailhead, the tablets in the field pull tiles from the laptop over Wi-Fi. You didn't pre-cache anything. The country was already there.
+>
+> Wildland fire in California today, hurricane in Florida tomorrow, SAR in Washington the day after. Same hardware. No re-provisioning.
+
+---
+
+## Video script outlines
+
+### 30-second cinematic (social-cut format)
+
+| 0:00–0:05 | Tight close-up of a laptop opening on a folding table at a forward EOC. Hand reaching to the trackpad. |
+| 0:05–0:12 | Screen fills frame — a TAK terrain map with markers, the IC drops a new marker with two clicks. |
+| 0:12–0:20 | Quick cuts: the same marker appearing on an ATAK tablet a deputy is holding; on a WinTAK desktop two rooms over; on an iTAK iPad in a fire engine. |
+| 0:20–0:25 | Pull back to a wide of the EOC — twelve laptops, twelve people, one shared picture. |
+| 0:25–0:30 | Title card: **baseTAK. Run the operation from a browser.** + buymeacoffee.com/xtak |
+
+**VO (optional, single line):** "Most TAK clients take four clicks to drop a marker. baseTAK takes two."
+
+### 60-second demo
+
+1. **Hook (0:00–0:08):** Hand opening a laptop. "Run the operation from a browser." Tab opens, map fills.
+2. **Pre-loaded country (0:08–0:18):** Pan to show the IC zooming around — Northeast, Southwest, Pacific NW — at satellite detail, no loading. VO: "1 TB on the SSD. The whole continental US, already on board."
+3. **Two-click broadcast (0:18–0:30):** Close-up on the icon picker, click an icon, click the map. Cut to a second screen showing the marker appear within a second. VO: "Two clicks. The whole team sees it."
+4. **Suite composition (0:30–0:48):** Quick cards: APRS contacts streaming in (digiTAK), Meshtastic mesh nodes (loraTAK), aircraft (sdrTAK), browser-user contacts (chatTAK). VO: "Drop any other xTAK product on the LAN — APRS, mesh, aircraft, chat — and it shows up. No glue."
+5. **Close (0:48–0:60):** Wide of a real EOC scene. Title card: **baseTAK. In Beta now. Become an Early Adopter at buymeacoffee.com/xtak**
+
+### 2-minute deep dive (YouTube / conference brief)
+
+- **0:00–0:15 Setup the problem.** EOC environment, ATAK tablets in the field but laptops in the EOC.
+- **0:15–0:45 What baseTAK is.** Browser-native, multi-user, full CoT fidelity. Show the live UI.
+- **0:45–1:10 Why it's fast.** Two-click broadcast, curated icon set, keyboard shortcuts, broadcast-by-default. Close-ups on the speed.
+- **1:10–1:30 The deploy story.** 1 TB CONUS MBTiles. The screenshots on this site = proof.
+- **1:30–1:50 Authoritative SA.** 3-burst initial broadcast + per-COT-type cadence keeps every client current on flaky networks. Mention take-ownership (in dev).
+- **1:50–2:00 CTA.** Beta, Early Adopter program, link.
+
+---
+
+## Live-demo talking points
+
+- **Open the browser, navigate to the URL.** "No app install. No login. Pick a callsign, pick a team color, you're on."
+- **Pan across the country.** "Watch the satellite imagery as I zoom. No loading bars. This is offline — the WAN is off. The whole country is on this laptop's SSD."
+- **Drop a marker.** "Two clicks. Pick an icon, click the spot." Show it appearing on the other device.
+- **Open the side rail.** "Every contact on the network, grouped by source. Browser users, ATAK tablets, APRS stations from digiTAK, mesh nodes from loraTAK, aircraft from sdrTAK — all here."
+- **Draw a polygon.** "Hand-draw an evac zone. Geofence with entry/exit alerts. Every TAK client on the LAN sees it instantly."
+- **Switch tabs to show the file server.** "Send a 30 MB PDF to a WinTAK in the field. Standard TAK fileshare CoT. They get a chat notification, click to download."
+- **Pull up the chat panel.** "Multi-user GeoChat. DMs, team, broadcast, custom groups. Read receipts. Timeline view or threaded view."
+
+---
+
+## Objections + responses
+
+| Objection | Response |
+|---|---|
+| "We already have WinTAK." | "Great — baseTAK runs alongside WinTAK on the same LAN. Add browser users to the same picture; everyone sees everyone." |
+| "Why not just use WebTAK?" | "Different category. WebTAK needs a TAK Server. baseTAK is self-hosted, runs on a laptop, includes its own file server. No server license needed." |
+| "Browser-based — is it slow?" | "Not in practice. The 3D map is hardware-accelerated. We render the same MBTiles ATAK does. Multi-user up to 100 users on a typical server." |
+| "What about security?" | "Self-hosted. Data stays on your hardware. SQLite-backed persistence. No cloud account, no third-party telemetry. Open standards on the wire." |
+| "Does it work offline?" | "Designed for offline. No internet required. The 1 TB CONUS file is preloaded. Tileserver serves every TAK client on the LAN." |
+| "How do I migrate from a TAK Server setup?" | "You don't need to. baseTAK joins your existing TAK network as a peer. Federate as much as you want, or run baseTAK as the server-of-record for the suite." |
+
+---
+
+## Visual / image cues
+
+Strong visuals for posts + b-roll:
+
+- **The 1 TB on a laptop** — Toughbook open on a folding table, screen showing a TAK terrain view of a recognizable region (CA / NE / PNW).
+- **The EOC wide shot** — multiple laptops on a long table, the same TAK picture on each.
+- **The two-click flow** — over-the-shoulder of an operator, picking an icon and clicking the spot, then immediate cut to another device showing the marker appear.
+- **The suite composition** — a single TAK map with multiple icon types (aircraft + APRS + mesh + browser users) coexisting.
+
+Avoid: literal military gear, plate-carrier vests, weapon imagery, cyberpunk / Tom Clancy aesthetic, neon glow, hexagons.
+
+---
+
+*Related: [`PROJECT-LEARNINGS-2026-05-19.md`](../PROJECT-LEARNINGS-2026-05-19.md), live site at `site/products/baseTAK.html`.*

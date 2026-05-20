@@ -1,162 +1,202 @@
-# aiTAK
+# aiTAK — Marketing Module
 
-# An AI operations assistant that lives inside your TAK network.
+**Status:** ★ Design phase — release timing TBD
+**Last updated:** 2026-05-19
+**Use this for:** vision-state content, design teasers, demo scripts grounded in the Devil's Gate Fire scenario.
 
-**aiTAK is an LLM-backed operator's helper that joins your TAK network like any other xTAK service, watches the picture as it evolves, and answers questions, summarizes activity, drafts chat, and flags conditions that match operator-defined rules — running on your own hardware, in your own deployment, never on someone else's cloud.**
-
-> **Status: in active development.** Architecture is being prototyped; first public release timing TBD.
-
-> **About TAK:** aiTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS). It reads the TAK picture in real time and participates as a TAK contact — answering DMs, posting summaries, flagging conditions. [More about the TAK ecosystem →](../about-tak.md)
-
-> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtak)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtak)
+> **Disclosure:** aiTAK is the most experimental product in the suite. The architecture is being prototyped; first public-release timing is TBD. Posts and videos referencing aiTAK must flag this clearly.
 
 ---
 
-## The scenario
+## TL;DR
 
-It's hour four of a multi-agency wildfire response. The IC has three operations sections, two air assets in the box, four ground crews, and a planning meeting in twenty minutes. Her WinTAK is dense with markers — staging areas, hot spots, structure threats, drop points, hazard zones, four kinds of overlay.
+aiTAK is an AI agent that participates in the TAK picture as a first-class contact. Operators chat with it via native GeoChat to query the SA picture, ask for summaries, request COT generation, or task it to monitor specific feeds. Local-first — runs on the same Pi as the rest of the suite, no cloud dependency. Pluggable LLM backend (OpenAI, Anthropic, Ollama, llama.cpp).
 
-She opens a chat thread with `aiTAK-1` from her WinTAK.
-
-> *"summarize the last hour by sector"*
-
-aiTAK posts a four-bullet brief in chat: spread direction by sector, structures newly threatened, air-asset activity, ground-crew positions. Each bullet links to the relevant markers on her map.
-
-> *"draft the 1400 IAP planning brief"*
-
-aiTAK drops a draft into chat, structured to her unit's IAP template, pre-populated with the position and activity data it observed over the last shift.
-
-While she's reviewing the draft, aiTAK posts on its own:
-
-> *"⚠️ A ground crew has been stationary for 22 minutes inside the hot-zone polygon you drew at 10:14. Their last chat said 'taking ten.' Possible heat exhaustion. Suggest comms check."*
-
-She DMs the crew lead. They're fine — but she didn't have to be the one watching.
-
-**An LLM that has been on the network the whole time, watching what every operator was watching, and helping.**
-
-That's aiTAK.
+**The pitch:** an AI on your TAK network you can talk to like a person, without sending your SA picture to a third-party cloud.
 
 ---
 
-## What you can do
+## Taglines
 
-### 1. Ask questions about the operational picture in natural language
-
-aiTAK has been on the TAK network since the start of the deployment. It has the full COT history, the chat log, the marker placements, the team movements, and the timestamps.
-
-- **"Summarize the last hour by sector"**
-- **"When was the structure marker at Smith Road first dropped? By whom?"**
-- **"Where is Engine 3 right now and what was their last status update?"**
-- **"Which crews are inside the evacuation zone I drew?"**
-- **"Draft a SITREP for the 1400 brief"**
-
-### 2. Run as a watchful background participant
-
-Operator-defined rules let aiTAK monitor for conditions that an IC shouldn't have to watch personally.
-
-- **Stationary-team alerts** — flag a team that hasn't moved in N minutes inside a hazard polygon
-- **Geofence breaches** — alert when any contact crosses an operator-drawn boundary
-- **Comms-silence alerts** — flag a contact that hasn't beaconed or chatted in N minutes
-- **Pattern recognition** — flag combinations of conditions (low battery + entering hot zone)
-
-Alerts post as TAK chat from aiTAK's TAK identity; ICs can DM aiTAK for more context.
-
-### 3. Draft, summarize, translate
-
-Anything you'd ask a junior planning officer to bang out, aiTAK can draft. The operator stays in the loop — aiTAK produces drafts; humans send them.
-
-- **IAP / SITREP drafts** from observed activity
-- **End-of-shift summaries** for hand-off briefs
-- **Chat-to-radio translation drafts** — formalize an informal chat into a clean radio-traffic script
-
-### 4. Run on your own hardware, your own data
-
-aiTAK is built to run **locally** — on a workstation with a consumer GPU, or on a server with proper inference hardware. It does not send the operational picture to anyone's cloud. The LLM, the embeddings, the chat history, the COT log — all of it stays on your machine.
-
-- **Local-first, by design** — sensitive operational data never leaves the deployment
-- **Bring-your-own-model** — open-weights LLMs (Llama, Qwen, Mistral, etc.) supported
-- **No subscription, no API keys** — your hardware, your inference, your costs
-- **Audit log** — every aiTAK response is logged with the prompt, the model, and the data it referenced
+- **"An AI on your TAK chat. Local-first."** *(headline)*
+- **"Ask questions about the operational picture in natural language."** *(use-case angle)*
+- **"A junior planning officer who never sleeps."** *(workflow angle)*
+- **"Your SA picture never leaves your hardware."** *(privacy / sovereignty angle)*
 
 ---
 
-## Who runs aiTAK
+## Audience-by-audience framings
 
-- **Incident commanders** running medium-to-large incidents who need a second pair of eyes on a busy picture.
-- **Planning section chiefs** drafting IAPs and SITREPs against a shifting operational picture.
-- **SAR operations chiefs** managing dozens of teams across long shifts.
-- **EOC staff** at multi-day activations where shift hand-offs need crisp summaries.
-- **Training coordinators** running exercises where post-event AAR depends on a clean record of what happened when.
-- **Anyone running a TAK deployment with sensitive data** who can't legally or operationally use a cloud LLM service.
-
----
-
-## Under the hood
-
-For the engineer screening this before adoption:
-
-- **Local-first inference.** Runs against any OpenAI-compatible local inference endpoint (llama.cpp, vLLM, Ollama, LM Studio, TGI). Bring your own model.
-- **Joins the TAK multicast network as a peer.** Has its own UID, callsign, team, and SA heartbeat — TAK clients can DM aiTAK like any other contact.
-- **Streaming COT ingest.** Builds a structured event log of every marker, chat, position update, and shape change — queryable in natural language with the LLM.
-- **Retrieval-augmented over operational context.** Embeddings + vector search over the COT log; the LLM is grounded in what actually happened.
-- **Rule engine for proactive alerts.** Operator-authored rules in a small DSL evaluate against the live multicast stream.
-- **Audit log.** Every response, every alert, every rule trigger — logged with prompt, model, data references, and timestamp.
+| Audience | Lead with |
+|---|---|
+| **Incident Commanders** | "Ask aiTAK to summarize the last hour by sector. Draft a SITREP for the 1430 brief. Translate an informal chat into clean radio traffic. The IC stays in the loop; aiTAK drafts, the IC sends." |
+| **Planning sections / IAP authors** | "Draft the operational-period IAP section with division assignments. End-of-shift hand-off in 5 bullets. Bilingual evac notices for PIO push (English + Spanish)." |
+| **Watch-officers / dispatch** | "Watchful background participant. Operator-defined rules fire alerts when conditions trigger — stationary crew in a hazard zone, comms silence, battery low + hot zone, fire enters a geofence." |
+| **EmComm net controls** | "aiTAK as a passive participant on the TAK chat thread, responding to '@aitak status' style queries with structured snapshots." |
+| **Privacy-conscious agencies** | "Local-first. Your SA picture, your contacts, your chat history — none of it leaves your hardware. BYO model. No cloud dependency required." |
 
 ---
 
-## What you need
+## Three outcomes (the design surface)
 
-- **A small mini-PC, an Apple Silicon Mac mini, a Jetson, or any consumer machine with enough VRAM for your chosen open-weights model.** An **8B-class model** (Llama 3.1 8B, Qwen-class, Mistral) runs comfortably on consumer hardware — typically sub-150 W draw — staying power-modest enough to be **solar-viable for multi-day field deployments**.
-- **Heavier models** (70B-class) run on workstation hardware (RTX 4090 / 5090, dual-3090, M-series Mac Studio) when the operation can spare the power budget. Server hardware (H100 / A100 / L40S) is supported but not required.
-- A **TAK LAN** — the same one your ATAK / WinTAK / baseTAK is on.
-- An **open-weights LLM** of your choice, served through any OpenAI-compatible local inference server (llama.cpp, vLLM, Ollama, LM Studio, TGI).
+### O1 — Ask questions about the operational picture
+The IC asks; aiTAK answers with structured, citable, scan-friendly responses. Scripts in [`aitak-o1-chat-script.md`](../aitak-o1-chat-script.md) — 5 example Q&A turns grounded in the Devil's Gate Fire YAML scenario:
+- Summarize the last hour by sector
+- Where is Engine 11 right now and what was their last status update?
+- Which crews are inside the Mandatory Evacuation Zone I drew?
+- When was the marker for Mt. Wilson Observatory first placed, and by whom?
+- Draft a SITREP for the 1430 brief.
 
-## What you don't need
+### O2 — Watchful background participant
+aiTAK auto-fires alerts when operator-defined rules trigger. Scripts in [`aitak-o2-alerts-script.md`](../aitak-o2-alerts-script.md) — 5 example alerts:
+- MEDIUM: 24-hr predicted-spread polygon intersects critical infrastructure
+- HIGH: Stationary crew inside fire perimeter (with IC acknowledgment + auto-resolve)
+- INFO: Comms silence + IC follow-up query for movement history
+- HIGH: Low battery + hazard polygon
+- CRITICAL: Fire feature enters infrastructure perimeter
 
-- **No cloud LLM service.** No OpenAI, no Anthropic, no Google — unless you choose to use one.
-- **No internet** (once the model is downloaded).
-- **No TAK Server.** aiTAK joins the TAK network like every other xTAK product.
-- **No subscription.** Your hardware, your model, your data.
-
-## Install
-
-*Coming with the first public release. Will follow the xTAK pattern.*
-
----
-
-## Status
-
-**In active development.** Architecture is being prototyped; first public release timing TBD.
-
-aiTAK is the most experimental product in the xTAK suite. The positioning and capabilities described here are the design target — the actual feature set at first release will likely be a subset, with capabilities added incrementally.
-
----
-
-## Channel adapters
-
-*Derived from the page above; for use in social, web, video, and other channels.*
-
-### Tagline
-**An AI operations assistant that lives inside your TAK network.**
-
-### Social pitch — 50 words
-aiTAK is an LLM-backed operator's helper that joins your TAK network like any other xTAK service. It watches the picture, summarizes activity, drafts SITREPs, and flags rule-matched conditions in chat. Runs on your own hardware, your own model. Local-first, no cloud. *(future release)*
-
-### Long pitch — 200 words
-aiTAK is the xTAK suite's AI augmentation layer — an LLM-backed assistant that joins your team's TAK network as a peer and helps the operator handle a busy picture. It can answer natural-language questions about the operational state ("summarize the last hour by sector," "where is Engine 3 right now"), draft SITREPs and IAP sections from observed activity, and run operator-defined rules to flag conditions the IC shouldn't have to watch personally (stationary teams in hazard zones, geofence breaches, comms-silence alerts).
-
-The design priority is **local-first**: aiTAK runs on your hardware against an open-weights LLM you choose, via any OpenAI-compatible local inference server. Sensitive operational data never leaves the deployment. No cloud LLM service required. No subscription. Bring your own GPU and your own model.
-
-aiTAK is the most experimental product in the xTAK suite; first public release timing is TBD. The positioning here is the design target — initial release will be a subset of these capabilities, with more added incrementally.
-
-### Soul quote
-> An LLM that has been on the network the whole time, watching what every operator was watching, and helping.
-
-### Audience tags
-**Primary:** incident commanders, planning section chiefs, SAR operations chiefs, EOC staff at multi-day activations.
-**Secondary:** training coordinators (AAR-quality records), agencies with data-sovereignty requirements who can't use cloud LLM services, large-event ops, public-safety analysts.
-
+### O3 — Draft / summarize / translate
+Generative outputs the operator reviews and sends. Scripts in [`aitak-o3-drafts-script.md`](../aitak-o3-drafts-script.md):
+- IAP section for next operational period
+- End-of-shift hand-off summary (5 bullets)
+- Chat-to-radio translation (informal chat → clean radio script)
+- English + Spanish evac notice for PIO push
 
 ---
 
-*© 2026 xTAK Project. All rights reserved. xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, and aiTAK are trademarks of the xTAK Project. ATAK, WinTAK, iTAK, and TAK are products of the U.S. Government via the TAK Product Center; the xTAK Project is not affiliated with the TAK Product Center. [Full copyright and trademark notice →](../COPYRIGHT.md)*
+## Killer features (design target)
+
+1. **First-class TAK contact** — aiTAK appears on the roster with its own callsign and team affiliation. Indistinguishable from a human participant on the wire.
+2. **Native GeoChat interaction** — DM, broadcast, team. Operators talk to it like a person.
+3. **CoT generation from natural language** — "place a friendly marker at Mt. Wilson Observatory" → marker appears on every TAK client.
+4. **Picture summarization** — structured operational briefs grounded in the TAK history.
+5. **Feed monitoring** — "alert me if any fire feature enters the Mt. Wilson geofence" runs as an always-on rule.
+6. **Local-first** — runs on the same Pi as the rest of the suite. No required cloud dependency. BYO model.
+7. **Pluggable LLM backend** — OpenAI, Anthropic, Ollama, llama.cpp.
+
+---
+
+## Suite-level pairings
+
+- **aiTAK + baseTAK** — aiTAK's responses include marker UIDs and coordinates that link back to the baseTAK map. The operator clicks a referenced marker; baseTAK pans to it.
+- **aiTAK + the whole suite** — aiTAK queries can range across APRS contacts (digiTAK), mesh nodes (loraTAK), aircraft (sdrTAK), and TAK chat history.
+
+---
+
+## Honest disclosures
+
+- **Status:** ★ Design phase. First-release timing TBD. The positioning above is the design target — the actual first-release feature set will likely be a subset, with capabilities added incrementally.
+- **Chat rendering constraint:** the chatTAK incognito-window workflow used to render aiTAK demo screenshots supports only 2 callsigns easily. All three example scripts use only `@ic-base` and `@aiTAK`. Future scripts should follow the same constraint.
+- **Local-first is the design intent.** BYO model. Specific backends are pluggable, not yet committed.
+- **All aiTAK content must flag the design-phase status.**
+
+---
+
+## Sample social posts
+
+### X / Twitter
+
+> **POST 1 — the SA-query hook** 🚧 *(design phase)*
+> Ask the TAK picture a question.
+>
+> > "Summarize the last hour by sector."
+> > "Where is Engine 11 right now and what was their last status update?"
+> > "Draft a SITREP for the 1430 brief."
+>
+> aiTAK — local-first AI on your TAK chat. Coming.
+
+> **POST 2 — the watchful hook** 🚧
+> Operator-defined rules fire alerts when conditions trigger.
+>
+> Stationary crew in a hazard zone. Comms silence. Low battery + hot zone. Fire enters a geofence.
+>
+> aiTAK posts the alert in TAK chat. IC acknowledges. Self-mutes.
+
+> **POST 3 — the privacy hook** 🚧
+> Your SA picture never leaves your hardware.
+>
+> aiTAK runs locally. BYO LLM — OpenAI, Anthropic, Ollama, llama.cpp.
+>
+> No cloud uplink required. Your contacts, chat, and geofences stay yours.
+
+### LinkedIn
+
+> 🚧 **POST A — the design teaser**
+> The product in xTAK we're most excited about (and the one furthest from shipping): aiTAK — an AI agent that participates in the TAK picture as a first-class contact.
+>
+> Three use cases drive the design:
+>
+> 1. **Ask questions about the operational picture.** "Where is Engine 11 right now and what was their last status update?" "Which crews are inside the evac zone I drew?" "Draft a SITREP for the 1430 brief." aiTAK answers from real TAK history with structured, citable responses.
+>
+> 2. **Watchful background participant.** Operator-defined rules fire alerts when conditions trigger — stationary crew in a hazard zone, comms silence, fire entering a geofence. aiTAK posts the alert in TAK chat, IC acks, and aiTAK self-mutes.
+>
+> 3. **Drafts.** IAP sections, hand-off summaries, chat-to-radio translations, bilingual evac notices. aiTAK drafts; the operator reviews and sends.
+>
+> Local-first. BYO LLM. Your SA picture stays on your hardware.
+>
+> Design phase — release timing TBD. https://buymeacoffee.com/xtak
+
+---
+
+## Video script outlines
+
+### 30-second concept teaser
+
+| 0:00–0:08 | Close-up of an IC's TAK chat panel. IC types: "Where is Engine 11 right now and what was their last status?" |
+| 0:08–0:18 | aiTAK responds with a structured answer: position, last comm timestamp, comm quote, recommended action. |
+| 0:18–0:24 | Quick cut: aiTAK alert fires for a stationary crew. IC types "Roger. Trying them on tac 2." aiTAK acknowledges. |
+| 0:24–0:30 | Title card: **aiTAK. Local-first AI on your TAK chat. (Design phase.)** |
+
+### 60-second feature brief
+
+1. **Hook (0:00–0:10):** "An AI on your TAK chat you can talk to like a person." Show the chat panel with `@aiTAK` callsign.
+2. **Use case 1 (0:10–0:25):** Q&A flow. IC asks a question, aiTAK answers in structured form.
+3. **Use case 2 (0:25–0:40):** Alert flow. Rule fires, alert posts, IC acknowledges, aiTAK self-mutes.
+4. **Use case 3 (0:40–0:52):** Draft flow. IC requests a SITREP. aiTAK drafts. "Draft. Edit before sending."
+5. **Close (0:52–0:60):** Design-phase disclosure. Early Adopter link.
+
+---
+
+## Demo talking points (when scripted)
+
+> Open the chatTAK panel. Two callsigns: `@ic-base` and `@aiTAK`.
+> Type a question. aiTAK responds in structured format (headers, bullets, coordinates).
+> Cite real markers (e.g., Mt. Wilson Observatory) and explain what aiTAK is doing under the hood.
+> Show an alert auto-firing. IC acks. aiTAK self-mutes.
+> Request a SITREP draft. aiTAK produces structured copy ending with "Draft. Edit before sending."
+
+Use scripts: [`aitak-o1-chat-script.md`](../aitak-o1-chat-script.md), [`aitak-o2-alerts-script.md`](../aitak-o2-alerts-script.md), [`aitak-o3-drafts-script.md`](../aitak-o3-drafts-script.md).
+
+---
+
+## Objections + responses
+
+| Objection | Response |
+|---|---|
+| "When does it ship?" | "Design phase. Timing TBD. Honest disclosure — first-release feature set will be a subset of the design target." |
+| "ChatGPT / Claude already do this." | "Sure, with manual copy-paste of TAK data. aiTAK is the productized agent with TAK-native chat in and out — no copy-paste, no separate window, no leaking your SA picture to a cloud." |
+| "Anduril Lattice AI?" | "Defense-grade, integrates AI across radar, EW, UAS. aiTAK is the operator-grade tier — public safety, SAR, EmComm. Different audience, different price." |
+| "Do I have to use OpenAI?" | "No. Pluggable backend. Use Ollama or llama.cpp for fully-local. OpenAI / Anthropic for cloud if you choose." |
+| "Does aiTAK take action on its own?" | "No. aiTAK proposes, the operator decides. Every draft closes with 'Draft. Edit before sending.' Alerts post in chat for human acknowledgment." |
+
+---
+
+## Visual / image cues
+
+- **The aiTAK chat-panel close-up** — outcome image showing all 3 use cases (Q&A, alerts, drafts) in one rendered panel. Use the live outcome images.
+- **The Devil's Gate Fire scenario** — every aiTAK demo anchors here. Devil's Gate is the operational reality aiTAK responds about.
+- **No futuristic UI** — keep it strictly TAK chat, no AI-themed dashboards, no glowing brain icons.
+
+Avoid: neural-net cliches, glowing brains, "AI in a sphere," sci-fi UIs. aiTAK should look like a TAK contact, not a science-fiction prop.
+
+---
+
+## Key terms
+
+- **LLM** — large language model. The category of AI that aiTAK is built on top of.
+- **BYO model** — bring your own model. Operator chooses which backend to plug in (cloud or local).
+- **GeoChat** — TAK's native chat protocol. aiTAK speaks it natively.
+
+---
+
+*Related: [`aitak-o1-chat-script.md`](../aitak-o1-chat-script.md), [`aitak-o2-alerts-script.md`](../aitak-o2-alerts-script.md), [`aitak-o3-drafts-script.md`](../aitak-o3-drafts-script.md), [`PROJECT-LEARNINGS-2026-05-19.md`](../PROJECT-LEARNINGS-2026-05-19.md), live site at `site/products/aiTAK.html`.*

@@ -1,172 +1,220 @@
-# digiTAK
+# digiTAK — Marketing Module
 
-# TAK on the air. Internet not required.
-
-**Federate two or more TAK networks over amateur radio — VHF for regional reach, HF for the continent. Run both transports simultaneously from one box. Built for EmComm, SAR, ARES districts, and any team that needs to coordinate when the WAN is gone.**
-
-> **About TAK:** digiTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS) — adding the worldwide APRS network as a first-class participant. Your existing TAK clients see APRS stations as native TAK contacts, and digiTAK does the protocol translation on the wire. [More about the TAK ecosystem →](../about-tak.md)
-
-> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtak)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtak)
+**Status:** Beta — shipping soon (v 2.1.12 · VHF + APRS-IS)
+**Wire protocol:** TAK-APRS Protocol Extension **v2.3** ([open spec](https://github.com/adamstern2000/cot_radio_aprs))
+**Last updated:** 2026-05-19
+**Use this for:** social posts, video scripts, ARRL / EmComm content, ham radio podcasts, conference talks.
 
 ---
 
-## The scenario
+## TL;DR (the 60-second pitch)
 
-It's day two of a multi-day SAR exercise. The forward team is up a fire road with no cell, no Starlink, no LTE. Base camp is forty miles back. Both teams need to be looking at the same map — markers, search assignments, evacuation routes, last-known-positions.
+digiTAK is a full APRS-to-TAK gateway that runs on its own Pi. **Plug it onto any network and the LAN gains a full APRS gateway** — every ATAK, iTAK, WinTAK, or baseTAK browser picks up APRS stations as native TAK markers, and every TAK marker, chat, or shape goes back out onto RF. No glue, no integration; just standard TAK protocols on the wire. Pair with baseTAK and you get the richest APRS picture on any modern map — full APRS icon set + filter by device type with a click.
 
-You drop a digiTAK at each site. A VHF antenna on a mast. The map on the IC's WinTAK at base camp shows the forward team's markers within seconds. The forward team's ATAK tablets see the IC's search grid the moment it's drawn. When a volunteer with an APRS rig drives in from the highway, their callsign appears on every TAK client on the network as a chat-able contact. The IC can DM them from WinTAK and the message lands on RF.
-
-Meanwhile, the state EOC five hundred miles away has its own digiTAK with an HF rig. The duty officer there sees the exercise's team positions on her WinTAK — passed across the ionosphere by your digiTAK's *second* radio port, which is hooked to an HF radio. She can chat with the field IC over HF. Markers and full fidelity stay regional on VHF; positions and chat cross the continent on HF. Same digiTAK. Both radios. Simultaneously.
-
-No internet. No TAK Server. No cellular. Just amateur radio and a Pi at each end.
-
-That's digiTAK.
+The two deployment modes describe **what else is on the network**, not where digiTAK runs:
+- **Bridge mode:** digiTAK alongside baseTAK and the rest of the xTAK suite
+- **Standalone mode:** digiTAK alone is the whole TAK install
 
 ---
 
-## What you can do
+## Taglines — pick the angle
 
-### Run a shared TAK picture across two, three, or N sites
-
-In **bridge mode**, multiple digiTAK gateways form a federated mesh over RF or APRS-IS. Markers placed in ATAK at site A appear in WinTAK at site B with full TAK fidelity — team color, role, COT type, custom icons all preserved. Add a digipeater between sites to extend RF reach. Add another digiTAK to grow the operating area. The network coordinates, it doesn't echo: any number of sibling gateways coexist on the same RF channel without re-emitting or re-digipeating each other's traffic.
-
-### Put every APRS station on your TAK clients
-
-In **standalone mode**, a single digiTAK gateway puts every APRS station within reach — on the air or on the internet — onto your team's ATAK / WinTAK / iTAK / baseTAK clients as a chat-able contact. Weather stations, NWS bulletins, vehicle trackers, beacon stations — they all appear as native TAK overlays. DM a callsign from ATAK and your message lands on RF or APRS-IS, wherever that operator is hearing. Replies come back on the same path.
-
-**The reach is bigger than your antenna.** On standard APRS frequencies (144.39 MHz in North America, regional equivalents elsewhere), your digiTAK joins a global network of volunteer-operated **APRS digipeaters** that relay WIDE-tagged packets onward. Your TAK network's reach becomes whatever the digipeater infrastructure can carry — often dozens or hundreds of miles beyond your own antenna's line of sight, with zero additional hardware on your end.
-
-**APRS-only operators are full participants — in both directions.** An operator with nothing more than an APRS-capable radio sees the picture, is seen, and chats with the operation — all over APRS, no TAK client required.
-
-- They appear on TAK clients as native TAK contacts (position, bulletins, callsign attribution preserved).
-- They see the TAK operation on their APRS gear — TAK users' positions are broadcast out to APRS as standard objects, so the ham with just a handheld and an APRS map display sees the team on their screen, no TAK install.
-- They chat across the bridge — an APRS message addressed to a TAK callsign lands in TAK chat. The IC's reply comes back to the ham's APRS rig. Bulletins, NWS alerts, group messages all reach across.
-- The auxcomm net stops being parallel infrastructure — APRS hams aren't a separate radio room hanging off the side of the operation; they're first-class participants on the same shared picture as the ATAK / WinTAK clients.
-- For EmComm activations, SAR call-outs, and ad-hoc events: volunteers show up with the rig they already own, beacon their callsign, and they're on the operation. **No app. No new gear. No new training.**
-
-### Bridge WinTAK islands across the continent on HF
-
-Hook a 2-meter rig to digiTAK and you reach the next county over VHF. Hook an HF rig to the *same* digiTAK and you reach the next state — or the next country — over the ionosphere. Both transports run simultaneously from one box.
-
-HF is a narrower channel by physics: positions for participants and chat, not the full marker/icon/symbology fidelity available on VHF. digiTAK encodes HF traffic with a binary compression codec (~20 bytes per position vs. full COT XML) so it actually fits the band. But it carries far enough that two WinTAK installs a thousand miles apart can share each other's team positions and trade chat over the air. State EOC sees state EOC. ARES district sees ARES region. National mutual-aid coordinators see all of them. WinTAK islands stop being islands.
-
-- **Multi-transport, one box** — APRS-IS, VHF/UHF, and HF all from a single digiTAK
-- **HF as the continental backbone** — positions and chat across hundreds to thousands of miles via HF digital modes
-- **Compressed for the band** — binary codec fits a position update into ~20 bytes; HF gating has its own rate limits separate from APRS
-- **Narrower feature set on HF, by design** — markers, shapes, and icons stay on VHF and APRS-IS; positions and chat cross HF
-- **All transports concurrent** — local APRS stations on VHF, regional peer on VHF/UHF, distant peer on HF, internet stations via APRS-IS — same digiTAK, same moment
-
-*HF transport is in active development — see Status below.*
-
-### Modernize your APRS station with a TAK client interface
-
-For ham operators tired of UI-View32, AGW, YAAC, or any other legacy APRS software — old UIs, often unsupported on modern operating systems, increasingly hard to keep running — digiTAK is the modern replacement. The user interface is *any* TAK client: ATAK on your phone, WinTAK on your laptop, iTAK on your tablet, baseTAK in any browser. Same map, same chat, same symbology that first responders use, now as your APRS UI.
-
-- **Modern map providers and UI** — current basemaps, click-to-message, fast click paths, real symbology
-- **Connect a USB GPS** to the digiTAK and it becomes a mobile APRS tracker — beacon your vehicle from the dashboard, your pack from a hike, your shack from a fixed install
-- **Every APRS station as a TAK contact** — DM by callsign, send and receive bulletins, monitor weather stations, watch the local APRS net
-- **Run alongside or in place of your legacy software** — digiTAK speaks the standard APRS wire format on the air; keep your favorite legacy client if you want, or retire it
-
-For the ham who's been quietly running UI-View32 on a Windows XP VM for the last decade: there's finally a modern path forward, with no loss of the APRS station you've built.
-
-### Be a first-class citizen of the APRS network
-
-digiTAK isn't a tunneled emulator. It's a real ham station: full WIDE digipeater with loop suppression, RX+TX IGate, SmartBeacon adaptive cadence, NWS weather ingest, addressable direct messages, Part 97 compliance gates with failure-safe TX disable. Your callsign. Your beacons. Your APRS identity.
+- **"TAK on the air. VHF for the region. HF for the continent."** *(headline)*
+- **"Drop a digiTAK in. Instantly an APRS gateway."** *(deploy angle)*
+- **"The TAK client your APRS station has always needed."** *(ham operator angle)*
+- **"Same digiTAK. Both radios. Simultaneously."** *(multi-transport angle)*
+- **"For ham operators tired of legacy APRS software."** *(modernization angle; never name specific legacy tools)*
 
 ---
 
-## Who runs digiTAK
+## Audience-by-audience framings
 
-- **EmComm operators** running ARES, RACES, ACS, or local CERT — get TAK situational awareness on the bands you already use, without TAK Server or a cellular dependency.
-- **State and national EmComm coordinators** — ARES districts, SATERN, MARS-affiliated nets, DHS mutual-aid programs — federate WinTAK installs across state lines on HF instead of trying to keep an internet VPN alive through a disaster.
-- **SAR teams** with ham radio resources who already use APRS for vehicle tracking — promote those positions to first-class TAK markers, and add a shared map across the exercise area.
-- **County / city EOCs** running off-grid drills where cell and WAN are assumed dark — federate your tabletop and field sites over a 2-meter link, and link to neighboring counties' EOCs on HF.
-- **Public safety agencies** with ham volunteers — the bridge between your TAK ops and your auxcomm team isn't a phone call anymore. It's the same TAK picture.
-- **Amateur radio operators replacing legacy APRS software** (UI-View32, AGW, YAAC, and others) — keep your APRS station, retire the old UI, run any TAK client as the front end. Add a USB GPS and your digiTAK is a mobile APRS tracker too.
-- **Any licensed ham with an APRS rig** — your existing handheld, mobile, or base station appears on the TAK map and in TAK chat the moment you key up. No new gear, no new configuration. Show up to a search, an exercise, or an EmComm activation; beacon your callsign; you're a TAK participant.
-
----
-
-## Under the hood
-
-For the engineer screening this before adoption:
-
-- **Lossless cross-gateway fidelity.** Team affiliation, role, COT type, custom icons, and chat attribution survive every round-trip through the APRS wire and render correctly on the peer's WinTAK, ATAK, or baseTAK.
-- **Three-layer echo prevention** by `(callsign+SSID, station_number, gateway_uid)` tuple — own packets, peer-bridged-edit packets, and sibling-gateway packets each handled distinctly. No echo loops, even on busy multicast.
-- **CRC16 wire-identity** on every marker — round-trip recognition survives gateway restarts.
-- **Raw AX.25 dispatched byte-exact to KISS** — no text-decode mangling, no path-byte corruption.
-- **Open wire format** — the TAK-APRS Protocol Extension is published as an open spec at [cot_radio_aprs](https://github.com/adamstern2000/cot_radio_aprs), so independent implementations can interoperate.
-- **Gate funnel architecture** — L1 transport → L2 class → L3 feature → L4 origin, short-circuit AND, verified end-to-end by a bridge QA harness.
-- **Simultaneous multi-transport** — APRS-IS, VHF/UHF RF, and HF RF run concurrently from one digiTAK instance. Per-transport gates and rate limits; HF traffic is feature-gated to positions + chat at the L3 layer with a separate compression codec to fit the band.
+| Audience | Lead with |
+|---|---|
+| **ARES / RACES / ACS** | "Every APRS station on the net shows up on every TAK client. Your APRS infrastructure becomes the SA backbone — markers, chat, weather, NWS bulletins, all native." |
+| **SAR teams** | "An APRS-equipped volunteer who shows up to a SAR call has nothing but a handheld radio — and they're a first-class participant the moment they beacon. No app to install on the volunteer's gear." |
+| **EmComm net controls** | "Bridge two or more TAK networks over RF. State EOC sees the county-level picture without an internet uplink. HF reaches the next state; VHF reaches the next county. Same Pi." |
+| **Fire / Wildland EmComm** | "When the WAN is dark, APRS is what your auxcomm has. digiTAK turns it into the SA wire for the IC. Mutual-aid units appear on the map by callsign." |
+| **Public-safety auxcomm** | "The auxcomm net stops being parallel infrastructure. APRS hams aren't a separate radio room anymore — they're first-class participants on the same shared picture as the ATAK / WinTAK clients." |
+| **Ham radio operators** | "Run any TAK client as your APRS UI. ATAK, WinTAK, iTAK, or baseTAK in a browser — modern map, click-to-message, every station with its proper APRS icon. Connect a USB GPS and the digiTAK is also your tracker." |
 
 ---
 
-## What you need
+## Killer features (the headline bullets)
 
-- A **Raspberry Pi 4/5** (4 GB+) or any modern Linux box. Python 3.8+, systemd.
-- A **VHF/UHF rig** for regional reach (~30–100 mi), driven by a USB audio interface (Digirig, SignaLink) or any **KISS-compatible TNC** over serial or TCP. Direwolf modem is bundled.
-- An **HF rig** *(optional)* for continental reach (hundreds to thousands of miles), driven via USB audio interface. Both radios can be connected to the same digiTAK at once.
-- An **amateur callsign** with APRS-IS passcode and HF privileges for the bands you intend to use.
-
-## What you don't need
-
-- **No internet.** Bridge-mode-over-RF works entirely off-grid.
-- **No TAK Server.** digiTAK talks to ATAK, WinTAK, and iTAK clients directly on the LAN.
-- **No cellular.** Solar and a battery is enough.
-- **No subscription.** Offline install — every Python wheel ships in the tarball.
-
-## Install
-
-```bash
-tar xzf cot_radio-2.1.12.tar.gz -C /opt
-cd /opt/cot_radio && sudo bash install.sh
-```
-
-Admin UI on port 5101. Open `http://<host>:5101` to set callsign, SSID, gateway name, and RF mode.
+1. **Drop it in, instant APRS gateway** — plug a digiTAK onto any network and the LAN gains a full APRS bridge. No glue.
+2. **Bidirectional bridge** — APRS → TAK *and* TAK → APRS. DM a callsign from ATAK; the message lands on RF or APRS-IS.
+3. **Full APRS icon set on the map** — every primary and alternate APRS symbol (digi, mobile, weather, ambulance, fire engine, boat, aircraft, NWS object) renders as a proper TAK icon when paired with baseTAK. Not generic dots.
+4. **Open TAK-APRS Protocol Extension v2.3** — public spec, third-party-implementable, wire-format documented.
+5. **Multi-transport** — Direwolf-managed VHF/UHF + external KISS TNC support + APRS-IS Tier 2 simultaneously. Single Pi, multiple radio ports.
+6. **Sibling-gateway coexistence** — multiple digiTAKs on one RF channel coordinate so they don't re-emit or re-digipeat each other's traffic. (Standard channel collisions still apply — half-duplex RF is half-duplex RF.)
+7. **Full digipeater** — WIDE1/WIDE2 aliases, dedup window, own-echo filter, IGate beacon on both RF and APRS-IS.
 
 ---
 
-## Status
+## The two modes (be precise)
 
-**Beta — shipping soon** (v2.1.12, VHF/UHF + APRS-IS): Beta-ready.
+### Bridge mode — alongside the xTAK suite
+- digiTAK runs on its own Pi, talks to baseTAK and other xTAK products over standard TAK protocols on the LAN.
+- baseTAK owns the broader SA picture; digiTAK extends it onto amateur radio in both directions.
+- Adds: TAK → APRS broadcast bridging, mesh-to-APRS gating (forward loraTAK origins or not — per-operator policy), datapackage notifications onto APRS, group-origin prefix for chat attribution.
 
-**In active development:**
-- **HF transport** — binary compression codec, separate gating, positions + chat fidelity. Design complete (FR-081); implementation in progress.
-
-**Also on the roadmap:**
-- APRS DM ack/rej with retry queue
-- TAK 911 → APRS Mic-E emergency alerts
-- Bulletin TX with slot picker (BLN0–9, BLNA–Z)
-- Station list view in admin UI
-- NWS warning shape polygons (currently text-only)
-
----
-
-## Channel adapters
-
-*Derived from the page above; for use in social, web, video, and other channels.*
-
-### Tagline
-**TAK on the air. VHF for the region. HF for the continent. No internet either way.**
-
-### Social pitch — 50 words
-Two sites. Two states. Two thousand miles. Same TAK picture. digiTAK federates TAK networks over amateur radio — VHF for regional, HF for continental, APRS-IS for internet. Run all three transports at once from one Pi. EmComm, SAR, and ARES districts finally have a continental-scale, no-internet TAK backbone.
-
-### Long pitch — 200 words
-digiTAK is the bridge between the TAK ecosystem (ATAK, WinTAK, iTAK) and the worldwide amateur radio network. Run two or more digiTAK sites and they form a federated mesh — markers, team color, custom icons, chat, and DMs all round-trip with full TAK fidelity over VHF/UHF and APRS-IS. Add a digipeater between sites to extend RF reach. Add another digiTAK to grow the operating area.
-
-For continental scale, hook a second radio to digiTAK — an HF rig — and the same gateway bridges WinTAK installs hundreds or thousands of miles apart over the ionosphere. HF carries a narrower feature set (positions and chat, by physics of the band), encoded through a binary compression codec to fit. State EOC sees state EOC. ARES district sees ARES region. All transports run concurrently from one digiTAK.
-
-In single-site mode, every APRS station within reach appears on every TAK client on your LAN as a chat-able contact. Full WIDE digipeater, RX+TX IGate, SmartBeacon, Part 97 compliance gates. Runs on a Pi. Offline install. Open wire spec.
-
-### Soul quote
-> Lossless cross-gateway TAK fidelity. Team, role, icons, attribution — all of it survives the round-trip through the APRS wire.
-
-### Audience tags
-**Primary:** amateur radio operators, EmComm, ARES/RACES, ACS, packet-radio enthusiasts, HF digital-modes operators.
-**Secondary:** state and national EmComm coordinators, SATERN, MARS-affiliated operators, SAR teams with ham resources, EOCs running off-grid drills, first responders with ham volunteers, preppers running multi-state networks.
-
+### Standalone mode — digiTAK alone is the whole install
+- No baseTAK anywhere on the network. Just digiTAK and the TAK clients that connect.
+- digiTAK hosts its own chat router, TAK router, and APRS bridge. Every ATAK / WinTAK / iTAK on the LAN connects directly.
+- Adds: bulletin subscriptions (BLN0–BLN9 + NWS wildcards), 5-minute inbound holding buffer for startup, per-participant TCP fan-out for DM/team chat.
+- **The whole TAK environment fits on one Pi.**
 
 ---
 
-*© 2026 xTAK Project. All rights reserved. xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, and aiTAK are trademarks of the xTAK Project. ATAK, WinTAK, iTAK, and TAK are products of the U.S. Government via the TAK Product Center; the xTAK Project is not affiliated with the TAK Product Center. [Full copyright and trademark notice →](../COPYRIGHT.md)*
+## Suite-level pairings (1 + 1 = 3 stories)
+
+- **digiTAK + baseTAK** = the best APRS map experience. Full APRS icon set + map filter by APRS device type with a click. *Lead pitch for any ham audience.*
+- **digiTAK + loraTAK** = full mesh partners on the TAK chat thread. A ham with an HT can message a SAR volunteer with a $40 Meshtastic radio. Both products speak standard TAK on the wire. *Lead pitch for SAR / EmComm volunteer scenarios.*
+- **digiTAK alone** = appliance APRS-to-TAK gateway for a single site or operator.
+
+---
+
+## Honest disclosures
+
+- **HF transport** is on the roadmap, not yet shipped — VHF + APRS-IS today.
+- **Protocol Extension v2.3** is the current wire-format version. (Earlier docs said v1.2; corrected.)
+- **Sibling coexistence:** digiTAKs coordinate to not re-emit each other's traffic. They don't eliminate RF channel collisions — that's physics. The page says this honestly.
+
+---
+
+## Sample social posts
+
+### X / Twitter (≤ 240 chars)
+
+> **POST 1 — the drop-in hook**
+> Drop a digiTAK onto any network.
+>
+> Every ATAK, WinTAK, iTAK, and baseTAK browser on the LAN now sees APRS stations as native TAK contacts. Every TAK marker goes back out onto RF.
+>
+> No glue. No integration. Just standard TAK.
+
+> **POST 2 — the volunteer-with-a-handheld story**
+> A volunteer pulls into your SAR base camp with an APRS handheld and nothing else.
+>
+> The moment they beacon, they're on the IC's WinTAK. The IC DMs them from the laptop — the message lands on their radio's screen.
+>
+> No app. No new gear. No new training.
+
+> **POST 3 — the picture quality angle**
+> digiTAK + baseTAK = every APRS station with its proper icon on a modern map.
+>
+> Weather stations, digipeaters, mobile trackers, NWS objects, ambulances — every primary and alternate APRS symbol rendered correctly. Not generic dots.
+>
+> Filter by device type with a click.
+
+> **POST 4 — the EmComm net angle**
+> The auxcomm net stops being parallel infrastructure.
+>
+> With digiTAK on the LAN, APRS hams aren't a separate radio room hanging off the side of the op. They're first-class participants on the same TAK picture the ATAK / WinTAK clients use.
+>
+> Same maps. Same chat thread. Same SA.
+
+> **POST 5 — the cross-mode chat hook**
+> digiTAK + loraTAK on the same network = a ham with a VHF HT can DM a SAR volunteer with a $40 Meshtastic radio.
+>
+> Same TAK chat thread. Different RF. Both speak standard TAK on the wire.
+
+### LinkedIn (400–800 chars)
+
+> **POST A — modernizing APRS**
+> If you're a ham radio operator running a long-standing APRS station and you've been looking at modern map apps with envy, this one's for you.
+>
+> digiTAK pairs your existing APRS hardware with any TAK client — ATAK on a tablet, WinTAK on a desktop, baseTAK in a browser — and your station finally has a UI that looks like 2026 instead of 1996. Modern basemaps, search by address, click-to-message, full APRS icon set rendered as proper symbols.
+>
+> Connect a USB GPS and the same Pi becomes your mobile tracker. APRS-IS Tier 2 baked in, WIDE1/WIDE2 digipeater, IGate beacon — everything an APRS operator expects, plus the bridge to TAK.
+>
+> Open wire spec (TAK-APRS Protocol Extension v2.3). Beta now: https://buymeacoffee.com/xtak
+
+> **POST B — EmComm activation story**
+> Day two of a multi-day exercise. The forward team is up a fire road with no cell, no Starlink, no LTE. Base camp is forty miles back. Both teams need the same picture.
+>
+> You drop a digiTAK at each site. A VHF antenna on a mast. The map on the IC's WinTAK at base camp shows the forward team's markers within seconds. The forward team's ATAK tablets see the IC's search grid the moment it's drawn.
+>
+> When a volunteer with an APRS rig drives in from the highway, their callsign appears on every TAK client on the network as a chat-able contact.
+>
+> No internet. No TAK Server. No cellular. Just amateur radio and a Pi at each end.
+
+---
+
+## Video script outlines
+
+### 30-second cinematic
+
+| 0:00–0:06 | Close-up on the back of an SUV at a fire-staging area. Hands plugging a digiTAK Pi into a portable power bank, antenna mast in the background. |
+| 0:06–0:14 | Cut to a rugged laptop in the IC vehicle. Map view zooms in — APRS stations populate across the region as native TAK contacts, each with its proper icon. |
+| 0:14–0:22 | Side-by-side: a ham operator holds up an APRS HT with the team's callsigns on its screen; the IC's laptop shows the same operator's callsign as a contact. |
+| 0:22–0:27 | Wide of the scene — IC truck, mast, antennas, dust in golden hour. |
+| 0:27–0:30 | Title card: **digiTAK. TAK on the air.** + buymeacoffee.com/xtak |
+
+### 60-second demo
+
+1. **Hook (0:00–0:08):** Drop the digiTAK on the network. Animation of the LAN icon gaining a "↔ APRS" link.
+2. **APRS in (0:08–0:25):** Pan over a state-sized map filling with APRS stations: digipeaters on mountaintops, weather beacons, mobile trackers on highways. VO: "Every APRS station in range, on every TAK client."
+3. **APRS out (0:25–0:42):** IC types a DM to a callsign in TAK. Cut to an APRS handheld screen showing the message arrive. VO: "Bidirectional. The IC's reply lands on the ham's radio."
+4. **Suite composition (0:42–0:55):** Side rail showing APRS contacts grouped, loraTAK mesh contacts grouped, baseTAK browser users grouped. VO: "Pair with loraTAK and the ham chats with a SAR volunteer on a $40 mesh radio — same TAK thread."
+5. **Close (0:55–0:60):** Title card + URL.
+
+### 2-minute deep dive (ARRL conference style)
+
+- 0:00–0:20 The state of APRS-on-TAK today (mostly DIY, one-way feeds, plugin-only).
+- 0:20–0:50 What digiTAK is: full bidirectional gateway, on its own Pi, two modes.
+- 0:50–1:20 Modern UI story: baseTAK rendering APRS as proper icons + filter by type.
+- 1:20–1:45 The federation story: two digiTAKs at two sites, VHF and HF transports simultaneously.
+- 1:45–2:00 Open spec (TAK-APRS Protocol Extension v2.3). Beta access link.
+
+---
+
+## Live-demo talking points
+
+- **Plug it in.** "I'm not configuring anything. The digiTAK has a static IP on the LAN. The TAK clients on this network already see it."
+- **Show the side rail.** "APRSPrimary and APRSSecondary groups, every station grouped by feed."
+- **Click an APRS contact.** "Full identity — callsign, SSID, last beacon time, position, comment, battery telemetry if it's a tracker. Same shape as any TAK contact."
+- **Type a chat to a callsign.** "I'm typing to KN6XYZ-9, which is a vehicle tracker. Watch the digiTAK's TX VU meter spike." (Show the meter.)
+- **Show the admin UI on port 5101.** "RX and TX audio meters, live packet feed, counters. Standard ham-shack diagnostics."
+- **Demonstrate filter by APRS type.** "Show only weather stations during a SKYWARN net. Only digipeaters during a band test. Only mobile trackers during a race."
+
+---
+
+## Objections + responses
+
+| Objection | Response |
+|---|---|
+| "I already have UI-View / APRSIS32 / Xastir / etc." | "Keep them — digiTAK is in addition. The benefit is that your APRS station's picture is now also on every TAK client your team uses, with a modern UI and the same chat thread as the rest of the operation." |
+| "Is the wire format proprietary?" | "Open spec: TAK-APRS Protocol Extension v2.3 at github.com/adamstern2000/cot_radio_aprs. Third-party implementations welcome." |
+| "What about packet collisions?" | "Sibling digiTAKs coordinate so they don't re-emit each other's traffic. Standard channel collisions still apply — half-duplex RF is half-duplex RF." |
+| "Why not just use plain APRS-IS?" | "One-way. Plain APRS-IS feeds to a website. digiTAK closes the loop — TAK users can write back to RF." |
+| "Does it work without internet?" | "Yes. APRS-IS is optional. Direwolf + VHF rig is enough. The whole stack runs on a Pi off battery power." |
+
+---
+
+## Visual / image cues
+
+Strong visuals:
+- **Pi on a tailgate** with a VHF/HF radio + antenna mast. Real ham-shack-in-the-field aesthetic.
+- **The two-radio shot** — digiTAK Pi with two SDR/TNC ports labeled VHF and HF, both with audio meters lit.
+- **APRS-station-on-a-modern-map** — baseTAK with the New England APRS picture (current outcome image).
+- **Ham operator with HT** — at a fire-staging area, ARES vest, radio in hand with TAK callsigns on the handheld's screen.
+
+Avoid: military / defense imagery, weapons, plate carriers, urban-warfare aesthetic, neon.
+
+---
+
+## Key terms
+
+- **APRS** — Automatic Packet Reporting System. Ham-radio data network for positions, weather, messages.
+- **IGate** — APRS station that bridges RF to APRS-IS over internet.
+- **Digipeater** — APRS station that repeats packets to extend range; WIDE1/WIDE2 are standard alias schemes.
+- **Direwolf** — open-source soundcard-modem software, the standard for AX.25 / APRS on Linux.
+- **APRS-IS** — the global internet backbone for APRS. Tier 2 = standard server tier hams connect to.
+- **KISS** — common framing protocol for talking to an external TNC over serial or TCP.
+- **SmartBeacon** — algorithm for motion-adaptive position beaconing (fast on highway, sparse at rest).
+
+---
+
+*Related: [`PROJECT-LEARNINGS-2026-05-19.md`](../PROJECT-LEARNINGS-2026-05-19.md), live site at `site/products/digiTAK.html`, wire spec at github.com/adamstern2000/cot_radio_aprs.*
