@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="loraTAK puts every Meshtastic LoRa node on your TAK map as a first-class contact. Position, telemetry, chat round-trip in both directions. Cheap, off-grid, mesh-resilient SA for SAR, EmComm, and outdoor ops." />
+  <title>loraTAK — Your Meshtastic Mesh, Now a TAK Network | xTAK Suite</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">PRODUCT / LORATAK</span>
+        <span class="readout__item">CODENAME / cot_mesh</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">STATUS / BETA</span>
+        <span class="readout__item">v 1.3.0</span>
+        <span class="readout__item"><span data-clock>—</span></span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="brand"><span class="brand__diamond"></span><span class="brand__word"><span class="accent">x</span>TAK</span></a>
+      <nav><ul class="nav__links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#suite">The Suite</a></li>
+        <li><a href="/about-tak.html">About TAK</a></li>
+        <li><a href="/#get-started">Get Started</a></li>
+        <li><a href="/support.html">Support</a></li>
+      </ul></nav>
+      <a href="/support.html" class="nav__cta">Early Adopter →</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / Products / <span class="text-cyan">loraTAK</span></div>
+      <div class="pagehead__status"><span class="status status--beta">Beta — shipping soon (Meshtastic backend)</span></div>
+      <h1 class="pagehead__title">Your Meshtastic mesh,<br>now a <em>TAK network.</em></h1>
+      <p class="pagehead__sub">
+        loraTAK puts every Meshtastic LoRa node on your TAK map as a first-class contact. Position,
+        telemetry, and chat round-trip in both directions. Cheap, off-grid, mesh-resilient situational
+        awareness for teams that already carry mesh radios.
+      </p>
+      <div class="hero__ctas" style="margin-top: 2rem;">
+        <a href="/support.html" class="btn btn--primary">Become an Early Adopter</a>
+        <a href="https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/loraTAK.md" target="_blank" rel="noopener" class="btn btn--ghost">Full Spec</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="container">
+      <div class="trust__inner">
+        <span>SAR Teams</span><span>Outdoor / Wilderness Ops</span><span>EmComm</span><span>Volunteer Fire</span><span>CERT</span><span>Preppers</span><span>Public Safety</span>
+      </div>
+    </div>
+  </div>
+
+  <figure class="hero-image">
+    <div class="container container--wide">
+      <div class="hero-image__frame">
+        <img src="/img/products/loratak-hero.png" alt="loraTAK at a SAR base camp — folding table at a forest trailhead with a Pi running loraTAK, Meshtastic radio, and a rugged laptop showing every team's mesh node as a TAK contact" loading="eager" />
+        <figcaption class="hero-image__caption">
+          <span class="hero-image__caption-label">LORATAK · SAR BASE CAMP · MESH ON MAP</span>
+          <span class="hero-image__caption-text">loraTAK at a SAR trailhead — a Pi gateway, a Meshtastic radio, and a WinTAK laptop showing every searcher's position as a first-class TAK contact. Mesh nodes clipped to packs, no cell tower in sight.</span>
+        </figcaption>
+      </div>
+    </div>
+  </figure>
+
+  <section class="scenario">
+    <div class="container">
+      <div class="scenario__grid">
+        <div class="scenario__sticky">
+          <span class="section__label section__label--coord" data-coord="LORA + TAK">SCENARIO</span>
+          <h2 class="section__title">A hundred-acre sweep.<br><em>Twelve $40 nodes.</em></h2>
+        </div>
+        <div class="scenario__body">
+          <p>
+            A volunteer SAR team is sweeping a hundred-acre property looking for a missing hiker.
+            Twelve searchers in two-person teams, fanned out across thick brush and steep terrain.
+            The base-camp ATAK tablet at the trailhead can't reach the far side of the ridge over
+            Wi-Fi. The handheld VHF radios are working but voice-only — base has no idea where any
+            of the search teams actually <em>are.</em>
+          </p>
+          <p>
+            Every searcher carries a $40 Meshtastic node clipped to their pack. The team lead drops
+            one more node at base camp, plugs it into a Pi running loraTAK, and powers the Pi off a
+            battery. Within a minute, every Meshtastic node appears on the base camp's WinTAK map as
+            a moving icon with the searcher's name, team color, and battery level.
+          </p>
+          <p>
+            The IC drops a search-sector polygon in WinTAK; loraTAK pushes a one-line summary to every
+            mesh device in the field. The searchers see the new sector on their Meshtastic display
+            and reroute. When a team finds sign of the hiker, they type a chat on their Meshtastic.
+            It appears in the IC's WinTAK chat panel with the team's callsign and position attached.
+          </p>
+          <p><strong>No cell. No Wi-Fi. No internet.</strong> <em>Mesh radios and a Pi.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="03 / CAPABILITIES">WHAT YOU CAN DO</span>
+      <h2 class="section__title">Three things<br>loraTAK <em>does well.</em></h2>
+
+      <div class="outcomes" style="margin-top: 4rem;">
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 01</div>
+            <h3 class="outcome__title">Make every mesh node a TAK contact</h3>
+            <p class="outcome__lede">
+              Mesh node positions flow onto ATAK, WinTAK, iTAK, and baseTAK maps in real time as SA
+              markers. The mesh device doesn't need any TAK awareness — it beacons its position
+              normally, and loraTAK translates.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Operator-chosen icon per node</strong> — assign a team color, role, and icon to each Meshtastic user: full MIL-STD-2525C symbology, or any standard ATAK iconset. Icons reflect the role on the team, not the radio model.</li>
+              <li><strong>Position liveness</strong> — keepalive beacons keep mesh markers visible every 60 seconds even when stationary radios beacon every few hours.</li>
+              <li><strong>Synthetic positions</strong> — GPS-off mesh devices still appear at the gateway location so they're chat-able.</li>
+              <li><strong>Telemetry on the map</strong> — battery, voltage, channel utilization, temperature, SNR all visible in TAK position details.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/loraTAK/loratak-01-smokies-sar.png" alt="A baseTAK 3D oblique view of a Great Smoky Mountains SAR sweep — Meshtastic LoRa nodes deployed along the Boulevard and Le Conte ridgelines, search-area polygons drawn over the terrain, a callout open for SEARCH AREA BRAVO with mesh node IDs M-05 through M-08, and a left rail listing the green friendly mesh contacts and orange neutral SAR drawings" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 02</div>
+            <h3 class="outcome__title">Run a real chat bridge in both directions</h3>
+            <p class="outcome__lede">
+              Mesh chat lands in TAK chat. TAK chat lands on mesh devices. DMs work both ways.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Mesh primary channel → TAK All Chat Rooms</strong> — broadcast text from any mesh device reaches every TAK client on the network.</li>
+              <li><strong>TAK chat → mesh</strong> — broadcast TAK chat relays to the mesh primary channel.</li>
+              <li><strong>Addressable DMs</strong> — TAK users can DM individual mesh nodes by name; mesh users can DM TAK team names or callsigns.</li>
+              <li><strong>Multi-part outbound to LoRa users</strong> <span class="text-amber">(in development)</span> — messages longer than the Meshtastic packet limit will split into multiple LoRa sends so the receiving mesh user gets the full message. (Current build truncates with a "…" suffix.)</li>
+              <li><strong>Read receipts</strong> — TAK clients get acknowledgment checkmarks when mesh nodes confirm delivery over LoRa.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/loraTAK/loratak-02-chat-bridge.png" alt="A SAR coordinator in an orange vest seated inside a base-camp pop-up tent, lit by overhead LED work light, working on a rugged Windows laptop showing a TAK chat panel and holding a Meshtastic handheld device displaying the mirrored chat thread" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 03</div>
+            <h3 class="outcome__title">Full mesh partner with digiTAK and the xTAK suite</h3>
+            <p class="outcome__lede">
+              loraTAK and <a href="/products/digiTAK.html" style="color: var(--cyan);">digiTAK</a>
+              are <strong>full mesh partners on the TAK network.</strong> A SAR volunteer with a $40
+              Meshtastic radio can DM a ham operator with an APRS handheld; a weather-station
+              beacon on APRS sits next to a hiker's LoRa node on the same map. Every TAK client
+              (baseTAK, ATAK, WinTAK, iTAK) sees both feeds as native contacts.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>LoRa users chat with APRS users (and every TAK client)</strong> — a Meshtastic message routes from LoRa → TAK GeoChat on the LAN → digiTAK → APRS-IS or RF, end to end. Both products speak the standard TAK protocol, so the same chat thread carries Meshtastic users, APRS users, and TAK-client users together.</li>
+              <li><strong>Run a Meshtastic gateway and an APRS gateway side-by-side</strong> with no port collisions or echo loops.</li>
+              <li><strong>Multi-NIC Pi-as-AP setups handled correctly</strong> — works when the gateway has a wired LAN and a Wi-Fi AP on the same Pi.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/loraTAK/loratak-03-suite.png" alt="Technical schematic in dark mode showing the TAK network on LAN at top with ATAK, WinTAK, and iTAK icons, and five xTAK product cards arranged in a row below: loraTAK, digiTAK, baseTAK, sdrTAK, and chatTAK — each connected to the shared network bar" loading="lazy" />
+          </figure>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CAPABILITY CATALOG ============== -->
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="06 / DETAIL">EVERY FEATURE</span>
+      <h2 class="section__title reveal">What's <em>in the box.</em></h2>
+      <p class="reveal" data-delay="1" style="font-size: 1.1rem; color: var(--ink-body); line-height: 1.6; max-width: 64ch; margin-top: 1.4rem;">
+        loraTAK is a bidirectional Meshtastic-to-TAK gateway. Field teams
+        running stock Heltec, T-Beam, RAK, or Station-G2 hardware appear as
+        first-class TAK contacts with positions, chat, and telemetry.
+      </p>
+
+      <ul class="capabilities reveal" data-delay="2">
+        <li class="capability"><strong>Meshtastic SDK integration</strong> — works with stock firmware. No custom radio build required.</li>
+        <li class="capability"><strong>Operator-chosen icons</strong> — assign any team color, role, and icon to each Meshtastic user. Use the full MIL-STD-2525C symbol set, or load any standard ATAK iconset (firefighter, SAR, medic, etc.) and assign it. Icons reflect the role on the team, not the radio model.</li>
+        <li class="capability"><strong>Bidirectional position + chat</strong> — full round-trip between TAK clients and the mesh.</li>
+        <li class="capability"><strong>60-second keepalive beacons</strong> anchor mesh-node presence in TAK even when nodes go quiet.</li>
+        <li class="capability"><strong>Multi-part outbound to LoRa</strong> <span class="text-amber">(in development)</span> — outgoing messages longer than the Meshtastic packet limit will split across multiple LoRa sends. Current build truncates long messages with a "…" suffix.</li>
+        <li class="capability"><strong>Multi-part inbound reassembly</strong> — long mesh-origin messages that arrive as multiple LoRa packets reassemble cleanly on the TAK side.</li>
+        <li class="capability"><strong>Read receipts and addressable DMs</strong> across the LoRa link.</li>
+        <li class="capability"><strong>Synthetic positions</strong> for GPS-off mesh nodes — anchored from gateway location so they stay chat-able.</li>
+        <li class="capability"><strong>Mesh telemetry on the map</strong> — battery %, voltage, channel utilization, SNR — emitted as <code>&lt;__mesh_telem&gt;</code> JSON in every beacon.</li>
+        <li class="capability"><strong>Multi-NIC Pi-as-AP mode</strong> — eth0 for upstream, wlan0 as a soft AP for the mesh team to associate with.</li>
+        <li class="capability"><strong>Bidirectional TAK protobuf RX</strong> from radios that speak it — no XML round-trip.</li>
+      </ul>
+
+      <div class="choose reveal" data-delay="2">
+        <div class="choose__eyebrow">★ Choose loraTAK when</div>
+        <p class="choose__body">
+          Your field team has <strong>Meshtastic radios</strong> (or you can hand them
+          out for ~$40 each) and you want their positions and messages to
+          appear alongside your other TAK contacts.
+          <strong>License-free RF, multi-day battery life on solar.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <div class="cta-banner__eyebrow">☕ Beta · Early Access</div>
+          <h3 class="cta-banner__title">Get loraTAK in your hands now.</h3>
+          <p class="cta-banner__body">Become a supporter on Buy Me a Coffee and join the early-adopter Beta — get the current build, the next release, and direct engagement with the team.</p>
+        </div>
+        <a href="/support.html" class="btn btn--amber">Support on Buy Me a Coffee</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="HW + INSTALL">SPECS</span>
+      <h2 class="section__title">What loraTAK <em>needs.</em></h2>
+
+      <div class="specs" style="margin-top: 2rem;">
+        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Raspberry Pi (4 or 5, even a Zero 2 W works) or any Linux/macOS box with Python 3.10+</div></div>
+        <div class="specs__row"><div class="specs__key">Meshtastic radio</div><div class="specs__val">Any model the Meshtastic firmware supports — Heltec V3, T-Beam, RAK 4631, T-Echo, station-G2. USB serial or TCP.</div></div>
+        <div class="specs__row"><div class="specs__key">Network</div><div class="specs__val">A LAN — same one your ATAK / WinTAK clients are on</div></div>
+        <div class="specs__row"><div class="specs__key">TAK clients supported</div><div class="specs__val">ATAK, WinTAK, iTAK, baseTAK — any standard TAK client</div></div>
+        <div class="specs__row"><div class="specs__key">Internet</div><div class="specs__val">Not required · mesh ↔ TAK works entirely off-grid</div></div>
+        <div class="specs__row"><div class="specs__key">Mesh firmware</div><div class="specs__val">Stock Meshtastic firmware · no modifications required</div></div>
+        <div class="specs__row"><div class="specs__key">Future direction</div><div class="specs__val">Named for the LoRa layer, not a specific firmware. Architecture leaves room for Reticulum (RNS), custom Meshtastic forks, future LoRa transports.</div></div>
+        <div class="specs__row"><div class="specs__key">Version</div><div class="specs__val">cot_mesh v 1.3.0 (Beta · shipping soon)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <span class="section__label section__label--coord" data-coord="Q &amp; A">FAQ</span>
+      <h2 class="section__title">Questions<br>operators ask.</h2>
+
+      <div class="faq">
+        <details>
+          <summary>Does loraTAK require modified Meshtastic firmware?</summary>
+          <p>No. Stock Meshtastic firmware works. loraTAK reads the device's standard position and chat traffic via USB serial or TCP and translates it to TAK.</p>
+        </details>
+        <details>
+          <summary>What if a mesh node turns its GPS off?</summary>
+          <p>Silent (GPS-off) mesh nodes get a synthetic position at the gateway location with a "noGPS" marker so they're chat-able. Three independent safety checks prevent overwriting a real GPS fix if one ever arrives.</p>
+        </details>
+        <details>
+          <summary>Do I need TAK Server?</summary>
+          <p>No. loraTAK talks to ATAK, WinTAK, and iTAK clients directly on your LAN.</p>
+        </details>
+        <details>
+          <summary>Can mesh users chat with TAK users (and vice versa)?</summary>
+          <p>Yes. Mesh primary channel ↔ TAK All Chat Rooms works in both directions. Addressable DMs work too — a TAK user can DM a mesh node by name, and a mesh user can DM a TAK callsign.</p>
+        </details>
+        <details>
+          <summary>What if a chat message is too long for a LoRa frame?</summary>
+          <p>loraTAK auto-truncates with a "…" suffix to fit the LoRa payload limit.</p>
+        </details>
+        <details>
+          <summary>Could I use a non-Meshtastic LoRa stack with loraTAK?</summary>
+          <p>The shipping backend is Meshtastic. The architecture is designed to support alternate LoRa stacks (Reticulum/RNS, custom Meshtastic forks, future transports) without changing the TAK-facing surface.</p>
+        </details>
+        <details>
+          <summary>Does loraTAK work with civilian (CivTAK) builds?</summary>
+          <p>Yes. loraTAK speaks the same TAK protocol all builds use.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span style="color: var(--cyan);">x</span>TAK</div>
+          <p class="footer__brand-tag">Open situational awareness for the team that has to coordinate when the WAN is gone.</p>
+        </div>
+        <div class="footer__col"><h4>Products</h4><ul>
+          <li><a href="/products/baseTAK.html">baseTAK</a></li>
+          <li><a href="/products/digiTAK.html">digiTAK</a></li>
+          <li><a href="/products/loraTAK.html">loraTAK</a></li>
+          <li><a href="/products/chatTAK.html">chatTAK</a></li>
+          <li><a href="/products/sdrTAK.html">sdrTAK</a></li>
+          <li><a href="/products/netTAK.html">netTAK <span class="text-amber">(future)</span></a></li>
+          <li><a href="/products/aiTAK.html">aiTAK <span class="text-amber">(future)</span></a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Resources</h4><ul>
+          <li><a href="/about-tak.html">About TAK</a></li>
+          <li><a href="/support.html">Become an Early Adopter</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK" target="_blank" rel="noopener">GitHub Repo</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul>
+          <li><a href="https://buymeacoffee.com/xtak" target="_blank" rel="noopener">Buy Me a Coffee</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 xTAK Project · All rights reserved</div>
+        <div>xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, aiTAK are trademarks of the xTAK Project · <a href="/copyright.html">Notice</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

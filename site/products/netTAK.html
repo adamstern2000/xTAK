@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="netTAK is the base operating layer for every mobile xTAK device — sdrTAK, chatTAK, loraTAK, digiTAK, baseTAK Lite. Standalone or self-healing mesh over Wi-Fi / Ethernet / optional Wi-Fi HaLow. Future release." />
+  <title>netTAK — The Operating Layer for Every Mobile xTAK Device | xTAK Suite</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">PRODUCT / NETTAK</span>
+        <span class="readout__item">FIELD PLATFORM · MESH</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">STATUS / FUTURE</span>
+        <span class="readout__item">DEV / LAB</span>
+        <span class="readout__item"><span data-clock>—</span></span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="brand"><span class="brand__diamond"></span><span class="brand__word"><span class="accent">x</span>TAK</span></a>
+      <nav><ul class="nav__links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#suite">The Suite</a></li>
+        <li><a href="/about-tak.html">About TAK</a></li>
+        <li><a href="/#get-started">Get Started</a></li>
+        <li><a href="/support.html">Support</a></li>
+      </ul></nav>
+      <a href="/support.html" class="nav__cta">Early Adopter →</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / Products / <span class="text-cyan">netTAK</span></div>
+      <div class="pagehead__status"><span class="status status--future">Future release · in active development</span></div>
+      <h1 class="pagehead__title">The operating layer<br>for every <em>mobile</em><br>xTAK device.</h1>
+      <p class="pagehead__sub">
+        netTAK is the base platform that runs on every Pi-class mobile xTAK device — sdrTAK,
+        chatTAK, loraTAK, digiTAK, baseTAK Lite. It manages each device's services and exposes a
+        unified admin surface. Use a netTAK standalone for a remote single-site role, or mesh
+        multiple together over Wi-Fi, Ethernet, and (optionally) Wi-Fi HaLow for ridge-to-ridge ranges.
+      </p>
+      <div class="hero__ctas" style="margin-top: 2rem;">
+        <a href="/support.html" class="btn btn--primary">Get Notified at Release</a>
+        <a href="https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/netTAK.md" target="_blank" rel="noopener" class="btn btn--ghost">Read the Design</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="container">
+      <div class="trust__inner">
+        <span>Wildland Fire</span><span>Multi-day SAR</span><span>Deployable EmComm</span><span>State / County EM</span><span>Tactical Training</span><span>Public-Safety Auxcomm</span>
+      </div>
+    </div>
+  </div>
+
+  <figure class="hero-image">
+    <div class="container container--wide">
+      <div class="hero-image__frame">
+        <img src="/img/products/nettak-hero.png" alt="netTAK at a forward operating site — a wildland firefighter alone on a mountain ridge consulting a rugged tablet, distant wildfire smoke and mountain ranges at golden hour" loading="eager" />
+        <figcaption class="hero-image__caption">
+          <span class="hero-image__caption-label">NETTAK · FORWARD OPERATING SITE · GOLDEN HOUR</span>
+          <span class="hero-image__caption-text">A wildland crew at a forward operating site — netTAK at the edge of the deployment, meshing back to the IC tent across miles of terrain. The map stays current; the picture survives the hop.</span>
+        </figcaption>
+      </div>
+    </div>
+  </figure>
+
+  <section class="scenario">
+    <div class="container">
+      <div class="scenario__grid">
+        <div class="scenario__sticky">
+          <span class="section__label section__label--coord" data-coord="WILDFIRE + MESH">SCENARIO</span>
+          <h2 class="section__title">Five Pis.<br><em>One self-healing mesh.</em><br>A real LAN across miles.</h2>
+        </div>
+        <div class="scenario__body">
+          <p>
+            A wildland fire crew is operating in mountainous terrain over a five-day deployment. The
+            Incident Command Post is at the trailhead, three squad bases are spread across the
+            operations area, and a logistics camp is set up at the watering point two miles downhill.
+            Cellular is dead. The radios work for voice but can't carry the IC's map. Starlink is
+            unreliable under the canopy.
+          </p>
+          <p>
+            The crew deploys a netTAK at every site — five nodes in total, each in a Pelican case,
+            each running on a 12V battery. The nodes auto-form a self-healing 802.11s + BATMAN mesh.
+            Some hops are short-haul 2.4 / 5 GHz Wi-Fi between adjacent sites; others are 802.11ah
+            HaLow with a small Yagi pointed up a ridge for the long-haul links.
+          </p>
+          <p>
+            Every netTAK runs the xTAK services the crew needs in the field: a <strong>baseTAK Lite</strong>
+            serving a tactical map browser to anyone on the mesh, a <strong>digiTAK</strong> feeding the
+            regional ham network into the mesh-wide TAK picture, a <strong>chatTAK</strong> letting
+            volunteers join via their phones at any site, and an <strong>sdrTAK</strong> at the IC's
+            node watching for inbound mutual-aid helicopters.
+          </p>
+          <p>
+            When one of the squad sites' uplink fails — antenna knocked over by a branch, battery low
+            — the mesh re-routes around it within seconds. The squad's view of the TAK picture stays
+            current. Their chat lands at the IC's tent without anyone touching a config.
+          </p>
+          <p><strong>Five Pis. One self-healing mesh.</strong> <em>A real LAN across miles of fire ground.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="04 / CAPABILITIES">WHAT YOU CAN DO</span>
+      <h2 class="section__title">Four things<br>netTAK <em>will do.</em></h2>
+
+      <div class="outcomes" style="margin-top: 4rem;">
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 01</div>
+            <h3 class="outcome__title">Run xTAK on every field device</h3>
+            <p class="outcome__lede">
+              netTAK is the base operating layer for every mobile xTAK device. Pick the service that
+              fits the role — sdrTAK on the device with line-of-sight to the sky, loraTAK on the
+              device with the Meshtastic radio, chatTAK at a volunteer post, digiTAK at the radio
+              shack, baseTAK Lite at the IC's site — and netTAK runs it as a managed service.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>One install workflow for the whole suite</strong> — each xTAK service runs as a managed unit on netTAK with lifecycle, config, logging, and admin handled by the platform.</li>
+              <li><strong>Unified admin surface</strong> — one web UI per device shows the running services, their status, and the device's role.</li>
+              <li><strong>Fleet management</strong> — when netTAKs see each other, every netTAK can see the status of every other netTAK on the mesh. Restart services, push config, check status across the entire field deployment from one node.</li>
+              <li><strong>Same services that ship standalone</strong> — sdrTAK, loraTAK, digiTAK, chatTAK, and baseTAK Lite all run on netTAK as the same products you'd install on a bare Pi today.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/netTAK/nettak-01-multi-agency.png" alt="A multi-agency wildland-fire forward operating site at golden hour, with a single Pi-based netTAK appliance in an open Pelican case at center on a folding camp table; about ten public-safety operators on different devices — USFS firefighter with an ATAK tablet, incident commander with WinTAK, SAR volunteer on a phone browser, deputy with iTAK iPad, paramedic at a Toughbook, ARES ham with an APRS handheld, NPS ranger, CAL FIRE captain on radio, EOC liaison — arranged across foreground, midground, and background, with a fire engine and antenna mast visible at the edges and a smoke column on the ridgeline" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 02</div>
+            <h3 class="outcome__title">Mesh them together — or run a single node standalone</h3>
+            <p class="outcome__lede">
+              netTAK supports three deployment patterns. Pick the one your operation needs; mix and
+              match across sites.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Standalone</strong> — a single netTAK running its xTAK services, no mesh required. For remote outposts, single-site deployments, or any role that doesn't need peer-to-peer routing. Joins the local TAK LAN like a fixed install.</li>
+              <li><strong>Local mesh (Wi-Fi + Ethernet)</strong> — multiple netTAKs auto-mesh over the Pi's built-in Wi-Fi and/or wired Ethernet. No specialty radios, no licensed spectrum, no cost beyond the Pis.</li>
+              <li><strong>Long-range mesh (with Wi-Fi HaLow)</strong> — add 802.11ah HaLow radios to span miles between sites. Pair with directional antennas for ridge-to-ridge and watershed-to-watershed bridges.</li>
+              <li><strong>Self-healing, self-organizing, layer-2 transparent</strong> — when a node drops, traffic re-routes within seconds. Standard TAK traffic crosses without translation.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/netTAK/nettak-02-three-modes.png" alt="Three-panel tactical schematic showing netTAK's three deployment patterns: Panel 1 STANDALONE (single Pi node), Panel 2 LOCAL MESH (multiple nodes meshed over Wi-Fi/Ethernet), Panel 3 LONG-RANGE MESH (multiple nodes connected with Wi-Fi HaLow and directional antennas)" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 03</div>
+            <h3 class="outcome__title">Distribute maps in the field, no Operations Center required</h3>
+            <p class="outcome__lede">
+              Every netTAK node running baseTAK Lite includes the same tileserver baseTAK runs at the
+              EOC — so a forward site can distribute maps locally, without backhauling to headquarters
+              and without an internet uplink in the field.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Pre-load the netTAK node</strong> with regional terrain (MBTiles, XYZ tile sets).</li>
+              <li><strong>Live distribution to EUDs</strong> — every ATAK and WinTAK tablet that joins the local mesh pulls tiles directly from the netTAK node it can reach.</li>
+              <li><strong>Sync from any forward site</strong> — operators arriving at a remote staging area can download local map sets from the netTAK there, without ever connecting to the operations center.</li>
+              <li><strong>Resilient to long deployments</strong> — if the mesh hop back to the EOC fails, the local node keeps serving maps; field teams stay current.</li>
+              <li><strong>Same tile format everywhere</strong> — what baseTAK serves at the EOC, baseTAK Lite serves at every forward site. One pre-load workflow.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/netTAK/nettak-03-forward-maps.png" alt="Wildland firefighters at a forward staging area on a mountain ridge — open Pelican case holding a Pi-based netTAK on a folding table, two firefighters consulting rugged Android tablets pulling tiles from the netTAK, a third referencing a paper map, golden-hour mountain backdrop" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 04</div>
+            <h3 class="outcome__title">Add surveillance and ISR feeds</h3>
+            <p class="outcome__lede">
+              netTAK's higher bandwidth (compared to LoRa or APRS) makes it practical to carry video
+              and other rich feeds across a deployment.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>IP cameras</strong> at sentry points, gate checks, parking lots — visible to every TAK client on the mesh.</li>
+              <li><strong>Drone telemetry and video feeds</strong> routed through the mesh to the IC's screen.</li>
+              <li><strong>Sensor packages</strong> — weather stations, perimeter sensors, anything IP-based.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/netTAK/nettak-04-isr.png" alt="A Search and Rescue operator in a navy SAR vest launching a civilian DJI-style drone from a clearing; a netTAK device on a folding table with cables routed to a small panel antenna; a rugged tablet displaying the drone telemetry as a TAK overlay" loading="lazy" />
+          </figure>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CAPABILITY CATALOG ============== -->
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="06 / DETAIL">EVERY FEATURE</span>
+      <h2 class="section__title reveal">What's <em>in the box.</em>
+        <span class="status status--future" style="display: block; margin-top: 0.6rem; font-size: 0.85rem;">★ Design phase — first ship 2026Q3 estimated</span>
+      </h2>
+      <p class="reveal" data-delay="1" style="font-size: 1.1rem; color: var(--ink-body); line-height: 1.6; max-width: 64ch; margin-top: 1.4rem;">
+        netTAK is mesh-networking infrastructure for field deployment.
+        Drop Pi-sized boxes around an operations area and they self-organize
+        into a wireless mesh that carries TAK traffic when there's no LTE,
+        no satellite, and no fixed AP. The capability list below is the
+        design target, not a shipped product.
+      </p>
+
+      <ul class="capabilities reveal" data-delay="2">
+        <li class="capability"><strong>802.11s mesh + B.A.T.M.A.N. routing</strong> on stock Linux Wi-Fi — no custom radio drivers.</li>
+        <li class="capability"><strong>Wi-Fi HaLow (802.11ah)</strong> for long-range, low-bandwidth backhaul between sites.</li>
+        <li class="capability"><strong>Local DHCP / DNS / HTTPS termination</strong> so TAK clients on the mesh don't need to know anything about it.</li>
+        <li class="capability"><strong>Self-configuring backbone</strong> — drop a node, it joins. No keys, no console, no provisioning.</li>
+        <li class="capability"><strong>Gateway role</strong> — one node can bridge the mesh to an upstream LTE, satellite, or internet pipe.</li>
+      </ul>
+
+      <div class="choose reveal" data-delay="2">
+        <div class="choose__eyebrow">★ Choose netTAK when</div>
+        <p class="choose__body">
+          You're running an exercise, SAR operation, festival, or remote camp
+          where <strong>there's no infrastructure</strong> and you want the TAK picture
+          to <strong>work across kilometers of self-mesh radio</strong>. Currently design
+          phase — first ship 2026Q3 estimated.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <div class="cta-banner__eyebrow">☕ Future release · Get notified</div>
+          <h3 class="cta-banner__title">Be first when netTAK ships.</h3>
+          <p class="cta-banner__body">netTAK is in active development. Hardware platform is being validated, the xTAK service stack is in lab testing. Become an Early Adopter and you'll get the Beta build the moment it's cut.</p>
+        </div>
+        <a href="/support.html" class="btn btn--amber">Support on Buy Me a Coffee</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="HW + INSTALL">SPECS</span>
+      <h2 class="section__title">What netTAK <em>will use.</em></h2>
+      <p style="font-size: 0.9rem; color: var(--ink-dim); margin-top: 0.5rem; font-family: var(--font-mono);">— Specs firming up as the platform is validated.</p>
+
+      <div class="specs" style="margin-top: 2rem;">
+        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Raspberry Pi (Pi 5 recommended; Pi 4 for lower-cost nodes)</div></div>
+        <div class="specs__row"><div class="specs__key">Standalone or local mesh</div><div class="specs__val">Pi's built-in Wi-Fi · optionally Ethernet · optional USB Wi-Fi 6E adapter for higher throughput</div></div>
+        <div class="specs__row"><div class="specs__key">Long-range mesh</div><div class="specs__val">Optional Wi-Fi HaLow radio (USB or HAT) — Newracom NRC7292 common chipset. Only needed when miles-class links are required.</div></div>
+        <div class="specs__row"><div class="specs__key">Antennas</div><div class="specs__val">Omnidirectional for nearby nodes; directional Yagi / panel for long hops (HaLow only)</div></div>
+        <div class="specs__row"><div class="specs__key">Power</div><div class="specs__val">12V battery, solar, or generator</div></div>
+        <div class="specs__row"><div class="specs__key">Enclosure</div><div class="specs__val">Pelican case, ammo can, or 3D-printed weatherproof box for field deployments; bare Pi for fixed standalone roles</div></div>
+        <div class="specs__row"><div class="specs__key">Mesh technology</div><div class="specs__val">802.11s + BATMAN (IEEE standard, open source, mature) · Wi-Fi HaLow 802.11ah (optional)</div></div>
+        <div class="specs__row"><div class="specs__key">Services hosted</div><div class="specs__val">sdrTAK · loraTAK · digiTAK · chatTAK · baseTAK Lite — managed lifecycle, unified admin</div></div>
+        <div class="specs__row"><div class="specs__key">Release timing</div><div class="specs__val">First public release expected later this year</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <span class="section__label section__label--coord" data-coord="Q &amp; A">FAQ</span>
+      <h2 class="section__title">Questions<br>operators ask.</h2>
+
+      <div class="faq">
+        <details>
+          <summary>When will netTAK ship?</summary>
+          <p>First public release is expected later this year. Hardware platform is validated and the xTAK service stack is in lab testing. Early Adopters get the Beta build the moment it's cut.</p>
+        </details>
+        <details>
+          <summary>Do I have to use Wi-Fi HaLow?</summary>
+          <p>No. HaLow is optional. Standalone deployments use the Pi's built-in Wi-Fi. Local mesh works over standard Wi-Fi or wired Ethernet. HaLow is only needed when you want to bridge miles between sites with directional antennas.</p>
+        </details>
+        <details>
+          <summary>Can a single netTAK run multiple xTAK services?</summary>
+          <p>Yes — node configuration selects which xTAK services run; nothing required, everything optional. A typical deployment has one service per node (sdrTAK at the airport, chatTAK at a parking lot, etc.), but a single node can host multiple.</p>
+        </details>
+        <details>
+          <summary>What's the difference between baseTAK and baseTAK Lite?</summary>
+          <p>baseTAK Lite is the variant of baseTAK that runs on a netTAK field node — same tileserver capability, multi-user web UI, but stripped down for the field-deployable form factor. The full baseTAK is the fixed-install EOC version.</p>
+        </details>
+        <details>
+          <summary>How is the mesh routed?</summary>
+          <p>802.11s + BATMAN — the IEEE wireless mesh standard plus the BATMAN routing protocol, both open source and production-deployed. Self-healing on node failure, self-organizing on node join. Layer-2 transparent — standard TAK traffic crosses without translation.</p>
+        </details>
+        <details>
+          <summary>Do I need a commercial mesh-router vendor?</summary>
+          <p>No. Standards-based 802.11s and BATMAN, your hardware, your Linux, your Pis.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span style="color: var(--cyan);">x</span>TAK</div>
+          <p class="footer__brand-tag">Open situational awareness for the team that has to coordinate when the WAN is gone.</p>
+        </div>
+        <div class="footer__col"><h4>Products</h4><ul>
+          <li><a href="/products/baseTAK.html">baseTAK</a></li>
+          <li><a href="/products/digiTAK.html">digiTAK</a></li>
+          <li><a href="/products/loraTAK.html">loraTAK</a></li>
+          <li><a href="/products/chatTAK.html">chatTAK</a></li>
+          <li><a href="/products/sdrTAK.html">sdrTAK</a></li>
+          <li><a href="/products/netTAK.html">netTAK <span class="text-amber">(future)</span></a></li>
+          <li><a href="/products/aiTAK.html">aiTAK <span class="text-amber">(future)</span></a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Resources</h4><ul>
+          <li><a href="/about-tak.html">About TAK</a></li>
+          <li><a href="/support.html">Become an Early Adopter</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK" target="_blank" rel="noopener">GitHub Repo</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul>
+          <li><a href="https://buymeacoffee.com/xtak" target="_blank" rel="noopener">Buy Me a Coffee</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 xTAK Project · All rights reserved</div>
+        <div>xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, aiTAK are trademarks of the xTAK Project · <a href="/copyright.html">Notice</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

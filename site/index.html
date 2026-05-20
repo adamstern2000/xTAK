@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="xTAK is an open suite of seven services that extend the TAK ecosystem to amateur radio, LoRa mesh, off-grid Wi-Fi, SDR-decoded aircraft, browser endpoints, and AI helpers. Self-hosted. Beta — shipping soon." />
+  <title>xTAK — Seven Products. One TAK Picture. No Internet Required.</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <!-- ============== READOUT BAR ============== -->
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">SUITE / xTAK</span>
+        <span class="readout__item">STATUS / BETA</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">PRODUCTS / 07</span>
+        <span class="readout__item">v 2026.05</span>
+        <span class="readout__item"><span data-clock>—</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== NAV ============== -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="brand"><span class="brand__diamond"></span><span class="brand__word"><span class="accent">x</span>TAK</span></a>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="#products">Products</a></li>
+          <li><a href="#suite">The Suite</a></li>
+          <li><a href="/about-tak.html">About TAK</a></li>
+          <li><a href="#get-started">Get Started</a></li>
+          <li><a href="/support.html">Support</a></li>
+        </ul>
+      </nav>
+      <a href="/support.html" class="nav__cta">Early Adopter →</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ============== HERO ============== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__frame reveal">
+        <div class="hero__meta">
+          <span>SECTOR / SUITE OVERVIEW</span>
+          <span>OPS / OFF-GRID</span>
+          <span>FIDELITY / 100%</span>
+        </div>
+        <h1 class="hero__title">
+          <span class="hero__title-line">Seven products.</span>
+          <span class="hero__title-line hero__title-line--accent">One TAK picture.</span>
+          <span class="hero__title-line">No internet required.</span>
+        </h1>
+        <p class="hero__sub">
+          xTAK is an open suite of seven independent services that extend
+          <strong class="text-bright">ATAK, WinTAK,</strong> and
+          <strong class="text-bright">iTAK</strong> to the places the official clients can't reach:
+          amateur radio, LoRa mesh, off-grid Wi-Fi, SDR-decoded aircraft, browser endpoints, and AI helpers.
+          Self-hosted. Backpack-portable. The whole suite fits in a Pelican case.
+        </p>
+        <div class="hero__ctas">
+          <a href="/support.html" class="btn btn--primary">Become an Early Adopter</a>
+          <a href="#products" class="btn btn--ghost">Browse the Suite</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== TRUST STRIP ============== -->
+  <div class="trust">
+    <div class="container">
+      <div class="trust__inner">
+        <span>Incident Commanders</span>
+        <span>SAR Teams</span>
+        <span>Wildland Fire</span>
+        <span>ARES / RACES / ACS</span>
+        <span>SATERN / MARS</span>
+        <span>EOC Staff</span>
+        <span>Auxcomm Operators</span>
+        <span>Amateur Radio</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== HERO IMAGE — baseTAK Devil's Gate Fire scenario ============== -->
+  <figure class="hero-image">
+    <div class="container container--wide">
+      <div class="hero-image__frame">
+        <img src="/img/scenario/hero.png" alt="baseTAK rendering the Devil's Gate Fire — 3D satellite terrain showing fire perimeter, hotspots, units, helicopter, and labeled zones across the San Gabriel Mountains" loading="eager" />
+        <figcaption class="hero-image__caption">
+          <span class="hero-image__caption-label">LIVE OPERATIONS · DEVIL'S GATE FIRE — DAY 2</span>
+          <span class="hero-image__caption-text">baseTAK rendering a 3D terrain view of an active wildland-fire incident in the San Gabriel Mountains — fire perimeter, hot spots, operating units, air assets, and labeled evacuation zones all on one shared TAK picture.</span>
+        </figcaption>
+      </div>
+    </div>
+  </figure>
+
+  <!-- ============== SCENARIO ============== -->
+  <section class="scenario" id="scenario">
+    <div class="container">
+      <div class="scenario__grid">
+        <div class="scenario__sticky reveal">
+          <span class="section__label section__label--coord" data-coord="34.07°N · 118.27°W">SCENARIO / 01</span>
+          <h2 class="section__title">When the<br><em>WAN goes dark</em>,<br>xTAK keeps coordinating.</h2>
+        </div>
+        <div class="scenario__body reveal" data-delay="1">
+          <p>
+            A regional disaster response. The state EOC has lost the WAN. Cellular is intermittent
+            across three counties. Three SAR teams are in the field; two carry ATAK tablets, the
+            third is volunteers running phones they brought from home. A mutual-aid air asset is
+            inbound. The state EOC five hundred miles away wants to share the picture.
+          </p>
+          <p>
+            A <strong><a href="/products/baseTAK.html" style="color: var(--cyan); text-decoration: none;">baseTAK</a></strong> at the EOC serves the IC's web map. She runs the operation from a laptop.
+            Two clicks to drop a marker. A <strong><a href="/products/digiTAK.html" style="color: var(--cyan); text-decoration: none;">digiTAK</a></strong> in the next rack federates the EOC with the
+            state ARES net over HF and the regional APRS network over VHF — simultaneously.
+          </p>
+          <p>
+            A <strong><a href="/products/loraTAK.html" style="color: var(--cyan); text-decoration: none;">loraTAK</a></strong> at a remote staging site puts every volunteer's Meshtastic node on the
+            IC's map. A <strong><a href="/products/chatTAK.html" style="color: var(--cyan); text-decoration: none;">chatTAK</a></strong> in the parking lot at a shelter checks in walk-up
+            volunteers in sixty seconds — each becomes a first-class TAK contact, no app install.
+            An <strong><a href="/products/sdrTAK.html" style="color: var(--cyan); text-decoration: none;">sdrTAK</a></strong> at the airport feeds inbound mutual-aid helicopter positions onto
+            every map in the network.
+          </p>
+          <p>
+            <em>One TAK picture. Seven products. No TAK Server. No cloud. No internet uplink.</em>
+          </p>
+          <p>That's xTAK.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PRODUCTS ============== -->
+  <section class="section" id="products">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="07 / SUITE">PRODUCTS</span>
+      <h2 class="section__title reveal">Run just the<br><em>products you need.</em></h2>
+      <p class="section__lede reveal" data-delay="1">
+        Every product works standalone. Together they compose on one TAK network — no glue, no
+        integration tax. Pick the radio, pick the role, drop it on the LAN.
+      </p>
+
+      <div class="products">
+        <a href="/products/baseTAK.html" class="product reveal">
+          <div class="product__head">
+            <div class="product__icon">⌂</div>
+            <span class="status status--beta">Beta</span>
+          </div>
+          <h3 class="product__name">base<em>TAK</em></h3>
+          <p class="product__tagline">Run the operation from a browser. Full TAK map, chat, and SA hub in a tab — faster than WinTAK by design.</p>
+          <div class="product__meta">
+            <span class="product__codename">HUB · MAP · CHAT</span>
+            <span class="product__link">Open →</span>
+          </div>
+        </a>
+
+        <a href="/products/digiTAK.html" class="product reveal" data-delay="1">
+          <div class="product__head">
+            <div class="product__icon">((·))</div>
+            <span class="status status--beta">Beta</span>
+          </div>
+          <h3 class="product__name">digi<em>TAK</em></h3>
+          <p class="product__tagline">TAK on the air. VHF for the region, HF for the continent, APRS-IS for the internet — all simultaneously.</p>
+          <div class="product__meta">
+            <span class="product__codename">VHF · HF · APRS</span>
+            <span class="product__link">Open →</span>
+          </div>
+        </a>
+
+        <a href="/products/loraTAK.html" class="product reveal" data-delay="2">
+          <div class="product__head">
+            <div class="product__icon">⌬</div>
+            <span class="status status--beta">Beta</span>
+          </div>
+          <h3 class="product__name">lora<em>TAK</em></h3>
+          <p class="product__tagline">Your Meshtastic mesh, now a TAK network. Every node a first-class chat-able contact.</p>
+          <div class="product__meta">
+            <span class="product__codename">LORA · MESHTASTIC</span>
+            <span class="product__link">Open →</span>
+          </div>
+        </a>
+
+        <a href="/products/chatTAK.html" class="product reveal" data-delay="3">
+          <div class="product__head">
+            <div class="product__icon">[·]</div>
+            <span class="status status--beta">Beta</span>
+          </div>
+          <h3 class="product__name">chat<em>TAK</em></h3>
+          <p class="product__tagline">Comms-forward TAK on a Pi. Multi-user — the whole command staff runs from one box, no app required.</p>
+          <div class="product__meta">
+            <span class="product__codename">PI APPLIANCE · CHAT</span>
+            <span class="product__link">Open →</span>
+          </div>
+        </a>
+
+        <a href="/products/sdrTAK.html" class="product reveal" data-delay="4">
+          <div class="product__head">
+            <div class="product__icon">✈</div>
+            <span class="status status--beta">Beta</span>
+          </div>
+          <h3 class="product__name">sdr<em>TAK</em></h3>
+          <p class="product__tagline">Every aircraft in the sky. Every ship in the bay. SDR-decoded ADS-B, UAT, and AIS as native TAK contacts.</p>
+          <div class="product__meta">
+            <span class="product__codename">ADS-B · UAT · AIS</span>
+            <span class="product__link">Open →</span>
+          </div>
+        </a>
+
+        <a href="/products/netTAK.html" class="product reveal" data-delay="5">
+          <div class="product__head">
+            <div class="product__icon">⌖</div>
+            <span class="status status--future">Future</span>
+          </div>
+          <h3 class="product__name">net<em>TAK</em></h3>
+          <p class="product__tagline">The operating layer for every mobile xTAK device. Standalone or self-healing field mesh, optionally over Wi-Fi HaLow.</p>
+          <div class="product__meta">
+            <span class="product__codename">FIELD PLATFORM · MESH</span>
+            <span class="product__link">Open →</span>
+          </div>
+        </a>
+
+        <a href="/products/aiTAK.html" class="product reveal" data-delay="5">
+          <div class="product__head">
+            <div class="product__icon">◐</div>
+            <span class="status status--future">Future</span>
+          </div>
+          <h3 class="product__name">ai<em>TAK</em></h3>
+          <p class="product__tagline">A local-first LLM that joins your TAK network as a peer. Drafts SITREPs, answers questions, flags conditions.</p>
+          <div class="product__meta">
+            <span class="product__codename">LLM · ON-NETWORK</span>
+            <span class="product__link">Open →</span>
+          </div>
+        </a>
+
+        <a href="/support.html" class="product product--support reveal" data-delay="5">
+          <div class="product__head">
+            <div class="product__icon" style="color: var(--amber); border-color: var(--amber);">☕</div>
+            <span class="status" style="color: var(--amber);">Beta access</span>
+          </div>
+          <h3 class="product__name" style="color: var(--amber);">Early <em style="color: var(--ink-bright);">Adopter</em></h3>
+          <p class="product__tagline">Support the project on Buy Me a Coffee — get every xTAK Beta build, every new feature, and direct engagement with the team before public release.</p>
+          <div class="product__meta">
+            <span class="product__codename" style="color: var(--amber);">☕ SUPPORTER PROGRAM</span>
+            <span class="product__link" style="color: var(--amber);">Become one →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="divider-bracket">[ SUITE DESIGN PROPOSITIONS ]</div></div>
+
+  <!-- ============== PROPOSITIONS ============== -->
+  <section class="section section--tight" id="suite">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="06 / RULES">DESIGN PROPOSITIONS</span>
+      <h2 class="section__title reveal">What every xTAK<br>product <em>commits to.</em></h2>
+
+      <div class="propositions">
+        <div class="proposition reveal">
+          <div class="proposition__num">01</div>
+          <h3 class="proposition__title">Stand-alone,<br>compose by network</h3>
+          <p class="proposition__body">Every product is a complete service. They discover each other and trade data over standard TAK protocols. No glue. No integration tax. No shared database.</p>
+        </div>
+        <div class="proposition reveal" data-delay="1">
+          <div class="proposition__num">02</div>
+          <h3 class="proposition__title">Off-grid<br>by design</h3>
+          <p class="proposition__body">Built to run without internet, without cellular, without TAK Server. Cloud is an option, not a requirement. Offline tarball installs with vendored dependencies.</p>
+        </div>
+        <div class="proposition reveal" data-delay="2">
+          <div class="proposition__num">03</div>
+          <h3 class="proposition__title">100% TAK<br>protocol fidelity</h3>
+          <p class="proposition__body">What xTAK emits on the wire is byte-identical to what WinTAK emits. Markers, chat, SA, team color, custom icons — full fidelity through every product.</p>
+        </div>
+        <div class="proposition reveal" data-delay="3">
+          <div class="proposition__num">04</div>
+          <h3 class="proposition__title">Self-hosted,<br>no vendor lock-in</h3>
+          <p class="proposition__body">Open standards. Open source on the wire. No subscription, no per-device licensing, no cloud account. The data is yours, the boxes are yours.</p>
+        </div>
+        <div class="proposition reveal" data-delay="4">
+          <div class="proposition__num">05</div>
+          <h3 class="proposition__title">Built for<br>the operator</h3>
+          <p class="proposition__body">Designed by and for the people who actually run operations. Faster click paths, fewer menus, less clutter — the map gets the screen.</p>
+        </div>
+        <div class="proposition reveal" data-delay="5">
+          <div class="proposition__num">06</div>
+          <h3 class="proposition__title">Portable,<br>battery-powered</h3>
+          <p class="proposition__body">None of this lives in a server rack. baseTAK on a Game Boy-sized device. chatTAK smaller than a deck of cards. The whole suite fits in a backpack.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== ARCHITECTURE ============== -->
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="LAYER / NETWORK">ARCHITECTURE</span>
+      <h2 class="section__title reveal">How the suite<br><em>composes.</em></h2>
+
+      <p class="reveal" data-delay="1" style="font-size: 1.05rem; color: var(--ink-body); line-height: 1.6; max-width: 70ch; margin-top: 1.2rem;">
+        Every xTAK product is a standalone service. They compose by sharing
+        one thing: <strong>the standard TAK network on the LAN.</strong> TAK clients on
+        top, the network in the middle, xTAK gateways underneath — each reaching
+        out to whatever its world is (radio, LoRa, SDR, browser, AI).
+      </p>
+
+      <div class="archnet reveal" data-delay="2">
+
+        <!-- TOP: TAK clients on the LAN -->
+        <div class="archnet__row archnet__row--clients">
+          <div class="archnet__card">
+            <div class="archnet__card-name">ATAK</div>
+            <div class="archnet__card-desc">Android tactical client. The TAK app on a tablet or phone.</div>
+            <span class="archnet__card-chip">Android</span>
+          </div>
+          <div class="archnet__card">
+            <div class="archnet__card-name">WinTAK</div>
+            <div class="archnet__card-desc">Windows tactical client. The TAK app on a desktop or rugged laptop.</div>
+            <span class="archnet__card-chip">Windows</span>
+          </div>
+          <div class="archnet__card">
+            <div class="archnet__card-name">iTAK</div>
+            <div class="archnet__card-desc">iOS tactical client. The TAK app on an iPad or iPhone.</div>
+            <span class="archnet__card-chip">iOS</span>
+          </div>
+          <div class="archnet__card">
+            <div class="archnet__card-name">baseTAK browser</div>
+            <div class="archnet__card-desc">Multi-user TAK picture in a browser tab. Chrome, Firefox, Safari, Edge — anything modern.</div>
+            <span class="archnet__card-chip">Any browser</span>
+          </div>
+        </div>
+
+        <!-- SPINE: the network -->
+        <div class="archnet__spine">
+          <span class="archnet__spine-label">▸ TAK Network on the LAN</span>
+          <div class="archnet__spine-protocols">
+            <span class="archnet__spine-protocol">CoT XML</span>
+            <span class="archnet__spine-protocol">GeoChat</span>
+            <span class="archnet__spine-protocol">TAK protobuf</span>
+          </div>
+        </div>
+
+        <!-- BOTTOM: xTAK gateways -->
+        <div class="archnet__row archnet__row--gateways">
+          <a href="/products/baseTAK.html" class="archnet__card" style="text-decoration: none;">
+            <div class="archnet__card-name">baseTAK</div>
+            <div class="archnet__card-desc">Map, chat, fileserver, tileserver. The TAK server and the operator UI in one.</div>
+            <span class="archnet__card-chip">Browser + tiles</span>
+          </a>
+          <a href="/products/digiTAK.html" class="archnet__card" style="text-decoration: none;">
+            <div class="archnet__card-name">digiTAK</div>
+            <div class="archnet__card-desc">Bidirectional APRS gateway. TAK on amateur radio, in both directions.</div>
+            <span class="archnet__card-chip">VHF · APRS-IS</span>
+          </a>
+          <a href="/products/loraTAK.html" class="archnet__card" style="text-decoration: none;">
+            <div class="archnet__card-name">loraTAK</div>
+            <div class="archnet__card-desc">Meshtastic LoRa to TAK. Every $40 mesh node becomes a first-class TAK contact.</div>
+            <span class="archnet__card-chip">LoRa mesh</span>
+          </a>
+          <a href="/products/sdrTAK.html" class="archnet__card" style="text-decoration: none;">
+            <div class="archnet__card-name">sdrTAK</div>
+            <div class="archnet__card-desc">SDR listener. ADS-B aircraft, AIS ships, ISM sensors — into TAK.</div>
+            <span class="archnet__card-chip">ADS-B · UAT · AIS</span>
+          </a>
+          <a href="/products/chatTAK.html" class="archnet__card" style="text-decoration: none;">
+            <div class="archnet__card-name">chatTAK</div>
+            <div class="archnet__card-desc">Pi appliance with its own Wi-Fi. Browser TAK chat for anyone with a phone.</div>
+            <span class="archnet__card-chip">Wi-Fi AP</span>
+          </a>
+          <a href="/products/aiTAK.html" class="archnet__card" style="text-decoration: none;">
+            <div class="archnet__card-name">aiTAK</div>
+            <div class="archnet__card-desc">AI participant on the picture. Chat with the operation in natural language.</div>
+            <span class="archnet__card-chip">LLM</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== EARLY ADOPTER ============== -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div>
+          <div class="cta-banner__eyebrow">☕ Beta · Limited Access</div>
+          <h3 class="cta-banner__title">Become an early adopter.</h3>
+          <p class="cta-banner__body">
+            xTAK is in active Beta. Supporters on Buy Me a Coffee get early access to all xTAK
+            software, new features, and direct engagement with the team — well before the public
+            release.
+          </p>
+        </div>
+        <a href="/support.html" class="btn btn--amber">Support on Buy Me a Coffee</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== GET STARTED ============== -->
+  <section class="section" id="get-started">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="DEPLOY / PICK">GET STARTED</span>
+      <h2 class="section__title reveal">Pick the products<br><em>your operation needs.</em></h2>
+      <p class="section__lede reveal" data-delay="1">
+        Each product ships as an independent install — offline tarball, single install script,
+        settings-file configuration. Drop them on a shared LAN; they discover each other.
+      </p>
+
+      <div class="decision reveal" data-delay="2">
+        <div class="decision__row decision__row--header">
+          <div class="decision__cell">If your operation needs…</div>
+          <div class="decision__cell">Start with</div>
+        </div>
+        <div class="decision__row">
+          <div class="decision__cell">A web-based map and SA hub</div>
+          <div class="decision__cell"><a href="/products/baseTAK.html">baseTAK →</a></div>
+        </div>
+        <div class="decision__row">
+          <div class="decision__cell">TAK over amateur radio (VHF, APRS-IS, HF)</div>
+          <div class="decision__cell"><a href="/products/digiTAK.html">digiTAK →</a></div>
+        </div>
+        <div class="decision__row">
+          <div class="decision__cell">TAK over Meshtastic LoRa mesh</div>
+          <div class="decision__cell"><a href="/products/loraTAK.html">loraTAK →</a></div>
+        </div>
+        <div class="decision__row">
+          <div class="decision__cell">Browser chat for non-ATAK users</div>
+          <div class="decision__cell"><a href="/products/chatTAK.html">chatTAK →</a></div>
+        </div>
+        <div class="decision__row">
+          <div class="decision__cell">Live aircraft / ships on the map</div>
+          <div class="decision__cell"><a href="/products/sdrTAK.html">sdrTAK →</a></div>
+        </div>
+        <div class="decision__row">
+          <div class="decision__cell">A deployable mesh LAN for the field</div>
+          <div class="decision__cell"><a href="/products/netTAK.html">netTAK <span class="text-amber">(future)</span></a></div>
+        </div>
+        <div class="decision__row">
+          <div class="decision__cell">AI augmentation for the IC</div>
+          <div class="decision__cell"><a href="/products/aiTAK.html">aiTAK <span class="text-amber">(future)</span></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== STATUS TABLE ============== -->
+  <section class="section section--tight">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="07 / SUITE">STATUS</span>
+      <h2 class="section__title reveal">What's <em>Beta</em><br>and what's <em>future.</em></h2>
+
+      <div class="status-table reveal" data-delay="1">
+        <div class="status-table__row status-table__row--header">
+          <div class="status-table__cell">Product</div>
+          <div class="status-table__cell">Status</div>
+          <div class="status-table__cell">Notes</div>
+        </div>
+        <div class="status-table__row">
+          <div class="status-table__cell"><a href="/products/baseTAK.html" style="color: var(--cyan); text-decoration: none; font-family: var(--font-mono); font-weight: 600;">baseTAK</a></div>
+          <div class="status-table__cell"><span class="status status--beta">Beta — shipping soon</span></div>
+          <div class="status-table__cell">Validated in pilot deployments</div>
+        </div>
+        <div class="status-table__row">
+          <div class="status-table__cell"><a href="/products/digiTAK.html" style="color: var(--cyan); text-decoration: none; font-family: var(--font-mono); font-weight: 600;">digiTAK</a></div>
+          <div class="status-table__cell"><span class="status status--beta">Beta — shipping soon (VHF + APRS-IS)</span></div>
+          <div class="status-table__cell">HF transport — future release</div>
+        </div>
+        <div class="status-table__row">
+          <div class="status-table__cell"><a href="/products/loraTAK.html" style="color: var(--cyan); text-decoration: none; font-family: var(--font-mono); font-weight: 600;">loraTAK</a></div>
+          <div class="status-table__cell"><span class="status status--beta">Beta — shipping soon (Meshtastic)</span></div>
+          <div class="status-table__cell">LoRa-stack pluggability on roadmap</div>
+        </div>
+        <div class="status-table__row">
+          <div class="status-table__cell"><a href="/products/chatTAK.html" style="color: var(--cyan); text-decoration: none; font-family: var(--font-mono); font-weight: 600;">chatTAK</a></div>
+          <div class="status-table__cell"><span class="status status--beta">Beta — shipping soon</span></div>
+          <div class="status-table__cell">Pi-appliance Beta tested</div>
+        </div>
+        <div class="status-table__row">
+          <div class="status-table__cell"><a href="/products/sdrTAK.html" style="color: var(--cyan); text-decoration: none; font-family: var(--font-mono); font-weight: 600;">sdrTAK</a></div>
+          <div class="status-table__cell"><span class="status status--beta">Beta — shipping soon (ADS-B + UAT)</span></div>
+          <div class="status-table__cell">AIS — future release (imminent)</div>
+        </div>
+        <div class="status-table__row">
+          <div class="status-table__cell"><a href="/products/netTAK.html" style="color: var(--cyan); text-decoration: none; font-family: var(--font-mono); font-weight: 600;">netTAK</a></div>
+          <div class="status-table__cell"><span class="status status--future">Future release</span></div>
+          <div class="status-table__cell">First public release expected later this year</div>
+        </div>
+        <div class="status-table__row">
+          <div class="status-table__cell"><a href="/products/aiTAK.html" style="color: var(--cyan); text-decoration: none; font-family: var(--font-mono); font-weight: 600;">aiTAK</a></div>
+          <div class="status-table__cell"><span class="status status--future">Future release</span></div>
+          <div class="status-table__cell">First release timing TBD</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FAQ ============== -->
+  <section class="section">
+    <div class="container container--narrow">
+      <span class="section__label section__label--coord" data-coord="Q &amp; A">FAQ</span>
+      <h2 class="section__title reveal">Questions<br><em>operators ask.</em></h2>
+
+      <div class="faq reveal" data-delay="1">
+        <details>
+          <summary>Is xTAK shipping today?</summary>
+          <p>The suite is in active <strong>Beta</strong>. Five products (baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK) are in Beta testing with operators and will be shipping publicly soon. Two products (netTAK, aiTAK) are future releases under active development. <a href="/support.html">Early Adopters</a> get access to Beta builds today.</p>
+        </details>
+        <details>
+          <summary>Do I need TAK Server to run xTAK?</summary>
+          <p>No. Every xTAK product joins the local TAK network directly and talks to ATAK, WinTAK, and iTAK clients without any server. TAK Server is the official cross-WAN federation product from the TAK Product Center; xTAK solves that problem differently — over RF, mesh, and HF — without it.</p>
+        </details>
+        <details>
+          <summary>Does xTAK work with civilian (CivTAK) builds?</summary>
+          <p>Yes. xTAK speaks the same TAK protocol all builds use — military, civilian, and the open community variants.</p>
+        </details>
+        <details>
+          <summary>Is xTAK open source?</summary>
+          <p>Source repositories are private during Beta; the public posture is open documentation, open wire formats (the <a href="https://github.com/adamstern2000/cot_radio_aprs" target="_blank" rel="noopener">TAK-APRS Protocol Extension</a> is fully open), and the goal of community-friendly licensing at general availability. Early Adopters get Beta build access.</p>
+        </details>
+        <details>
+          <summary>Do I have to be a ham operator to use xTAK?</summary>
+          <p>For digiTAK (and loraTAK on RF), yes — the radios transmit on amateur frequencies and require a licensed callsign. For baseTAK, chatTAK, sdrTAK (receive-only), and aiTAK: no license required.</p>
+        </details>
+        <details>
+          <summary>How do I support the project?</summary>
+          <p><a href="/support.html">Buy Me a Coffee</a>. Early Adopters get Beta access to all xTAK software, new features, and direct engagement with the team. The project is self-funded — supporter contributions fund the next product and the next deployment test.</p>
+        </details>
+        <details>
+          <summary>Will xTAK products always be standalone?</summary>
+          <p>Yes. Composability through the TAK network is a hard design rule — every product runs on its own and discovers the others via standard TAK protocol. There is no integration tax, no shared module, no required hub.</p>
+        </details>
+        <details>
+          <summary>Can xTAK coexist with my existing TAK Server setup?</summary>
+          <p>Yes. xTAK joins as a peer. If you already run TAK Server for WAN federation, xTAK runs alongside it; if you don't, xTAK gives you off-grid alternatives.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span style="color: var(--cyan);">x</span>TAK</div>
+          <p class="footer__brand-tag">Open situational awareness for the team that has to coordinate when the WAN is gone.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/products/baseTAK.html">baseTAK</a></li>
+            <li><a href="/products/digiTAK.html">digiTAK</a></li>
+            <li><a href="/products/loraTAK.html">loraTAK</a></li>
+            <li><a href="/products/chatTAK.html">chatTAK</a></li>
+            <li><a href="/products/sdrTAK.html">sdrTAK</a></li>
+            <li><a href="/products/netTAK.html">netTAK <span class="text-amber">(future)</span></a></li>
+            <li><a href="/products/aiTAK.html">aiTAK <span class="text-amber">(future)</span></a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/about-tak.html">About TAK</a></li>
+            <li><a href="/support.html">Become an Early Adopter</a></li>
+            <li><a href="https://github.com/adamstern2000/xTAK" target="_blank" rel="noopener">GitHub Repo</a></li>
+            <li><a href="https://github.com/adamstern2000/cot_radio_aprs" target="_blank" rel="noopener">Wire-format Spec</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://buymeacoffee.com/xtak" target="_blank" rel="noopener">Buy Me a Coffee</a></li>
+            <li><a href="https://github.com/adamstern2000/xTAK/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 xTAK Project · All rights reserved</div>
+        <div>
+          xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, aiTAK are trademarks of the xTAK Project ·
+          <a href="/copyright.html">Notice</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

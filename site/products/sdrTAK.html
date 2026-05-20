@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="sdrTAK pulls aircraft (ADS-B 1090, UAT 978) and ships (AIS) off the air with a $30 SDR dongle and renders them as native TAK contacts. Military hex / callsign auto-flagging. 520k-entry aircraft database." />
+  <title>sdrTAK — Every Aircraft in the Sky. Every Ship in the Bay. | xTAK Suite</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">PRODUCT / SDRTAK</span>
+        <span class="readout__item">CODENAME / cot_sdr</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">STATUS / BETA</span>
+        <span class="readout__item">v 1.4.0</span>
+        <span class="readout__item"><span data-clock>—</span></span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="brand"><span class="brand__diamond"></span><span class="brand__word"><span class="accent">x</span>TAK</span></a>
+      <nav><ul class="nav__links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#suite">The Suite</a></li>
+        <li><a href="/about-tak.html">About TAK</a></li>
+        <li><a href="/#get-started">Get Started</a></li>
+        <li><a href="/support.html">Support</a></li>
+      </ul></nav>
+      <a href="/support.html" class="nav__cta">Early Adopter →</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / Products / <span class="text-cyan">sdrTAK</span></div>
+      <div class="pagehead__status"><span class="status status--beta">Beta — shipping soon (ADS-B + UAT)</span></div>
+      <h1 class="pagehead__title">Every aircraft<br>in the sky.<br><em>Every ship in the bay.</em></h1>
+      <p class="pagehead__sub">
+        sdrTAK is an SDR-powered radio decoder that pulls aircraft (ADS-B 1090 ES, UAT 978) and ships
+        (AIS) off the air and renders them as native TAK contacts. Air and surface situational
+        awareness, in your ATAK / WinTAK / baseTAK, for the cost of a $30 dongle and an antenna.
+      </p>
+      <div class="hero__ctas" style="margin-top: 2rem;">
+        <a href="/support.html" class="btn btn--primary">Become an Early Adopter</a>
+        <a href="https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/sdrTAK.md" target="_blank" rel="noopener" class="btn btn--ghost">Full Spec</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="container">
+      <div class="trust__inner">
+        <span>Airshow Safety</span><span>Public-Safety Aviation</span><span>SAR Aircraft Coordinators</span><span>Coastal SAR / Harbormaster</span><span>Aviation Hobbyists</span><span>SDR Hackers</span><span>EmComm</span>
+      </div>
+    </div>
+  </div>
+
+  <figure class="hero-image">
+    <div class="container container--wide">
+      <div class="hero-image__frame">
+        <img src="/img/products/sdrtak-hero.png" alt="sdrTAK at an airshow safety operations table — Pi with RTL-SDR dongles, antenna on a tripod, laptop showing aircraft contacts on a TAK map, two safety officers in 'Event Safety' vests at the airport ramp" loading="eager" />
+        <figcaption class="hero-image__caption">
+          <span class="hero-image__caption-label">SDRTAK · AIRSHOW SAFETY OPS · LIVE AIR PICTURE</span>
+          <span class="hero-image__caption-text">sdrTAK at a regional airport safety setup — a $30 SDR dongle, a tripod antenna, and a Pi feeding every transponder-equipped aircraft within 150 miles onto the safety team's TAK map. TFR busters and performing aircraft all on one picture.</span>
+        </figcaption>
+      </div>
+    </div>
+  </figure>
+
+  <section class="scenario">
+    <div class="container">
+      <div class="scenario__grid">
+        <div class="scenario__sticky">
+          <span class="section__label section__label--coord" data-coord="AIRSHOW + TFR">SCENARIO</span>
+          <h2 class="section__title">A regional airshow.<br><em>One Pi.</em><br>Every aircraft in 150 miles.</h2>
+        </div>
+        <div class="scenario__body">
+          <p>
+            It's the morning of a regional airshow. Twenty performing aircraft, two thousand spectators,
+            an active temporary flight restriction overhead, and the airshow safety team watching for
+            both ramp-side coordination and TFR busters — non-participating aircraft straying into the
+            performance box.
+          </p>
+          <p>
+            The safety officer plugs an RTL-SDR into a Pi running sdrTAK and hoists an antenna onto a
+            tripod. Within thirty seconds, every aircraft within 150 miles is rendering on his WinTAK
+            with proper 2525C symbology — fixed-wing for the airliners overhead, rotorcraft for the
+            news helicopter at the perimeter, friendly affiliation for the C-130 doing a flyby. The
+            OpenSky database lookup adds tail number, type, and operator to each contact's remarks.
+          </p>
+          <p>
+            When an unfamiliar squawk drifts into the TFR from the south, it shows up on every TAK
+            client in the safety tent. The ramp boss DMs the aircraft's callsign request to ATC over
+            the radio without taking his eyes off the map.
+          </p>
+          <p><strong>One Pi. One $30 dongle. One antenna.</strong> <em>Every aircraft in the region.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="04 / CAPABILITIES">WHAT YOU CAN DO</span>
+      <h2 class="section__title">Four things<br>sdrTAK <em>does well.</em></h2>
+
+      <div class="outcomes" style="margin-top: 4rem;">
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 01</div>
+            <h3 class="outcome__title">Pair with baseTAK for the best aircraft picture</h3>
+            <p class="outcome__lede">
+              sdrTAK decodes the live ADS-B 1090 ES stream from the air around you and emits each
+              aircraft as a native TAK contact. <strong>Paired with <a href="/products/baseTAK.html" style="color: var(--cyan);">baseTAK</a>,</strong>
+              every aircraft shows up with the correct icon for its emitter category — and you can
+              filter the map down to just the type you care about with a click.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Proper aircraft icons on the map</strong> — 14 ADS-B emitter categories mapped to 2525C/2525D symbology (fixed-wing heavy, light, rotorcraft, glider, lighter-than-air, etc.). Airliners look like airliners; helos look like helos.</li>
+              <li><strong>Filter by aircraft type</strong> — baseTAK's map filter isolates the categories you care about. Only military traffic during a TFR, only rotorcraft during a SAR coordination, only heavies during airshow ops.</li>
+              <li><strong>ADS-B 1090 ES decoding</strong> — the global civil aviation transponder standard.</li>
+              <li><strong>UAT 978 MHz decoding</strong> — the U.S. general-aviation alternative (run alongside 1090 with a second dongle).</li>
+              <li><strong>CPR position decoding</strong> — proper even/odd Mode S compact position reporting for sub-meter lat/lon accuracy.</li>
+              <li><strong>520k-entry aircraft database</strong> — auto-loads OpenSky CSV on startup, adds tail number, manufacturer, model, operator, and owner to every contact's remarks.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/sdrTAK/sdrtak-01-airspace.png" alt="A baseTAK satellite-imagery view of Chicago O'Hare airspace dense with ADS-B aircraft contacts — arrivals on approach, departures climbing, GA traffic at the satellite airports — with a marker info card open for SkyWest 3401 (E175) and a left rail listing every contact" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 02</div>
+            <h3 class="outcome__title">Flag military and government aircraft automatically</h3>
+            <p class="outcome__lede">
+              sdrTAK ships with a built-in lookup table of ICAO hex ranges for U.S. DoD, Army, UK,
+              France, and Germany, plus 25+ military callsign prefixes (RCH, FORTE, DUSTOFF, SAM, CGR,
+              and others).
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Military hex range detection</strong> — automatically marks aircraft in known DoD ranges.</li>
+              <li><strong>Callsign prefix matching</strong> — RCH (military airlift), DUSTOFF (medevac), SAM (special air missions), and more.</li>
+              <li><strong>Friendly affiliation flip</strong> — military contacts render with the friendly 2525C affiliation instead of neutral.</li>
+              <li><strong>Extensible</strong> — add your own ranges and prefixes via settings.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/sdrTAK/sdrtak-02-mil-flagged.png" alt="A baseTAK 3D satellite view of the National Capital Region: civilian airliner contacts rendered in muted neutral symbology while military and government aircraft — MARINE-1, REACH456, RAIDER62, TREK01, SAM41, MAGMA31 — are highlighted with friendly affiliation symbology, with a marker info card open for MARINE-1" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 03</div>
+            <h3 class="outcome__title">Add ships and (optionally) ISM sensors</h3>
+            <p class="outcome__lede">
+              The same architecture that handles ADS-B decodes any SoapySDR-driven radio stream.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>AIS</strong> (162 MHz ship tracking) — for harbor, port, and coastal ops <span class="text-amber">(decoder in tree; release imminent)</span>.</li>
+              <li><strong>rtl_433 ISM-band sensors</strong> — for sensor-network integration <span class="text-amber">(roadmap)</span>.</li>
+              <li><strong>Add your own decoders</strong> — the SoapySDR abstraction means write-once decoder plugins work with any driver-supported hardware.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/sdrTAK/sdrtak-03-harbor.png" alt="A rugged Windows laptop on a desk in a harbormaster's office, screen showing a TAK satellite map with AIS ship contacts marked across a busy California port. Through the window: real container ships, cranes, and a U.S. flag" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 04</div>
+            <h3 class="outcome__title">Compose with the rest of the xTAK suite</h3>
+            <p class="outcome__lede">
+              sdrTAK is 100% standalone — no shared code, database, or process with any other xTAK
+              product. The only shared interface is the TAK network.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Aircraft feeds onto baseTAK</strong> alongside your operational markers.</li>
+              <li><strong>Aircraft visible on every ATAK / WinTAK / iTAK client</strong> on the LAN.</li>
+              <li><strong>Per-decoder stale time</strong> — aircraft age out independently from ground unit positions.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/sdrTAK/sdrtak-04-composed.png" alt="A baseTAK 3D oblique view of Puget Sound combining four xTAK feeds on a single map: sdrTAK ADS-B aircraft and AIS vessels, digiTAK APRS stations, and loraTAK Meshtastic nodes, with a left rail grouping the contacts by Friendly and Neutral affiliation" loading="lazy" />
+          </figure>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CAPABILITY CATALOG ============== -->
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="06 / DETAIL">EVERY FEATURE</span>
+      <h2 class="section__title reveal">What's <em>in the box.</em></h2>
+      <p class="reveal" data-delay="1" style="font-size: 1.1rem; color: var(--ink-body); line-height: 1.6; max-width: 64ch; margin-top: 1.4rem;">
+        sdrTAK is a software-defined-radio listener that decodes ADS-B
+        and UAT (with AIS shipping soon) into native TAK contacts.
+        Plug in an RTL-SDR dongle and every aircraft in your area shows
+        up on the TAK map with a full track, callsign, and identity.
+      </p>
+
+      <ul class="capabilities reveal" data-delay="2">
+        <li class="capability"><strong>ADS-B 1090&nbsp;MHz decoding</strong> — dump1090 backend, the global civil aviation transponder standard.</li>
+        <li class="capability"><strong>UAT 978&nbsp;MHz decoding</strong> — dump978-fa, for US general-aviation traffic.</li>
+        <li class="capability"><strong>14 ADS-B emitter-category icons</strong> — heavy, light, helo, glider, surface, sport, etc. — each rendered with the correct 2525C symbology.</li>
+        <li class="capability"><strong>520k-entry OpenSky aircraft database</strong> — auto-callsign lookup adds tail number, manufacturer, model, operator, and owner to every contact's remarks.</li>
+        <li class="capability"><strong>Military hex-range auto-flag</strong> — US, UK, Australia mil ranges plus 25+ callsign prefixes (RCH, FORTE, DUSTOFF, SAM, CGR).</li>
+        <li class="capability"><strong>SoapySDR abstraction</strong> — works with RTL-SDR, HackRF, Airspy, BladeRF. 13 vendored drivers in the install tarball.</li>
+        <li class="capability"><strong>Offline-installable tarball</strong> — vendored Python deps, no internet at install time.</li>
+        <li class="capability"><strong>Admin UI on port 5100</strong> with signal-meter visualization and live decode counters.</li>
+        <li class="capability"><strong>Aircraft DB self-update</strong> — pulls fresh OpenSky data on operator command.</li>
+      </ul>
+
+      <div class="choose reveal" data-delay="2">
+        <div class="choose__eyebrow">★ Choose sdrTAK when</div>
+        <p class="choose__body">
+          You want an <strong>air picture (and soon, sea picture)</strong> in your TAK
+          without depending on FlightAware, FR24, or any commercial feed —
+          and you want the contacts to be <strong>first-class TAK CoT,</strong> not separate
+          map layers. A $20 RTL-SDR plus a Pi gets you going.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <div class="cta-banner__eyebrow">☕ Beta · Early Access</div>
+          <h3 class="cta-banner__title">Get sdrTAK in your hands now.</h3>
+          <p class="cta-banner__body">Become a supporter on Buy Me a Coffee and join the early-adopter Beta — get the current build, the next release, and direct engagement with the team.</p>
+        </div>
+        <a href="/support.html" class="btn btn--amber">Support on Buy Me a Coffee</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="HW + INSTALL">SPECS</span>
+      <h2 class="section__title">What sdrTAK <em>needs.</em></h2>
+
+      <div class="specs" style="margin-top: 2rem;">
+        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Raspberry Pi 4 / 5 or any Debian Bookworm / Ubuntu 22.04+ host</div></div>
+        <div class="specs__row"><div class="specs__key">SDR dongle</div><div class="specs__val">RTL-SDR for 1090 (~$30), a second RTL-SDR for UAT 978, AirSpy R2 for better sensitivity, or HackRF. 13 SoapySDR drivers bundled — any SoapySDR-supported device works.</div></div>
+        <div class="specs__row"><div class="specs__key">Antenna</div><div class="specs__val">Ground-plane or discone for 1090 / 978. AIS is 162 MHz — different antenna.</div></div>
+        <div class="specs__row"><div class="specs__key">Network</div><div class="specs__val">A LAN — same one your ATAK / WinTAK clients are on</div></div>
+        <div class="specs__row"><div class="specs__key">Installation</div><div class="specs__val">100% offline tarball · all .deb drivers, dump978-fa, and aircraft database vendored. No network access at install time.</div></div>
+        <div class="specs__row"><div class="specs__key">Internet</div><div class="specs__val">Not required · aircraft database can pull updates if available</div></div>
+        <div class="specs__row"><div class="specs__key">Aircraft database</div><div class="specs__val">520k-entry OpenSky CSV · auto-loads on startup · enriches every contact with tail number, type, operator, owner</div></div>
+        <div class="specs__row"><div class="specs__key">Admin UI</div><div class="specs__val">Web, port 5100 · gain/stale-time, decoder enable/disable, device discovery, icon picker, DB refresh, restart</div></div>
+        <div class="specs__row"><div class="specs__key">Version</div><div class="specs__val">v 1.4.0 (Beta · shipping soon · 65 passing tests)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <span class="section__label section__label--coord" data-coord="Q &amp; A">FAQ</span>
+      <h2 class="section__title">Questions<br>operators ask.</h2>
+
+      <div class="faq">
+        <details>
+          <summary>Do I really only need a $30 dongle?</summary>
+          <p>For ADS-B 1090 ES, yes. An RTL-SDR Blog v3 dongle (~$30) and a basic ground-plane antenna gets you every aircraft within roughly 100-150 nautical miles. Better antennas and higher-gain SDRs (AirSpy R2) extend the range.</p>
+        </details>
+        <details>
+          <summary>Do I need internet?</summary>
+          <p>No. The install runs without internet (everything is vendored). At runtime, the aircraft database stays current via optional periodic updates, but operation never requires it.</p>
+        </details>
+        <details>
+          <summary>Will it flag military aircraft automatically?</summary>
+          <p>Yes. Built-in lookup table covers U.S. DoD, Army, UK, France, German ICAO hex ranges, plus 25+ military callsign prefixes (RCH, FORTE, DUSTOFF, SAM, CGR, and others). Detected military aircraft flip to friendly 2525C affiliation. The lookup is extensible.</p>
+        </details>
+        <details>
+          <summary>When is AIS shipping?</summary>
+          <p>The decoder is in tree and the architecture is in place — AIS release is imminent. Early Adopters get it the moment it ships.</p>
+        </details>
+        <details>
+          <summary>Can I add my own decoder for some other RF signal?</summary>
+          <p>Yes. sdrTAK uses the SoapySDR abstraction — write-once decoder plugins work with any driver-supported hardware. rtl_433 (ISM-band sensors) is on the roadmap as an example.</p>
+        </details>
+        <details>
+          <summary>Do I need TAK Server?</summary>
+          <p>No. sdrTAK talks to TAK clients directly on the LAN.</p>
+        </details>
+        <details>
+          <summary>Will my aircraft data leave my deployment?</summary>
+          <p>No. Unlike pushing to commercial aircraft feeds (Flightradar24, ADS-B Exchange), sdrTAK keeps your data on your hardware. Your antenna, your receiver, your data.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span style="color: var(--cyan);">x</span>TAK</div>
+          <p class="footer__brand-tag">Open situational awareness for the team that has to coordinate when the WAN is gone.</p>
+        </div>
+        <div class="footer__col"><h4>Products</h4><ul>
+          <li><a href="/products/baseTAK.html">baseTAK</a></li>
+          <li><a href="/products/digiTAK.html">digiTAK</a></li>
+          <li><a href="/products/loraTAK.html">loraTAK</a></li>
+          <li><a href="/products/chatTAK.html">chatTAK</a></li>
+          <li><a href="/products/sdrTAK.html">sdrTAK</a></li>
+          <li><a href="/products/netTAK.html">netTAK <span class="text-amber">(future)</span></a></li>
+          <li><a href="/products/aiTAK.html">aiTAK <span class="text-amber">(future)</span></a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Resources</h4><ul>
+          <li><a href="/about-tak.html">About TAK</a></li>
+          <li><a href="/support.html">Become an Early Adopter</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK" target="_blank" rel="noopener">GitHub Repo</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul>
+          <li><a href="https://buymeacoffee.com/xtak" target="_blank" rel="noopener">Buy Me a Coffee</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 xTAK Project · All rights reserved</div>
+        <div>xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, aiTAK are trademarks of the xTAK Project · <a href="/copyright.html">Notice</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

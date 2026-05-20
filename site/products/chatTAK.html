@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="chatTAK is a Pi appliance with its own Wi-Fi network and a browser-based TAK chat UI. Multi-user — the whole command staff runs from one Pi. Plug it in, hand out the SSID, your team is on the network in 60 seconds. No app required." />
+  <title>chatTAK — Comms-forward TAK, No App Required | xTAK Suite</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">PRODUCT / CHATTAK</span>
+        <span class="readout__item">PI APPLIANCE</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">STATUS / BETA</span>
+        <span class="readout__item">v 1.0.x</span>
+        <span class="readout__item"><span data-clock>—</span></span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="brand"><span class="brand__diamond"></span><span class="brand__word"><span class="accent">x</span>TAK</span></a>
+      <nav><ul class="nav__links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#suite">The Suite</a></li>
+        <li><a href="/about-tak.html">About TAK</a></li>
+        <li><a href="/#get-started">Get Started</a></li>
+        <li><a href="/support.html">Support</a></li>
+      </ul></nav>
+      <a href="/support.html" class="nav__cta">Early Adopter →</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / Products / <span class="text-cyan">chatTAK</span></div>
+      <div class="pagehead__status"><span class="status status--beta">Beta — shipping soon</span></div>
+      <h1 class="pagehead__title">A TAK endpoint<br>in everyone's pocket.<br><em>No app required.</em></h1>
+      <p class="pagehead__sub">
+        chatTAK is a comms-forward TAK endpoint: a self-contained Pi appliance that hosts a Wi-Fi
+        network and a browser-based chat UI. Multiple users — phones, laptops, tablets — connect at
+        once, each as their own first-class TAK identity. Plug it in, hand out the SSID, and your
+        whole team is on the network in 60 seconds.
+      </p>
+      <div class="hero__ctas" style="margin-top: 2rem;">
+        <a href="/support.html" class="btn btn--primary">Become an Early Adopter</a>
+        <a href="https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/chatTAK.md" target="_blank" rel="noopener" class="btn btn--ghost">Full Spec</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="container">
+      <div class="trust__inner">
+        <span>Field Command Elements</span><span>Mobile Command Vehicles</span><span>Event Coordinators</span><span>SAR Base Teams</span><span>CERT</span><span>Volunteer Fire / Ambulance</span><span>Pop-up EOCs</span>
+      </div>
+    </div>
+  </div>
+
+  <figure class="hero-image">
+    <div class="container container--wide">
+      <div class="hero-image__frame">
+        <img src="/img/products/chattak-hero.png" alt="chatTAK at a volunteer aid station — Pi Zero appliance on a folding table, volunteers in event t-shirts on their phones connected to chatTAK's Wi-Fi, bike riders passing in foreground" loading="eager" />
+        <figcaption class="hero-image__caption">
+          <span class="hero-image__caption-label">CHATTAK · VOLUNTEER AID STATION · 60-SECOND ONBOARD</span>
+          <span class="hero-image__caption-text">chatTAK at a charity bike-ride aid station — a sub-$30 Pi Zero appliance with its own Wi-Fi network. Volunteers connect their personal phones, pick a callsign, and they're a first-class TAK participant. No app install, no infrastructure.</span>
+        </figcaption>
+      </div>
+    </div>
+  </figure>
+
+  <section class="scenario">
+    <div class="container">
+      <div class="scenario__grid">
+        <div class="scenario__sticky">
+          <span class="section__label section__label--coord" data-coord="EVENT + VOLS">SCENARIO</span>
+          <h2 class="section__title">A charity bike ride.<br><em>Eighty volunteers.</em><br>Sixty seconds to onboard.</h2>
+        </div>
+        <div class="scenario__body">
+          <p>
+            It's the morning of a regional charity bike ride. Two hundred riders, twelve aid stations
+            across forty miles of back roads, eighty volunteers. The race director is running ops from
+            her car with ATAK on a phone. The chief medical officer has WinTAK on his laptop in the
+            SAG vehicle. The volunteer comms lead has a 2-meter HT.
+          </p>
+          <p>
+            The volunteers at the aid stations have neither ATAK nor amateur radio. They're regular
+            people with regular phones who showed up to help. None of them are going to install an app
+            or learn a tactical mapping tool.
+          </p>
+          <p>
+            At each aid station the comms lead hands the station captain a chatTAK — a Pi Zero in a
+            3D-printed case the size of a deck of cards, powered by a USB battery. "Connect your phone
+            to the Wi-Fi named <em>AID-7</em>. Open the link. Pick your name and team." Sixty seconds
+            later every volunteer at the station is on the team's TAK chat. Their position is updating
+            on the race director's ATAK. They can DM the chief medical officer.
+          </p>
+          <p>
+            When a rider goes down, the captain types a chat. It reaches the race director, the
+            medical officer, and every aid station — instantly.
+          </p>
+          <p><strong>No app install. No accounts. No cell coverage required.</strong> <em>A Pi Zero per station.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="04 / CAPABILITIES">WHAT YOU CAN DO</span>
+      <h2 class="section__title">Four things<br>chatTAK <em>does well.</em></h2>
+
+      <div class="outcomes" style="margin-top: 4rem;">
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 01</div>
+            <h3 class="outcome__title">Add anyone with a phone to your TAK network</h3>
+            <p class="outcome__lede">
+              chatTAK is a self-contained TAK endpoint, not a forwarding tunnel. Every browser user
+              gets a real TAK identity — UID, callsign, team, color, position — and broadcasts a
+              periodic SA heartbeat onto the TAK network exactly like an ATAK device.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Native TAK chat</strong> — every message is byte-identical to ATAK GeoChat; WinTAK and ATAK clients can't tell chatTAK users from "real" TAK clients.</li>
+              <li><strong>Per-user periodic SA</strong> — each browser broadcasts position + metadata on a configurable cadence (default 30 s).</li>
+              <li><strong>Browser-only UI</strong> — no app install, no account, no app store; works on any modern phone or laptop.</li>
+              <li><strong>Self-hosted Wi-Fi AP</strong> — chatTAK can be its own wireless network so it works in a parking lot with no LAN around.</li>
+              <li><strong>Attachments up to 50 MB</strong> — send photos and documents over TAK.</li>
+              <li><strong>Clean enrollment / logout</strong> — callsign + team + role picker on first connect; leaving triggers a proper TAK delete.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/chatTAK/chattak-01-phone-enroll.png" alt="Close-up of a volunteer's hands holding a smartphone, the screen showing a chatTAK browser-based enrollment form with callsign and team fields, a Pi Zero appliance in a 3D-printed case visible on a folding table in the background" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 02</div>
+            <h3 class="outcome__title">Drop into any operation without infrastructure</h3>
+            <p class="outcome__lede">
+              chatTAK is a fully offline-strict appliance. Every dependency is vendored. The install
+              runs without internet. The product runs without internet.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Pi Zero 2 W form factor</strong> — sub-$30 hardware, palm-sized.</li>
+              <li><strong>Self-contained Wi-Fi AP</strong> with DHCP, DNS, and HTTPS termination already configured.</li>
+              <li><strong>Battery-powered operation</strong> — USB power bank lasts a day.</li>
+              <li><strong>One-tarball install</strong> — everything ships in the offline release archive.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/chatTAK/chattak-02-pelican.png" alt="A black Pelican case open on the dropped tailgate of a parked SUV, holding a small Raspberry Pi Zero in a 3D-printed case wired to a USB power bank, with a handwritten label reading 'chatTAK · join WiFi · pick callsign' and a community gathering visible in the background" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 03</div>
+            <h3 class="outcome__title">Run a comms-forward command element from a single Pi</h3>
+            <p class="outcome__lede">
+              When the priority is <em>talk, decide, coordinate</em> — not stare at a map — chatTAK is
+              the TAK endpoint of choice. One Pi, one Wi-Fi network, and your whole command staff is
+              on the same TAK chat from their phones.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Multi-user from one device</strong> — the IC, ops chief, planning chief, and logistics officer can all be on one Pi at once, each as their own callsign with their own team color, role, and SA heartbeat.</li>
+              <li><strong>The WinTAK chat feature set, in a browser</strong> — All Chat, team chat, addressable DMs, group chat, attachments.</li>
+              <li><strong>No ATAK cognitive load</strong> — for staff who don't need the tactical map every second, chatTAK gives them the comms layer without the rest of the client.</li>
+              <li><strong>Field command, no infrastructure</strong> — a four-person command element can run an incident from a single chatTAK Pi powered by a USB battery. Carry it in a sleeve, run command from a phone.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/chatTAK/chattak-03-command-element.png" alt="A four-person wildland-fire command element in yellow Nomex gear gathered around the dropped tailgate of a Forest Service truck on a fire road, conversing while consulting their personal smartphones, with a Raspberry Pi Zero appliance visible on the tailgate" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 04</div>
+            <h3 class="outcome__title">Compose with the rest of the xTAK suite</h3>
+            <p class="outcome__lede">
+              chatTAK is the lightweight endpoint counterpart to baseTAK. The chat wire format is
+              byte-identical between them — they share the same <code>cot_chat</code> shared module.
+              Drop a chatTAK on a LAN that also has baseTAK, digiTAK, loraTAK, or sdrTAK and they all
+              see each other.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>chatTAK browser user can DM an ATAK device</strong> — and vice versa.</li>
+              <li><strong>chatTAK chat reaches a Meshtastic node</strong> via loraTAK on the same LAN.</li>
+              <li><strong>chatTAK chat reaches a ham operator</strong> via digiTAK on the same LAN.</li>
+              <li><strong>A logged-in volunteer's position</strong> flows to every TAK client and bridge on the network.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/chatTAK/chattak-04-suite.png" alt="Technical schematic showing a chatTAK Pi appliance at top connected via Wi-Fi to three smartphones, with a two-way cyan link down to the TAK network bar carrying ATAK, WinTAK, and iTAK icons — illustrating chat in both directions and per-user SA heartbeat" loading="lazy" />
+          </figure>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CAPABILITY CATALOG ============== -->
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="06 / DETAIL">EVERY FEATURE</span>
+      <h2 class="section__title reveal">What's <em>in the box.</em></h2>
+      <p class="reveal" data-delay="1" style="font-size: 1.1rem; color: var(--ink-body); line-height: 1.6; max-width: 64ch; margin-top: 1.4rem;">
+        chatTAK is a standalone, browser-native TAK GeoChat client. Hand
+        someone a URL on a tablet or phone-browser and they're on your TAK
+        chat thread with attachments — no app install, no Play Store
+        approval, no MDM.
+      </p>
+
+      <ul class="capabilities reveal" data-delay="2">
+        <li class="capability"><strong>Full GeoChat compatibility</strong> — DMs, broadcast, team, custom groups.</li>
+        <li class="capability"><strong>Multi-user</strong> — each browser session is a distinct TAK identity with team color, role, presence.</li>
+        <li class="capability"><strong>Timeline + threaded views</strong> — read the feed in chronological order with the newest at the bottom, or grouped by conversation so a single DM, team, or group thread collapses into one block. One click between them.</li>
+        <li class="capability"><strong>50&nbsp;MB attachments</strong> — images, video, docs.</li>
+        <li class="capability"><strong>Proper <code>t-x-d-d</code> removal on logout</strong> — no ghost contacts cluttering the roster.</li>
+        <li class="capability"><strong>Native CoT XML compliance</strong> — chats appear in WinTAK and ATAK without translation.</li>
+        <li class="capability"><strong>Custom chat groups</strong> with full member roster lifecycle (create, add, remove, delete).</li>
+        <li class="capability"><strong>Offline-installable tarball</strong> with vendored Python deps — no internet required at install time.</li>
+        <li class="capability"><strong>Runs as a Pi appliance</strong> — hand out the SSID, operators connect, no setup.</li>
+        <li class="capability"><strong>Shared codebase with baseTAK</strong> — same <code>cot_chat</code> pip package, so fixes ship to both products at once.</li>
+      </ul>
+
+      <div class="choose reveal" data-delay="2">
+        <div class="choose__eyebrow">★ Choose chatTAK when</div>
+        <p class="choose__body">
+          You have stakeholders who need to be on the TAK chat thread but
+          <strong>don't need the SA map</strong> — incident commanders, dispatch,
+          family liaisons, ham radio chase teams. Or you're standing up a
+          <strong>temporary appliance at an event</strong> and want hands-free onboarding.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <div class="cta-banner__eyebrow">☕ Beta · Early Access</div>
+          <h3 class="cta-banner__title">Get chatTAK in your hands now.</h3>
+          <p class="cta-banner__body">Become a supporter on Buy Me a Coffee and join the early-adopter Beta — get the current build, the next release, and direct engagement with the team.</p>
+        </div>
+        <a href="/support.html" class="btn btn--amber">Support on Buy Me a Coffee</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="HW + INSTALL">SPECS</span>
+      <h2 class="section__title">What chatTAK <em>needs.</em></h2>
+
+      <div class="specs" style="margin-top: 2rem;">
+        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Raspberry Pi Zero 2 W (or any Pi 3+, or any Linux/macOS box for testing)</div></div>
+        <div class="specs__row"><div class="specs__key">Case</div><div class="specs__val">3D-printable designs available</div></div>
+        <div class="specs__row"><div class="specs__key">Power</div><div class="specs__val">USB battery, wall wart, or USB-C PD adapter — day-long operation on a single battery</div></div>
+        <div class="specs__row"><div class="specs__key">Wi-Fi</div><div class="specs__val">Self-contained AP — DHCP, DNS, HTTPS termination all configured. Works in a parking lot with no LAN.</div></div>
+        <div class="specs__row"><div class="specs__key">Client devices</div><div class="specs__val">Phones, tablets, laptops — any modern browser. No app install.</div></div>
+        <div class="specs__row"><div class="specs__key">Multi-user</div><div class="specs__val">Every browser session = its own TAK identity (callsign, team, role, position, SA heartbeat)</div></div>
+        <div class="specs__row"><div class="specs__key">TAK clients supported</div><div class="specs__val">ATAK, WinTAK, iTAK, baseTAK — any standard TAK client on the LAN</div></div>
+        <div class="specs__row"><div class="specs__key">Internet</div><div class="specs__val">Not required · install and operation are fully offline</div></div>
+        <div class="specs__row"><div class="specs__key">Version</div><div class="specs__val">v 1.0.x (Beta · shipping soon)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <span class="section__label section__label--coord" data-coord="Q &amp; A">FAQ</span>
+      <h2 class="section__title">Questions<br>operators ask.</h2>
+
+      <div class="faq">
+        <details>
+          <summary>Do volunteers need to install anything?</summary>
+          <p>No. Any phone with a browser connects to chatTAK's Wi-Fi, opens the URL, picks a callsign and team, and they're a TAK participant. Sixty seconds end-to-end.</p>
+        </details>
+        <details>
+          <summary>Can multiple users be on the same chatTAK?</summary>
+          <p>Yes — that's the point. Every browser user gets their own TAK identity. The IC, ops chief, planning chief, logistics officer, and finance officer can all be on one Pi at once. Same for volunteer aid stations: every volunteer at the station is on their own callsign.</p>
+        </details>
+        <details>
+          <summary>Does it really work without any LAN or internet?</summary>
+          <p>Yes. chatTAK can host its own Wi-Fi access point. Phones connect directly to it. The Pi resolves its own hostname. Works in a parking lot, in a basement, at a trailhead, anywhere — no infrastructure required.</p>
+        </details>
+        <details>
+          <summary>How does chatTAK appear to ATAK / WinTAK on the LAN?</summary>
+          <p>Like a real TAK client. Every chatTAK browser user broadcasts a periodic SA heartbeat onto the TAK network with their own UID, callsign, team, color, and position. ATAK and WinTAK can't tell them apart from "real" TAK clients on the wire.</p>
+        </details>
+        <details>
+          <summary>What's the form factor?</summary>
+          <p>Pi Zero 2 W, sub-$30 hardware, palm-sized. Fits in a 3D-printed case smaller than a deck of cards. Powered by a USB battery for a day of operation.</p>
+        </details>
+        <details>
+          <summary>Do I need TAK Server?</summary>
+          <p>No. chatTAK talks to TAK clients directly on the LAN.</p>
+        </details>
+        <details>
+          <summary>What happens when a user leaves?</summary>
+          <p>Leaving chatTAK triggers a proper TAK delete (<code>t-x-d-d</code>) — the participant prunes from baseTAK, ATAK, and WinTAK immediately instead of waiting for stale timeout.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span style="color: var(--cyan);">x</span>TAK</div>
+          <p class="footer__brand-tag">Open situational awareness for the team that has to coordinate when the WAN is gone.</p>
+        </div>
+        <div class="footer__col"><h4>Products</h4><ul>
+          <li><a href="/products/baseTAK.html">baseTAK</a></li>
+          <li><a href="/products/digiTAK.html">digiTAK</a></li>
+          <li><a href="/products/loraTAK.html">loraTAK</a></li>
+          <li><a href="/products/chatTAK.html">chatTAK</a></li>
+          <li><a href="/products/sdrTAK.html">sdrTAK</a></li>
+          <li><a href="/products/netTAK.html">netTAK <span class="text-amber">(future)</span></a></li>
+          <li><a href="/products/aiTAK.html">aiTAK <span class="text-amber">(future)</span></a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Resources</h4><ul>
+          <li><a href="/about-tak.html">About TAK</a></li>
+          <li><a href="/support.html">Become an Early Adopter</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK" target="_blank" rel="noopener">GitHub Repo</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul>
+          <li><a href="https://buymeacoffee.com/xtak" target="_blank" rel="noopener">Buy Me a Coffee</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 xTAK Project · All rights reserved</div>
+        <div>xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, aiTAK are trademarks of the xTAK Project · <a href="/copyright.html">Notice</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

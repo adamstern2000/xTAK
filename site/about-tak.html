@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About the TAK ecosystem — ATAK, WinTAK, iTAK, TAK Server — and where xTAK fits." />
+  <title>About the TAK Ecosystem — xTAK Project</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">ECOSYSTEM / TAK</span>
+        <span class="readout__item">REF / TPC</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">PARTICIPANT / xTAK</span>
+        <span class="readout__item"><span data-clock>—</span></span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="brand"><span class="brand__diamond"></span><span class="brand__word"><span class="accent">x</span>TAK</span></a>
+      <nav><ul class="nav__links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#suite">The Suite</a></li>
+        <li><a href="/about-tak.html" aria-current="page">About TAK</a></li>
+        <li><a href="/#get-started">Get Started</a></li>
+        <li><a href="/support.html">Support</a></li>
+      </ul></nav>
+      <a href="/support.html" class="nav__cta">Early Adopter →</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / <span class="text-cyan">About the TAK ecosystem</span></div>
+      <h1 class="pagehead__title">What <em>TAK</em><br>actually is.</h1>
+      <p class="pagehead__sub">
+        TAK stands for <strong class="text-bright">Team Awareness Kit</strong> — a family of
+        situational-awareness applications originally built by the U.S. Air Force Research Laboratory
+        and now widely used in defense, public safety, search and rescue, and amateur radio. The TAK
+        Product Center maintains the official clients; civilian versions are freely available from
+        <a href="https://tak.gov" target="_blank" rel="noopener" class="text-cyan">tak.gov</a> for
+        U.S. citizens.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section__label">THE OFFICIAL CLIENTS</span>
+      <h2 class="section__title reveal">The TAK<br><em>baseline.</em></h2>
+
+      <div class="specs reveal" data-delay="1" style="margin-top: 2.5rem;">
+        <div class="specs__row">
+          <div class="specs__key">ATAK</div>
+          <div class="specs__val">Android phones and tablets · the flagship TAK client. Civilian distribution sometimes referred to as <strong>CivTAK</strong> or ATAK-CIV.</div>
+        </div>
+        <div class="specs__row">
+          <div class="specs__key">WinTAK</div>
+          <div class="specs__val">Windows · desktop client for command posts and base stations.</div>
+        </div>
+        <div class="specs__row">
+          <div class="specs__key">iTAK</div>
+          <div class="specs__val">iOS · iPhone and iPad.</div>
+        </div>
+        <div class="specs__row">
+          <div class="specs__key">TAK Server</div>
+          <div class="specs__val">Linux backend (optional) · federates clients across WAN. Civilian version is open source.</div>
+        </div>
+        <div class="specs__row">
+          <div class="specs__key">Wire protocol</div>
+          <div class="specs__val">Cursor-on-Target (COT) · compact XML and protobuf format for positions, markers, chat, shapes, routes.</div>
+        </div>
+        <div class="specs__row">
+          <div class="specs__key">Local network</div>
+          <div class="specs__val">UDP multicast (239.2.3.1:6969 for SA, 224.10.10.1:17012 for chat) — works without any server.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container container--narrow prose">
+      <span class="section__label">XTAK + TAK</span>
+      <h2 class="section__title" style="margin-bottom: 2rem;">What xTAK<br><em>is, and isn't.</em></h2>
+
+      <p><strong class="text-bright">xTAK is not a TAK client.</strong> xTAK is a suite of <em>participants</em> in the TAK ecosystem — services and appliances that join the same local network, speak the same TAK protocol, and appear as peers alongside ATAK, WinTAK, and iTAK clients.</p>
+
+      <p>xTAK extends the ecosystem in directions the official clients don't reach:</p>
+
+      <ul>
+        <li><strong>Radio transports</strong> — APRS over RF and APRS-IS (<a href="/products/digiTAK.html">digiTAK</a>), Meshtastic LoRa mesh (<a href="/products/loraTAK.html">loraTAK</a>), and Wi-Fi HaLow with BATMAN/802.11s mesh (<a href="/products/netTAK.html">netTAK</a>). Bring the bands you already use into TAK.</li>
+        <li><strong>Passive ingest</strong> — SDR-decoded aircraft, UAT 978, and AIS ships rendered as native TAK contacts (<a href="/products/sdrTAK.html">sdrTAK</a>).</li>
+        <li><strong>Browser and headless endpoints</strong> — a full-featured web map and chat hub (<a href="/products/baseTAK.html">baseTAK</a>) and a standalone chat-only Pi appliance (<a href="/products/chatTAK.html">chatTAK</a>) for users who don't have an ATAK device.</li>
+        <li><strong>AI augmentation</strong> — an LLM-backed operations assistant (<a href="/products/aiTAK.html">aiTAK</a>).</li>
+      </ul>
+
+      <p>xTAK works <strong>alongside</strong> ATAK, WinTAK, and iTAK on the same network. A marker placed in ATAK appears in baseTAK. A chat sent from chatTAK appears in WinTAK. A position from a Meshtastic node reaches every client through loraTAK. <strong class="text-bright">No TAK Server required. No vendor lock-in.</strong> Use as much or as little of xTAK as you want — every product is standalone, and the suite composes cleanly because every component speaks the same TAK protocol on the same network.</p>
+
+      <blockquote>
+        <strong>A note on trademarks.</strong> ATAK, WinTAK, iTAK, and TAK are products and trademarks of the U.S. Government, made available through the TAK Product Center. The xTAK Project is independent and is <strong>not affiliated with the TAK Product Center.</strong>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div>
+          <div class="cta-banner__eyebrow">☕ Beta · Early Access</div>
+          <h3 class="cta-banner__title">Become an Early Adopter.</h3>
+          <p class="cta-banner__body">Get early access to all xTAK software and new features. Direct engagement with the team. Self-funded, open by design.</p>
+        </div>
+        <a href="/support.html" class="btn btn--amber">Support on Buy Me a Coffee</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span style="color: var(--cyan);">x</span>TAK</div>
+          <p class="footer__brand-tag">Open situational awareness for the team that has to coordinate when the WAN is gone.</p>
+        </div>
+        <div class="footer__col"><h4>Products</h4><ul>
+          <li><a href="/products/baseTAK.html">baseTAK</a></li>
+          <li><a href="/products/digiTAK.html">digiTAK</a></li>
+          <li><a href="/products/loraTAK.html">loraTAK</a></li>
+          <li><a href="/products/chatTAK.html">chatTAK</a></li>
+          <li><a href="/products/sdrTAK.html">sdrTAK</a></li>
+          <li><a href="/products/netTAK.html">netTAK <span class="text-amber">(future)</span></a></li>
+          <li><a href="/products/aiTAK.html">aiTAK <span class="text-amber">(future)</span></a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Resources</h4><ul>
+          <li><a href="/about-tak.html">About TAK</a></li>
+          <li><a href="/support.html">Become an Early Adopter</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK" target="_blank" rel="noopener">GitHub Repo</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul>
+          <li><a href="https://buymeacoffee.com/xtak" target="_blank" rel="noopener">Buy Me a Coffee</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 xTAK Project · All rights reserved</div>
+        <div>xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, aiTAK are trademarks of the xTAK Project · <a href="/copyright.html">Notice</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

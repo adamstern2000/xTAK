@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="baseTAK is a full TAK map, chat, and SA hub in a browser tab — faster than WinTAK by design. Two-click broadcast. Built-in tileserver serves very detailed maps to every TAK client on the network (baseTAK, ATAK, WinTAK, iTAK). Self-hosted. No TAK Server. No cloud." />
+  <title>baseTAK — Run the Operation from a Browser | xTAK Suite</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">PRODUCT / BASETAK</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">STATUS / BETA</span>
+        <span class="readout__item">v 0.45.x</span>
+        <span class="readout__item"><span data-clock>—</span></span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="brand"><span class="brand__diamond"></span><span class="brand__word"><span class="accent">x</span>TAK</span></a>
+      <nav><ul class="nav__links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#suite">The Suite</a></li>
+        <li><a href="/about-tak.html">About TAK</a></li>
+        <li><a href="/#get-started">Get Started</a></li>
+        <li><a href="/support.html">Support</a></li>
+      </ul></nav>
+      <a href="/support.html" class="nav__cta">Early Adopter →</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / Products / <span class="text-cyan">baseTAK</span></div>
+      <div class="pagehead__status"><span class="status status--beta">Beta — shipping soon</span></div>
+      <h1 class="pagehead__title">Run the operation<br>from a <em>browser.</em></h1>
+      <p class="pagehead__sub">
+        A full TAK map, chat, and SA hub in a tab — faster to operate than WinTAK by design.
+        baseTAK turns every laptop in your EOC into a first-class TAK operator alongside ATAK,
+        WinTAK, and iTAK. With a built-in tileserver, every tablet in the field gets its maps
+        from you. No internet required.
+      </p>
+      <div class="hero__ctas" style="margin-top: 2rem;">
+        <a href="/support.html" class="btn btn--primary">Become an Early Adopter</a>
+        <a href="https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/baseTAK.md" target="_blank" rel="noopener" class="btn btn--ghost">Full Spec</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="container">
+      <div class="trust__inner">
+        <span>Incident Commanders</span><span>EOC Staff</span><span>Wildland Fire</span><span>SAR Base Coordinators</span><span>Fire / EMS Operations</span><span>EmComm Net Controls</span><span>County / City EM</span>
+      </div>
+    </div>
+  </div>
+
+  <figure class="hero-image">
+    <div class="container container--wide">
+      <div class="hero-image__frame">
+        <img src="/img/scenario/overhead.png" alt="baseTAK overhead view of the Devil's Gate Fire incident — fire perimeter, mandatory and warning evacuation zones, geofence alerts firing as the fire approaches Eaton Canyon mouth" loading="eager" />
+        <figcaption class="hero-image__caption">
+          <span class="hero-image__caption-label">BASETAK · OVERHEAD VIEW · ZONES + ALERTS</span>
+          <span class="hero-image__caption-text">baseTAK as the operational hub: fire perimeter overlaid on satellite imagery, mandatory and warning evacuation polygons labeled, geofence alerts firing in real time as the fire approaches the Eaton Canyon mouth. Every TAK client on the network sees the same picture.</span>
+        </figcaption>
+      </div>
+    </div>
+  </figure>
+
+  <section class="scenario">
+    <div class="container">
+      <div class="scenario__grid">
+        <div class="scenario__sticky">
+          <span class="section__label section__label--coord" data-coord="EOC + LAPTOPS">SCENARIO</span>
+          <h2 class="section__title">A winter storm.<br><em>Twelve laptops.</em><br>One shared picture.</h2>
+        </div>
+        <div class="scenario__body">
+          <p>
+            A winter storm has knocked out power across three counties. The Emergency Operations
+            Center is staffed by twelve people. None of them have ATAK tablets. They have laptops.
+          </p>
+          <p>
+            The IC opens a browser tab to <code style="color: var(--cyan);">https://eoc.local</code>.
+            The map fills the screen — terrain shading, county overlays, the warming-shelter polygon
+            she drew yesterday, the staging areas she imported from a KML. She drops a new marker for
+            the shelter that just opened in the high school. <strong>Two clicks:</strong> pick the icon,
+            click the spot. No "send" button. No "are you sure" dialog. Within seconds, every laptop
+            in the EOC sees it. So does the sheriff's ATAK tablet in his cruiser. So does the WinTAK
+            on the EM director's desktop two doors down.
+          </p>
+          <p>
+            When deputies start checking in from rural patrol with spotty cell coverage, their ATAK
+            tablets pull terrain tiles straight from baseTAK over the EOC's LAN. The IC pre-loaded
+            regional aerial imagery from county GIS last week, before the storm. Nobody in the field
+            needs cell coverage to get a current map.
+          </p>
+          <p><strong>Twelve operators. One shared picture.</strong> <em>No tablets distributed. No TAK Server. No cloud.</em></p>
+          <p>That's baseTAK.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== SCALE / SIZING ============== -->
+  <section class="section section--tight">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="04 / DEPLOY">INSTANT DEPLOY</span>
+      <h2 class="section__title reveal">The whole country,<br><em>pre-loaded on the laptop.</em></h2>
+      <p class="reveal" data-delay="1" style="font-size: 1.1rem; color: var(--ink-body); line-height: 1.6; max-width: 70ch; margin-top: 1.4rem;">
+        A <strong>1 TB MBTiles file holds satellite imagery for the entire
+        continental United States.</strong> Load it once; deploy anywhere. There's
+        no "pre-cache the area" step before the op — when you arrive at the
+        incident, the maps are already there at satellite detail. Wildland
+        fire in California today, hurricane in Florida tomorrow, SAR in
+        Washington the day after — same hardware, no re-provisioning.
+      </p>
+
+      <div class="propositions reveal" data-delay="2">
+        <div class="proposition">
+          <div class="proposition__num">LAPTOP TIER</div>
+          <h3 class="proposition__title">CONUS sat,<br>on a laptop.</h3>
+          <p class="proposition__body">
+            32 GB RAM, 2 TB SSD. The 1 TB whole-country imagery file fits
+            with room to spare for an operation's COTs and chat history.
+            Mobile EOC, command vehicle, forward CP — <strong>open the laptop,
+            hand out the SSID, your team is on a TAK picture of the entire
+            country at satellite detail.</strong> Instant.
+          </p>
+        </div>
+        <div class="proposition">
+          <div class="proposition__num">SERVER TIER</div>
+          <h3 class="proposition__title">50 TB of detail,<br>on a server.</h3>
+          <p class="proposition__body">
+            Forget about <em>just</em> CONUS sat. With a server and a 50 TB
+            SSD you carry everything: multi-source aerial imagery,
+            hi-res topographic, FEMA hazard layers, regional overlays,
+            custom basemaps. <strong>100+ users, agency- or multi-state-exercise
+            scale, on hardware you already own.</strong> The hardware is the only
+            limit on map detail.
+          </p>
+        </div>
+      </div>
+
+      <div class="choose reveal" data-delay="3" style="margin-top: 3rem;">
+        <div class="choose__eyebrow">★ Proof on the page</div>
+        <p class="choose__body">
+          <strong>Every screenshot on this site</strong> — Devil's Gate Fire (CA),
+          Bolder Boulder (CO), Catskills SAR (NY), Smokies SAR (NC/TN),
+          ORD airspace (IL), DC airspace, Puget Sound (WA) — was rendered
+          from <strong>the same 1 TB MBTiles file running on a laptop.</strong> One file,
+          the whole country, no cloud render, no per-state download.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="05 / CAPABILITIES">WHAT YOU CAN DO</span>
+      <h2 class="section__title">Five things<br>baseTAK <em>does well.</em></h2>
+
+      <div class="outcomes" style="margin-top: 4rem;">
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 01</div>
+            <h3 class="outcome__title">Put a real TAK client on every laptop in the room</h3>
+            <p class="outcome__lede">
+              baseTAK is a full TAK map in a browser — no app to install, no per-device licensing,
+              no tablet requirement. Anyone on the LAN with Chrome, Firefox, or Safari is a participant.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Native COT creation</strong> — markers, routes, polygons, rectangles, ellipses, circles, range rings, bullseyes, bearing-distance lines.</li>
+              <li><strong>Telestrations and freehand drawings</strong> — sketch on the map and broadcast to every TAK client.</li>
+              <li><strong>Editing parity</strong> — rename, recolor, move, re-broadcast any marker with original creator attribution preserved.</li>
+              <li><strong>3D terrain</strong> with EGM96 geoid elevation accuracy — meters HAE-to-MSL, not approximated.</li>
+              <li><strong>KML / GPX / KMZ import</strong> preserving symbology, names, and geometry.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/baseTAK/basetak-01-eoc.png" alt="A baseTAK browser view of a Catskills search-and-rescue scenario: 3D terrain basemap with high-, medium- and low-probability search polygons, a 'TRAIL CLOSURE — DEVIL'S PATH' callout, marker pins for crews and waypoints, and a left rail listing the Drawings and Markers panes" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 02</div>
+            <h3 class="outcome__title">Operate at the speed of the incident</h3>
+            <p class="outcome__lede">
+              WinTAK takes four or more clicks to drop a marker and broadcast it. In a fast-moving
+              incident, that's a tax on every decision. baseTAK is built around the operator: turn on
+              <strong>broadcast-by-default</strong> and every new marker, drawing, icon, or shape is on
+              the wire the moment you place it. <strong>Two clicks. Done.</strong>
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Broadcast-by-default mode</strong> — every new entity is on the wire immediately. No "send" button, no "are you sure" dialog.</li>
+              <li><strong>Curated icon set</strong> — pruned to what operators actually use in the field. Faster selection, lower cognitive load.</li>
+              <li><strong>Working panes designed around the map</strong> — UI chrome is collapsible and minimal so the map gets the screen.</li>
+              <li><strong>Keyboard shortcuts</strong> for every common action — drop, draw, send chat without leaving the keys.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/baseTAK/basetak-02-icon-picker.png" alt="The baseTAK 'Select Icon' panel open over the map: a grid of curated transportation symbols with a color picker row below, a Drawings pane on the left, and a 'Place on Map' button — illustrating the two-click marker workflow" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 03</div>
+            <h3 class="outcome__title">Be the authoritative SA source, even on imperfect networks</h3>
+            <p class="outcome__lede">
+              baseTAK is designed for the <strong>imperfect networks</strong> operations
+              actually run on — Wi-Fi APs that drop packets, mesh hops that flake out,
+              devices that come and go. Markers don't get lost; every TAK client on the
+              network stays in sync without an operator having to chase anyone down.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>3-burst initial broadcast</strong> — every new marker, drawing, or shape is emitted three times at 30-second intervals when it's created. A client that missed the first send because of a flaky AP gets caught up on the next one. No operator action required.</li>
+              <li><strong>Per-COT-type re-broadcast cadence, admin-configurable</strong> — after the initial burst, each COT type has its own admin-set cadence for ongoing re-broadcast. High-value items (evac zones, hot zones, critical contacts) re-broadcast often; static infrastructure markers re-broadcast rarely. The picture stays current without flooding the wire.</li>
+              <li><strong>Take ownership of other users' COTs</strong> <span class="text-amber">(in development)</span> — a designated user can take ownership of any marker on the wire, including ones placed by other operators, and baseTAK keeps re-broadcasting it from then on. No more orphaned markers when the operator who placed them goes off-net.</li>
+              <li><strong>Per-field echo filtering</strong> — when the same COT comes back from a different bridge (APRS, mesh), only genuine field changes update the record.</li>
+              <li><strong>SQLite-backed persistence</strong> — the picture survives a restart, a power cycle, a swap of the laptop, a swap of the IC.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/baseTAK/basetak-03-heartbeat.png" alt="Diagram of baseTAK as a central hub with cyan concentric rings radiating outward to ATAK, WinTAK, iTAK, and another baseTAK client — visualizing heartbeat re-broadcast configurable per type" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 04</div>
+            <h3 class="outcome__title">Serve very detailed maps to every TAK client on your network</h3>
+            <p class="outcome__lede">
+              baseTAK ships with a standard tileserver built in. Every TAK
+              client on your network — baseTAK browsers, ATAK, WinTAK, iTAK —
+              pulls the same maps from one source. So does anything else that
+              speaks the standard tileserver format.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>One source of maps for every TAK client</strong> — baseTAK, ATAK, WinTAK, and iTAK all point at your baseTAK and pull from there. One map stack to maintain, not four.</li>
+              <li><strong>Direct EUD tile download over the network</strong> — when a tablet is connected, it downloads tiles directly from baseTAK on the fly. No HQ provisioning of every device, no sideload, no SD-card preflight.</li>
+              <li><strong>Standard tileserver format</strong> — anything that speaks XYZ / TMS / MBTiles can consume the same maps. The basemap stack you load is reusable across any compatible app, not just TAK clients.</li>
+              <li><strong>Multi-source basemaps</strong> — aerial imagery, USGS topo, OpenStreetMap, FEMA hazard layers, custom overlays — any standard tile format works.</li>
+              <li><strong>And it extends to the field.</strong> baseTAK Lite — the same tileserver on a <a href="/products/netTAK.html" style="color: var(--cyan);">netTAK</a> field node — serves maps to every TAK device at a forward site without backhaul.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/baseTAK/basetak-04-tileserver.png" alt="Sheriff's deputy in uniform standing beside his patrol vehicle on a backcountry road, holding up a rugged Android tablet displaying a TAK topographic map served from baseTAK at the EOC, golden-hour light over a valley" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome">
+          <div>
+            <div class="outcome__num">OUTCOME 05</div>
+            <h3 class="outcome__title">Compose with the rest of the xTAK suite, no glue required</h3>
+            <p class="outcome__lede">
+              Drop any other xTAK product on the same LAN and it just shows up. Every product speaks
+              the same TAK protocol on the same network.
+            </p>
+            <ul class="outcome__list">
+              <li><strong><a href="/products/digiTAK.html" style="color: var(--cyan);">digiTAK</a></strong> feeds APRS stations and bridged sites onto your map.</li>
+              <li><strong><a href="/products/loraTAK.html" style="color: var(--cyan);">loraTAK</a></strong> feeds Meshtastic LoRa node positions and chat.</li>
+              <li><strong><a href="/products/sdrTAK.html" style="color: var(--cyan);">sdrTAK</a></strong> feeds decoded aircraft (1090 ES, UAT 978) and ships (AIS).</li>
+              <li><strong><a href="/products/chatTAK.html" style="color: var(--cyan);">chatTAK</a></strong> browser users appear as their own first-class TAK endpoints.</li>
+              <li><strong><a href="/products/netTAK.html" style="color: var(--cyan);">netTAK</a></strong> <span class="text-amber">(future)</span> extends the LAN over a self-healing 802.11s + BATMAN mesh.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/baseTAK/basetak-05-composed.png" alt="A baseTAK street-map view of a Bolder Boulder 10K race-day operation, the full course traced through downtown with restricted-zone polygons, race-marshal and PD vehicle markers, APRS station beacons, Meshtastic mesh nodes, ADS-B aircraft, and browser-user contacts all visible on a single map, with a callout open for the RESTRICTED ZONE — FINISH CHUTE and a left rail listing Drawings, Navigation, and Tracks" loading="lazy" />
+          </figure>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CAPABILITY CATALOG ============== -->
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="06 / DETAIL">EVERY FEATURE</span>
+      <h2 class="section__title reveal">What's <em>in the box.</em></h2>
+      <p class="reveal" data-delay="1" style="font-size: 1.1rem; color: var(--ink-body); line-height: 1.6; max-width: 64ch; margin-top: 1.4rem;">
+        baseTAK ships every primitive an operator needs to run a real
+        TAK picture from a browser — full CoT origination, drawing,
+        chat, file transfer, and offline tiles. Multi-user, multi-device,
+        self-hosted, no app install.
+      </p>
+
+      <ul class="capabilities reveal" data-delay="2">
+        <li class="capability"><strong>Multi-user enrollment</strong> — every browser session is a distinct TAK identity with team color, role, and live presence.</li>
+        <li class="capability"><strong>Full CoT marker origination</strong> — friendly, neutral, hostile, custom iconsets, full MIL-STD-2525C symbology.</li>
+        <li class="capability"><strong>Filter the map by icon type</strong> — show only the markers you care about. Paired with <a href="/products/digiTAK.html" style="color: var(--cyan);">digiTAK</a>, the filter is APRS-symbol-aware (weather stations only, mobile trackers only, digipeaters only). Paired with <a href="/products/sdrTAK.html" style="color: var(--cyan);">sdrTAK</a>, you filter aircraft by emitter category (helo, heavy, light, glider, military) and ships by AIS type. One control, multi-source decluttering.</li>
+        <li class="capability"><strong>Drawing primitives</strong> — freehand telestration, polygons, rectangles, range rings, bullseyes, lines, ellipses, circles.</li>
+        <li class="capability"><strong>Route planning</strong> with elevation profile and magnetic-declination-corrected bearings (WMM2020).</li>
+        <li class="capability"><strong>Address + business search</strong> — find any location by typing an address, intersection, or business name. Backed by open-source geocoding data — no Google API key, no per-query fees, no third-party tracking.</li>
+        <li class="capability"><strong>Track history</strong> — record and play back any unit's movement; convert any track to a route.</li>
+        <li class="capability"><strong>Lock-on · Pointer HUD · Resection</strong> — operator-grade nav primitives, not just a map viewer.</li>
+        <li class="capability"><strong>Geofences</strong> with entry/exit + cross-shape alerts.</li>
+        <li class="capability"><strong>Emergency lifecycle</strong> — alert, "ring the bell," lockdown; full <code>b-a-o-tbl</code> + <code>b-a-o-pan</code> compliance.</li>
+        <li class="capability"><strong>3D terrain</strong> with EGM96-correct altitude (HAE, not approximated MSL).</li>
+        <li class="capability"><strong>KML / GPX / KMZ / TAK Data Package</strong> import + export, with symbology preserved.</li>
+        <li class="capability"><strong>Native GeoChat</strong> — broadcast, team, DM, custom groups, attachments, read receipts.</li>
+        <li class="capability"><strong>Built-in TAK file server</strong> — send and receive files up to 50&nbsp;MB to any WinTAK/ATAK/iTAK client. Emits the standard <code>b-f-t-r</code> fileshare CoT, validates SHA-256, exposes an HTTPS endpoint at <code>/api/attachments/&lt;id&gt;/zip</code>, and tracks every attachment in SQLite as an auditable trail. No TAK Server required.</li>
+        <li class="capability"><strong>Built-in tileserver</strong> — serves very detailed maps to every TAK client on the network (baseTAK, ATAK, WinTAK, iTAK) and to any other app that speaks the standard tileserver format. EUDs download tiles directly when connected over the network.</li>
+        <li class="capability"><strong>SQLite persistence</strong> — the picture survives restart, power cycle, hardware swap. Your data stays on your hardware.</li>
+      </ul>
+
+      <div class="choose reveal" data-delay="2">
+        <div class="choose__eyebrow">★ Choose baseTAK when</div>
+        <p class="choose__body">
+          You need a TAK SA picture <strong>on browsers</strong>, you don't want
+          to install apps on every operator's device, and you want
+          <strong>full ownership of the data and stack.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <div class="cta-banner__eyebrow">☕ Beta · Early Access</div>
+          <h3 class="cta-banner__title">Get baseTAK in your hands now.</h3>
+          <p class="cta-banner__body">Become a supporter on Buy Me a Coffee and join the early-adopter Beta — get the current build, the next release, and direct engagement with the team.</p>
+        </div>
+        <a href="/support.html" class="btn btn--amber">Support on Buy Me a Coffee</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="HW + INSTALL">SPECS</span>
+      <h2 class="section__title">What baseTAK <em>needs.</em></h2>
+
+      <div class="specs" style="margin-top: 2rem;">
+        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">A small Linux device — Raspberry Pi 4 / 5, fanless mini-PC, or any handheld Linux box (yes, even one the size of a Game Boy). 3.5 GB RAM, ~500 MB disk. Battery-powered or solar-viable.</div></div>
+        <div class="specs__row"><div class="specs__key">Browser clients</div><div class="specs__val">Any modern browser — Chrome, Firefox, Safari, Edge. No app install.</div></div>
+        <div class="specs__row"><div class="specs__key">TAK clients supported</div><div class="specs__val">ATAK, WinTAK, iTAK — any standard TAK client on the same LAN</div></div>
+        <div class="specs__row"><div class="specs__key">Tileserver</div><div class="specs__val">Standard tileserver format · serves baseTAK, ATAK, WinTAK, iTAK and any compatible app · EUDs download tiles directly over the network</div></div>
+        <div class="specs__row"><div class="specs__key">Persistence</div><div class="specs__val">SQLite-backed · picture survives restart, power cycle, hardware swap</div></div>
+        <div class="specs__row"><div class="specs__key">Operator features</div><div class="specs__val">Broadcast-by-default · 3-burst initial broadcast · admin-configurable per-COT-type re-broadcast cadence · curated icon set · keyboard shortcuts</div></div>
+        <div class="specs__row"><div class="specs__key">Network</div><div class="specs__val">Standard TAK on the LAN · no TAK Server, no cloud, no internet required</div></div>
+        <div class="specs__row"><div class="specs__key">Version</div><div class="specs__val">baseTAK v 0.45.x (Beta · shipping soon)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <span class="section__label section__label--coord" data-coord="Q &amp; A">FAQ</span>
+      <h2 class="section__title">Questions<br>operators ask.</h2>
+
+      <div class="faq">
+        <details>
+          <summary>Is baseTAK actually faster than WinTAK?</summary>
+          <p>Yes, by design. With broadcast-by-default enabled, dropping and broadcasting a marker is two clicks (pick icon, click location). WinTAK's flow requires explicit broadcast steps after placement. The curated icon set, keyboard shortcuts, and collapsible chrome reinforce the speed advantage.</p>
+        </details>
+        <details>
+          <summary>Do I need TAK Server?</summary>
+          <p>No. baseTAK talks to ATAK, WinTAK, and iTAK clients directly on your LAN. TAK Server is a separate product that federates clients across WAN — which is solved differently in xTAK (via digiTAK over RF, netTAK over mesh).</p>
+        </details>
+        <details>
+          <summary>How does the tileserver work?</summary>
+          <p>baseTAK includes a standard tileserver. Every TAK client — baseTAK, ATAK, WinTAK, iTAK — and any other app that speaks the standard tileserver format can point at baseTAK's tile URL and pull maps directly. EUDs connected to the network download tiles on the fly; no need to provision maps onto each device in advance.</p>
+        </details>
+        <details>
+          <summary>How does baseTAK keep every client's map up to date on a flaky network?</summary>
+          <p>Two mechanisms. <strong>First</strong>, every new marker, drawing, or shape is broadcast three times at 30-second intervals when it's created — so a client that missed the first emit because of a Wi-Fi drop or mesh-hop flake gets caught up on the next one. <strong>Second</strong>, each COT type has its own admin-configurable re-broadcast cadence for ongoing sync — high-value items (evac zones, hot contacts) re-broadcast often; static infrastructure rarely. A new feature in development lets a designated user take ownership of any marker on the wire — including ones placed by other operators — so baseTAK can keep re-broadcasting it even after the original placer goes off-net.</p>
+        </details>
+        <details>
+          <summary>Can multiple people use the same baseTAK instance?</summary>
+          <p>Yes. Multi-user is foundational — every browser user gets their own TAK identity (callsign, team, role, position) and acts as a first-class TAK participant. The IC, GIS analysts, ops chiefs, and finance officer can all be on the same baseTAK at once.</p>
+        </details>
+        <details>
+          <summary>Does it work with civilian (CivTAK) builds?</summary>
+          <p>Yes. baseTAK speaks the same TAK protocol all builds use — military, civilian, community variants.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span style="color: var(--cyan);">x</span>TAK</div>
+          <p class="footer__brand-tag">Open situational awareness for the team that has to coordinate when the WAN is gone.</p>
+        </div>
+        <div class="footer__col"><h4>Products</h4><ul>
+          <li><a href="/products/baseTAK.html">baseTAK</a></li>
+          <li><a href="/products/digiTAK.html">digiTAK</a></li>
+          <li><a href="/products/loraTAK.html">loraTAK</a></li>
+          <li><a href="/products/chatTAK.html">chatTAK</a></li>
+          <li><a href="/products/sdrTAK.html">sdrTAK</a></li>
+          <li><a href="/products/netTAK.html">netTAK <span class="text-amber">(future)</span></a></li>
+          <li><a href="/products/aiTAK.html">aiTAK <span class="text-amber">(future)</span></a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Resources</h4><ul>
+          <li><a href="/about-tak.html">About TAK</a></li>
+          <li><a href="/support.html">Become an Early Adopter</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK" target="_blank" rel="noopener">GitHub Repo</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul>
+          <li><a href="https://buymeacoffee.com/xtak" target="_blank" rel="noopener">Buy Me a Coffee</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 xTAK Project · All rights reserved</div>
+        <div>xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, aiTAK are trademarks of the xTAK Project · <a href="/copyright.html">Notice</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

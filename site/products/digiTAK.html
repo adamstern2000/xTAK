@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="digiTAK federates TAK networks over amateur radio — VHF for regional reach, HF for the continent. Run both simultaneously from one Pi. Replace your legacy APRS software with any TAK client as the UI. No internet required." />
+  <title>digiTAK — TAK Over Amateur Radio | xTAK Suite</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">PRODUCT / DIGITAK</span>
+        <span class="readout__item">CODENAME / cot_radio</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">STATUS / BETA</span>
+        <span class="readout__item">v 2.1.12</span>
+        <span class="readout__item"><span data-clock>—</span></span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="brand"><span class="brand__diamond"></span><span class="brand__word"><span class="accent">x</span>TAK</span></a>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="/#products">Products</a></li>
+          <li><a href="/#suite">The Suite</a></li>
+          <li><a href="/about-tak.html">About TAK</a></li>
+          <li><a href="/#get-started">Get Started</a></li>
+          <li><a href="/support.html">Support</a></li>
+        </ul>
+      </nav>
+      <a href="/support.html" class="nav__cta">Early Adopter →</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ============== PAGE HEAD ============== -->
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / Products / <span class="text-cyan">digiTAK</span></div>
+      <div class="pagehead__status"><span class="status status--beta">Beta — shipping soon (VHF + APRS-IS)</span></div>
+      <h1 class="pagehead__title">TAK <em>on the air.</em><br>VHF for the region.<br>HF for the continent.</h1>
+      <p class="pagehead__sub">
+        Federate two or more TAK networks over amateur radio. Run VHF and HF transports
+        simultaneously from one Pi. Built for EmComm, SAR, ARES districts, and any team that
+        needs to coordinate when the WAN is gone.
+      </p>
+      <div class="hero__ctas" style="margin-top: 2rem;">
+        <a href="/support.html" class="btn btn--primary">Become an Early Adopter</a>
+        <a href="https://github.com/adamstern2000/cot_radio_aprs" target="_blank" rel="noopener" class="btn btn--ghost">Wire-format Spec</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== TRUST STRIP ============== -->
+  <div class="trust">
+    <div class="container">
+      <div class="trust__inner">
+        <span>ARES</span><span>RACES</span><span>ACS</span><span>SATERN</span><span>MARS</span><span>SAR</span><span>Public-Safety Auxcomm</span><span>Amateur Radio</span>
+      </div>
+    </div>
+  </div>
+
+  <figure class="hero-image">
+    <div class="container container--wide">
+      <div class="hero-image__frame">
+        <img src="/img/products/digitak-hero.png" alt="digiTAK in the field — Pi-based gateway on the tailgate of a fire-response truck with VHF/HF radio and antenna mast, firefighter at a rugged laptop showing TAK map with fire perimeter, San Gabriel Mountains in the background" loading="eager" />
+        <figcaption class="hero-image__caption">
+          <span class="hero-image__caption-label">DIGITAK · FIELD STAGING · GOLDEN HOUR</span>
+          <span class="hero-image__caption-text">digiTAK on the tailgate of a fire-response truck — Pi gateway, VHF and HF radios, antenna mast, and a WinTAK laptop showing the live TAK picture. Same digiTAK reaches the next county on VHF, the next state on HF, simultaneously.</span>
+        </figcaption>
+      </div>
+    </div>
+  </figure>
+
+  <!-- ============== SCENARIO ============== -->
+  <section class="scenario">
+    <div class="container">
+      <div class="scenario__grid">
+        <div class="scenario__sticky reveal">
+          <span class="section__label section__label--coord" data-coord="VHF + HF">SCENARIO</span>
+          <h2 class="section__title">Day two of a<br><em>multi-day exercise.</em></h2>
+        </div>
+        <div class="scenario__body reveal" data-delay="1">
+          <p>
+            The forward team is up a fire road with no cell, no Starlink, no LTE. Base camp is
+            forty miles back. Both teams need to be looking at the same picture.
+          </p>
+          <p>
+            You drop a digiTAK at each site. A VHF antenna on a mast. The map on the IC's
+            <strong>WinTAK</strong> at base camp shows the forward team's markers within seconds. The
+            forward team's ATAK tablets see the IC's search grid the moment it's drawn. When a
+            volunteer with an APRS rig drives in from the highway, their callsign appears on every
+            TAK client on the network as a chat-able contact.
+          </p>
+          <p>
+            Meanwhile, the state EOC five hundred miles away has its own digiTAK with an HF rig.
+            The duty officer there sees the exercise's team positions on her WinTAK — passed
+            across the ionosphere by your digiTAK's <em>second</em> radio port. She can chat with the
+            field IC over HF.
+          </p>
+          <p><strong>Same digiTAK. Both radios. Simultaneously.</strong></p>
+          <p><em>No internet. No TAK Server. No cellular.</em> Just amateur radio and a Pi at each end.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== DEPLOYMENT / SCALE ============== -->
+  <section class="section section--tight">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="04 / DEPLOY">INSTANT DEPLOY</span>
+      <h2 class="section__title reveal">Drop a digiTAK in.<br><em>Instantly an APRS gateway.</em></h2>
+      <p class="reveal" data-delay="1" style="font-size: 1.1rem; color: var(--ink-body); line-height: 1.65; max-width: 70ch; margin-top: 1.6rem;">
+        digiTAK runs on its own Pi. <strong>Plug it onto any network and the LAN gains a full APRS
+        gateway</strong> — every ATAK, iTAK, WinTAK, or baseTAK browser picks up APRS stations as native
+        TAK markers, and every marker, chat, or shape goes back out onto RF. No glue, no
+        integration; just standard TAK protocols on the wire.
+      </p>
+
+      <div class="propositions reveal" data-delay="2">
+        <div class="proposition">
+          <div class="proposition__num">BRIDGE MODE</div>
+          <h3 class="proposition__title">Alongside the<br>xTAK suite.</h3>
+          <p class="proposition__body">
+            Drop a digiTAK onto a network where <a href="/products/baseTAK.html" style="color: var(--cyan);">baseTAK</a> and the rest of the xTAK
+            suite are already running. It joins like any other TAK contact and becomes the APRS
+            gateway for the whole picture. Standard TAK protocols — no special configuration on
+            either side.
+          </p>
+        </div>
+        <div class="proposition">
+          <div class="proposition__num">STANDALONE MODE</div>
+          <h3 class="proposition__title">digiTAK alone is<br>the whole install.</h3>
+          <p class="proposition__body">
+            Drop a digiTAK onto a bare network — no baseTAK anywhere on the wire. digiTAK hosts its own
+            chat router and TAK router; every ATAK / WinTAK / iTAK on the LAN connects directly
+            and sees both the local team and APRS contacts from the wider world. <strong>The whole TAK
+            environment fits on one Pi.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== OUTCOMES ============== -->
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="05 / CAPABILITIES">WHAT YOU CAN DO</span>
+      <h2 class="section__title reveal">Five things<br>digiTAK <em>does well.</em></h2>
+
+      <div class="outcomes" style="margin-top: 4rem;">
+        <article class="outcome reveal">
+          <div>
+            <div class="outcome__num">OUTCOME 01</div>
+            <h3 class="outcome__title">Run a shared TAK picture across N sites</h3>
+            <p class="outcome__lede">
+              In <strong>bridge mode</strong>, multiple digiTAK gateways form a federated mesh over
+              RF or APRS-IS. Markers placed in ATAK at site A appear in WinTAK at site B with full
+              TAK fidelity — team color, role, COT type, custom icons all preserved.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Add a digipeater</strong> between sites to extend RF reach via existing APRS infrastructure.</li>
+              <li><strong>Add another digiTAK</strong> to grow the operating area.</li>
+              <li><strong>Sibling-gateway coexistence</strong> — any number of digiTAKs can share an RF channel without re-emitting or re-digipeating each other's traffic. (Standard channel collisions still apply — half-duplex RF is half-duplex RF.)</li>
+              <li><strong>Open wire spec</strong> — third-party gateways can interoperate.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/digiTAK/digitak-01-federation.png" alt="Tactical schematic showing three digiTAK sites (A, B, C) in a bridge-mode federation — sites A and B connected by a short RF hop, sites B and C connected through a digipeater node. Each site's TAK network cloud shows the synchronized marker." loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome reveal">
+          <div>
+            <div class="outcome__num">OUTCOME 02</div>
+            <h3 class="outcome__title">Pair with baseTAK for the best APRS map experience</h3>
+            <p class="outcome__lede">
+              <strong>digiTAK + <a href="/products/baseTAK.html" style="color: var(--cyan);">baseTAK</a>
+              is the richest APRS picture on any modern map.</strong> Every APRS station renders with its
+              proper APRS icon — not a generic dot — and you can filter the map down to just the
+              device type you care about with a click.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Full APRS icon set on the map</strong> — every primary and alternate APRS symbol renders as a proper TAK icon. Digi, mobile, weather, ambulance, fire engine, boat, aircraft, NWS object — every device type you'd expect, on a modern pan-zoom-search map.</li>
+              <li><strong>Filter by APRS device type</strong> — baseTAK's map filter isolates the symbols you care about. Show only weather stations during a SKYWARN net, only mobile trackers during a race, only digipeaters during a band test, only NWS bulletins during severe weather.</li>
+              <li><strong>DM a callsign</strong> from any TAK client; the message lands on RF or APRS-IS.</li>
+              <li><strong>Weather stations and NWS bulletins</strong> appear as native TAK overlays.</li>
+              <li><strong>Reach amplified by APRS digipeaters</strong> — your TAK network's reach becomes whatever the global volunteer digipeater infrastructure can carry, often dozens or hundreds of miles beyond your own line of sight.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/digiTAK/digitak-02-aprs-statewide.png" alt="A baseTAK terrain view of Northern New England with 30 APRS station contacts pulled in via digiTAK — mountaintop digipeaters, weather beacons, vehicle and HT trackers across VT, NH, and ME — with a marker info card open for KB1NCT-7 (low-power HT in St. Johnsbury VT) and a left rail listing every callsign" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome reveal">
+          <div>
+            <div class="outcome__num">OUTCOME 03</div>
+            <h3 class="outcome__title">APRS-only operators are full participants — in both directions</h3>
+            <p class="outcome__lede">
+              An operator with nothing more than an APRS-capable radio participates fully in the TAK
+              operation. They see the picture, they're seen, and they chat — all over APRS, no TAK
+              client required. <strong>No app. No new gear. No new training.</strong>
+            </p>
+            <ul class="outcome__list">
+              <li><strong>They appear on TAK clients</strong> as native TAK contacts — position on the IC's WinTAK, bulletins in TAK chat, callsign attribution preserved end-to-end.</li>
+              <li><strong>They see the TAK operation on their APRS gear</strong> — TAK users' positions are broadcast out to APRS as standard objects, so the ham with just a handheld and an APRS map display sees the team on their screen, no TAK install.</li>
+              <li><strong>They chat across the bridge</strong> — an APRS message addressed to a TAK callsign lands in TAK chat. The IC's reply comes back to the ham's APRS rig. Bulletins, NWS alerts, group messages — all reach across.</li>
+              <li><strong>And when <a href="/products/loraTAK.html" style="color: var(--cyan);">loraTAK</a> is on the network</strong>, an APRS user can DM a Meshtastic LoRa user just as easily — digiTAK and loraTAK are full mesh partners on the same TAK chat thread. A ham with an HT can message a SAR volunteer with a $40 mesh radio. Both speak standard TAK on the wire; no integration to configure.</li>
+              <li><strong>The auxcomm net stops being parallel infrastructure</strong> — APRS hams aren't a separate radio room hanging off the side of the op; they're first-class participants on the same shared picture as the ATAK / WinTAK clients.</li>
+              <li><strong>For EmComm activations, SAR call-outs, and ad-hoc events:</strong> volunteers show up with the rig they already own, beacon their callsign, and they're on the operation.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/digiTAK/digitak-03-aprs-only.png" alt="A licensed amateur radio operator in an ARES vest at the back of his SUV at a fire-staging area, holding an APRS-capable handheld radio with map display, fire trucks visible in background, TAK laptop on a folding table" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome reveal">
+          <div>
+            <div class="outcome__num">OUTCOME 04</div>
+            <h3 class="outcome__title">Bridge WinTAK islands across the continent on HF</h3>
+            <p class="outcome__lede">
+              Hook a 2-meter rig to digiTAK and you reach the next county over VHF. Hook an HF rig
+              to the <em>same</em> digiTAK and you reach the next state — or country — over the
+              ionosphere. Both transports run simultaneously.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Multi-transport, one box</strong> — APRS-IS, VHF/UHF, and HF all from a single digiTAK.</li>
+              <li><strong>HF as the continental backbone</strong> — positions and chat across hundreds to thousands of miles.</li>
+              <li><strong>Binary compression codec</strong> — ~20 bytes per position update, designed to fit the band.</li>
+              <li><strong>WinTAK islands stop being islands.</strong> State EOC sees state EOC. ARES district sees ARES region.</li>
+            </ul>
+            <p style="margin-top: 1rem; font-size: 0.92rem; color: var(--ink-dim);"><em>HF transport is in active development — see Status below.</em></p>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/digiTAK/digitak-04-hf-continental.png" alt="Stylized topographic map of the western United States with two state EOCs marked roughly 800 miles apart, connected by a cyan arcing HF radio path bouncing off the ionosphere, tactical HUD reticle markings at the corners" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="outcome reveal">
+          <div>
+            <div class="outcome__num">OUTCOME 05</div>
+            <h3 class="outcome__title">Modernize your APRS station with a TAK client interface</h3>
+            <p class="outcome__lede">
+              For ham operators tired of legacy APRS software — digiTAK is the modern
+              replacement. The user interface is <em>any</em> TAK client: ATAK, WinTAK,
+              iTAK, or baseTAK in a browser.
+            </p>
+            <ul class="outcome__list">
+              <li><strong>Any TAK client as your APRS UI</strong> — modern map providers, click-to-message, fast click paths.</li>
+              <li><strong>Connect a USB GPS</strong> to the digiTAK and it becomes a mobile APRS tracker.</li>
+              <li><strong>Every APRS station as a TAK contact</strong> — DM by callsign, bulletins, weather stations, the local APRS net.</li>
+              <li><strong>Standard APRS wire format</strong> — digiTAK plays nicely with whatever else is already on the net.</li>
+            </ul>
+          </div>
+          <figure class="outcome-image">
+            <img src="/img/products/digiTAK/digitak-05-wintak.png" alt="WinTAK on a Windows desktop showing APRS station contacts pulled in via digiTAK — Northern New England rendered on the TAK basemap with mountaintop digipeaters and weather beacons visible across VT, NH, and ME, and the Overlay Manager pane open on the left listing every APRSPrimary callsign" loading="lazy" />
+          </figure>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CAPABILITY CATALOG ============== -->
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="06 / DETAIL">EVERY FEATURE</span>
+      <h2 class="section__title reveal">What's <em>in the box.</em></h2>
+      <p class="reveal" data-delay="1" style="font-size: 1.1rem; color: var(--ink-body); line-height: 1.6; max-width: 68ch; margin-top: 1.4rem;">
+        digiTAK is a full APRS-to-TAK gateway that runs on its own Pi.
+        The features below apply across both deployment shapes; the
+        mode-specific extras follow. <strong>Bridge mode</strong> means
+        baseTAK (and possibly other xTAK products) is already on the
+        network with the digiTAK. <strong>Standalone mode</strong> means
+        digiTAK is the whole TAK install.
+      </p>
+
+      <!-- Shared / common features -->
+      <div class="capabilities-group reveal" data-delay="2">
+        <div class="capabilities-group__title">▾ Shared across both modes</div>
+        <ul class="capabilities">
+          <li class="capability"><strong>Direwolf-managed VHF/UHF</strong> with managed PTT (RTS, CM108, or VOX).</li>
+          <li class="capability"><strong>External TNC support</strong> via KISS over TCP or KISS Serial.</li>
+          <li class="capability"><strong>APRS-IS Tier 2 connection</strong> with auto-passcode derived from your callsign.</li>
+          <li class="capability"><strong>Open TAK-APRS Protocol Extension v2.3</strong> — public spec at <a href="https://github.com/adamstern2000/cot_radio_aprs" target="_blank" rel="noopener" style="color: var(--cyan);">cot_radio_aprs</a>.</li>
+          <li class="capability"><strong>Full digipeater</strong> with WIDE1/WIDE2 aliases, dedup window, own-echo filter, and sibling-gateway coexistence — multiple digiTAKs on one RF channel coordinate so they don't re-emit or re-digipeat each other's traffic.</li>
+          <li class="capability"><strong>IGate beacon</strong> on the gateway SSID (e.g. <code>KN6ZPL-10</code>) — broadcast on both RF and APRS-IS.</li>
+          <li class="capability"><strong>Operator TX-position beacon</strong> on the main SSID with SmartBeacon-gated motion-adaptive cadence (fast on highway, sparse at rest).</li>
+          <li class="capability"><strong>gpsd live-position</strong> — heading, course, speed, HAE flow through to gateway SA, IGate beacon, and TX-position. Static lat/lon fallback when gpsd is off.</li>
+          <li class="capability"><strong>TAK protobuf RX</strong> from other TAK gateways — peer-to-peer, no XML round-trip.</li>
+          <li class="capability"><strong>Full APRS icon set</strong> — every primary and alternate APRS symbol (digi, mobile, weather, ambulance, fire engine, boat, aircraft, mil unit, NWS object, etc.) maps to a proper TAK iconset path. An APRS station shows up on the map with its correct symbol — not a generic dot.</li>
+          <li class="capability"><strong>Iconset preservation</strong> across gateway echoes — APRS station icons keep their assignment when re-emitted by a sibling.</li>
+          <li class="capability"><strong>Marker UID CRC16</strong> — keeps wire UIDs short while preserving uniqueness on the air.</li>
+          <li class="capability"><strong>Admin UI on port 5101</strong> with live audio meters (RX + TX VU), packet feed, counters.</li>
+          <li class="capability"><strong>1645+ pytest cases</strong> gating every release.</li>
+        </ul>
+      </div>
+
+      <!-- Bridge mode -->
+      <div class="capabilities-group reveal" data-delay="3">
+        <div class="capabilities-group__title">▾ Bridge mode — alongside the xTAK suite on the network</div>
+        <p class="capabilities-group__lede">
+          digiTAK runs on its own Pi as always, but talks to baseTAK and other
+          xTAK products that are on the network with it. baseTAK owns the
+          broader SA picture; digiTAK extends it onto amateur radio in both
+          directions — no glue, no integration, just standard TAK protocols.
+        </p>
+        <ul class="capabilities">
+          <li class="capability"><strong>TAK → APRS broadcast bridging</strong> — markers, shapes, and chat on TAK get re-emitted onto APRS so plain-APRS receivers see them.</li>
+          <li class="capability"><strong>Mesh-to-APRS gating</strong> (<code>gate_mesh_to_aprs</code>) — forward mesh-origin SA and markers to APRS, or keep mesh traffic off RF entirely. Per-operator policy.</li>
+          <li class="capability"><strong>Datapackage notifications to APRS</strong> — when baseTAK ships an attachment, the announcement goes out on APRS too.</li>
+          <li class="capability"><strong>Group-origin prefix</strong> (<code>prefix_group_origin</code>) for outbound chats — receivers know which TAK group originated the message.</li>
+          <li class="capability"><strong>Bridge-v2-only filter</strong> (<code>bridge_v2_only</code>) — drop legacy plain-APRS inbound; only v2-protocol packets pass through. Useful for high-noise channels.</li>
+          <li class="capability"><strong>Configurable RF chatter level</strong> (<code>bridge_aprs_chatter</code>) — bridge the noisy stuff or keep the wire clean.</li>
+        </ul>
+      </div>
+
+      <!-- Standalone mode -->
+      <div class="capabilities-group reveal" data-delay="4">
+        <div class="capabilities-group__title">▾ Standalone mode — digiTAK alone is the whole TAK install</div>
+        <p class="capabilities-group__lede">
+          No baseTAK anywhere on the network. Just a digiTAK and the TAK
+          clients that connect to it. digiTAK hosts its own chat router, TAK
+          router, and APRS bridge — every ATAK / WinTAK / iTAK on the LAN
+          connects directly and sees both the local team and APRS contacts from
+          the wider world.
+        </p>
+        <ul class="capabilities">
+          <li class="capability"><strong>Self-contained chat router</strong> — handles GeoChat DM, team, and broadcast routing for the LAN even when baseTAK isn't on the network.</li>
+          <li class="capability"><strong>Self-contained TAK router</strong> — emits SA and chat directly to local TAK multicast so every WinTAK / ATAK / iTAK on the LAN sees the picture.</li>
+          <li class="capability"><strong>Bulletin subscriptions</strong> (BLN0–BLN9 + NWS wildcards like <code>NWS-*</code>, <code>CAZ*</code>, <code>NMZ*</code>) — selectively forward APRS bulletins to TAK, sticky in the admin UI.</li>
+          <li class="capability"><strong>StandaloneInboundHold</strong> — 5-min holding buffer (max 100 frames) for inbound APRS during boot, so nothing's dropped during the warm-up window.</li>
+          <li class="capability"><strong>Per-participant TCP fan-out</strong> for DM and team chat — replicates ATAK's TCP-unicast convention so DMs go directly to the recipient's endpoint.</li>
+          <li class="capability"><strong>R1–R19 gating completion</strong> — 19 explicit resolutions covering every inbound/outbound APRS scenario when there's no baseTAK on the network. Own-echo filter included.</li>
+        </ul>
+      </div>
+
+      <div class="choose reveal" data-delay="2">
+        <div class="choose__eyebrow">★ Choose digiTAK when</div>
+        <p class="choose__body">
+          You want APRS stations on the map <strong>without writing the bridge,</strong>
+          you have a ham radio plus a Pi, and you want
+          <strong>bidirectional traffic</strong> — TAK→APRS as well as APRS→TAK.
+          HF transport is on the roadmap; VHF + APRS-IS ship today.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== EARLY ADOPTER BANNER ============== -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div>
+          <div class="cta-banner__eyebrow">☕ Beta · Early Access</div>
+          <h3 class="cta-banner__title">Get digiTAK in your hands now.</h3>
+          <p class="cta-banner__body">
+            Become a supporter on Buy Me a Coffee and join the early-adopter Beta — get the
+            current build, the next release, and direct engagement with the team.
+          </p>
+        </div>
+        <a href="/support.html" class="btn btn--amber">Support on Buy Me a Coffee</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== SPECS ============== -->
+  <section class="section">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="HW + WIRE">SPECS</span>
+      <h2 class="section__title reveal">What digiTAK <em>needs.</em></h2>
+
+      <div class="specs reveal" data-delay="1" style="margin-top: 2rem;">
+        <div class="specs__row"><div class="specs__key">Modes</div><div class="specs__val">Bridge (federated multi-site mesh) and Standalone (single gateway)</div></div>
+        <div class="specs__row"><div class="specs__key">VHF/UHF transport</div><div class="specs__val">Direwolf modem (bundled) or any KISS-compatible TNC (serial or TCP)</div></div>
+        <div class="specs__row"><div class="specs__key">APRS-IS transport</div><div class="specs__val">Tier 2 (your callsign + passcode)</div></div>
+        <div class="specs__row"><div class="specs__key">HF transport</div><div class="specs__val">Binary compression codec (~20 bytes per position) · <span class="text-amber">future release</span></div></div>
+        <div class="specs__row"><div class="specs__key">TAK clients</div><div class="specs__val">ATAK, WinTAK, iTAK, baseTAK — any standard TAK client</div></div>
+        <div class="specs__row"><div class="specs__key">Wire protocol</div><div class="specs__val">TAK-APRS Protocol Extension v2.3 (<a href="https://github.com/adamstern2000/cot_radio_aprs" target="_blank" rel="noopener" style="color: var(--cyan);">open spec</a>)</div></div>
+        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Raspberry Pi 4 / 5 (4 GB+), or any modern Linux box. Python 3.8+, systemd.</div></div>
+        <div class="specs__row"><div class="specs__key">Installation</div><div class="specs__val">Offline tarball · all Python wheels vendored</div></div>
+        <div class="specs__row"><div class="specs__key">Admin UI</div><div class="specs__val">Web, port 5101 · live audio meters, packet feed, counters</div></div>
+        <div class="specs__row"><div class="specs__key">Version</div><div class="specs__val">v 2.1.12 (Beta · shipping soon)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FAQ ============== -->
+  <section class="section">
+    <div class="container container--narrow">
+      <span class="section__label section__label--coord" data-coord="Q &amp; A">FAQ</span>
+      <h2 class="section__title reveal">Questions<br>operators ask.</h2>
+
+      <div class="faq reveal" data-delay="1">
+        <details>
+          <summary>Do I need TAK Server?</summary>
+          <p>No. digiTAK talks to ATAK, WinTAK, and iTAK clients directly on your LAN. TAK Server is a separate product that federates clients across WAN — which is the problem digiTAK solves over RF instead.</p>
+        </details>
+        <details>
+          <summary>Does it work with civilian (CivTAK) builds?</summary>
+          <p>Yes. digiTAK speaks the same TAK protocol all builds use.</p>
+        </details>
+        <details>
+          <summary>Do I need an amateur radio license?</summary>
+          <p>For RF transmission, yes — digiTAK transmits on amateur frequencies and you need a licensed callsign. For APRS-IS-only operation you still need a valid callsign and passcode (free for licensed hams). HF operation requires the appropriate band privileges for your license class.</p>
+        </details>
+        <details>
+          <summary>Can I keep my legacy APRS software alongside digiTAK?</summary>
+          <p>Yes. digiTAK speaks the standard APRS wire format on the air. Your UI-View32, AGW, or YAAC setup keeps working. digiTAK adds a modern TAK-client front end <em>in addition to</em> whatever you already run.</p>
+        </details>
+        <details>
+          <summary>Can my digiTAK be a mobile APRS tracker?</summary>
+          <p>Yes. Connect a USB GPS to the Pi and digiTAK beacons its own position as your APRS station. Mount it in a vehicle, throw it in a pack, or run it in your shack as a fixed beacon.</p>
+        </details>
+        <details>
+          <summary>Can two digiTAKs run on the same LAN?</summary>
+          <p>Yes. Each gets its own tactical callsign and station number; they coordinate, they don't collide.</p>
+        </details>
+        <details>
+          <summary>When is HF support shipping?</summary>
+          <p>HF transport via a binary compression codec is in active development — design is complete (FR-081) and implementation is in progress. Early Adopters get access as soon as it ships.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span style="color: var(--cyan);">x</span>TAK</div>
+          <p class="footer__brand-tag">Open situational awareness for the team that has to coordinate when the WAN is gone.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/products/baseTAK.html">baseTAK</a></li>
+            <li><a href="/products/digiTAK.html">digiTAK</a></li>
+            <li><a href="/products/loraTAK.html">loraTAK</a></li>
+            <li><a href="/products/chatTAK.html">chatTAK</a></li>
+            <li><a href="/products/sdrTAK.html">sdrTAK</a></li>
+            <li><a href="/products/netTAK.html">netTAK <span class="text-amber">(future)</span></a></li>
+            <li><a href="/products/aiTAK.html">aiTAK <span class="text-amber">(future)</span></a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/about-tak.html">About TAK</a></li>
+            <li><a href="/support.html">Become an Early Adopter</a></li>
+            <li><a href="https://github.com/adamstern2000/xTAK" target="_blank" rel="noopener">GitHub Repo</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://buymeacoffee.com/xtak" target="_blank" rel="noopener">Buy Me a Coffee</a></li>
+            <li><a href="https://github.com/adamstern2000/xTAK/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 xTAK Project · All rights reserved</div>
+        <div>xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, aiTAK are trademarks of the xTAK Project · <a href="/copyright.html">Notice</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
