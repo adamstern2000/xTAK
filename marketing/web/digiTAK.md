@@ -28,7 +28,7 @@ TAK — **Team Awareness Kit** — is the family of situational-awareness client
 
 ---
 
-> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtak)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtak)
 
 ---
 
@@ -58,7 +58,7 @@ In **bridge mode**, multiple digiTAK gateways form a federated mesh over RF or A
 
 - **Add a digipeater** between sites to extend RF reach — leverage existing APRS infrastructure
 - **Add another digiTAK** to grow the operating area
-- **Sibling-gateway coexistence** — any number of digiTAKs on one RF channel without packet collisions
+- **Sibling-gateway coexistence** — any number of digiTAKs on one RF channel without re-emitting or re-digipeating each other's traffic
 - **Open wire spec** ([cot_radio_aprs](https://github.com/adamstern2000/cot_radio_aprs)) so third-party gateways can interoperate
 
 → [How bridge mode works under the hood](/products/digiTAK/bridge-mode)
@@ -192,7 +192,7 @@ Every digiTAK joins the TAK network on its LAN as a peer. It listens for outboun
 | **APRS-IS transport** | Tier 2 (your callsign + passcode) |
 | **HF transport** | Binary compression codec (~20 bytes per position); in development |
 | **TAK clients supported** | ATAK, WinTAK, iTAK, baseTAK — any standard TAK client |
-| **Wire protocol** | TAK-APRS Protocol Extension v1.2 ([open spec](https://github.com/adamstern2000/cot_radio_aprs)) |
+| **Wire protocol** | TAK-APRS Protocol Extension v2.3 ([open spec](https://github.com/adamstern2000/cot_radio_aprs)) |
 | **Hardware** | Raspberry Pi 4/5 (4 GB+), or any modern Linux box |
 | **OS** | Debian Bookworm, Ubuntu 22.04+, Raspberry Pi OS |
 | **Installation** | Offline tarball; all Python wheels vendored |

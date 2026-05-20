@@ -8,7 +8,7 @@
 
 > **About TAK:** netTAK extends your TAK network across the kind of terrain where regular Wi-Fi gives up. Every node runs ATAK-compatible TAK services and bridges them across the mesh. [More about the TAK ecosystem →](../about-tak.md)
 
-> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtak)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtak)
 
 ---
 

@@ -28,7 +28,7 @@ TAK — **Team Awareness Kit** — is the family of situational-awareness client
 
 ---
 
-> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtak)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtak)
 
 ---
 
@@ -60,7 +60,7 @@ Mesh node positions flow onto ATAK, WinTAK, iTAK, and baseTAK maps in real time 
 
 - **Per-node team color, role, and icon** — assign team color and 2525C symbology per Meshtastic node
 - **Position liveness** — keepalive beacons keep mesh markers visible every 60 seconds even when stationary radios beacon every few hours
-- **Hardware-aware icons** — Meshtastic device model (Heltec, T-Beam, RAK, etc.) flows into the TAK display
+- **Operator-chosen icons** — assign any team color, role, and icon to each Meshtastic user: full MIL-STD-2525C symbology, or any standard ATAK iconset (firefighter, SAR, medic, etc.). Icons reflect the role on the team, not the radio model.
 - **Synthetic positions** — mesh devices that disable GPS for privacy or battery still appear at the gateway location with a "noGPS" marker so they're chat-able
 - **Telemetry on the map** — battery, voltage, channel utilization, temperature, SNR all appear in TAK position details
 

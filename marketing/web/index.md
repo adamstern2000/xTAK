@@ -13,7 +13,7 @@ canonical: https://xtak.io/
 
 **xTAK is an open suite of seven services that extend the TAK ecosystem — ATAK, WinTAK, iTAK — to the places the official clients can't reach: amateur radio, LoRa mesh, off-grid Wi-Fi, SDR-decoded aircraft, browser endpoints, AI assistants. Each product works standalone. Together they compose on one TAK network into a complete, self-hosted situational-awareness stack. The whole suite fits in a backpack.**
 
-<!-- CTA BUTTONS: [Become an Early Adopter →](https://buymeacoffee.com/xtakproject) [Browse the products](#the-products) [View on GitHub](https://github.com/adamstern2000/xTAK) -->
+<!-- CTA BUTTONS: [Become an Early Adopter →](https://buymeacoffee.com/xtak) [Browse the products](#the-products) [View on GitHub](https://github.com/adamstern2000/xTAK) -->
 
 ---
 
@@ -28,7 +28,7 @@ TAK — **Team Awareness Kit** — is the family of situational-awareness client
 
 ---
 
-> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtak)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtak)
 
 ---
 
@@ -190,7 +190,7 @@ Each product ships as an independent install — offline tarball, single install
 | A deployable mesh LAN for the field | [netTAK](netTAK.md) *(future release)* |
 | AI augmentation for the IC | [aiTAK](aiTAK.md) *(future release)* |
 
-**Want Beta access today?** [☕ Become an Early Adopter on Buy Me a Coffee →](https://buymeacoffee.com/xtakproject)
+**Want Beta access today?** [☕ Become an Early Adopter on Buy Me a Coffee →](https://buymeacoffee.com/xtak)
 
 ---
 
@@ -221,7 +221,7 @@ Each product ships as an independent install — offline tarball, single install
 ## Frequently asked questions
 
 ### Is xTAK shipping today?
-The suite is in active **Beta**. Five products (baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK) are in Beta testing with operators and will be shipping soon. Two products (netTAK, aiTAK) are future releases under active development. [Early Adopters](https://buymeacoffee.com/xtakproject) get access to Beta builds today.
+The suite is in active **Beta**. Five products (baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK) are in Beta testing with operators and will be shipping soon. Two products (netTAK, aiTAK) are future releases under active development. [Early Adopters](https://buymeacoffee.com/xtak) get access to Beta builds today.
 
 ### Do I need TAK Server to run xTAK?
 No. Every xTAK product joins the local TAK network directly and talks to ATAK, WinTAK, and iTAK clients without any server. TAK Server is the official cross-WAN federation product from the TAK Product Center; xTAK solves that problem differently (over RF, mesh, and HF) without it.
@@ -236,7 +236,7 @@ Source repositories are private during Beta; the public posture is open document
 For digiTAK (and loraTAK on RF), yes — the radios transmit on amateur frequencies and require a licensed callsign. For baseTAK, chatTAK, sdrTAK (receive-only), and aiTAK: no license required.
 
 ### How do I support the project?
-[Buy Me a Coffee](https://buymeacoffee.com/xtakproject). Early Adopters get Beta access to all xTAK software, new features, and direct engagement with the team. The project is self-funded — supporter contributions fund the next product and the next deployment test.
+[Buy Me a Coffee](https://buymeacoffee.com/xtak). Early Adopters get Beta access to all xTAK software, new features, and direct engagement with the team. The project is self-funded — supporter contributions fund the next product and the next deployment test.
 
 ### Will xTAK products always be standalone?
 Yes. Composability through the TAK network is a hard design rule — every product runs on its own and discovers the others via standard TAK protocol. There is no integration tax, no shared module, no required hub.
@@ -248,7 +248,7 @@ Yes. xTAK joins as a peer. If you already run TAK Server for WAN federation, xTA
 
 ## Get in touch
 
-**Become an Early Adopter:** **[☕ Buy Me a Coffee →](https://buymeacoffee.com/xtakproject)**
+**Become an Early Adopter:** **[☕ Buy Me a Coffee →](https://buymeacoffee.com/xtak)**
 
 **Source and issues:** [github.com/adamstern2000/xTAK](https://github.com/adamstern2000/xTAK)
 

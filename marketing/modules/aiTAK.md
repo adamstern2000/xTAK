@@ -8,7 +8,7 @@
 
 > **About TAK:** aiTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS). It reads the TAK picture in real time and participates as a TAK contact — answering DMs, posting summaries, flagging conditions. [More about the TAK ecosystem →](../about-tak.md)
 
-> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtak)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtak)
 
 ---
 

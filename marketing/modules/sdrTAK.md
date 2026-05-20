@@ -6,7 +6,7 @@
 
 > **About TAK:** sdrTAK joins the same network as ATAK (Android), WinTAK (Windows), and iTAK (iOS) — and feeds decoded aircraft and ship contacts onto the map alongside your team's positions and markers. [More about the TAK ecosystem →](../about-tak.md)
 
-> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtakproject)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtakproject)
+> **☕ Become an Early Adopter.** xTAK is in active **Beta**. Support the project on **[Buy Me a Coffee](https://buymeacoffee.com/xtak)** to get early access to all xTAK software, new features, and direct engagement with the team. [Become a supporter →](https://buymeacoffee.com/xtak)
 
 ---
 
