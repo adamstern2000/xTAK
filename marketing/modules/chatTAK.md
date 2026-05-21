@@ -145,7 +145,7 @@ chatTAK is a comms-forward TAK chat client that runs as a Pi appliance with its 
 | "Why not just use Slack / Teams / WhatsApp?" | "Not TAK-native. Messages from Slack won't appear in WinTAK chat history. chatTAK speaks the actual TAK GeoChat protocol — messages cross seamlessly between chatTAK users, ATAK tablets, WinTAK desktops, iTAK iPads." |
 | "Doesn't ATAK already do chat?" | "It does, but it requires the full ATAK app. chatTAK is chat-only — for people who need to be in the loop but don't need the map. Commanders, dispatch, family liaisons, walk-up volunteers." |
 | "What about Matrix bridges?" | "Generic chat federation, no TAK awareness. chatTAK is purpose-built for the TAK protocol." |
-| "Is it secure?" | "Self-hosted on your Pi. Data stays on your hardware. Open source on the wire. Pair with WPA2/3 on the Wi-Fi side." |
+| "Is it secure?" | "Self-hosted on your Pi. Data stays on your hardware. Standard TAK protocol on the wire. Pair with WPA2/3 on the Wi-Fi side." |
 | "What if someone shows up without a phone?" | "They share with a teammate, or chatTAK runs on a laptop too. Same UI, any browser." |
 
 ---

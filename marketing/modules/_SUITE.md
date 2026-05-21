@@ -8,7 +8,7 @@
 
 ## TL;DR — what xTAK is
 
-xTAK is an open suite of seven independent services that extend the TAK ecosystem — ATAK, WinTAK, iTAK — to the places the official clients don't reach: amateur radio, LoRa mesh, off-grid Wi-Fi, SDR-decoded aircraft and ships, browser endpoints, AI assistants. Each product works standalone. Together they compose on one TAK network into a complete self-hosted situational-awareness stack. **The whole suite fits in a backpack.**
+xTAK is a suite of seven independent services that extend the TAK ecosystem — ATAK, WinTAK, iTAK — to the places the official clients don't reach: amateur radio, LoRa mesh, off-grid Wi-Fi, SDR-decoded aircraft and ships, browser endpoints, AI assistants. Each product works standalone. Together they compose on one TAK network into a complete self-hosted situational-awareness stack. **The whole suite fits in a backpack.**
 
 **The suite-level pitch:** when the WAN goes dark, xTAK keeps coordinating.
 
@@ -53,7 +53,7 @@ These are the "Design Propositions" on the home page — every xTAK product is b
 1. **Stand-alone, compose by network** — every product is a complete service. They discover each other and trade data over standard TAK protocols. No glue, no integration tax, no shared database.
 2. **Off-grid by design** — built to run without internet, without cellular, without TAK Server. Cloud is an option, not a requirement. Offline tarball installs with vendored dependencies.
 3. **100% TAK protocol fidelity** — what xTAK emits on the wire is byte-identical to what WinTAK emits. Markers, chat, SA, team color, custom icons — full fidelity through every product.
-4. **Self-hosted, no vendor lock-in** — open standards. Open source on the wire. No subscription, no per-device licensing, no cloud account. The data is yours, the boxes are yours.
+4. **Self-hosted, no vendor lock-in** — standard TAK protocol on the wire. No subscription, no per-device licensing, no cloud account. The data is yours, the boxes are yours.
 5. **Built for the operator** — designed by and for the people who actually run operations. Faster click paths, fewer menus, less clutter — the map gets the screen.
 6. **Portable, battery-powered** — none of this lives in a server rack. Pi-class hardware throughout. The whole suite fits in a backpack.
 
@@ -145,7 +145,7 @@ Use Devil's Gate for any single-scenario explainer.
 > **POST A — what xTAK is**
 > If you've used ATAK, WinTAK, or iTAK and wanted them to work in more places, this is for you.
 >
-> xTAK is an open suite of seven services that extend the TAK ecosystem to:
+> xTAK is a suite of seven services that extend the TAK ecosystem to:
 > - Amateur radio (VHF, HF coming) via digiTAK
 > - LoRa mesh (Meshtastic) via loraTAK
 > - Off-grid Wi-Fi mesh (netTAK, coming 2026Q3)
@@ -176,9 +176,9 @@ Use Devil's Gate for any single-scenario explainer.
 |---|---|
 | "How is this different from PAR's TAK?" | "xTAK extends PAR's TAK. ATAK / WinTAK / iTAK are still the clients you use. xTAK adds the services on your LAN that bring APRS, Meshtastic, SDR, browser, and AI participants into the same picture." |
 | "Do I need TAK Server?" | "No. xTAK products are self-hosted. baseTAK includes its own file server. digiTAK and loraTAK federate over RF. If you already run FreeTAKServer, drop xTAK products in as feeds." |
-| "Open source?" | "Open documentation, open wire formats (TAK-APRS Protocol Extension v2.3 is fully open at github.com/adamstern2000/cot_radio_aprs), and the goal of community-friendly licensing at general availability. Source repos are private during Beta; Early Adopters get Beta build access." |
+| "How do I get xTAK?" | "Two ways. Install our software on your own hardware (Pi-class Linux — Raspberry Pi 4/5, fanless mini-PC, handheld Linux box), or order a ready-to-deploy xTAK appliance from us. Either way, the software runs on your network. Your data stays on your hardware. The wire-format spec we designed (TAK-APRS Protocol Extension v2.3) is published openly at github.com/adamstern2000/cot_radio_aprs. Early Adopters get Beta build access." |
 | "How does it compare to Anduril / Palantir?" | "Different category. Those are defense-grade, six-figure pricing. xTAK is operator-grade — public safety, SAR, EmComm. Pi-class hardware, open standards." |
-| "Why should I pay for Beta?" | "You're not paying for Beta — you're supporting an independent open-source project so it can reach GA. Buy Me a Coffee. https://buymeacoffee.com/xtak" |
+| "Why should I pay for Beta?" | "You're not paying for Beta — you're supporting an independent project so it can reach GA. Buy Me a Coffee. https://buymeacoffee.com/xtak" |
 
 ---
 

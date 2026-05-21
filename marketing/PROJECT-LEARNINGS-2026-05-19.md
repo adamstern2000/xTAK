@@ -33,7 +33,7 @@ This is the **source-of-truth for product positioning** as of 2026-05-19. The li
 ### What we don't compare to
 We **removed all comparison tables that named specific competitors.** Earlier drafts included "vs. WebTAK / ATAK-CIV / WinTAK-CIV / Anduril / Palantir / FlightAware / goTenna / TAKChat / TAKtical plugins" tables on every product page. **All removed.**
 
-**Reason:** xTAK is a young open-source project. Comparing it to PAR Government's TAK products picks a fight with the community we want as allies. Comparing it to Anduril / Palantir / FlightAware / goTenna invites legal pushback we don't have time to defend. Naming community plugins makes enemies. Even when every claim is technically accurate, the table format reads as combative.
+**Reason:** xTAK is a young independent project. Comparing it to PAR Government's TAK products picks a fight with the community we want as allies. Comparing it to Anduril / Palantir / FlightAware / goTenna invites legal pushback we don't have time to defend. Naming community plugins makes enemies. Even when every claim is technically accurate, the table format reads as combative.
 
 **What replaced the tables:** a single **"★ Choose X when…"** closer per product page that states the positive case for picking that product, without comparing to anything specific. Located at the bottom of each Feature Catalog section.
 

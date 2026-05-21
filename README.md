@@ -2,7 +2,7 @@
 
 **Seven products. One TAK picture. No internet required.**
 
-xTAK is an open suite of seven independent services that extend the TAK ecosystem — ATAK, WinTAK, iTAK — to the places the official clients don't reach: **amateur radio, LoRa mesh, off-grid Wi-Fi, SDR-decoded aircraft and ships, browser endpoints, AI assistants.** Each product works standalone. Together they compose on one TAK network into a complete, self-hosted situational-awareness stack.
+xTAK is a suite of seven independent services that extend the TAK ecosystem — ATAK, WinTAK, iTAK — to the places the official clients don't reach: **amateur radio, LoRa mesh, off-grid Wi-Fi, SDR-decoded aircraft and ships, browser endpoints, AI assistants.** Each product works standalone. Together they compose on one TAK network into a complete, self-hosted situational-awareness stack.
 
 When the WAN goes dark, xTAK keeps coordinating.
 
@@ -58,7 +58,7 @@ The killer suite-level moments are the combinations:
 
 xTAK is in active **Beta**. Five of seven products are shipping (baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK); netTAK is in design phase with a 2026Q3 first-ship target; aiTAK is in design phase with release timing TBD.
 
-**Source repositories are private during Beta.** The public posture is open documentation, open wire formats (the [TAK-APRS Protocol Extension v2.3](https://github.com/adamstern2000/cot_radio_aprs) is fully open), and the goal of community-friendly licensing at general availability. **Early Adopters get Beta build access** by supporting the project on [Buy Me a Coffee](https://buymeacoffee.com/xtak).
+Customers install xTAK on their own hardware — Pi-class Linux (Raspberry Pi 4/5, fanless mini-PC, handheld Linux device) — or order a ready-to-deploy xTAK appliance from us. Either way, the software runs on the customer's own network and data stays on their own hardware. The TAK-APRS wire-format extension we designed is published openly at [github.com/adamstern2000/cot_radio_aprs](https://github.com/adamstern2000/cot_radio_aprs). **Early Adopters get Beta build access** by supporting the project on [Buy Me a Coffee](https://buymeacoffee.com/xtak).
 
 ---
 
