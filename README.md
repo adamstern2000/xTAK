@@ -20,7 +20,7 @@ When the WAN goes dark, xTAK keeps coordinating.
 | **[loraTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/loraTAK.md)** | Meshtastic LoRa to TAK bidirectional bridge. | Beta — shipping soon |
 | **[chatTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/chatTAK.md)** | Browser TAK chat appliance — Pi with its own Wi-Fi, no app required. | Beta — shipping soon |
 | **[sdrTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/sdrTAK.md)** | SDR-decoded aircraft (ADS-B + UAT). AIS for ships imminent. | Beta — shipping soon |
-| **[netTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/netTAK.md)** | Mesh-network fabric for off-grid field deployment. | ★ Design phase · 2026Q3 target |
+| **[netTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/netTAK.md)** | Self-managing wireless mesh for field-deployable TAK operations. Drop a Pi at every site, they auto-form. | Beta — shipping soon |
 | **[aiTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/aiTAK.md)** | AI agent participating in TAK chat as a first-class contact. | ★ Design phase · timing TBD |
 
 ---
@@ -56,7 +56,7 @@ The killer suite-level moments are the combinations:
 
 ## Status
 
-xTAK is in active **Beta**. Five of seven products are shipping (baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK); netTAK is in design phase with a 2026Q3 first-ship target; aiTAK is in design phase with release timing TBD.
+xTAK is in active **Beta**. Six of seven products are shipping (baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK); aiTAK is in design phase with release timing TBD.
 
 Customers install xTAK on their own hardware — Pi-class Linux (Raspberry Pi 4/5, fanless mini-PC, handheld Linux device) — or order a ready-to-deploy xTAK appliance from us. Either way, the software runs on the customer's own network and data stays on their own hardware. The TAK-APRS wire-format extension we designed is published openly at [github.com/adamstern2000/cot_radio_aprs](https://github.com/adamstern2000/cot_radio_aprs). **Early Adopters get Beta build access** by supporting the project on [Buy Me a Coffee](https://buymeacoffee.com/xtak).
 

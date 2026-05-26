@@ -23,7 +23,7 @@ All TAK clients speak the **Cursor-on-Target (COT)** protocol — a compact XML 
 
 xTAK extends the ecosystem in directions the official clients don't reach:
 
-- **Radio transports** — APRS over RF and APRS-IS ([digiTAK](modules/digiTAK.md)), Meshtastic LoRa mesh ([loraTAK](modules/loraTAK.md)), and Wi-Fi HaLow with BATMAN/802.11s mesh ([netTAK](modules/netTAK.md), in development). Bring the bands you already use into TAK.
+- **Radio transports** — APRS over RF and APRS-IS ([digiTAK](modules/digiTAK.md)), Meshtastic LoRa mesh ([loraTAK](modules/loraTAK.md)), and Wi-Fi HaLow self-managing wireless mesh ([netTAK](modules/netTAK.md), Beta). Bring the bands you already use into TAK.
 - **Passive ingest** — SDR-decoded aircraft, UAT 978, and AIS ships rendered as native TAK contacts ([sdrTAK](modules/sdrTAK.md)).
 - **Browser and headless endpoints** — a full-featured web map and chat hub ([baseTAK](modules/baseTAK.md)) and a standalone chat-only Pi appliance ([chatTAK](modules/chatTAK.md)) for users who don't have an ATAK device or need a fixed install.
 - **AI augmentation** — an LLM-backed operations assistant ([aiTAK](modules/aiTAK.md), in development).

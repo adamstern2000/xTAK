@@ -32,7 +32,7 @@ xTAK is a suite of seven independent services that extend the TAK ecosystem — 
 | **loraTAK** | Meshtastic LoRa to TAK bidirectional bridge. | Beta — shipping soon |
 | **chatTAK** | Browser TAK chat appliance — Pi-with-Wi-Fi, no app required. | Beta — shipping soon |
 | **sdrTAK** | SDR-decoded aircraft (ADS-B + UAT) and ships (AIS imminent). | Beta — shipping soon |
-| **netTAK** | Mesh-network fabric for off-grid field deployment. | ★ Design phase (2026Q3 target) |
+| **netTAK** | Self-managing wireless mesh for field-deployable TAK operations. | Beta — shipping soon |
 | **aiTAK** | AI agent participating in TAK chat as a first-class contact. | ★ Design phase (timing TBD) |
 
 ---
@@ -148,7 +148,7 @@ Use Devil's Gate for any single-scenario explainer.
 > xTAK is a suite of seven services that extend the TAK ecosystem to:
 > - Amateur radio (VHF, HF coming) via digiTAK
 > - LoRa mesh (Meshtastic) via loraTAK
-> - Off-grid Wi-Fi mesh (netTAK, coming 2026Q3)
+> - Off-grid Wi-Fi mesh (netTAK, Beta)
 > - SDR-decoded aircraft (ADS-B + UAT) and ships (AIS imminent) via sdrTAK
 > - Browser endpoints — full map (baseTAK) or chat-only (chatTAK)
 > - AI assistance on TAK chat (aiTAK, design phase)

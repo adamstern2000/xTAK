@@ -63,7 +63,7 @@ baseTAK is a full TAK situational-awareness picture — map, chat, drawing, file
 - **Status:** Beta — shipping soon. Current version v 0.45.x. Early Adopters get the build now.
 - **Take ownership of other users' COTs** — *in development*. Lets a designated user re-broadcast markers placed by operators who've since gone off-net. Not promised as shipped; phrased as "in development" on the live site.
 - **Tileserver:** does not auto-ingest dropped files instantly — that earlier claim was overstated. Real value is **standard format, every TAK client + any compatible app, direct EUD download over the network.**
-- **netTAK / aiTAK pairings:** netTAK is design phase (first ship 2026Q3 estimated); aiTAK release timing TBD. Don't promise those as available today.
+- **aiTAK pairings:** aiTAK release timing TBD. Don't promise as available today.
 
 ---
 

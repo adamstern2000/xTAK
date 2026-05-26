@@ -25,7 +25,7 @@ Built for the operators who actually run things — incident commanders, EmComm 
 - **loraTAK** — Meshtastic LoRa mesh gateway; every node a TAK contact
 - **chatTAK** — Pi appliance with its own Wi-Fi; comms-forward TAK for non-ATAK users
 - **sdrTAK** — every aircraft in the sky, every ship in the bay, on your TAK map
-- **netTAK** *(future release)* — base operating layer + self-healing field mesh
+- **netTAK** — self-managing wireless mesh for field-deployable TAK operations
 - **aiTAK** *(future release)* — local-first LLM that joins your TAK network as a peer
 
 **Why your support matters**
