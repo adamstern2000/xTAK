@@ -105,7 +105,7 @@ Scenario: baseTAK web map showing a composed picture — APRS station icons (via
 
 ```
 A clean tactical schematic in dark mode showing three digiTAK sites
-(small Pi+radio icons) connected by RF links — site A and site B over a
+(small appliance+radio icons) connected by RF links — site A and site B over a
 short hop, site B and site C through a digipeater node in the middle. Each
 site has a "TAK NETWORK" cloud above it with ATAK/WinTAK client icons. A
 synchronized marker (cyan diamond labeled "MARKER") appears in all three
@@ -194,7 +194,7 @@ DO NOT include: military gear, weapons, glow, neon, futuristic UI.
 A clean technical schematic in dark mode. Top: "TAK NETWORK ON LAN" bar
 with ATAK / WinTAK / iTAK icons. Below: five small product cards arranged
 in a row — loraTAK (with a tiny mesh-node icon), digiTAK (radio mast),
-baseTAK (browser), sdrTAK (aircraft), chatTAK (Pi-with-phones). Each
+baseTAK (browser), sdrTAK (aircraft), chatTAK (appliance-with-phones). Each
 connects to the network bar with a thin cyan line. A side annotation
 showing "mesh chat reaching APRS via loraTAK → TAK → digiTAK." Aesthetic:
 dark charcoal background, TAK cyan accent, mono labels, flat 2D, no
@@ -213,7 +213,7 @@ Cinematic widescreen photograph, 21:9 aspect ratio. A close-up of a
 volunteer's hands holding a modern smartphone, screen showing a
 browser-based enrollment screen: input fields for "Callsign," "Team," and
 a color picker, with a "Join Network" button. Beyond the phone, slightly
-out of focus: a folding camp table with a small Raspberry Pi Zero in a
+out of focus: a folding camp table with a small palm-sized Linux appliance in a
 3D-printed case and a USB battery pack. Background slightly out of focus:
 other volunteers in event t-shirts. Natural overcast outdoor light.
 Documentary-realism, real volunteer-ops vibe. The phone screen content
@@ -227,7 +227,7 @@ DO NOT include: military gear, glow effects, futuristic UI, cyberpunk.
 ```
 Cinematic widescreen photograph, 21:9 aspect ratio. A black Pelican case
 open on the dropped tailgate of a parked SUV, revealing a small Raspberry
-Pi Zero computer (palm-sized, in a 3D-printed case) wired to a USB power
+palm-sized appliance computer (palm-sized, in a 3D-printed case) wired to a USB power
 bank. A small printed handwritten label on the case lid: "chatTAK · join
 WiFi · pick callsign." Background slightly out of focus: a community
 gathering — could be a folksy church parking lot, a school event, a
@@ -236,13 +236,13 @@ style, late afternoon natural light, real community-ops ambiance.
 DO NOT include: military gear, glow, neon, futuristic UI.
 ```
 
-### Outcome 03 — Run a comms-forward command element from a single Pi ✅ DONE
+### Outcome 03 — Run a comms-forward command element from a single appliance ✅ DONE
 **🎬 Nano Banana Pro**
 
 ```
 Cinematic widescreen photograph, 21:9 aspect ratio. A four-person field
 command element gathered around the dropped tailgate of a Forest Service
-truck on a fire road. On the tailgate: a small Raspberry Pi Zero in a
+truck on a fire road. On the tailgate: a small palm-sized Linux appliance in a
 3D-printed case, plugged into a USB power bank. Each of the four people
 in incident-command vests (yellow Nomex, ICS vests, or fire department
 uniforms) is looking at their own personal smartphone displaying a
@@ -256,7 +256,7 @@ DO NOT include: military combat gear, weapons, glow effects, futuristic UI.
 **📐 Diagram** (same style as loraTAK O3)
 
 ```
-A clean technical schematic in dark mode. Top: chatTAK Pi appliance
+A clean technical schematic in dark mode. Top: chatTAK appliance
 with three small phone icons connected via Wi-Fi. Bottom: TAK network
 bar with ATAK / WinTAK / iTAK icons. A two-way thin cyan line connects
 the chatTAK to the TAK network bar, with labels "chat both directions"
@@ -311,7 +311,7 @@ Cinematic widescreen photograph, 21:9 aspect ratio. A multi-agency forward
 operating site at the edge of a mountain meadow during a wildland-fire or
 SAR response, late-afternoon golden-hour light.
 
-FOREGROUND CENTER (subject of the frame): a small Pi-based netTAK appliance
+FOREGROUND CENTER (subject of the frame): a small appliance-based netTAK appliance
 in a 3D-printed case sitting on an open black Pelican hard case on a
 folding camp table. Two short whip antennas attached. One status LED
 glowing soft cyan. A USB power bank wired in. The device should read as
@@ -358,7 +358,7 @@ cool teal in the shadows. Slight shallow depth of field — the netTAK in
 sharp focus, the most distant operators slightly softened. Documentary
 realism — like a national newspaper photo, not a stock-photo composition.
 
-The visual story: ONE small Pi-based netTAK in the center of a busy ops
+The visual story: ONE small appliance-based netTAK in the center of a busy ops
 table, TEN different operators each on a DIFFERENT device, ALL coordinating
 through that one box.
 
@@ -373,12 +373,12 @@ cover-art vibe.
 ```
 Three-panel technical schematic, dark mode, arranged horizontally with
 labels above each:
-PANEL 1 — "STANDALONE": Single Pelican-cased Pi icon alone, connected
+PANEL 1 — "STANDALONE": Single Pelican-cased appliance icon alone, connected
 upward to a "TAK LAN" bar.
-PANEL 2 — "LOCAL MESH (WI-FI + ETHERNET)": Three Pelican-cased Pi icons
+PANEL 2 — "LOCAL MESH (WI-FI + ETHERNET)": Three Pelican-cased appliance icons
 connected by short cyan mesh lines representing Wi-Fi, all joined to
 one "TAK LAN" bar.
-PANEL 3 — "LONG-RANGE MESH (WITH HALOW)": Three Pelican-cased Pi icons
+PANEL 3 — "LONG-RANGE MESH (WITH HALOW)": Three Pelican-cased appliance icons
 spread across a mountain ridge silhouette, connected by longer cyan
 mesh lines, each with small Yagi antennas.
 Aesthetic: dark charcoal background, TAK cyan accent, mono labels, flat
@@ -391,7 +391,7 @@ Aesthetic: dark charcoal background, TAK cyan accent, mono labels, flat
 ```
 Cinematic widescreen photograph, 21:9 aspect ratio. A wildland-fire
 forward staging area at the edge of a mountain ridge. Foreground: a
-small Pelican case open on a folding camp table holding a Pi-based
+small Pelican case open on a folding camp table holding an appliance-based
 netTAK device, with a USB battery pack and a small panel antenna nearby.
 Mid-ground: three wildland firefighters in yellow Nomex gear, two of them
 holding rugged Android tablets clearly showing TAK topographic maps. The
@@ -407,7 +407,7 @@ DO NOT include: military combat gear, weapons, glow effects, futuristic UI.
 ```
 Cinematic widescreen photograph, 21:9 aspect ratio. A small drone (DJI-
 style, civilian) being launched from a clearing by a public-safety
-operator in a navy SAR vest. Mid-ground: a Pi-based netTAK device on a
+operator in a navy SAR vest. Mid-ground: an appliance-based netTAK device on a
 folding table, with cables running to a small 4G/5G antenna and a small
 video monitor displaying the drone's downlinked footage — the drone view
 showing a search area below. Beside the monitor, a rugged tablet

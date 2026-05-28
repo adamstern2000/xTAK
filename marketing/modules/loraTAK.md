@@ -32,7 +32,7 @@ loraTAK is a bidirectional gateway between Meshtastic LoRa mesh radios and the T
 | **CERT / volunteer fire** | "License-free spectrum. Hand out $40 radios on event day. Volunteers don't need ham licenses to participate." |
 | **Preppers / off-grid** | "No infrastructure required. The mesh IS the network. loraTAK is the bridge to operator-grade situational awareness." |
 | **Public safety event ops** | "Mass events (marathons, festivals, charity rides) — every aid station gets a Meshtastic node, the race director sees every position on TAK." |
-| **Meshtastic community** | "You already have the radios. Add a Pi + loraTAK and your mesh becomes a TAK network alongside ATAK / WinTAK / iTAK." |
+| **Meshtastic community** | "You already have the radios. Add an appliance + loraTAK and your mesh becomes a TAK network alongside ATAK / WinTAK / iTAK." |
 
 ---
 
@@ -43,7 +43,7 @@ loraTAK is a bidirectional gateway between Meshtastic LoRa mesh radios and the T
 3. **Mesh telemetry on the map** — battery %, voltage, channel utilization, SNR — emitted as `<__mesh_telem>` JSON in every beacon. Visible in TAK position details.
 4. **60-second keepalive beacons** anchor mesh-node presence in TAK even when stationary radios beacon every few hours.
 5. **Synthetic positions** for GPS-off mesh devices — anchored from gateway location so they stay chat-able.
-6. **Multi-NIC Pi-as-AP mode** — eth0 for upstream, wlan0 as a soft AP for the mesh team to associate with. One Pi, no second router.
+6. **Multi-NIC appliance-as-AP mode** — eth0 for upstream, wlan0 as a soft AP for the mesh team to associate with. One appliance, no second router.
 7. **Hardware-flexible** — works with stock Meshtastic firmware. Heltec V3, T-Beam, RAK 4631, T-Echo, Station-G2.
 
 ---
@@ -95,20 +95,20 @@ loraTAK is a bidirectional gateway between Meshtastic LoRa mesh radios and the T
 >
 > Hand out Meshtastic radios on event day. Every aid station, every marshal, every volunteer becomes a TAK contact.
 >
-> loraTAK is the bridge. Pi + Meshtastic + a battery = your team's mesh-resilient SA wire.
+> loraTAK is the bridge. appliance + Meshtastic + a battery = your team's mesh-resilient SA wire.
 
 ### LinkedIn (400–800 chars)
 
 > **POST A — the SAR scenario**
 > A hundred-acre property. Twelve searchers in two-person teams. The base-camp ATAK tablet can't reach the far side of the ridge over Wi-Fi. The handheld VHF radios are working but voice-only — base has no idea where any of the search teams actually are.
 >
-> Every searcher carries a $40 Meshtastic node clipped to their pack. The team lead drops one more node at base camp, plugs it into a Pi running loraTAK, powers the Pi off a battery.
+> Every searcher carries a $40 Meshtastic node clipped to their pack. The team lead drops one more node at base camp, plugs it into an appliance running loraTAK, powers the appliance off a battery.
 >
 > Within a minute, every Meshtastic node appears on the base camp's WinTAK map as a moving icon with the searcher's name, team color, and battery level.
 >
 > When a team finds sign of the hiker, they type a chat on their Meshtastic. It appears in the IC's WinTAK chat panel with the team's callsign and position attached.
 >
-> No cell. No Wi-Fi. No internet. Mesh radios and a Pi. Beta now: https://buymeacoffee.com/xtak
+> No cell. No Wi-Fi. No internet. Mesh radios and an appliance. Beta now: https://buymeacoffee.com/xtak
 
 ---
 
@@ -117,14 +117,14 @@ loraTAK is a bidirectional gateway between Meshtastic LoRa mesh radios and the T
 ### 30-second cinematic
 
 | 0:00–0:06 | Wide shot of a forest trailhead. SAR volunteers in orange vests checking packs, each with a small Meshtastic device clipped. |
-| 0:06–0:14 | Cut to base camp: Pi on a folding table next to a rugged laptop. The laptop's TAK map populates with mesh-node icons spreading out from the camp. |
+| 0:06–0:14 | Cut to base camp: appliance on a folding table next to a rugged laptop. The laptop's TAK map populates with mesh-node icons spreading out from the camp. |
 | 0:14–0:22 | Close-up on a Meshtastic handheld — searcher types a quick chat. Cut to IC's laptop — message appears in TAK chat panel. |
 | 0:22–0:27 | Wide of the team in the field, no cell tower visible. |
 | 0:27–0:30 | Title card: **loraTAK. Your Meshtastic mesh, now a TAK network.** |
 
 ### 60-second demo
 
-1. **Setup (0:00–0:12):** Hand setting up a Meshtastic node clipped to a vest. Same operator plugging a second node into a Pi at the base camp. VO: "License-free RF. Battery-powered. Mesh-resilient."
+1. **Setup (0:00–0:12):** Hand setting up a Meshtastic node clipped to a vest. Same operator plugging a second node into an appliance at the base camp. VO: "License-free RF. Battery-powered. Mesh-resilient."
 2. **Mesh in (0:12–0:25):** TAK map fills with mesh contacts — each labeled by name + role icon + battery percentage. VO: "Every mesh node, a first-class TAK contact."
 3. **Chat both ways (0:25–0:42):** Demo of typing on the Meshtastic handheld and seeing it land in TAK chat. Then reverse — type in TAK chat, it appears on the mesh device. VO: "Bidirectional. No app on the mesh device."
 4. **Suite composition (0:42–0:55):** APRS user on the same chat thread, ham operator on an HT. VO: "Pair with digiTAK and Meshtastic users chat with APRS users — same TAK thread."
@@ -143,7 +143,7 @@ loraTAK is a bidirectional gateway between Meshtastic LoRa mesh radios and the T
 ## Live-demo talking points
 
 - **Hold up the Meshtastic.** "Stock firmware. No custom build. This costs $30-40."
-- **Show base-camp Pi.** "Same Meshtastic radio, plus a Pi running loraTAK. Connected via USB. That's the whole gateway."
+- **Show base-camp appliance.** "Same Meshtastic radio, plus an appliance running loraTAK. Connected via USB. That's the whole gateway."
 - **Open the TAK map.** "Every mesh node, populated on the map. Each one's a first-class TAK contact with operator-chosen icon and live telemetry."
 - **Click a contact.** "Battery 73%. Voltage 3.91. Channel utilization 4%. SNR 12.4 dB. Last beacon 22 seconds ago."
 - **Type a chat on the handheld.** "Watch the IC's screen." (Show it arriving.)
@@ -167,7 +167,7 @@ loraTAK is a bidirectional gateway between Meshtastic LoRa mesh radios and the T
 ## Visual / image cues
 
 - **Mesh node clipped to a pack** — clear shot of a small Heltec or T-Beam unit clipped to a SAR volunteer's vest.
-- **Base camp setup** — Pi + Meshtastic + Toughbook on a folding table, forest trailhead in the background.
+- **Base camp setup** — appliance + Meshtastic + Toughbook on a folding table, forest trailhead in the background.
 - **The map populating** — animated time-lapse of mesh contacts appearing across a topographic basemap.
 - **Cross-modal chat** — Meshtastic handheld in one frame, ATAK tablet in another, same chat thread visible on both.
 

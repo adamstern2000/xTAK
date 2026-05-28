@@ -10,7 +10,7 @@
 
 ## TL;DR
 
-aiTAK is an AI agent that participates in the TAK picture as a first-class contact. Operators chat with it via native GeoChat to query the SA picture, ask for summaries, request COT generation, or task it to monitor specific feeds. Local-first — runs on the same Pi as the rest of the suite, no cloud dependency. Pluggable LLM backend (OpenAI, Anthropic, Ollama, llama.cpp).
+aiTAK is an AI agent that participates in the TAK picture as a first-class contact. Operators chat with it via native GeoChat to query the SA picture, ask for summaries, request COT generation, or task it to monitor specific feeds. Local-first — runs on the same appliance as the rest of the suite, no cloud dependency. Pluggable LLM backend (OpenAI, Anthropic, Ollama, llama.cpp).
 
 **The pitch:** an AI on your TAK network you can talk to like a person, without sending your SA picture to a third-party cloud.
 
@@ -71,7 +71,7 @@ Generative outputs the operator reviews and sends. Scripts in [`aitak-o3-drafts-
 3. **CoT generation from natural language** — "place a friendly marker at Mt. Wilson Observatory" → marker appears on every TAK client.
 4. **Picture summarization** — structured operational briefs grounded in the TAK history.
 5. **Feed monitoring** — "alert me if any fire feature enters the Mt. Wilson geofence" runs as an always-on rule.
-6. **Local-first** — runs on the same Pi as the rest of the suite. No required cloud dependency. BYO model.
+6. **Local-first** — runs on the same appliance as the rest of the suite. No required cloud dependency. BYO model.
 7. **Pluggable LLM backend** — OpenAI, Anthropic, Ollama, llama.cpp.
 
 ---

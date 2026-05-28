@@ -1,6 +1,6 @@
 # chatTAK — Marketing Module
 
-**Status:** Beta — shipping soon (v 1.0.x · Pi appliance)
+**Status:** Beta — shipping soon (v 1.0.x · appliance)
 **Last updated:** 2026-05-19
 **Use this for:** social posts, video scripts, event-coordinator and volunteer-org content.
 
@@ -8,7 +8,7 @@
 
 ## TL;DR
 
-chatTAK is a comms-forward TAK chat client that runs as a Pi appliance with its own Wi-Fi network and a browser-based UI. Plug it in, hand out the SSID, and your whole team is on TAK chat in 60 seconds. No app install, no Play Store, no MDM. Multi-user — every browser is a distinct TAK identity with team color, role, and live presence. Architecturally shared with baseTAK (same `cot_chat` package) so fixes ship to both.
+chatTAK is a comms-forward TAK chat client that runs as an appliance with its own Wi-Fi network and a browser-based UI. Plug it in, hand out the SSID, and your whole team is on TAK chat in 60 seconds. No app install, no Play Store, no MDM. Multi-user — every browser is a distinct TAK identity with team color, role, and live presence. Architecturally shared with baseTAK (same `cot_chat` package) so fixes ship to both.
 
 **The pitch:** for stakeholders who need to be on the TAK chat thread but don't need the full SA map — incident commanders, dispatch, family liaisons, ham chase teams, walk-up volunteers at events.
 
@@ -19,7 +19,7 @@ chatTAK is a comms-forward TAK chat client that runs as a Pi appliance with its 
 - **"A TAK endpoint in everyone's pocket. No app required."** *(headline)*
 - **"Plug it in, hand out the SSID, your team is on TAK in 60 seconds."** *(deploy angle)*
 - **"Comms-forward TAK for the people in the loop."** *(audience angle)*
-- **"Pi-sized. Pelican-cased. Backpack-portable."** *(hardware angle)*
+- **"appliance-sized. Pelican-cased. Backpack-portable."** *(hardware angle)*
 
 ---
 
@@ -44,7 +44,7 @@ chatTAK is a comms-forward TAK chat client that runs as a Pi appliance with its 
 4. **50 MB attachments** — images, video, docs.
 5. **Self-hosted Wi-Fi AP** — chatTAK can be its own wireless network. Works in a parking lot with no LAN around.
 6. **Proper ghost-contact cleanup** — `t-x-d-d` on logout, so disconnected operators don't clutter the roster.
-7. **Pi Zero appliance** — smaller than a deck of cards. Solar-viable. Offline-installable tarball.
+7. **palm-sized appliance** — smaller than a deck of cards. Solar-viable. Offline-installable tarball.
 8. **Shared codebase with baseTAK** — same `cot_chat` package, so fixes and features ship to both.
 
 ---
@@ -73,7 +73,7 @@ chatTAK is a comms-forward TAK chat client that runs as a Pi appliance with its 
 >
 > None of them have ATAK. They have personal phones.
 >
-> Each aid station gets a chatTAK Pi Zero. Volunteers connect to "AID-7" Wi-Fi, pick a name, they're on the TAK chat thread.
+> Each aid station gets a chatTAK palm-sized appliance. Volunteers connect to "AID-7" Wi-Fi, pick a name, they're on the TAK chat thread.
 >
 > 60 seconds.
 
@@ -100,7 +100,7 @@ chatTAK is a comms-forward TAK chat client that runs as a Pi appliance with its 
 >
 > The volunteers at the aid stations have neither ATAK nor amateur radio. They're regular people with regular phones.
 >
-> At each aid station the comms lead hands the station captain a chatTAK — a Pi Zero in a 3D-printed case, powered by a USB battery. "Connect your phone to AID-7. Open the link. Pick your name."
+> At each aid station the comms lead hands the station captain a chatTAK — a palm-sized appliance in a 3D-printed case, powered by a USB battery. "Connect your phone to AID-7. Open the link. Pick your name."
 >
 > Sixty seconds later every volunteer at the station is on the team's TAK chat. Their position is updating on the race director's ATAK. They can DM the chief medical officer.
 >
@@ -112,14 +112,14 @@ chatTAK is a comms-forward TAK chat client that runs as a Pi appliance with its 
 
 ### 30-second cinematic
 
-| 0:00–0:08 | Aid station — volunteers in event tees, a folding table, a tiny Pi Zero in a 3D-printed case. |
+| 0:00–0:08 | Aid station — volunteers in event tees, a folding table, a tiny palm-sized appliance in a 3D-printed case. |
 | 0:08–0:16 | Close-up: a volunteer opens her phone, connects to "AID-7" Wi-Fi, opens a browser. Picks a callsign. The TAK chat panel fills the screen. |
 | 0:16–0:23 | Cut to the race director in her vehicle — the volunteer's callsign appears on the ATAK map with a position pin. |
 | 0:23–0:30 | Title card: **chatTAK. 60 seconds. No app required.** |
 
 ### 60-second demo
 
-1. **Setup (0:00–0:12):** Pull a Pi Zero out of a Pelican case. Plug into a USB battery. The Wi-Fi SSID appears on a phone.
+1. **Setup (0:00–0:12):** Pull a palm-sized appliance out of a Pelican case. Plug into a USB battery. The Wi-Fi SSID appears on a phone.
 2. **Onboarding (0:12–0:25):** Phone joins the Wi-Fi. Browser opens the captive portal. Pick a callsign, pick a team color. The phone is now showing the chatTAK panel.
 3. **Multi-user (0:25–0:40):** Show 3 different phones, 3 different operators, 3 different chats happening in parallel — DMs, team chat, broadcast.
 4. **Native TAK fidelity (0:40–0:55):** Cut to a WinTAK desktop. Same chats appearing in the WinTAK chat panel. VO: "Every chatTAK user is a first-class TAK contact."
@@ -129,7 +129,7 @@ chatTAK is a comms-forward TAK chat client that runs as a Pi appliance with its 
 
 ## Live-demo talking points
 
-- **Hold up the Pi Zero.** "This is a $15 Raspberry Pi Zero in a 3D-printed case. Powered by a USB battery."
+- **Hold up the palm-sized appliance.** "This is a $15 palm-sized appliance in a 3D-printed case. Powered by a USB battery."
 - **Broadcast the SSID.** "It's its own Wi-Fi network. AID-7. No LAN around required."
 - **Have someone connect.** "Volunteer scans the SSID, joins, opens the browser. Captive portal."
 - **Show the onboarding.** "Pick a callsign, pick a team color. That's it. They're now a TAK contact with a UID, callsign, team color, and live presence."
@@ -145,14 +145,14 @@ chatTAK is a comms-forward TAK chat client that runs as a Pi appliance with its 
 | "Why not just use Slack / Teams / WhatsApp?" | "Not TAK-native. Messages from Slack won't appear in WinTAK chat history. chatTAK speaks the actual TAK GeoChat protocol — messages cross seamlessly between chatTAK users, ATAK tablets, WinTAK desktops, iTAK iPads." |
 | "Doesn't ATAK already do chat?" | "It does, but it requires the full ATAK app. chatTAK is chat-only — for people who need to be in the loop but don't need the map. Commanders, dispatch, family liaisons, walk-up volunteers." |
 | "What about Matrix bridges?" | "Generic chat federation, no TAK awareness. chatTAK is purpose-built for the TAK protocol." |
-| "Is it secure?" | "Self-hosted on your Pi. Data stays on your hardware. Standard TAK protocol on the wire. Pair with WPA2/3 on the Wi-Fi side." |
+| "Is it secure?" | "Self-hosted on your appliance. Data stays on your hardware. Standard TAK protocol on the wire. Pair with WPA2/3 on the Wi-Fi side." |
 | "What if someone shows up without a phone?" | "They share with a teammate, or chatTAK runs on a laptop too. Same UI, any browser." |
 
 ---
 
 ## Visual / image cues
 
-- **Pi Zero on a tailgate** — sub-deck-of-cards device, real-scale shot.
+- **palm-sized appliance on a tailgate** — sub-deck-of-cards device, real-scale shot.
 - **The captive-portal moment** — phone showing the callsign-pick screen.
 - **Multi-phone scene** — three or four phones in different hands, all on the same chat thread.
 - **The Wi-Fi SSID poster** — sign reading "AID-7 · open browser to chat.local · TAK chat · no app required."

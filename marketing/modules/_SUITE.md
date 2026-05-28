@@ -30,7 +30,7 @@ xTAK is a suite of seven independent services that extend the TAK ecosystem — 
 | **baseTAK** | Browser-native TAK map, chat, fileserver, tileserver. The hub. | In development · Beta TBD |
 | **digiTAK** | Bidirectional APRS-to-TAK gateway over VHF + APRS-IS. | Beta · APRS / APRS-IS shipping (HF in development) |
 | **loraTAK** | Meshtastic LoRa to TAK bidirectional bridge. | In development · Beta TBD |
-| **chatTAK** | Browser TAK chat appliance — Pi-with-Wi-Fi, no app required. | In development · Beta TBD |
+| **chatTAK** | Browser TAK chat appliance — self-contained Wi-Fi appliance, no app required. | In development · Beta TBD |
 | **sdrTAK** | SDR-decoded aircraft (ADS-B + UAT) and ships (AIS imminent). | Beta · aircraft shipping (ADS-B + UAT; AIS in development) |
 | **netTAK** | Self-managing wireless mesh for field-deployable TAK operations. | In development · Beta TBD |
 | **aiTAK** | AI agent participating in TAK chat as a first-class contact. | ★ Design phase (timing TBD) |
@@ -55,7 +55,7 @@ These are the "Design Propositions" on the home page — every xTAK product is b
 3. **100% TAK protocol fidelity** — what xTAK emits on the wire is byte-identical to what WinTAK emits. Markers, chat, SA, team color, custom icons — full fidelity through every product.
 4. **Self-hosted, no vendor lock-in** — standard TAK protocol on the wire. No subscription, no per-device licensing, no cloud account. The data is yours, the boxes are yours.
 5. **Built for the operator** — designed by and for the people who actually run operations. Faster click paths, fewer menus, less clutter — the map gets the screen.
-6. **Portable, battery-powered** — none of this lives in a server rack. Pi-class hardware throughout. The whole suite fits in a backpack.
+6. **Portable, battery-powered** — none of this lives in a server rack. commodity Linux hardware throughout. The whole suite fits in a backpack.
 
 ---
 
@@ -90,11 +90,11 @@ Use Devil's Gate for any single-scenario explainer.
 | Audience | The 30-second xTAK pitch |
 |---|---|
 | **EOC / EM directors** | "ATAK / WinTAK / iTAK are the operator clients. xTAK is the suite of services on the LAN that extend them to amateur radio (digiTAK), Meshtastic (loraTAK), aircraft and ships (sdrTAK), browser users (baseTAK + chatTAK), and AI assistants (aiTAK). When the WAN goes dark, you still have a TAK picture." |
-| **SAR coordinators** | "One Pi at base camp running baseTAK. Searchers carry $40 Meshtastic radios — loraTAK puts them on the map. APRS-equipped volunteers — digiTAK puts them on too. Inbound helo — sdrTAK adds them. Walk-up volunteers — chatTAK gives them a phone-only chat endpoint. All on one TAK picture." |
-| **EmComm / ARES** | "Your existing APRS infrastructure becomes a TAK SA wire (digiTAK). Add Meshtastic for license-free mesh (loraTAK). Run TAK from a laptop (baseTAK) or a chat-only Pi appliance (chatTAK). Drop-in nodes for field deploy (netTAK, coming). All standalone, all on one network." |
+| **SAR coordinators** | "One appliance at base camp running baseTAK. Searchers carry $40 Meshtastic radios — loraTAK puts them on the map. APRS-equipped volunteers — digiTAK puts them on too. Inbound helo — sdrTAK adds them. Walk-up volunteers — chatTAK gives them a phone-only chat endpoint. All on one TAK picture." |
+| **EmComm / ARES** | "Your existing APRS infrastructure becomes a TAK SA wire (digiTAK). Add Meshtastic for license-free mesh (loraTAK). Run TAK from a laptop (baseTAK) or a chat-only appliance (chatTAK). Drop-in nodes for field deploy (netTAK, coming). All standalone, all on one network." |
 | **Wildland fire** | "Mobile EOC truck runs baseTAK on a Toughbook. CAL FIRE inbound aircraft on the map via sdrTAK. EmComm volunteers on APRS via digiTAK. Smokejumpers on Meshtastic via loraTAK. Spike camps on netTAK mesh (coming). One picture across the whole AO." |
-| **Public safety LE/EMS** | "Browser-native TAK on every laptop and iPad in the agency (baseTAK). APRS over RF when LTE is down (digiTAK). Aircraft picture for TFRs (sdrTAK). Pi-appliance chat for stakeholders without TAK gear (chatTAK). Self-hosted, no third-party cloud." |
-| **Ham radio operators** | "The TAK client your APRS station has always needed (baseTAK). A modern bidirectional APRS gateway (digiTAK, v2.3 open spec). License-free Meshtastic bridge (loraTAK). Aircraft and AIS decoded from a $20 SDR (sdrTAK). All on a Pi, all on your bench." |
+| **Public safety LE/EMS** | "Browser-native TAK on every laptop and iPad in the agency (baseTAK). APRS over RF when LTE is down (digiTAK). Aircraft picture for TFRs (sdrTAK). appliance chat for stakeholders without TAK gear (chatTAK). Self-hosted, no third-party cloud." |
+| **Ham radio operators** | "The TAK client your APRS station has always needed (baseTAK). A modern bidirectional APRS gateway (digiTAK, v2.3 open spec). License-free Meshtastic bridge (loraTAK). Aircraft and AIS decoded from a $20 SDR (sdrTAK). All on an appliance, all on your bench." |
 
 ---
 
@@ -117,7 +117,7 @@ Use Devil's Gate for any single-scenario explainer.
 > **POST 3 — the price hook**
 > The whole xTAK suite fits in a backpack.
 >
-> $20 RTL-SDR for aircraft. $30-40 Meshtastic radios for mesh. Pi-class hardware everywhere. A Toughbook runs the EOC. The whole stack is operator-grade pricing.
+> $20 RTL-SDR for aircraft. $30-40 Meshtastic radios for mesh. commodity Linux hardware everywhere. A Toughbook runs the EOC. The whole stack is operator-grade pricing.
 
 > **POST 4 — the seven-products hook**
 > 7 xTAK products. 1 TAK picture.
@@ -176,8 +176,8 @@ Use Devil's Gate for any single-scenario explainer.
 |---|---|
 | "How is this different from PAR's TAK?" | "xTAK extends PAR's TAK. ATAK / WinTAK / iTAK are still the clients you use. xTAK adds the services on your LAN that bring APRS, Meshtastic, SDR, browser, and AI participants into the same picture." |
 | "Do I need TAK Server?" | "No. xTAK products are self-hosted. baseTAK includes its own file server. digiTAK and loraTAK federate over RF. If you already run FreeTAKServer, drop xTAK products in as feeds." |
-| "How do I get xTAK?" | "Two ways. Install our software on your own hardware (Pi-class Linux — Raspberry Pi 4/5, fanless mini-PC, handheld Linux box), or order a ready-to-deploy xTAK appliance from us. Either way, the software runs on your network. Your data stays on your hardware. The wire-format spec we designed (TAK-APRS Protocol Extension v2.3) is published openly at github.com/adamstern2000/cot_radio_aprs. Early Adopters get Beta build access." |
-| "How does it compare to defense-tier platforms?" | "Different category. Those are defense-grade, six-figure pricing. xTAK is operator-grade — public safety, SAR, EmComm. Pi-class hardware, open standards." |
+| "How do I get xTAK?" | "Two ways. Install our software on your own hardware (small Linux device — 4 GB+ RAM, fanless mini-PC, or handheld Linux box), or order a ready-to-deploy xTAK appliance from us. Either way, the software runs on your network. Your data stays on your hardware. The wire-format spec we designed (TAK-APRS Protocol Extension v2.3) is published openly at github.com/adamstern2000/cot_radio_aprs. Early Adopters get Beta build access." |
+| "How does it compare to defense-tier platforms?" | "Different category. Those are defense-grade, six-figure pricing. xTAK is operator-grade — public safety, SAR, EmComm. commodity Linux hardware, open standards." |
 | "Why should I pay for Beta?" | "You're not paying for Beta — you're supporting an independent project so it can reach GA. Buy Me a Coffee. https://buymeacoffee.com/xtak" |
 
 ---
