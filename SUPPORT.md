@@ -8,18 +8,18 @@ For people who want to be part of this earlier — and want to support the work 
 
 ## What you get as an Early Adopter
 
-- **🚀 Early access to all xTAK software** — Beta builds before public release
-- **✨ Early access to new features** — capabilities land for supporters first
-- **🗣️ Direct engagement with the team** — Q&A, feature input, deployment questions, roadmap discussion
-- **🤝 The early-adopter community** — a room of operators figuring out how to deploy this for real
+- **🚀 Software AND hardware, early** — Beta builds of every xTAK product the moment they're cut, well before public release. As reference designs and 3D-printer files for operator hardware (cases, mounts, mast adapters) become available, supporters get them first.
+- **🗣️ Direct line to the developers** — Talk to the team about your deployment. Feature input, integration questions, roadmap discussion. Your operational reality shapes what gets built next.
+- **🤝 The early-adopter community** — A room of other operators deploying xTAK for real — EmComm, SAR, wildland fire, public safety, amateur radio. Share what's working, swap deployment patterns, learn what others have shipped.
+- **✨ New features first** — Capabilities land for supporters before public release. You're using the next thing before the rest of the world hears about it.
 
 ---
 
-## Why we're doing it this way
+## Why be an Early Adopter?
 
-The xTAK Project is self-funded and open by design. We're not selling subscriptions, not charging per device, not running a cloud service, not collecting your operational data. The support model is voluntary: if the work is valuable to your operation, become a supporter and you'll get the software earlier in return.
+xTAK is in active Beta. We're building it for operators who want to deploy these tools as they're ready — public safety, SAR, wildland fire, EmComm, amateur radio — and who want a voice in what gets built next.
 
-Every contribution funds the next product, the next feature, the next deployment test.
+Supporters get early access to every build, every hardware reference design, and every new capability — plus a direct line to the developers, a voice in what ships next, and a community of operators figuring out deployments alongside you.
 
 ---
 
