@@ -1,6 +1,6 @@
 # xTAK Suite — Marketing Module
 
-**Status:** Beta — 6 of 7 products shipping, 1 in design (aiTAK)
+**Status:** 2 of 7 in Beta · 4 in active development · 1 in design phase
 **Last updated:** 2026-05-28
 **Use this for:** suite-level positioning, intro posts, conference talks, podcast briefs, "what is xTAK" explainers.
 
@@ -27,12 +27,12 @@ xTAK is a suite of seven independent services that extend the TAK ecosystem — 
 
 | Product | What it does | Status |
 |---|---|---|
-| **baseTAK** | Browser-native TAK map, chat, fileserver, tileserver. The hub. | Beta — shipping soon |
-| **digiTAK** | Bidirectional APRS-to-TAK gateway over VHF + APRS-IS. | Beta — shipping soon (HF roadmap) |
-| **loraTAK** | Meshtastic LoRa to TAK bidirectional bridge. | Beta — shipping soon |
-| **chatTAK** | Browser TAK chat appliance — Pi-with-Wi-Fi, no app required. | Beta — shipping soon |
-| **sdrTAK** | SDR-decoded aircraft (ADS-B + UAT) and ships (AIS imminent). | Beta — shipping soon |
-| **netTAK** | Self-managing wireless mesh for field-deployable TAK operations. | Beta — shipping soon |
+| **baseTAK** | Browser-native TAK map, chat, fileserver, tileserver. The hub. | In development · Beta TBD |
+| **digiTAK** | Bidirectional APRS-to-TAK gateway over VHF + APRS-IS. | Beta · APRS / APRS-IS shipping (HF in development) |
+| **loraTAK** | Meshtastic LoRa to TAK bidirectional bridge. | In development · Beta TBD |
+| **chatTAK** | Browser TAK chat appliance — Pi-with-Wi-Fi, no app required. | In development · Beta TBD |
+| **sdrTAK** | SDR-decoded aircraft (ADS-B + UAT) and ships (AIS imminent). | Beta · aircraft shipping (ADS-B + UAT; AIS in development) |
+| **netTAK** | Self-managing wireless mesh for field-deployable TAK operations. | In development · Beta TBD |
 | **aiTAK** | AI agent participating in TAK chat as a first-class contact. | ★ Design phase (timing TBD) |
 
 ---
@@ -148,7 +148,7 @@ Use Devil's Gate for any single-scenario explainer.
 > xTAK is a suite of seven services that extend the TAK ecosystem to:
 > - Amateur radio (VHF, HF coming) via digiTAK
 > - LoRa mesh (Meshtastic) via loraTAK
-> - Off-grid Wi-Fi mesh (netTAK, Beta)
+> - Off-grid Wi-Fi mesh (netTAK, in development)
 > - SDR-decoded aircraft (ADS-B + UAT) and ships (AIS imminent) via sdrTAK
 > - Browser endpoints — full map (baseTAK) or chat-only (chatTAK)
 > - AI assistance on TAK chat (aiTAK, design phase)

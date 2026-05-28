@@ -34,6 +34,7 @@
 
   --status-beta: var(--amber);
   --status-future: var(--ink-faint);
+  --status-dev: rgba(255, 155, 58, 0.55);
   --status-ok: #5ee882;
 
   /* Lines / grids */
@@ -520,6 +521,7 @@ body::after {
 }
 .status--beta { color: var(--status-beta); }
 .status--future { color: var(--status-future); }
+.status--dev { color: var(--status-dev); }
 .status--ok { color: var(--status-ok); }
 
 /* ---------- Product grid (home) ---------- */
