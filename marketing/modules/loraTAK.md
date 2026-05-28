@@ -157,7 +157,7 @@ loraTAK is a bidirectional gateway between Meshtastic LoRa mesh radios and the T
 | Objection | Response |
 |---|---|
 | "Why not just use APRS?" | "Different audience. APRS requires a ham license; Meshtastic uses license-free spectrum. For event volunteers, CERT, prepper teams, kids — Meshtastic is the lower-friction onboarding." |
-| "What about goTenna Pro?" | "Meshtastic radios start at $30 vs $300+. Stock firmware, open hardware, global licence-free spectrum. Different price point, different audience." |
+| "What about commercial mesh-radio products?" | "Meshtastic radios start at $30 vs $300+. Stock firmware, open hardware, global license-free spectrum. Different price point, different audience." |
 | "How does it handle long messages?" | "Inbound — multi-part messages reassemble cleanly. Outbound — current build truncates with '…'. Multi-part outbound is in development." |
 | "Is GPS required on the mesh radio?" | "No. GPS-off devices get synthetic positions anchored to the gateway location, so they stay chat-able even without GPS." |
 | "Does loraTAK depend on baseTAK?" | "No. loraTAK is standalone. Joins any TAK network on the LAN — works with ATAK / WinTAK / iTAK / baseTAK in any combination." |

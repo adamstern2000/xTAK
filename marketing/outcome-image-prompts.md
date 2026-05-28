@@ -157,16 +157,10 @@ DO NOT include: bright sci-fi neon, hexagons, cartoonish military
 imagery, lens flares.
 ```
 
-### Outcome 05 — Modernize your APRS station with a TAK client ✅ DONE interface
-**📐 Side-by-side composite** (Figma / Photoshop split panel)
+### Outcome 05 — Modernize your APRS station with a TAK client ✅ DONE
+**🎬 Nano Banana Pro**
 
-Composite of two screenshots side-by-side:
-- **Left:** A genuine UI-View32 screenshot (find on the web, public domain) showing the dated Windows-95-style APRS UI
-- **Right:** Modern WinTAK / baseTAK screenshot showing APRS contacts on a satellite basemap with proper symbology
-
-A small arrow / "vs" indicator between them. Caption: "OUT WITH THE OLD."
-
-If side-by-side feels too literal, alternative: a single Nano Banana cinematic photograph showing a ham operator at their desk with a modern TAK laptop in foreground and an old CRT monitor with UI-View32 in the background, partially shut off.
+A single cinematic photograph showing a ham operator at their desk: a modern TAK laptop in the foreground (APRS contacts on a satellite basemap with proper symbology) and an old CRT monitor in the background running an older Windows-style APRS UI, partially shut off. The visual story is "out with the old, in with the new" — no specific legacy software named.
 
 ---
 

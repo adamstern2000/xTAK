@@ -185,7 +185,7 @@ The two deployment modes describe **what else is on the network**, not where dig
 
 | Objection | Response |
 |---|---|
-| "I already have UI-View / APRSIS32 / Xastir / etc." | "Keep them — digiTAK is in addition. The benefit is that your APRS station's picture is now also on every TAK client your team uses, with a modern UI and the same chat thread as the rest of the operation." |
+| "I already have legacy APRS software." | "Keep it — digiTAK is in addition. The benefit is that your APRS station's picture is now also on every TAK client your team uses, with a modern UI and the same chat thread as the rest of the operation." |
 | "Is the wire format proprietary?" | "Open spec: TAK-APRS Protocol Extension v2.3 at github.com/adamstern2000/cot_radio_aprs. Third-party implementations welcome." |
 | "What about packet collisions?" | "Sibling digiTAKs coordinate so they don't re-emit each other's traffic. Standard channel collisions still apply — half-duplex RF is half-duplex RF." |
 | "Why not just use plain APRS-IS?" | "One-way. Plain APRS-IS feeds to a website. digiTAK closes the loop — TAK users can write back to RF." |
