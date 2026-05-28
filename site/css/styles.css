@@ -1448,6 +1448,7 @@ body::after {
   white-space: nowrap;
 }
 .archnet__extender:hover .archnet__extender-tag { color: var(--cyan); }
+.archnet__extender-tag-brand { text-transform: none; letter-spacing: 0; }
 .archnet__extender-desc {
   font-size: 0.85rem;
   color: var(--ink-body);
