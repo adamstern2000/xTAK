@@ -1,7 +1,7 @@
 # xTAK Suite — Marketing Module
 
-**Status:** Beta — 5 of 7 products shipping, 2 in design (netTAK, aiTAK)
-**Last updated:** 2026-05-19
+**Status:** Beta — 6 of 7 products shipping, 1 in design (aiTAK)
+**Last updated:** 2026-05-28
 **Use this for:** suite-level positioning, intro posts, conference talks, podcast briefs, "what is xTAK" explainers.
 
 ---
@@ -107,7 +107,7 @@ Use Devil's Gate for any single-scenario explainer.
 >
 > 7 services that extend ATAK / WinTAK / iTAK to amateur radio, LoRa mesh, off-grid Wi-Fi, SDR-decoded aircraft, browser endpoints, and AI assistants.
 >
-> Self-hosted. Backpack-portable. https://xtak.io
+> Self-hosted. Backpack-portable. https://xtak.ai
 
 > **POST 2 — the architecture hook**
 > Every xTAK product is standalone.
@@ -184,7 +184,7 @@ Use Devil's Gate for any single-scenario explainer.
 
 ## Project / repository links
 
-- **Live website:** https://xtak.io (deploying from `site/` in this repo)
+- **Live website:** https://xtak.ai (deploying from `site/` in this repo)
 - **GitHub repo:** https://github.com/adamstern2000/xTAK
 - **Open wire spec (TAK-APRS Protocol Extension v2.3):** https://github.com/adamstern2000/cot_radio_aprs
 - **Buy Me a Coffee / Early Adopter:** https://buymeacoffee.com/xtak
