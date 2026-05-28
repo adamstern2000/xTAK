@@ -22,7 +22,7 @@ Cinematic widescreen photograph, 21:9 aspect ratio. A wildland-fire incident
 command staging area in the mountains of Southern California, golden-hour
 lighting with light wildfire smoke in the distance. Foreground: an open
 Pelican case on the tailgate of a fire-response truck, holding a Raspberry
-Pi 5 (small black computer) with two USB cables routed cleanly — one to a
+small Linux appliance with two USB cables routed cleanly — one to a
 VHF amateur radio handheld, one to a desktop HF transceiver radio with knobs
 and a small LCD display. Above the truck, a portable telescoping antenna
 mast rises 15 feet, with both a VHF whip antenna and a longer HF wire dipole
@@ -46,7 +46,7 @@ neon, hexagons, futuristic UI mockups.
 Cinematic widescreen photograph, 21:9 aspect ratio. A search-and-rescue base
 camp at a trailhead in dense California chaparral, late afternoon light
 filtering through oak trees. Foreground: a folding camp table holding a
-small Raspberry Pi computer with a single USB cable running to a Meshtastic
+small Linux appliance computer with a single USB cable running to a Meshtastic
 LoRa radio device (small, with a stubby black antenna, screen showing a
 mesh-network display). Next to it, a rugged Windows laptop showing a TAK
 map populated with twelve small icons representing search teams spread
@@ -69,7 +69,7 @@ aesthetic.
 
 ```
 Cinematic widescreen photograph, 21:9 aspect ratio. A volunteer aid station
-at a community charity bike-ride event. Foreground: a small Raspberry Pi
+at a community charity bike-ride event. Foreground: a small Linux appliance
 Zero computer (palm-sized, in a 3D-printed plastic case) sitting on a
 folding camp table, with a USB power bank plugged in. Above the case on a
 small printed sign: a Wi-Fi network name and a QR code. Mid-ground: three
@@ -94,7 +94,7 @@ glow, neon, cyberpunk.
 ```
 Cinematic widescreen photograph, 21:9 aspect ratio. An airshow safety
 operations setup at a small regional airport on a bright California summer
-day. Foreground: a folding table on the airport ramp holding a Raspberry Pi
+day. Foreground: a folding table on the airport ramp holding a Linux appliance
 5 with two small RTL-SDR USB radio dongles plugged into a powered hub.
 A ground-plane antenna sits on a portable tripod next to the table,
 extending about 4 feet up. A rugged Windows laptop nearby shows a TAK
@@ -122,7 +122,7 @@ Cinematic widescreen photograph, 21:9 aspect ratio. A wildland-fire forward
 operating area in the rugged mountains of Southern California, late
 afternoon with golden hour light and a faint orange glow of wildfire smoke
 on the horizon. Foreground: a black Pelican case open on a flat rock,
-revealing a Raspberry Pi 5 in a small ruggedized enclosure with cables
+revealing a small Linux appliance in a small ruggedized enclosure with cables
 routing to a directional Yagi antenna mounted on a small tripod nearby
 (pointing up toward a distant ridge). Beside it, a 12V deep-cycle battery
 powering the setup, with a small solar panel visible at the edge of frame.

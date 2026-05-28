@@ -79,10 +79,10 @@
   <figure class="hero-image">
     <div class="container container--wide">
       <div class="hero-image__frame">
-        <img src="/img/products/loratak-hero.png" alt="loraTAK at a SAR base camp — folding table at a forest trailhead with a Pi running loraTAK, Meshtastic radio, and a rugged laptop showing every team's mesh node as a TAK contact" loading="eager" />
+        <img src="/img/products/loratak-hero.png" alt="loraTAK at a SAR base camp — folding table at a forest trailhead with an appliance running loraTAK, Meshtastic radio, and a rugged laptop showing every team's mesh node as a TAK contact" loading="eager" />
         <figcaption class="hero-image__caption">
           <span class="hero-image__caption-label">LORATAK · SAR BASE CAMP · MESH ON MAP</span>
-          <span class="hero-image__caption-text">loraTAK at a SAR trailhead — a Pi gateway, a Meshtastic radio, and a WinTAK laptop showing every searcher's position as a first-class TAK contact. Mesh nodes clipped to packs, no cell tower in sight.</span>
+          <span class="hero-image__caption-text">loraTAK at a SAR trailhead — an appliance gateway, a Meshtastic radio, and a WinTAK laptop showing every searcher's position as a first-class TAK contact. Mesh nodes clipped to packs, no cell tower in sight.</span>
         </figcaption>
       </div>
     </div>
@@ -105,7 +105,7 @@
           </p>
           <p>
             Every searcher carries a $40 Meshtastic node clipped to their pack. The team lead drops
-            one more node at base camp, plugs it into a Pi running loraTAK, and powers the Pi off a
+            one more node at base camp, plugs it into an appliance running loraTAK, and powers the appliance off a
             battery. Within a minute, every Meshtastic node appears on the base camp's WinTAK map as
             a moving icon with the searcher's name, team color, and battery level.
           </p>
@@ -115,7 +115,7 @@
             and reroute. When a team finds sign of the hiker, they type a chat on their Meshtastic.
             It appears in the IC's WinTAK chat panel with the team's callsign and position attached.
           </p>
-          <p><strong>No cell. No Wi-Fi. No internet.</strong> <em>Mesh radios and a Pi.</em></p>
+          <p><strong>No cell. No Wi-Fi. No internet.</strong> <em>Mesh radios and an appliance.</em></p>
         </div>
       </div>
     </div>
@@ -182,8 +182,8 @@
             <ul class="outcome__list">
               <li><strong>LoRa users chat with APRS users (and every TAK client)</strong> — a Meshtastic message routes from LoRa → TAK GeoChat on the LAN → digiTAK → APRS-IS or RF, end to end. Both products speak the standard TAK protocol, so the same chat thread carries Meshtastic users, APRS users, and TAK-client users together.</li>
               <li><strong>Run a Meshtastic gateway and an APRS gateway side-by-side</strong> with no port collisions or echo loops.</li>
-              <li><strong>Multi-NIC Pi-as-AP setups handled correctly</strong> — works when the gateway has a wired LAN and a Wi-Fi AP on the same Pi.</li>
-              <li><strong>Drop loraTAK onto a <a href="/products/netTAK.html" style="color: var(--cyan);">netTAK</a> field mesh</strong> and every Pi-node becomes a Meshtastic gateway — no LAN required.</li>
+              <li><strong>Multi-NIC appliance-as-AP setups handled correctly</strong> — works when the gateway has a wired LAN and a Wi-Fi AP on the same appliance.</li>
+              <li><strong>Drop loraTAK onto a <a href="/products/netTAK.html" style="color: var(--cyan);">netTAK</a> field mesh</strong> and every appliance-node becomes a Meshtastic gateway — no LAN required.</li>
             </ul>
           </div>
           <figure class="outcome-image">
@@ -215,7 +215,7 @@
         <li class="capability"><strong>Read receipts and addressable DMs</strong> across the LoRa link.</li>
         <li class="capability"><strong>Synthetic positions</strong> for GPS-off mesh nodes — anchored from gateway location so they stay chat-able.</li>
         <li class="capability"><strong>Mesh telemetry on the map</strong> — battery %, voltage, channel utilization, SNR — emitted as <code>&lt;__mesh_telem&gt;</code> JSON in every beacon.</li>
-        <li class="capability"><strong>Multi-NIC Pi-as-AP mode</strong> — eth0 for upstream, wlan0 as a soft AP for the mesh team to associate with.</li>
+        <li class="capability"><strong>Multi-NIC appliance-as-AP mode</strong> — eth0 for upstream, wlan0 as a soft AP for the mesh team to associate with.</li>
         <li class="capability"><strong>Bidirectional TAK protobuf RX</strong> from radios that speak it — no XML round-trip.</li>
       </ul>
 
@@ -250,7 +250,7 @@
       <h2 class="section__title">What loraTAK <em>needs.</em></h2>
 
       <div class="specs" style="margin-top: 2rem;">
-        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Raspberry Pi (4 or 5, even a Zero 2 W works) or any Linux/macOS box with Python 3.10+</div></div>
+        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Any small Linux appliance or any Linux/macOS box with Python 3.10+</div></div>
         <div class="specs__row"><div class="specs__key">Meshtastic radio</div><div class="specs__val">Any model the Meshtastic firmware supports — Heltec V3, T-Beam, RAK 4631, T-Echo, station-G2. USB serial or TCP.</div></div>
         <div class="specs__row"><div class="specs__key">Network</div><div class="specs__val">A LAN — same one your ATAK / WinTAK clients are on</div></div>
         <div class="specs__row"><div class="specs__key">TAK clients supported</div><div class="specs__val">ATAK, WinTAK, iTAK, baseTAK — any standard TAK client</div></div>

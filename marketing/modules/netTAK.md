@@ -8,7 +8,7 @@
 
 ## TL;DR
 
-netTAK is a self-managing wireless mesh for field-deployable TAK operations. Drop a Pi at every site; they auto-form a mesh in under a minute. TAK clients connect like to any Wi-Fi. The picture stays current across miles of operating area — no infrastructure required, no internet needed, no central server to configure. Every node serves a web admin UI you reach from any browser. Offline install bundle includes every dependency; install proceeds with no network.
+netTAK is a self-managing wireless mesh for field-deployable TAK operations. Drop an appliance at every site; they auto-form a mesh in under a minute. TAK clients connect like to any Wi-Fi. The picture stays current across miles of operating area — no infrastructure required, no internet needed, no central server to configure. Every node serves a web admin UI you reach from any browser. Offline install bundle includes every dependency; install proceeds with no network.
 
 **The pitch:** a real LAN spanning miles of off-grid operating area, with one-minute mesh convergence and a web admin you can drive from a phone.
 
@@ -16,7 +16,7 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 
 ## Taglines
 
-- **"Drop a Pi at every site. They mesh."** *(deploy angle)*
+- **"Drop an appliance at every site. They mesh."** *(deploy angle)*
 - **"A real LAN across miles of fire ground."** *(scenario anchor)*
 - **"Flash, boot, mesh."** *(self-managing angle)*
 - **"Admin from any browser."** *(operator-experience angle)*
@@ -29,7 +29,7 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 | Audience | Lead with |
 |---|---|
 | **SAR base coordinators** | "Drop nodes from the trailhead out into the search area. The mesh extends the TAK LAN across kilometers of brush and ridgelines. ATAK tablets connect like to any Wi-Fi." |
-| **Wildland fire** | "Mobile EOC → forward staging → spike camps, all on one mesh fabric. WAN-independent. Each node is Pi-class hardware, battery- and solar-viable." |
+| **Wildland fire** | "Mobile EOC → forward staging → spike camps, all on one mesh fabric. WAN-independent. Each node is commodity Linux hardware, battery- and solar-viable." |
 | **Event ops / festivals** | "Festival venue → backstage → aid stations → parking → media tents — one mesh across the whole grounds, no infrastructure to install, admin from the phone in your pocket." |
 | **EmComm / disaster response** | "Day-3 of a regional disaster, the LTE is intermittent and the WAN is gone. netTAK is the mesh that keeps TAK working — install bundle is 75 MB, no internet needed at install." |
 | **Field exercise / training** | "Multi-day exercise across a county. Drop a netTAK per OP site, the mesh comes up, the IC has SA across the whole AO. Web admin from any laptop." |
@@ -50,8 +50,8 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 9. **GPS time discipline** — clocks stay in sync across the cluster without internet.
 10. **Offline install bundle** — 75 MB, all dependencies vendored, no network required.
 11. **Idempotent re-install** — admin password, TLS, cluster state preserved across upgrades.
-12. **PiSugar UPS integration** — live battery state on the dashboard.
-13. **Runs on Pi 4B, Pi 5, Pi Zero 2W** — auto-detected, no per-platform configuration.
+12. **USB-PD UPS hat UPS integration** — live battery state on the dashboard.
+13. **Runs on any small Linux appliance** — auto-detected, no per-platform configuration.
 
 ---
 
@@ -65,7 +65,7 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 ## Honest disclosures
 
 - **Status:** Beta — shipping soon. Currently at v0.3.x. Early Adopters have it running in active operations.
-- **Hardware platform:** Raspberry Pi 4B / Pi 5 / Pi Zero 2W validated. PiSugar 2/3/3-Plus integration validated.
+- **Hardware platform:** Linux appliance validated. USB-PD UPS hat 2/3/3-Plus integration validated.
 - **Wi-Fi HaLow** is optional but recommended for miles-class links. Vantron VT-USB-AH-8108 / Morse Micro MM8108 USB dongle is the supported hardware.
 
 ---
@@ -75,7 +75,7 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 ### X / Twitter
 
 > **POST 1 — the deploy hook**
-> Drop a Pi at every site. Power it on. Watch it join the mesh in under a minute.
+> Drop an appliance at every site. Power it on. Watch it join the mesh in under a minute.
 >
 > No central server. No keys. No console cable.
 >
@@ -98,7 +98,7 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 > **POST A — the field-mesh brief**
 > For teams that have to coordinate when the WAN is gone: netTAK is now shipping in Beta.
 >
-> Drop a Pi at every site. They auto-form a wireless mesh in under a minute. No central master. No provisioning. ATAK tablets, WinTAK laptops, and iTAK phones connect to the mesh like to any Wi-Fi.
+> Drop an appliance at every site. They auto-form a wireless mesh in under a minute. No central master. No provisioning. ATAK tablets, WinTAK laptops, and iTAK phones connect to the mesh like to any Wi-Fi.
 >
 > Every node serves a web admin UI over HTTPS — dashboard tiles for DHCP leases, mesh neighbors, battery, GPS, all live. Cluster-wide DNS records and DHCP reservations propagate to every node when you edit them anywhere.
 >
@@ -117,13 +117,13 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 | 0:00–0:08 | Forest road, golden hour. SAR coordinator pulls three Pelican cases out of a truck and places them at intervals along the road. |
 | 0:08–0:18 | Animated overlay of mesh links forming between the three nodes within seconds. A laptop on the truck tailgate shows the TAK map come up. |
 | 0:18–0:24 | Operator opens a browser on a phone. The netTAK dashboard loads — live tiles for leases, AP clients, mesh neighbors. |
-| 0:24–0:30 | Title card: **netTAK. Drop a Pi at every site. They mesh.** Beta — early access at xtak.ai. |
+| 0:24–0:30 | Title card: **netTAK. Drop an appliance at every site. They mesh.** Beta — early access at xtak.ai. |
 
 ### 60-second feature brief
 
 1. **The deploy story (0:00–0:15)** — three Pelican cases, three netTAKs, mesh converges in under a minute. No central server.
 2. **The admin story (0:15–0:30)** — phone browser opens to the admin UI. Live dashboard. Add a DNS record. It propagates.
-3. **The off-grid story (0:30–0:45)** — install bundle on a USB stick. Flash a fresh Pi. Install proceeds with no network. The cluster picks it up.
+3. **The off-grid story (0:30–0:45)** — install bundle on a USB stick. Flash a fresh appliance. Install proceeds with no network. The cluster picks it up.
 4. **The reliability story (0:45–0:55)** — one node's antenna goes down. Mesh re-routes in seconds. Operators don't notice.
 5. **Close (0:55–0:60)** — Beta · Early Adopter access at https://buymeacoffee.com/xtak.
 
@@ -147,7 +147,7 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 | "When does it ship?" | "Beta — shipping now. Early Adopter access via Buy Me a Coffee gets you the current build today." |
 | "Why not LibreMesh / OpenWrt?" | "Those are router firmware. netTAK is a purpose-built field-deploy appliance with a web admin UI tuned for operators, not network engineers. And the offline install bundle is 75 MB — most LibreMesh deployments still expect package-manager reachability." |
 | "Why not just a commercial cellular router + a tablet?" | "That setup needs an uplink. netTAK doesn't. Mesh-resilient by design, not WAN-dependent." |
-| "What about defense-tier mesh networks?" | "Six-figure pricing, defense customer base. netTAK is the homestead / SAR / event / EmComm tier — commodity Pi hardware, operator-grade pricing." |
+| "What about defense-tier mesh networks?" | "Six-figure pricing, defense customer base. netTAK is the homestead / SAR / event / EmComm tier — commodity appliance hardware, operator-grade pricing." |
 | "Why do I need Wi-Fi HaLow?" | "You don't, for short-range deployments — standard Wi-Fi or wired Ethernet works fine. HaLow is what unlocks miles between sites with directional antennas." |
 | "Can I admin it without SSH?" | "Entirely. Every node serves a full web UI over HTTPS — dashboard, service control, log viewer, system reboot, DNS records, DHCP reservations, TLS regen, time setter, the lot." |
 
@@ -158,7 +158,7 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 - **The multi-agency 1-netTAK-many-operators scene** — already a cinematic outcome image. Continues to work for shipping-product content.
 - **Drop-and-converge** — three Pelican cases placed in a line, mesh links animating between them in under a minute.
 - **The admin UI on a phone** — operator opens the dashboard in a mobile browser; live tiles refreshing.
-- **A node on a mast or in a Pelican case** — Pi-class hardware in a real outdoor context, PiSugar UPS visible.
+- **A node on a mast or in a Pelican case** — commodity Linux hardware in a real outdoor context, USB-PD UPS hat UPS visible.
 
 ---
 
@@ -166,7 +166,7 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 
 - **Wi-Fi HaLow** — 802.11ah. Low-band (sub-1 GHz), long-range, low-bandwidth Wi-Fi. Used for netTAK's backhaul between sites.
 - **Mesh** — multi-node wireless network where each node forwards traffic for others. Self-healing on node failure.
-- **PiSugar UPS** — Raspberry Pi battery-backup HAT with charge reporting.
+- **USB-PD UPS hat UPS** — Linux appliance battery-backup HAT with charge reporting.
 - **Cluster** — the collection of netTAK nodes that share state via the gossip protocol.
 
 ---

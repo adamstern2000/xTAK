@@ -26,12 +26,12 @@ sdrTAK is a software-defined-radio listener that decodes ADS-B, UAT, and (soon) 
 | Audience | Lead with |
 |---|---|
 | **TFR coordinators / airshow ops** | "Filter the air picture by emitter category. Only military traffic during a TFR. Only rotorcraft during airshow coordination. Live, local, sub-second latency." |
-| **Maritime ops / harbormasters** | "AIS shipping soon — every commercial vessel in the bay with full identity, course, and speed on the TAK map. Same Pi handles aircraft via ADS-B simultaneously." |
+| **Maritime ops / harbormasters** | "AIS shipping soon — every commercial vessel in the bay with full identity, course, and speed on the TAK map. Same appliance handles aircraft via ADS-B simultaneously." |
 | **Wildland fire / aviation coordinators** | "When CAL FIRE / USFS air assets are inbound, sdrTAK puts them on the IC's map with proper helitanker / airtanker / scout icons. Mil hex ranges auto-flagged." |
 | **TFR / restricted-airspace enforcement** | "Auto-flag aircraft entering a polygon you draw in baseTAK. Cross-reference with the 520k OpenSky database — tail, operator, owner — directly in the contact remarks." |
 | **SAR coordinators with air support** | "Every helicopter on station shows up as a TAK contact. Track them in real time without depending on internet-hosted flight-tracking services." |
 | **SDR hobbyists / amateur radio** | "You already have an RTL-SDR or HackRF. SoapySDR abstraction means 13 vendored drivers in the install tarball. Plug, decode, see contacts on a real TAK map." |
-| **EOC / emergency management** | "Air picture for free. No third-party account, no per-query fees, no cloud dependency. Local Pi, $20 dongle, your data stays on your hardware." |
+| **EOC / emergency management** | "Air picture for free. No third-party account, no per-query fees, no cloud dependency. Local appliance, $20 dongle, your data stays on your hardware." |
 
 ---
 
@@ -68,7 +68,7 @@ sdrTAK is a software-defined-radio listener that decodes ADS-B, UAT, and (soon) 
 ### X / Twitter
 
 > **POST 1 — the $20 hook**
-> $20 RTL-SDR dongle + Pi = every transponder-equipped aircraft in your area on your TAK map.
+> $20 RTL-SDR dongle + appliance = every transponder-equipped aircraft in your area on your TAK map.
 >
 > Sub-second latency. Offline. No third-party account. No cloud.
 >
@@ -100,7 +100,7 @@ sdrTAK is a software-defined-radio listener that decodes ADS-B, UAT, and (soon) 
 > **POST A — the wildland aviation coordination story**
 > Wildland fire incident, hour 3. Mutual-aid air assets inbound — a Type 1 helitanker from CAL FIRE, an S-2T airtanker from CDF, two scout helos. The Air Ops chief wants to track every aircraft in real time without depending on an internet-hosted flight-tracking service.
 >
-> sdrTAK on a Pi with an RTL-SDR dongle decodes the live ADS-B stream. Each aircraft shows up on the IC's baseTAK map with its proper 2525 icon — helitanker, airtanker, scout — and full callsign attribution from the 520k OpenSky database.
+> sdrTAK on an appliance with an RTL-SDR dongle decodes the live ADS-B stream. Each aircraft shows up on the IC's baseTAK map with its proper 2525 icon — helitanker, airtanker, scout — and full callsign attribution from the 520k OpenSky database.
 >
 > Sub-second latency. Offline. Local. No cloud account, no per-query fees, no third-party tracking.
 >
@@ -112,7 +112,7 @@ sdrTAK is a software-defined-radio listener that decodes ADS-B, UAT, and (soon) 
 
 ### 30-second cinematic
 
-| 0:00–0:06 | RTL-SDR dongle plugging into a Pi on a folding table. |
+| 0:00–0:06 | RTL-SDR dongle plugging into an appliance on a folding table. |
 | 0:06–0:14 | TAK map fills with aircraft icons — helicopter, light, heavy, glider — all properly categorized. |
 | 0:14–0:22 | Click an aircraft: callsign, tail number, operator, altitude, speed. |
 | 0:22–0:27 | Filter to "military only" — civilian aircraft fade, mil traffic stays. |
@@ -130,12 +130,12 @@ sdrTAK is a software-defined-radio listener that decodes ADS-B, UAT, and (soon) 
 
 ## Live-demo talking points
 
-- **Show the hardware.** "RTL-SDR dongle. Twenty dollars. The Pi is whatever you have lying around."
+- **Show the hardware.** "RTL-SDR dongle. Twenty dollars. The appliance is whatever you have lying around."
 - **Start the decoder.** "dump1090 backend. Standard ADS-B 1090 ES. You're hearing every transponder in range — that's typically a 100-mile radius at any decent antenna height."
 - **Open the TAK map.** "Watch it populate. Each contact has the proper 2525 icon for its emitter category."
 - **Click one.** "Tail number, manufacturer, operator, owner — pulled from the 520k OpenSky database that ships with the install."
 - **Filter by mil.** "Auto-flag for US / UK / AU mil hex ranges plus 25+ callsign prefixes. RCH airlift, DUSTOFF medevac, SAM specials. Click the filter — only those traffic show."
-- **Mention AIS.** "AIS for ships is in tree, release imminent. Same Pi, same architecture."
+- **Mention AIS.** "AIS for ships is in tree, release imminent. Same appliance, same architecture."
 
 ---
 
@@ -147,13 +147,13 @@ sdrTAK is a software-defined-radio listener that decodes ADS-B, UAT, and (soon) 
 | "What about hosted ADS-B aggregation services?" | "Internet-dependent, third-party hosted, latency-bound. sdrTAK runs locally. Internet not required." |
 | "What about pilot-focused ADS-B receivers?" | "Those serve XGPS / GDL-90 to aviation EFB apps. sdrTAK speaks TAK CoT so the contacts integrate with your operational picture, not a separate pilot's map." |
 | "Range?" | "Depends on antenna and terrain. A roof-mounted antenna at 30 ft gives 100-150 nm typical. ADS-B is line-of-sight VHF UHF physics." |
-| "When does AIS ship?" | "Imminent — decoder is in tree. Same architecture, same Pi." |
+| "When does AIS ship?" | "Imminent — decoder is in tree. Same architecture, same appliance." |
 
 ---
 
 ## Visual / image cues
 
-- **RTL-SDR + Pi on a desk** — small, unassuming hardware.
+- **RTL-SDR + appliance on a desk** — small, unassuming hardware.
 - **The dense ADS-B picture** — TAK map with 50+ aircraft visible (use the ORD outcome image as reference).
 - **The mil-flagged DC scene** — civilian muted, military amber. (Use the sdrtak-02-mil-flagged outcome image.)
 - **Puget Sound composed** — aircraft + AIS vessels + APRS + mesh on one map.

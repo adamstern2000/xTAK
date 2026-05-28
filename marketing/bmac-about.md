@@ -23,7 +23,7 @@ Built for the operators who actually run things — incident commanders, EmComm 
 - **baseTAK** — full TAK map and chat hub in a browser, with built-in offline tileserver
 - **digiTAK** — amateur radio gateway: VHF/UHF, APRS-IS, and HF for continental bridging
 - **loraTAK** — Meshtastic LoRa mesh gateway; every node a TAK contact
-- **chatTAK** — Pi appliance with its own Wi-Fi; comms-forward TAK for non-ATAK users
+- **chatTAK** — appliance with its own Wi-Fi; comms-forward TAK for non-ATAK users
 - **sdrTAK** — every aircraft in the sky, every ship in the bay, on your TAK map
 - **netTAK** — self-managing wireless mesh for field-deployable TAK operations
 - **aiTAK** *(future release)* — local-first LLM that joins your TAK network as a peer

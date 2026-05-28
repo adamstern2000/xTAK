@@ -25,7 +25,7 @@ xTAK extends the ecosystem in directions the official clients don't reach:
 
 - **Radio transports** — APRS over RF and APRS-IS ([digiTAK](modules/digiTAK.md)), Meshtastic LoRa mesh ([loraTAK](modules/loraTAK.md)), and Wi-Fi HaLow self-managing wireless mesh ([netTAK](modules/netTAK.md), Beta). Bring the bands you already use into TAK.
 - **Passive ingest** — SDR-decoded aircraft, UAT 978, and AIS ships rendered as native TAK contacts ([sdrTAK](modules/sdrTAK.md)).
-- **Browser and headless endpoints** — a full-featured web map and chat hub ([baseTAK](modules/baseTAK.md)) and a standalone chat-only Pi appliance ([chatTAK](modules/chatTAK.md)) for users who don't have an ATAK device or need a fixed install.
+- **Browser and headless endpoints** — a full-featured web map and chat hub ([baseTAK](modules/baseTAK.md)) and a standalone chat-only appliance ([chatTAK](modules/chatTAK.md)) for users who don't have an ATAK device or need a fixed install.
 - **AI augmentation** — an LLM-backed operations assistant ([aiTAK](modules/aiTAK.md), in development).
 
 xTAK works **alongside** ATAK, WinTAK, and iTAK on the same network. A marker placed in ATAK appears in baseTAK. A chat sent from chatTAK appears in WinTAK. A position from a Meshtastic node reaches every client through loraTAK. No TAK Server required. No vendor lock-in. Use as much or as little of xTAK as you want — every product is standalone, and the suite composes cleanly because every component speaks the same TAK protocol on the same network.

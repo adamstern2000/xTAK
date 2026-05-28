@@ -89,13 +89,13 @@ The old "drop MBTiles into baseTAK and they're served immediately" claim was **o
 ### digiTAK
 
 **Headline framing (corrected):**
-- digiTAK runs on **its own Pi** — always. The two modes (Bridge and Standalone) describe **what else is on the network**, not where digiTAK runs.
+- digiTAK runs on **its own appliance** — always. The two modes (Bridge and Standalone) describe **what else is on the network**, not where digiTAK runs.
 - **"Drop a digiTAK in. Instantly an APRS gateway."** This is the headline for the INSTANT DEPLOY section.
 - Plug it onto any network and the LAN gains a full APRS gateway — every ATAK, iTAK, WinTAK, or baseTAK browser picks up APRS stations as native TAK markers.
 
 **The two modes (corrected framing):**
-- **Bridge mode** = digiTAK alongside other xTAK products on the network. Talks to baseTAK and other products via standard TAK protocols on the wire. cot_bridge ownership story REMOVED. digiTAK is its own Pi; baseTAK is somewhere else on the network.
-- **Standalone mode** = digiTAK is the whole TAK install. No baseTAK anywhere on the network. digiTAK hosts its own chat router and TAK router; every ATAK / WinTAK / iTAK on the LAN connects directly. The whole TAK environment fits on one Pi.
+- **Bridge mode** = digiTAK alongside other xTAK products on the network. Talks to baseTAK and other products via standard TAK protocols on the wire. cot_bridge ownership story REMOVED. digiTAK is its own appliance; baseTAK is somewhere else on the network.
+- **Standalone mode** = digiTAK is the whole TAK install. No baseTAK anywhere on the network. digiTAK hosts its own chat router and TAK router; every ATAK / WinTAK / iTAK on the LAN connects directly. The whole TAK environment fits on one appliance.
 
 **Outcome 02 — "Pair with baseTAK for the best APRS map experience"** *(renamed from "Put every APRS station on your TAK clients")*:
 - digiTAK + baseTAK is the **richest APRS picture on any modern map.**
@@ -137,7 +137,7 @@ The old "drop MBTiles into baseTAK and they're served immediately" claim was **o
 **New feature added to feature catalog:**
 - **Timeline + threaded views** — read the chat feed in chronological order (newest at the bottom), or grouped by conversation so a single DM, team, or group thread collapses into one block. One click between them.
 
-**Everything else unchanged from prior positioning** — chatTAK is the comms-forward Pi-appliance TAK chat for stakeholders who don't need the SA map.
+**Everything else unchanged from prior positioning** — chatTAK is the comms-forward appliance TAK chat for stakeholders who don't need the SA map.
 
 ---
 
@@ -198,7 +198,7 @@ The home page adds:
 - Hero image (Devil's Gate Fire scenario)
 - Scenario narrative
 - Products grid (8 tiles — 7 products + BMAC support)
-- Design Propositions (6 commitments: stand-alone / off-grid / 100% TAK fidelity / self-hosted / operator-built / Pi-class portable)
+- Design Propositions (6 commitments: stand-alone / off-grid / 100% TAK fidelity / self-hosted / operator-built / commodity-class portable)
 - Architecture diagram (CSS network diagram: TAK clients above the LAN spine, xTAK gateways below — replaces the previous ASCII-art block)
 - Early adopter CTA
 - Get-started picker
