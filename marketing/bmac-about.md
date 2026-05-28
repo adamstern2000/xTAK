@@ -4,7 +4,7 @@
 
 ---
 
-## xTAK — open situational awareness for the team that has to coordinate when the WAN is gone
+## xTAK — self-hosted, off-grid situational awareness for the team that has to coordinate when the WAN is gone
 
 xTAK is a suite of seven independent services that extend the TAK ecosystem — ATAK, WinTAK, iTAK — to the places the official clients can't reach: amateur radio, LoRa mesh, off-grid Wi-Fi, SDR-decoded aircraft, browser endpoints, and on-network AI assistants.
 
@@ -28,18 +28,16 @@ Built for the operators who actually run things — incident commanders, EmComm 
 - **netTAK** — self-managing wireless mesh for field-deployable TAK operations
 - **aiTAK** *(future release)* — local-first LLM that joins your TAK network as a peer
 
-**Why your support matters**
+**Why be an Early Adopter?**
 
-xTAK is self-funded and open by design. We're not selling subscriptions, not charging per device, not running a cloud service, not collecting your operational data.
+xTAK is in active Beta. We're building it for operators who want to deploy these tools as they're ready — public safety, SAR, wildland fire, EmComm, amateur radio — and who want a voice in what gets built next.
 
 When you become a supporter, you get:
 
-- 🚀 **Early access to all xTAK software** — Beta builds before public release
-- ✨ **Early access to new features** — capabilities land for supporters first
-- 🗣️ **Direct engagement with the team** — feature input, deployment questions, roadmap
-- 🤝 **The early-adopter community** — operators figuring out real deployments together
-
-Every contribution funds the next product, the next feature, the next deployment test. If the work is valuable to your operation, become a supporter and you'll get the software earlier in return.
+- 🚀 **Software AND hardware, early** — Beta builds of every xTAK product the moment they're cut, well before public release. As reference designs and 3D-printer files for operator hardware become available, supporters get them first.
+- 🗣️ **Direct line to the developers** — Talk to the team about your deployment. Feature input, integration questions, roadmap discussion. Your operational reality shapes what gets built next.
+- 🤝 **The early-adopter community** — A room of other operators deploying xTAK for real — EmComm, SAR, wildland fire, public safety, amateur radio. Share what's working, swap deployment patterns.
+- ✨ **New features first** — Capabilities land for supporters before public release. You're using the next thing before the rest of the world hears about it.
 
 Thank you for being here.
 
