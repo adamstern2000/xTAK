@@ -89,7 +89,7 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 > No SSH. No console cable.
 
 > **POST 3 — the off-grid hook**
-> Day-3 of the disaster. LTE intermittent. WAN gone. Cradlepoint can't help — it expects an uplink.
+> Day-3 of the disaster. LTE intermittent. WAN gone. Commercial cellular routers can't help — they expect an uplink.
 >
 > netTAK doesn't. 75 MB install bundle, every dependency vendored. Drop nodes around the operating area. TAK clients connect like to any Wi-Fi.
 
@@ -146,8 +146,8 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 |---|---|
 | "When does it ship?" | "Beta — shipping now. Early Adopter access via Buy Me a Coffee gets you the current build today." |
 | "Why not LibreMesh / OpenWrt?" | "Those are router firmware. netTAK is a purpose-built field-deploy appliance with a web admin UI tuned for operators, not network engineers. And the offline install bundle is 75 MB — most LibreMesh deployments still expect package-manager reachability." |
-| "Why not just Cradlepoint + a tablet?" | "Cradlepoint needs an uplink. netTAK doesn't. Mesh-resilient by design, not WAN-dependent." |
-| "Anduril Lattice mesh?" | "Six-figure pricing, defense customer base. netTAK is the homestead / SAR / event / EmComm tier — commodity Pi hardware, operator-grade pricing." |
+| "Why not just a commercial cellular router + a tablet?" | "That setup needs an uplink. netTAK doesn't. Mesh-resilient by design, not WAN-dependent." |
+| "What about defense-tier mesh networks?" | "Six-figure pricing, defense customer base. netTAK is the homestead / SAR / event / EmComm tier — commodity Pi hardware, operator-grade pricing." |
 | "Why do I need Wi-Fi HaLow?" | "You don't, for short-range deployments — standard Wi-Fi or wired Ethernet works fine. HaLow is what unlocks miles between sites with directional antennas." |
 | "Can I admin it without SSH?" | "Entirely. Every node serves a full web UI over HTTPS — dashboard, service control, log viewer, system reboot, DNS records, DHCP reservations, TLS regen, time setter, the lot." |
 

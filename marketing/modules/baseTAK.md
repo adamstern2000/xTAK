@@ -177,7 +177,7 @@ baseTAK is a full TAK situational-awareness picture — map, chat, drawing, file
 | Objection | Response |
 |---|---|
 | "We already have WinTAK." | "Great — baseTAK runs alongside WinTAK on the same LAN. Add browser users to the same picture; everyone sees everyone." |
-| "Why not just use WebTAK?" | "Different category. WebTAK needs a TAK Server. baseTAK is self-hosted, runs on a laptop, includes its own file server. No server license needed." |
+| "Why not just use a TAK-Server-based web client?" | "Different category. Those need a TAK Server. baseTAK is self-hosted, runs on a laptop, includes its own file server. No server license needed." |
 | "Browser-based — is it slow?" | "Not in practice. The 3D map is hardware-accelerated. We render the same MBTiles ATAK does. Multi-user up to 100 users on a typical server." |
 | "What about security?" | "Self-hosted. Data stays on your hardware. SQLite-backed persistence. No cloud account, no third-party telemetry. Open standards on the wire." |
 | "Does it work offline?" | "Designed for offline. No internet required. The 1 TB CONUS file is preloaded. Tileserver serves every TAK client on the LAN." |

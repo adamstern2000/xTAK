@@ -19,7 +19,7 @@ xTAK is a suite of seven independent services that extend the TAK ecosystem — 
 - **Not a TAK client.** xTAK is a suite of *participants* — services and appliances that join the same local network, speak the same TAK protocol, and appear as peers alongside ATAK / WinTAK / iTAK.
 - **Not a TAK Server replacement.** Some xTAK products federate without a TAK Server; others pair with FreeTAKServer if you already run one. The suite is protocol-compatible, not infrastructure-dependent.
 - **Not affiliated with the TAK Product Center.** xTAK is independent. ATAK / WinTAK / iTAK / TAK are products and trademarks of the U.S. Government, made available through the TAK Product Center.
-- **Not a defense product.** Operator-grade, public-safety / SAR / EmComm tier. Not Anduril. Not Palantir. Not Lattice.
+- **Not a defense product.** Operator-grade, public-safety / SAR / EmComm tier.
 
 ---
 
@@ -177,7 +177,7 @@ Use Devil's Gate for any single-scenario explainer.
 | "How is this different from PAR's TAK?" | "xTAK extends PAR's TAK. ATAK / WinTAK / iTAK are still the clients you use. xTAK adds the services on your LAN that bring APRS, Meshtastic, SDR, browser, and AI participants into the same picture." |
 | "Do I need TAK Server?" | "No. xTAK products are self-hosted. baseTAK includes its own file server. digiTAK and loraTAK federate over RF. If you already run FreeTAKServer, drop xTAK products in as feeds." |
 | "How do I get xTAK?" | "Two ways. Install our software on your own hardware (Pi-class Linux — Raspberry Pi 4/5, fanless mini-PC, handheld Linux box), or order a ready-to-deploy xTAK appliance from us. Either way, the software runs on your network. Your data stays on your hardware. The wire-format spec we designed (TAK-APRS Protocol Extension v2.3) is published openly at github.com/adamstern2000/cot_radio_aprs. Early Adopters get Beta build access." |
-| "How does it compare to Anduril / Palantir?" | "Different category. Those are defense-grade, six-figure pricing. xTAK is operator-grade — public safety, SAR, EmComm. Pi-class hardware, open standards." |
+| "How does it compare to defense-tier platforms?" | "Different category. Those are defense-grade, six-figure pricing. xTAK is operator-grade — public safety, SAR, EmComm. Pi-class hardware, open standards." |
 | "Why should I pay for Beta?" | "You're not paying for Beta — you're supporting an independent project so it can reach GA. Buy Me a Coffee. https://buymeacoffee.com/xtak" |
 
 ---

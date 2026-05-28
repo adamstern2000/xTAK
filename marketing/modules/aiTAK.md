@@ -175,7 +175,7 @@ Use scripts: [`aitak-o1-chat-script.md`](../aitak-o1-chat-script.md), [`aitak-o2
 |---|---|
 | "When does it ship?" | "Design phase. Timing TBD. Honest disclosure — first-release feature set will be a subset of the design target." |
 | "ChatGPT / Claude already do this." | "Sure, with manual copy-paste of TAK data. aiTAK is the productized agent with TAK-native chat in and out — no copy-paste, no separate window, no leaking your SA picture to a cloud." |
-| "Anduril Lattice AI?" | "Defense-grade, integrates AI across radar, EW, UAS. aiTAK is the operator-grade tier — public safety, SAR, EmComm. Different audience, different price." |
+| "What about defense-tier AI ops platforms?" | "Defense-grade, integrates AI across radar, EW, UAS. aiTAK is the operator-grade tier — public safety, SAR, EmComm. Different audience, different price." |
 | "Do I have to use OpenAI?" | "No. Pluggable backend. Use Ollama or llama.cpp for fully-local. OpenAI / Anthropic for cloud if you choose." |
 | "Does aiTAK take action on its own?" | "No. aiTAK proposes, the operator decides. Every draft closes with 'Draft. Edit before sending.' Alerts post in chat for human acknowledgment." |
 

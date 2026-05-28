@@ -29,9 +29,9 @@ sdrTAK is a software-defined-radio listener that decodes ADS-B, UAT, and (soon) 
 | **Maritime ops / harbormasters** | "AIS shipping soon — every commercial vessel in the bay with full identity, course, and speed on the TAK map. Same Pi handles aircraft via ADS-B simultaneously." |
 | **Wildland fire / aviation coordinators** | "When CAL FIRE / USFS air assets are inbound, sdrTAK puts them on the IC's map with proper helitanker / airtanker / scout icons. Mil hex ranges auto-flagged." |
 | **TFR / restricted-airspace enforcement** | "Auto-flag aircraft entering a polygon you draw in baseTAK. Cross-reference with the 520k OpenSky database — tail, operator, owner — directly in the contact remarks." |
-| **SAR coordinators with air support** | "Every helicopter on station shows up as a TAK contact. Track them in real time without depending on FlightAware / FR24 / commercial feeds." |
+| **SAR coordinators with air support** | "Every helicopter on station shows up as a TAK contact. Track them in real time without depending on internet-hosted flight-tracking services." |
 | **SDR hobbyists / amateur radio** | "You already have an RTL-SDR or HackRF. SoapySDR abstraction means 13 vendored drivers in the install tarball. Plug, decode, see contacts on a real TAK map." |
-| **EOC / emergency management** | "Air picture for free. No FlightAware account, no FlightRadar24 fees, no cloud dependency. Local Pi, $20 dongle, your data stays on your hardware." |
+| **EOC / emergency management** | "Air picture for free. No third-party account, no per-query fees, no cloud dependency. Local Pi, $20 dongle, your data stays on your hardware." |
 
 ---
 
@@ -70,7 +70,7 @@ sdrTAK is a software-defined-radio listener that decodes ADS-B, UAT, and (soon) 
 > **POST 1 — the $20 hook**
 > $20 RTL-SDR dongle + Pi = every transponder-equipped aircraft in your area on your TAK map.
 >
-> Sub-second latency. Offline. No FlightAware account. No cloud.
+> Sub-second latency. Offline. No third-party account. No cloud.
 >
 > sdrTAK is in Beta now.
 
@@ -98,7 +98,7 @@ sdrTAK is a software-defined-radio listener that decodes ADS-B, UAT, and (soon) 
 ### LinkedIn
 
 > **POST A — the wildland aviation coordination story**
-> Wildland fire incident, hour 3. Mutual-aid air assets inbound — a Type 1 helitanker from CAL FIRE, an S-2T airtanker from CDF, two scout helos. The Air Ops chief wants to track every aircraft in real time without depending on FlightAware or a commercial feed.
+> Wildland fire incident, hour 3. Mutual-aid air assets inbound — a Type 1 helitanker from CAL FIRE, an S-2T airtanker from CDF, two scout helos. The Air Ops chief wants to track every aircraft in real time without depending on an internet-hosted flight-tracking service.
 >
 > sdrTAK on a Pi with an RTL-SDR dongle decodes the live ADS-B stream. Each aircraft shows up on the IC's baseTAK map with its proper 2525 icon — helitanker, airtanker, scout — and full callsign attribution from the 520k OpenSky database.
 >
@@ -120,7 +120,7 @@ sdrTAK is a software-defined-radio listener that decodes ADS-B, UAT, and (soon) 
 
 ### 60-second demo
 
-1. **Setup (0:00–0:10):** Plug dongle. VO: "Twenty-dollar RTL-SDR. The same hardware FlightAware uses."
+1. **Setup (0:00–0:10):** Plug dongle. VO: "Twenty-dollar RTL-SDR. Standard ADS-B hardware."
 2. **Aircraft pour in (0:10–0:25):** Map populates with chevrons pointing along heading. VO: "Every transponder-equipped aircraft in your area, on your TAK map."
 3. **Proper icons (0:25–0:40):** Zoom in. Airliner = airliner. Helo = helo. Glider = glider. VO: "14 emitter categories. Proper 2525 symbology."
 4. **Filter by type (0:40–0:52):** Click filter. Only military. VO: "Paired with baseTAK, filter by emitter category with a click."
@@ -143,9 +143,9 @@ sdrTAK is a software-defined-radio listener that decodes ADS-B, UAT, and (soon) 
 
 | Objection | Response |
 |---|---|
-| "Why not just use FlightAware Pi?" | "Closed feed, requires a FlightAware account, one-way reporting to FA. sdrTAK keeps everything local — your data stays on your hardware, sub-second latency, works without internet." |
-| "What about OpenSky or ADSBexchange?" | "Internet-dependent, third-party hosted, latency-bound. sdrTAK runs locally. Internet not required." |
-| "Stratux?" | "Pilot-focused — serves XGPS / GDL-90 to aviation EFB apps. sdrTAK speaks TAK CoT so the contacts integrate with your operational picture, not a separate pilot's map." |
+| "Why not just use an internet-hosted ADS-B feed?" | "Those require an account, depend on internet, and feed your local picture out to a third party. sdrTAK keeps everything local — your data stays on your hardware, sub-second latency, works without internet." |
+| "What about hosted ADS-B aggregation services?" | "Internet-dependent, third-party hosted, latency-bound. sdrTAK runs locally. Internet not required." |
+| "What about pilot-focused ADS-B receivers?" | "Those serve XGPS / GDL-90 to aviation EFB apps. sdrTAK speaks TAK CoT so the contacts integrate with your operational picture, not a separate pilot's map." |
 | "Range?" | "Depends on antenna and terrain. A roof-mounted antenna at 30 ft gives 100-150 nm typical. ADS-B is line-of-sight VHF UHF physics." |
 | "When does AIS ship?" | "Imminent — decoder is in tree. Same architecture, same Pi." |
 
