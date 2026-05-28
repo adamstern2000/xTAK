@@ -1419,6 +1419,41 @@ body::after {
   text-transform: uppercase;
 }
 
+.archnet__extender {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding: 0.65rem 1.3rem;
+  margin-top: -1px;
+  border: 1px dashed var(--cyan-dim);
+  border-top: none;
+  background: rgba(0, 217, 255, 0.025);
+  text-decoration: none;
+  color: var(--ink-bright);
+  flex-wrap: wrap;
+  transition: background 0.15s, border-color 0.15s;
+}
+.archnet__extender:hover {
+  border-color: var(--cyan);
+  background: rgba(0, 217, 255, 0.05);
+}
+.archnet__extender-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyan-dim);
+  white-space: nowrap;
+}
+.archnet__extender:hover .archnet__extender-tag { color: var(--cyan); }
+.archnet__extender-desc {
+  font-size: 0.85rem;
+  color: var(--ink-body);
+  line-height: 1.4;
+}
+
 /* ---------- Capability catalog (dense feature list) ---------- */
 .capabilities {
   margin-top: 2.4rem;
