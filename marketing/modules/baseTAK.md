@@ -102,7 +102,7 @@ baseTAK is a full TAK situational-awareness picture — map, chat, drawing, file
 > One LAN. No integration. Just standard TAK.
 
 > **POST 5 — the "proof on the page" hook**
-> Every screenshot on https://xtak.io was rendered from the same 1 TB MBTiles file.
+> Every screenshot on https://xtak.ai was rendered from the same 1 TB MBTiles file.
 > California wildfire. Colorado race. New York SAR. Tennessee mountains. Illinois airport. DC airspace. Washington Sound.
 >
 > One file. The whole country. On a laptop.

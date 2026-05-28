@@ -25,7 +25,7 @@ Every contribution funds the next product, the next feature, the next deployment
 
 ## Become a supporter
 
-**[☕ Support xTAK on Buy Me a Coffee →](https://buymeacoffee.com/xtakproject)**
+**[☕ Support xTAK on Buy Me a Coffee →](https://buymeacoffee.com/xtak)**
 
 Once you're a supporter, you'll get an email with access details for the early-adopter Beta channel and the supporter community.
 

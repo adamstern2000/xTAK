@@ -6,7 +6,7 @@ xTAK is a suite of seven independent services that extend the TAK ecosystem — 
 
 When the WAN goes dark, xTAK keeps coordinating.
 
-🌐 **Live site:** [https://xtak.io](https://xtak.io) *(when deployed)*
+🌐 **Live site:** [https://xtak.ai](https://xtak.ai)
 ☕ **Become an Early Adopter:** [buymeacoffee.com/xtak](https://buymeacoffee.com/xtak)
 
 ---
