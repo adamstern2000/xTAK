@@ -18,6 +18,16 @@
   <meta name="twitter:image" content="https://xtak.ai/img/xtak-banner.png" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    /* Coming Soon / roadmap — page-scoped */
+    .comingsoon { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem 3rem; margin-top: 3rem; }
+    @media (max-width: 900px) { .comingsoon { grid-template-columns: 1fr; gap: 2rem; } }
+    .comingsoon .proposition__icon { color: var(--cyan); display: block; margin-bottom: 1rem; }
+    .comingsoon .proposition__icon svg { width: 34px; height: 34px; display: block; }
+    .comingsoon .proposition__body b { color: var(--ink-bright); font-weight: 600; }
+    .comingsoon-foot { margin-top: 2.6rem; max-width: 62rem; color: #8a95a5; font-size: 0.95rem; line-height: 1.6; }
+    .comingsoon-foot em { color: var(--cyan-dim); font-style: normal; }
+  </style>
 </head>
 <body>
 
@@ -275,6 +285,53 @@
           <strong class="text-bright">Operators connect to standard Wi-Fi. The picture stays current.</strong>
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- ============== COMING SOON / ROADMAP ============== -->
+  <section class="section" id="coming-soon">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="07 / ROADMAP">COMING SOON</span>
+      <h2 class="section__title reveal">The mesh becomes a full<br><em>talk · see · sense</em> fabric.</h2>
+      <p class="reveal" data-delay="1" style="font-size: 1.1rem; color: var(--ink-body); line-height: 1.6; max-width: 64ch; margin-top: 1.4rem;">
+        netTAK already carries your TAK traffic across the field with no infrastructure. Next, every
+        node becomes a <b style="color:var(--ink-bright);">talk</b>, <b style="color:var(--ink-bright);">see</b>,
+        and <b style="color:var(--ink-bright);">sense</b> endpoint on that same mesh.
+      </p>
+
+      <div class="comingsoon reveal" data-delay="2">
+        <div class="proposition">
+          <span class="proposition__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+          </span>
+          <div class="proposition__num">TALK · PUSH-TO-TALK VOICE</div>
+          <h3 class="proposition__title">Field radio<br>on the mesh</h3>
+          <p class="proposition__body">Turn any netTAK node into a field radio. A rugged lapel speaker-mic and a physical channel knob give you push-to-talk group voice across the HaLow mesh — <b>no phone, no cell, no repeater</b>. Built on multicast, so one channel reaches the whole team at once, and designed to interoperate with ATAK's voice plugin so your handhelds and nodes share the same channels.</p>
+        </div>
+
+        <div class="proposition">
+          <span class="proposition__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h4l2-2h6l2 2h4v12H3z"/><circle cx="12" cy="13" r="3.5"/></svg>
+          </span>
+          <div class="proposition__num">SEE · LIVE CAMERA FEEDS</div>
+          <h3 class="proposition__title">Overwatch<br>from anywhere</h3>
+          <p class="proposition__body">Plug a USB camera into any node and stream it to ATAK, VLC, or any standard viewer over the mesh. <b>Bandwidth-aware from the ground up</b> — dial each camera from smooth motion down to a few frames per second — so several cameras can share one network. Overwatch a gate, a perimeter, or a forward position from anywhere on the mesh.</p>
+        </div>
+
+        <div class="proposition">
+          <span class="proposition__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1.4"/><path d="M8.5 8.5a5 5 0 0 0 0 7"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M6 6a9 9 0 0 0 0 12"/><path d="M18 6a9 9 0 0 1 0 12"/></svg>
+          </span>
+          <div class="proposition__num">SENSE · mmWAVE PRESENCE</div>
+          <h3 class="proposition__title">A silent<br>sentry node</h3>
+          <p class="proposition__body">A low-power millimeter-wave radar turns a node into a silent sentry. It detects people moving — or holding perfectly still — and drops them onto your ATAK map as live contacts, automatically. <b>Passive and weatherproof</b>, unbothered by the darkness, heat, dust, or foliage that blind cameras and PIR sensors.</p>
+        </div>
+      </div>
+
+      <p class="comingsoon-foot reveal">
+        Each runs on the netTAK mesh you already have. More coming.
+        <em>These capabilities are in active development and are not yet part of the shipping Beta build — no dates promised.</em>
+      </p>
     </div>
   </section>
 
