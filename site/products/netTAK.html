@@ -27,6 +27,19 @@
     .comingsoon .proposition__body b { color: var(--ink-bright); font-weight: 600; }
     .comingsoon-foot { margin-top: 2.6rem; max-width: 62rem; color: #8a95a5; font-size: 0.95rem; line-height: 1.6; }
     .comingsoon-foot em { color: var(--cyan-dim); font-style: normal; }
+    /* Roadmap lead — the "on the map" foundation block */
+    .roadmap-lead { margin-top: 2.5rem; border: 1px solid var(--cyan-faint); border-radius: 4px; padding: 2.2rem 2.4rem; background: var(--cyan-trace); }
+    .roadmap-lead__head { display: flex; align-items: center; gap: 0.9rem; }
+    .roadmap-lead__icon { color: var(--cyan); }
+    .roadmap-lead__icon svg { width: 30px; height: 30px; display: block; }
+    .roadmap-lead__num { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; color: var(--cyan); }
+    .roadmap-lead__title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; text-transform: uppercase; line-height: 1.05; color: var(--ink-bright); margin: 0.9rem 0 0.6rem; }
+    .roadmap-lead__lede { color: var(--ink-body); line-height: 1.6; max-width: 70ch; margin-bottom: 1.5rem; }
+    .roadmap-lead__list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2.6rem; }
+    @media (max-width: 760px) { .roadmap-lead__list { grid-template-columns: 1fr; } }
+    .roadmap-lead__list li { position: relative; padding-left: 1.3rem; color: var(--ink-body); line-height: 1.5; font-size: 0.98rem; }
+    .roadmap-lead__list li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); }
+    .roadmap-lead__list b { color: var(--ink-bright); font-weight: 600; }
   </style>
 </head>
 <body>
@@ -326,6 +339,28 @@
           <h3 class="proposition__title">A silent<br>sentry node</h3>
           <p class="proposition__body">A low-power millimeter-wave radar turns a node into a silent sentry. It detects people moving — or holding perfectly still — and drops them onto your ATAK map as live contacts, automatically. <b>Passive and weatherproof</b>, unbothered by the darkness, heat, dust, or foliage that blind cameras and PIR sensors.</p>
         </div>
+      </div>
+
+      <div class="roadmap-lead reveal" data-delay="2">
+        <div class="roadmap-lead__head">
+          <span class="roadmap-lead__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          </span>
+          <span class="roadmap-lead__num">LOCATE · YOUR MESH ON THE MAP</span>
+        </div>
+        <h3 class="roadmap-lead__title">Every node, live on your ATAK map</h3>
+        <p class="roadmap-lead__lede">
+          Every netTAK node reports its own position straight to your ATAK / WinTAK map — no extra
+          software, no manual entry. Open ATAK and your entire mesh is laid out in front of you, live
+          and geolocated. It's the map layer the rest of the roadmap rides on.
+        </p>
+        <ul class="roadmap-lead__list">
+          <li><b>Standard CoT, nothing to install.</b> Nodes broadcast Cursor-on-Target over the mesh, so any ATAK or WinTAK client already on your network simply sees them. Zero client setup.</li>
+          <li><b>GPS or fixed placement.</b> A node with GPS places itself automatically; a mounted node without GPS can be pinned to a known spot in seconds — grabbed straight from your browser's location.</li>
+          <li><b>Clean map markers, not clutter.</b> Nodes show up as proper map symbols, not fake team members in your contact list. Your roster stays real people; your map stays readable.</li>
+          <li><b>Make them yours.</b> Choose each node's map symbol, or pick a custom icon from a built-in library — tell your gate sensor from your relay from your forward camera at a glance.</li>
+          <li><b>The foundation for everything else.</b> The same map layer carries your mmWave contacts and camera positions, so radar hits and video feeds appear right where they are, on the map you already trust.</li>
+        </ul>
       </div>
 
       <p class="comingsoon-foot reveal">
