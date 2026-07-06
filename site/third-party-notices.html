@@ -69,25 +69,57 @@
   <section class="section">
     <div class="container container--narrow prose">
 
-      <p style="color: var(--ink-faint); font-size: 0.92rem; border-left: 3px solid var(--cyan-faint); padding-left: 1rem; margin-bottom: 2rem;">This page lists principal open-source components. A complete, version-specific list of components and their licenses is maintained with each product release; for the full notices or any license text for a specific product and version, contact <a href="mailto:legal@xtak.ai">legal@xtak.ai</a>.</p>
+      <p style="color: var(--ink-faint); font-size: 0.92rem; border-left: 3px solid var(--cyan-faint); padding-left: 1rem; margin-bottom: 2rem;">The components listed below reflect the current shipping product, <strong>netTAK v0.23.1</strong>. Lists are maintained per release; contact <a href="mailto:legal@xtak.ai">legal@xtak.ai</a> for the notices or any license text for a specific product and version.</p>
 
       <p>xTAK products are built on the shoulders of the open-source community, and we are grateful for it. xTAK software incorporates and runs on third-party open-source components, each provided under its own license. Those licenses — not our <a href="/terms.html">Terms</a> — govern your rights in those components. This page provides the attributions and notices those licenses require.</p>
 
       <p><strong>xTAK's own software is proprietary and is not open-source software.</strong> Inclusion of open-source components does not place xTAK-authored code under an open-source license. Component names and marks belong to their respective owners; see our <a href="/copyright.html">Copyright &amp; Trademark Notice</a>.</p>
 
-      <h2>Components</h2>
-      <p>The following components are included in or required by xTAK software (netTAK first). Each is used under the terms of its respective license, the full text of which is available from the linked project and is included with the software distribution where required.</p>
+      <h2>Components — netTAK v0.23.1</h2>
+      <p>netTAK's management plane is a single Go binary; everything compiled into it is permissively licensed (no GPL/LGPL/AGPL is linked into the binary). Copyleft components ship <em>alongside</em> netTAK as firmware, kernel modules, or separate operating-system processes, under their own licenses. Each component is used under the terms of its respective license; full license texts are available from each upstream project and are included with the software distribution where required.</p>
+
+      <h3>Compiled into the netTAK binary</h3>
       <div class="tablewrap"><table>
-        <tr><th>Component</th><th>Role</th><th class="lic">License</th></tr>
-        <tr><td>Linux kernel</td><td>Operating-system kernel (HaLow-enabled build)</td><td class="lic">GPL-2.0</td></tr>
-        <tr><td>Debian / Raspberry Pi OS base</td><td>Base operating system and packages</td><td class="lic">Various (GPL &amp; GPL-compatible)</td></tr>
-        <tr><td>batman-adv (B.A.T.M.A.N. Advanced)</td><td>Layer-2 mesh routing</td><td class="lic">GPL-2.0</td></tr>
-        <tr><td>The Go programming language &amp; standard library</td><td>xTAK service runtime</td><td class="lic">BSD-3-Clause</td></tr>
-        <tr><td colspan="3" style="color:var(--ink-faint);font-style:italic;">…full list to be generated from the netTAK build manifest (each with version, copyright, and license text): networking/DHCP/DNS, TLS, HaLow radio driver, web/UI, and other bundled dependencies.</td></tr>
+        <tr><th>Component</th><th>Version</th><th class="lic">License</th></tr>
+        <tr><td>Go standard library</td><td>go 1.26.3</td><td class="lic">BSD-3-Clause</td></tr>
+        <tr><td>github.com/fsnotify/fsnotify</td><td>v1.10.1</td><td class="lic">BSD-3-Clause</td></tr>
+        <tr><td>github.com/yuin/goldmark</td><td>v1.8.2</td><td class="lic">MIT</td></tr>
+        <tr><td>golang.org/x/crypto</td><td>v0.51.0</td><td class="lic">BSD-3-Clause</td></tr>
+        <tr><td>golang.org/x/sys</td><td>v0.44.0</td><td class="lic">BSD-3-Clause</td></tr>
+        <tr><td>htmx (embedded web asset)</td><td>—</td><td class="lic">BSD-2-Clause</td></tr>
+        <tr><td>htmx json-enc extension (embedded)</td><td>—</td><td class="lic">BSD-2-Clause</td></tr>
       </table></div>
 
+      <h3>Redistributed firmware &amp; kernel modules</h3>
+      <p>These ship with netTAK but run as firmware blobs or kernel modules — separate from, and not linked into, the netTAK binary. Morse Micro firmware ships only on hardware containing a Morse Micro HaLow chip.</p>
+      <div class="tablewrap"><table>
+        <tr><th>Component</th><th>Role</th><th class="lic">License</th></tr>
+        <tr><td>Morse Micro MM8108 firmware &amp; reference BCFs</td><td>Wi-Fi HaLow radio firmware</td><td class="lic">Morse Micro Binary Distribution License (proprietary)</td></tr>
+        <tr><td>Module-partner BCFs (AzureWave, Quectel, NetPrisma)</td><td>Radio board configuration</td><td class="lic">Vendor binary licenses</td></tr>
+        <tr><td>morse_driver (morse.ko, dot11ah.ko)</td><td>HaLow kernel modules (tag 1.17.8)</td><td class="lic">GPL-2.0-or-later</td></tr>
+      </table></div>
+
+      <h3>Runtime OS packages (separate processes)</h3>
+      <p>Invoked as separate processes or kernel facilities and distributed alongside netTAK — never linked into it. Source for the GPL packages is available from the Debian / Raspberry Pi OS archives, and under the source offer below.</p>
+      <div class="tablewrap"><table>
+        <tr><th>Package</th><th>Role</th><th class="lic">License</th></tr>
+        <tr><td>Linux kernel</td><td>Operating-system kernel</td><td class="lic">GPL-2.0 (syscall exception)</td></tr>
+        <tr><td>dnsmasq</td><td>DHCP / DNS</td><td class="lic">GPL-2.0-or-later</td></tr>
+        <tr><td>hostapd</td><td>2.4 GHz AP daemon</td><td class="lic">BSD-3-Clause</td></tr>
+        <tr><td>wpa_supplicant</td><td>Wireless control</td><td class="lic">BSD-3-Clause</td></tr>
+        <tr><td>iw</td><td>Wireless interface utility</td><td class="lic">ISC</td></tr>
+        <tr><td>batctl</td><td>batman-adv userspace (mesh)</td><td class="lic">GPL-2.0-or-later</td></tr>
+        <tr><td>ebtables</td><td>Bridge-level packet filtering</td><td class="lic">GPL-2.0-or-later</td></tr>
+        <tr><td>bridge-utils</td><td>Linux bridge utilities</td><td class="lic">GPL-2.0-or-later</td></tr>
+        <tr><td>rfkill</td><td>Radio enable / disable</td><td class="lic">GPL-2.0-or-later</td></tr>
+        <tr><td>chrony</td><td>Time sync (mesh time authority)</td><td class="lic">GPL-2.0</td></tr>
+        <tr><td>gpsd</td><td>GPS daemon (position + time)</td><td class="lic">BSD-3-Clause</td></tr>
+        <tr><td>raspi-config / raspi-utils</td><td>Board configuration utilities</td><td class="lic">Raspberry Pi OS</td></tr>
+      </table></div>
+      <p style="color: var(--ink-faint); font-size: 0.92rem;">Vendored transitive libraries bundled for offline install: <span class="mono">libpython3.11</span> (PSF-2.0), <span class="mono">libyaml-0-2</span> (MIT), <span class="mono">libpci3</span> (GPL-2.0-or-later), <span class="mono">raspi-utils-eeprom</span> (Raspberry Pi OS) — each under its upstream Debian license.</p>
+
       <h2>Source code for copyleft components</h2>
-      <p>Some components are licensed under the GNU General Public License or other copyleft licenses that entitle you to the corresponding source code. For any such component distributed with xTAK software, you may obtain the corresponding source code, for at least the period required by the applicable license, by contacting <a href="mailto:legal@xtak.ai">legal@xtak.ai</a> with the product name and version. We will provide the source code (or a means to obtain it) as required by that component's license. Where a component's own license includes a written-offer or source-availability requirement, that requirement controls.</p>
+      <p>Some components are licensed under the GNU General Public License or other copyleft licenses that entitle you to the corresponding source code — including the Linux kernel, the <span class="mono">morse_driver</span> kernel modules, and GPL OS packages (dnsmasq, batctl, ebtables, bridge-utils, rfkill, chrony, and others). Source for these is available from the Debian and Raspberry Pi OS archives. In addition, as a written offer under GPL-2.0 §3(b), you may obtain the corresponding source code for any such component distributed with netTAK, for at least the period required by the applicable license, by contacting <a href="mailto:legal@xtak.ai">legal@xtak.ai</a> with the product name and version. Where a component's own license includes a written-offer or source-availability requirement, that requirement controls.</p>
 
       <h2>Full license texts</h2>
       <p>The complete text of each component's license is included in the software distribution (for example, in an accompanying notices file) and is available from each project's official source. If you need a copy of any license text or notice and cannot locate it, contact <a href="mailto:legal@xtak.ai">legal@xtak.ai</a>.</p>
