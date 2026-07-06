@@ -53,13 +53,13 @@
   <section class="pagehead">
     <div class="container">
       <div class="pagehead__bread"><a href="/">xTAK</a> / Products / <span class="text-cyan">sdrTAK</span></div>
-      <div class="pagehead__status"><span class="status status--dev">In development · Beta TBD</span></div>
+      <div class="pagehead__status"><span class="status status--dev">In development · Beta imminent</span></div>
       <h1 class="pagehead__title">Every aircraft<br>in the sky.<br><em>Every ship in the bay.</em></h1>
       <p class="pagehead__sub">
         <strong class="text-bright">$30 dongle. One antenna. Every aircraft in 150 miles, on your map.</strong>
-        An SDR-powered radio decoder that pulls aircraft (ADS-B 1090 ES, UAT 978) and ships
-        (AIS) off the air and renders them as native TAK contacts. Air and surface SA in your
-        ATAK / WinTAK / baseTAK — no internet, no cloud, no third-party feed.
+        An SDR-powered radio decoder that pulls aircraft (ADS-B 1090 ES, UAT 978) off the air and
+        renders them as native TAK contacts today — with ship tracking (AIS) on the roadmap. Air and
+        surface SA in your ATAK / WinTAK / baseTAK — no internet, no cloud, no third-party feed.
       </p>
       <div class="hero__ctas" style="margin-top: 2rem;">
         <a href="/beta.html" class="btn btn--primary">See the Beta Program →</a>
@@ -178,7 +178,7 @@
               The same architecture that handles ADS-B decodes any SoapySDR-driven radio stream.
             </p>
             <ul class="outcome__list">
-              <li><strong>AIS</strong> (162 MHz ship tracking) — for harbor, port, and coastal ops <span class="text-amber">(decoder in tree; release imminent)</span>.</li>
+              <li><strong>AIS</strong> (162 MHz ship tracking) — for harbor, port, and coastal ops <span class="text-amber">(on the roadmap — not in the first beta)</span>.</li>
               <li><strong>rtl_433 ISM-band sensors</strong> — for sensor-network integration <span class="text-amber">(roadmap)</span>.</li>
               <li><strong>Add your own decoders</strong> — the SoapySDR abstraction means write-once decoder plugins work with any driver-supported hardware.</li>
             </ul>
@@ -218,7 +218,7 @@
       <h2 class="section__title reveal">What's <em>in the box.</em></h2>
       <p class="reveal" data-delay="1" style="font-size: 1.1rem; color: var(--ink-body); line-height: 1.6; max-width: 64ch; margin-top: 1.4rem;">
         sdrTAK is a software-defined-radio listener that decodes ADS-B
-        and UAT (with AIS shipping soon) into native TAK contacts.
+        and UAT (with AIS planned for a later release) into native TAK contacts.
         Plug in an RTL-SDR dongle and every aircraft in your area shows
         up on the TAK map with a full track, callsign, and identity.
       </p>
@@ -274,7 +274,7 @@
         <div class="specs__row"><div class="specs__key">Internet</div><div class="specs__val">Not required · aircraft database can pull updates if available</div></div>
         <div class="specs__row"><div class="specs__key">Aircraft database</div><div class="specs__val">520k-entry OpenSky CSV · auto-loads on startup · enriches every contact with tail number, type, operator, owner</div></div>
         <div class="specs__row"><div class="specs__key">Admin UI</div><div class="specs__val">Web, port 5100 · gain/stale-time, decoder enable/disable, device discovery, icon picker, DB refresh, restart</div></div>
-        <div class="specs__row"><div class="specs__key">Version</div><div class="specs__val">v 1.4.0 (in development · 65 passing tests)</div></div>
+        <div class="specs__row"><div class="specs__key">Version</div><div class="specs__val">v 1.4.1 (in development · 115 passing tests)</div></div>
       </div>
     </div>
   </section>
@@ -299,7 +299,7 @@
         </details>
         <details>
           <summary>When is AIS shipping?</summary>
-          <p>The decoder is in tree and the architecture is in place — AIS release is imminent. Subscribers get it the moment it ships.</p>
+          <p>AIS is on our roadmap, but it won't be in the first beta release — we've prioritized the aircraft picture (ADS-B / UAT) for beta. Subscribers get AIS the moment it ships.</p>
         </details>
         <details>
           <summary>Can I add my own decoder for some other RF signal?</summary>
