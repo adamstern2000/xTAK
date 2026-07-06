@@ -40,6 +40,11 @@
     .roadmap-lead__list li { position: relative; padding-left: 1.3rem; color: var(--ink-body); line-height: 1.5; font-size: 0.98rem; }
     .roadmap-lead__list li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); }
     .roadmap-lead__list b { color: var(--ink-bright); font-weight: 600; }
+    /* Two-option buy stack — equal-width buttons sized to the wider label */
+    .buy-stack { display: inline-flex; flex-direction: column; align-items: stretch; gap: 0.7rem; }
+    .buy-stack .btn { justify-content: center; margin: 0; }
+    .buy-note { margin-top: 0.7rem; font-size: 0.85rem; color: #8a95a5; max-width: 34rem; }
+    @media (max-width: 480px) { .buy-stack { display: flex; } }
   </style>
 </head>
 <body>
@@ -85,7 +90,10 @@
         Every node runs a web admin UI you reach from any browser.
       </p>
       <div class="hero__ctas" style="margin-top: 2rem;">
-        <a href="https://buy.stripe.com/dRmfZgbdTgIkcs3dRyfbq00" class="btn btn--primary">Join the Beta — from $59/device</a>
+        <div class="buy-stack">
+          <a href="https://buy.stripe.com/dRmfZgbdTgIkcs3dRyfbq00" class="btn btn--primary">Join the Beta — from $59/device</a>
+          <a href="https://buy.stripe.com/7sY7sK4Pv0Jm63FcNufbq01" class="btn btn--ghost">Licenses only — $59/device</a>
+        </div>
       </div>
       <p style="margin-top:1rem;color:#8a95a5;font-size:.95rem">
         <s>$99</s> <b style="color:var(--cyan);font-size:1.2rem">$59</b>/device
@@ -385,7 +393,11 @@
           <div class="proposition__num" style="color:var(--cyan)">PAID · $59/DEVICE</div>
           <h3 class="proposition__title">netTAK<br>Mesh</h3>
           <p class="proposition__body">The self-forming, self-healing HaLow mesh across every site, with cluster-wide management. Every mesh node runs a 30-day free trial, then activates with a per-device license. Running a fleet? A site license covers unlimited devices.</p>
-          <a href="https://buy.stripe.com/dRmfZgbdTgIkcs3dRyfbq00" class="btn btn--primary" style="margin-top:1rem;">Join the Beta — $59/device</a>
+          <div class="buy-stack" style="margin-top:1.25rem;">
+            <a href="https://buy.stripe.com/dRmfZgbdTgIkcs3dRyfbq00" class="btn btn--primary">Join the Beta — $59/device + support</a>
+            <a href="https://buy.stripe.com/7sY7sK4Pv0Jm63FcNufbq01" class="btn btn--ghost">Buy device licenses only — $59/device</a>
+          </div>
+          <p class="buy-note">Licenses only — just the per-device license, no support subscription. Buy one or more (set quantity at checkout).</p>
         </div>
       </div>
       <p class="reveal" style="margin-top:2rem;color:#8a95a5;max-width:44rem;">
