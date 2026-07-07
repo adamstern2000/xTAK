@@ -128,7 +128,7 @@
       <ol>
       <li><code>nettak-install-0.23.3-arm64.tar.gz</code> + <code>SHA256SUMS-0.23.3.txt</code> — netTAK</li>
       <li><code>adminTAK-0.1.5-linux-arm64.tar.gz</code> — the admin panel</li>
-      <li><code>cot_sdr-1.4.5.tar.gz</code> — sdrTAK</li>
+      <li><code>cot_sdr-1.4.6.tar.gz</code> — sdrTAK</li>
       </ol>
       <p>You only need internet to download these to your computer — everything you run
       on the Pi is <strong>fully offline</strong>.</p>
@@ -208,12 +208,12 @@
       bundle.</p>
       <h3>3.1 Copy sdrTAK onto the Pi</h3>
       <ul>
-      <li><strong>WinSCP:</strong> drag <code>cot_sdr-1.4.5.tar.gz</code> into the Pi's home folder.</li>
-      <li><strong>Terminal:</strong> <code>scp ~/Downloads/cot_sdr-1.4.5.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></li>
+      <li><strong>WinSCP:</strong> drag <code>cot_sdr-1.4.6.tar.gz</code> into the Pi's home folder.</li>
+      <li><strong>Terminal:</strong> <code>scp ~/Downloads/cot_sdr-1.4.6.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></li>
       </ul>
       <h3>3.2 Install</h3>
       <p>On the Pi, unpack straight into the system folder and run the installer:</p>
-      <pre><code class="language-bash">sudo tar xzf ~/cot_sdr-1.4.5.tar.gz -C /opt/
+      <pre><code class="language-bash">sudo tar xzf ~/cot_sdr-1.4.6.tar.gz -C /opt/
       cd /opt/cot_sdr
       sudo bash install.sh
       </code></pre>
@@ -338,7 +338,7 @@
       </table></div>
       <p>Live bridge log, any time: <code>sudo journalctl -u cot-sdr -f</code></p>
       <hr />
-      <p><em>sdrTAK v1.4.5 · adminTAK v0.1.5 · netTAK v0.23.3 (standalone). A product suite of
+      <p><em>sdrTAK v1.4.6 · adminTAK v0.1.5 · netTAK v0.23.3 (standalone). A product suite of
       xTAK — www.xtak.ai.</em></p>
       <p class="mono" style="color: var(--ink-faint); margin-top: 2.5rem;">sdrTAK is a product of xTAK (Altay Corporation). Support &amp; licensing: <a href="/support.html">Support</a>.</p>
     </div>
