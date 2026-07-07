@@ -69,72 +69,114 @@ network: a Wi-Fi access point your ATAK/WinTAK devices connect to, an optional
 long-range <strong>HaLow</strong> mesh linking multiple nodes with no cell or internet, local
 DNS/DHCP, and a GPS-disciplined clock. Everything is managed from a built-in web
 admin UI.</p>
-<p>This guide covers installing netTAK from the downloaded bundle.</p>
+<blockquote>
+<p><strong>New to Linux / the Raspberry Pi?</strong> Follow the commands <strong>exactly</strong> as written,
+including the full file paths. Every command below is complete — you don't need
+to know where anything lives; copy and paste each line in order. Text in
+<code>&lt;angle brackets&gt;</code> is the one thing you replace (e.g. your chosen node name).</p>
+</blockquote>
 <hr />
-<h2 id="1-choose-your-mode">1. Choose your mode</h2>
+<h2>1. Choose your mode</h2>
 <ul>
 <li><strong>Standalone</strong> — a single node: Wi-Fi AP + DHCP + local DNS. No extra radio
   needed. <strong>Free.</strong></li>
 <li><strong>Mesh</strong> — two or more nodes linked over <strong>HaLow</strong> (802.11ah sub-GHz) into one
   network. Requires a Morse Micro HaLow USB radio on each node. Mesh is a
-  <strong>licensed</strong> feature (30-day trial included; see <a href="#5-licensing">Licensing</a>).</li>
+  <strong>licensed</strong> feature (30-day trial included; see <a href="#6-licensing">Licensing</a>).</li>
 </ul>
 <hr />
-<h2 id="2-what-you-need">2. What you need</h2>
+<h2>2. What you need</h2>
 <ul>
-<li><strong>Raspberry Pi 4B</strong> (arm64) with a microSD card running <strong>Raspberry Pi OS
-  64-bit (Bookworm)</strong>.</li>
-<li>A <strong>wired Ethernet connection</strong> to the Pi for the install (you run the
-  installer over the wired port, not over Wi-Fi).</li>
+<li><strong>Raspberry Pi 4B</strong> with a microSD card running <strong>Raspberry Pi OS 64-bit
+  (Bookworm)</strong>.</li>
+<li>The Pi connected to your network by its <strong>wired Ethernet port</strong> (you run the
+  installer over the wire, never over Wi-Fi).</li>
+<li>The Pi's <strong>IP address</strong> on that wired network, and its login (default user
+  <code>pi</code> or <code>admin</code>, plus the password you set when imaging the card).</li>
 <li><strong>For mesh:</strong> a <strong>Morse Micro HaLow USB radio</strong> on each node, plus the netTAK
-  <strong>HaLow radio</strong> bundle (a separate download — see below).</li>
-<li><strong>Optional:</strong> a serial <strong>GPS receiver</strong> (e.g. u-blox M10 on the GPIO UART) for
-  precise, offline time. GPS setup is on by default; pass <code>--nogps</code> if you have
-  none.</li>
+  <strong>HaLow radio</strong> bundle (a separate download — see the download page).</li>
+<li><strong>Optional:</strong> a serial <strong>GPS receiver</strong> for precise, offline time (setup is on
+  by default; add <code>--nogps</code> if you have none).</li>
 </ul>
 <hr />
-<h2 id="3-download-and-verify">3. Download and verify</h2>
-<p>Download the netTAK install bundle and its checksum from the release page, then
-verify the download before installing:</p>
-<pre><code class="language-bash">sha256sum -c SHA256SUMS-&lt;version&gt;.txt
-#   nettak-install-&lt;version&gt;-arm64.tar.gz: OK
+<h2>3. Connect to the Pi</h2>
+<p>From your computer's terminal (macOS Terminal, Windows PowerShell, or Linux
+shell), open an SSH session to the Pi, replacing <code>&lt;pi-ip&gt;</code> with the Pi's wired IP
+address and <code>&lt;user&gt;</code> with its login name:</p>
+<pre><code class="language-bash">ssh &lt;user&gt;@&lt;pi-ip&gt;
 </code></pre>
-<p>If verification fails, re-download — do not install a corrupted bundle.</p>
+<p>Everything from here runs <strong>on the Pi</strong>, inside that SSH session. Start in your
+home folder:</p>
+<pre><code class="language-bash">cd ~
+</code></pre>
+<hr />
+<h2>4. Download and verify the bundle</h2>
+<p>Download the netTAK bundle and its checksum <strong>directly onto the Pi</strong>, into your
+home folder, then verify the download is intact:</p>
+<pre><code class="language-bash">cd ~
+wget https://github.com/adamstern2000/meshtak/releases/download/v0.23.3/nettak-install-0.23.3-arm64.tar.gz
+wget https://github.com/adamstern2000/meshtak/releases/download/v0.23.3/SHA256SUMS-0.23.3.txt
+sha256sum -c ~/SHA256SUMS-0.23.3.txt
+</code></pre>
+<p>The last command must print:</p>
+<pre><code>nettak-install-0.23.3-arm64.tar.gz: OK
+</code></pre>
+<p>If it does <strong>not</strong> say <code>OK</code>, delete the file and download it again — do not
+install a corrupted bundle:</p>
+<pre><code class="language-bash">rm ~/nettak-install-0.23.3-arm64.tar.gz    # only if verification failed
+</code></pre>
+<p>Now unpack it (this creates the folder <code>~/nettak-install-0.23.3-arm64/</code>):</p>
+<pre><code class="language-bash">cd ~
+tar xzf ~/nettak-install-0.23.3-arm64.tar.gz
+</code></pre>
 <blockquote>
-<p><strong>Mesh only:</strong> you also need the <strong>HaLow radio</strong> bundle
-(<code>halow-radio-&lt;kernel&gt;-arm64.tar.gz</code>). Standalone nodes skip it.</p>
+<p><strong>Mesh only:</strong> before the netTAK step below, install the <strong>HaLow radio</strong> bundle
+(from the download page) the same way — download it to <code>~</code>, unpack it, and run
+its <code>install-halow-radio.sh</code> (full path shown in the mesh section). Standalone
+nodes skip this.</p>
 </blockquote>
 <hr />
-<h2 id="4-install">4. Install</h2>
-<p>Run everything over the <strong>wired Ethernet port</strong> (not the Wi-Fi AP or mesh) — the
-installer reconfigures the network and would cut a Wi-Fi session mid-install.
-SSH to the Pi's wired IP, then:</p>
-<h3 id="standalone-node">Standalone node</h3>
-<pre><code class="language-bash">tar xzf nettak-install-&lt;version&gt;-arm64.tar.gz
-sudo ./nettak-install-&lt;version&gt;-arm64/install.sh &lt;hostname&gt; --mode=standalone
+<h2>5. Run the installer</h2>
+<p>Pick a <strong>node name</strong> ending in a number (e.g. <code>node01</code>, <code>node02</code>) — each node's
+network address is derived from it (<code>node21</code> → <code>10.1.21.1</code>). Then run the
+installer <strong>by its full path</strong>.</p>
+<h3>Standalone node</h3>
+<pre><code class="language-bash">sudo ~/nettak-install-0.23.3-arm64/install.sh &lt;node-name&gt; --mode=standalone
 sudo reboot
 </code></pre>
-<h3 id="mesh-node">Mesh node</h3>
-<p><strong>First, install the HaLow radio (once per node):</strong></p>
-<pre><code class="language-bash">tar xzf halow-radio-&lt;kernel&gt;-arm64.tar.gz
-sudo ./halow-radio-&lt;kernel&gt;-arm64/install-halow-radio.sh
+<p>Example:</p>
+<pre><code class="language-bash">sudo ~/nettak-install-0.23.3-arm64/install.sh node01 --mode=standalone
 sudo reboot
 </code></pre>
-<p>After reboot the HaLow radio is active. <strong>Then install netTAK.</strong></p>
-<p><strong>First node in a new mesh (founder):</strong></p>
-<pre><code class="language-bash">tar xzf nettak-install-&lt;version&gt;-arm64.tar.gz
-sudo ./nettak-install-&lt;version&gt;-arm64/install.sh &lt;hostname&gt;
+<h3>Mesh node</h3>
+<p><strong>Step A — install the HaLow radio first (once per node):</strong></p>
+<pre><code class="language-bash">cd ~
+tar xzf ~/halow-radio-6.12.21-v8+-arm64.tar.gz
+sudo ~/halow-radio-6.12.21-v8+-arm64/install-halow-radio.sh
+sudo reboot
+</code></pre>
+<p>Reconnect (<code>ssh &lt;user&gt;@&lt;pi-ip&gt;</code>) after it reboots — the HaLow radio is now active.</p>
+<p><strong>Step B — install netTAK:</strong></p>
+<ul>
+<li><strong>First node in a new mesh:</strong></li>
+</ul>
+<pre><code class="language-bash">sudo ~/nettak-install-0.23.3-arm64/install.sh &lt;node-name&gt;
 sudo reboot
 </code></pre>
 <p>With the HaLow radio present, the installer auto-selects mesh mode.</p>
 <ul>
-<li><strong>Joining an existing mesh:</strong> on a node already in the mesh, create a join
-  <strong>seed</strong> from the web admin (Services → Cluster-join package), copy the
-  resulting <code>seed.json</code> next to the installer on the new node, then install as
-  above. The seed carries the mesh identity, key, and AP settings — the new node
-  joins automatically.</li>
+<li><strong>Adding a node to an existing mesh:</strong> on a node already in the mesh, create a
+  join <strong>seed</strong> from the web admin (<strong>Services → Cluster-join package</strong>), copy the
+  produced <code>seed.json</code> into the installer folder on the new node, then install:</li>
 </ul>
-<h3 id="useful-install-flags">Useful install flags</h3>
+<pre><code class="language-bash"># after placing seed.json at ~/nettak-install-0.23.3-arm64/seed.json
+sudo ~/nettak-install-0.23.3-arm64/install.sh &lt;node-name&gt;
+sudo reboot
+</code></pre>
+<p>The seed carries the mesh identity, key, and AP settings — the node joins
+  automatically.</p>
+<h3>Optional install flags</h3>
+<p>Add any of these after the node name:</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -144,12 +186,8 @@ sudo reboot
 </thead>
 <tbody>
 <tr>
-<td><code>--mode=standalone</code> / <code>--mode=mesh</code></td>
-<td>Force the mode (otherwise auto-detected from the HaLow radio).</td>
-</tr>
-<tr>
 <td><code>--ap-ssid=&lt;name&gt;</code></td>
-<td>Wi-Fi network name. Default: your hostname with any trailing number removed, so a fleet shares one SSID for seamless roaming.</td>
+<td>Wi-Fi network name. Default: your node name with any trailing number removed, so a fleet shares one SSID for seamless roaming.</td>
 </tr>
 <tr>
 <td><code>--ap-password=&lt;pw&gt;</code></td>
@@ -157,7 +195,7 @@ sudo reboot
 </tr>
 <tr>
 <td><code>--mesh-ssid=&lt;name&gt;</code></td>
-<td>Mesh network id. Use the same value on every founder to form one fleet mesh.</td>
+<td>Mesh network id. Use the same value on every founding node to form one fleet mesh.</td>
 </tr>
 <tr>
 <td><code>--nogps</code></td>
@@ -165,58 +203,60 @@ sudo reboot
 </tr>
 </tbody>
 </table></div>
-<p>Choose a <strong>hostname</strong> ending in a number (e.g. <code>node01</code>, <code>node02</code>) — each node's
-address is derived from it (<code>node21</code> → <code>10.1.21.1</code>).</p>
 <hr />
-<h2 id="5-first-boot-and-access">5. First boot and access</h2>
+<h2>6. First boot and access</h2>
 <p>After the reboot, the node broadcasts its Wi-Fi AP (and, on mesh nodes, joins the
-mesh). Open the admin UI:</p>
+mesh). Open the admin UI in a browser:</p>
 <ul>
-<li><strong><code>https://&lt;node-ip&gt;:5103/</code></strong>, or from a device on the AP,
-  <strong><code>https://&lt;hostname&gt;.xtak.ai:5103/</code></strong></li>
+<li><strong><code>https://&lt;pi-ip&gt;:5103/</code></strong>, or from a device connected to the AP,
+  <strong><code>https://&lt;node-name&gt;.xtak.ai:5103/</code></strong></li>
 </ul>
-<p>The first-boot certificate is self-signed, so your browser warns once — accept
-it to continue.</p>
+<p>The first-boot certificate is self-signed, so your browser warns once — accept it
+to continue.</p>
 <p><strong>Log in and change the defaults immediately:</strong></p>
 <ul>
 <li><strong>Admin login:</strong> username <code>admin</code>, password <code>password</code> → change it on
   <strong>Admin &amp; security</strong>.</li>
 <li><strong>Wi-Fi AP:</strong> default passphrase <code>password</code> → change it on <strong>AP</strong>.</li>
 </ul>
-<p>The built-in <strong>operator manual</strong> is available in the UI at <strong><code>/help</code></strong> and
-documents every page and setting.</p>
+<p>The built-in <strong>operator manual</strong> is in the UI at <strong><code>/help</code></strong> — it documents every
+page and setting.</p>
 <hr />
-<h2 id="6-licensing">6. Licensing</h2>
+<h2>7. Licensing</h2>
 <ul>
 <li><strong>Standalone</strong> operation is <strong>free</strong> — no license needed.</li>
 <li><strong>Mesh</strong> operation includes a <strong>30-day trial</strong>. After the trial, mesh is
   disabled until you install a license (standalone keeps working).</li>
-<li>To license a node, open <strong>Licensing</strong> in the admin UI and either paste a
-  license <strong>token</strong> (<code>XTAKL1…</code>) issued for the node's hardware, or enter a
-  <strong>certificate code</strong> from your purchase and <strong>Redeem online</strong>. Licenses are
-  hardware-tied and verified <strong>offline</strong> — no internet needed in the field.</li>
+<li>To license a node, open <strong>Licensing</strong> in the admin UI and either paste a license
+  <strong>token</strong> (<code>XTAKL1…</code>) issued for the node's hardware, or enter a <strong>certificate
+  code</strong> from your purchase and <strong>Redeem online</strong>. Licenses are hardware-tied and
+  verified <strong>offline</strong> — no internet needed in the field.</li>
 </ul>
 <hr />
-<h2 id="7-verify-the-install">7. Verify the install</h2>
+<h2>8. Verify the install</h2>
 <ul>
-<li>The admin UI loads at <code>https://&lt;node&gt;:5103/</code> and the <strong>Dashboard</strong> shows the
+<li>The admin UI loads at <code>https://&lt;pi-ip&gt;:5103/</code> and the <strong>Dashboard</strong> shows the
   node online.</li>
 <li>The <strong>Wi-Fi AP</strong> is broadcasting and a client can connect and get an address.</li>
-<li><strong>Mesh nodes:</strong> the <strong>Dashboard → Mesh</strong> card shows neighbor node(s), and you
-  can reach another node's address.</li>
+<li><strong>Mesh nodes:</strong> the Dashboard <strong>Mesh</strong> card shows neighbor node(s), and you can
+  reach another node's address.</li>
 <li><strong>Time:</strong> the Dashboard <strong>Timing</strong> card shows a clock source (GPS when a
   receiver has sky view, otherwise the mesh floor).</li>
 </ul>
-<p>For deeper troubleshooting, see the in-UI manual at <code>/help</code> (Troubleshooting
-section).</p>
+<p>For troubleshooting, see the in-UI manual at <code>/help</code> (Troubleshooting section).</p>
 <hr />
-<h2 id="8-uninstall-update">8. Uninstall / update</h2>
+<h2>9. Update or uninstall</h2>
 <ul>
-<li><strong>Update:</strong> re-run <code>install.sh</code> with the same hostname — it updates the binary,
-  configs, and packages in place, preserving your settings.</li>
-<li><strong>Uninstall netTAK</strong> (keeps the HaLow radio): run the bundle's
-  <code>uninstall.sh</code>.</li>
+<li><strong>Update:</strong> re-run the installer with the <strong>same node name</strong> — it updates the
+  software in place and preserves your settings:</li>
 </ul>
+<pre><code class="language-bash">sudo ~/nettak-install-0.23.3-arm64/install.sh &lt;node-name&gt;
+</code></pre>
+<ul>
+<li><strong>Uninstall netTAK</strong> (keeps the HaLow radio):</li>
+</ul>
+<pre><code class="language-bash">sudo ~/nettak-install-0.23.3-arm64/uninstall.sh
+</code></pre>
 <hr />
       <p class="mono" style="color: var(--ink-faint); margin-top: 2.5rem;">netTAK is a product of xTAK (Altay Corporation). Support &amp; licensing: <a href="/support.html">Support</a>.</p>
     </div>
