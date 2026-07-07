@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Installation guide for netTAK — install the self-managing mesh from the downloaded bundle on a Raspberry Pi. Standalone or HaLow mesh, licensing, first boot, and verification." />
+  <title>netTAK Install Guide — xTAK</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    .prose pre { background: #0d0f14; border: 1px solid var(--rule); border-radius: 6px; padding: 0.9rem 1.1rem; overflow-x: auto; margin: 1rem 0; }
+    .prose pre code { color: var(--ink-bright); font-family: var(--font-mono); font-size: 0.85rem; background: none; padding: 0; border: none; white-space: pre; }
+    .prose code { font-family: var(--font-mono); font-size: 0.85em; background: rgba(0,217,255,0.1); color: var(--cyan-pop); padding: 0.05em 0.35em; border-radius: 4px; }
+    .prose blockquote { border-left: 3px solid var(--cyan-faint); margin: 1.2rem 0; padding: 0.6rem 1.1rem; color: var(--ink-body); background: var(--cyan-trace); border-radius: 0 4px 4px 0; }
+    .prose blockquote p { margin: 0; }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+    .prose th, .prose td { text-align: left; vertical-align: top; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--rule); }
+    .prose th { color: var(--ink-bright); font-weight: 600; }
+    .prose hr { border: none; border-top: 1px solid var(--rule); margin: 2.25rem 0; }
+    .tablewrap { overflow-x: auto; }
+    .doc-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 0; }
+  </style>
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">DOCS / NETTAK</span>
+        <span class="readout__item">INSTALL GUIDE</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">PUBLIC BETA</span>
+        <span class="readout__item"><span data-clock>&mdash;</span></span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="brand"><span class="brand__diamond"></span><span class="brand__word"><span class="accent">x</span>TAK</span></a>
+      <nav><ul class="nav__links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#suite">The Suite</a></li>
+        <li><a href="/about-tak.html">About TAK</a></li>
+        <li><a href="/#get-started">Get Started</a></li>
+        <li><a href="/support.html">Support</a></li>
+      </ul></nav>
+      <a href="https://buy.stripe.com/dRmfZgbdTgIkcs3dRyfbq00" class="nav__cta">Join the Beta &rarr;</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / <a href="/products/netTAK.html">netTAK</a> / <span class="text-cyan">Install Guide</span></div>
+      <h1 class="pagehead__title">netTAK<br><em>Install Guide.</em></h1>
+      <div class="doc-cta">
+        <a href="/products/netTAK.html" class="btn btn--ghost">&larr; netTAK product</a>
+        <a href="https://activate.xtak.ai/downloads" class="btn btn--ghost">Your downloads &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow prose">
+<p>netTAK turns a Raspberry Pi into a self-contained, infrastructure-free TAK
+network: a Wi-Fi access point your ATAK/WinTAK devices connect to, an optional
+long-range <strong>HaLow</strong> mesh linking multiple nodes with no cell or internet, local
+DNS/DHCP, and a GPS-disciplined clock. Everything is managed from a built-in web
+admin UI.</p>
+<p>This guide covers installing netTAK from the downloaded bundle.</p>
+<hr />
+<h2 id="1-choose-your-mode">1. Choose your mode</h2>
+<ul>
+<li><strong>Standalone</strong> — a single node: Wi-Fi AP + DHCP + local DNS. No extra radio
+  needed. <strong>Free.</strong></li>
+<li><strong>Mesh</strong> — two or more nodes linked over <strong>HaLow</strong> (802.11ah sub-GHz) into one
+  network. Requires a Morse Micro HaLow USB radio on each node. Mesh is a
+  <strong>licensed</strong> feature (30-day trial included; see <a href="#5-licensing">Licensing</a>).</li>
+</ul>
+<hr />
+<h2 id="2-what-you-need">2. What you need</h2>
+<ul>
+<li><strong>Raspberry Pi 4B</strong> (arm64) with a microSD card running <strong>Raspberry Pi OS
+  64-bit (Bookworm)</strong>.</li>
+<li>A <strong>wired Ethernet connection</strong> to the Pi for the install (you run the
+  installer over the wired port, not over Wi-Fi).</li>
+<li><strong>For mesh:</strong> a <strong>Morse Micro HaLow USB radio</strong> on each node, plus the netTAK
+  <strong>HaLow radio</strong> bundle (a separate download — see below).</li>
+<li><strong>Optional:</strong> a serial <strong>GPS receiver</strong> (e.g. u-blox M10 on the GPIO UART) for
+  precise, offline time. GPS setup is on by default; pass <code>--nogps</code> if you have
+  none.</li>
+</ul>
+<hr />
+<h2 id="3-download-and-verify">3. Download and verify</h2>
+<p>Download the netTAK install bundle and its checksum from the release page, then
+verify the download before installing:</p>
+<pre><code class="language-bash">sha256sum -c SHA256SUMS-&lt;version&gt;.txt
+#   nettak-install-&lt;version&gt;-arm64.tar.gz: OK
+</code></pre>
+<p>If verification fails, re-download — do not install a corrupted bundle.</p>
+<blockquote>
+<p><strong>Mesh only:</strong> you also need the <strong>HaLow radio</strong> bundle
+(<code>halow-radio-&lt;kernel&gt;-arm64.tar.gz</code>). Standalone nodes skip it.</p>
+</blockquote>
+<hr />
+<h2 id="4-install">4. Install</h2>
+<p>Run everything over the <strong>wired Ethernet port</strong> (not the Wi-Fi AP or mesh) — the
+installer reconfigures the network and would cut a Wi-Fi session mid-install.
+SSH to the Pi's wired IP, then:</p>
+<h3 id="standalone-node">Standalone node</h3>
+<pre><code class="language-bash">tar xzf nettak-install-&lt;version&gt;-arm64.tar.gz
+sudo ./nettak-install-&lt;version&gt;-arm64/install.sh &lt;hostname&gt; --mode=standalone
+sudo reboot
+</code></pre>
+<h3 id="mesh-node">Mesh node</h3>
+<p><strong>First, install the HaLow radio (once per node):</strong></p>
+<pre><code class="language-bash">tar xzf halow-radio-&lt;kernel&gt;-arm64.tar.gz
+sudo ./halow-radio-&lt;kernel&gt;-arm64/install-halow-radio.sh
+sudo reboot
+</code></pre>
+<p>After reboot the HaLow radio is active. <strong>Then install netTAK.</strong></p>
+<p><strong>First node in a new mesh (founder):</strong></p>
+<pre><code class="language-bash">tar xzf nettak-install-&lt;version&gt;-arm64.tar.gz
+sudo ./nettak-install-&lt;version&gt;-arm64/install.sh &lt;hostname&gt;
+sudo reboot
+</code></pre>
+<p>With the HaLow radio present, the installer auto-selects mesh mode.</p>
+<ul>
+<li><strong>Joining an existing mesh:</strong> on a node already in the mesh, create a join
+  <strong>seed</strong> from the web admin (Services → Cluster-join package), copy the
+  resulting <code>seed.json</code> next to the installer on the new node, then install as
+  above. The seed carries the mesh identity, key, and AP settings — the new node
+  joins automatically.</li>
+</ul>
+<h3 id="useful-install-flags">Useful install flags</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--mode=standalone</code> / <code>--mode=mesh</code></td>
+<td>Force the mode (otherwise auto-detected from the HaLow radio).</td>
+</tr>
+<tr>
+<td><code>--ap-ssid=&lt;name&gt;</code></td>
+<td>Wi-Fi network name. Default: your hostname with any trailing number removed, so a fleet shares one SSID for seamless roaming.</td>
+</tr>
+<tr>
+<td><code>--ap-password=&lt;pw&gt;</code></td>
+<td>Wi-Fi passphrase (≥ 8 chars). Default: <code>password</code> — <strong>change it after install.</strong></td>
+</tr>
+<tr>
+<td><code>--mesh-ssid=&lt;name&gt;</code></td>
+<td>Mesh network id. Use the same value on every founder to form one fleet mesh.</td>
+</tr>
+<tr>
+<td><code>--nogps</code></td>
+<td>Skip GPS setup (use when the node has no GPS receiver).</td>
+</tr>
+</tbody>
+</table></div>
+<p>Choose a <strong>hostname</strong> ending in a number (e.g. <code>node01</code>, <code>node02</code>) — each node's
+address is derived from it (<code>node21</code> → <code>10.1.21.1</code>).</p>
+<hr />
+<h2 id="5-first-boot-and-access">5. First boot and access</h2>
+<p>After the reboot, the node broadcasts its Wi-Fi AP (and, on mesh nodes, joins the
+mesh). Open the admin UI:</p>
+<ul>
+<li><strong><code>https://&lt;node-ip&gt;:5103/</code></strong>, or from a device on the AP,
+  <strong><code>https://&lt;hostname&gt;.xtak.ai:5103/</code></strong></li>
+</ul>
+<p>The first-boot certificate is self-signed, so your browser warns once — accept
+it to continue.</p>
+<p><strong>Log in and change the defaults immediately:</strong></p>
+<ul>
+<li><strong>Admin login:</strong> username <code>admin</code>, password <code>password</code> → change it on
+  <strong>Admin &amp; security</strong>.</li>
+<li><strong>Wi-Fi AP:</strong> default passphrase <code>password</code> → change it on <strong>AP</strong>.</li>
+</ul>
+<p>The built-in <strong>operator manual</strong> is available in the UI at <strong><code>/help</code></strong> and
+documents every page and setting.</p>
+<hr />
+<h2 id="6-licensing">6. Licensing</h2>
+<ul>
+<li><strong>Standalone</strong> operation is <strong>free</strong> — no license needed.</li>
+<li><strong>Mesh</strong> operation includes a <strong>30-day trial</strong>. After the trial, mesh is
+  disabled until you install a license (standalone keeps working).</li>
+<li>To license a node, open <strong>Licensing</strong> in the admin UI and either paste a
+  license <strong>token</strong> (<code>XTAKL1…</code>) issued for the node's hardware, or enter a
+  <strong>certificate code</strong> from your purchase and <strong>Redeem online</strong>. Licenses are
+  hardware-tied and verified <strong>offline</strong> — no internet needed in the field.</li>
+</ul>
+<hr />
+<h2 id="7-verify-the-install">7. Verify the install</h2>
+<ul>
+<li>The admin UI loads at <code>https://&lt;node&gt;:5103/</code> and the <strong>Dashboard</strong> shows the
+  node online.</li>
+<li>The <strong>Wi-Fi AP</strong> is broadcasting and a client can connect and get an address.</li>
+<li><strong>Mesh nodes:</strong> the <strong>Dashboard → Mesh</strong> card shows neighbor node(s), and you
+  can reach another node's address.</li>
+<li><strong>Time:</strong> the Dashboard <strong>Timing</strong> card shows a clock source (GPS when a
+  receiver has sky view, otherwise the mesh floor).</li>
+</ul>
+<p>For deeper troubleshooting, see the in-UI manual at <code>/help</code> (Troubleshooting
+section).</p>
+<hr />
+<h2 id="8-uninstall-update">8. Uninstall / update</h2>
+<ul>
+<li><strong>Update:</strong> re-run <code>install.sh</code> with the same hostname — it updates the binary,
+  configs, and packages in place, preserving your settings.</li>
+<li><strong>Uninstall netTAK</strong> (keeps the HaLow radio): run the bundle's
+  <code>uninstall.sh</code>.</li>
+</ul>
+<hr />
+      <p class="mono" style="color: var(--ink-faint); margin-top: 2.5rem;">netTAK is a product of xTAK (Altay Corporation). Support &amp; licensing: <a href="/support.html">Support</a>.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span style="color: var(--cyan);">x</span>TAK</div>
+          <p class="footer__brand-tag">Self-hosted, off-grid situational awareness for the team that has to coordinate when the WAN is gone.</p>
+        </div>
+        <div class="footer__col"><h4>Products</h4><ul>
+          <li><a href="/products/baseTAK.html">baseTAK</a></li>
+          <li><a href="/products/digiTAK.html">digiTAK</a></li>
+          <li><a href="/products/loraTAK.html">loraTAK</a></li>
+          <li><a href="/products/chatTAK.html">chatTAK</a></li>
+          <li><a href="/products/sdrTAK.html">sdrTAK</a></li>
+          <li><a href="/products/netTAK.html">netTAK</a></li>
+          <li><a href="/products/aiTAK.html">aiTAK</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Resources</h4><ul>
+          <li><a href="/about-tak.html">About TAK</a></li>
+          <li><a href="/beta.html">Beta Program</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK" target="_blank" rel="noopener">GitHub Repo</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul>
+          <li><a href="https://github.com/adamstern2000/xTAK/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__bottom">
+        <div>&copy; 2026 xTAK Project &middot; All rights reserved</div>
+        <div>xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, aiTAK are trademarks of the xTAK Project &middot; <a href="/copyright.html">Notice</a></div>
+        <div style="flex-basis:100%"><a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/refund.html">Refunds</a> &middot; <a href="/third-party-notices.html">Open-Source &amp; Third-Party Notices</a> &middot; <a href="/copyright.html">Copyright &amp; Trademarks</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
