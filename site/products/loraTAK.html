@@ -18,6 +18,13 @@
   <meta name="twitter:image" content="https://xtak.ai/img/og-card.png" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    /* Two-option buy stack — equal-width buttons sized to the wider label */
+    .buy-stack { display: inline-flex; flex-direction: column; align-items: stretch; gap: 0.7rem; }
+    .buy-stack .btn { justify-content: center; margin: 0; }
+    .buy-note { margin-top: 0.7rem; font-size: 0.85rem; color: #8a95a5; max-width: 34rem; }
+    @media (max-width: 480px) { .buy-stack { display: flex; } }
+  </style>
 </head>
 <body>
 
@@ -28,8 +35,8 @@
         <span class="readout__item">CODENAME / cot_mesh</span>
       </div>
       <div class="readout__group">
-        <span class="readout__item">STATUS / DEV</span>
-        <span class="readout__item">v 1.3.0</span>
+        <span class="readout__item">STATUS / PUBLIC BETA</span>
+        <span class="readout__item">$39.99/device · beta</span>
         <span class="readout__item"><span data-clock>—</span></span>
       </div>
     </div>
@@ -45,7 +52,7 @@
         <li><a href="/#get-started">Get Started</a></li>
         <li><a href="/support.html">Support</a></li>
       </ul></nav>
-      <a href="/beta.html" class="nav__cta">Beta Program →</a>
+      <a href="https://buy.stripe.com/14A6oG1Dj9fS0Jl6p6fbq02" class="nav__cta">Join the Beta →</a>
       <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </header>
@@ -53,7 +60,7 @@
   <section class="pagehead">
     <div class="container">
       <div class="pagehead__bread"><a href="/">xTAK</a> / Products / <span class="text-cyan">loraTAK</span></div>
-      <div class="pagehead__status"><span class="status status--dev">In development · Beta TBD (Meshtastic backend)</span></div>
+      <div class="pagehead__status"><span class="status status--dev">Public Beta · available now</span></div>
       <h1 class="pagehead__title">Your Meshtastic mesh,<br>now a <em>TAK network.</em></h1>
       <p class="pagehead__sub">
         <strong class="text-bright">$40 radios. License-free RF. Multi-day battery. On the TAK map.</strong>
@@ -62,8 +69,16 @@
         already carry mesh radios, or can hand them out for the price of dinner.
       </p>
       <div class="hero__ctas" style="margin-top: 2rem;">
-        <a href="/beta.html" class="btn btn--primary">See the Beta Program →</a>
+        <div class="buy-stack">
+          <a href="https://buy.stripe.com/14A6oG1Dj9fS0Jl6p6fbq02" class="btn btn--primary">Join the Beta — from $39.99/device</a>
+          <a href="https://buy.stripe.com/00w7sK1Dj77K3Vx5l2fbq03" class="btn btn--ghost">Licenses only — $39.99/device</a>
+        </div>
       </div>
+      <p style="margin-top:1rem;color:#8a95a5;font-size:.95rem">
+        <s>$59</s> <b style="color:var(--cyan);font-size:1.2rem">$39.99</b>/device
+        · <s>$24/yr</s> <b style="color:var(--cyan)">$16/yr</b> Beta Support
+        · <span>~32% off retail</span>
+      </p>
     </div>
   </section>
 
@@ -234,11 +249,11 @@
     <div class="container">
       <div class="cta-banner">
         <div>
-          <div class="cta-banner__eyebrow">In development</div>
-          <h3 class="cta-banner__title">loraTAK is on the way.</h3>
-          <p class="cta-banner__body">This product is in active development. netTAK is available now in public Beta — see the Beta program to start with xTAK today.</p>
+          <div class="cta-banner__eyebrow">Public Beta · ~32% off retail</div>
+          <h3 class="cta-banner__title">Get loraTAK on your mesh.</h3>
+          <p class="cta-banner__body">Beta pricing: <b>$39.99/device</b> (retail $59) plus <b>$16/yr</b> Beta Support for updates, case designs, and Discord support — bundled in one checkout.</p>
         </div>
-        <a href="/beta.html" class="btn btn--primary">See the Beta Program →</a>
+        <a href="https://buy.stripe.com/14A6oG1Dj9fS0Jl6p6fbq02" class="btn btn--primary">Join the Beta →</a>
       </div>
     </div>
   </section>
