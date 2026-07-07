@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Join the netTAK Beta — a deep discount on the full product, plus fast code updates, 3D case designs, and direct support on Discord." />
+  <meta name="description" content="Join the xTAK Beta — netTAK, loraTAK, and sdrTAK are in public Beta. Deep discount on the full product, every new build the day it ships, 3D case designs, and direct support on Discord." />
   <title>Beta Program — xTAK</title>
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://xtak.ai/beta.html" />
   <meta property="og:title" content="xTAK Beta Program" />
-  <meta property="og:description" content="Join the netTAK Beta — a deep discount, fast code updates, 3D case designs, and direct support on Discord." />
+  <meta property="og:description" content="netTAK, loraTAK, and sdrTAK are in public Beta — a deep discount, fast code updates, 3D case designs, and direct support on Discord." />
   <meta property="og:image" content="https://xtak.ai/img/og-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="xTAK Beta Program" />
-  <meta name="twitter:description" content="Join the netTAK Beta — a deep discount, fast updates, and direct support." />
+  <meta name="twitter:description" content="netTAK, loraTAK, and sdrTAK are in public Beta — a deep discount, fast updates, and direct support." />
   <meta name="twitter:image" content="https://xtak.ai/img/og-card.png" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/css/styles.css" />
@@ -24,6 +24,22 @@
     .price-now{color:var(--cyan);font-weight:700;font-size:1.6rem}
     .price-unit{color:#8a95a5;font-size:.95rem}
     .save-tag{background:var(--cyan);color:#001;font-size:.72rem;font-weight:700;padding:.15rem .5rem;border-radius:4px}
+
+    .beta-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+    @media(max-width:860px){.beta-cards{grid-template-columns:1fr}}
+    .beta-card{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:10px;padding:1.7rem 1.6rem;background:var(--cyan-trace,rgba(0,217,255,.03))}
+    .beta-card__eyebrow{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;color:var(--cyan);margin-bottom:.6rem}
+    .beta-card__title{font-size:1.55rem;margin:0 0 .35rem;line-height:1.1}
+    .beta-card__tag{color:var(--ink-body,#8a95a5);font-size:.9rem;line-height:1.45;margin:0 0 1.3rem}
+    .beta-card__prices{display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.5rem}
+    .beta-price{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;border-bottom:1px dashed var(--rule);padding-bottom:.7rem}
+    .beta-price__label{font-size:.82rem;color:var(--ink-body,#8a95a5)}
+    .beta-price__val{display:flex;gap:.5rem;align-items:baseline}
+    .beta-price__val .price-now{font-size:1.35rem}
+    .beta-price__val .price-was{font-size:.95rem}
+    .beta-card__cta{margin-top:auto;text-align:center;width:100%}
+    .beta-card__alt{display:block;text-align:center;margin-top:.75rem;font-size:.8rem;color:var(--ink-dim,#8a95a5);text-decoration:none}
+    .beta-card__alt:hover{color:var(--cyan)}
   </style>
 </head>
 <body>
@@ -31,8 +47,8 @@
   <div class="readout">
     <div class="readout__inner">
       <div class="readout__group">
-        <span class="readout__item readout__item--ok">NETTAK · PUBLIC BETA</span>
-        <span class="readout__item">DEEP DISCOUNT · LIMITED</span>
+        <span class="readout__item readout__item--ok">XTAK · PUBLIC BETA</span>
+        <span class="readout__item">THREE PRODUCTS · LIVE NOW</span>
       </div>
       <div class="readout__group">
         <span class="readout__item">EARLY ACCESS · FAST UPDATES</span>
@@ -51,7 +67,7 @@
         <li><a href="/beta.html" aria-current="page">Beta</a></li>
         <li><a href="/support.html">Support</a></li>
       </ul></nav>
-      <a href="https://buy.stripe.com/dRmfZgbdTgIkcs3dRyfbq00" class="nav__cta">Join the Beta →</a>
+      <a href="#beta-offers" class="nav__cta">Join the Beta →</a>
       <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </header>
@@ -59,57 +75,84 @@
   <section class="pagehead">
     <div class="container">
       <div class="pagehead__bread"><a href="/">xTAK</a> / <span class="text-cyan">Beta Program</span></div>
-      <h1 class="pagehead__title">Get netTAK early.<br>Get it <em>cheaper.</em></h1>
+      <h1 class="pagehead__title">Get in early.<br>Get it <em>cheaper.</em></h1>
       <p class="pagehead__sub">
-        netTAK is in <strong class="text-bright">public Beta</strong>. Join now and you get the full
-        product at a <strong class="text-bright">deep discount</strong> — plus every new build the day
-        it ships, 3D case designs, and direct support on Discord. Same software everyone else will buy
-        at full price, just earlier and cheaper.
+        <strong class="text-bright">netTAK</strong>, <strong class="text-bright">loraTAK</strong>, and
+        <strong class="text-bright">sdrTAK</strong> are in <strong class="text-bright">public Beta</strong>.
+        Join now and you get the full product at a <strong class="text-bright">deep discount</strong> — plus
+        every new build the day it ships, 3D case designs, and direct support on Discord. The same software
+        everyone else will buy at full price, just earlier and cheaper.
       </p>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="beta-offers">
     <div class="container">
       <span class="section__label">THE BETA OFFER</span>
-      <h2 class="section__title reveal">netTAK Beta —<br><em>everything, bundled.</em></h2>
+      <h2 class="section__title reveal">Three products,<br><em>in Beta now.</em></h2>
+      <p class="pagehead__sub reveal" style="margin-top:1.2rem;max-width:60ch;">
+        Each <strong class="text-bright">Join the Beta</strong> checkout bundles your device licenses and a
+        year of Beta Support into one payment. Already in a beta and just need more hardware? The
+        <em>add devices</em> link on each card is licenses only. After payment you get your licenses and a
+        download code on-screen and by email, plus your Discord invite.
+      </p>
 
-      <div class="propositions" style="margin-top: 3rem;">
-        <div class="proposition reveal">
-          <div class="proposition__num">🔑 · LICENSE</div>
-          <h3 class="proposition__title">netTAK<br>per device</h3>
-          <div class="price-compare">
-            <span class="price-was">$99</span>
-            <span class="price-now">$59</span>
-            <span class="price-unit">/ device</span>
-            <span class="save-tag">SAVE 40%</span>
-          </div>
-          <p class="proposition__body">A permanent license for each node, yours to keep. netTAK needs two or more nodes to mesh, so most teams start with two.</p>
-        </div>
-        <div class="proposition reveal" data-delay="1">
-          <div class="proposition__num">🔄 · SUPPORT</div>
-          <h3 class="proposition__title">Beta Support<br>per year</h3>
-          <div class="price-compare">
-            <span class="price-was">$40</span>
-            <span class="price-now">$24</span>
-            <span class="price-unit">/ yr · all devices</span>
-            <span class="save-tag">SAVE 40%</span>
-          </div>
-          <p class="proposition__body">Fast code updates as they ship, 3D case designs, the build list, and direct support on Discord. One flat fee for your whole fleet.</p>
-        </div>
-      </div>
+      <div class="beta-cards">
 
-      <div class="cta-banner reveal" style="margin-top:3rem;">
-        <div>
-          <div class="cta-banner__eyebrow">One checkout · licenses + support together</div>
-          <h3 class="cta-banner__title">Join the netTAK Beta.</h3>
-          <p class="cta-banner__body">
-            Pick how many devices you're running — your licenses and a year of Beta Support are
-            bundled into one checkout. After payment you'll get your licenses and a download code
-            on-screen and by email, plus your Discord invite.
-          </p>
+        <div class="beta-card reveal">
+          <div class="beta-card__eyebrow">PUBLIC BETA · AVAILABLE NOW</div>
+          <h3 class="beta-card__title">net<em>TAK</em></h3>
+          <p class="beta-card__tag">Off-grid TAK network — a Wi-Fi access point, long-range HaLow mesh, local DNS/DHCP, and GPS-disciplined time.</p>
+          <div class="beta-card__prices">
+            <div class="beta-price">
+              <span class="beta-price__label">License / device</span>
+              <span class="beta-price__val"><span class="price-was">$99</span><span class="price-now">$59</span></span>
+            </div>
+            <div class="beta-price">
+              <span class="beta-price__label">Beta Support / yr</span>
+              <span class="beta-price__val"><span class="price-was">$40</span><span class="price-now">$24</span></span>
+            </div>
+          </div>
+          <a href="https://buy.stripe.com/dRmfZgbdTgIkcs3dRyfbq00" class="btn btn--primary beta-card__cta">Join the netTAK Beta →</a>
+          <a href="https://buy.stripe.com/7sY7sK4Pv0Jm63FcNufbq01" class="beta-card__alt">or add devices to existing support →</a>
         </div>
-        <a href="https://buy.stripe.com/dRmfZgbdTgIkcs3dRyfbq00" class="btn btn--primary">Join the Beta →</a>
+
+        <div class="beta-card reveal" data-delay="1">
+          <div class="beta-card__eyebrow">PUBLIC BETA · AVAILABLE NOW</div>
+          <h3 class="beta-card__title">lora<em>TAK</em></h3>
+          <p class="beta-card__tag">Your Meshtastic mesh, now a TAK network — every LoRa node a first-class, chat-able contact on the map.</p>
+          <div class="beta-card__prices">
+            <div class="beta-price">
+              <span class="beta-price__label">License / device</span>
+              <span class="beta-price__val"><span class="price-was">$59</span><span class="price-now">$39.99</span></span>
+            </div>
+            <div class="beta-price">
+              <span class="beta-price__label">Beta Support / yr</span>
+              <span class="beta-price__val"><span class="price-was">$24</span><span class="price-now">$16</span></span>
+            </div>
+          </div>
+          <a href="https://buy.stripe.com/14A6oG1Dj9fS0Jl6p6fbq02" class="btn btn--primary beta-card__cta">Join the loraTAK Beta →</a>
+          <a href="https://buy.stripe.com/00w7sK1Dj77K3Vx5l2fbq03" class="beta-card__alt">or add devices to existing support →</a>
+        </div>
+
+        <div class="beta-card reveal" data-delay="2">
+          <div class="beta-card__eyebrow">PUBLIC BETA · AVAILABLE NOW</div>
+          <h3 class="beta-card__title">sdr<em>TAK</em></h3>
+          <p class="beta-card__tag">Software-defined radio, straight onto the TAK map — the passive RF picture around you as live tracks.</p>
+          <div class="beta-card__prices">
+            <div class="beta-price">
+              <span class="beta-price__label">License / device</span>
+              <span class="beta-price__val"><span class="price-was">$59</span><span class="price-now">$39.99</span></span>
+            </div>
+            <div class="beta-price">
+              <span class="beta-price__label">Beta Support / yr</span>
+              <span class="beta-price__val"><span class="price-was">$24</span><span class="price-now">$16</span></span>
+            </div>
+          </div>
+          <a href="https://buy.stripe.com/fZu00i4Pv9fS2RtbJqfbq04" class="btn btn--primary beta-card__cta">Join the sdrTAK Beta →</a>
+          <a href="https://buy.stripe.com/6oUbJ0eq54ZC2RtfZGfbq05" class="beta-card__alt">or add devices to existing support →</a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -123,12 +166,12 @@
         <div class="proposition reveal">
           <div class="proposition__num">💸</div>
           <h3 class="proposition__title">A deep<br>discount</h3>
-          <p class="proposition__body">~40% off the product and the support subscription versus retail. Beta pricing is for people getting in while netTAK is still being hardened in the field.</p>
+          <p class="proposition__body">Up to ~40% off the product and the support subscription versus retail. Beta pricing is for people getting in while these products are still being hardened in the field.</p>
         </div>
         <div class="proposition reveal" data-delay="1">
           <div class="proposition__num">⚡</div>
           <h3 class="proposition__title">Fast code<br>updates</h3>
-          <p class="proposition__body">netTAK is improving quickly. Beta subscribers pull every new build the moment it's cut — new capabilities and fixes as they land, not months later.</p>
+          <p class="proposition__body">These products are improving quickly. Beta subscribers pull every new build the moment it's cut — new capabilities and fixes as they land, not months later.</p>
         </div>
         <div class="proposition reveal" data-delay="2">
           <div class="proposition__num">💬</div>
@@ -138,7 +181,7 @@
         <div class="proposition reveal" data-delay="3">
           <div class="proposition__num">✅</div>
           <h3 class="proposition__title">All the full<br>product</h3>
-          <p class="proposition__body">This isn't a stripped-down trial. You get the complete netTAK — every capability the full-price product will have — at the beta price.</p>
+          <p class="proposition__body">This isn't a stripped-down trial. You get the complete product — every capability the full-price version will have — at the beta price.</p>
         </div>
       </div>
     </div>
@@ -149,10 +192,10 @@
       <div class="cta-banner reveal">
         <div>
           <div class="cta-banner__eyebrow">Public Beta · available now</div>
-          <h3 class="cta-banner__title">Deploy netTAK<br>this week.</h3>
-          <p class="cta-banner__body">Start with two nodes to stand up a mesh. Beta pricing won't last past general release.</p>
+          <h3 class="cta-banner__title">Deploy<br>this week.</h3>
+          <p class="cta-banner__body">Pick your product above and stand it up today. Beta pricing won't last past general release.</p>
         </div>
-        <a href="https://buy.stripe.com/dRmfZgbdTgIkcs3dRyfbq00" class="btn btn--primary">Join the Beta →</a>
+        <a href="#beta-offers" class="btn btn--primary">See the beta offers →</a>
       </div>
     </div>
   </section>
