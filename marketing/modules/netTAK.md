@@ -1,8 +1,8 @@
 # netTAK — Marketing Module
 
-**Status:** Beta — shipping soon (v0.3.x)
-**Last updated:** 2026-05-24
-**Use this for:** social posts, video scripts, demo talking points, Early Adopter recruitment.
+**Status:** Public Beta — available now (v0.3.x)
+**Last updated:** 2026-07-08
+**Use this for:** social posts, video scripts, demo talking points, Beta program promotion.
 
 ---
 
@@ -64,7 +64,7 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 
 ## Honest disclosures
 
-- **Status:** Beta — shipping soon. Currently at v0.3.x. Early Adopters have it running in active operations.
+- **Status:** Public Beta — available now. Currently at v0.3.x. In active operations today.
 - **Hardware platform:** Linux appliance validated. USB-PD UPS hat 2/3/3-Plus integration validated.
 - **Wi-Fi HaLow** is optional but recommended for miles-class links. Vantron VT-USB-AH-8108 / Morse Micro MM8108 USB dongle is the supported hardware.
 
@@ -79,7 +79,7 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 >
 > No central server. No keys. No console cable.
 >
-> netTAK = self-managing wireless mesh for field-deployable TAK operations. Beta. https://buymeacoffee.com/xtak
+> netTAK — self-managing wireless mesh for field-deployable TAK ops. Public Beta, available now: https://xtak.ai/products/netTAK
 
 > **POST 2 — the admin hook**
 > Admin a wireless mesh from your phone.
@@ -106,7 +106,7 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 >
 > Wi-Fi HaLow for miles-class backhaul. Standard 2.4 GHz Wi-Fi for client devices. GPS time discipline keeps the cluster's clocks in sync without internet.
 >
-> Early Adopter access: https://buymeacoffee.com/xtak
+> Join the public Beta: https://xtak.ai/beta
 
 ---
 
@@ -117,7 +117,7 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 | 0:00–0:08 | Forest road, golden hour. SAR coordinator pulls three Pelican cases out of a truck and places them at intervals along the road. |
 | 0:08–0:18 | Animated overlay of mesh links forming between the three nodes within seconds. A laptop on the truck tailgate shows the TAK map come up. |
 | 0:18–0:24 | Operator opens a browser on a phone. The netTAK dashboard loads — live tiles for leases, AP clients, mesh neighbors. |
-| 0:24–0:30 | Title card: **netTAK. Drop an appliance at every site. They mesh.** Beta — early access at xtak.ai. |
+| 0:24–0:30 | Title card: **netTAK. Drop an appliance at every site. They mesh.** Public Beta — available now at xtak.ai/beta. |
 
 ### 60-second feature brief
 
@@ -125,7 +125,7 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 2. **The admin story (0:15–0:30)** — phone browser opens to the admin UI. Live dashboard. Add a DNS record. It propagates.
 3. **The off-grid story (0:30–0:45)** — install bundle on a USB stick. Flash a fresh appliance. Install proceeds with no network. The cluster picks it up.
 4. **The reliability story (0:45–0:55)** — one node's antenna goes down. Mesh re-routes in seconds. Operators don't notice.
-5. **Close (0:55–0:60)** — Beta · Early Adopter access at https://buymeacoffee.com/xtak.
+5. **Close (0:55–0:60)** — Public Beta — available now at xtak.ai/beta.
 
 ---
 
@@ -144,7 +144,7 @@ netTAK is a self-managing wireless mesh for field-deployable TAK operations. Dro
 
 | Objection | Response |
 |---|---|
-| "When does it ship?" | "Beta — shipping now. Early Adopter access via Buy Me a Coffee gets you the current build today." |
+| "When does it ship?" | "Public Beta — available now. Join at xtak.ai/beta ($59/device, a year of Beta Support bundled in)." |
 | "Why not LibreMesh / OpenWrt?" | "Those are router firmware. netTAK is a purpose-built field-deploy appliance with a web admin UI tuned for operators, not network engineers. And the offline install bundle is 75 MB — most LibreMesh deployments still expect package-manager reachability." |
 | "Why not just a commercial cellular router + a tablet?" | "That setup needs an uplink. netTAK doesn't. Mesh-resilient by design, not WAN-dependent." |
 | "What about defense-tier mesh networks?" | "Six-figure pricing, defense customer base. netTAK is the homestead / SAR / event / EmComm tier — commodity appliance hardware, operator-grade pricing." |

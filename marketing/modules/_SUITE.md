@@ -1,7 +1,7 @@
 # xTAK Suite — Marketing Module
 
-**Status:** 2 of 7 in Beta · 4 in active development · 1 in design phase
-**Last updated:** 2026-05-28
+**Status:** 3 of 7 in Beta · 3 in active development · 1 in design phase
+**Last updated:** 2026-07-08
 **Use this for:** suite-level positioning, intro posts, conference talks, podcast briefs, "what is xTAK" explainers.
 
 ---
@@ -28,11 +28,11 @@ xTAK is a suite of seven independent services that extend the TAK ecosystem — 
 | Product | What it does | Status |
 |---|---|---|
 | **baseTAK** | Browser-native TAK map, chat, fileserver, tileserver. The hub. | In development · Beta TBD |
-| **digiTAK** | Bidirectional APRS-to-TAK gateway over VHF + APRS-IS. | Beta · APRS / APRS-IS shipping (HF in development) |
-| **loraTAK** | Meshtastic LoRa to TAK bidirectional bridge. | In development · Beta TBD |
+| **digiTAK** | Bidirectional APRS-to-TAK gateway over VHF + APRS-IS. | In development · Beta TBD |
+| **loraTAK** | Meshtastic LoRa to TAK bidirectional bridge. | Public Beta · available now |
 | **chatTAK** | Browser TAK chat appliance — self-contained Wi-Fi appliance, no app required. | In development · Beta TBD |
-| **sdrTAK** | SDR-decoded aircraft (ADS-B + UAT) and ships (AIS imminent). | Beta · aircraft shipping (ADS-B + UAT; AIS in development) |
-| **netTAK** | Self-managing wireless mesh for field-deployable TAK operations. | In development · Beta TBD |
+| **sdrTAK** | SDR-decoded aircraft (ADS-B + UAT) and ships (AIS imminent). | Public Beta · available now |
+| **netTAK** | Self-managing wireless mesh for field-deployable TAK operations. | Public Beta · available now |
 | **aiTAK** | AI agent participating in TAK chat as a first-class contact. | ★ Design phase (timing TBD) |
 
 ---
@@ -91,8 +91,8 @@ Use Devil's Gate for any single-scenario explainer.
 |---|---|
 | **EOC / EM directors** | "ATAK / WinTAK / iTAK are the operator clients. xTAK is the suite of services on the LAN that extend them to amateur radio (digiTAK), Meshtastic (loraTAK), aircraft and ships (sdrTAK), browser users (baseTAK + chatTAK), and AI assistants (aiTAK). When the WAN goes dark, you still have a TAK picture." |
 | **SAR coordinators** | "One appliance at base camp running baseTAK. Searchers carry $40 Meshtastic radios — loraTAK puts them on the map. APRS-equipped volunteers — digiTAK puts them on too. Inbound helo — sdrTAK adds them. Walk-up volunteers — chatTAK gives them a phone-only chat endpoint. All on one TAK picture." |
-| **EmComm / ARES** | "Your existing APRS infrastructure becomes a TAK SA wire (digiTAK). Add Meshtastic for license-free mesh (loraTAK). Run TAK from a laptop (baseTAK) or a chat-only appliance (chatTAK). Drop-in nodes for field deploy (netTAK, coming). All standalone, all on one network." |
-| **Wildland fire** | "Mobile EOC truck runs baseTAK on a Toughbook. CAL FIRE inbound aircraft on the map via sdrTAK. EmComm volunteers on APRS via digiTAK. Smokejumpers on Meshtastic via loraTAK. Spike camps on netTAK mesh (coming). One picture across the whole AO." |
+| **EmComm / ARES** | "Your existing APRS infrastructure becomes a TAK SA wire (digiTAK). Add Meshtastic for license-free mesh (loraTAK). Run TAK from a laptop (baseTAK) or a chat-only appliance (chatTAK). Drop-in nodes for field deploy (netTAK). All standalone, all on one network." |
+| **Wildland fire** | "Mobile EOC truck runs baseTAK on a Toughbook. CAL FIRE inbound aircraft on the map via sdrTAK. EmComm volunteers on APRS via digiTAK. Smokejumpers on Meshtastic via loraTAK. Spike camps on netTAK mesh. One picture across the whole AO." |
 | **Public safety LE/EMS** | "Browser-native TAK on every laptop and iPad in the agency (baseTAK). APRS over RF when LTE is down (digiTAK). Aircraft picture for TFRs (sdrTAK). appliance chat for stakeholders without TAK gear (chatTAK). Self-hosted, no third-party cloud." |
 | **Ham radio operators** | "The TAK client your APRS station has always needed (baseTAK). A modern bidirectional APRS gateway (digiTAK, v2.3 open spec). License-free Meshtastic bridge (loraTAK). Aircraft and AIS decoded from a $20 SDR (sdrTAK). All on an appliance, all on your bench." |
 
@@ -127,7 +127,7 @@ Use Devil's Gate for any single-scenario explainer.
 > loraTAK = Meshtastic bridge
 > chatTAK = chat appliance
 > sdrTAK = SDR aircraft/ships
-> netTAK = mesh fabric (coming)
+> netTAK = mesh fabric
 > aiTAK = AI on chat (design)
 
 > **POST 5 — the suite-vs-single-product hook**
@@ -148,14 +148,14 @@ Use Devil's Gate for any single-scenario explainer.
 > xTAK is a suite of seven services that extend the TAK ecosystem to:
 > - Amateur radio (VHF, HF coming) via digiTAK
 > - LoRa mesh (Meshtastic) via loraTAK
-> - Off-grid Wi-Fi mesh (netTAK, in development)
+> - Off-grid Wi-Fi mesh (netTAK)
 > - SDR-decoded aircraft (ADS-B + UAT) and ships (AIS imminent) via sdrTAK
 > - Browser endpoints — full map (baseTAK) or chat-only (chatTAK)
 > - AI assistance on TAK chat (aiTAK, design phase)
 >
 > Each product works standalone. Together they compose on one TAK network — standard protocol on the wire, no glue, no integration tax.
 >
-> Self-hosted. Backpack-portable. Beta now: https://buymeacoffee.com/xtak
+> Self-hosted. Backpack-portable. Join the public Beta: https://xtak.ai/beta
 
 ---
 
@@ -166,7 +166,7 @@ Use Devil's Gate for any single-scenario explainer.
 3. **0:35–1:00 — What xTAK is.** "Seven services that extend the ecosystem to amateur radio, LoRa mesh, off-grid Wi-Fi, SDR aircraft and ships, browser endpoints, AI assistants."
 4. **1:00–1:30 — Quick product montage.** Each product gets 4-5 seconds with its core capability shown.
 5. **1:30–1:50 — The composition pitch.** "Each product works standalone. Together they compose on one TAK network. No glue."
-6. **1:50–2:00 — CTA.** Beta, Early Adopter, link.
+6. **1:50–2:00 — CTA.** Join the public Beta at xtak.ai/beta.
 
 ---
 
@@ -176,9 +176,9 @@ Use Devil's Gate for any single-scenario explainer.
 |---|---|
 | "How is this different from PAR's TAK?" | "xTAK extends PAR's TAK. ATAK / WinTAK / iTAK are still the clients you use. xTAK adds the services on your LAN that bring APRS, Meshtastic, SDR, browser, and AI participants into the same picture." |
 | "Do I need TAK Server?" | "No. xTAK products are self-hosted. baseTAK includes its own file server. digiTAK and loraTAK federate over RF. If you already run FreeTAKServer, drop xTAK products in as feeds." |
-| "How do I get xTAK?" | "Two ways. Install our software on your own hardware (small Linux device — 4 GB+ RAM, fanless mini-PC, or handheld Linux box), or order a ready-to-deploy xTAK appliance from us. Either way, the software runs on your network. Your data stays on your hardware. The wire-format spec we designed (TAK-APRS Protocol Extension v2.3) is published openly at github.com/adamstern2000/cot_radio_aprs. Early Adopters get Beta build access." |
+| "How do I get xTAK?" | "Two ways. Install our software on your own hardware (small Linux device — 4 GB+ RAM, fanless mini-PC, or handheld Linux box), or order a ready-to-deploy xTAK appliance from us. Either way, the software runs on your network. Your data stays on your hardware. The wire-format spec we designed (TAK-APRS Protocol Extension v2.3) is published openly at github.com/adamstern2000/cot_radio_aprs. Join the public Beta at xtak.ai/beta." |
 | "How does it compare to defense-tier platforms?" | "Different category. Those are defense-grade, six-figure pricing. xTAK is operator-grade — public safety, SAR, EmComm. commodity Linux hardware, open standards." |
-| "Why should I pay for Beta?" | "You're not paying for Beta — you're supporting an independent project so it can reach GA. Buy Me a Coffee. https://buymeacoffee.com/xtak" |
+| "Why buy during Beta?" | "Beta pricing is a deep discount off the planned retail price, and it includes a year of Beta Support plus every new build as it ships. Join at xtak.ai/beta." |
 
 ---
 
@@ -187,7 +187,8 @@ Use Devil's Gate for any single-scenario explainer.
 - **Live website:** https://xtak.ai (deploying from `site/` in this repo)
 - **GitHub repo:** https://github.com/adamstern2000/xTAK
 - **Open wire spec (TAK-APRS Protocol Extension v2.3):** https://github.com/adamstern2000/cot_radio_aprs
-- **Buy Me a Coffee / Early Adopter:** https://buymeacoffee.com/xtak
+- **Beta program & purchase:** https://xtak.ai/beta
+- **Support (per-product Discord channel + contact form):** https://xtak.ai/support
 
 ---
 
@@ -198,7 +199,6 @@ The repo contains:
 - **`site/`** — the deployable website (HTML/CSS/JS/images). Source-of-truth for live messaging.
 - **`marketing/modules/`** — *(you are here)* — per-product marketing kits for social posts, video scripts, demo talking points.
 - **`marketing/about-tak.md`** — explainer for the TAK ecosystem.
-- **`marketing/bmac-about.md`** — Buy Me a Coffee / Early Adopter framing.
 - **`marketing/COPYRIGHT.md`** — copyright and trademark policy.
 - **`marketing/PROJECT-LEARNINGS-2026-05-19.md`** — canonical positioning doc. Read first.
 - **`marketing/aitak-o1-chat-script.md` · `aitak-o2-alerts-script.md` · `aitak-o3-drafts-script.md`** — chat scripts for aiTAK rendered outcome images.

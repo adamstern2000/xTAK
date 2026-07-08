@@ -1,7 +1,7 @@
 # baseTAK — Marketing Module
 
-**Status:** Beta — shipping soon (v 0.45.x)
-**Last updated:** 2026-05-19
+**Status:** In development — Beta TBD (v 0.45.x)
+**Last updated:** 2026-07-08
 **Use this for:** social posts, video scripts, demo talking points, sales conversations, podcast briefs.
 
 ---
@@ -60,7 +60,7 @@ baseTAK is a full TAK situational-awareness picture — map, chat, drawing, file
 
 ## Honest disclosures
 
-- **Status:** Beta — shipping soon. Current version v 0.45.x. Early Adopters get the build now.
+- **Status:** In development — Beta TBD. Current version v 0.45.x.
 - **Take ownership of other users' COTs** — *in development*. Lets a designated user re-broadcast markers placed by operators who've since gone off-net. Not promised as shipped; phrased as "in development" on the live site.
 - **Tileserver:** does not auto-ingest dropped files instantly — that earlier claim was overstated. Real value is **standard format, every TAK client + any compatible app, direct EUD download over the network.**
 - **aiTAK pairings:** aiTAK release timing TBD. Don't promise as available today.
@@ -85,7 +85,7 @@ baseTAK is a full TAK situational-awareness picture — map, chat, drawing, file
 >
 > Every marker fires on the network the moment you click. The whole team sees it within seconds.
 >
-> Browser-native TAK. Now in Beta.
+> Browser-native TAK. In development — follow along at xtak.ai/beta.
 
 > **POST 3 — the multi-user hook**
 > Every laptop in your EOC becomes a TAK operator.
@@ -116,7 +116,7 @@ baseTAK is a full TAK situational-awareness picture — map, chat, drawing, file
 >
 > Two-click broadcast. Built-in tileserver. 1 TB MBTiles = the whole country on board, ready the moment you open the laptop.
 >
-> In Beta now. Free for Early Adopters: https://buymeacoffee.com/xtak
+> In development — follow the Beta program at https://xtak.ai/beta
 
 > **POST B — the "no internet at the trailhead" story**
 > SAR coordinators know this problem. You're at a remote trailhead. There's no cell. Your team has ATAK tablets that work great — when they have a map.
@@ -137,7 +137,7 @@ baseTAK is a full TAK situational-awareness picture — map, chat, drawing, file
 | 0:05–0:12 | Screen fills frame — a TAK terrain map with markers, the IC drops a new marker with two clicks. |
 | 0:12–0:20 | Quick cuts: the same marker appearing on an ATAK tablet a deputy is holding; on a WinTAK desktop two rooms over; on an iTAK iPad in a fire engine. |
 | 0:20–0:25 | Pull back to a wide of the EOC — twelve laptops, twelve people, one shared picture. |
-| 0:25–0:30 | Title card: **baseTAK. Run the operation from a browser.** + buymeacoffee.com/xtak |
+| 0:25–0:30 | Title card: **baseTAK. Run the operation from a browser.** + xtak.ai/beta |
 
 **VO (optional, single line):** "Most TAK clients take four clicks to drop a marker. baseTAK takes two."
 
@@ -147,7 +147,7 @@ baseTAK is a full TAK situational-awareness picture — map, chat, drawing, file
 2. **Pre-loaded country (0:08–0:18):** Pan to show the IC zooming around — Northeast, Southwest, Pacific NW — at satellite detail, no loading. VO: "1 TB on the SSD. The whole continental US, already on board."
 3. **Two-click broadcast (0:18–0:30):** Close-up on the icon picker, click an icon, click the map. Cut to a second screen showing the marker appear within a second. VO: "Two clicks. The whole team sees it."
 4. **Suite composition (0:30–0:48):** Quick cards: APRS contacts streaming in (digiTAK), Meshtastic mesh nodes (loraTAK), aircraft (sdrTAK), browser-user contacts (chatTAK). VO: "Drop any other xTAK product on the LAN — APRS, mesh, aircraft, chat — and it shows up. No glue."
-5. **Close (0:48–0:60):** Wide of a real EOC scene. Title card: **baseTAK. In Beta now. Become an Early Adopter at buymeacoffee.com/xtak**
+5. **Close (0:48–0:60):** Wide of a real EOC scene. Title card: **baseTAK. In development. Follow the Beta program at xtak.ai/beta**
 
 ### 2-minute deep dive (YouTube / conference brief)
 
@@ -156,7 +156,7 @@ baseTAK is a full TAK situational-awareness picture — map, chat, drawing, file
 - **0:45–1:10 Why it's fast.** Two-click broadcast, curated icon set, keyboard shortcuts, broadcast-by-default. Close-ups on the speed.
 - **1:10–1:30 The deploy story.** 1 TB CONUS MBTiles. The screenshots on this site = proof.
 - **1:30–1:50 Authoritative SA.** 3-burst initial broadcast + per-COT-type cadence keeps every client current on flaky networks. Mention take-ownership (in dev).
-- **1:50–2:00 CTA.** Beta, Early Adopter program, link.
+- **1:50–2:00 CTA.** In development, follow the Beta program at xtak.ai/beta.
 
 ---
 

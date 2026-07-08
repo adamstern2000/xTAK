@@ -1,7 +1,7 @@
 # aiTAK — Marketing Module
 
-**Status:** ★ Design phase — release timing TBD
-**Last updated:** 2026-05-19
+**Status:** ★ Design phase — first release timing TBD
+**Last updated:** 2026-07-08
 **Use this for:** vision-state content, design teasers, demo scripts grounded in the Devil's Gate Fire scenario.
 
 > **Disclosure:** aiTAK is the most experimental product in the suite. The architecture is being prototyped; first public-release timing is TBD. Posts and videos referencing aiTAK must flag this clearly.
@@ -134,7 +134,7 @@ Generative outputs the operator reviews and sends. Scripts in [`aitak-o3-drafts-
 >
 > Local-first. BYO LLM. Your SA picture stays on your hardware.
 >
-> Design phase — release timing TBD. https://buymeacoffee.com/xtak
+> Design phase — follow along at https://xtak.ai/beta
 
 ---
 
@@ -153,7 +153,7 @@ Generative outputs the operator reviews and sends. Scripts in [`aitak-o3-drafts-
 2. **Use case 1 (0:10–0:25):** Q&A flow. IC asks a question, aiTAK answers in structured form.
 3. **Use case 2 (0:25–0:40):** Alert flow. Rule fires, alert posts, IC acknowledges, aiTAK self-mutes.
 4. **Use case 3 (0:40–0:52):** Draft flow. IC requests a SITREP. aiTAK drafts. "Draft. Edit before sending."
-5. **Close (0:52–0:60):** Design-phase disclosure. Early Adopter link.
+5. **Close (0:52–0:60):** Design-phase disclosure. Follow along at xtak.ai/beta.
 
 ---
 

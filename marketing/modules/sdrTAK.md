@@ -1,7 +1,7 @@
 # sdrTAK — Marketing Module
 
-**Status:** Beta — shipping soon (v 0.7.x)
-**Last updated:** 2026-05-19
+**Status:** Public Beta — available now (v1.4.7)
+**Last updated:** 2026-07-08
 **Use this for:** social posts, video scripts, aviation / maritime / SDR-hobby content.
 
 ---
@@ -56,7 +56,7 @@ sdrTAK is a software-defined-radio listener that decodes ADS-B, UAT, and (soon) 
 
 ## Honest disclosures
 
-- **Status:** Beta — shipping soon.
+- **Status:** Public Beta — available now.
 - **AIS:** decoder in tree; release imminent — not yet shipped.
 - **rtl_433 ISM-band sensors:** on the roadmap, not shipped.
 - **OpenSky DB:** auto-updates on operator command (manual trigger).
@@ -104,7 +104,7 @@ sdrTAK is a software-defined-radio listener that decodes ADS-B, UAT, and (soon) 
 >
 > Sub-second latency. Offline. Local. No cloud account, no per-query fees, no third-party tracking.
 >
-> Beta: https://buymeacoffee.com/xtak
+> Public Beta, available now: https://xtak.ai/beta
 
 ---
 

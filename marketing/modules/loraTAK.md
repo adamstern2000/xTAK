@@ -1,7 +1,7 @@
 # loraTAK — Marketing Module
 
-**Status:** Beta — shipping soon (v 1.3.0, Meshtastic backend)
-**Last updated:** 2026-05-19
+**Status:** Public Beta — available now (v1.6.3, Meshtastic backend)
+**Last updated:** 2026-07-08
 **Use this for:** social posts, video scripts, SAR / outdoor / prepper podcasts, Meshtastic community content.
 
 ---
@@ -58,7 +58,7 @@ loraTAK is a bidirectional gateway between Meshtastic LoRa mesh radios and the T
 
 ## Honest disclosures
 
-- **Status:** Beta — shipping soon. Current version v 1.3.0.
+- **Status:** Public Beta — available now. Current version v1.6.3.
 - **Multi-part outbound to LoRa** — *in development*. Currently long messages truncate with a "…" suffix. The coming feature will split long outbound messages across multiple LoRa packets so the receiving mesh user gets the full message.
 - **Hardware-aware icons:** we do NOT render icons based on Meshtastic device model. Operators choose icons per user.
 - **Reticulum / RNS:** not currently a loraTAK backend. Shipping backend is Meshtastic. Compatible architecture on roadmap.
@@ -108,7 +108,7 @@ loraTAK is a bidirectional gateway between Meshtastic LoRa mesh radios and the T
 >
 > When a team finds sign of the hiker, they type a chat on their Meshtastic. It appears in the IC's WinTAK chat panel with the team's callsign and position attached.
 >
-> No cell. No Wi-Fi. No internet. Mesh radios and an appliance. Beta now: https://buymeacoffee.com/xtak
+> No cell. No Wi-Fi. No internet. Mesh radios and an appliance. Public Beta, available now: https://xtak.ai/beta
 
 ---
 

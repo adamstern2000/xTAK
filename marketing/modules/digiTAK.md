@@ -1,8 +1,8 @@
 # digiTAK — Marketing Module
 
-**Status:** Beta — shipping soon (v 2.1.12 · VHF + APRS-IS)
+**Status:** In development — Beta TBD (v 2.1.12 · VHF + APRS-IS)
 **Wire protocol:** TAK-APRS Protocol Extension **v2.3** ([open spec](https://github.com/adamstern2000/cot_radio_aprs))
-**Last updated:** 2026-05-19
+**Last updated:** 2026-07-08
 **Use this for:** social posts, video scripts, ARRL / EmComm content, ham radio podcasts, conference talks.
 
 ---
@@ -129,7 +129,7 @@ The two deployment modes describe **what else is on the network**, not where dig
 >
 > Connect a USB GPS and the same appliance becomes your mobile tracker. APRS-IS Tier 2 baked in, WIDE1/WIDE2 digipeater, IGate beacon — everything an APRS operator expects, plus the bridge to TAK.
 >
-> Open wire spec (TAK-APRS Protocol Extension v2.3). Beta now: https://buymeacoffee.com/xtak
+> Open wire spec (TAK-APRS Protocol Extension v2.3). In development — follow the Beta program at https://xtak.ai/beta
 
 > **POST B — EmComm activation story**
 > Day two of a multi-day exercise. The forward team is up a fire road with no cell, no Starlink, no LTE. Base camp is forty miles back. Both teams need the same picture.
@@ -150,7 +150,7 @@ The two deployment modes describe **what else is on the network**, not where dig
 | 0:06–0:14 | Cut to a rugged laptop in the IC vehicle. Map view zooms in — APRS stations populate across the region as native TAK contacts, each with its proper icon. |
 | 0:14–0:22 | Side-by-side: a ham operator holds up an APRS HT with the team's callsigns on its screen; the IC's laptop shows the same operator's callsign as a contact. |
 | 0:22–0:27 | Wide of the scene — IC truck, mast, antennas, dust in golden hour. |
-| 0:27–0:30 | Title card: **digiTAK. TAK on the air.** + buymeacoffee.com/xtak |
+| 0:27–0:30 | Title card: **digiTAK. TAK on the air.** + xtak.ai/beta |
 
 ### 60-second demo
 
@@ -166,7 +166,7 @@ The two deployment modes describe **what else is on the network**, not where dig
 - 0:20–0:50 What digiTAK is: full bidirectional gateway, on its own appliance, two modes.
 - 0:50–1:20 Modern UI story: baseTAK rendering APRS as proper icons + filter by type.
 - 1:20–1:45 The federation story: two digiTAKs at two sites, VHF and HF transports simultaneously.
-- 1:45–2:00 Open spec (TAK-APRS Protocol Extension v2.3). Beta access link.
+- 1:45–2:00 Open spec (TAK-APRS Protocol Extension v2.3). In development — follow the Beta program at xtak.ai/beta.
 
 ---
 

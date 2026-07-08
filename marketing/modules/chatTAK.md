@@ -1,7 +1,7 @@
 # chatTAK — Marketing Module
 
-**Status:** Beta — shipping soon (v 1.0.x · appliance)
-**Last updated:** 2026-05-19
+**Status:** In development — Beta TBD (v 1.0.x · appliance)
+**Last updated:** 2026-07-08
 **Use this for:** social posts, video scripts, event-coordinator and volunteer-org content.
 
 ---
@@ -58,7 +58,7 @@ chatTAK is a comms-forward TAK chat client that runs as an appliance with its ow
 
 ## Honest disclosures
 
-- **Status:** Beta — shipping soon. Current version v 1.0.x.
+- **Status:** In development — Beta TBD. Current version v 1.0.x.
 - **Architecturally shared with baseTAK** — both products use the same `cot_chat` pip package. Fixes ship together.
 - **Web — not iOS / Android native** — by design. Browser-only is the point. If you need the SA map, you need baseTAK or an ATAK / WinTAK / iTAK client; chatTAK is chat-only.
 
@@ -104,7 +104,7 @@ chatTAK is a comms-forward TAK chat client that runs as an appliance with its ow
 >
 > Sixty seconds later every volunteer at the station is on the team's TAK chat. Their position is updating on the race director's ATAK. They can DM the chief medical officer.
 >
-> No app install. No accounts. No cell coverage required. https://buymeacoffee.com/xtak
+> No app install. No accounts. No cell coverage required. In development — follow the Beta program at https://xtak.ai/beta
 
 ---
 

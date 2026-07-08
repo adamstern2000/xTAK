@@ -7,7 +7,7 @@ xTAK is a suite of seven independent services that extend the TAK ecosystem — 
 When the WAN goes dark, xTAK keeps coordinating.
 
 🌐 **Live site:** [https://xtak.ai](https://xtak.ai)
-☕ **Become an Early Adopter:** [buymeacoffee.com/xtak](https://buymeacoffee.com/xtak)
+🚀 **Join the public Beta:** [xtak.ai/beta](https://xtak.ai/beta) — netTAK, loraTAK, and sdrTAK are available now
 
 ---
 
@@ -15,12 +15,12 @@ When the WAN goes dark, xTAK keeps coordinating.
 
 | Product | What it does | Status |
 |---|---|---|
-| **[baseTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/baseTAK.md)** | Browser-native TAK map, chat, fileserver, tileserver. The hub. | Beta — shipping soon |
-| **[digiTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/digiTAK.md)** | Bidirectional APRS-to-TAK gateway. VHF + APRS-IS today, HF on the roadmap. | Beta — shipping soon |
-| **[loraTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/loraTAK.md)** | Meshtastic LoRa to TAK bidirectional bridge. | Beta — shipping soon |
-| **[chatTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/chatTAK.md)** | Browser TAK chat appliance — Pi with its own Wi-Fi, no app required. | Beta — shipping soon |
-| **[sdrTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/sdrTAK.md)** | SDR-decoded aircraft (ADS-B + UAT). AIS for ships imminent. | Beta — shipping soon |
-| **[netTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/netTAK.md)** | Self-managing wireless mesh for field-deployable TAK operations. Drop a Pi at every site, they auto-form. | Beta — shipping soon |
+| **[netTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/netTAK.md)** | Self-managing wireless mesh for field-deployable TAK operations. Drop a Pi at every site, they auto-form. | **Public Beta — available now** |
+| **[loraTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/loraTAK.md)** | Meshtastic LoRa to TAK bidirectional bridge. | **Public Beta — available now** |
+| **[sdrTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/sdrTAK.md)** | SDR-decoded aircraft (ADS-B + UAT). AIS for ships on the roadmap. | **Public Beta — available now** |
+| **[baseTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/baseTAK.md)** | Browser-native TAK map, chat, fileserver, tileserver. The hub. | In development — Beta TBD |
+| **[digiTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/digiTAK.md)** | Bidirectional APRS-to-TAK gateway. VHF + APRS-IS today, HF on the roadmap. | In development — Beta TBD |
+| **[chatTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/chatTAK.md)** | Browser TAK chat appliance — Pi with its own Wi-Fi, no app required. | In development — Beta TBD |
 | **[aiTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/aiTAK.md)** | AI agent participating in TAK chat as a first-class contact. | ★ Design phase · timing TBD |
 
 ---
@@ -56,9 +56,9 @@ The killer suite-level moments are the combinations:
 
 ## Status
 
-xTAK is in active **Beta**. Six of seven products are shipping (baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK); aiTAK is in design phase with release timing TBD.
+Three products are in **public Beta and available now** — **netTAK**, **loraTAK**, and **sdrTAK** — buyable at [xtak.ai/beta](https://xtak.ai/beta) at a deep Beta discount (from $39.99/device, with a year of Beta Support bundled in). **baseTAK**, **digiTAK**, and **chatTAK** are in active development; **aiTAK** is in design phase with release timing TBD.
 
-Customers install xTAK on their own hardware — Pi-class Linux (Raspberry Pi 4/5, fanless mini-PC, handheld Linux device) — or order a ready-to-deploy xTAK appliance from us. Either way, the software runs on the customer's own network and data stays on their own hardware. The TAK-APRS wire-format extension we designed is published openly at [github.com/adamstern2000/cot_radio_aprs](https://github.com/adamstern2000/cot_radio_aprs). **Early Adopters get Beta build access** by supporting the project on [Buy Me a Coffee](https://buymeacoffee.com/xtak).
+Customers install xTAK on their own hardware — a small Linux device (Raspberry Pi 4/5, fanless mini-PC, or handheld Linux box) — or order a ready-to-deploy xTAK appliance from us. Either way, the software runs on the customer's own network and data stays on their own hardware. The TAK-APRS wire-format extension we designed is published openly at [github.com/adamstern2000/cot_radio_aprs](https://github.com/adamstern2000/cot_radio_aprs).
 
 ---
 
@@ -71,7 +71,7 @@ Customers install xTAK on their own hardware — Pi-class Linux (Raspberry Pi 4/
 | **Dig into any individual product** | [`marketing/modules/<product>.md`](marketing/modules/) — per-product marketing kits |
 | **See the positioning decisions behind everything** | [`marketing/PROJECT-LEARNINGS-2026-05-19.md`](marketing/PROJECT-LEARNINGS-2026-05-19.md) |
 | **Read the open wire spec** | [github.com/adamstern2000/cot_radio_aprs](https://github.com/adamstern2000/cot_radio_aprs) — TAK-APRS Protocol Extension v2.3 |
-| **Become an Early Adopter** | [`SUPPORT.md`](SUPPORT.md) or [buymeacoffee.com/xtak](https://buymeacoffee.com/xtak) |
+| **Join the public Beta** | [`SUPPORT.md`](SUPPORT.md) or [xtak.ai/beta](https://xtak.ai/beta) |
 | **See chat scripts for aiTAK** | [`marketing/aitak-o1-chat-script.md`](marketing/aitak-o1-chat-script.md) · [`o2`](marketing/aitak-o2-alerts-script.md) · [`o3`](marketing/aitak-o3-drafts-script.md) |
 
 ---
@@ -100,7 +100,6 @@ Customers install xTAK on their own hardware — Pi-class Linux (Raspberry Pi 4/
 │   │   ├── netTAK.md
 │   │   └── aiTAK.md
 │   ├── about-tak.md                 ← TAK ecosystem explainer
-│   ├── bmac-about.md                ← Early Adopter / Buy Me a Coffee framing
 │   ├── COPYRIGHT.md                 ← copyright + trademark policy
 │   ├── PROJECT-LEARNINGS-2026-05-19.md  ← positioning decisions canon
 │   ├── image-prompts.md             ← hero image prompts

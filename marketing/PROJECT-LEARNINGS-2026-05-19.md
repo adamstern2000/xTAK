@@ -1,5 +1,18 @@
 # xTAK Website Project — Learnings & Positioning Decisions
 
+> ⚠️ **PARTIALLY SUPERSEDED (as of 2026-07-08).** This is a dated snapshot from
+> 2026-05-19. Two things have changed and the **live site at [xtak.ai](https://xtak.ai)
+> is now the single source of truth**:
+> 1. **Buy Me a Coffee is retired.** xTAK no longer runs a BMAC / "Early Adopter"
+>    supporter program. netTAK, loraTAK, and sdrTAK are sold directly as a **public
+>    Beta** (see `SUPPORT.md`); support is via per-product Discord channels + the
+>    contact form. Ignore every BMAC / `buymeacoffee.com/xtak` reference below.
+> 2. **Product statuses changed.** netTAK, loraTAK, and sdrTAK are **Public Beta,
+>    available now**; baseTAK, digiTAK, and chatTAK are **in development**; aiTAK is
+>    **design phase**. (The 2026-05 snapshot below predates this.)
+>
+> Everything else here (brand, voice, positioning rationale) still holds.
+
 **Date:** 2026-05-19
 **Purpose:** Capture every framing decision, positioning refinement, and accuracy correction made during the marketing-website build, so any future updates to `marketing/web/*.md` or `marketing/modules/*.md` reflect the current, considered positioning rather than drifting back to earlier copy.
 
