@@ -204,12 +204,12 @@
             <p class="outcome__lede">
               <strong>digiTAK + <a href="/products/baseTAK.html" style="color: var(--cyan);">baseTAK</a>
               is the richest APRS picture on any modern map.</strong> Every APRS station renders with its
-              proper APRS icon — not a generic dot — and you can filter the map down to just the
-              device type you care about with a click.
+              proper APRS icon — not a generic dot — with the full iconset preserved end to end,
+              even across digipeater echoes.
             </p>
             <ul class="outcome__list">
               <li><strong>Full APRS icon set on the map</strong> — every primary and alternate APRS symbol renders as a proper TAK icon. Digi, mobile, weather, ambulance, fire engine, boat, aircraft, NWS object — every device type you'd expect, on a modern pan-zoom-search map.</li>
-              <li><strong>Filter by APRS device type</strong> — baseTAK's map filter isolates the symbols you care about. Show only weather stations during a SKYWARN net, only mobile trackers during a race, only digipeaters during a band test, only NWS bulletins during severe weather.</li>
+              <li><strong>Filter the live activity feed by source</strong> — RF, digipeater, APRS-IS, chat, or TAK — so you can focus on the traffic that matters: just RF during a net, or APRS-IS while you're gateway'd to the world.</li>
               <li><strong>DM a callsign</strong> from any TAK client; the message lands on RF or APRS-IS.</li>
               <li><strong>Weather stations and NWS bulletins</strong> appear as native TAK overlays.</li>
               <li><strong>Reach amplified by APRS digipeaters</strong> — your TAK network's reach becomes whatever the global volunteer digipeater infrastructure can carry, often dozens or hundreds of miles beyond your own line of sight.</li>
@@ -246,19 +246,18 @@
         <article class="outcome reveal">
           <div>
             <div class="outcome__num">OUTCOME 04</div>
-            <h3 class="outcome__title">Bridge WinTAK islands across the continent on HF</h3>
+            <h3 class="outcome__title">Bridge WinTAK islands across the continent on HF <span class="text-amber">— coming soon</span></h3>
             <p class="outcome__lede">
-              Hook a 2-meter rig to digiTAK and you reach the next county over VHF. Hook an HF rig
-              to the <em>same</em> digiTAK and you reach the next state — or country — over the
-              ionosphere. Both transports run simultaneously.
+              Today, hook a 2-meter rig to digiTAK and you reach the next county over VHF, plus the
+              wider world over APRS-IS. On the roadmap: hook an HF rig to the <em>same</em> digiTAK
+              and reach the next state — or country — over the ionosphere, both transports from one box.
             </p>
             <ul class="outcome__list">
-              <li><strong>Multi-transport, one box</strong> — APRS-IS, VHF/UHF, and HF all from a single digiTAK.</li>
-              <li><strong>HF as the continental backbone</strong> — positions and chat across hundreds to thousands of miles.</li>
-              <li><strong>Binary compression codec</strong> — ~20 bytes per position update, designed to fit the band.</li>
+              <li><strong>Multi-transport, one box</strong> — APRS-IS and VHF/UHF today; HF on the roadmap.</li>
+              <li><strong>HF as the continental backbone</strong> — positions and chat across hundreds to thousands of miles <span class="text-amber">(planned)</span>.</li>
               <li><strong>WinTAK islands stop being islands.</strong> State EOC sees state EOC. ARES district sees ARES region.</li>
             </ul>
-            <p style="margin-top: 1rem; font-size: 0.92rem; color: var(--ink-dim);"><em>HF transport is in active development — see Status below.</em></p>
+            <p style="margin-top: 1rem; font-size: 0.92rem; color: var(--ink-dim);"><em>HF transport is on the roadmap — not in the current release. Today: VHF/UHF + APRS-IS.</em></p>
           </div>
           <figure class="outcome-image">
             <img src="/img/products/digiTAK/digitak-04-hf-continental.png" alt="Stylized topographic map of the western United States with two state EOCs marked roughly 800 miles apart, connected by a cyan arcing HF radio path bouncing off the ionosphere, tactical HUD reticle markings at the corners" loading="lazy" />
@@ -310,7 +309,7 @@
           <li class="capability"><strong>Direwolf-managed VHF/UHF</strong> with managed PTT (RTS, CM108, or VOX).</li>
           <li class="capability"><strong>External TNC support</strong> via KISS over TCP or KISS Serial.</li>
           <li class="capability"><strong>APRS-IS Tier 2 connection</strong> with auto-passcode derived from your callsign.</li>
-          <li class="capability"><strong>Open TAK-APRS Protocol Extension v2.3</strong> — public spec at <a href="https://github.com/adamstern2000/cot_radio_aprs" target="_blank" rel="noopener" style="color: var(--cyan);">cot_radio_aprs</a>.</li>
+          <li class="capability"><strong>Open TAK-APRS Protocol Extension v2.1</strong> — public spec at <a href="https://github.com/adamstern2000/cot_radio_aprs" target="_blank" rel="noopener" style="color: var(--cyan);">cot_radio_aprs</a>.</li>
           <li class="capability"><strong>Full digipeater</strong> with WIDE1/WIDE2 aliases, dedup window, own-echo filter, and sibling-gateway coexistence — multiple digiTAKs on one RF channel coordinate so they don't re-emit or re-digipeat each other's traffic.</li>
           <li class="capability"><strong>IGate beacon</strong> on the gateway SSID (e.g. <code>KN6ZPL-10</code>) — broadcast on both RF and APRS-IS.</li>
           <li class="capability"><strong>Operator TX-position beacon</strong> on the main SSID with SmartBeacon-gated motion-adaptive cadence (fast on highway, sparse at rest).</li>
@@ -319,7 +318,9 @@
           <li class="capability"><strong>Full APRS icon set</strong> — every primary and alternate APRS symbol (digi, mobile, weather, ambulance, fire engine, boat, aircraft, mil unit, NWS object, etc.) maps to a proper TAK iconset path. An APRS station shows up on the map with its correct symbol — not a generic dot.</li>
           <li class="capability"><strong>Iconset preservation</strong> across gateway echoes — APRS station icons keep their assignment when re-emitted by a sibling.</li>
           <li class="capability"><strong>Marker UID CRC16</strong> — keeps wire UIDs short while preserving uniqueness on the air.</li>
-          <li class="capability"><strong>Admin UI on port 5101</strong> with live audio meters (RX + TX VU), packet feed, counters.</li>
+          <li class="capability"><strong>adminTAK control panel</strong> (port 8443) — mobile-friendly, with live audio meters (RX + TX VU), packet feed, counters, and per-product service enable/disable.</li>
+          <li class="capability"><strong>Licensed, offline</strong> — a 30-day trial, then a hardware-tied activation token verified offline (no internet in the field).</li>
+          <li class="capability"><strong>Part 97 transmit gate</strong> — digiTAK won't key up until you set a valid amateur callsign. Monitor/receive with none; a real gateway needs yours.</li>
           <li class="capability"><strong>1645+ pytest cases</strong> gating every release.</li>
         </ul>
       </div>
@@ -356,7 +357,7 @@
         <ul class="capabilities">
           <li class="capability"><strong>Self-contained chat router</strong> — handles GeoChat DM, team, and broadcast routing for the LAN even when baseTAK isn't on the network.</li>
           <li class="capability"><strong>Self-contained TAK router</strong> — emits SA and chat directly to local TAK multicast so every WinTAK / ATAK / iTAK on the LAN sees the picture.</li>
-          <li class="capability"><strong>Bulletin subscriptions</strong> (BLN0–BLN9 + NWS wildcards like <code>NWS-*</code>, <code>CAZ*</code>, <code>NMZ*</code>) — selectively forward APRS bulletins to TAK, sticky in the admin UI.</li>
+          <li class="capability"><strong>Bulletin subscriptions</strong> (BLN0–BLN9 + NWS wildcards like <code>NWS-*</code>, <code>CAZ*</code>, <code>NMZ*</code>) — selectively forward APRS/NWS bulletins and ARES/RACES net traffic to TAK, sticky in the adminTAK panel.</li>
           <li class="capability"><strong>StandaloneInboundHold</strong> — 5-min holding buffer (max 100 frames) for inbound APRS during boot, so nothing's dropped during the warm-up window.</li>
           <li class="capability"><strong>Per-participant TCP fan-out</strong> for DM and team chat — replicates ATAK's TCP-unicast convention so DMs go directly to the recipient's endpoint.</li>
           <li class="capability"><strong>R1–R19 gating completion</strong> — 19 explicit resolutions covering every inbound/outbound APRS scenario when there's no baseTAK on the network. Own-echo filter included.</li>
@@ -408,14 +409,16 @@
       <div class="specs reveal" data-delay="1" style="margin-top: 2rem;">
         <div class="specs__row"><div class="specs__key">Modes</div><div class="specs__val">Bridge (federated multi-site mesh) and Standalone (single gateway)</div></div>
         <div class="specs__row"><div class="specs__key">VHF/UHF transport</div><div class="specs__val">Direwolf modem (bundled) or any KISS-compatible TNC (serial or TCP)</div></div>
-        <div class="specs__row"><div class="specs__key">APRS-IS transport</div><div class="specs__val">Tier 2 (your callsign + passcode)</div></div>
-        <div class="specs__row"><div class="specs__key">HF transport</div><div class="specs__val">Binary compression codec (~20 bytes per position) · <span class="text-amber">future release</span></div></div>
+        <div class="specs__row"><div class="specs__key">APRS-IS transport</div><div class="specs__val">Tier 2 (passcode auto-derived from your callsign)</div></div>
+        <div class="specs__row"><div class="specs__key">HF transport</div><div class="specs__val"><span class="text-amber">On the roadmap — not in the current release</span></div></div>
         <div class="specs__row"><div class="specs__key">TAK clients</div><div class="specs__val">ATAK, WinTAK, iTAK, baseTAK — any standard TAK client</div></div>
-        <div class="specs__row"><div class="specs__key">Wire protocol</div><div class="specs__val">TAK-APRS Protocol Extension v2.3 (<a href="https://github.com/adamstern2000/cot_radio_aprs" target="_blank" rel="noopener" style="color: var(--cyan);">open spec</a>)</div></div>
-        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Linux appliance (4 GB+), or any modern Linux box. Python 3.8+, systemd.</div></div>
+        <div class="specs__row"><div class="specs__key">Wire protocol</div><div class="specs__val">TAK-APRS Protocol Extension v2.1 (<a href="https://github.com/adamstern2000/cot_radio_aprs" target="_blank" rel="noopener" style="color: var(--cyan);">open spec</a>)</div></div>
+        <div class="specs__row"><div class="specs__key">Control panel</div><div class="specs__val">adminTAK web panel (port 8443) — mobile-friendly; live audio meters, packet feed, counters, per-mode widgets, per-product service enable/disable</div></div>
+        <div class="specs__row"><div class="specs__key">Licensing</div><div class="specs__val">30-day trial, then an offline hardware-tied activation token (Ed25519, verified offline — no internet in the field)</div></div>
+        <div class="specs__row"><div class="specs__key">RF compliance</div><div class="specs__val">Part 97 gate — won't transmit until a valid amateur callsign is set</div></div>
+        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Linux appliance (4 GB+), or any modern Linux box. Python 3.10+, systemd.</div></div>
         <div class="specs__row"><div class="specs__key">Installation</div><div class="specs__val">Offline tarball · all Python wheels vendored</div></div>
-        <div class="specs__row"><div class="specs__key">Admin UI</div><div class="specs__val">Web, port 5101 · live audio meters, packet feed, counters</div></div>
-        <div class="specs__row"><div class="specs__key">Version</div><div class="specs__val">v 3.1.3 (in development)</div></div>
+        <div class="specs__row"><div class="specs__key">Version</div><div class="specs__val">v3.1.3</div></div>
       </div>
     </div>
   </section>
@@ -453,7 +456,7 @@
         </details>
         <details>
           <summary>When is HF support shipping?</summary>
-          <p>HF transport via a binary compression codec is in active development — design is complete (FR-081) and implementation is in progress. Subscribers get access as soon as it ships.</p>
+          <p>HF transport is on the roadmap — not in the current release. Today digiTAK runs on VHF/UHF (Direwolf or any KISS-compatible TNC) and APRS-IS. Beta subscribers get HF as soon as it ships.</p>
         </details>
       </div>
     </div>

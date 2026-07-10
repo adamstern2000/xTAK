@@ -1,7 +1,7 @@
 # digiTAK — Marketing Module
 
 **Status:** Public Beta — available now (v3.1.3 · VHF + APRS-IS)
-**Wire protocol:** TAK-APRS Protocol Extension **v2.3** ([open spec](https://github.com/adamstern2000/cot_radio_aprs))
+**Wire protocol:** TAK-APRS Protocol Extension **v2.1** ([open spec](https://github.com/adamstern2000/cot_radio_aprs))
 **Last updated:** 2026-07-08
 **Use this for:** social posts, video scripts, ARRL / EmComm content, ham radio podcasts, conference talks.
 
@@ -45,7 +45,7 @@ The two deployment modes describe **what else is on the network**, not where dig
 1. **Drop it in, instant APRS gateway** — plug a digiTAK onto any network and the LAN gains a full APRS bridge. No glue.
 2. **Bidirectional bridge** — APRS → TAK *and* TAK → APRS. DM a callsign from ATAK; the message lands on RF or APRS-IS.
 3. **Full APRS icon set on the map** — every primary and alternate APRS symbol (digi, mobile, weather, ambulance, fire engine, boat, aircraft, NWS object) renders as a proper TAK icon when paired with baseTAK. Not generic dots.
-4. **Open TAK-APRS Protocol Extension v2.3** — public spec, third-party-implementable, wire-format documented.
+4. **Open TAK-APRS Protocol Extension v2.1** — public spec, third-party-implementable, wire-format documented.
 5. **Multi-transport** — Direwolf-managed VHF/UHF + external KISS TNC support + APRS-IS Tier 2 simultaneously. Single appliance, multiple radio ports.
 6. **Sibling-gateway coexistence** — multiple digiTAKs on one RF channel coordinate so they don't re-emit or re-digipeat each other's traffic. (Standard channel collisions still apply — half-duplex RF is half-duplex RF.)
 7. **Full digipeater** — WIDE1/WIDE2 aliases, dedup window, own-echo filter, IGate beacon on both RF and APRS-IS.
@@ -78,7 +78,7 @@ The two deployment modes describe **what else is on the network**, not where dig
 ## Honest disclosures
 
 - **HF transport** is on the roadmap, not yet shipped — VHF + APRS-IS today.
-- **Protocol Extension v2.3** is the current wire-format version. (Earlier docs said v1.2; corrected.)
+- **Protocol Extension v2.1** is the current wire-format version. (Earlier docs said v1.2; corrected.)
 - **Sibling coexistence:** digiTAKs coordinate to not re-emit each other's traffic. They don't eliminate RF channel collisions — that's physics. The page says this honestly.
 
 ---
@@ -129,7 +129,7 @@ The two deployment modes describe **what else is on the network**, not where dig
 >
 > Connect a USB GPS and the same appliance becomes your mobile tracker. APRS-IS Tier 2 baked in, WIDE1/WIDE2 digipeater, IGate beacon — everything an APRS operator expects, plus the bridge to TAK.
 >
-> Open wire spec (TAK-APRS Protocol Extension v2.3). In development — follow the Beta program at https://xtak.ai/beta
+> Open wire spec (TAK-APRS Protocol Extension v2.1). In development — follow the Beta program at https://xtak.ai/beta
 
 > **POST B — EmComm activation story**
 > Day two of a multi-day exercise. The forward team is up a fire road with no cell, no Starlink, no LTE. Base camp is forty miles back. Both teams need the same picture.
@@ -166,7 +166,7 @@ The two deployment modes describe **what else is on the network**, not where dig
 - 0:20–0:50 What digiTAK is: full bidirectional gateway, on its own appliance, two modes.
 - 0:50–1:20 Modern UI story: baseTAK rendering APRS as proper icons + filter by type.
 - 1:20–1:45 The federation story: two digiTAKs at two sites, VHF and HF transports simultaneously.
-- 1:45–2:00 Open spec (TAK-APRS Protocol Extension v2.3). In development — follow the Beta program at xtak.ai/beta.
+- 1:45–2:00 Open spec (TAK-APRS Protocol Extension v2.1). In development — follow the Beta program at xtak.ai/beta.
 
 ---
 
@@ -186,7 +186,7 @@ The two deployment modes describe **what else is on the network**, not where dig
 | Objection | Response |
 |---|---|
 | "I already have legacy APRS software." | "Keep it — digiTAK is in addition. The benefit is that your APRS station's picture is now also on every TAK client your team uses, with a modern UI and the same chat thread as the rest of the operation." |
-| "Is the wire format proprietary?" | "Open spec: TAK-APRS Protocol Extension v2.3 at github.com/adamstern2000/cot_radio_aprs. Third-party implementations welcome." |
+| "Is the wire format proprietary?" | "Open spec: TAK-APRS Protocol Extension v2.1 at github.com/adamstern2000/cot_radio_aprs. Third-party implementations welcome." |
 | "What about packet collisions?" | "Sibling digiTAKs coordinate so they don't re-emit each other's traffic. Standard channel collisions still apply — half-duplex RF is half-duplex RF." |
 | "Why not just use plain APRS-IS?" | "One-way. Plain APRS-IS feeds to a website. digiTAK closes the loop — TAK users can write back to RF." |
 | "Does it work without internet?" | "Yes. APRS-IS is optional. Direwolf + VHF rig is enough. The whole stack runs on an appliance off battery power." |
