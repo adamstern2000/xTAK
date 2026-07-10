@@ -126,7 +126,7 @@
       activate.xtak.ai</strong>, onto your computer (they land in <strong>Downloads</strong>):</p>
       <ol>
       <li><code>nettak-install-0.23.3-arm64.tar.gz</code> + <code>SHA256SUMS-0.23.3.txt</code> — netTAK</li>
-      <li><code>adminTAK-0.1.5-linux-arm64.tar.gz</code> — the admin panel</li>
+      <li><code>adminTAK-0.1.11-linux-arm64.tar.gz</code> — the admin panel</li>
       <li><code>cot_mesh-1.6.3.tar.gz</code> — loraTAK</li>
       </ol>
       <p>You only need internet to download these to your computer — everything you run
@@ -183,14 +183,14 @@
       program — nothing to download at install time, works fully offline.</p>
       <h3>2.1 Copy adminTAK onto the Pi</h3>
       <ul>
-      <li><strong>WinSCP:</strong> drag <code>adminTAK-0.1.5-linux-arm64.tar.gz</code> into the Pi's home folder.</li>
-      <li><strong>Terminal:</strong> <code>scp ~/Downloads/adminTAK-0.1.5-linux-arm64.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></li>
+      <li><strong>WinSCP:</strong> drag <code>adminTAK-0.1.11-linux-arm64.tar.gz</code> into the Pi's home folder.</li>
+      <li><strong>Terminal:</strong> <code>scp ~/Downloads/adminTAK-0.1.11-linux-arm64.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></li>
       </ul>
       <h3>2.2 Install</h3>
       <p>On the Pi:</p>
       <pre><code class="language-bash">cd ~
-      tar xzf adminTAK-0.1.5-linux-arm64.tar.gz
-      cd adminTAK-0.1.5-linux-arm64
+      tar xzf adminTAK-0.1.11-linux-arm64.tar.gz
+      cd adminTAK-0.1.11-linux-arm64
       sudo bash install.sh
       </code></pre>
       <p>This installs the panel to <code>/opt/adminTAK</code> and starts it on <strong>port 8443</strong>.</p>

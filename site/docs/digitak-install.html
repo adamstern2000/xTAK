@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Full-system installation guide for digiTAK — take a bare Raspberry Pi to a self-contained, off-grid APRS-to-TAK gateway: netTAK network, adminTAK panel, and digiTAK, all offline." />
+  <title>digiTAK Install Guide — xTAK</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    .prose pre { background: #0d0f14; border: 1px solid var(--rule); border-radius: 6px; padding: 0.9rem 1.1rem; overflow-x: auto; margin: 1rem 0; }
+    .prose pre code { color: var(--ink-bright); font-family: var(--font-mono); font-size: 0.85rem; background: none; padding: 0; border: none; white-space: pre; }
+    .prose code { font-family: var(--font-mono); font-size: 0.85em; background: rgba(0,217,255,0.1); color: var(--cyan-pop); padding: 0.05em 0.35em; border-radius: 4px; }
+    .prose blockquote { border-left: 3px solid var(--cyan-faint); margin: 1.2rem 0; padding: 0.6rem 1.1rem; color: var(--ink-body); background: var(--cyan-trace); border-radius: 0 4px 4px 0; }
+    .prose blockquote p { margin: 0; }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+    .prose th, .prose td { text-align: left; vertical-align: top; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--rule); }
+    .prose th { color: var(--ink-bright); font-weight: 600; }
+    .prose hr { border: none; border-top: 1px solid var(--rule); margin: 2.25rem 0; }
+    .tablewrap { overflow-x: auto; }
+    .doc-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 0; }
+  </style>
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">DOCS / DIGITAK</span>
+        <span class="readout__item">INSTALL GUIDE</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">PUBLIC BETA</span>
+        <span class="readout__item"><span data-clock>&mdash;</span></span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="brand"><span class="brand__diamond"></span><span class="brand__word"><span class="accent">x</span>TAK</span></a>
+      <nav><ul class="nav__links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#suite">The Suite</a></li>
+        <li><a href="/about-tak.html">About TAK</a></li>
+        <li><a href="/#get-started">Get Started</a></li>
+        <li><a href="/support.html">Support</a></li>
+      </ul></nav>
+      <a href="https://buy.stripe.com/dRm3cu0zfbo00Jl28Qfbq06" class="nav__cta">Join the Beta &rarr;</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / <a href="/products/digiTAK.html">digiTAK</a> / <span class="text-cyan">Install Guide</span></div>
+      <h1 class="pagehead__title">digiTAK<br><em>Install Guide.</em></h1>
+      <div class="doc-cta">
+        <a href="/products/digiTAK.html" class="btn btn--ghost">&larr; digiTAK product</a>
+        <a href="https://activate.xtak.ai/downloads" class="btn btn--ghost">Your downloads &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow prose">
+<h1>digiTAK — Full System Installation Guide</h1>
+<p>Welcome. This guide takes you from a <strong>bare Raspberry Pi</strong> to a complete,
+<strong>self-contained TAK field system</strong> — no cell service, no internet, no existing
+network required. When you're done you'll have one Pi running three pieces that
+work together:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Product</th>
+<th>What it gives you</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>netTAK</strong></td>
+<td>The <strong>network</strong>: a Wi-Fi access point your ATAK/WinTAK devices join, plus local DNS/DHCP and a GPS-disciplined clock. Free with digiTAK.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>adminTAK</strong></td>
+<td>One <strong>admin panel</strong> to manage your digiTAK product from a phone or laptop.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>digiTAK</strong></td>
+<td>The <strong>bridge</strong>: turns an amateur (ham) radio into live TAK contacts — APRS stations, trackers, objects, and weather become map markers, and TAK GeoChat bridges to APRS messaging, over RF and/or the worldwide APRS-IS network.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The payoff: connect your ATAK devices to the Pi's Wi-Fi, wire a 2 m/VHF radio to
+the Pi, and the APRS stations around you appear on every connected device's map —
+and your team's TAK chat goes back out over the air — all managed from one panel,
+entirely off-grid.</p>
+<blockquote>
+<p><strong>New to Linux / the Raspberry Pi?</strong> Follow the steps <strong>exactly</strong> in order.
+Every command is complete — copy and paste each line as-is. The only things
+you change are the values in <code>&lt;angle brackets&gt;</code> (your Pi's address, your login,
+your chosen node name).</p>
+</blockquote>
+<p><strong>Install the three parts in order — netTAK first (it lays down the network),
+then adminTAK, then digiTAK.</strong></p>
+<hr />
+<h2>What you need</h2>
+<ul>
+<li>A <strong>Raspberry Pi 4B</strong> with a microSD card running <strong>Raspberry Pi OS 64-bit
+  (Bookworm)</strong>.</li>
+<li>The Pi connected to your network by its <strong>wired Ethernet port</strong> (you install
+  over the wire), and its <strong>IP address</strong> on that network.</li>
+<li>The Pi's <strong>login</strong> — the username and password you set when imaging the card.</li>
+<li>For digiTAK, a way to get on the air:</li>
+<li>A <strong>2 m/VHF amateur radio</strong> (an HT or mobile with a data/mic jack), <strong>and</strong>
+    a <strong>TNC</strong> — either a <strong>sound-card interface</strong> (e.g. a Digirig or similar, a
+    USB audio device + PTT) driving digiTAK's <strong>built-in Direwolf</strong> soft-TNC, or
+    a <strong>hardware KISS TNC</strong> (USB-serial or networked/TCP). <em>(You can install
+    without radio hardware and add it later — APRS-IS-only still works.)</em></li>
+<li>Your <strong>FCC amateur radio callsign</strong> — <strong>required to transmit</strong> (Part 97). You
+    can monitor and receive without one, but a real gateway needs your callsign.</li>
+<li><strong>Optional:</strong> internet for <strong>APRS-IS</strong> (to also see/reach the worldwide APRS
+    network and aprs.fi). The RF gateway itself works fully off-grid.</li>
+<li>A way to copy files to the Pi and run commands on it:</li>
+<li><strong>Windows:</strong> <strong>WinSCP</strong> (free file copy — <a href="https://winscp.net">winscp.net</a>)
+    and <strong>PuTTY</strong> or Windows <strong>PowerShell</strong> (to run commands).</li>
+<li><strong>macOS / Linux:</strong> the built-in <strong>Terminal</strong> (<code>scp</code> and <code>ssh</code>).</li>
+<li><strong>Optional:</strong> a serial <strong>GPS receiver</strong> for precise, offline time.</li>
+</ul>
+<p><strong>Download everything up front</strong> from the <strong>xTAK download page at
+activate.xtak.ai</strong>, onto your computer (they land in <strong>Downloads</strong>):</p>
+<ol>
+<li><code>nettak-install-0.23.3-arm64.tar.gz</code> + <code>SHA256SUMS-0.23.3.txt</code> — netTAK</li>
+<li><code>adminTAK-0.1.11-linux-arm64.tar.gz</code> — the admin panel</li>
+<li><code>cot_radio-3.1.3.tar.gz</code> — digiTAK</li>
+</ol>
+<p>You only need internet to download these to your computer — everything you run
+on the Pi is <strong>fully offline</strong>.</p>
+<hr />
+<h1>Part 1 · netTAK — the network foundation</h1>
+<p>netTAK turns the Pi into a self-contained TAK network: a Wi-Fi AP, local
+DNS/DHCP, and a GPS-disciplined clock. This guide installs the <strong>standalone</strong>
+node — a single self-contained unit, which is <strong>free</strong> and needs no extra radio.</p>
+<h3>1.1 Copy netTAK onto the Pi</h3>
+<p>Copy the file into the Pi's <strong>home folder</strong>.</p>
+<ul>
+<li><strong>Windows (WinSCP):</strong> open WinSCP → <strong>File protocol</strong> <code>SCP</code>, <strong>Host name</strong> =
+  your Pi's IP, <strong>User name / Password</strong> = your Pi login → <strong>Login</strong>. Drag
+  <code>nettak-install-0.23.3-arm64.tar.gz</code> and <code>SHA256SUMS-0.23.3.txt</code> from your
+  Downloads (left pane) into the Pi's home folder (right pane).</li>
+<li><strong>macOS / Linux (Terminal):</strong>
+  <pre><code>  scp ~/Downloads/nettak-install-0.23.3-arm64.tar.gz ~/Downloads/SHA256SUMS-0.23.3.txt &lt;user&gt;@&lt;pi-ip&gt;:~/</code></pre></li>
+</ul>
+<h3>1.2 Connect to the Pi and verify the download</h3>
+<p>Open a command session <strong>on the Pi</strong>:
+- <strong>Windows:</strong> open <strong>PuTTY</strong> and log in, or in <strong>PowerShell</strong> run
+  <code>ssh &lt;user&gt;@&lt;pi-ip&gt;</code>.
+- <strong>macOS / Linux:</strong> <code>ssh &lt;user&gt;@&lt;pi-ip&gt;</code>.</p>
+<p>Confirm the bundle arrived intact, then unpack it:</p>
+<pre><code class="language-bash">cd ~
+sha256sum -c ~/SHA256SUMS-0.23.3.txt        # must print: nettak-install-0.23.3-arm64.tar.gz: OK
+tar xzf ~/nettak-install-0.23.3-arm64.tar.gz
+</code></pre>
+<p>If it does <strong>not</strong> say <code>OK</code>, delete the file and copy it again (step 1.1).</p>
+<h3>1.3 Run the netTAK installer</h3>
+<p>Pick a <strong>node name</strong> ending in a number (e.g. <code>node01</code>) — the node's network
+address is derived from it (<code>node01</code> → <code>10.1.1.1</code>).</p>
+<pre><code class="language-bash">sudo ~/nettak-install-0.23.3-arm64/install.sh &lt;node-name&gt; --mode=standalone
+sudo reboot
+</code></pre>
+<p><strong>Optional flags</strong> (add after the node name): <code>--ap-ssid=&lt;name&gt;</code> (Wi-Fi name),
+<code>--ap-password=&lt;pw&gt;</code> (Wi-Fi passphrase, ≥ 8 chars — default <code>password</code>, change
+it), <code>--nogps</code> (no GPS receiver attached).</p>
+<h3>1.4 First access</h3>
+<p>After the reboot, the node broadcasts its Wi-Fi AP. Open <strong><code>https://&lt;pi-ip&gt;:5103/</code></strong>
+(accept the one-time self-signed-cert warning). Log in with <code>admin</code> / <code>password</code>
+and <strong>change both defaults immediately</strong>: the admin password (<strong>Admin &amp;
+security</strong>) and the Wi-Fi passphrase (<strong>AP</strong>). The built-in manual is at <code>/help</code>.</p>
+<blockquote>
+<p><strong>Standalone netTAK is free — no license required.</strong> (netTAK's licensed <em>mesh</em>
+feature, linking multiple nodes over long-range HaLow radio, has its own guide.)</p>
+</blockquote>
+<p>✅ <strong>You now have a working TAK network.</strong> Reconnect to the Pi over SSH (its wired
+IP is unchanged) and continue.</p>
+<hr />
+<h1>Part 2 · adminTAK — the management panel</h1>
+<p>adminTAK is the single web panel you'll use to manage digiTAK. It's one <strong>static</strong>
+program — nothing to download at install time, works fully offline.</p>
+<h3>2.1 Copy adminTAK onto the Pi</h3>
+<ul>
+<li><strong>WinSCP:</strong> drag <code>adminTAK-0.1.11-linux-arm64.tar.gz</code> into the Pi's home folder.</li>
+<li><strong>Terminal:</strong> <code>scp ~/Downloads/adminTAK-0.1.11-linux-arm64.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></li>
+</ul>
+<h3>2.2 Install</h3>
+<p>On the Pi:</p>
+<pre><code class="language-bash">cd ~
+tar xzf adminTAK-0.1.11-linux-arm64.tar.gz
+cd adminTAK-0.1.11-linux-arm64
+sudo bash install.sh
+</code></pre>
+<p>This installs the panel to <code>/opt/adminTAK</code> and starts it on <strong>port 8443</strong>.</p>
+<h3>2.3 First access</h3>
+<p>Open <strong><code>https://&lt;pi-ip&gt;:8443/</code></strong> (accept the self-signed-cert warning). First
+login is <code>admin</code> / <code>password</code>, and you're <strong>required to set a new password</strong>
+right away. Do it now. The panel will show "no products yet" — that's expected;
+digiTAK is next, and it will appear here automatically.</p>
+<p>✅ <strong>Your management panel is live.</strong></p>
+<hr />
+<h1>Part 3 · digiTAK — the APRS ↔ TAK bridge</h1>
+<p>This is your bridge product. It installs <strong>fully offline</strong> — every dependency
+(the Direwolf software TNC and the APRS libraries) ships inside the bundle.</p>
+<h3>3.1 Copy digiTAK onto the Pi</h3>
+<ul>
+<li><strong>WinSCP:</strong> drag <code>cot_radio-3.1.3.tar.gz</code> into the Pi's home folder.</li>
+<li><strong>Terminal:</strong> <code>scp ~/Downloads/cot_radio-3.1.3.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></li>
+</ul>
+<h3>3.2 Install</h3>
+<p>On the Pi, unpack straight into the system folder and run the installer:</p>
+<pre><code class="language-bash">sudo tar xzf ~/cot_radio-3.1.3.tar.gz -C /opt/
+cd /opt/cot_radio
+sudo bash install.sh
+</code></pre>
+<p>The installer — with no internet — installs Direwolf and the APRS software from
+its bundled packages, starts the <code>cot-radio</code> service, and <strong>refreshes the
+adminTAK panel</strong> so digiTAK shows up right away. It also starts the 30-day trial
+(see 3.5).</p>
+<h3>3.3 Wire up your radio</h3>
+<ol>
+<li>Connect your <strong>sound-card interface</strong> (or hardware TNC) between the Pi (USB)
+   and your radio's <strong>data/mic + speaker + PTT</strong> jacks.</li>
+<li>Turn the radio to your <strong>APRS frequency</strong> (2 m APRS in North America is
+   <strong>144.390 MHz</strong>) and set a sensible volume/squelch.</li>
+</ol>
+<p><em>(No radio yet? You can still install and run APRS-IS-only — skip to 3.4 and
+enable APRS-IS instead of RF.)</em></p>
+<h3>3.4 Configure — all in the panel</h3>
+<p>Open <strong><code>https://&lt;pi-ip&gt;:8443/</code></strong> and select <strong>digiTAK</strong>. On a fresh install a red
+<strong>"CALLSIGN NOT SET — TRANSMIT DISABLED"</strong> banner shows until you set your
+callsign — that's the FCC Part 97 gate. Work top to bottom:</p>
+<ol>
+<li><strong>Callsign</strong> (<em>General → Identity</em>) — set your FCC amateur callsign (e.g.
+   <code>KN6ZPL</code>), no SSID. <strong>Save.</strong> The red banner clears and TX is unlocked.</li>
+<li><strong>RF Mode</strong> (<em>RF</em>) — pick how digiTAK reaches the air:</li>
+<li><strong><code>direwolf</code></strong> — the built-in software TNC. Choose your <strong>PTT Serial Port</strong>
+     (prefer a <code>/dev/serial/by-id/…</code> entry so it survives USB re-enumeration),
+     click <strong>Test PTT</strong> to confirm it keys the radio, and set the <strong>Audio
+     Device</strong> (ALSA name, e.g. <code>plughw:2,0</code>). Use the RX audio meter + <strong>Test
+     Transmit</strong> to check levels.</li>
+<li><strong><code>kiss_tcp</code></strong> / <strong><code>kiss_serial</code></strong> — for an external hardware TNC (network
+     or USB-serial). Set its host/port.</li>
+<li><strong>APRS-IS</strong> (<em>APRS-IS Network</em>, optional) — enable it and enter your <strong>APRS-IS
+   passcode</strong> + a <strong>filter</strong> (e.g. <code>r/34.05/-118.24/50</code>) to also see and reach
+   the worldwide APRS network / aprs.fi.</li>
+<li><strong>Mode</strong> — use the <strong>Bridge / Standalone</strong> banner at the top:</li>
+<li><strong>Bridge</strong> — the full APRS↔TAK gateway for a multi-device TAK network (the
+     usual choice on a netTAK Pi).</li>
+<li><strong>Standalone</strong> — single-operator use.</li>
+<li><strong>Save.</strong> The panel applies your settings and restarts the bridge for you.</li>
+</ol>
+<p>The <strong>status pills</strong> turn healthy and the <strong>Activity Feed</strong> (<em>Logging</em>) starts
+scrolling as APRS packets flow in and TAK traffic goes out.</p>
+<h3>3.5 Activate your license</h3>
+<p>digiTAK includes a <strong>30-day trial</strong> — it works immediately, nothing to do. The
+panel's <strong>License</strong> pill shows the trial and days remaining. When the trial ends,
+the gateway stops (the panel stays up so you can activate) and the pill reads
+<strong>LOCKED</strong>.</p>
+<p>To license the device at any time:
+1. In the panel, open digiTAK and note the <strong>Hardware ID</strong> shown on the
+   <strong>License</strong> page (and in the status strip).
+2. Get a <strong>digiTAK activation token</strong> for that Hardware ID (from your xTAK
+   licensing contact / activate.xtak.ai).
+3. Open digiTAK → <strong>License</strong> → paste the token into <strong>License Token</strong> → <strong>Save</strong>.</p>
+<p>The pill flips to <strong>Licensed (this device)</strong> and the gateway runs normally.
+Licenses are hardware-tied and verified <strong>offline</strong> — no internet in the field.</p>
+<p>✅ <strong>Your APRS↔TAK bridge is live and licensed.</strong></p>
+<hr />
+<h2>Verify the full system</h2>
+<ul>
+<li><strong>Network:</strong> the netTAK admin (<code>https://&lt;pi-ip&gt;:5103/</code>) Dashboard shows the
+  node online, and an ATAK device can join the Pi's Wi-Fi and get an address.</li>
+<li><strong>Management:</strong> the adminTAK panel (<code>https://&lt;pi-ip&gt;:8443/</code>) lists <strong>digiTAK</strong>
+  with a healthy service pill, a scrolling <strong>Activity Feed</strong>, and a <strong>Licensed</strong>
+  status.</li>
+<li><strong>The bridge, end to end:</strong> on an ATAK/WinTAK device connected to the netTAK
+  Wi-Fi, nearby <strong>APRS stations appear as map markers</strong> (callsign, position,
+  course), and a <strong>TAK GeoChat</strong> message you send goes back out over APRS (as the
+  <code>BLNXTAK</code> bulletin).</li>
+</ul>
+<p>That's the whole system: <strong>radio in → TAK map out, on a self-contained, off-grid
+network, managed from one panel.</strong></p>
+<hr />
+<h2>Updating &amp; uninstalling</h2>
+<p>Each part updates the same way it installed — copy the newer bundle over and
+re-run its installer; your settings (and digiTAK's license) are preserved.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Update</th>
+<th>Uninstall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>netTAK</td>
+<td>re-run <code>install.sh &lt;same-node-name&gt;</code></td>
+<td><code>sudo ~/nettak-install-0.23.3-arm64/uninstall.sh</code></td>
+</tr>
+<tr>
+<td>adminTAK</td>
+<td>re-run <code>sudo bash install.sh</code></td>
+<td><code>sudo bash /opt/adminTAK/uninstall.sh</code></td>
+</tr>
+<tr>
+<td>digiTAK</td>
+<td>re-extract to <code>/opt/</code> + <code>sudo bash install.sh</code></td>
+<td><code>sudo bash /opt/cot_radio/uninstall.sh</code> (add <code>--wipe</code> to also remove settings + purge Direwolf)</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>After updating digiTAK, if the panel looks stale, restart the panel once so it
+re-reads the new layout: <code>sudo systemctl restart adminTAK</code>.</p>
+</blockquote>
+<hr />
+<h2>If something's not right</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can't reach a panel after reboot</td>
+<td>Reconnect to the Pi's <strong>wired IP</strong>; the AP address (<code>10.1.x.1</code>) is separate. Accept the self-signed-cert warning.</td>
+</tr>
+<tr>
+<td>adminTAK panel doesn't list digiTAK</td>
+<td><code>sudo systemctl restart adminTAK</code> (digiTAK's installer normally does this for you).</td>
+</tr>
+<tr>
+<td>Red <strong>"CALLSIGN NOT SET — TRANSMIT DISABLED"</strong> banner</td>
+<td>Set your FCC callsign under <strong>General → Identity</strong> and Save (step 3.4). Part 97 requires a valid amateur callsign to transmit.</td>
+</tr>
+<tr>
+<td>No RF / nothing transmits</td>
+<td>Set <strong>RF Mode</strong> on the <em>RF</em> page (<code>direwolf</code> or a KISS TNC), pick the <strong>PTT Serial Port</strong>, and use <strong>Test PTT</strong> to confirm it keys the radio.</td>
+</tr>
+<tr>
+<td>RX audio meter flat / no packets</td>
+<td>Check the interface cabling and the radio's volume; the meter only moves on real received audio. Make sure the radio is on <strong>144.390 MHz</strong> (NA APRS).</td>
+</tr>
+<tr>
+<td>License pill says <strong>LOCKED</strong></td>
+<td>Trial ended — paste a token on the <strong>License</strong> page (step 3.5). The panel stays reachable so you can.</td>
+</tr>
+<tr>
+<td>APRS stations don't appear in ATAK</td>
+<td>Check the antenna/radio, that ATAK is on the netTAK Wi-Fi, and that TAK multicast reaches the LAN (SA group <code>239.2.3.1:6969</code>).</td>
+</tr>
+</tbody>
+</table></div>
+<p>Live bridge log, any time: <code>sudo journalctl -u cot-radio -f</code></p>
+<hr />
+<p><em>digiTAK v3.1.3 · adminTAK v0.1.11 · netTAK v0.23.3 (standalone). A product suite
+of xTAK — www.xtak.ai.</em></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span style="color: var(--cyan);">x</span>TAK</div>
+          <p class="footer__brand-tag">Self-hosted, off-grid situational awareness for the team that has to coordinate when the WAN is gone.</p>
+        </div>
+        <div class="footer__col"><h4>Products</h4><ul>
+          <li><a href="/products/baseTAK.html">baseTAK</a></li>
+          <li><a href="/products/digiTAK.html">digiTAK</a></li>
+          <li><a href="/products/loraTAK.html">loraTAK</a></li>
+          <li><a href="/products/chatTAK.html">chatTAK</a></li>
+          <li><a href="/products/sdrTAK.html">sdrTAK</a></li>
+          <li><a href="/products/netTAK.html">netTAK</a></li>
+          <li><a href="/products/aiTAK.html">aiTAK</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Resources</h4><ul>
+          <li><a href="/about-tak.html">About TAK</a></li>
+          <li><a href="/beta.html">Beta Program</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK" target="_blank" rel="noopener">GitHub Repo</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul>
+          <li><a href="https://activate.xtak.ai/contact">Contact support</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__bottom">
+        <div>&copy; 2026 xTAK Project &middot; All rights reserved</div>
+        <div>xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, aiTAK are trademarks of the xTAK Project &middot; <a href="/copyright.html">Notice</a></div>
+        <div style="flex-basis:100%"><a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/refund.html">Refunds</a> &middot; <a href="/third-party-notices.html">Open-Source &amp; Third-Party Notices</a> &middot; <a href="/copyright.html">Copyright &amp; Trademarks</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

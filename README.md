@@ -19,7 +19,7 @@ When the WAN goes dark, xTAK keeps coordinating.
 | **[loraTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/loraTAK.md)** | Meshtastic LoRa to TAK bidirectional bridge. | **Public Beta — available now** |
 | **[sdrTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/sdrTAK.md)** | SDR-decoded aircraft (ADS-B + UAT). AIS for ships on the roadmap. | **Public Beta — available now** |
 | **[baseTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/baseTAK.md)** | Browser-native TAK map, chat, fileserver, tileserver. The hub. | In development — Beta TBD |
-| **[digiTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/digiTAK.md)** | Bidirectional APRS-to-TAK gateway. VHF + APRS-IS today, HF on the roadmap. | In development — Beta TBD |
+| **[digiTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/digiTAK.md)** | Bidirectional APRS-to-TAK gateway. VHF + APRS-IS today, HF on the roadmap. | **Public Beta — available now** |
 | **[chatTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/chatTAK.md)** | Browser TAK chat appliance — Pi with its own Wi-Fi, no app required. | In development — Beta TBD |
 | **[aiTAK](https://github.com/adamstern2000/xTAK/blob/main/marketing/modules/aiTAK.md)** | AI agent participating in TAK chat as a first-class contact. | ★ Design phase · timing TBD |
 

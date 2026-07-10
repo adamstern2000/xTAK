@@ -1,6 +1,6 @@
 # digiTAK — Marketing Module
 
-**Status:** In development — Beta TBD (v 2.1.12 · VHF + APRS-IS)
+**Status:** Public Beta — available now (v3.1.3 · VHF + APRS-IS)
 **Wire protocol:** TAK-APRS Protocol Extension **v2.3** ([open spec](https://github.com/adamstern2000/cot_radio_aprs))
 **Last updated:** 2026-07-08
 **Use this for:** social posts, video scripts, ARRL / EmComm content, ham radio podcasts, conference talks.
