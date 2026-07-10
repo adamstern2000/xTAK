@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Install guide for mbtileserver — add offline maps to your xTAK node. Serve basemaps to ATAK / WinTAK from the Pi with no internet, managed through adminTAK." />
+  <title>mbtileserver — Offline Maps Install Guide | xTAK</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    .prose pre { background: #0d0f14; border: 1px solid var(--rule); border-radius: 6px; padding: 0.9rem 1.1rem; overflow-x: auto; margin: 1rem 0; }
+    .prose pre code { color: var(--ink-bright); font-family: var(--font-mono); font-size: 0.85rem; background: none; padding: 0; border: none; white-space: pre; }
+    .prose code { font-family: var(--font-mono); font-size: 0.85em; background: rgba(0,217,255,0.1); color: var(--cyan-pop); padding: 0.05em 0.35em; border-radius: 4px; }
+    .prose blockquote { border-left: 3px solid var(--cyan-faint); margin: 1.2rem 0; padding: 0.6rem 1.1rem; color: var(--ink-body); background: var(--cyan-trace); border-radius: 0 4px 4px 0; }
+    .prose blockquote p { margin: 0; }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+    .prose th, .prose td { text-align: left; vertical-align: top; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--rule); }
+    .prose th { color: var(--ink-bright); font-weight: 600; }
+    .prose hr { border: none; border-top: 1px solid var(--rule); margin: 2.25rem 0; }
+    .tablewrap { overflow-x: auto; }
+    .doc-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 0; }
+  </style>
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">DOCS / MBTILESERVER</span>
+        <span class="readout__item">OFFLINE MAPS</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">AVAILABLE NOW</span>
+        <span class="readout__item"><span data-clock>&mdash;</span></span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="brand"><span class="brand__diamond"></span><span class="brand__word"><span class="accent">x</span>TAK</span></a>
+      <nav><ul class="nav__links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#suite">The Suite</a></li>
+        <li><a href="/about-tak.html">About TAK</a></li>
+        <li><a href="/builds/">Builds</a></li>
+        <li><a href="/support.html">Support</a></li>
+      </ul></nav>
+      <a href="https://activate.xtak.ai/downloads" class="nav__cta">Your downloads &rarr;</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / Docs / <span class="text-cyan">mbtileserver</span></div>
+      <h1 class="pagehead__title">Offline Maps<br><em>Install Guide.</em></h1>
+      <div class="doc-cta">
+        <a href="https://activate.xtak.ai/downloads" class="btn btn--ghost">Your downloads</a>
+        <a href="/support.html" class="btn btn--ghost">Support</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow prose">
+<h1>mbtileserver — Offline Maps Installation Guide</h1>
+<p>Welcome. This guide adds <strong>offline maps</strong> to your xTAK node. When you're done,
+your <strong>ATAK / WinTAK</strong> devices will have detailed street basemaps in the field —
+<strong>no cell service and no internet required</strong>. The maps live on the Pi and are
+served to every connected TAK device over your local network.</p>
+<p>mbtileserver is one small, <strong>self-contained</strong> program: nothing to download at
+install time, no dependencies, works fully offline. You install it once, then
+drop in the <strong>map region(s)</strong> you want.</p>
+<blockquote>
+<p><strong>New to Linux / the Raspberry Pi?</strong> Follow the steps <strong>exactly</strong> in order.
+Every command is complete — copy and paste each line as-is. The only things
+you change are the values in <code>&lt;angle brackets&gt;</code> (your Pi's address, your login,
+the map file names you downloaded).</p>
+</blockquote>
+<hr />
+<h2>What you need</h2>
+<ul>
+<li>A <strong>Raspberry Pi</strong> running <strong>64-bit Raspberry Pi OS (Bookworm)</strong> — a Pi 4B/5,
+  or a <strong>Pi Zero 2 W</strong> (the 64-bit OS is required; the program is 64-bit ARM).</li>
+<li>The Pi on your network by its <strong>wired Ethernet</strong> (or Wi-Fi), and its <strong>IP
+  address</strong>.</li>
+<li>The Pi's <strong>login</strong> — the username and password you set when imaging the card.</li>
+<li><strong>Storage for the maps.</strong> Map regions are large. A single region is a few GB;
+  the whole continental US is tens of GB. Size your microSD (or attached USB
+  drive) accordingly.</li>
+<li>A way to copy files to the Pi and run commands on it:</li>
+<li><strong>Windows:</strong> <strong>WinSCP</strong> (free file copy — <a href="https://winscp.net">winscp.net</a>)
+    and <strong>PuTTY</strong> or Windows <strong>PowerShell</strong>.</li>
+<li><strong>macOS / Linux:</strong> the built-in <strong>Terminal</strong> (<code>scp</code> and <code>ssh</code>).</li>
+</ul>
+<p><strong>Download up front</strong> from the <strong>xTAK download page at activate.xtak.ai</strong>, onto
+your computer (files land in <strong>Downloads</strong>):</p>
+<ol>
+<li><code>mbtileserver-0.1.0-linux-arm64.tar.gz</code> — the map server (this install).</li>
+<li><strong>Your map region file(s)</strong> — e.g. <code>west-colorful-z15.mbtiles</code>. Download only
+   the region(s) you operate in. (Maps are distributed separately from the
+   software; see <strong>Add your maps</strong> below.)</li>
+</ol>
+<p>You only need internet to download these to your computer — everything you run
+on the Pi is <strong>fully offline</strong>.</p>
+<hr />
+<h1>Install mbtileserver</h1>
+<h3>1 · Copy mbtileserver onto the Pi</h3>
+<p>Copy the file into the Pi's <strong>home folder</strong>.</p>
+<ul>
+<li><strong>Windows (WinSCP):</strong> open WinSCP → <strong>File protocol</strong> <code>SCP</code>, <strong>Host name</strong> =
+  your Pi's IP, <strong>User name / Password</strong> = your Pi login → <strong>Login</strong>. Drag
+  <code>mbtileserver-0.1.0-linux-arm64.tar.gz</code> from Downloads (left) into the Pi's
+  home folder (right).</li>
+<li><strong>macOS / Linux (Terminal):</strong>
+  <pre><code>  scp ~/Downloads/mbtileserver-0.1.0-linux-arm64.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></pre></li>
+</ul>
+<h3>2 · Connect to the Pi and unpack</h3>
+<p>Open a command session <strong>on the Pi</strong>:
+- <strong>Windows:</strong> open <strong>PuTTY</strong> and log in, or in <strong>PowerShell</strong> run
+  <code>ssh &lt;user&gt;@&lt;pi-ip&gt;</code>.
+- <strong>macOS / Linux:</strong> <code>ssh &lt;user&gt;@&lt;pi-ip&gt;</code>.</p>
+<p>Then unpack the bundle:</p>
+<pre><code class="language-bash">cd ~
+tar xzf mbtileserver-0.1.0-linux-arm64.tar.gz
+cd mbtileserver-0.1.0-linux-arm64
+</code></pre>
+<p><em>(Optional integrity check — compare against the SHA256 shown on the download
+page: <code>sha256sum mbtileserver-0.1.0-linux-arm64.tar.gz</code>.)</em></p>
+<h3>3 · Install</h3>
+<p>On the Pi:</p>
+<pre><code class="language-bash">sudo ./install.sh
+</code></pre>
+<p>The installer — with <strong>no internet</strong> — copies the program to <code>/opt/mbtileserver</code>,
+starts the <code>mbtileserver</code> service on <strong>port 8000</strong>, and (if you have adminTAK)
+refreshes the panel so the map server appears there. It creates an empty
+<code>/opt/mbtileserver/tiles/</code> folder — that's where your maps go next.</p>
+<h3>4 · Confirm it's running</h3>
+<pre><code class="language-bash">systemctl is-active mbtileserver     # should print: active
+curl -s http://127.0.0.1:8000/services
+</code></pre>
+<p>The <code>curl</code> prints <code>[]</code> (an empty list) until you add a map — that's expected.</p>
+<p>✅ <strong>The map server is live.</strong> Now give it maps.</p>
+<hr />
+<h2>Add your maps</h2>
+<p>Maps are single <code>.mbtiles</code> files, one per region. <strong>You just drop them in</strong> — the
+server picks them up automatically, no restart needed.</p>
+<h3>1 · Copy your region file(s) onto the Pi</h3>
+<ul>
+<li><strong>WinSCP:</strong> drag e.g. <code>west-colorful-z15.mbtiles</code> into the Pi's home folder.</li>
+<li><strong>Terminal:</strong> <code>scp ~/Downloads/west-colorful-z15.mbtiles &lt;user&gt;@&lt;pi-ip&gt;:~/</code></li>
+</ul>
+<h3>2 · Move them into the maps folder</h3>
+<pre><code class="language-bash">sudo mv ~/*.mbtiles /opt/mbtileserver/tiles/
+</code></pre>
+<p>The server auto-detects the new file within a second. Confirm it's listed:</p>
+<pre><code class="language-bash">curl -s http://127.0.0.1:8000/services
+</code></pre>
+<p>You'll see an entry for each map, with its <strong>id</strong> (the file name without
+<code>.mbtiles</code>) and image type. Add as many regions as your storage holds — the
+server hosts them all at once.</p>
+<hr />
+<h2>Point ATAK / WinTAK at the maps</h2>
+<p>Each map is served at this address pattern (replace <code>&lt;pi-ip&gt;</code> and <code>&lt;map-id&gt;</code>):</p>
+<pre><code>http://&lt;pi-ip&gt;:8000/services/&lt;map-id&gt;/tiles/{$z}/{$x}/{$y}.&lt;ext&gt;
+</code></pre>
+<p><code>&lt;ext&gt;</code> is the map's image type (<code>png</code>, <code>jpg</code>, or <code>webp</code>). A quick way to see the
+exact URL and preview a map in a browser is:
+<code>http://&lt;pi-ip&gt;:8000/services/&lt;map-id&gt;/map</code>.</p>
+<p><strong>Add it in ATAK</strong> either way:</p>
+<ul>
+<li><strong>Easiest — import a source file:</strong> if a <code>.xml</code> map-source file was provided
+  with your maps, copy it to the device's <code>atak/imports</code> folder (or use ATAK's
+  <strong>Import Manager</strong>). It sets the name, tile type, and zoom for you.</li>
+<li><strong>Manually:</strong> in ATAK, add a <strong>custom map source</strong> with the URL above. Set
+  <strong>max zoom</strong> to the map's native max (the download page lists it, e.g. 15) so
+  ATAK <strong>overzooms</strong> (upsamples) for closer looks instead of going blank.</li>
+</ul>
+<p>Switch the active basemap in ATAK's map manager. If you loaded both a <strong>day</strong>
+(bright) and a <strong>night</strong> (dark) style, toggle between them there.</p>
+<blockquote>
+<p><strong>Tip:</strong> if you re-download an updated map with the <strong>same name</strong>, ATAK may
+still show its <strong>cached</strong> tiles. Clear that map source's cache in ATAK (or
+remove and re-add it) to see the new version.</p>
+</blockquote>
+<hr />
+<h2>Manage it in adminTAK (optional)</h2>
+<p>If your Pi runs <strong>adminTAK</strong>, the map server shows up there as <strong>mbtileserver</strong>
+with <strong>Start / Restart / Stop / Enable / Disable</strong> controls and a live service
+indicator — handy for turning maps off at boot on a Pi where you don't always
+need them. No configuration is required; it works the same from the command line.</p>
+<hr />
+<h2>Verify</h2>
+<ul>
+<li><code>systemctl is-active mbtileserver</code> prints <strong>active</strong>.</li>
+<li><code>http://&lt;pi-ip&gt;:8000/services</code> lists each map you installed.</li>
+<li>The browser preview <code>http://&lt;pi-ip&gt;:8000/services/&lt;map-id&gt;/map</code> draws the map.</li>
+<li>On a TAK device on the same network, your basemap appears and pans/zooms with
+  street detail — fully offline.</li>
+</ul>
+<hr />
+<h2>Updating &amp; uninstalling</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Update the server</strong></td>
+<td>Copy the newer <code>mbtileserver-&lt;ver&gt;-linux-arm64.tar.gz</code> over, unpack, <code>sudo ./install.sh</code> again. Your maps in <code>tiles/</code> are untouched.</td>
+</tr>
+<tr>
+<td><strong>Add / replace a map</strong></td>
+<td>Drop the new <code>.mbtiles</code> into <code>/opt/mbtileserver/tiles/</code> (replace the old file of the same name). Auto-served.</td>
+</tr>
+<tr>
+<td><strong>Remove a map</strong></td>
+<td><code>sudo rm /opt/mbtileserver/tiles/&lt;name&gt;.mbtiles</code></td>
+</tr>
+<tr>
+<td><strong>Uninstall the server</strong></td>
+<td><code>sudo systemctl disable --now mbtileserver &amp;&amp; sudo rm /etc/systemd/system/mbtileserver.service &amp;&amp; sudo systemctl daemon-reload &amp;&amp; sudo rm -rf /opt/mbtileserver</code></td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>If you have adminTAK and the map server doesn't appear after installing,
+refresh the panel once: <code>sudo systemctl restart adminTAK</code>.</p>
+</blockquote>
+<hr />
+<h2>If something's not right</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>systemctl is-active mbtileserver</code> isn't <strong>active</strong></td>
+<td>See the log: <code>sudo journalctl -u mbtileserver -e</code>. Most often a maps-folder permission issue — <code>sudo chown -R root:root /opt/mbtileserver</code>.</td>
+</tr>
+<tr>
+<td><code>/services</code> stays empty after adding a map</td>
+<td>Confirm the file is in <code>/opt/mbtileserver/tiles/</code> and ends in <code>.mbtiles</code>. Check the log as above.</td>
+</tr>
+<tr>
+<td>Map is blank / gray in ATAK past a certain zoom</td>
+<td>You've zoomed past the map's native max. Set the source's <strong>max zoom</strong> to the native max so ATAK overzooms instead of blanking.</td>
+</tr>
+<tr>
+<td>Map looks mis-tiled or "zoomed in wrong"</td>
+<td>The device may not handle the tile size — contact your xTAK support with the map name; a matching build can be provided.</td>
+</tr>
+<tr>
+<td>ATAK shows an old version after a map update</td>
+<td>Clear that map source's cache in ATAK, or remove + re-add the source.</td>
+</tr>
+<tr>
+<td>Won't start on a <strong>Pi Zero 2 W</strong></td>
+<td>Confirm the OS is <strong>64-bit</strong> Raspberry Pi OS (<code>getconf LONG_BIT</code> prints <code>64</code>). The program is 64-bit ARM; 32-bit Pi OS is not supported.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Live server log, any time: <code>sudo journalctl -u mbtileserver -f</code></p>
+<hr />
+<p><em>mbtileserver v0.1.0 — offline maps for ATAK/WinTAK. A product of xTAK —
+www.xtak.ai. Map server: consbio/mbtileserver (ISC). Map data © OpenStreetMap
+contributors (ODbL).</em></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span style="color: var(--cyan);">x</span>TAK</div>
+          <p class="footer__brand-tag">Self-hosted, off-grid situational awareness for the team that has to coordinate when the WAN is gone.</p>
+        </div>
+        <div class="footer__col"><h4>Products</h4><ul>
+          <li><a href="/products/baseTAK.html">baseTAK</a></li>
+          <li><a href="/products/digiTAK.html">digiTAK</a></li>
+          <li><a href="/products/loraTAK.html">loraTAK</a></li>
+          <li><a href="/products/chatTAK.html">chatTAK</a></li>
+          <li><a href="/products/sdrTAK.html">sdrTAK</a></li>
+          <li><a href="/products/netTAK.html">netTAK</a></li>
+          <li><a href="/products/aiTAK.html">aiTAK</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Resources</h4><ul>
+          <li><a href="/about-tak.html">About TAK</a></li>
+          <li><a href="/builds/">Builds</a></li>
+          <li><a href="/beta.html">Beta Program</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK" target="_blank" rel="noopener">GitHub Repo</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul>
+          <li><a href="https://activate.xtak.ai/contact">Contact support</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 xTAK Project · All rights reserved</div>
+        <div>xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, aiTAK are trademarks of the xTAK Project · <a href="/copyright.html">Notice</a></div>
+        <div style="flex-basis:100%"><a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="/refund.html">Refunds</a> · <a href="/third-party-notices.html">Open-Source &amp; Third-Party Notices</a> · <a href="/copyright.html">Copyright &amp; Trademarks</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+
+</body>
+</html>
