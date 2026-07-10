@@ -196,7 +196,7 @@
             <ul class="outcome__list">
               <li><strong>LoRa users chat with APRS users (and every TAK client)</strong> — a Meshtastic message routes from LoRa → TAK GeoChat on the LAN → digiTAK → APRS-IS or RF, end to end. Both products speak the standard TAK protocol, so the same chat thread carries Meshtastic users, APRS users, and TAK-client users together.</li>
               <li><strong>Run a Meshtastic gateway and an APRS gateway side-by-side</strong> with no port collisions or echo loops.</li>
-              <li><strong>Multi-NIC appliance-as-AP setups handled correctly</strong> — works when the gateway has a wired LAN and a Wi-Fi AP on the same appliance.</li>
+              <li><strong>Multi-interface setups handled correctly</strong> — loraTAK emits on every network interface, so it works whether the node has one NIC or several (e.g. a wired LAN plus the netTAK Wi-Fi AP).</li>
               <li><strong>Drop loraTAK onto a <a href="/products/netTAK.html" style="color: var(--cyan);">netTAK</a> field mesh</strong> and every appliance-node becomes a Meshtastic gateway — no LAN required.</li>
             </ul>
           </div>
@@ -215,7 +215,7 @@
       <h2 class="section__title reveal">What's <em>in the box.</em></h2>
       <p class="reveal" data-delay="1" style="font-size: 1.1rem; color: var(--ink-body); line-height: 1.6; max-width: 64ch; margin-top: 1.4rem;">
         loraTAK is a bidirectional Meshtastic-to-TAK gateway. Field teams
-        running stock Heltec, T-Beam, RAK, or Station-G2 hardware appear as
+        running stock Heltec, T-Beam, RAK, Seeed TRACKER L1, or Station-G2 hardware appear as
         first-class TAK contacts with positions, chat, and telemetry.
       </p>
 
@@ -229,8 +229,11 @@
         <li class="capability"><strong>Read receipts and addressable DMs</strong> across the LoRa link.</li>
         <li class="capability"><strong>Synthetic positions</strong> for GPS-off mesh nodes — anchored from gateway location so they stay chat-able.</li>
         <li class="capability"><strong>Mesh telemetry on the map</strong> — battery %, voltage, channel utilization, SNR — emitted as <code>&lt;__mesh_telem&gt;</code> JSON in every beacon.</li>
-        <li class="capability"><strong>Multi-NIC appliance-as-AP mode</strong> — eth0 for upstream, wlan0 as a soft AP for the mesh team to associate with.</li>
-        <li class="capability"><strong>Bidirectional TAK protobuf RX</strong> from radios that speak it — no XML round-trip.</li>
+        <li class="capability"><strong>Multi-interface CoT</strong> — sends and receives TAK multicast on every network interface and self-heals as interfaces come and go, so it just works on a netTAK standalone node with no extra setup.</li>
+        <li class="capability"><strong>Reads TAK protobuf directly (RX)</strong> — parses TAK Protocol V1 protobuf from clients that send it, no XML round-trip on the way in.</li>
+        <li class="capability"><strong>Managed from the adminTAK control panel</strong> (port 8443) — configure and monitor loraTAK from one mobile-friendly web panel.</li>
+        <li class="capability"><strong>Licensed, offline</strong> — a 30-day trial, then a hardware-tied activation token verified offline; no internet in the field.</li>
+        <li class="capability"><strong>Installs fully offline</strong> — vendored Python deps, no network at install time (good for air-gapped deploys).</li>
       </ul>
 
       <div class="choose reveal" data-delay="2">
@@ -276,7 +279,10 @@
 
       <div class="specs" style="margin-top: 2rem;">
         <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Any small Linux appliance or any Linux/macOS box with Python 3.10+</div></div>
-        <div class="specs__row"><div class="specs__key">Meshtastic radio</div><div class="specs__val">Any model the Meshtastic firmware supports — Heltec V3, T-Beam, RAK 4631, T-Echo, station-G2. USB serial or TCP.</div></div>
+        <div class="specs__row"><div class="specs__key">Meshtastic radio</div><div class="specs__val">Any model the Meshtastic firmware supports — Heltec V3, T-Beam, RAK 4631, T-Echo, Seeed TRACKER L1, station-G2. USB serial or TCP.</div></div>
+        <div class="specs__row"><div class="specs__key">Control panel</div><div class="specs__val">adminTAK web panel (port 8443) — mobile-friendly configuration + monitoring</div></div>
+        <div class="specs__row"><div class="specs__key">Licensing</div><div class="specs__val">30-day trial, then an offline hardware-tied activation token (Ed25519, verified offline)</div></div>
+        <div class="specs__row"><div class="specs__key">Installation</div><div class="specs__val">Offline tarball · vendored Python deps · no network at install time</div></div>
         <div class="specs__row"><div class="specs__key">Network</div><div class="specs__val">A LAN — same one your ATAK / WinTAK clients are on</div></div>
         <div class="specs__row"><div class="specs__key">TAK clients supported</div><div class="specs__val">ATAK, WinTAK, iTAK, baseTAK — any standard TAK client</div></div>
         <div class="specs__row"><div class="specs__key">Internet</div><div class="specs__val">Not required · mesh ↔ TAK works entirely off-grid</div></div>

@@ -155,7 +155,7 @@
               <li><strong>Filter by aircraft type</strong> — baseTAK's map filter isolates the categories you care about. Only military traffic during a TFR, only rotorcraft during a SAR coordination, only heavies during airshow ops.</li>
               <li><strong>ADS-B 1090 ES decoding</strong> — the global civil aviation transponder standard.</li>
               <li><strong>UAT 978 MHz decoding</strong> — the U.S. general-aviation alternative (run alongside 1090 with a second dongle).</li>
-              <li><strong>CPR position decoding</strong> — proper even/odd Mode S compact position reporting for sub-meter lat/lon accuracy.</li>
+              <li><strong>CPR position decoding</strong> — proper even/odd Mode S compact position reporting for accurate lat/lon.</li>
               <li><strong>520k-entry aircraft database</strong> — auto-loads OpenSky CSV on startup, adds tail number, manufacturer, model, operator, and owner to every contact's remarks.</li>
             </ul>
           </div>
@@ -246,8 +246,10 @@
         <li class="capability"><strong>Military hex-range auto-flag</strong> — US, UK, Australia mil ranges plus 25+ callsign prefixes (RCH, FORTE, DUSTOFF, SAM, CGR).</li>
         <li class="capability"><strong>SoapySDR abstraction</strong> — works with RTL-SDR, HackRF, Airspy, BladeRF. 13 vendored drivers in the install tarball.</li>
         <li class="capability"><strong>Offline-installable tarball</strong> — vendored Python deps, no internet at install time.</li>
-        <li class="capability"><strong>Admin UI on port 5100</strong> with signal-meter visualization and live decode counters.</li>
+        <li class="capability"><strong>adminTAK control panel</strong> (port 8443) — mobile-friendly, with signal meters, live decode counters, gain/stale-time, decoder enable/disable, and device discovery.</li>
         <li class="capability"><strong>Aircraft DB self-update</strong> — pulls fresh OpenSky data on operator command.</li>
+        <li class="capability"><strong>Squawk &amp; emergency-status decoding</strong> — transponder squawk codes, including emergency states (7500 / 7600 / 7700), surface on the map.</li>
+        <li class="capability"><strong>Mesh-ready CoT</strong> — emits on every network interface (including batman-adv / br0) and self-heals as interfaces come and go, so it just works on a netTAK standalone node with no extra infrastructure.</li>
       </ul>
 
       <div class="choose reveal" data-delay="2">
@@ -299,7 +301,7 @@
         <div class="specs__row"><div class="specs__key">Installation</div><div class="specs__val">100% offline tarball · all .deb drivers, dump978-fa, and aircraft database vendored. No network access at install time.</div></div>
         <div class="specs__row"><div class="specs__key">Internet</div><div class="specs__val">Not required · aircraft database can pull updates if available</div></div>
         <div class="specs__row"><div class="specs__key">Aircraft database</div><div class="specs__val">520k-entry OpenSky CSV · auto-loads on startup · enriches every contact with tail number, type, operator, owner</div></div>
-        <div class="specs__row"><div class="specs__key">Admin UI</div><div class="specs__val">Web, port 5100 · gain/stale-time, decoder enable/disable, device discovery, icon picker, DB refresh, restart</div></div>
+        <div class="specs__row"><div class="specs__key">Control panel</div><div class="specs__val">adminTAK web panel (port 8443) · gain/stale-time, decoder enable/disable, device discovery, icon picker, DB refresh, restart</div></div>
         <div class="specs__row"><div class="specs__key">Version</div><div class="specs__val">cot_sdr v 1.4.7 · Beta</div></div>
       </div>
     </div>
