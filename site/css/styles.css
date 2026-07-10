@@ -1547,3 +1547,19 @@ body::after {
 
 /* ---------- Selection ---------- */
 ::selection { background: var(--cyan); color: var(--bg-base); }
+
+/* ---------- Roadmap / coming-soon callout (shared; originally netTAK-only) ---------- */
+.roadmap-lead { margin-top: 2.5rem; border: 1px solid var(--cyan-faint); border-radius: 4px; padding: 2.2rem 2.4rem; background: var(--cyan-trace); }
+.roadmap-lead__head { display: flex; align-items: center; gap: 0.9rem; }
+.roadmap-lead__icon { color: var(--cyan); }
+.roadmap-lead__icon svg { width: 30px; height: 30px; display: block; }
+.roadmap-lead__num { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; color: var(--cyan); }
+.roadmap-lead__title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; text-transform: uppercase; line-height: 1.05; color: var(--ink-bright); margin: 0.9rem 0 0.6rem; }
+.roadmap-lead__lede { color: var(--ink-body); line-height: 1.6; max-width: 70ch; margin-bottom: 1.5rem; }
+.roadmap-lead__list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2.6rem; }
+@media (max-width: 760px) { .roadmap-lead__list { grid-template-columns: 1fr; } }
+.roadmap-lead__list li { position: relative; padding-left: 1.3rem; color: var(--ink-body); line-height: 1.5; font-size: 0.98rem; }
+.roadmap-lead__list li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); }
+.roadmap-lead__list b { color: var(--ink-bright); font-weight: 600; }
+.comingsoon-foot { margin-top: 2.6rem; max-width: 62rem; color: #8a95a5; font-size: 0.95rem; line-height: 1.6; }
+.comingsoon-foot em { color: var(--cyan-dim); font-style: normal; }
