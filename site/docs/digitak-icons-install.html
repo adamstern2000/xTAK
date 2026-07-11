@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Install the APRS symbol iconsets for digiTAK on ATAK and WinTAK, so APRS stations render with their proper symbols instead of generic markers. One-time setup per device." />
+  <title>digiTAK APRS Icons — Install Guide | xTAK</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    .prose pre { background: #0d0f14; border: 1px solid var(--rule); border-radius: 6px; padding: 0.9rem 1.1rem; overflow-x: auto; margin: 1rem 0; }
+    .prose pre code { color: var(--ink-bright); font-family: var(--font-mono); font-size: 0.85rem; background: none; padding: 0; border: none; white-space: pre; }
+    .prose code { font-family: var(--font-mono); font-size: 0.85em; background: rgba(0,217,255,0.1); color: var(--cyan-pop); padding: 0.05em 0.35em; border-radius: 4px; }
+    .prose blockquote { border-left: 3px solid var(--cyan-faint); margin: 1.2rem 0; padding: 0.6rem 1.1rem; color: var(--ink-body); background: var(--cyan-trace); border-radius: 0 4px 4px 0; }
+    .prose blockquote p { margin: 0; }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+    .prose th, .prose td { text-align: left; vertical-align: top; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--rule); }
+    .prose th { color: var(--ink-bright); font-weight: 600; }
+    .prose hr { border: none; border-top: 1px solid var(--rule); margin: 2.25rem 0; }
+    .tablewrap { overflow-x: auto; }
+    .doc-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 0; }
+  </style>
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">DOCS / DIGITAK</span>
+        <span class="readout__item">APRS ICONS</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">ATAK &amp; WINTAK</span>
+        <span class="readout__item"><span data-clock>&mdash;</span></span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="brand"><span class="brand__diamond"></span><span class="brand__word"><span class="accent">x</span>TAK</span></a>
+      <nav><ul class="nav__links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#suite">The Suite</a></li>
+        <li><a href="/about-tak.html">About TAK</a></li>
+        <li><a href="/builds/">Builds</a></li>
+        <li><a href="/support.html">Support</a></li>
+      </ul></nav>
+      <a href="/products/digiTAK.html" class="nav__cta">Get digiTAK &rarr;</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / <a href="/products/digiTAK.html">digiTAK</a> / <span class="text-cyan">APRS Icons</span></div>
+      <h1 class="pagehead__title">APRS Icons<br><em>Install Guide.</em></h1>
+      <div class="doc-cta">
+        <a href="/docs/digitak-install.html" class="btn btn--ghost">digiTAK install guide</a>
+        <a href="https://activate.xtak.ai/downloads" class="btn btn--ghost">Your downloads</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow prose">
+<h1>digiTAK — APRS Icons Installation Guide (ATAK &amp; WinTAK)</h1>
+<p>digiTAK bridges APRS stations onto your TAK map. Out of the box, TAK draws them
+with generic markers. This one-time install adds the <strong>APRS symbol set</strong> — the
+same primary/secondary symbols used across the APRS world (Hessu Hannikainen's
+set, 188 icons) — so a weather station looks like a weather station, a vehicle
+like a vehicle, a digipeater like a digipeater, and so on, on <strong>ATAK</strong> and
+<strong>WinTAK</strong>.</p>
+<p>Once installed, digiTAK's markers resolve automatically: every APRS object
+digiTAK emits carries its icon reference, and TAK renders the matching symbol.
+No per-marker work — you just install the iconsets once per device.</p>
+<blockquote>
+<p><strong>You install TWO iconsets</strong> — one for each APRS symbol table:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Iconset</th>
+<th>Symbol table</th>
+<th>Icons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>APRSPrimary.zip</code></td>
+<td><strong>APRSPrimary</strong></td>
+<td>primary (<code>/</code>)</td>
+<td>94</td>
+</tr>
+<tr>
+<td><code>APRSSecondary.zip</code></td>
+<td><strong>APRSSecondary</strong></td>
+<td>secondary (<code>\</code>)</td>
+<td>94</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Install both.</strong> With only one, half of APRS symbols won't resolve.</p>
+</blockquote>
+<hr />
+<h2>What you need</h2>
+<ul>
+<li><strong><code>APRSPrimary.zip</code></strong> and <strong><code>APRSSecondary.zip</code></strong> — download both from the xTAK
+  download page (they ship with digiTAK, and are attached to the digiTAK release).</li>
+<li>The TAK client you're setting up:</li>
+<li><strong>WinTAK</strong> on a Windows machine, <strong>or</strong></li>
+<li><strong>ATAK</strong> on an Android device.</li>
+<li>A way to get the two zips onto the device:</li>
+<li><strong>WinTAK:</strong> copy them to any folder on the Windows machine.</li>
+<li><strong>ATAK:</strong> copy them to the Android device (USB cable, or a Wi-Fi transfer app
+    like <strong>LocalSend</strong>). Put them somewhere you can browse to, e.g. <code>Download/</code>.</li>
+</ul>
+<p>Install the icons on <strong>every</strong> ATAK/WinTAK device that connects to digiTAK.</p>
+<hr />
+<h1>Part 1 · WinTAK</h1>
+<ol>
+<li>Open <strong>WinTAK</strong>.</li>
+<li>Open the <strong>Point Dropper</strong> tool, then click its <strong>Settings</strong> (the gear icon).</li>
+<li>Open the <strong>Iconset Manager</strong>.</li>
+<li>Click <strong><code>[ + ]</code></strong> (add) → browse to <strong><code>APRSPrimary.zip</code></strong> → open. WinTAK
+   imports it.</li>
+<li>Click <strong><code>[ + ]</code></strong> again → select <strong><code>APRSSecondary.zip</code></strong> → open.</li>
+<li>Confirm <strong>both <code>APRSPrimary</code> and <code>APRSSecondary</code></strong> now appear in the iconset
+   list.</li>
+</ol>
+<p>That's it — WinTAK now resolves digiTAK's APRS symbols.</p>
+<hr />
+<h1>Part 2 · ATAK (Android)</h1>
+<ol>
+<li>Copy <strong><code>APRSPrimary.zip</code></strong> and <strong><code>APRSSecondary.zip</code></strong> onto the device (into
+   <code>Download/</code>, or straight into <code>atak/iconsets/</code> if you prefer — see the note).</li>
+<li>Open <strong>ATAK</strong>.</li>
+<li>Open the <strong>≡</strong> menu → <strong>Import Manager</strong>.</li>
+<li>Choose <strong>Local SD</strong> (import from device storage) → browse to
+   <strong><code>APRSPrimary.zip</code></strong> → select it. ATAK imports the iconset.</li>
+<li>Repeat for <strong><code>APRSSecondary.zip</code></strong>.</li>
+<li>Verify: open the <strong>Point Dropper</strong>, tap the <strong>icon/palette selector</strong>, and
+   confirm the <strong>APRSPrimary</strong> and <strong>APRSSecondary</strong> groups are listed.</li>
+</ol>
+<blockquote>
+<p><strong>Alternative (manual):</strong> ATAK also loads iconsets placed directly in the
+device's <strong><code>atak/iconsets/</code></strong> folder. Unzip each package there so you have
+<code>atak/iconsets/APRSPrimary/…</code> and <code>atak/iconsets/APRSSecondary/…</code>, then restart
+ATAK. The Import Manager route above is easier and does this for you.</p>
+</blockquote>
+<hr />
+<h2>Verify (both clients)</h2>
+<p>With the client connected to digiTAK (over your netTAK Wi‑Fi or LAN), let an APRS
+station come in — for example a nearby weather station or a mobile tracker. On
+the map it should now render with its <strong>proper APRS symbol</strong> instead of a generic
+marker. If symbols render, you're done.</p>
+<hr />
+<h2>If something's not right</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Some APRS markers show a generic/placeholder icon</td>
+<td>You likely installed only one table. Install <strong>both</strong> <code>APRSPrimary</code> and <code>APRSSecondary</code>.</td>
+</tr>
+<tr>
+<td>Iconsets don't appear in the list after import</td>
+<td>Re-run the import and confirm you selected the <strong><code>.zip</code></strong> (not an extracted folder) via the Iconset Manager (WinTAK) / Import Manager (ATAK).</td>
+</tr>
+<tr>
+<td>WinTAK refuses to import the zip</td>
+<td>Use the zips <strong>exactly as distributed</strong> — do not re-zip them. WinTAK's importer rejects zips repacked by some tools. Re-download the originals.</td>
+</tr>
+<tr>
+<td>ATAK: icons still generic after import</td>
+<td>Fully close and reopen ATAK so it reloads iconsets, then re-check the Point Dropper icon selector.</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<p><em>digiTAK — APRS ⇄ TAK gateway. A product of xTAK — www.xtak.ai. APRS symbol set:
+Hessu Hannikainen (see <code>iconsets/APRS-NONTAK/ATTRIBUTION.md</code>).</em></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span style="color: var(--cyan);">x</span>TAK</div>
+          <p class="footer__brand-tag">Self-hosted, off-grid situational awareness for the team that has to coordinate when the WAN is gone.</p>
+        </div>
+        <div class="footer__col"><h4>Products</h4><ul>
+          <li><a href="/products/baseTAK.html">baseTAK</a></li>
+          <li><a href="/products/digiTAK.html">digiTAK</a></li>
+          <li><a href="/products/loraTAK.html">loraTAK</a></li>
+          <li><a href="/products/chatTAK.html">chatTAK</a></li>
+          <li><a href="/products/sdrTAK.html">sdrTAK</a></li>
+          <li><a href="/products/netTAK.html">netTAK</a></li>
+          <li><a href="/products/aiTAK.html">aiTAK</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Resources</h4><ul>
+          <li><a href="/about-tak.html">About TAK</a></li>
+          <li><a href="/builds/">Builds</a></li>
+          <li><a href="/beta.html">Beta Program</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK" target="_blank" rel="noopener">GitHub Repo</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul>
+          <li><a href="https://activate.xtak.ai/contact">Contact support</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 xTAK Project · All rights reserved</div>
+        <div>xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, aiTAK are trademarks of the xTAK Project · <a href="/copyright.html">Notice</a></div>
+        <div style="flex-basis:100%"><a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="/refund.html">Refunds</a> · <a href="/third-party-notices.html">Open-Source &amp; Third-Party Notices</a> · <a href="/copyright.html">Copyright &amp; Trademarks</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+
+</body>
+</html>
