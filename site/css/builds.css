@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Builds section — reference hardware pages (/builds/*)
+   Loaded in addition to styles.css. Uses the shared design tokens.
+   ========================================================================== */
+
+/* ---------- Index: node cards ---------- */
+.buildgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3.5rem; }
+@media (max-width: 900px) { .buildgrid { grid-template-columns: 1fr; } }
+.buildcard { display: flex; flex-direction: column; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; background: rgba(255,255,255,0.015); transition: border-color .18s ease, transform .18s ease; }
+.buildcard:hover { border-color: var(--cyan-faint); transform: translateY(-3px); }
+.buildcard--soon { opacity: .72; }
+.buildcard__photo { aspect-ratio: 4 / 3; background: linear-gradient(135deg,#0d1016,#12161d); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--rule); position: relative; overflow: hidden; }
+.buildcard__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.buildcard__ph { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .16em; color: #55606f; text-transform: uppercase; }
+.buildcard__body { padding: 1.6rem 1.6rem 1.9rem; display: flex; flex-direction: column; flex: 1; }
+.buildcard__eyebrow { font-family: var(--font-mono); font-size: .7rem; font-weight: 600; letter-spacing: .18em; color: var(--cyan); text-transform: uppercase; }
+.buildcard__name { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; text-transform: uppercase; line-height: 1; color: var(--ink-bright); margin: .55rem 0 .2rem; }
+.buildcard__size { font-family: var(--font-mono); font-size: .75rem; color: #8a95a5; letter-spacing: .04em; }
+.buildcard__tag { color: var(--ink-body); line-height: 1.55; font-size: .96rem; margin: .9rem 0 1.1rem; }
+.buildcard__foot { margin-top: auto; }
+
+/* ---------- Shared bits ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.3rem 0 0; }
+.chips--tight { margin-bottom: 1.4rem; }
+.chip { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .05em; text-transform: uppercase; color: var(--cyan); border: 1px solid var(--cyan-faint); background: var(--cyan-trace); border-radius: 3px; padding: .3em .65em; }
+.chip--muted { color: #8a95a5; border-color: var(--rule); background: transparent; }
+.chips__label { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: #8a95a5; align-self: center; margin-right: .3rem; }
+.intro-lede { font-size: 1.15rem; color: var(--ink-body); line-height: 1.65; max-width: 68ch; margin-top: 1.5rem; }
+.intro-lede b { color: var(--ink-bright); font-weight: 600; }
+.builds-note { margin-top: 3rem; border-left: 3px solid var(--cyan-faint); background: var(--cyan-trace); border-radius: 0 4px 4px 0; padding: 1.1rem 1.4rem; color: var(--ink-body); font-size: .95rem; line-height: 1.6; max-width: 74ch; }
+.builds-note b { color: var(--ink-bright); }
+.soon-tag { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--cyan-dim); border: 1px solid var(--rule); border-radius: 3px; padding: .2em .5em; margin-left: .5rem; white-space: nowrap; }
+
+/* ---------- Detail: hero, meta, benefits ---------- */
+.build-photo { aspect-ratio: 16 / 9; width: 100%; background: linear-gradient(135deg,#0d1016,#12161d); border: 1px solid var(--rule); border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-top: 2.2rem; }
+.build-photo span { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .16em; color: #55606f; text-transform: uppercase; }
+.build-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
+/* real photo (portrait build shots) — frame + contain, don't crop */
+.build-photo--shot { aspect-ratio: auto; padding: 1.4rem; }
+.build-photo--shot img { width: auto; max-width: 100%; max-height: 640px; height: auto; object-fit: contain; box-shadow: 0 8px 30px rgba(0,0,0,.5); }
+figure.build-shot { margin: 2rem 0 0; }
+figure.build-shot figcaption { margin-top: .8rem; font-family: var(--font-mono); font-size: .72rem; letter-spacing: .12em; color: #6a7482; text-transform: uppercase; text-align: center; }
+.buildmeta { display: flex; flex-wrap: wrap; gap: 1.4rem 2.6rem; margin-top: 2rem; padding: 1.3rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.buildmeta__item { display: flex; flex-direction: column; gap: .2rem; }
+.buildmeta__k { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: #8a95a5; }
+.buildmeta__v { color: var(--ink-bright); font-weight: 600; }
+.benefits { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2.6rem; margin-top: 2rem; }
+@media (max-width: 760px) { .benefits { grid-template-columns: 1fr; } }
+.benefits li { position: relative; padding-left: 1.4rem; color: var(--ink-body); line-height: 1.55; }
+.benefits li::before { content: ''; position: absolute; left: 0; top: .55em; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); }
+.benefits b { color: var(--ink-bright); font-weight: 600; }
+
+/* ---------- BOM table ---------- */
+.tablewrap { overflow-x: auto; margin-top: 1.4rem; }
+.bom { width: 100%; border-collapse: collapse; font-size: .94rem; min-width: 640px; }
+.bom th { text-align: left; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--cyan); padding: .55rem .8rem; border-bottom: 1px solid var(--cyan-faint); }
+.bom td { padding: .75rem .8rem; border-bottom: 1px solid var(--rule); vertical-align: top; color: var(--ink-body); line-height: 1.45; }
+.bom tr td:first-child { color: var(--ink-bright); font-weight: 600; }
+.bom__spec { display: block; font-family: var(--font-mono); font-size: .74rem; font-weight: 400; color: #8a95a5; margin-top: .15rem; }
+.bom__group td { background: rgba(0,217,255,0.045); font-family: var(--font-mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--cyan); font-weight: 600; }
+.bom__note { color: #8a95a5; font-size: .88rem; }
+.bom a.buy { color: var(--cyan); font-weight: 600; white-space: nowrap; }
+.bom .tag--xtak { color: #7ee0a0; }
+.bom .tag--self { color: #8a95a5; font-weight: 600; }
+
+/* ---------- Download + disclosure ---------- */
+.dl-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.8rem; align-items: center; }
+.disclosure { margin-top: 1rem; font-size: .82rem; color: #6f7a89; line-height: 1.5; max-width: 74ch; }
+
+/* ---------- Build guide steps ---------- */
+.guide-steps { list-style: none; counter-reset: step; margin-top: 1.8rem; display: grid; gap: 1rem; }
+.guide-steps li { position: relative; padding: 1rem 1.2rem 1rem 3.2rem; border: 1px solid var(--rule); border-radius: 5px; background: rgba(255,255,255,0.015); color: var(--ink-body); line-height: 1.55; }
+.guide-steps li::before { counter-increment: step; content: counter(step); position: absolute; left: 1rem; top: 1rem; width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--cyan-trace); border: 1px solid var(--cyan-faint); color: var(--cyan); font-family: var(--font-mono); font-size: .8rem; display: flex; align-items: center; justify-content: center; }
+.guide-steps b { color: var(--ink-bright); }
+
+/* ---------- Support matrix (index) ---------- */
+.matrix-wrap { overflow-x: auto; margin-top: 2.5rem; }
+.matrix { width: 100%; border-collapse: collapse; min-width: 560px; font-size: .95rem; }
+.matrix th, .matrix td { padding: .85rem 1rem; border-bottom: 1px solid var(--rule); text-align: center; }
+.matrix thead th { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-bright); border-bottom: 1px solid var(--cyan-faint); vertical-align: bottom; font-weight: 600; }
+.matrix__rowh { text-align: left !important; color: #8a95a5 !important; font-weight: 600 !important; font-size: .68rem !important; letter-spacing: .12em; }
+.matrix__dev { display: block; font-family: var(--font-mono); font-size: .62rem; font-weight: 400; letter-spacing: .03em; text-transform: none; color: #7d8794; margin-top: .35rem; }
+.matrix tbody th { text-align: left; color: var(--ink-bright); font-weight: 800; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .02em; font-size: 1.15rem; }
+.matrix td.yes { color: var(--cyan); font-weight: 700; font-size: 1.15rem; }
+.matrix tbody tr.matrix__all { background: rgba(0,217,255,0.05); }
+.matrix tbody tr:hover { background: rgba(0,217,255,0.06); }
+.matrix__note { margin-top: 1.1rem; font-size: .9rem; color: #8a95a5; line-height: 1.6; max-width: 72ch; }
+.matrix__note b { color: var(--ink-bright); }
+
+/* ---------- "What runs where" — per-node rows (replaces the matrix table) ---------- */
+.runs { margin-top: 2.4rem; }
+.runs__row { display: flex; flex-wrap: wrap; align-items: baseline; gap: .7rem 1.6rem; padding: 1.25rem 1.2rem; border-bottom: 1px solid var(--rule); }
+.runs__row:first-child { border-top: 1px solid var(--rule); }
+.runs__row--all { background: rgba(0,217,255,0.045); border-radius: 4px; }
+.runs__node { flex: 0 0 8rem; font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; text-transform: uppercase; color: var(--ink-bright); letter-spacing: .02em; }
+.runs__pkgs { display: flex; flex-wrap: wrap; gap: .5rem; }
+.runs__dev { color: #7d8794; font-weight: 400; }
+@media (max-width: 560px) { .runs__node { flex-basis: 100%; margin-bottom: .35rem; } }

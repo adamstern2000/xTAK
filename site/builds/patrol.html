@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Patrol node — the everyday xTAK reference build. A battery-powered Raspberry Pi 4B netTAK mesh node with GPS timing and external-antenna options. Full parts list, substitution notes, and build guide." />
+  <title>Patrol Node — xTAK Reference Build | xTAK</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/builds.css?v=4" />
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">REFERENCE / BUILDS</span>
+        <span class="readout__item">PATROL NODE</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">MEDIUM · TEAM / MOBILE</span>
+        <span class="readout__item"><span data-clock>&mdash;</span></span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="brand"><span class="brand__diamond"></span><span class="brand__word"><span class="accent">x</span>TAK</span></a>
+      <nav><ul class="nav__links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#suite">The Suite</a></li>
+        <li><a href="/about-tak.html">About TAK</a></li>
+        <li><a href="/builds/">Builds</a></li>
+        <li><a href="/support.html">Support</a></li>
+      </ul></nav>
+      <a href="/products/netTAK.html#mesh-radio" class="nav__cta">Join the Beta &rarr;</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / <a href="/builds/">Builds</a> / <span class="text-cyan">Patrol</span></div>
+      <h1 class="pagehead__title">Patrol<br><em>node.</em></h1>
+      <p class="intro-lede" style="font-size:1.15rem;color:var(--ink-body);line-height:1.65;max-width:66ch;margin-top:1.4rem;">
+        The everyday node. A battery-powered Raspberry&nbsp;Pi&nbsp;4B that runs netTAK — Standalone out of
+        the box, or full Mesh with the HaLow radio — plus offline maps, GPS timing, and an external-antenna
+        option. Sized to move with a team and keep a self-contained TAK network in your pack.
+      </p>
+
+      <div class="chips">
+        <span class="chips__label">Runs</span>
+        <span class="chip">netTAK Standalone</span>
+        <span class="chip">netTAK Mesh</span>
+        <span class="chip">mbtileserver</span>
+      </div>
+
+      <div class="build-photo build-photo--shot"><img src="/img/builds/patrol-hero.jpg" alt="A completed Patrol node on a mast — printed enclosure with dual antennas, out in the field." loading="lazy"></div>
+
+      <div class="buildmeta">
+        <div class="buildmeta__item"><span class="buildmeta__k">Compute</span><span class="buildmeta__v">Raspberry Pi 4B</span></div>
+        <div class="buildmeta__item"><span class="buildmeta__k">Backhaul</span><span class="buildmeta__v">Wi-Fi HaLow</span></div>
+        <div class="buildmeta__item"><span class="buildmeta__k">Power</span><span class="buildmeta__v">10,000 mAh · UPS</span></div>
+        <div class="buildmeta__item"><span class="buildmeta__k">Options</span><span class="buildmeta__v">GPS · High-gain Wi-Fi</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES / BENEFITS -->
+  <section class="section section--tight">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="WHY THIS NODE">FEATURES</span>
+      <h2 class="section__title">What the<br>Patrol <em>gives you.</em></h2>
+      <ul class="benefits">
+        <li><b>Battery-powered, all-day.</b> A UPS power board and a 10,000 mAh cell run the node off-grid, with live battery state right in the adminTAK panel.</li>
+        <li><b>GPS timing &amp; position.</b> Add the GPS module and the node disciplines the cluster clock without internet — and reports its own position to your ATAK map.</li>
+        <li><b>Reach when you need it.</b> Drop in the high-gain USB Wi-Fi adapter and external antennas for client coverage well beyond the built-in radio.</li>
+        <li><b>Field-sealed I/O.</b> Panel-mount Ethernet and antenna bulkheads bring connectors to the outside of the case without breaking the seal.</li>
+        <li><b>One-button operation.</b> A single momentary button for clean power-up and safe shutdown — no keyboard, no console.</li>
+        <li><b>HaLow mesh backhaul.</b> The Wi-Fi HaLow radio links Patrol nodes into a self-healing mesh across long distances.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BOM -->
+  <section class="section section--tight">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="PARTS LIST">BILL OF MATERIALS</span>
+      <h2 class="section__title">The <em>parts list.</em></h2>
+      <p style="color:var(--ink-body);line-height:1.6;max-width:64ch;margin-top:1.3rem;">
+        The base build runs netTAK Standalone and mbtileserver on its own. Add the HaLow radio to run
+        netTAK Mesh, plus the optional GPS and long-range Wi-Fi groups. Generic part on the left, where to
+        buy on the right, and a note on what you can safely swap.
+      </p>
+
+      <div class="tablewrap">
+        <table class="bom">
+          <thead>
+            <tr><th>Part</th><th>Where to get it</th><th>Notes &amp; substitutions</th></tr>
+          </thead>
+          <tbody>
+            <tr class="bom__group"><td colspan="3">Base build — runs netTAK Standalone + mbtileserver</td></tr>
+
+            <tr>
+              <td>Compute<span class="bom__spec">Raspberry Pi 4B</span></td>
+              <td><span class="tag--self">You supply</span></td>
+              <td class="bom__note">Must be a Raspberry Pi <b>4B</b> (4 GB or 8 GB). Other Pi models aren't supported.</td>
+            </tr>
+            <tr>
+              <td>UPS / power board<span class="bom__spec">PiSugar 3 Plus</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0FBK89B8H?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">PiSugar 3 or 3 Plus. Live battery readout in adminTAK depends on this board.</td>
+            </tr>
+            <tr>
+              <td>Battery<span class="bom__spec">10,000 mAh LiPo</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0DP634VQ5?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Any quality LiPo that fits your case and matches the PiSugar connector &amp; polarity.</td>
+            </tr>
+            <tr>
+              <td>microSD card<span class="bom__spec">A1/U3 · 64 GB–512 GB</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0BF5XMJCM?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Any A1/U3 card runs netTAK. For offline maps (mbtileserver), size up: ~64 GB holds one map region, ~512 GB the full map set.</td>
+            </tr>
+            <tr>
+              <td>USB-C charge cable<span class="bom__spec">Right-angle, short</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0CY23C434?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Any short right-angle USB-C cable that fits your internal routing.</td>
+            </tr>
+            <tr>
+              <td>Wi-Fi antenna extension<span class="bom__spec">RP-SMA bulkhead, 2-pack</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B081BH627Q?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">RP-SMA male-to-female bulkhead pigtails to bring antennas to the case wall.</td>
+            </tr>
+            <tr>
+              <td>USB-A U-shape adapter<span class="bom__spec">180°, 2-pack</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0BZ4M7FYH?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Frees clearance for the HaLow radio and adapters inside the case.</td>
+            </tr>
+            <tr>
+              <td>USB-C charge-port mount<span class="bom__spec">Panel mount, 23.4 mm</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0BJDSH8KM?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Panel-mount USB-C that brings the charge port out to the case wall. The 23.4 mm barrel matches the 3D-printed case cutout; sold in a 2-pack (the build uses one).</td>
+            </tr>
+            <tr>
+              <td>Ethernet patch cable<span class="bom__spec">Cat6, slim</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B07JMLLDLG?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Chosen for its thin profile so it packs neatly inside the case. Any equally slim, short Cat6 works.</td>
+            </tr>
+            <tr>
+              <td>Ethernet panel connector<span class="bom__spec">RJ45 bulkhead, 20 mm</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0CP288ZNJ?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Weatherproof RJ45 bulkhead for out-of-band / bridge access at the case wall. The 20 mm barrel matches the 3D-printed case cutout.</td>
+            </tr>
+            <tr>
+              <td>Power button<span class="bom__spec">12 mm momentary</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B09BKXT1J1?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">12 mm momentary push button. Wired to the PiSugar for power/shutdown.</td>
+            </tr>
+            <tr>
+              <td>Heat-set inserts — covers<span class="bom__spec">M3 kit</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0GR9XXCGG?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">M3 heat-set inserts for installing the covers.</td>
+            </tr>
+            <tr>
+              <td>Heat-set inserts — mounting<span class="bom__spec">½&quot; interface</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0FZ67H2KX?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Larger inserts for the external ½&quot; mounting interface (tripod / mast / pole).</td>
+            </tr>
+
+            <tr>
+              <td>Pi mounting screws<span class="bom__spec">2.5 mm plastic</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0BL3RW7PJ?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">2.5 mm plastic screws to mount the Pi to the PiSugar and the case.</td>
+            </tr>
+            <tr>
+              <td>Case screws<span class="bom__spec">3 mm stainless</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0DFWX8F36?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">3 mm stainless machine screws that thread into the heat-set inserts to close up the case.</td>
+            </tr>
+
+            <tr class="bom__group"><td colspan="3">Add for netTAK Mesh (needs the HaLow radio)</td></tr>
+            <tr>
+              <td>Wi-Fi HaLow radio<span class="bom__spec">Vantron VT-USB-AH-8108</span></td>
+              <td><a class="buy tag--xtak" href="/products/netTAK.html#mesh-radio">Buy from xTAK &rarr;</a></td>
+              <td class="bom__note">Required for netTAK <b>Mesh</b> — the mesh runs on it. Sold by xTAK; do not substitute. Skip it if you're only running netTAK Standalone.</td>
+            </tr>
+
+            <tr class="bom__group"><td colspan="3">Optional — GPS (position reports + clock sync)</td></tr>
+            <tr>
+              <td>GPS module<span class="bom__spec">BZGNSS BZ-251</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0C4XKZHNP?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Fits the printed case and is known for a fast fix. Any u-blox-based GPS works electrically, but this one is sized for the case.</td>
+            </tr>
+            <tr>
+              <td>Jumper wires<span class="bom__spec">Female-female</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B07S2RH6Q4?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Dupont jumpers to wire the GPS module to the Pi's GPIO UART.</td>
+            </tr>
+
+            <tr class="bom__group"><td colspan="3">Optional — enhanced Wi-Fi (external antenna, dual-band range)</td></tr>
+            <tr>
+              <td>USB Wi-Fi adapter<span class="bom__spec">ALFA AWUS036ACS</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0752CTSGD?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Adds dual-band client coverage beyond the Pi's built-in Wi-Fi. Any RTL8812-based USB Wi-Fi adapter works — the ALFA is just our known-good pick.</td>
+            </tr>
+            <tr>
+              <td>Antenna<span class="bom__spec">8 dBi RP-SMA</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B07R21LN5P?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">High-gain RP-SMA antenna for the USB adapter — the adapter uses one; sold in a 2-pack. Match connector to your adapter.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="dl-row">
+        <a href="/builds/patrol-bom.csv" class="btn btn--ghost" download>Download BOM (CSV)</a>
+        <span style="color:#8a95a5;font-size:.9rem;">Opens in Excel / Google Sheets.</span>
+      </div>
+
+      <p class="disclosure">
+        Some links above are Amazon affiliate links — as an Amazon Associate, xTAK earns from qualifying
+        purchases at no extra cost to you. We link the exact parts we build with; you're free to source
+        equivalents anywhere.
+      </p>
+    </div>
+  </section>
+
+  <!-- BUILD GUIDE -->
+  <section class="section section--tight">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="ASSEMBLY">BUILD GUIDE</span>
+      <h2 class="section__title">Putting it <em>together.</em></h2>
+      <p style="color:var(--ink-body);line-height:1.6;max-width:64ch;margin-top:1.3rem;">
+        Most of the Patrol build is plug-together. A few steps need care — heat-set inserts, a little
+        soldering, and wiring the GPS. Step-by-step photos and instructions for each are on the way.
+      </p>
+      <ol class="guide-steps">
+        <li><b>Set the heat-set inserts.</b> Melt the M3 (cover) and mounting inserts into the printed case with a soldering iron.</li>
+        <li><b>Solder the power button.</b> Wire the 12 mm momentary button to the PiSugar power header.</li>
+        <li><b>Wire the GPS module (optional).</b> Jumper the GPS to the Pi's GPIO UART pins.</li>
+        <li><b>Mount the panel connectors.</b> Fit the RJ45 bulkhead and antenna pigtails to the case wall.</li>
+        <li><b>Lay out the internals.</b> Seat the Pi, PiSugar, battery, and HaLow radio; route USB-C and Ethernet.</li>
+      </ol>
+      <figure class="build-shot">
+        <div class="build-photo build-photo--shot"><img src="/img/builds/patrol-internals.jpg" alt="Inside a completed Patrol node: Raspberry Pi 4B, HaLow radio, ALFA Wi-Fi adapter, RJ45 and antenna bulkheads in the printed case." loading="lazy"></div>
+        <figcaption>Patrol internals — Pi 4B, HaLow radio, Wi-Fi adapter, and panel-mounted RJ45 &amp; antennas</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div>
+          <div class="cta-banner__eyebrow">Software + the one part we sell</div>
+          <h3 class="cta-banner__title">Get netTAK and the HaLow radio.</h3>
+          <p class="cta-banner__body">Build the hardware from this list, then license netTAK and grab the Wi-Fi HaLow radio — the one component we sell direct.</p>
+        </div>
+        <a href="/products/netTAK.html#mesh-radio" class="btn btn--primary">Get netTAK</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span style="color: var(--cyan);">x</span>TAK</div>
+          <p class="footer__brand-tag">Self-hosted, off-grid situational awareness for the team that has to coordinate when the WAN is gone.</p>
+        </div>
+        <div class="footer__col"><h4>Products</h4><ul>
+          <li><a href="/products/baseTAK.html">baseTAK</a></li>
+          <li><a href="/products/digiTAK.html">digiTAK</a></li>
+          <li><a href="/products/loraTAK.html">loraTAK</a></li>
+          <li><a href="/products/chatTAK.html">chatTAK</a></li>
+          <li><a href="/products/sdrTAK.html">sdrTAK</a></li>
+          <li><a href="/products/netTAK.html">netTAK</a></li>
+          <li><a href="/products/aiTAK.html">aiTAK</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Resources</h4><ul>
+          <li><a href="/about-tak.html">About TAK</a></li>
+          <li><a href="/builds/">Builds</a></li>
+          <li><a href="/beta.html">Beta Program</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK" target="_blank" rel="noopener">GitHub Repo</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul>
+          <li><a href="https://activate.xtak.ai/contact">Contact support</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 xTAK Project · All rights reserved</div>
+        <div>xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, aiTAK are trademarks of the xTAK Project · <a href="/copyright.html">Notice</a></div>
+        <div style="flex-basis:100%"><a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="/refund.html">Refunds</a> · <a href="/third-party-notices.html">Open-Source &amp; Third-Party Notices</a> · <a href="/copyright.html">Copyright &amp; Trademarks</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+
+</body>
+</html>

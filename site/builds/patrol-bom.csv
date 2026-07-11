@@ -1,0 +1,21 @@
+Group,Part,Spec,Where to buy,Link,Notes / substitutions
+Base build,Compute,Raspberry Pi 4B,You supply,,Must be a Raspberry Pi 4B (4GB or 8GB). Other Pi models are not supported.
+netTAK Mesh add-on,Wi-Fi HaLow radio,Vantron VT-USB-AH-8108,xTAK,https://xtak.ai/products/netTAK.html#mesh-radio,Required for netTAK Mesh - the mesh runs on it. Sold by xTAK; do not substitute. Skip if only running netTAK Standalone.
+Base build,UPS / power board,PiSugar 3 Plus,Amazon,https://www.amazon.com/dp/B0FBK89B8H?tag=xtak-20,PiSugar 3 or 3 Plus. Live battery readout in adminTAK depends on this board.
+Base build,Battery,10000 mAh LiPo,Amazon,https://www.amazon.com/dp/B0DP634VQ5?tag=xtak-20,Any quality LiPo that fits your case and matches the PiSugar connector and polarity.
+Base build,microSD card,A1/U3 64 GB-512 GB,Amazon,https://www.amazon.com/dp/B0BF5XMJCM?tag=xtak-20,Any A1/U3 card runs netTAK. For offline maps (mbtileserver) size up: ~64 GB holds one map region ~512 GB the full map set.
+Base build,USB-C charge cable,Right-angle short,Amazon,https://www.amazon.com/dp/B0CY23C434?tag=xtak-20,Any short right-angle USB-C cable that fits your internal routing.
+Base build,Wi-Fi antenna extension,RP-SMA bulkhead 2-pack,Amazon,https://www.amazon.com/dp/B081BH627Q?tag=xtak-20,RP-SMA male-to-female bulkhead pigtails to bring antennas to the case wall.
+Base build,USB-A U-shape adapter,180 degree 2-pack,Amazon,https://www.amazon.com/dp/B0BZ4M7FYH?tag=xtak-20,Frees clearance for the HaLow radio and adapters inside the case.
+Base build,USB-C charge-port mount,Panel mount 23.4 mm,Amazon,https://www.amazon.com/dp/B0BJDSH8KM?tag=xtak-20,Panel-mount USB-C that brings the charge port out to the case wall. The 23.4 mm barrel matches the 3D-printed case cutout; sold in a 2-pack (the build uses one).
+Base build,Ethernet patch cable,Cat6 slim,Amazon,https://www.amazon.com/dp/B07JMLLDLG?tag=xtak-20,Chosen for its thin profile so it packs neatly inside the case. Any equally slim short Cat6 works.
+Base build,Ethernet panel connector,RJ45 bulkhead 20 mm,Amazon,https://www.amazon.com/dp/B0CP288ZNJ?tag=xtak-20,Weatherproof RJ45 bulkhead for out-of-band / bridge access at the case wall. The 20 mm barrel matches the 3D-printed case cutout.
+Base build,Power button,12 mm momentary,Amazon,https://www.amazon.com/dp/B09BKXT1J1?tag=xtak-20,12 mm momentary push button. Wired to the PiSugar for power / shutdown.
+Base build,Heat-set inserts - covers,M3 kit,Amazon,https://www.amazon.com/dp/B0GR9XXCGG?tag=xtak-20,M3 heat-set inserts for installing the covers.
+Base build,Heat-set inserts - mounting,1/2 inch interface,Amazon,https://www.amazon.com/dp/B0FZ67H2KX?tag=xtak-20,Larger inserts for the external 1/2 inch mounting interface (tripod / mast / pole).
+Base build,Pi mounting screws,2.5 mm plastic,Amazon,https://www.amazon.com/dp/B0BL3RW7PJ?tag=xtak-20,2.5 mm plastic screws to mount the Pi to the PiSugar and the case.
+Base build,Case screws,3 mm stainless,Amazon,https://www.amazon.com/dp/B0DFWX8F36?tag=xtak-20,3 mm stainless machine screws that thread into the heat-set inserts to close up the case.
+Optional GPS,GPS module,BZGNSS BZ-251,Amazon,https://www.amazon.com/dp/B0C4XKZHNP?tag=xtak-20,Fits the printed case and is known for a fast fix. Any u-blox-based GPS works electrically but this one is sized for the case.
+Optional GPS,Jumper wires,Female-female,Amazon,https://www.amazon.com/dp/B07S2RH6Q4?tag=xtak-20,Dupont jumpers to wire the GPS module to the Pi GPIO UART.
+Optional Wi-Fi,USB Wi-Fi adapter,ALFA AWUS036ACS,Amazon,https://www.amazon.com/dp/B0752CTSGD?tag=xtak-20,Adds dual-band client coverage. Any RTL8812-based USB Wi-Fi adapter works - the ALFA is just our known-good pick.
+Optional Wi-Fi,Antenna,8 dBi RP-SMA,Amazon,https://www.amazon.com/dp/B07R21LN5P?tag=xtak-20,High-gain RP-SMA antenna for the USB adapter - the adapter uses one; sold in a 2-pack. Match connector to your adapter.

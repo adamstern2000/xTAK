@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Scout node — the smallest xTAK reference build. A pocket-to-pack Raspberry Pi Zero 2 W running digiTAK, offline maps, and GPS for a single operator. Full parts list and build guide." />
+  <title>Scout Node — xTAK Reference Build | xTAK</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/builds.css?v=4" />
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">REFERENCE / BUILDS</span>
+        <span class="readout__item">SCOUT NODE</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">SMALLEST · PERSONAL / CARRY</span>
+        <span class="readout__item"><span data-clock>&mdash;</span></span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="brand"><span class="brand__diamond"></span><span class="brand__word"><span class="accent">x</span>TAK</span></a>
+      <nav><ul class="nav__links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#suite">The Suite</a></li>
+        <li><a href="/about-tak.html">About TAK</a></li>
+        <li><a href="/builds/">Builds</a></li>
+        <li><a href="/support.html">Support</a></li>
+      </ul></nav>
+      <a href="/products/digiTAK.html" class="nav__cta">Get digiTAK &rarr;</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / <a href="/builds/">Builds</a> / <span class="text-cyan">Scout</span></div>
+      <h1 class="pagehead__title">Scout<br><em>node.</em></h1>
+      <p class="intro-lede" style="font-size:1.15rem;color:var(--ink-body);line-height:1.65;max-width:66ch;margin-top:1.4rem;">
+        The lightest node — a pocket-to-pack Raspberry&nbsp;Pi&nbsp;Zero&nbsp;2&nbsp;W running digiTAK,
+        offline maps, and GPS for a single operator on the move. Custom-powered and sized to a compact
+        printed case.
+      </p>
+
+      <div class="chips">
+        <span class="chips__label">Runs</span>
+        <span class="chip">netTAK Standalone</span>
+        <span class="chip">digiTAK</span>
+        <span class="chip">mbtileserver</span>
+      </div>
+
+      <div class="build-photo build-photo--shot"><img src="/img/builds/scout-hero.jpg" alt="A completed Scout node — compact printed enclosure with a single antenna, out in the field." loading="lazy"></div>
+
+      <div class="buildmeta">
+        <div class="buildmeta__item"><span class="buildmeta__k">Compute</span><span class="buildmeta__v">Raspberry Pi Zero 2 W</span></div>
+        <div class="buildmeta__item"><span class="buildmeta__k">Runs</span><span class="buildmeta__v">digiTAK (digirig)</span></div>
+        <div class="buildmeta__item"><span class="buildmeta__k">Power</span><span class="buildmeta__v">4,000 mAh · panel-charged</span></div>
+        <div class="buildmeta__item"><span class="buildmeta__k">GPS</span><span class="buildmeta__v">Fast-fix</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES / BENEFITS -->
+  <section class="section section--tight">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="WHY THIS NODE">FEATURES</span>
+      <h2 class="section__title">What the<br>Scout <em>gives you.</em></h2>
+      <ul class="benefits">
+        <li><b>Pocket-to-pack.</b> The smallest node in the lineup — a Raspberry Pi Zero 2 W in a compact printed case a single operator can carry anywhere.</li>
+        <li><b>digiTAK on the air.</b> A digirig bridges an amateur radio for VHF/UHF data — run <a href="/products/digiTAK.html" class="text-cyan">digiTAK</a> straight from the node.</li>
+        <li><b>Offline maps.</b> mbtileserver serves basemaps to your ATAK / WinTAK with no internet — <a href="/docs/mbtileserver-install.html" class="text-cyan">install guide</a>.</li>
+        <li><b>Fast GPS.</b> A quick-fix GPS puts your position on the map and disciplines the clock — no internet, no jumper wiring.</li>
+        <li><b>Custom power.</b> A panel-mount charge port and a tiny 5V supply keep the build sealed and field-chargeable.</li>
+        <li><b>Runs the netTAK Standalone base.</b> Its own Wi-Fi, DNS, and DHCP so EUDs connect straight to it — no separate router.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BOM -->
+  <section class="section section--tight">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="PARTS LIST">BILL OF MATERIALS</span>
+      <h2 class="section__title">The <em>parts list.</em></h2>
+      <p style="color:var(--ink-body);line-height:1.6;max-width:64ch;margin-top:1.3rem;">
+        The base build runs netTAK Standalone and mbtileserver. Add the digirig to run digiTAK, plus the
+        optional GPS. Generic part on the left, where to buy on the right, and a note on what you can
+        safely swap.
+      </p>
+
+      <div class="tablewrap">
+        <table class="bom">
+          <thead>
+            <tr><th>Part</th><th>Where to get it</th><th>Notes &amp; substitutions</th></tr>
+          </thead>
+          <tbody>
+            <tr class="bom__group"><td colspan="3">Base build — runs netTAK Standalone + mbtileserver</td></tr>
+            <tr>
+              <td>Compute<span class="bom__spec">Pi Zero 2 W kit</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0FWRPF4FV?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Raspberry Pi Zero 2 W. This kit includes the short USB cable the build routes inside the case.</td>
+            </tr>
+            <tr>
+              <td>UPS / power board<span class="bom__spec">PiSugar (Pi Zero)</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0FB3N1YSK?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">A PiSugar sized for the Pi Zero 2 W. Gives live battery state in adminTAK.</td>
+            </tr>
+            <tr>
+              <td>Battery<span class="bom__spec">4,000 mAh LiPo · 54×50 mm</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B09FSYGKDB?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">The 54×50 mm cell is sized to fit the custom Scout case.</td>
+            </tr>
+            <tr>
+              <td>microSD card<span class="bom__spec">A1/U3 · 64 GB–512 GB</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0BF5XMJCM?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Any A1/U3 card runs digiTAK. For offline maps (mbtileserver), size up: ~64 GB holds one map region, ~512 GB the full map set.</td>
+            </tr>
+            <tr>
+              <td>USB panel mount (data)<span class="bom__spec">Male USB, 23.7 mm</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0CQ29PYBT?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Male-USB panel mount that mates the cable included with the Pi, bringing data to the case wall. The 23.7 mm barrel matches the 3D-printed case cutout.</td>
+            </tr>
+            <tr>
+              <td>USB-C charge-port mount<span class="bom__spec">Panel mount, 23.4 mm</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0BJDSH8KM?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Panel-mount USB-C charge port at the case wall. The 23.4 mm barrel matches the 3D-printed case cutout.</td>
+            </tr>
+            <tr>
+              <td>5V power module<span class="bom__spec">Compact buck</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0G458HNSS?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">A very small 5V supply that installs inside the charge panel mount to power the Pi.</td>
+            </tr>
+            <tr>
+              <td>Charge connector<span class="bom__spec">Cable end</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B091CRLJM2?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Mates the other end of the charge cable.</td>
+            </tr>
+            <tr>
+              <td>Charging wire<span class="bom__spec">20–24 AWG silicone, ~6 in</span></td>
+              <td><span class="tag--self">You supply</span></td>
+              <td class="bom__note">About 6 in of 20–24 AWG silicone wire for the charge run. Any equivalent works.</td>
+            </tr>
+            <tr>
+              <td>Heat-set inserts — covers<span class="bom__spec">M3 kit</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0GR9XXCGG?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">M3 heat-set inserts for installing the covers.</td>
+            </tr>
+            <tr>
+              <td>Pi mounting screws<span class="bom__spec">2.5 mm plastic</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0BL3RW7PJ?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">2.5 mm plastic screws to mount the Pi to the PiSugar and the case.</td>
+            </tr>
+            <tr>
+              <td>Case screws<span class="bom__spec">3 mm stainless</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0DFWX8F36?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">3 mm stainless machine screws that thread into the heat-set inserts to close up the case.</td>
+            </tr>
+
+            <tr class="bom__group"><td colspan="3">Add for digiTAK</td></tr>
+            <tr>
+              <td>digirig interface<span class="bom__spec">USB sound + PTT</span></td>
+              <td><a class="buy" href="https://digirig.net" target="_blank" rel="noopener">digirig.net</a></td>
+              <td class="bom__note">Bridges an amateur (VHF/UHF) radio for digiTAK. Sold direct at digirig.net.</td>
+            </tr>
+            <tr>
+              <td>Digirig shielded cable<span class="bom__spec">USB-C, ferrites</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0BJ182J9J?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">Short shielded USB-C cable for the digirig — keeps RF off the data line.</td>
+            </tr>
+
+            <tr class="bom__group"><td colspan="3">Optional — GPS (position reports + clock sync)</td></tr>
+            <tr>
+              <td>GPS module<span class="bom__spec">BZGNSS BZ-251</span></td>
+              <td><a class="buy" href="https://www.amazon.com/dp/B0C4XKZHNP?tag=xtak-20">Amazon</a></td>
+              <td class="bom__note">The same fast-fix GPS as the other builds — no jumper wires needed on the Scout.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="dl-row">
+        <a href="/builds/scout-bom.csv" class="btn btn--ghost" download>Download BOM (CSV)</a>
+        <span style="color:#8a95a5;font-size:.9rem;">Opens in Excel / Google Sheets.</span>
+      </div>
+
+      <p class="disclosure">
+        Some links above are Amazon affiliate links — as an Amazon Associate, xTAK earns from qualifying
+        purchases at no extra cost to you. We link the exact parts we build with; you're free to source
+        equivalents anywhere.
+      </p>
+    </div>
+  </section>
+
+  <!-- BUILD GUIDE -->
+  <section class="section section--tight">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="ASSEMBLY">BUILD GUIDE</span>
+      <h2 class="section__title">Putting it <em>together.</em></h2>
+      <p style="color:var(--ink-body);line-height:1.6;max-width:64ch;margin-top:1.3rem;">
+        The Scout adds a small custom charging harness to the compact case. Step-by-step photos and the
+        wiring detail are on the way.
+      </p>
+      <figure class="build-shot">
+        <div class="build-photo build-photo--shot"><img src="/img/builds/scout-internals.jpg" alt="Inside a completed Scout node: Raspberry Pi Zero 2 W, PiSugar power board, and custom charge harness in the compact printed case." loading="lazy"></div>
+        <figcaption>Scout internals — Pi Zero 2 W, PiSugar, and the custom charge harness</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div>
+          <div class="cta-banner__eyebrow">The software the Scout runs</div>
+          <h3 class="cta-banner__title">Put TAK in your pocket.</h3>
+          <p class="cta-banner__body">Build the hardware from this list, then license digiTAK — offline maps and the netTAK Standalone base come with it.</p>
+        </div>
+        <a href="/products/digiTAK.html" class="btn btn--primary">Get digiTAK</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span style="color: var(--cyan);">x</span>TAK</div>
+          <p class="footer__brand-tag">Self-hosted, off-grid situational awareness for the team that has to coordinate when the WAN is gone.</p>
+        </div>
+        <div class="footer__col"><h4>Products</h4><ul>
+          <li><a href="/products/baseTAK.html">baseTAK</a></li>
+          <li><a href="/products/digiTAK.html">digiTAK</a></li>
+          <li><a href="/products/loraTAK.html">loraTAK</a></li>
+          <li><a href="/products/chatTAK.html">chatTAK</a></li>
+          <li><a href="/products/sdrTAK.html">sdrTAK</a></li>
+          <li><a href="/products/netTAK.html">netTAK</a></li>
+          <li><a href="/products/aiTAK.html">aiTAK</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Resources</h4><ul>
+          <li><a href="/about-tak.html">About TAK</a></li>
+          <li><a href="/builds/">Builds</a></li>
+          <li><a href="/beta.html">Beta Program</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK" target="_blank" rel="noopener">GitHub Repo</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul>
+          <li><a href="https://activate.xtak.ai/contact">Contact support</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 xTAK Project · All rights reserved</div>
+        <div>xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, aiTAK are trademarks of the xTAK Project · <a href="/copyright.html">Notice</a></div>
+        <div style="flex-basis:100%"><a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="/refund.html">Refunds</a> · <a href="/third-party-notices.html">Open-Source &amp; Third-Party Notices</a> · <a href="/copyright.html">Copyright &amp; Trademarks</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+
+</body>
+</html>

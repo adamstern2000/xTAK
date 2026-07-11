@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Reference hardware builds for the xTAK suite — carry-anywhere mesh nodes you can build yourself. Full parts lists, substitution notes, and build guides for the Scout, Patrol, and Basecamp nodes." />
+  <title>Builds — Reference Hardware for the xTAK Suite | xTAK</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/builds.css?v=4" />
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">REFERENCE / BUILDS</span>
+        <span class="readout__item">FIELD HARDWARE</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">CARRY-ANYWHERE NODES</span>
+        <span class="readout__item"><span data-clock>&mdash;</span></span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="brand"><span class="brand__diamond"></span><span class="brand__word"><span class="accent">x</span>TAK</span></a>
+      <nav><ul class="nav__links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#suite">The Suite</a></li>
+        <li><a href="/about-tak.html">About TAK</a></li>
+        <li><a href="/builds/">Builds</a></li>
+        <li><a href="/support.html">Support</a></li>
+      </ul></nav>
+      <a href="/products/netTAK.html#mesh-radio" class="nav__cta">Join the Beta &rarr;</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / <span class="text-cyan">Builds</span></div>
+      <h1 class="pagehead__title">Build your<br><em>own node.</em></h1>
+      <p class="intro-lede">
+        Every xTAK product runs on a carry-anywhere appliance you can build yourself. These are our
+        <b>reference hardware builds</b> — the exact nodes we run, with full parts lists, substitution
+        notes, and step-by-step build guides. Pick the node that fits the mission, source the parts,
+        and put a self-contained TAK network in a case.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="03 / HARDWARE">CHOOSE YOUR NODE</span>
+
+      <div class="buildgrid">
+
+        <!-- SCOUT -->
+        <article class="buildcard">
+          <a href="/builds/scout.html" style="display:contents;">
+            <div class="buildcard__photo"><img src="/img/builds/scout-hero.jpg" alt="Completed Scout node" loading="lazy"></div>
+          </a>
+          <div class="buildcard__body">
+            <span class="buildcard__eyebrow">Reference build</span>
+            <h2 class="buildcard__name">Scout</h2>
+            <span class="buildcard__size">Smallest · Pi Zero 2 W</span>
+            <p class="buildcard__tag">The lightest node — a pocket-to-pack Raspberry Pi Zero 2 W running digiTAK, offline maps, and GPS for a single operator on the move.</p>
+            <div class="chips"><span class="chip">digiTAK</span><span class="chip">mbtileserver</span></div>
+            <div class="buildcard__foot"><a href="/builds/scout.html" class="btn btn--primary">View the build</a></div>
+          </div>
+        </article>
+
+        <!-- PATROL -->
+        <article class="buildcard">
+          <a href="/builds/patrol.html" style="display:contents;">
+            <div class="buildcard__photo"><img src="/img/builds/patrol-hero.jpg" alt="Completed Patrol node" loading="lazy"></div>
+          </a>
+          <div class="buildcard__body">
+            <span class="buildcard__eyebrow">Reference build</span>
+            <h2 class="buildcard__name">Patrol</h2>
+            <span class="buildcard__size">Medium · team / mobile</span>
+            <p class="buildcard__tag">The everyday node. Battery-powered netTAK mesh with GPS timing and an external-antenna option — built to move with a team.</p>
+            <div class="chips"><span class="chip">netTAK Mesh</span><span class="chip">mbtileserver</span></div>
+            <div class="buildcard__foot"><a href="/builds/patrol.html" class="btn btn--primary">View the build</a></div>
+          </div>
+        </article>
+
+        <!-- BASECAMP -->
+        <article class="buildcard">
+          <a href="/builds/basecamp.html" style="display:contents;">
+            <div class="buildcard__photo"><img src="/img/builds/basecamp-hero.jpg" alt="Completed Basecamp node" loading="lazy"></div>
+          </a>
+          <div class="buildcard__body">
+            <span class="buildcard__eyebrow">Reference build</span>
+            <h2 class="buildcard__name">Basecamp</h2>
+            <span class="buildcard__size">Largest · site / whole-suite</span>
+            <p class="buildcard__tag">The do-everything node. Dual-USB expansion drives cameras, mmWave sensing, and the digiTAK, sdrTAK &amp; loraTAK radios — one box runs the whole suite.</p>
+            <div class="chips"><span class="chip">netTAK Mesh</span><span class="chip">digiTAK</span><span class="chip">sdrTAK</span><span class="chip">loraTAK</span><span class="chip">mbtileserver</span></div>
+            <div class="buildcard__foot"><a href="/builds/basecamp.html" class="btn btn--primary">View the build</a></div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="builds-note">
+        <b>New to these builds?</b> Patrol and Basecamp run on a Raspberry&nbsp;Pi&nbsp;4B, the Scout on a
+        smaller Pi&nbsp;Zero&nbsp;2&nbsp;W — each in a field case running the xTAK software you license. The
+        one part we sell directly is the Wi-Fi HaLow radio
+        (<a href="/products/netTAK.html#mesh-radio" class="text-cyan">Vantron VT-USB-AH-8108</a>),
+        required only for netTAK Mesh — everything else is off-the-shelf and linked in each build's parts list.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== SUPPORT MATRIX ============== -->
+  <section class="section section--tight">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="04 / SOFTWARE">SOFTWARE SUPPORT</span>
+      <h2 class="section__title">What runs<br><em>where.</em></h2>
+      <p style="color:var(--ink-body);line-height:1.6;max-width:66ch;margin-top:1.3rem;">
+        Every build runs <b style="color:var(--ink-bright)">netTAK Standalone</b> and
+        <b style="color:var(--ink-bright)">mbtileserver</b> out of the box. Beyond that, each node runs
+        the packages below — just add the small plug-in device each one needs.
+      </p>
+      <div class="runs">
+        <div class="runs__row">
+          <div class="runs__node">Scout</div>
+          <div class="runs__pkgs">
+            <span class="chip">digiTAK <span class="runs__dev">· digirig</span></span>
+          </div>
+        </div>
+        <div class="runs__row">
+          <div class="runs__node">Patrol</div>
+          <div class="runs__pkgs">
+            <span class="chip">netTAK Mesh <span class="runs__dev">· HaLow</span></span>
+          </div>
+        </div>
+        <div class="runs__row runs__row--all">
+          <div class="runs__node">Basecamp</div>
+          <div class="runs__pkgs">
+            <span class="chip">netTAK Mesh <span class="runs__dev">· HaLow</span></span>
+            <span class="chip">digiTAK <span class="runs__dev">· digirig</span></span>
+            <span class="chip">sdrTAK <span class="runs__dev">· RTL-SDR</span></span>
+            <span class="chip">loraTAK <span class="runs__dev">· Meshtastic</span></span>
+          </div>
+        </div>
+      </div>
+      <p class="matrix__note">Scout is the digiTAK node, Patrol the netTAK Mesh node, and <b>Basecamp runs all four</b> — on their own or several at once.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span style="color: var(--cyan);">x</span>TAK</div>
+          <p class="footer__brand-tag">Self-hosted, off-grid situational awareness for the team that has to coordinate when the WAN is gone.</p>
+        </div>
+        <div class="footer__col"><h4>Products</h4><ul>
+          <li><a href="/products/baseTAK.html">baseTAK</a></li>
+          <li><a href="/products/digiTAK.html">digiTAK</a></li>
+          <li><a href="/products/loraTAK.html">loraTAK</a></li>
+          <li><a href="/products/chatTAK.html">chatTAK</a></li>
+          <li><a href="/products/sdrTAK.html">sdrTAK</a></li>
+          <li><a href="/products/netTAK.html">netTAK</a></li>
+          <li><a href="/products/aiTAK.html">aiTAK</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Resources</h4><ul>
+          <li><a href="/about-tak.html">About TAK</a></li>
+          <li><a href="/builds/">Builds</a></li>
+          <li><a href="/beta.html">Beta Program</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK" target="_blank" rel="noopener">GitHub Repo</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul>
+          <li><a href="https://activate.xtak.ai/contact">Contact support</a></li>
+          <li><a href="https://github.com/adamstern2000/xTAK/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 xTAK Project · All rights reserved</div>
+        <div>xTAK, baseTAK, digiTAK, loraTAK, chatTAK, sdrTAK, netTAK, aiTAK are trademarks of the xTAK Project · <a href="/copyright.html">Notice</a></div>
+        <div style="flex-basis:100%"><a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="/refund.html">Refunds</a> · <a href="/third-party-notices.html">Open-Source &amp; Third-Party Notices</a> · <a href="/copyright.html">Copyright &amp; Trademarks</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+
+</body>
+</html>

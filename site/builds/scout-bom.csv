@@ -1,0 +1,16 @@
+Group,Part,Spec,Where to buy,Link,Notes / substitutions
+Base build,Compute,Pi Zero 2 W kit,Amazon,https://www.amazon.com/dp/B0FWRPF4FV?tag=xtak-20,Raspberry Pi Zero 2 W. This kit includes the short USB cable the build routes inside the case.
+Base build,UPS / power board,PiSugar (Pi Zero),Amazon,https://www.amazon.com/dp/B0FB3N1YSK?tag=xtak-20,A PiSugar sized for the Pi Zero 2 W. Gives live battery state in adminTAK.
+Base build,Battery,4000 mAh LiPo 54x50 mm,Amazon,https://www.amazon.com/dp/B09FSYGKDB?tag=xtak-20,The 54x50 mm cell is sized to fit the custom Scout case.
+Base build,microSD card,A1/U3 64 GB-512 GB,Amazon,https://www.amazon.com/dp/B0BF5XMJCM?tag=xtak-20,Any A1/U3 card runs digiTAK. For offline maps (mbtileserver) size up: ~64 GB holds one map region ~512 GB the full map set.
+Base build,USB panel mount (data),Male USB 23.7 mm,Amazon,https://www.amazon.com/dp/B0CQ29PYBT?tag=xtak-20,Male-USB panel mount that mates the cable included with the Pi bringing data to the case wall. The 23.7 mm barrel matches the 3D-printed case cutout.
+Base build,USB-C charge-port mount,Panel mount 23.4 mm,Amazon,https://www.amazon.com/dp/B0BJDSH8KM?tag=xtak-20,Panel-mount USB-C charge port at the case wall. The 23.4 mm barrel matches the 3D-printed case cutout.
+Base build,5V power module,Compact buck,Amazon,https://www.amazon.com/dp/B0G458HNSS?tag=xtak-20,A very small 5V supply that installs inside the charge panel mount to power the Pi.
+Base build,Charge connector,Cable end,Amazon,https://www.amazon.com/dp/B091CRLJM2?tag=xtak-20,Mates the other end of the charge cable.
+Base build,Charging wire,20-24 AWG silicone ~6 in,You supply,,About 6 in of 20-24 AWG silicone wire for the charge run. Any equivalent works.
+Base build,Heat-set inserts - covers,M3 kit,Amazon,https://www.amazon.com/dp/B0GR9XXCGG?tag=xtak-20,M3 heat-set inserts for installing the covers.
+Base build,Pi mounting screws,2.5 mm plastic,Amazon,https://www.amazon.com/dp/B0BL3RW7PJ?tag=xtak-20,2.5 mm plastic screws to mount the Pi to the PiSugar and the case.
+Base build,Case screws,3 mm stainless,Amazon,https://www.amazon.com/dp/B0DFWX8F36?tag=xtak-20,3 mm stainless machine screws that thread into the heat-set inserts to close up the case.
+digiTAK add-on,digirig interface,USB sound + PTT,digirig.net,https://digirig.net,Bridges an amateur (VHF/UHF) radio for digiTAK. Sold direct at digirig.net.
+digiTAK add-on,Digirig shielded cable,USB-C ferrites,Amazon,https://www.amazon.com/dp/B0BJ182J9J?tag=xtak-20,Short shielded USB-C cable for the digirig - keeps RF off the data line.
+Optional GPS,GPS module,BZGNSS BZ-251,Amazon,https://www.amazon.com/dp/B0C4XKZHNP?tag=xtak-20,The same fast-fix GPS as the other builds - no jumper wires needed on the Scout.
