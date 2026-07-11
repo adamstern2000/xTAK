@@ -6,6 +6,10 @@
 /* ---------- Index: node cards ---------- */
 .buildgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3.5rem; }
 @media (max-width: 900px) { .buildgrid { grid-template-columns: 1fr; } }
+/* fewer-than-3 card layouts (product-page cross-links) */
+.buildgrid--1 { grid-template-columns: minmax(0, 400px); }
+.buildgrid--2 { grid-template-columns: repeat(2, minmax(0, 400px)); }
+@media (max-width: 900px) { .buildgrid--1, .buildgrid--2 { grid-template-columns: 1fr; } }
 .buildcard { display: flex; flex-direction: column; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; background: rgba(255,255,255,0.015); transition: border-color .18s ease, transform .18s ease; }
 .buildcard:hover { border-color: var(--cyan-faint); transform: translateY(-3px); }
 .buildcard--soon { opacity: .72; }
