@@ -78,7 +78,7 @@
         Every node runs a web admin UI you reach from any browser.
       </p>
       <div class="hero__ctas" style="margin-top: 2rem;">
-        <a href="#mesh-radio" class="btn btn--primary">Join the Beta &mdash; see options &darr;</a>
+        <a href="#mesh-radio" class="btn btn--primary">Join the Beta — from $59/device</a>
       </div>
       <p style="margin-top:1rem;color:#8a95a5;font-size:.95rem">
         From <b style="color:var(--cyan);font-size:1.2rem">$59</b>/device · or a Mesh node with the HaLow radio included for <b style="color:var(--cyan)">$159</b> · + <b style="color:var(--cyan)">$24/yr</b> Beta Support
@@ -226,7 +226,7 @@
               site for the duration of an operation.
             </p>
             <ul class="outcome__list">
-              <li><strong>Multi-platform support</strong> — Linux appliance (palm-sized to mini-server). Pick the hardware that fits the role.</li>
+              <li><strong>Palm-sized and rugged</strong> — a Raspberry Pi 4B you can drop in a Pelican case and leave at a forward site.</li>
               <li><strong>Wi-Fi HaLow backhaul</strong> — sub-1 GHz long-range Wi-Fi. Up to ~1 km with a standard 3 dBi antenna; up to ~16 km with a high-gain directional (Yagi or panel) for ridge-to-ridge bridges.</li>
               <li><strong>Standard 2.4 GHz Wi-Fi for clients</strong> — operators connect with the phones, tablets, and laptops they already have. No special radios required on the client side.</li>
               <li><strong>USB-PD UPS hat UPS integration</strong> — live battery state in the dashboard. Plug in a USB-PD UPS hat 2, 3, or 3-Plus and you have a battery-operated node with charge visibility.</li>
@@ -278,7 +278,7 @@
         <li class="capability"><strong>Service control in the browser</strong> — restart, stop, view logs from the admin UI.</li>
         <li class="capability"><strong>Reboot, shutdown, halt</strong> — system actions in the UI with confirmation gates.</li>
         <li class="capability"><strong>USB-PD UPS hat UPS integration</strong> — live battery state on the dashboard for battery-operated deployments.</li>
-        <li class="capability"><strong>Runs on the Raspberry Pi 4B</strong> — aarch64; additional boards supported later.</li>
+        <li class="capability"><strong>Runs on the Raspberry Pi 4B</strong> — aarch64, Raspberry Pi OS Legacy (64-bit).</li>
       </ul>
 
       <div class="choose reveal" data-delay="2">
@@ -463,12 +463,8 @@
           <div class="proposition__num" style="color:var(--cyan)">PAID · $59/DEVICE</div>
           <h3 class="proposition__title">netTAK<br>Mesh</h3>
           <p class="proposition__body">The self-forming, self-healing HaLow mesh across every site, with cluster-wide management. Every mesh node runs a 30-day free trial, then activates with a per-device license. Running a fleet? A site license covers unlimited devices.</p>
-          <div class="buy-stack" style="margin-top:1.25rem;">
-            <a href="https://buy.stripe.com/dRmfZgbdTgIkcs3dRyfbq00" class="btn btn--primary">Join the Beta — $59/device + support</a>
-            <a href="https://buy.stripe.com/7sY7sK4Pv0Jm63FcNufbq01" class="btn btn--ghost">Buy device licenses only — $59/device</a>
-          </div>
-          <p class="buy-note">Licenses only — just the per-device license, no support subscription. Buy one or more (set quantity at checkout).</p>
-          <p class="buy-note"><strong style="color:var(--ink-bright)">Mesh needs a Wi-Fi HaLow radio</strong> — one per node, and we sell it: the <a href="#mesh-radio" style="color:var(--cyan)">VT-USB-AH-8108</a> ($100). Get the <a href="https://buy.stripe.com/eVqcN4gydbo063FaFmfbq09" style="color:var(--cyan)">license + radio together</a>, or add radios anytime.</p>
+          <p class="buy-note">Per-device license with a 30-day free trial, or a site license for unlimited devices. Pick a plan in the <a href="#mesh-radio" style="color:var(--cyan)">three options above</a>.</p>
+          <p class="buy-note"><strong style="color:var(--ink-bright)">Mesh needs a Wi-Fi HaLow radio</strong> — one per node, and we sell it: the VT-USB-AH-8108 ($100), included in the license-plus-radio option above.</p>
         </div>
       </div>
       <p class="reveal" style="margin-top:2rem;color:#8a95a5;max-width:44rem;">
@@ -485,7 +481,7 @@
           <h3 class="cta-banner__title">Get netTAK running on your hardware.</h3>
           <p class="cta-banner__body">Beta pricing: <b>$59/device</b> (retail $99) plus <b>$24/yr</b> Beta Support for updates, 3D case designs, and Discord support — bundled in one checkout. netTAK needs 2+ nodes to mesh.</p>
         </div>
-        <a href="https://buy.stripe.com/dRmfZgbdTgIkcs3dRyfbq00" class="btn btn--primary">Join the Beta →</a>
+        <a href="/beta.html" class="btn btn--primary">Join the Beta</a>
       </div>
     </div>
   </section>
@@ -496,8 +492,8 @@
       <h2 class="section__title">What netTAK <em>needs.</em></h2>
 
       <div class="specs" style="margin-top: 2rem;">
-        <div class="specs__row"><div class="specs__key">Compute</div><div class="specs__val">Raspberry Pi 4B (aarch64) · additional boards supported later</div></div>
-        <div class="specs__row"><div class="specs__key">OS</div><div class="specs__val">Raspberry Pi OS (Debian, aarch64) with netTAK's HaLow-enabled kernel (6.12.x)</div></div>
+        <div class="specs__row"><div class="specs__key">Compute</div><div class="specs__val">Raspberry Pi 4B (aarch64) · netTAK is validated on Raspberry Pi running Pi OS Legacy (64-bit)</div></div>
+        <div class="specs__row"><div class="specs__key">OS</div><div class="specs__val">Raspberry Pi OS Legacy (64-bit) with netTAK's HaLow-enabled kernel</div></div>
         <div class="specs__row"><div class="specs__key">Backhaul radio</div><div class="specs__val">Wi-Fi HaLow (802.11ah, sub-1 GHz) — Morse Micro chipset via USB (e.g. Vantron dongle) · pair with omni or directional antennas · range (line-of-sight): up to ~1 km with a standard 3 dBi omni, up to ~16 km with high-gain directional antennas</div></div>
         <div class="specs__row"><div class="specs__key">Client radio</div><div class="specs__val">Built-in 2.4 GHz Wi-Fi (802.11n) access point · optional external USB Wi-Fi for extended AP coverage</div></div>
         <div class="specs__row"><div class="specs__key">Mesh</div><div class="specs__val">batman-adv Layer-2 mesh over HaLow — self-forming, self-healing · dedicated out-of-band Ethernet management port (admin reachable even if the mesh is down)</div></div>
@@ -508,7 +504,6 @@
         <div class="specs__row"><div class="specs__key">Time</div><div class="specs__val">Optional u-blox M10 GPS for time discipline · with no GPS and no internet, the mesh elects its own time authority</div></div>
         <div class="specs__row"><div class="specs__key">Install</div><div class="specs__val">~105 MB offline bundle (+ separate ~40 MB HaLow radio bundle) · all dependencies vendored · no network required at install · idempotent re-install preserves state · <a href="/docs/nettak-install.html" style="color: var(--cyan);">Install Guide →</a></div></div>
         <div class="specs__row"><div class="specs__key">Distribution</div><div class="specs__val">Signed install bundle, SHA-256 verified · downloaded from your licensed account</div></div>
-        <div class="specs__row"><div class="specs__key">Version</div><div class="specs__val">netTAK v0.23.3 · Public Beta (available now)</div></div>
       </div>
     </div>
   </section>
@@ -529,7 +524,7 @@
         </details>
         <details>
           <summary>What hardware do I need?</summary>
-          <p>A Raspberry Pi 4B (aarch64) — additional boards supported later. Any power source works; a PiSugar UPS adds live battery visibility on the dashboard. Optionally a u-blox M10 GPS for cluster-wide time discipline, and a Wi-Fi HaLow USB dongle for long-range backhaul.</p>
+          <p>A Raspberry Pi 4B (aarch64) running Raspberry Pi OS Legacy (64-bit) — the platform netTAK is validated on. Any power source works; a PiSugar UPS adds live battery visibility on the dashboard. Optionally a u-blox M10 GPS for cluster-wide time discipline, and a Wi-Fi HaLow USB dongle for long-range backhaul.</p>
         </details>
         <details>
           <summary>Does it work without internet?</summary>
@@ -549,7 +544,7 @@
         </details>
         <details>
           <summary>Do I need a commercial mesh-router vendor?</summary>
-          <p>No. commodity Linux hardware, your Linux, your network. No vendor lock-in, no cloud account — your Linux, your network.</p>
+          <p>No. netTAK is self-hosted on the xTAK Raspberry Pi node — no proprietary mesh-router to buy into, no cloud account. Your network, your data.</p>
         </details>
       </div>
     </div>

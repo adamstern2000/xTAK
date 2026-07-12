@@ -255,7 +255,7 @@
           <h3 class="cta-banner__title">Get loraTAK on your mesh.</h3>
           <p class="cta-banner__body">Beta pricing: <b>$39.99/device</b> (retail $59) plus <b>$16/yr</b> Beta Support for updates, case designs, and Discord support — bundled in one checkout.</p>
         </div>
-        <a href="https://buy.stripe.com/14A6oG1Dj9fS0Jl6p6fbq02" class="btn btn--primary">Join the Beta →</a>
+        <a href="/beta.html" class="btn btn--primary">Join the Beta</a>
       </div>
     </div>
   </section>
@@ -266,7 +266,7 @@
       <h2 class="section__title">What loraTAK <em>needs.</em></h2>
 
       <div class="specs" style="margin-top: 2rem;">
-        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Any small Linux appliance or any Linux/macOS box with Python 3.10+</div></div>
+        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Any Ubuntu / Debian Linux machine (2 GB+ RAM, amd64 or arm64) with Python 3.10+ — no Raspberry Pi or xTAK build required</div></div>
         <div class="specs__row"><div class="specs__key">Meshtastic radio</div><div class="specs__val">Any model the Meshtastic firmware supports — Heltec V3, T-Beam, RAK 4631, T-Echo, Seeed TRACKER L1, station-G2. USB serial or TCP.</div></div>
         <div class="specs__row"><div class="specs__key">Control panel</div><div class="specs__val">adminTAK web panel (port 8443) — mobile-friendly configuration + monitoring</div></div>
         <div class="specs__row"><div class="specs__key">Licensing</div><div class="specs__val">30-day trial, then an offline hardware-tied activation token (Ed25519, verified offline)</div></div>
@@ -276,7 +276,6 @@
         <div class="specs__row"><div class="specs__key">Internet</div><div class="specs__val">Not required · mesh ↔ TAK works entirely off-grid</div></div>
         <div class="specs__row"><div class="specs__key">Mesh firmware</div><div class="specs__val">Stock Meshtastic firmware · no modifications required</div></div>
         <div class="specs__row"><div class="specs__key">Future direction</div><div class="specs__val">Named for the LoRa layer, not a specific firmware. Architecture leaves room for Reticulum (RNS), custom Meshtastic forks, future LoRa transports.</div></div>
-        <div class="specs__row"><div class="specs__key">Version</div><div class="specs__val">cot_mesh v 1.6.3 · Beta</div></div>
       </div>
     </div>
   </section>
@@ -325,7 +324,7 @@
     <div class="container">
       <span class="section__label section__label--coord" data-coord="REFERENCE HARDWARE">BUILD THE HARDWARE</span>
       <h2 class="section__title">Run loraTAK on a<br><em>node you build.</em></h2>
-      <p style="color:var(--ink-body);line-height:1.6;max-width:64ch;margin-top:1.3rem;">loraTAK adds a Meshtastic radio over USB — the Basecamp node has the expansion to run it.</p>
+      <p style="color:var(--ink-body);line-height:1.6;max-width:64ch;margin-top:1.3rem;">loraTAK adds a Meshtastic radio over USB — the Basecamp node has the expansion to run it. The build is optional — loraTAK also runs on any Ubuntu/Debian Linux box with a Meshtastic radio on USB.</p>
       <div class="buildgrid buildgrid--1">
         <article class="buildcard">
           <a href="/builds/basecamp.html" style="display:contents;">

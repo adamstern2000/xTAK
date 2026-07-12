@@ -301,7 +301,7 @@
           <h3 class="cta-banner__title">Put the sky on your map.</h3>
           <p class="cta-banner__body">Beta pricing: <b>$39.99/device</b> (retail $59) plus <b>$16/yr</b> Beta Support for updates, case designs, and Discord support — bundled in one checkout.</p>
         </div>
-        <a href="https://buy.stripe.com/fZu00i4Pv9fS2RtbJqfbq04" class="btn btn--primary">Join the Beta →</a>
+        <a href="/beta.html" class="btn btn--primary">Join the Beta</a>
       </div>
     </div>
   </section>
@@ -312,7 +312,7 @@
       <h2 class="section__title">What sdrTAK <em>needs.</em></h2>
 
       <div class="specs" style="margin-top: 2rem;">
-        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Linux appliance or any Debian Bookworm / Ubuntu 22.04+ host</div></div>
+        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Any Ubuntu / Debian Linux host (2 GB+ RAM, Debian Bookworm or Ubuntu 22.04+, amd64 or arm64) — no Raspberry Pi or xTAK build required</div></div>
         <div class="specs__row"><div class="specs__key">SDR dongle</div><div class="specs__val">RTL-SDR for 1090 (~$30), a second RTL-SDR for UAT 978, AirSpy R2 for better sensitivity, or HackRF. 13 SoapySDR drivers bundled — any SoapySDR-supported device works.</div></div>
         <div class="specs__row"><div class="specs__key">Antenna</div><div class="specs__val">Ground-plane or discone for 1090 / 978. AIS is 162 MHz — different antenna.</div></div>
         <div class="specs__row"><div class="specs__key">Network</div><div class="specs__val">A LAN — same one your ATAK / WinTAK clients are on</div></div>
@@ -320,7 +320,6 @@
         <div class="specs__row"><div class="specs__key">Internet</div><div class="specs__val">Not required · aircraft database can pull updates if available</div></div>
         <div class="specs__row"><div class="specs__key">Aircraft database</div><div class="specs__val">520k-entry OpenSky CSV · auto-loads on startup · enriches every contact with tail number, type, operator, owner</div></div>
         <div class="specs__row"><div class="specs__key">Control panel</div><div class="specs__val">adminTAK web panel (port 8443) · gain/stale-time, decoder enable/disable, device discovery, icon picker, DB refresh, restart</div></div>
-        <div class="specs__row"><div class="specs__key">Version</div><div class="specs__val">cot_sdr v 1.4.7 · Beta</div></div>
       </div>
     </div>
   </section>
@@ -369,7 +368,7 @@
     <div class="container">
       <span class="section__label section__label--coord" data-coord="REFERENCE HARDWARE">BUILD THE HARDWARE</span>
       <h2 class="section__title">Run sdrTAK on a<br><em>node you build.</em></h2>
-      <p style="color:var(--ink-body);line-height:1.6;max-width:64ch;margin-top:1.3rem;">sdrTAK needs an RTL-SDR on the USB expansion — the Basecamp node is built for it.</p>
+      <p style="color:var(--ink-body);line-height:1.6;max-width:64ch;margin-top:1.3rem;">sdrTAK needs an RTL-SDR on the USB expansion — the Basecamp node is built for it. The build is optional — sdrTAK also runs on any Ubuntu/Debian Linux box with an RTL-SDR plugged in.</p>
       <div class="buildgrid buildgrid--1">
         <article class="buildcard">
           <a href="/builds/basecamp.html" style="display:contents;">

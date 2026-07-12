@@ -30,7 +30,6 @@
       </div>
       <div class="readout__group">
         <span class="readout__item">STATUS / BETA</span>
-        <span class="readout__item">v 3.1.3</span>
         <span class="readout__item"><span data-clock>—</span></span>
       </div>
     </div>
@@ -295,7 +294,7 @@
           <li class="capability"><strong>Direwolf-managed VHF/UHF</strong> with managed PTT (RTS, CM108, or VOX).</li>
           <li class="capability"><strong>External TNC support</strong> via KISS over TCP or KISS Serial.</li>
           <li class="capability"><strong>APRS-IS Tier 2 connection</strong> with auto-passcode derived from your callsign.</li>
-          <li class="capability"><strong>Open TAK-APRS Protocol Extension v2.1</strong> — public spec at <a href="https://github.com/adamstern2000/cot_radio_aprs" target="_blank" rel="noopener" style="color: var(--cyan);">cot_radio_aprs</a>.</li>
+          <li class="capability"><strong>Open TAK-APRS Protocol Extension</strong> — public spec at <a href="https://github.com/adamstern2000/cot_radio_aprs" target="_blank" rel="noopener" style="color: var(--cyan);">cot_radio_aprs</a>.</li>
           <li class="capability"><strong>Full digipeater</strong> with WIDE1/WIDE2 aliases, dedup window, own-echo filter, and sibling-gateway coexistence — multiple digiTAKs on one RF channel coordinate so they don't re-emit or re-digipeat each other's traffic.</li>
           <li class="capability"><strong>IGate beacon</strong> on the gateway SSID (e.g. <code>KN6ZPL-10</code>) — broadcast on both RF and APRS-IS.</li>
           <li class="capability"><strong>Operator TX-position beacon</strong> on the main SSID with SmartBeacon-gated motion-adaptive cadence (fast on highway, sparse at rest).</li>
@@ -411,7 +410,7 @@
           <h3 class="cta-banner__title">Put TAK on the air.</h3>
           <p class="cta-banner__body">Beta pricing: <b>$39.99/device</b> (retail $59) plus <b>$16/yr</b> Beta Support for updates, case designs, and Discord support — bundled in one checkout.</p>
         </div>
-        <a href="https://buy.stripe.com/dRm3cu0zfbo00Jl28Qfbq06" class="btn btn--primary">Join the Beta →</a>
+        <a href="/beta.html" class="btn btn--primary">Join the Beta</a>
       </div>
     </div>
   </section>
@@ -428,13 +427,12 @@
         <div class="specs__row"><div class="specs__key">APRS-IS transport</div><div class="specs__val">Tier 2 (passcode auto-derived from your callsign)</div></div>
         <div class="specs__row"><div class="specs__key">HF transport</div><div class="specs__val"><span class="text-amber">On the roadmap — not in the current release</span></div></div>
         <div class="specs__row"><div class="specs__key">TAK clients</div><div class="specs__val">ATAK, WinTAK, iTAK, baseTAK — any standard TAK client</div></div>
-        <div class="specs__row"><div class="specs__key">Wire protocol</div><div class="specs__val">TAK-APRS Protocol Extension v2.1 (<a href="https://github.com/adamstern2000/cot_radio_aprs" target="_blank" rel="noopener" style="color: var(--cyan);">open spec</a>)</div></div>
+        <div class="specs__row"><div class="specs__key">Wire protocol</div><div class="specs__val">TAK-APRS Protocol Extension (<a href="https://github.com/adamstern2000/cot_radio_aprs" target="_blank" rel="noopener" style="color: var(--cyan);">open spec</a>)</div></div>
         <div class="specs__row"><div class="specs__key">Control panel</div><div class="specs__val">adminTAK web panel (port 8443) — mobile-friendly; live audio meters, packet feed, counters, per-mode widgets, per-product service enable/disable</div></div>
         <div class="specs__row"><div class="specs__key">Licensing</div><div class="specs__val">30-day trial, then an offline hardware-tied activation token (Ed25519, verified offline — no internet in the field)</div></div>
         <div class="specs__row"><div class="specs__key">RF compliance</div><div class="specs__val">Part 97 gate — won't transmit until a valid amateur callsign is set</div></div>
-        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Linux appliance (4 GB+), or any modern Linux box. Python 3.10+, systemd.</div></div>
+        <div class="specs__row"><div class="specs__key">Hardware</div><div class="specs__val">Any Ubuntu / Debian Linux machine (2 GB+ RAM, amd64 or arm64) — no Raspberry Pi or xTAK build required. Python 3.10+, systemd.</div></div>
         <div class="specs__row"><div class="specs__key">Installation</div><div class="specs__val">Offline tarball · all Python wheels vendored</div></div>
-        <div class="specs__row"><div class="specs__key">Version</div><div class="specs__val">v3.1.3</div></div>
       </div>
     </div>
   </section>
@@ -485,7 +483,7 @@
     <div class="container">
       <span class="section__label section__label--coord" data-coord="REFERENCE HARDWARE">BUILD THE HARDWARE</span>
       <h2 class="section__title">Run digiTAK on a<br><em>node you build.</em></h2>
-      <p style="color:var(--ink-body);line-height:1.6;max-width:64ch;margin-top:1.3rem;">Run digiTAK from a node you can carry. The Scout is the pocket digiTAK build; the Basecamp runs it alongside the rest of the suite.</p>
+      <p style="color:var(--ink-body);line-height:1.6;max-width:64ch;margin-top:1.3rem;">Run digiTAK from a node you can carry. The Scout is the pocket digiTAK build; the Basecamp runs it alongside the rest of the suite. These builds are optional — digiTAK also runs on any Ubuntu/Debian Linux box you already have.</p>
       <div class="buildgrid buildgrid--2">
         <article class="buildcard">
           <a href="/builds/scout.html" style="display:contents;">
