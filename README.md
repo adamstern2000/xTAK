@@ -111,6 +111,23 @@ Customers install xTAK on their own hardware — a small Linux device (Raspberry
 
 ---
 
+## Open-source licenses & corresponding source
+
+xTAK's own product code is proprietary. The products bundle third-party
+**open-source** components (SDR decoders, drivers, and libraries) under their own
+licenses — each product ships a `THIRD_PARTY_NOTICES.txt` and a `licenses/`
+directory inside its install.
+
+For the copyleft (GPL / LGPL) components we compile and distribute, the complete
+**corresponding source** is published under this repository's
+[Releases](https://github.com/adamstern2000/xTAK/releases) — for example
+sdrTAK's decoders:
+[`sdrtak-3rdparty-v1.5.1`](https://github.com/adamstern2000/xTAK/releases/tag/sdrtak-3rdparty-v1.5.1).
+Source for the unmodified Debian packages we redistribute is permanently archived
+at [snapshot.debian.org](https://snapshot.debian.org/).
+
+---
+
 ## Trademark notice
 
 ATAK, WinTAK, iTAK, and TAK are products and trademarks of the U.S. Government. The xTAK Project is independent and **not affiliated with, endorsed by, sponsored by, or licensed by the TAK Product Center, the U.S. Air Force Research Laboratory, the Department of Defense, the Department of Homeland Security, or any U.S. Government agency.**
