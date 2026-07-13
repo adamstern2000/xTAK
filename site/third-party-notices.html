@@ -83,7 +83,9 @@
         <tr><th>Component</th><th>Role</th><th class="lic">License</th></tr>
         <tr><td>Morse Micro MM8108 firmware &amp; reference BCFs</td><td>Wi-Fi HaLow radio firmware</td><td class="lic">Morse Micro Binary Distribution License (proprietary)</td></tr>
         <tr><td>Module-partner BCFs (AzureWave, Quectel, NetPrisma)</td><td>Radio board configuration</td><td class="lic">Vendor binary licenses</td></tr>
-        <tr><td>morse_driver (morse.ko, dot11ah.ko)</td><td>HaLow kernel modules (tag 1.17.8)</td><td class="lic">GPL-2.0-or-later</td></tr>
+        <tr><td>morse_driver (morse.ko, dot11ah.ko)</td><td>HaLow kernel modules (tag 1.17.9)</td><td class="lic">GPL-2.0-or-later</td></tr>
+        <tr><td>8821au.ko (<a href="https://github.com/morrownr/8821au-20210708">morrownr/8821au-20210708</a>, commit 61a0b878)</td><td>External-AP USB Wi-Fi driver</td><td class="lic">GPL-2.0-only</td></tr>
+        <tr><td>brcmfmac.ko (Linux brcmfmac; <strong>modified</strong> — CVE-2025-40321 fix, upstream commit 3776c685)</td><td>Built-in Wi-Fi kernel module</td><td class="lic">GPL-2.0</td></tr>
       </table></div>
 
       <h3>Runtime OS packages (separate processes)</h3>
@@ -102,8 +104,9 @@
         <tr><td>chrony</td><td>Time sync (mesh time authority)</td><td class="lic">GPL-2.0</td></tr>
         <tr><td>gpsd</td><td>GPS daemon (position + time)</td><td class="lic">BSD-3-Clause</td></tr>
         <tr><td>raspi-config / raspi-utils</td><td>Board configuration utilities</td><td class="lic">Raspberry Pi OS</td></tr>
+        <tr><td>PiSugar daemons (<a href="https://github.com/PiSugar/pisugar-power-manager-rs">pisugar-server / -poweroff / -programmer</a>)</td><td>UPS / battery management (2.3.2)</td><td class="lic">GPL-3.0</td></tr>
       </table></div>
-      <p style="color: var(--ink-faint); font-size: 0.92rem;">Vendored transitive libraries bundled for offline install: <span class="mono">libpython3.11</span> (PSF-2.0), <span class="mono">libyaml-0-2</span> (MIT), <span class="mono">libpci3</span> (GPL-2.0-or-later), <span class="mono">raspi-utils-eeprom</span> (Raspberry Pi OS) — each under its upstream Debian license.</p>
+      <p style="color: var(--ink-faint); font-size: 0.92rem;">netTAK also redistributes the transitive <span class="mono">.deb</span> dependencies of the above (e.g. glibc / libc6 LGPL-2.1+, libstdc++6 / libgcc GPL-3.0 with GCC Runtime Library Exception, libsystemd0 / libudev1 LGPL-2.1+, libpython3.11 PSF-2.0, and peers), unmodified from Debian 12 / Raspberry Pi OS, each under its own license; source available via the written offer below.</p>
 
       <h2>Components — sdrTAK</h2>
       <p>sdrTAK is a Python service that decodes SDR radio signals into TAK CoT. Its own code is proprietary; the SDR decoders and drivers it uses run as <em>separate operating-system processes</em> that sdrTAK drives over a command line and pipes — never linked into sdrTAK's own program (mere aggregation). Each component is used under its own license. The exhaustive, versioned list ships with the software as <span class="mono">THIRD_PARTY_NOTICES.txt</span> and <span class="mono">licenses/BOM.txt</span>, with the verbatim license texts in <span class="mono">licenses/</span>; the principal components are summarized below.</p>
@@ -174,25 +177,17 @@
            ========================================================================== -->
 
       <h2>Components — digiTAK</h2>
-      <p>digiTAK (codename <span class="mono">cot_radio</span>) is a Python service that bridges amateur radio and APRS into the TAK ecosystem (Cursor-on-Target). Its own code is proprietary. <span class="mono">direwolf</span> runs as a <em>separate operating-system process</em> that digiTAK drives over KISS — never linked into digiTAK's own program (mere aggregation). Other components are used under their own licenses. The exhaustive, versioned list ships with the software as <span class="mono">THIRD_PARTY_NOTICES.txt</span>; the principal components are summarized below.</p>
-      <h3>Bundled Debian packages</h3>
+      <p>digiTAK (codename <span class="mono">cot_radio</span>) is a Python service that bridges amateur radio and APRS into the TAK ecosystem (Cursor-on-Target). Its own code is proprietary. Its copyleft components each run as a <em>separate operating-system process</em> that digiTAK drives over an arm's-length interface — never linked into digiTAK's own program (mere aggregation). The exhaustive, versioned list ships with the software as <span class="mono">THIRD_PARTY_NOTICES.txt</span>; the principal components are summarized below.</p>
+      <h3>Copyleft components — separate processes (aggregation)</h3>
+      <div class="tablewrap"><table>
+        <tr><th>Component</th><th>Version</th><th>Role</th><th class="lic">License</th></tr>
+        <tr><td>aprslib</td><td>0.7.2</td><td>APRS packet parsing</td><td class="lic">GPL-2.0</td></tr>
+        <tr><td>direwolf</td><td>1.6+dfsg-3</td><td>Soft-TNC (KISS)</td><td class="lic">GPL-2.0-or-later</td></tr>
+      </table></div>
+      <p>Neither is linked into cot_radio's proprietary code: <span class="mono">aprslib</span> runs inside a separate helper process that cot_radio talks to over a pipe (cot_radio does not import aprslib), and <span class="mono">direwolf</span> runs as a separate daemon that cot_radio connects to over KISS-over-TCP. Both are therefore aggregated with, not combined into, cot_radio. Source is available from upstream and the Debian archive, and under the written offer below.</p>
+      <h3>Vendored Python libraries</h3>
       <div class="tablewrap"><table>
         <tr><th>Package</th><th>Version</th><th class="lic">License</th></tr>
-        <tr><td>direwolf</td><td>1.6+dfsg-3</td><td class="lic">GPL-2.0-or-later</td></tr>
-        <tr><td>libasound2 / libasound2-data</td><td>1.2.8</td><td class="lic">LGPL-2.1</td></tr>
-        <tr><td>python3-alsaaudio</td><td>0.8.4</td><td class="lic">PSF-2.0</td></tr>
-        <tr><td>libgps28 / python3-gps</td><td>3.22</td><td class="lic">BSD-3-Clause</td></tr>
-        <tr><td>libhamlib4</td><td>4.5.4</td><td class="lic">LGPL-2.1+ / GPL-2.0+</td></tr>
-        <tr><td>libindiclient1 / libindi-data</td><td>1.9.9</td><td class="lic">LGPL-2.1+ / GPL-2.0+</td></tr>
-        <tr><td>libnova-0.16-0</td><td>0.16</td><td class="lic">LGPL-2.0+</td></tr>
-        <tr><td>libusb-1.0-0</td><td>1.0.26</td><td class="lic">LGPL-2.1-or-later</td></tr>
-        <tr><td>libdbus-1-3</td><td>1.14.10</td><td class="lic">AFL-2.1 (elected) / GPL-2.0+</td></tr>
-        <tr><td>python3-pip / setuptools / wheel / distutils / pkg-resources</td><td>(deb12)</td><td class="lic">MIT / PSF-2.0</td></tr>
-      </table></div>
-      <h3>Vendored Python dependencies</h3>
-      <div class="tablewrap"><table>
-        <tr><th>Component</th><th>Version</th><th class="lic">License</th></tr>
-        <tr><td>aprslib</td><td>0.7.2</td><td class="lic">GPL-2.0-only</td></tr>
         <tr><td>ax253</td><td>0.1.5.post1</td><td class="lic">Apache-2.0</td></tr>
         <tr><td>kiss3</td><td>8.0.0</td><td class="lic">Apache-2.0</td></tr>
         <tr><td>protobuf</td><td>6.33.6</td><td class="lic">BSD-3-Clause</td></tr>
@@ -203,50 +198,44 @@
         <tr><td>importlib_metadata</td><td>9.0.0</td><td class="lic">Apache-2.0</td></tr>
         <tr><td>zipp</td><td>4.1.0</td><td class="lic">MIT</td></tr>
       </table></div>
+      <h3>Bundled Debian packages</h3>
+      <div class="tablewrap"><table>
+        <tr><th>Package</th><th>Version</th><th class="lic">License</th></tr>
+        <tr><td>libasound2 / libasound2-data</td><td>1.2.8</td><td class="lic">LGPL-2.1</td></tr>
+        <tr><td>python3-alsaaudio</td><td>0.8.4</td><td class="lic">PSF-2.0</td></tr>
+        <tr><td>libgps28 / python3-gps</td><td>3.22</td><td class="lic">BSD-3-Clause</td></tr>
+        <tr><td>libhamlib4</td><td>4.5.4</td><td class="lic">LGPL-2.1+ / GPL-2.0+</td></tr>
+        <tr><td>libindiclient1 / libindi-data</td><td>1.9.9</td><td class="lic">LGPL-2.1+ / GPL-2.0+</td></tr>
+        <tr><td>libnova-0.16-0</td><td>0.16</td><td class="lic">LGPL-2.0+</td></tr>
+        <tr><td>libusb-1.0-0</td><td>1.0.26</td><td class="lic">LGPL-2.1-or-later</td></tr>
+        <tr><td>libdbus-1-3</td><td>1.14.10</td><td class="lic">AFL-2.1 (elected) / GPL-2.0+</td></tr>
+        <tr><td>python3-pip / setuptools / wheel / distutils / lib2to3 / pkg-resources</td><td>(deb12)</td><td class="lic">MIT / PSF-2.0</td></tr>
+      </table></div>
       <h3>Bundled data</h3>
       <div class="tablewrap"><table>
-        <tr><th>Asset</th><th class="lic">Source / License</th></tr>
-        <tr><td>EGM96 geoid grid (<span class="mono">egm96_15.bin</span>)</td><td class="lic">Public domain (NGA / NASA)</td></tr>
+        <tr><th>Asset</th><th>Source / License</th></tr>
+        <tr><td>APRS symbol icons (188)</td><td><a href="https://github.com/hessu/aprs-symbols">aprs-symbols</a> by Heikki Hannikainen (OH7LZB) — free to redistribute with a source pointer; per-symbol copyrights in the upstream <span class="mono">COPYRIGHT.md</span>.</td></tr>
+        <tr><td>EGM96 geoid grid (<span class="mono">egm96_15.bin</span>)</td><td>Public domain (NGA / NASA)</td></tr>
       </table></div>
-      <p><strong>direwolf</strong> (GPL-2.0-or-later) and <strong>aprslib</strong> (GPL-2.0-only) are copyleft components distributed with digiTAK; the written offer below applies, and source is available from the Debian archive (direwolf) and upstream (aprslib).</p>
-      <!-- ==========================================================================
-           HOLD — DO NOT PUBLISH UNTIL PROVENANCE CONFIRMED.
-           APRS-NONTAK icon set — 188 icons (APRSPrimary.zip / APRSSecondary.zip)
-           shipped with digiTAK: origin + license TO CONFIRM before listing/crediting.
-           ========================================================================== -->
 
       <h2>Components — offline maps</h2>
       <p>The offline map stack (mbtileserver) is available with digiTAK, netTAK, and sdrTAK. The tile server and renderers run as separate processes; the map data carries the attribution requirements reproduced below.</p>
       <h3>Tile server &amp; render tooling</h3>
       <div class="tablewrap"><table>
-        <tr><th>Component</th><th>Role</th><th class="lic">License</th></tr>
-        <tr><td>mbtileserver (consbio)</td><td>Raster tile server</td><td class="lic">ISC</td></tr>
-        <tr><td>tileserver-gl (maptiler)</td><td>Vector → raster renderer</td><td class="lic">BSD-3-Clause</td></tr>
-        <tr><td>planetiler (onthegomap)</td><td>OSM → tiles builder</td><td class="lic">Apache-2.0</td></tr>
+        <tr><th>Component</th><th>Version</th><th class="lic">License</th></tr>
+        <tr><td>mbtileserver (fork of consbio/mbtileserver)</td><td>v0.1.0</td><td class="lic">ISC</td></tr>
+        <tr><td>tileserver-gl (maptiler)</td><td>5.6.0</td><td class="lic">BSD-3-Clause</td></tr>
+        <tr><td>planetiler (onthegomap)</td><td>@sha256:90c9d29e…</td><td class="lic">Apache-2.0</td></tr>
       </table></div>
-      <h3>Map &amp; imagery data</h3>
+      <h3>Map &amp; imagery data — attribution required</h3>
       <div class="tablewrap"><table>
         <tr><th>Source</th><th>License</th><th class="lic">Required credit</th></tr>
         <tr><td>OpenStreetMap data</td><td>ODbL-1.0</td><td class="lic">© OpenStreetMap contributors</td></tr>
-        <tr><td>OpenMapTiles schema/design</td><td>CC-BY-4.0 (schema code BSD-3)</td><td class="lic">© OpenMapTiles</td></tr>
+        <tr><td>OpenMapTiles schema, style &amp; sprites</td><td>CC-BY-4.0 (schema BSD-3; sprites Maki CC0 + OpenMapTiles)</td><td class="lic">© OpenMapTiles</td></tr>
         <tr><td>NAIP aerial imagery (USDA, via USGS / MS Planetary Computer)</td><td>U.S. public domain</td><td class="lic">USDA NAIP</td></tr>
+        <tr><td>Noto Sans / Open Sans (fonts)</td><td>OFL-1.1 / Apache-2.0</td><td class="lic">—</td></tr>
       </table></div>
-      <p><strong>Map attribution (required).</strong> The map data requires the credit <strong>&ldquo;© OpenMapTiles © OpenStreetMap contributors&rdquo;</strong> to be shown to end users on the map, plus a NAIP / USDA credit on satellite layers, under ODbL-1.0 and CC-BY-4.0. Tiles self-generated from raw OpenStreetMap data are distributed under the ODbL, honoring its attribution and share-alike terms.</p>
-      <h3>Fonts</h3>
-      <div class="tablewrap"><table>
-        <tr><th>Asset</th><th class="lic">License</th></tr>
-        <tr><td>Noto Sans</td><td class="lic">OFL-1.1</td></tr>
-        <tr><td>Open Sans</td><td class="lic">Apache-2.0 / OFL-1.1</td></tr>
-      </table></div>
-      <!-- ==========================================================================
-           HOLD / TBD before relying on this section:
-             - Pin exact versions of mbtileserver / tileserver-gl / planetiler
-               (currently :latest in the build).
-             - Confirm Microsoft Planetary Computer API terms for NAIP tile access.
-             - GL styles + sprites (us-tak, hybrid-tak): xTAK proprietary with
-               OpenMapTiles-schema lineage — confirm sprite/icon provenance before
-               listing/crediting them here.
-           ========================================================================== -->
+      <p><strong>Map attribution (required).</strong> The displayed map credit is <strong>&ldquo;© OpenMapTiles © OpenStreetMap contributors&rdquo;</strong>, with <strong>USDA NAIP</strong> on satellite / hybrid layers, as required by ODbL-1.0 and CC-BY-4.0. Tiles self-generated from raw OpenStreetMap data are distributed under the ODbL, honoring its attribution and share-alike terms.</p>
 
       <h2>Source code for copyleft components</h2>
       <p>Some components are licensed under the GNU General Public License or other copyleft licenses that entitle you to the corresponding source code — including the Linux kernel, the <span class="mono">morse_driver</span> kernel modules, and GPL OS packages (dnsmasq, batctl, ebtables, bridge-utils, rfkill, chrony, and others). Source for these is available from the Debian and Raspberry Pi OS archives. In addition, as a written offer under GPL-2.0 §3(b) and GPL-3.0 §6, you may obtain the corresponding source code for any such component distributed with any xTAK product, for at least the period required by the applicable license, by contacting us through <a href="https://activate.xtak.ai/contact">our contact form</a> with the product name and version. Where a component's own license includes a written-offer or source-availability requirement, that requirement controls. If any component listed on this page as permissive is later found to include copyleft-licensed portions, this written offer applies to it as well.</p>
