@@ -56,7 +56,7 @@
   <section class="section">
     <div class="container container--narrow prose">
 
-      <p style="color: var(--ink-faint); font-size: 0.92rem; border-left: 3px solid var(--cyan-faint); padding-left: 1rem; margin-bottom: 2rem;">The components listed below reflect the current shipping products, <strong>netTAK</strong>, <strong>sdrTAK</strong>, and <strong>loraTAK</strong>. Lists are maintained per release; the exhaustive, versioned list for each product also ships inside that product's software distribution. Contact us through <a href="https://activate.xtak.ai/contact">our contact form</a> for the notices or any license text for a specific product and version.</p>
+      <p style="color: var(--ink-faint); font-size: 0.92rem; border-left: 3px solid var(--cyan-faint); padding-left: 1rem; margin-bottom: 2rem;">The components listed below reflect the current shipping products, <strong>netTAK</strong>, <strong>sdrTAK</strong>, <strong>loraTAK</strong>, and <strong>digiTAK</strong>. Lists are maintained per release; the exhaustive, versioned list for each product also ships inside that product's software distribution. Contact us through <a href="https://activate.xtak.ai/contact">our contact form</a> for the notices or any license text for a specific product and version.</p>
 
       <p>xTAK products are built on the shoulders of the open-source community, and we are grateful for it. xTAK software incorporates and runs on third-party open-source components, each provided under its own license. Those licenses — not our <a href="/terms.html">Terms</a> — govern your rights in those components. This page provides the attributions and notices those licenses require.</p>
 
@@ -171,6 +171,81 @@
                  of the generated code.
            Once confirmed, add a "loraTAK — Bundled assets" H3 + table here in the
            same format.
+           ========================================================================== -->
+
+      <h2>Components — digiTAK</h2>
+      <p>digiTAK (codename <span class="mono">cot_radio</span>) is a Python service that bridges amateur radio and APRS into the TAK ecosystem (Cursor-on-Target). Its own code is proprietary. <span class="mono">direwolf</span> runs as a <em>separate operating-system process</em> that digiTAK drives over KISS — never linked into digiTAK's own program (mere aggregation). Other components are used under their own licenses. The exhaustive, versioned list ships with the software as <span class="mono">THIRD_PARTY_NOTICES.txt</span>; the principal components are summarized below.</p>
+      <h3>Bundled Debian packages</h3>
+      <div class="tablewrap"><table>
+        <tr><th>Package</th><th>Version</th><th class="lic">License</th></tr>
+        <tr><td>direwolf</td><td>1.6+dfsg-3</td><td class="lic">GPL-2.0-or-later</td></tr>
+        <tr><td>libasound2 / libasound2-data</td><td>1.2.8</td><td class="lic">LGPL-2.1</td></tr>
+        <tr><td>python3-alsaaudio</td><td>0.8.4</td><td class="lic">PSF-2.0</td></tr>
+        <tr><td>libgps28 / python3-gps</td><td>3.22</td><td class="lic">BSD-3-Clause</td></tr>
+        <tr><td>libhamlib4</td><td>4.5.4</td><td class="lic">LGPL-2.1+ / GPL-2.0+</td></tr>
+        <tr><td>libindiclient1 / libindi-data</td><td>1.9.9</td><td class="lic">LGPL-2.1+ / GPL-2.0+</td></tr>
+        <tr><td>libnova-0.16-0</td><td>0.16</td><td class="lic">LGPL-2.0+</td></tr>
+        <tr><td>libusb-1.0-0</td><td>1.0.26</td><td class="lic">LGPL-2.1-or-later</td></tr>
+        <tr><td>libdbus-1-3</td><td>1.14.10</td><td class="lic">AFL-2.1 (elected) / GPL-2.0+</td></tr>
+        <tr><td>python3-pip / setuptools / wheel / distutils / pkg-resources</td><td>(deb12)</td><td class="lic">MIT / PSF-2.0</td></tr>
+      </table></div>
+      <h3>Vendored Python dependencies</h3>
+      <div class="tablewrap"><table>
+        <tr><th>Component</th><th>Version</th><th class="lic">License</th></tr>
+        <tr><td>aprslib</td><td>0.7.2</td><td class="lic">GPL-2.0-only</td></tr>
+        <tr><td>ax253</td><td>0.1.5.post1</td><td class="lic">Apache-2.0</td></tr>
+        <tr><td>kiss3</td><td>8.0.0</td><td class="lic">Apache-2.0</td></tr>
+        <tr><td>protobuf</td><td>6.33.6</td><td class="lic">BSD-3-Clause</td></tr>
+        <tr><td>pyserial</td><td>3.5</td><td class="lic">BSD-3-Clause</td></tr>
+        <tr><td>pyserial-asyncio</td><td>0.6</td><td class="lic">BSD-3-Clause</td></tr>
+        <tr><td>bitarray</td><td>3.8.2</td><td class="lic">PSF-2.0</td></tr>
+        <tr><td>attrs</td><td>26.1.0</td><td class="lic">MIT</td></tr>
+        <tr><td>importlib_metadata</td><td>9.0.0</td><td class="lic">Apache-2.0</td></tr>
+        <tr><td>zipp</td><td>4.1.0</td><td class="lic">MIT</td></tr>
+      </table></div>
+      <h3>Bundled data</h3>
+      <div class="tablewrap"><table>
+        <tr><th>Asset</th><th class="lic">Source / License</th></tr>
+        <tr><td>EGM96 geoid grid (<span class="mono">egm96_15.bin</span>)</td><td class="lic">Public domain (NGA / NASA)</td></tr>
+      </table></div>
+      <p><strong>direwolf</strong> (GPL-2.0-or-later) and <strong>aprslib</strong> (GPL-2.0-only) are copyleft components distributed with digiTAK; the written offer below applies, and source is available from the Debian archive (direwolf) and upstream (aprslib).</p>
+      <!-- ==========================================================================
+           HOLD — DO NOT PUBLISH UNTIL PROVENANCE CONFIRMED.
+           APRS-NONTAK icon set — 188 icons (APRSPrimary.zip / APRSSecondary.zip)
+           shipped with digiTAK: origin + license TO CONFIRM before listing/crediting.
+           ========================================================================== -->
+
+      <h2>Components — offline maps</h2>
+      <p>The offline map stack (mbtileserver) is available with digiTAK, netTAK, and sdrTAK. The tile server and renderers run as separate processes; the map data carries the attribution requirements reproduced below.</p>
+      <h3>Tile server &amp; render tooling</h3>
+      <div class="tablewrap"><table>
+        <tr><th>Component</th><th>Role</th><th class="lic">License</th></tr>
+        <tr><td>mbtileserver (consbio)</td><td>Raster tile server</td><td class="lic">ISC</td></tr>
+        <tr><td>tileserver-gl (maptiler)</td><td>Vector → raster renderer</td><td class="lic">BSD-3-Clause</td></tr>
+        <tr><td>planetiler (onthegomap)</td><td>OSM → tiles builder</td><td class="lic">Apache-2.0</td></tr>
+      </table></div>
+      <h3>Map &amp; imagery data</h3>
+      <div class="tablewrap"><table>
+        <tr><th>Source</th><th>License</th><th class="lic">Required credit</th></tr>
+        <tr><td>OpenStreetMap data</td><td>ODbL-1.0</td><td class="lic">© OpenStreetMap contributors</td></tr>
+        <tr><td>OpenMapTiles schema/design</td><td>CC-BY-4.0 (schema code BSD-3)</td><td class="lic">© OpenMapTiles</td></tr>
+        <tr><td>NAIP aerial imagery (USDA, via USGS / MS Planetary Computer)</td><td>U.S. public domain</td><td class="lic">USDA NAIP</td></tr>
+      </table></div>
+      <p><strong>Map attribution (required).</strong> The map data requires the credit <strong>&ldquo;© OpenMapTiles © OpenStreetMap contributors&rdquo;</strong> to be shown to end users on the map, plus a NAIP / USDA credit on satellite layers, under ODbL-1.0 and CC-BY-4.0. Tiles self-generated from raw OpenStreetMap data are distributed under the ODbL, honoring its attribution and share-alike terms.</p>
+      <h3>Fonts</h3>
+      <div class="tablewrap"><table>
+        <tr><th>Asset</th><th class="lic">License</th></tr>
+        <tr><td>Noto Sans</td><td class="lic">OFL-1.1</td></tr>
+        <tr><td>Open Sans</td><td class="lic">Apache-2.0 / OFL-1.1</td></tr>
+      </table></div>
+      <!-- ==========================================================================
+           HOLD / TBD before relying on this section:
+             - Pin exact versions of mbtileserver / tileserver-gl / planetiler
+               (currently :latest in the build).
+             - Confirm Microsoft Planetary Computer API terms for NAIP tile access.
+             - GL styles + sprites (us-tak, hybrid-tak): xTAK proprietary with
+               OpenMapTiles-schema lineage — confirm sprite/icon provenance before
+               listing/crediting them here.
            ========================================================================== -->
 
       <h2>Source code for copyleft components</h2>
