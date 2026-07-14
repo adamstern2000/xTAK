@@ -140,8 +140,13 @@
       <p style="color: var(--ink-faint); font-size: 0.92rem;"><strong>License elections.</strong> Where a bundled component is offered under a choice of licenses, xTAK elects the permissive option for its redistribution: <span class="mono">libdbus-1-3</span> is offered under &ldquo;AFL-2.1 <em>or</em> GPL-2.0-or-later&rdquo;, and xTAK elects the <strong>Academic Free License v2.1</strong>.</p>
 
       <h2>Components — loraTAK</h2>
-      <p>loraTAK is a Python service that bridges Meshtastic LoRa mesh radios into the TAK ecosystem (Cursor-on-Target). It redistributes the third-party open-source components listed below. The applicable license and copyright files are installed alongside these components in the loraTAK software distribution.</p>
-      <h3>loraTAK — Python runtime dependencies (vendored)</h3>
+      <p>loraTAK bridges Meshtastic LoRa mesh radios into the TAK ecosystem (Cursor-on-Target). It runs as two separate programs: proprietary <strong>loraTAK-core</strong>, and a <strong>mesh-bridge</strong> — a separate helper process, licensed under GPL-3.0, that owns the Meshtastic radio. The two communicate over a local socket; loraTAK-core does not link the mesh-bridge or the Meshtastic library. The applicable license and copyright files are installed alongside these components in the loraTAK software distribution.</p>
+      <h3>loraTAK-core (proprietary) — third-party dependency</h3>
+      <div class="tablewrap"><table>
+        <tr><th>Component</th><th>Version</th><th class="lic">License</th></tr>
+        <tr><td>protobuf</td><td>6.33.6</td><td class="lic">BSD-3-Clause</td></tr>
+      </table></div>
+      <h3>loraTAK mesh-bridge (separate GPL-3.0 process) — Meshtastic + its dependency tree</h3>
       <div class="tablewrap"><table>
         <tr><th>Component</th><th>Version</th><th class="lic">License</th></tr>
         <tr><td>meshtastic</td><td>2.7.10</td><td class="lic">GPL-3.0-only</td></tr>
@@ -151,16 +156,15 @@
         <tr><td>dbus-fast</td><td>5.0.22</td><td class="lic">MIT</td></tr>
         <tr><td>idna</td><td>3.18</td><td class="lic">BSD-3-Clause</td></tr>
         <tr><td>packaging</td><td>26.2</td><td class="lic">Apache-2.0 OR BSD-2-Clause</td></tr>
-        <tr><td>pip</td><td>26.1.2</td><td class="lic">MIT</td></tr>
-        <tr><td>protobuf</td><td>6.33.6</td><td class="lic">BSD-3-Clause</td></tr>
         <tr><td>pypubsub</td><td>4.0.7</td><td class="lic">BSD-2-Clause</td></tr>
         <tr><td>pyserial</td><td>3.5</td><td class="lic">BSD-3-Clause</td></tr>
         <tr><td>PyYAML</td><td>6.0.3</td><td class="lic">MIT</td></tr>
         <tr><td>requests</td><td>2.34.2</td><td class="lic">Apache-2.0</td></tr>
         <tr><td>tabulate</td><td>0.9.0</td><td class="lic">MIT</td></tr>
         <tr><td>urllib3</td><td>2.7.0</td><td class="lic">MIT</td></tr>
+        <tr><td>pip</td><td>26.1.2</td><td class="lic">MIT</td></tr>
       </table></div>
-      <p><strong>meshtastic</strong> is licensed under the GNU General Public License v3.0 (GPL-3.0-only). You may obtain the corresponding source code for this component, for at least the period required by the applicable license, by contacting us through <a href="https://activate.xtak.ai/contact">our contact form</a> — the same written offer that applies to the other copyleft components on this page.</p>
+      <p>The <strong>mesh-bridge</strong> is a separate program licensed under the GNU General Public License v3.0 — the same arm's-length pattern by which sdrTAK ships its separate GPL decoders. You may obtain the corresponding source code for the mesh-bridge and the GPL/LGPL components above, for at least the period required by the applicable license, by contacting us through <a href="https://activate.xtak.ai/contact">our contact form</a> — the same written offer that applies to the other copyleft components on this page.</p>
       <!-- =========================================================================
            HOLD — DO NOT PUBLISH THE BLOCK BELOW UNTIL PROVENANCE IS CONFIRMED.
            loraTAK also bundles:
@@ -169,7 +173,7 @@
                  share-alike terms (OSM icons are frequently CC-BY-SA). Confirm the
                  source + license of each category BEFORE listing them publicly, and
                  add any required attribution/credits.
-             (2) TAK CoT protobuf schema (generated *_pb2 stubs) — derived from TAK
+             (2) Generated TAK CoT protobuf stubs (protobufModel) — derived from TAK
                  .proto files; confirm the source .proto license permits redistribution
                  of the generated code.
            Once confirmed, add a "loraTAK — Bundled assets" H3 + table here in the
