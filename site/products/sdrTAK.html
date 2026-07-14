@@ -52,8 +52,8 @@
       <h1 class="pagehead__title">Every aircraft<br>in the sky.<br><em>Every ship in the bay.</em></h1>
       <p class="pagehead__sub">
         <strong class="text-bright">$30 dongle. One antenna. Every aircraft in 150 miles, on your map.</strong>
-        An SDR-powered radio decoder that pulls aircraft (ADS-B 1090 ES, UAT 978) off the air and
-        renders them as native TAK contacts today — with ship tracking (AIS) on the roadmap. Air and
+        An SDR-powered radio decoder that pulls aircraft (ADS-B 1090 ES, UAT 978) and ships
+        (AIS, 162 MHz) off the air and renders them as native TAK contacts. Air and
         surface SA in your ATAK / WinTAK / baseTAK — no internet, no cloud, no third-party feed.
       </p>
       <div class="hero__ctas" style="margin-top: 2rem;">
@@ -181,7 +181,7 @@
               The same architecture that handles ADS-B decodes any SoapySDR-driven radio stream.
             </p>
             <ul class="outcome__list">
-              <li><strong>AIS</strong> (162 MHz ship tracking) — for harbor, port, and coastal ops <span class="text-amber">(on the roadmap — not in the first beta)</span>.</li>
+              <li><strong>AIS</strong> (162 MHz ship tracking) — for harbor, port, and coastal ops.</li>
               <li><strong>rtl_433 ISM-band sensors</strong> — for sensor-network integration <span class="text-amber">(roadmap)</span>.</li>
               <li><strong>Add your own decoders</strong> — the SoapySDR abstraction means write-once decoder plugins work with any driver-supported hardware.</li>
             </ul>
@@ -220,8 +220,8 @@
       <span class="section__label section__label--coord" data-coord="06 / DETAIL">EVERY FEATURE</span>
       <h2 class="section__title reveal">What's <em>in the box.</em></h2>
       <p class="reveal" data-delay="1" style="font-size: 1.1rem; color: var(--ink-body); line-height: 1.6; max-width: 64ch; margin-top: 1.4rem;">
-        sdrTAK is a software-defined-radio listener that decodes ADS-B
-        and UAT (with AIS planned for a later release) into native TAK contacts.
+        sdrTAK is a software-defined-radio listener that decodes ADS-B,
+        UAT, and AIS into native TAK contacts.
         Plug in an RTL-SDR dongle and every aircraft in your area shows
         up on the TAK map with a full track, callsign, and identity.
       </p>
@@ -343,8 +343,8 @@
           <p>Yes. Built-in lookup table covers U.S. DoD, Army, UK, France, German ICAO hex ranges, plus 25+ military callsign prefixes (RCH, FORTE, DUSTOFF, SAM, CGR, and others). Detected military aircraft flip to friendly 2525C affiliation. The lookup is extensible.</p>
         </details>
         <details>
-          <summary>When is AIS shipping?</summary>
-          <p>AIS is on our roadmap, but it won't be in the first beta release — we've prioritized the aircraft picture (ADS-B / UAT) for beta. Subscribers get AIS the moment it ships.</p>
+          <summary>Does sdrTAK track ships (AIS)?</summary>
+          <p>Yes. sdrTAK decodes AIS (162 MHz) ship traffic alongside the aircraft picture (ADS-B / UAT). AIS broadcasts on a different band than 1090 / 978, so plan for a VHF marine antenna in addition to your ADS-B antenna.</p>
         </details>
         <details>
           <summary>Can I add my own decoder for some other RF signal?</summary>
