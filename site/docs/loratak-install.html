@@ -114,7 +114,7 @@
       <ol>
       <li><code>nettak-install-*-arm64.tar.gz</code> + <code>SHA256SUMS*.txt</code> — netTAK</li>
       <li><code>adminTAK-*-linux-arm64.tar.gz</code> — the admin panel</li>
-      <li><code>cot_mesh-*tar.gz</code> — loraTAK</li>
+      <li><code>cot_mesh-*.tar.gz</code> — loraTAK</li>
       </ol>
       <p>You only need internet to download these to your computer — everything you run
       on the Pi is <strong>fully offline</strong>.</p>
@@ -193,12 +193,12 @@
       (including <code>pip</code> itself) ships inside the bundle.</p>
       <h3>3.1 Copy loraTAK onto the Pi</h3>
       <ul>
-      <li><strong>WinSCP:</strong> drag <code>cot_mesh-*tar.gz</code> into the Pi's home folder.</li>
-      <li><strong>Terminal:</strong> <code>scp ~/Downloads/cot_mesh-*tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></li>
+      <li><strong>WinSCP:</strong> drag <code>cot_mesh-*.tar.gz</code> into the Pi's home folder.</li>
+      <li><strong>Terminal:</strong> <code>scp ~/Downloads/cot_mesh-*.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></li>
       </ul>
       <h3>3.2 Install</h3>
       <p>On the Pi, unpack straight into the system folder and run the installer:</p>
-      <pre><code class="language-bash">sudo tar xzf ~/cot_mesh-*tar.gz -C /opt/
+      <pre><code class="language-bash">sudo tar xzf ~/cot_mesh-*.tar.gz -C /opt/
       cd /opt/cot_mesh
       sudo bash install.sh
       </code></pre>

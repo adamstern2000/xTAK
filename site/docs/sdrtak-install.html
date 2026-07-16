@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Full-system installation guide for sdrTAK — take a bare Raspberry Pi to a self-contained, off-grid SDR-to-TAK bridge: netTAK network, adminTAK panel, and sdrTAK ADS-B/UAT aircraft decoding, all offline." />
+  <meta name="description" content="Full-system installation guide for sdrTAK — take a bare Raspberry Pi to a self-contained, off-grid SDR-to-TAK bridge: netTAK network, adminTAK panel, and sdrTAK ADS-B/UAT aircraft + AIS ship decoding, all offline." />
   <title>sdrTAK Install Guide — xTAK</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/css/styles.css" />
@@ -78,7 +78,7 @@
       <tr>
       <td>3</td>
       <td><strong>sdrTAK</strong></td>
-      <td>The <strong>bridge</strong>: turns a software-defined radio into live TAK contacts — aircraft transponders (ADS-B 1090 MHz + UAT 978 MHz) become map markers.</td>
+      <td>The <strong>bridge</strong>: turns a software-defined radio into live TAK contacts — aircraft (ADS-B 1090 MHz + UAT 978 MHz) and ships (AIS 162 MHz) become map markers.</td>
       </tr>
       </tbody>
       </table></div>
@@ -101,9 +101,10 @@
       <li>The Pi connected to your network by its <strong>wired Ethernet port</strong> (you install
         over the wire), and its <strong>IP address</strong> on that network.</li>
       <li>The Pi's <strong>login</strong> — the username and password you set when imaging the card.</li>
-      <li>One or two <strong>SDR dongles</strong> (USB) for sdrTAK — an <strong>RTL-SDR</strong> (Blog v3/v4) and/or
-        an <strong>AirSpy</strong>. One dongle per band. <em>(You can install without one and attach it
-        later.)</em> A <strong>1090/978 MHz antenna</strong> for real range.</li>
+      <li>One or more <strong>SDR dongles</strong> (USB) for sdrTAK — an <strong>RTL-SDR</strong> (Blog v3/v4) and/or
+        an <strong>AirSpy</strong>. One dongle per band you run (aircraft on 1090/978 MHz, ships on
+        162 MHz AIS). <em>(You can install without one and attach it
+        later.)</em> A <strong>band-appropriate antenna</strong> (1090/978 MHz for aircraft, 162 MHz for AIS) for real range.</li>
       <li>A way to copy files to the Pi and run commands on it:</li>
       <li><strong>Windows:</strong> <strong>WinSCP</strong> (free file copy — <a href="https://winscp.net">winscp.net</a>)
           and <strong>PuTTY</strong> or Windows <strong>PowerShell</strong> (to run commands).</li>
@@ -115,7 +116,7 @@
       <ol>
       <li><code>nettak-install-*-arm64.tar.gz</code> + <code>SHA256SUMS*.txt</code> — netTAK</li>
       <li><code>adminTAK-*-linux-arm64.tar.gz</code> — the admin panel</li>
-      <li><code>cot_sdr-*tar.gz</code> — sdrTAK</li>
+      <li><code>cot_sdr-*.tar.gz</code> — sdrTAK</li>
       </ol>
       <p>You only need internet to download these to your computer — everything you run
       on the Pi is <strong>fully offline</strong>.</p>
@@ -191,16 +192,16 @@
       <hr />
       <h1>Part 3 · sdrTAK — the SDR ↔ TAK bridge</h1>
       <p>This is your bridge product. It installs <strong>fully offline</strong> — every dependency
-      (the SDR drivers, SoapySDR modules, and the ADS-B/UAT decoders) ships inside the
+      (the SDR drivers, SoapySDR modules, and the ADS-B / UAT / AIS decoders) ships inside the
       bundle.</p>
       <h3>3.1 Copy sdrTAK onto the Pi</h3>
       <ul>
-      <li><strong>WinSCP:</strong> drag <code>cot_sdr-*tar.gz</code> into the Pi's home folder.</li>
-      <li><strong>Terminal:</strong> <code>scp ~/Downloads/cot_sdr-*tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></li>
+      <li><strong>WinSCP:</strong> drag <code>cot_sdr-*.tar.gz</code> into the Pi's home folder.</li>
+      <li><strong>Terminal:</strong> <code>scp ~/Downloads/cot_sdr-*.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></li>
       </ul>
       <h3>3.2 Install</h3>
       <p>On the Pi, unpack straight into the system folder and run the installer:</p>
-      <pre><code class="language-bash">sudo tar xzf ~/cot_sdr-*tar.gz -C /opt/
+      <pre><code class="language-bash">sudo tar xzf ~/cot_sdr-*.tar.gz -C /opt/
       cd /opt/cot_sdr
       sudo bash install.sh
       </code></pre>
@@ -216,7 +217,8 @@
          - <strong>ADS-B (1090 MHz)</strong> — set <strong>Enabled</strong>, pick your dongle under <strong>SDR Device</strong>
            (the dropdown lists what's plugged in), and set <strong>Gain</strong> (RTL-SDR 0–49.6,
            AirSpy 0–21).
-         - <strong>UAT (978 MHz)</strong> — same, on its own dongle. (US low-altitude aircraft.)</li>
+         - <strong>UAT (978 MHz)</strong> — same, on its own dongle. (US low-altitude aircraft.)
+         - <strong>AIS (162 MHz)</strong> — ship &amp; vessel tracking; same setup on its own dongle. (Maritime — needs a 162 MHz antenna and ships within VHF range.)</li>
       <li><strong>Save.</strong> The panel applies the settings and restarts the bridge for you.</li>
       </ol>
       <p>The <strong>Decoders</strong> status pill turns green and <strong>Emitted</strong> starts climbing once
