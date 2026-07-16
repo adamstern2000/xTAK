@@ -95,8 +95,8 @@ and paste each line as-is. The only things you change are the values in
 <p>On the <strong>netTAK download page at activate.xtak.ai</strong>, download these to your
 computer (they'll land in your <strong>Downloads</strong> folder):</p>
 <ol>
-<li><code>nettak-install-0.23.3-arm64.tar.gz</code> — the netTAK install bundle</li>
-<li><code>SHA256SUMS-0.23.3.txt</code> — the checksum used to confirm the download is intact</li>
+<li><code>nettak-install-*-arm64.tar.gz</code> — the netTAK install bundle</li>
+<li><code>SHA256SUMS*.txt</code> — the checksum used to confirm the download is intact</li>
 <li><em>(mesh only)</em> the <strong>HaLow radio</strong> bundle (e.g.
    <code>halow-radio-6.12.21-v8+-arm64.tar.gz</code>)</li>
 </ol>
@@ -116,7 +116,7 @@ computer (they'll land in your <strong>Downloads</strong> folder):</p>
 </ol>
 <h3>macOS / Linux — Terminal (<code>scp</code>)</h3>
 <p>Replace <code>&lt;user&gt;</code> and <code>&lt;pi-ip&gt;</code> with your Pi's login and IP:</p>
-<pre><code class="language-bash">scp ~/Downloads/nettak-install-0.23.3-arm64.tar.gz ~/Downloads/SHA256SUMS-0.23.3.txt &lt;user&gt;@&lt;pi-ip&gt;:~/
+<pre><code class="language-bash">scp ~/Downloads/nettak-install-*-arm64.tar.gz ~/Downloads/SHA256SUMS*.txt &lt;user&gt;@&lt;pi-ip&gt;:~/
 </code></pre>
 <p>For mesh, also copy the HaLow radio bundle:</p>
 <pre><code class="language-bash">scp ~/Downloads/halow-radio-6.12.21-v8+-arm64.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/
@@ -131,18 +131,18 @@ computer (they'll land in your <strong>Downloads</strong> folder):</p>
 </ul>
 <p>Then, on the Pi, confirm the bundle copied over intact:</p>
 <pre><code class="language-bash">cd ~
-sha256sum -c ~/SHA256SUMS-0.23.3.txt
+sha256sum --ignore-missing -c ~/SHA256SUMS*.txt
 </code></pre>
 <p>It must print:</p>
-<pre><code>nettak-install-0.23.3-arm64.tar.gz: OK
+<pre><code>nettak-install-*-arm64.tar.gz: OK
 </code></pre>
 <p>If it does <strong>not</strong> say <code>OK</code>, the copy was incomplete — delete it and copy it
 again (step 4):</p>
-<pre><code class="language-bash">rm ~/nettak-install-0.23.3-arm64.tar.gz    # only if verification failed
+<pre><code class="language-bash">rm ~/nettak-install-*-arm64.tar.gz    # only if verification failed
 </code></pre>
-<p>Unpack the bundle (this creates the folder <code>~/nettak-install-0.23.3-arm64/</code>):</p>
+<p>Unpack the bundle (this creates the folder <code>~/nettak-install-*-arm64/</code>):</p>
 <pre><code class="language-bash">cd ~
-tar xzf ~/nettak-install-0.23.3-arm64.tar.gz
+tar xzf ~/nettak-install-*-arm64.tar.gz
 </code></pre>
 <hr />
 <h2>6. Run the installer (on the Pi)</h2>
@@ -155,11 +155,11 @@ you copied into your home folder are just the installer package, and can be
 deleted once the install finishes.</p>
 </blockquote>
 <h3>Standalone node</h3>
-<pre><code class="language-bash">sudo ~/nettak-install-0.23.3-arm64/install.sh &lt;node-name&gt; --mode=standalone
+<pre><code class="language-bash">sudo ~/nettak-install-*-arm64/install.sh &lt;node-name&gt; --mode=standalone
 sudo reboot
 </code></pre>
 <p>Example:</p>
-<pre><code class="language-bash">sudo ~/nettak-install-0.23.3-arm64/install.sh node01 --mode=standalone
+<pre><code class="language-bash">sudo ~/nettak-install-*-arm64/install.sh node01 --mode=standalone
 sudo reboot
 </code></pre>
 <h3>Mesh node</h3>
@@ -174,7 +174,7 @@ sudo reboot
 <ul>
 <li><strong>First node in a new mesh:</strong></li>
 </ul>
-<pre><code class="language-bash">sudo ~/nettak-install-0.23.3-arm64/install.sh &lt;node-name&gt;
+<pre><code class="language-bash">sudo ~/nettak-install-*-arm64/install.sh &lt;node-name&gt;
 sudo reboot
 </code></pre>
 <p>With the HaLow radio present, the installer auto-selects mesh mode.</p>
@@ -182,9 +182,9 @@ sudo reboot
 <li><strong>Adding a node to an existing mesh:</strong> on a node already in the mesh, create a
   join <strong>seed</strong> from the web admin (<strong>Services → Cluster-join package</strong>), copy the
   produced <code>seed.json</code> into the installer folder on the new node (drop it in the
-  same way as step 4, into <code>~/nettak-install-0.23.3-arm64/</code>), then install:</li>
+  same way as step 4, into <code>~/nettak-install-*-arm64/</code>), then install:</li>
 </ul>
-<pre><code class="language-bash">sudo ~/nettak-install-0.23.3-arm64/install.sh &lt;node-name&gt;
+<pre><code class="language-bash">sudo ~/nettak-install-*-arm64/install.sh &lt;node-name&gt;
 sudo reboot
 </code></pre>
 <p>The seed carries the mesh identity, key, and AP settings — the node joins
@@ -265,7 +265,7 @@ to continue.</p>
   preserves your settings.</li>
 <li><strong>Uninstall netTAK</strong> (keeps the HaLow radio):</li>
 </ul>
-<pre><code class="language-bash">sudo ~/nettak-install-0.23.3-arm64/uninstall.sh
+<pre><code class="language-bash">sudo ~/nettak-install-*-arm64/uninstall.sh
 </code></pre>
 <hr />
       <p class="mono" style="color: var(--ink-faint); margin-top: 2.5rem;">netTAK is a product of xTAK (Altay Corporation). Support &amp; licensing: <a href="/support.html">Support</a>.</p>

@@ -113,9 +113,9 @@
       <p><strong>Download everything up front</strong> from the <strong>xTAK download page at
       activate.xtak.ai</strong>, onto your computer (they land in <strong>Downloads</strong>):</p>
       <ol>
-      <li><code>nettak-install-0.23.3-arm64.tar.gz</code> + <code>SHA256SUMS-0.23.3.txt</code> — netTAK</li>
-      <li><code>adminTAK-0.1.11-linux-arm64.tar.gz</code> — the admin panel</li>
-      <li><code>cot_sdr-1.4.7.tar.gz</code> — sdrTAK</li>
+      <li><code>nettak-install-*-arm64.tar.gz</code> + <code>SHA256SUMS*.txt</code> — netTAK</li>
+      <li><code>adminTAK-*-linux-arm64.tar.gz</code> — the admin panel</li>
+      <li><code>cot_sdr-*tar.gz</code> — sdrTAK</li>
       </ol>
       <p>You only need internet to download these to your computer — everything you run
       on the Pi is <strong>fully offline</strong>.</p>
@@ -129,10 +129,10 @@
       <ul>
       <li><strong>Windows (WinSCP):</strong> open WinSCP → <strong>File protocol</strong> <code>SCP</code>, <strong>Host name</strong> =
         your Pi's IP, <strong>User name / Password</strong> = your Pi login → <strong>Login</strong>. Drag
-        <code>nettak-install-0.23.3-arm64.tar.gz</code> and <code>SHA256SUMS-0.23.3.txt</code> from your
+        <code>nettak-install-*-arm64.tar.gz</code> and <code>SHA256SUMS*.txt</code> from your
         Downloads (left pane) into the Pi's home folder (right pane).</li>
       <li><strong>macOS / Linux (Terminal):</strong>
-        <pre><code>scp ~/Downloads/nettak-install-0.23.3-arm64.tar.gz ~/Downloads/SHA256SUMS-0.23.3.txt &lt;user&gt;@&lt;pi-ip&gt;:~/</code></pre></li>
+        <pre><code>scp ~/Downloads/nettak-install-*-arm64.tar.gz ~/Downloads/SHA256SUMS*.txt &lt;user&gt;@&lt;pi-ip&gt;:~/</code></pre></li>
       </ul>
       <h3>1.2 Connect to the Pi and verify the download</h3>
       <p>Open a command session <strong>on the Pi</strong>:
@@ -141,14 +141,14 @@
       - <strong>macOS / Linux:</strong> <code>ssh &lt;user&gt;@&lt;pi-ip&gt;</code>.</p>
       <p>Confirm the bundle arrived intact, then unpack it:</p>
       <pre><code class="language-bash">cd ~
-      sha256sum -c ~/SHA256SUMS-0.23.3.txt        # must print: nettak-install-0.23.3-arm64.tar.gz: OK
-      tar xzf ~/nettak-install-0.23.3-arm64.tar.gz
+      sha256sum --ignore-missing -c ~/SHA256SUMS*.txt        # must print: nettak-install-*-arm64.tar.gz: OK
+      tar xzf ~/nettak-install-*-arm64.tar.gz
       </code></pre>
       <p>If it does <strong>not</strong> say <code>OK</code>, delete the file and copy it again (step 1.1).</p>
       <h3>1.3 Run the netTAK installer</h3>
       <p>Pick a <strong>node name</strong> ending in a number (e.g. <code>node01</code>) — the node's network
       address is derived from it (<code>node01</code> → <code>10.1.1.1</code>).</p>
-      <pre><code class="language-bash">sudo ~/nettak-install-0.23.3-arm64/install.sh &lt;node-name&gt; --mode=standalone
+      <pre><code class="language-bash">sudo ~/nettak-install-*-arm64/install.sh &lt;node-name&gt; --mode=standalone
       sudo reboot
       </code></pre>
       <p><strong>Optional flags</strong> (add after the node name): <code>--ap-ssid=&lt;name&gt;</code> (Wi-Fi name),
@@ -171,14 +171,14 @@
       program — nothing to download at install time, works fully offline.</p>
       <h3>2.1 Copy adminTAK onto the Pi</h3>
       <ul>
-      <li><strong>WinSCP:</strong> drag <code>adminTAK-0.1.11-linux-arm64.tar.gz</code> into the Pi's home folder.</li>
-      <li><strong>Terminal:</strong> <code>scp ~/Downloads/adminTAK-0.1.11-linux-arm64.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></li>
+      <li><strong>WinSCP:</strong> drag <code>adminTAK-*-linux-arm64.tar.gz</code> into the Pi's home folder.</li>
+      <li><strong>Terminal:</strong> <code>scp ~/Downloads/adminTAK-*-linux-arm64.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></li>
       </ul>
       <h3>2.2 Install</h3>
       <p>On the Pi:</p>
       <pre><code class="language-bash">cd ~
-      tar xzf adminTAK-0.1.11-linux-arm64.tar.gz
-      cd adminTAK-0.1.11-linux-arm64
+      tar xzf adminTAK-*-linux-arm64.tar.gz
+      cd adminTAK-*-linux-arm64
       sudo bash install.sh
       </code></pre>
       <p>This installs the panel to <code>/opt/adminTAK</code> and starts it on <strong>port 8443</strong>.</p>
@@ -195,12 +195,12 @@
       bundle.</p>
       <h3>3.1 Copy sdrTAK onto the Pi</h3>
       <ul>
-      <li><strong>WinSCP:</strong> drag <code>cot_sdr-1.4.7.tar.gz</code> into the Pi's home folder.</li>
-      <li><strong>Terminal:</strong> <code>scp ~/Downloads/cot_sdr-1.4.7.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></li>
+      <li><strong>WinSCP:</strong> drag <code>cot_sdr-*tar.gz</code> into the Pi's home folder.</li>
+      <li><strong>Terminal:</strong> <code>scp ~/Downloads/cot_sdr-*tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></li>
       </ul>
       <h3>3.2 Install</h3>
       <p>On the Pi, unpack straight into the system folder and run the installer:</p>
-      <pre><code class="language-bash">sudo tar xzf ~/cot_sdr-1.4.7.tar.gz -C /opt/
+      <pre><code class="language-bash">sudo tar xzf ~/cot_sdr-*tar.gz -C /opt/
       cd /opt/cot_sdr
       sudo bash install.sh
       </code></pre>
@@ -273,7 +273,7 @@
       <tr>
       <td>netTAK</td>
       <td>re-run <code>install.sh &lt;same-node-name&gt;</code></td>
-      <td><code>sudo ~/nettak-install-0.23.3-arm64/uninstall.sh</code></td>
+      <td><code>sudo ~/nettak-install-*-arm64/uninstall.sh</code></td>
       </tr>
       <tr>
       <td>adminTAK</td>

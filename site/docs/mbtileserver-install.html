@@ -84,7 +84,7 @@ the map file names you downloaded).</p>
 <p><strong>Download up front</strong> from the <strong>xTAK download page at activate.xtak.ai</strong>, onto
 your computer (files land in <strong>Downloads</strong>):</p>
 <ol>
-<li><code>mbtileserver-0.1.0-linux-arm64.tar.gz</code> — the map server (this install).</li>
+<li><code>mbtileserver-*-linux-arm64.tar.gz</code> — the map server (this install).</li>
 <li><strong>Your map region file(s)</strong> — e.g. <code>west-colorful-z15.mbtiles</code>. Download only
    the region(s) you operate in. (Maps are distributed separately from the
    software; see <strong>Add your maps</strong> below.)</li>
@@ -98,10 +98,10 @@ on the Pi is <strong>fully offline</strong>.</p>
 <ul>
 <li><strong>Windows (WinSCP):</strong> open WinSCP → <strong>File protocol</strong> <code>SCP</code>, <strong>Host name</strong> =
   your Pi's IP, <strong>User name / Password</strong> = your Pi login → <strong>Login</strong>. Drag
-  <code>mbtileserver-0.1.0-linux-arm64.tar.gz</code> from Downloads (left) into the Pi's
+  <code>mbtileserver-*-linux-arm64.tar.gz</code> from Downloads (left) into the Pi's
   home folder (right).</li>
 <li><strong>macOS / Linux (Terminal):</strong>
-  <pre><code>  scp ~/Downloads/mbtileserver-0.1.0-linux-arm64.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></pre></li>
+  <pre><code>  scp ~/Downloads/mbtileserver-*-linux-arm64.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/</code></pre></li>
 </ul>
 <h3>2 · Connect to the Pi and unpack</h3>
 <p>Open a command session <strong>on the Pi</strong>:
@@ -110,11 +110,11 @@ on the Pi is <strong>fully offline</strong>.</p>
 - <strong>macOS / Linux:</strong> <code>ssh &lt;user&gt;@&lt;pi-ip&gt;</code>.</p>
 <p>Then unpack the bundle:</p>
 <pre><code class="language-bash">cd ~
-tar xzf mbtileserver-0.1.0-linux-arm64.tar.gz
-cd mbtileserver-0.1.0-linux-arm64
+tar xzf mbtileserver-*-linux-arm64.tar.gz
+cd mbtileserver-*-linux-arm64
 </code></pre>
 <p><em>(Optional integrity check — compare against the SHA256 shown on the download
-page: <code>sha256sum mbtileserver-0.1.0-linux-arm64.tar.gz</code>.)</em></p>
+page: <code>sha256sum mbtileserver-*-linux-arm64.tar.gz</code>.)</em></p>
 <h3>3 · Install</h3>
 <p>On the Pi:</p>
 <pre><code class="language-bash">sudo ./install.sh
