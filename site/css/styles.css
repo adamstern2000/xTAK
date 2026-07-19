@@ -432,17 +432,8 @@ body::after {
   transition: all 0.18s var(--ease);
   position: relative;
 }
-.btn::after {
-  content: '→';
-  font-family: var(--font-body);
-  transform: translateX(0);
-  transition: transform 0.18s var(--ease);
-}
-.btn:hover::after { transform: translateX(4px); }
-
-/* Two-line license button: no arrow, vertically centered text */
+/* Two-line license button: vertically centered text */
 .btn--stack { flex-direction: column; justify-content: center; align-items: center; line-height: 1.15; gap: 0.15rem; }
-.btn--stack::after { content: none; }
 .btn--stack .btn__sub { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.06em; color: #8a95a5; }
 
 .btn--primary {
