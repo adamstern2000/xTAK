@@ -683,7 +683,7 @@ body::after {
   gap: 4rem;
   align-items: start;
 }
-@media (max-width: 900px) { .scenario__grid { grid-template-columns: 1fr; gap: 2rem; } }
+@media (max-width: 900px) { .scenario__grid { grid-template-columns: 1fr; gap: 2rem; } .scenario__sticky { position: static; top: auto; } }
 .scenario__sticky {
   position: sticky;
   top: 6rem;
