@@ -293,26 +293,50 @@
   </section>
 
   <!-- ============== COMING SOON / ROADMAP ============== -->
+  <!-- ============== VOICE (available now) ============== -->
+  <section class="section" id="voice">
+    <div class="container">
+      <span class="section__label section__label--coord" data-coord="VOICE">AVAILABLE NOW</span>
+      <h2 class="section__title reveal">Push-to-talk voice,<br><em>straight into ATAK.</em></h2>
+      <div class="roadmap-lead reveal" data-delay="2">
+        <div class="roadmap-lead__head">
+          <span class="roadmap-lead__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+          </span>
+          <span class="roadmap-lead__num">VOICE · HARDWARE PTT ON THE MESH</span>
+        </div>
+        <h3 class="roadmap-lead__title">A real radio that talks to the phones</h3>
+        <p class="roadmap-lead__lede">
+          netTAK Voice turns a Raspberry Pi with a Codec Zero audio HAT into a push-to-talk voice
+          endpoint — a real mic-and-button radio that speaks straight to the handsets your team already
+          carries. It shares the same Opus-over-multicast voice channels as ATAK's VX plugin, so your
+          fixed and vehicle PTT boxes and your dismounts on phones ride one push-to-talk net — no
+          server, no cell, no internet.
+        </p>
+        <ul class="roadmap-lead__list">
+          <li><b>PTT &harr; ATAK VX interop.</b> Hardware button to app and app to button, both directions — nodes and handsets share the same channels, no gateway or translation.</li>
+          <li><b>Real radio ergonomics.</b> A wired PTT button, mic, and speaker through a Codec Zero HAT — half-duplex, speaker auto-ducked while you transmit, just like a handheld.</li>
+          <li><b>Multi-channel, switch live.</b> A fleet channel table (Alpha, Bravo…) flips on the fly with no reboot and no dropped audio.</li>
+          <li><b>Reaches every segment automatically.</b> Voice binds to all of the box's interfaces at once — Wi-Fi AP, wired, and HaLow mesh — and adapts as links come and go.</li>
+          <li><b>Self-checking.</b> The engine supervises its own audio pipeline and publishes a live health signal — a green/red Voice chip on the netTAK dashboard, so you know it's up without keying up to test.</li>
+          <li><b>Runs on a node or standalone.</b> Put it on a netTAK node (AP + mesh + voice in one box) or a dedicated PTT box; either way it's crash-isolated — a voice hiccup never touches the mesh.</li>
+        </ul>
+      </div>
+      <p class="comingsoon-foot reveal">Available now — the netTAK Voice bundle ships in your xTAK downloads; runs on a Raspberry Pi with a Codec Zero HAT. <a href="/docs/nettak-voice-install.html" class="text-cyan">Install guide &rarr;</a></p>
+    </div>
+  </section>
+
   <section class="section" id="coming-soon">
     <div class="container">
       <span class="section__label section__label--coord" data-coord="07 / ROADMAP">COMING SOON</span>
       <h2 class="section__title reveal">The mesh becomes a full<br><em>talk · see · sense</em> fabric.</h2>
       <p class="reveal" data-delay="1" style="font-size: 1.1rem; color: var(--ink-body); line-height: 1.6; max-width: 64ch; margin-top: 1.4rem;">
-        netTAK already carries your TAK traffic across the field with no infrastructure. Next, every
-        node becomes a <b style="color:var(--ink-bright);">talk</b>, <b style="color:var(--ink-bright);">see</b>,
-        and <b style="color:var(--ink-bright);">sense</b> endpoint on that same mesh.
+        netTAK already carries your TAK traffic — and now <b style="color:var(--ink-bright);">push-to-talk voice</b> (above) —
+        across the field with no infrastructure. Next, every node also becomes a
+        <b style="color:var(--ink-bright);">see</b> and <b style="color:var(--ink-bright);">sense</b> endpoint on that same mesh.
       </p>
 
       <div class="comingsoon reveal" data-delay="2">
-        <div class="proposition">
-          <span class="proposition__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
-          </span>
-          <div class="proposition__num">TALK · PUSH-TO-TALK VOICE</div>
-          <h3 class="proposition__title">Field radio<br>on the mesh</h3>
-          <p class="proposition__body">Turn any netTAK node into a field radio. A rugged lapel speaker-mic and a physical channel knob give you push-to-talk group voice across the HaLow mesh — <b>no phone, no cell, no repeater</b>. Built on multicast, so one channel reaches the whole team at once, and designed to interoperate with ATAK's voice plugin so your handhelds and nodes share the same channels.</p>
-        </div>
-
         <div class="proposition">
           <span class="proposition__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h4l2-2h6l2 2h4v12H3z"/><circle cx="12" cy="13" r="3.5"/></svg>

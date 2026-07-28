@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Installation guide for netTAK Voice — turn a Raspberry Pi with a Codec Zero HAT into a push-to-talk radio endpoint that interoperates with ATAK's VX voice plugin over Opus/multicast. No server, no cell, no internet." />
+  <title>netTAK Voice Install Guide — xTAK</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/styles.css?v=7" />
+  <style>
+    .prose pre { background: #0d0f14; border: 1px solid var(--rule); border-radius: 6px; padding: 0.9rem 1.1rem; overflow-x: auto; margin: 1rem 0; }
+    .prose pre code { color: var(--ink-bright); font-family: var(--font-mono); font-size: 0.85rem; background: none; padding: 0; border: none; white-space: pre; }
+    .prose code { font-family: var(--font-mono); font-size: 0.85em; background: rgba(0,217,255,0.1); color: var(--cyan-pop); padding: 0.05em 0.35em; border-radius: 4px; }
+    .prose blockquote { border-left: 3px solid var(--cyan-faint); margin: 1.2rem 0; padding: 0.6rem 1.1rem; color: var(--ink-body); background: var(--cyan-trace); border-radius: 0 4px 4px 0; }
+    .prose blockquote p { margin: 0; }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+    .prose th, .prose td { text-align: left; vertical-align: top; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--rule); }
+    .prose th { color: var(--ink-bright); font-weight: 600; }
+    .prose hr { border: none; border-top: 1px solid var(--rule); margin: 2.25rem 0; }
+    .tablewrap { overflow-x: auto; }
+    .doc-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 0; }
+  </style>
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">DOCS / NETTAK VOICE</span>
+        <span class="readout__item">INSTALL GUIDE</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">PUBLIC BETA</span>
+        <span class="readout__item"><span data-clock>&mdash;</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!--#include virtual="/partials/header.html" -->
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / <a href="/products/netTAK.html">netTAK</a> / <span class="text-cyan">Voice Install Guide</span></div>
+      <h1 class="pagehead__title">netTAK Voice<br><em>Install Guide.</em></h1>
+      <div class="doc-cta">
+        <a href="/products/netTAK.html" class="btn btn--ghost">netTAK product</a>
+        <a href="/docs/nettak-install.html" class="btn btn--ghost">netTAK install guide</a>
+        <a href="https://activate.xtak.ai/downloads" class="btn btn--ghost">Your downloads</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow prose">
+<p>netTAK <strong>Voice</strong> turns a Raspberry Pi with a <strong>Codec Zero</strong> audio HAT into a
+push-to-talk (PTT) radio endpoint on the netTAK network. It speaks the same
+Opus-over-multicast voice channels as ATAK's VX plugin, so a handset with a PTT
+button talks to phones/tablets running VX &mdash; with <strong>no server</strong> and no internet.</p>
+<p>The voice engine (<code>nettak-voice</code>) installs <strong>standalone</strong> &mdash; it does not touch a
+netTAK mesh/AP install, and the two can coexist on the same Pi or run on
+separate boxes.</p>
+<blockquote>
+<p><strong>New to Linux / the Raspberry Pi?</strong> Follow the steps <strong>exactly</strong> in order.
+Every command is complete &mdash; copy and paste each line as-is. The only things you
+change are the values in <code>&lt;angle brackets&gt;</code>.</p>
+</blockquote>
+<hr />
+<h2>1. What you need</h2>
+<ul>
+<li>A <strong>Raspberry Pi</strong> with a <strong>Raspberry Pi Codec Zero</strong> HAT, running <strong>Raspberry
+  Pi OS 64-bit (Bookworm)</strong>.</li>
+<li>The Pi connected to your network (Ethernet recommended) and its <strong>IP address</strong>.</li>
+<li>The Pi's <strong>login</strong> (username + password).</li>
+<li>A <strong>PTT input</strong> wired to a GPIO line (default: <strong>GPIO 27</strong>, active-low) and a
+  <strong>mic + speaker</strong> on the Codec Zero (line/AUX out).</li>
+<li>The netTAK <strong>voice install bundle</strong>:
+  <code>nettak-voice-install-*-arm64.tar.gz</code> (from the netTAK download page). It is
+  <strong>fully offline</strong> &mdash; the GStreamer/Opus/gpiod packages are vendored inside; no
+  <code>apt</code> download is needed on the Pi.</li>
+<li>ATAK with the <strong>VX</strong> voice plugin on the handsets you want to talk to.</li>
+</ul>
+<hr />
+<h2>2. Copy the bundle onto the Pi</h2>
+<p>From your computer (replace <code>&lt;user&gt;</code> and <code>&lt;pi-ip&gt;</code>):</p>
+<pre><code class="language-bash">scp ~/Downloads/nettak-voice-install-*-arm64.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/
+</code></pre>
+<p>(Windows: use <strong>WinSCP</strong> to drag the file into the Pi's home folder.)</p>
+<hr />
+<h2>3. Install (on the Pi)</h2>
+<p>Open a session on the Pi (<code>ssh &lt;user&gt;@&lt;pi-ip&gt;</code>), then:</p>
+<pre><code class="language-bash">cd ~
+tar xzf nettak-voice-install-*-arm64.tar.gz
+cd nettak-voice-install-*-arm64
+sudo bash scripts/voice/install-voice.sh
+</code></pre>
+<p>The installer:</p>
+<ul>
+<li>runs a <strong>GPL-plugin guard</strong> over the vendored debs, then installs them offline,</li>
+<li>installs the <code>nettak-voice</code> binary to <code>/opt/nettak-voice/bin/</code>,</li>
+<li>installs the known-good <strong>Codec Zero mixer profile</strong> (restored on every start),</li>
+<li>collects <strong>license notices</strong> under <code>/opt/nettak-voice/licenses/</code>,</li>
+<li>installs and <strong>enables + starts</strong> <code>nettak-voice.service</code>.</li>
+</ul>
+<p>It <strong>preserves</strong> an existing <code>/etc/nettak-voice/config</code>, so re-running it to
+upgrade keeps your settings. (Re-installing over a <em>running</em> service does not
+auto-restart it &mdash; run <code>sudo systemctl restart nettak-voice</code> to activate the new
+binary.)</p>
+<hr />
+<h2>4. Configure</h2>
+<h3>Engine settings &mdash; <code>/etc/nettak-voice/config</code></h3>
+<p>Static, box-local settings (audio device, PTT line, mic/speaker levels). The
+defaults suit a standard Codec Zero + GPIO-27 PTT. Common keys (uncomment to
+override):</p>
+<pre><code class="language-ini">VOICE_ALSA_DEVICE=plughw:CARD=Zero
+VOICE_PTT_LINE=27
+VOICE_PTT_ACTIVE_LOW=true
+</code></pre>
+<h3>Channels &mdash; <code>/etc/nettak-voice/voice.json</code></h3>
+<p>The channel table (name &rarr; multicast group + port) and this box's <strong>active
+channel</strong>. On a netTAK <strong>mesh</strong> node this file is written and gossiped
+automatically. On a <strong>standalone</strong> voice box, place one manually, e.g.:</p>
+<pre><code class="language-json">{
+  "channels": [
+    { "slot": 1, "name": "Alpha", "group": "239.9.9.9",  "port": 6100 },
+    { "slot": 2, "name": "Bravo", "group": "239.9.9.10", "port": 6200 }
+  ],
+  "active_slot": 2
+}
+</code></pre>
+<p>A channel change (edit + <code>sudo systemctl reload nettak-voice</code>, or via the netTAK
+UI) retunes <strong>live</strong> &mdash; no restart, no dropped audio.</p>
+<blockquote>
+<p>Set your VX (ATAK) endpoints to the <strong>same group and port</strong> as the active
+channel to talk to this box.</p>
+</blockquote>
+<hr />
+<h2>5. Verify</h2>
+<pre><code class="language-bash">systemctl is-active nettak-voice          # -&gt; active
+cat /run/nettak-voice/status.json         # the engine's self-test
+</code></pre>
+<p>A healthy engine reports (give it ~30 s after a restart to settle):</p>
+<pre><code class="language-json">{"rx_up":true,"tx_up":true,"rx_joined_all_ifaces":true,
+ "playback_open":true,"capture_open":true,"restarts_recent":0, ...}
+</code></pre>
+<ul>
+<li><code>rx_up</code> / <code>tx_up</code> &mdash; the receive and transmit pipelines are running.</li>
+<li><code>rx_joined_all_ifaces</code> &mdash; multicast is joined on <strong>every</strong> IP interface (voice
+  reaches peers on any network segment the box is on).</li>
+<li><code>playback_open</code> / <code>capture_open</code> &mdash; the Codec Zero speaker and mic are open.</li>
+</ul>
+<p>On a netTAK node, the admin <strong>Dashboard</strong> shows a <strong>Voice</strong> health chip driven by
+this same self-test (green / red-with-fault-name / stale). Then press the PTT and
+confirm two-way audio with a VX handset on the active channel.</p>
+<hr />
+<h2>6. Update / uninstall</h2>
+<ul>
+<li><strong>Update:</strong> copy the newer bundle over and re-run
+  <code>sudo bash scripts/voice/install-voice.sh</code>, then
+  <code>sudo systemctl restart nettak-voice</code>. Config and channels are preserved.</li>
+<li><strong>Stop / disable:</strong> <code>sudo systemctl disable --now nettak-voice</code>.</li>
+</ul>
+<hr />
+      <p class="mono" style="color: var(--ink-faint); margin-top: 2.5rem;">netTAK Voice is a product of xTAK (Altay Corporation). Support &amp; licensing: <a href="/support.html">Support</a>.</p>
+    </div>
+  </section>
+
+  <!--#include virtual="/partials/footer.html" -->
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
