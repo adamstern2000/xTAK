@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Installation guide for netTAK Voice — turn a Raspberry Pi with a Codec Zero HAT into a push-to-talk radio endpoint that interoperates with ATAK's VX voice plugin over Opus/multicast. No server, no cell, no internet." />
+  <meta name="description" content="Installation guide for netTAK Voice — turn a Raspberry Pi with a Codec Zero HAT into a push-to-talk radio endpoint that talks to other netTAK boxes and to ATAK's voice plugin over Opus/multicast. No server, no cell, no internet." />
   <title>netTAK Voice Install Guide — xTAK</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/css/styles.css?v=7" />
@@ -53,9 +53,11 @@
   <section class="section">
     <div class="container container--narrow prose">
 <p>netTAK <strong>Voice</strong> turns a Raspberry Pi with a <strong>Codec Zero</strong> audio HAT into a
-push-to-talk (PTT) radio endpoint on the netTAK network. It speaks the same
-Opus-over-multicast voice channels as ATAK's VX plugin, so a handset with a PTT
-button talks to phones/tablets running VX &mdash; with <strong>no server</strong> and no internet.</p>
+push-to-talk (PTT) radio endpoint on the netTAK network. It puts your netTAK
+boxes and your handsets on one push-to-talk net &mdash; the same Opus-over-multicast
+voice channels ATAK's voice plugin uses &mdash; so a hardware PTT box talks to other
+netTAK boxes and to phones/tablets running ATAK's voice plugin, with <strong>no
+server</strong> and no internet.</p>
 <p>The voice engine (<code>nettak-voice</code>) installs <strong>standalone</strong> &mdash; it does not touch a
 netTAK mesh/AP install, and the two can coexist on the same Pi or run on
 separate boxes.</p>
@@ -77,7 +79,7 @@ and paste each line as-is. The only things you change are the values in
 <li>The Pi's <strong>login</strong> &mdash; the username and password you set when imaging the card.</li>
 <li>A <strong>PTT input</strong> wired to a GPIO line (default: <strong>GPIO 27</strong>, active-low) and a
   <strong>mic + speaker</strong> on the Codec Zero (line/AUX out).</li>
-<li><strong>ATAK</strong> with the <strong>VX</strong> voice plugin on the handsets you want to talk to.</li>
+<li><strong>ATAK</strong> with its <strong>voice plugin</strong> on the handsets you want to talk to.</li>
 <li>A way to copy files to the Pi and to run commands on it:</li>
 <li><strong>Windows:</strong> <strong>WinSCP</strong> (free, for copying files &mdash; download from
     <a href="https://winscp.net" target="_blank" rel="noopener">winscp.net</a>) and <strong>PuTTY</strong> or Windows <strong>PowerShell</strong>
@@ -182,7 +184,7 @@ manually, e.g.:</p>
 <p>A channel change (edit the file then run <code>sudo systemctl reload nettak-voice</code>, or
 switch from the netTAK UI) retunes <strong>live</strong> &mdash; no restart, no dropped audio.</p>
 <blockquote>
-<p><strong>To talk to ATAK:</strong> set your VX endpoints in ATAK to the <strong>same multicast group
+<p><strong>To talk to ATAK:</strong> set your ATAK voice-plugin endpoints to the <strong>same multicast group
 and port</strong> as this box's active channel.</p>
 </blockquote>
 <hr />
@@ -207,7 +209,7 @@ cat /run/nettak-voice/status.json         # the engine's self-test
 </table></div>
 <p>On a netTAK node, the admin <strong>Dashboard</strong> shows a <strong>Voice</strong> health chip driven by
 this same self-test (green / red-with-fault-name / stale). Finally, press the PTT
-button and confirm two-way audio with a VX handset on the active channel.</p>
+button and confirm two-way audio with a handset running ATAK's voice plugin on the active channel.</p>
 <hr />
 <h2>8. Update or uninstall</h2>
 <ul>
