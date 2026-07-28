@@ -61,36 +61,84 @@ netTAK mesh/AP install, and the two can coexist on the same Pi or run on
 separate boxes.</p>
 <blockquote>
 <p><strong>New to Linux / the Raspberry Pi?</strong> Follow the steps <strong>exactly</strong> in order.
-Every command is complete &mdash; copy and paste each line as-is. The only things you
-change are the values in <code>&lt;angle brackets&gt;</code>.</p>
+Every command is complete &mdash; you don't need to know where anything lives; copy
+and paste each line as-is. The only things you change are the values in
+<code>&lt;angle brackets&gt;</code> (your Pi's address and your login).</p>
 </blockquote>
+<p><strong>The install has three stages:</strong> (1) download the files to your computer,
+(2) copy them onto the Pi, (3) run the installer on the Pi.</p>
 <hr />
 <h2>1. What you need</h2>
 <ul>
 <li>A <strong>Raspberry Pi</strong> with a <strong>Raspberry Pi Codec Zero</strong> HAT, running <strong>Raspberry
   Pi OS 64-bit (Bookworm)</strong>.</li>
-<li>The Pi connected to your network (Ethernet recommended) and its <strong>IP address</strong>.</li>
-<li>The Pi's <strong>login</strong> (username + password).</li>
+<li>The Pi connected to your network (Ethernet recommended) and its <strong>IP address</strong>
+  on that network.</li>
+<li>The Pi's <strong>login</strong> &mdash; the username and password you set when imaging the card.</li>
 <li>A <strong>PTT input</strong> wired to a GPIO line (default: <strong>GPIO 27</strong>, active-low) and a
   <strong>mic + speaker</strong> on the Codec Zero (line/AUX out).</li>
-<li>The netTAK <strong>voice install bundle</strong>:
-  <code>nettak-voice-install-*-arm64.tar.gz</code> (from the netTAK download page). It is
-  <strong>fully offline</strong> &mdash; the GStreamer/Opus/gpiod packages are vendored inside; no
-  <code>apt</code> download is needed on the Pi.</li>
-<li>ATAK with the <strong>VX</strong> voice plugin on the handsets you want to talk to.</li>
+<li><strong>ATAK</strong> with the <strong>VX</strong> voice plugin on the handsets you want to talk to.</li>
+<li>A way to copy files to the Pi and to run commands on it:</li>
+<li><strong>Windows:</strong> <strong>WinSCP</strong> (free, for copying files &mdash; download from
+    <a href="https://winscp.net" target="_blank" rel="noopener">winscp.net</a>) and <strong>PuTTY</strong> or Windows <strong>PowerShell</strong>
+    (for running commands).</li>
+<li><strong>macOS / Linux:</strong> the built-in <strong>Terminal</strong> (uses <code>scp</code> and <code>ssh</code>).</li>
 </ul>
 <hr />
-<h2>2. Copy the bundle onto the Pi</h2>
-<p>From your computer (replace <code>&lt;user&gt;</code> and <code>&lt;pi-ip&gt;</code>):</p>
-<pre><code class="language-bash">scp ~/Downloads/nettak-voice-install-*-arm64.tar.gz &lt;user&gt;@&lt;pi-ip&gt;:~/
-</code></pre>
-<p>(Windows: use <strong>WinSCP</strong> to drag the file into the Pi's home folder.)</p>
+<h2>2. Download the files (to your computer)</h2>
+<p>On the <strong>netTAK download page at activate.xtak.ai</strong>, download these to your
+computer (they'll land in your <strong>Downloads</strong> folder):</p>
+<ol>
+<li><code>nettak-voice-install-*-arm64.tar.gz</code> &mdash; the voice install bundle. It is
+   <strong>fully offline</strong>: the GStreamer/Opus/gpiod packages are vendored inside, so no
+   <code>apt</code> download is needed on the Pi.</li>
+<li><code>SHA256SUMS*.txt</code> &mdash; the checksum used to confirm the download is intact.</li>
+</ol>
 <hr />
-<h2>3. Install (on the Pi)</h2>
-<p>Open a session on the Pi (<code>ssh &lt;user&gt;@&lt;pi-ip&gt;</code>), then:</p>
+<h2>3. Copy the files onto the Pi</h2>
+<p>You're copying the downloaded files into the Pi's <strong>home folder</strong>.</p>
+<h3>Windows — WinSCP (recommended)</h3>
+<ol>
+<li>Install and open <strong>WinSCP</strong>.</li>
+<li>In the login window: <strong>File protocol</strong> = <code>SCP</code>; <strong>Host name</strong> = your Pi's IP
+   address; <strong>User name</strong> and <strong>Password</strong> = your Pi login. Click <strong>Login</strong>
+   (accept the host-key prompt the first time).</li>
+<li>WinSCP shows two panes &mdash; your computer on the left, the Pi on the right (it
+   opens in the Pi's home folder).</li>
+<li>On the left, go to your <strong>Downloads</strong> folder and <strong>drag the two downloaded
+   files</strong> into the right pane. Wait for the copy to finish.</li>
+</ol>
+<h3>macOS / Linux — Terminal (<code>scp</code>)</h3>
+<p>Replace <code>&lt;user&gt;</code> and <code>&lt;pi-ip&gt;</code> with your Pi's login and IP:</p>
+<pre><code class="language-bash">scp ~/Downloads/nettak-voice-install-*-arm64.tar.gz ~/Downloads/SHA256SUMS*.txt &lt;user&gt;@&lt;pi-ip&gt;:~/
+</code></pre>
+<hr />
+<h2>4. Connect to the Pi and verify the download</h2>
+<p>Open a command session <strong>on the Pi</strong>:</p>
+<ul>
+<li><strong>Windows:</strong> open <strong>PuTTY</strong>, enter the Pi's IP, and log in &mdash; or in
+  <strong>PowerShell</strong> run <code>ssh &lt;user&gt;@&lt;pi-ip&gt;</code>.</li>
+<li><strong>macOS / Linux:</strong> in Terminal run <code>ssh &lt;user&gt;@&lt;pi-ip&gt;</code>.</li>
+</ul>
+<p>Then, on the Pi, confirm the bundle copied over intact:</p>
 <pre><code class="language-bash">cd ~
-tar xzf nettak-voice-install-*-arm64.tar.gz
-cd nettak-voice-install-*-arm64
+sha256sum --ignore-missing -c ~/SHA256SUMS*.txt
+</code></pre>
+<p>It must print:</p>
+<pre><code>nettak-voice-install-*-arm64.tar.gz: OK
+</code></pre>
+<p>If it does <strong>not</strong> say <code>OK</code>, the copy was incomplete &mdash; delete it and copy it
+again (step 3):</p>
+<pre><code class="language-bash">rm ~/nettak-voice-install-*-arm64.tar.gz    # only if verification failed
+</code></pre>
+<p>Unpack the bundle (this creates the folder <code>~/nettak-voice-install-*-arm64/</code>):</p>
+<pre><code class="language-bash">cd ~
+tar xzf ~/nettak-voice-install-*-arm64.tar.gz
+</code></pre>
+<hr />
+<h2>5. Install (on the Pi)</h2>
+<p>Run the installer from inside the unpacked folder:</p>
+<pre><code class="language-bash">cd ~/nettak-voice-install-*-arm64
 sudo bash scripts/voice/install-voice.sh
 </code></pre>
 <p>The installer:</p>
@@ -101,16 +149,19 @@ sudo bash scripts/voice/install-voice.sh
 <li>collects <strong>license notices</strong> under <code>/opt/nettak-voice/licenses/</code>,</li>
 <li>installs and <strong>enables + starts</strong> <code>nettak-voice.service</code>.</li>
 </ul>
-<p>It <strong>preserves</strong> an existing <code>/etc/nettak-voice/config</code>, so re-running it to
-upgrade keeps your settings. (Re-installing over a <em>running</em> service does not
-auto-restart it &mdash; run <code>sudo systemctl restart nettak-voice</code> to activate the new
-binary.)</p>
+<blockquote>
+<p>The installer <strong>preserves</strong> an existing <code>/etc/nettak-voice/config</code>, so re-running
+it to upgrade keeps your settings. Re-installing over a <em>running</em> service does
+not auto-restart it &mdash; run <code>sudo systemctl restart nettak-voice</code> to activate the
+new binary. The files you copied into your home folder are just the installer
+package, and can be deleted once the install finishes.</p>
+</blockquote>
 <hr />
-<h2>4. Configure</h2>
+<h2>6. Configure</h2>
 <h3>Engine settings &mdash; <code>/etc/nettak-voice/config</code></h3>
 <p>Static, box-local settings (audio device, PTT line, mic/speaker levels). The
-defaults suit a standard Codec Zero + GPIO-27 PTT. Common keys (uncomment to
-override):</p>
+defaults suit a standard Codec Zero + GPIO-27 PTT, so most installs need no
+changes here. To override a value, uncomment it:</p>
 <pre><code class="language-ini">VOICE_ALSA_DEVICE=plughw:CARD=Zero
 VOICE_PTT_LINE=27
 VOICE_PTT_ACTIVE_LOW=true
@@ -118,7 +169,8 @@ VOICE_PTT_ACTIVE_LOW=true
 <h3>Channels &mdash; <code>/etc/nettak-voice/voice.json</code></h3>
 <p>The channel table (name &rarr; multicast group + port) and this box's <strong>active
 channel</strong>. On a netTAK <strong>mesh</strong> node this file is written and gossiped
-automatically. On a <strong>standalone</strong> voice box, place one manually, e.g.:</p>
+automatically &mdash; you don't touch it. On a <strong>standalone</strong> voice box, place one
+manually, e.g.:</p>
 <pre><code class="language-json">{
   "channels": [
     { "slot": 1, "name": "Alpha", "group": "239.9.9.9",  "port": 6100 },
@@ -127,36 +179,41 @@ automatically. On a <strong>standalone</strong> voice box, place one manually, e
   "active_slot": 2
 }
 </code></pre>
-<p>A channel change (edit + <code>sudo systemctl reload nettak-voice</code>, or via the netTAK
-UI) retunes <strong>live</strong> &mdash; no restart, no dropped audio.</p>
+<p>A channel change (edit the file then run <code>sudo systemctl reload nettak-voice</code>, or
+switch from the netTAK UI) retunes <strong>live</strong> &mdash; no restart, no dropped audio.</p>
 <blockquote>
-<p>Set your VX (ATAK) endpoints to the <strong>same group and port</strong> as the active
-channel to talk to this box.</p>
+<p><strong>To talk to ATAK:</strong> set your VX endpoints in ATAK to the <strong>same multicast group
+and port</strong> as this box's active channel.</p>
 </blockquote>
 <hr />
-<h2>5. Verify</h2>
+<h2>7. Verify</h2>
+<p>Check the service is running, then read the engine's self-test:</p>
 <pre><code class="language-bash">systemctl is-active nettak-voice          # -&gt; active
 cat /run/nettak-voice/status.json         # the engine's self-test
 </code></pre>
-<p>A healthy engine reports (give it ~30 s after a restart to settle):</p>
+<p>A healthy engine reports (give it ~30&nbsp;s after a restart to settle):</p>
 <pre><code class="language-json">{"rx_up":true,"tx_up":true,"rx_joined_all_ifaces":true,
  "playback_open":true,"capture_open":true,"restarts_recent":0, ...}
 </code></pre>
-<ul>
-<li><code>rx_up</code> / <code>tx_up</code> &mdash; the receive and transmit pipelines are running.</li>
-<li><code>rx_joined_all_ifaces</code> &mdash; multicast is joined on <strong>every</strong> IP interface (voice
-  reaches peers on any network segment the box is on).</li>
-<li><code>playback_open</code> / <code>capture_open</code> &mdash; the Codec Zero speaker and mic are open.</li>
-</ul>
+<div class="tablewrap"><table>
+<thead>
+<tr><th>Field</th><th>Means</th></tr>
+</thead>
+<tbody>
+<tr><td><code>rx_up</code> / <code>tx_up</code></td><td>The receive and transmit audio pipelines are running.</td></tr>
+<tr><td><code>rx_joined_all_ifaces</code></td><td>Multicast is joined on <strong>every</strong> IP interface &mdash; voice reaches peers on any network segment the box is on.</td></tr>
+<tr><td><code>playback_open</code> / <code>capture_open</code></td><td>The Codec Zero speaker and mic are open.</td></tr>
+</tbody>
+</table></div>
 <p>On a netTAK node, the admin <strong>Dashboard</strong> shows a <strong>Voice</strong> health chip driven by
-this same self-test (green / red-with-fault-name / stale). Then press the PTT and
-confirm two-way audio with a VX handset on the active channel.</p>
+this same self-test (green / red-with-fault-name / stale). Finally, press the PTT
+button and confirm two-way audio with a VX handset on the active channel.</p>
 <hr />
-<h2>6. Update / uninstall</h2>
+<h2>8. Update or uninstall</h2>
 <ul>
-<li><strong>Update:</strong> copy the newer bundle over and re-run
+<li><strong>Update:</strong> copy the newer bundle onto the Pi (steps 2&ndash;4) and re-run
   <code>sudo bash scripts/voice/install-voice.sh</code>, then
-  <code>sudo systemctl restart nettak-voice</code>. Config and channels are preserved.</li>
+  <code>sudo systemctl restart nettak-voice</code>. Your config and channels are preserved.</li>
 <li><strong>Stop / disable:</strong> <code>sudo systemctl disable --now nettak-voice</code>.</li>
 </ul>
 <hr />
