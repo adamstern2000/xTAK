@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Installation guide for netTAK Voice — turn a Raspberry Pi with a Codec Zero HAT into a push-to-talk radio endpoint that talks to other netTAK boxes and to ATAK's voice plugin over Opus/multicast. No server, no cell, no internet." />
+  <meta name="description" content="Installation guide for netTAK Voice — turn a Raspberry Pi with a Codec Zero HAT into a push-to-talk radio endpoint that talks to other netTAK nodes and to ATAK's voice plugin over Opus/multicast. No server, no cell, no internet." />
   <title>netTAK Voice Install Guide — xTAK</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/css/styles.css?v=7" />
@@ -54,13 +54,13 @@
     <div class="container container--narrow prose">
 <p>netTAK <strong>Voice</strong> turns a Raspberry Pi with a <strong>Codec Zero</strong> audio HAT into a
 push-to-talk (PTT) radio endpoint on the netTAK network. It puts your netTAK
-boxes and your handsets on one push-to-talk net &mdash; the same Opus-over-multicast
-voice channels ATAK's voice plugin uses &mdash; so a hardware PTT box talks to other
-netTAK boxes and to phones/tablets running ATAK's voice plugin, with <strong>no
+nodes and your handsets on one push-to-talk net &mdash; the same Opus-over-multicast
+voice channels ATAK's voice plugin uses &mdash; so one netTAK talks to other netTAK
+nodes and to phones/tablets running ATAK's voice plugin, with <strong>no
 server</strong> and no internet.</p>
 <p>The voice engine (<code>nettak-voice</code>) installs <strong>standalone</strong> &mdash; it does not touch a
 netTAK mesh/AP install, and the two can coexist on the same Pi or run on
-separate boxes.</p>
+separate machines.</p>
 <blockquote>
 <p><strong>New to Linux / the Raspberry Pi?</strong> Follow the steps <strong>exactly</strong> in order.
 Every command is complete &mdash; you don't need to know where anything lives; copy
@@ -161,7 +161,7 @@ package, and can be deleted once the install finishes.</p>
 <hr />
 <h2>6. Configure</h2>
 <h3>Engine settings &mdash; <code>/etc/nettak-voice/config</code></h3>
-<p>Static, box-local settings (audio device, PTT line, mic/speaker levels). The
+<p>Static, node-local settings (audio device, PTT line, mic/speaker levels). The
 defaults suit a standard Codec Zero + GPIO-27 PTT, so most installs need no
 changes here. To override a value, uncomment it:</p>
 <pre><code class="language-ini">VOICE_ALSA_DEVICE=plughw:CARD=Zero
@@ -169,9 +169,9 @@ VOICE_PTT_LINE=27
 VOICE_PTT_ACTIVE_LOW=true
 </code></pre>
 <h3>Channels &mdash; <code>/etc/nettak-voice/voice.json</code></h3>
-<p>The channel table (name &rarr; multicast group + port) and this box's <strong>active
+<p>The channel table (name &rarr; multicast group + port) and this node's <strong>active
 channel</strong>. On a netTAK <strong>mesh</strong> node this file is written and gossiped
-automatically &mdash; you don't touch it. On a <strong>standalone</strong> voice box, place one
+automatically &mdash; you don't touch it. On a <strong>standalone</strong> voice node, place one
 manually, e.g.:</p>
 <pre><code class="language-json">{
   "channels": [
@@ -185,7 +185,7 @@ manually, e.g.:</p>
 switch from the netTAK UI) retunes <strong>live</strong> &mdash; no restart, no dropped audio.</p>
 <blockquote>
 <p><strong>To talk to ATAK:</strong> set your ATAK voice-plugin endpoints to the <strong>same multicast group
-and port</strong> as this box's active channel.</p>
+and port</strong> as this node's active channel.</p>
 </blockquote>
 <hr />
 <h2>7. Verify</h2>
@@ -203,7 +203,7 @@ cat /run/nettak-voice/status.json         # the engine's self-test
 </thead>
 <tbody>
 <tr><td><code>rx_up</code> / <code>tx_up</code></td><td>The receive and transmit audio pipelines are running.</td></tr>
-<tr><td><code>rx_joined_all_ifaces</code></td><td>Multicast is joined on <strong>every</strong> IP interface &mdash; voice reaches peers on any network segment the box is on.</td></tr>
+<tr><td><code>rx_joined_all_ifaces</code></td><td>Multicast is joined on <strong>every</strong> IP interface &mdash; voice reaches peers on any network segment the node is on.</td></tr>
 <tr><td><code>playback_open</code> / <code>capture_open</code></td><td>The Codec Zero speaker and mic are open.</td></tr>
 </tbody>
 </table></div>

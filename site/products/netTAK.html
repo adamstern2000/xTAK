@@ -79,7 +79,7 @@
       </p>
       <p style="margin-top:1.2rem;font-size:.98rem;line-height:1.5;color:var(--ink-body);max-width:62ch;">
         <span style="display:inline-block;background:var(--cyan);color:var(--bg-base);font-family:var(--font-mono);font-size:.62rem;font-weight:700;letter-spacing:.12em;padding:.2em .55em;border-radius:4px;vertical-align:middle;">NEW</span>
-        <b class="text-bright">Push-to-talk voice.</b> Hardware PTT between your netTAK boxes <em>and</em> straight into ATAK's voice clients — one channel over the mesh, no server, no cell, no repeater. <a href="#voice" style="color:var(--cyan);">See netTAK Voice &rarr;</a>
+        <b class="text-bright">Push-to-talk voice.</b> Hardware PTT from netTAK to netTAK <em>and</em> straight into ATAK's voice clients — one channel over the mesh, no server, no cell, no repeater. <a href="#voice" style="color:var(--cyan);">See netTAK Voice &rarr;</a>
       </p>
       <div class="hero__ctas" style="margin-top: 2rem;">
         <a href="#mesh-radio" class="btn btn--primary">Join the Beta — from $59/device</a>
@@ -139,8 +139,8 @@
             without losing the picture.
           </p>
           <p>
-            And the voice net rides the same mesh. A <strong>netTAK Voice</strong> box in the command
-            tent gives the IC a hardware push-to-talk handset — keying to every other netTAK box and to
+            And the voice net rides the same mesh. A <strong>netTAK Voice</strong> node in the command
+            tent gives the IC a hardware push-to-talk handset — keying to every other netTAK and to
             every dismount's phone running ATAK's voice plugin. One channel, the whole crew, no repeater
             and no separate radio net to stand up.
           </p>
@@ -266,18 +266,18 @@
         <h3 class="roadmap-lead__title">A real radio that talks to the phones</h3>
         <p class="roadmap-lead__lede">
           netTAK Voice turns a Raspberry Pi with a Codec Zero audio HAT into a push-to-talk voice
-          endpoint — a real mic-and-button radio. It puts your netTAK boxes and your dismounts on
+          endpoint — a real mic-and-button radio. It puts your netTAK nodes and your dismounts on
           phones on one push-to-talk net — the same Opus-over-multicast voice channels ATAK's voice
-          plugin uses — so hardware PTT boxes and ATAK handsets hear each other. No server, no cell,
+          plugin uses — so netTAK nodes and ATAK handsets hear each other. No server, no cell,
           no internet.
         </p>
         <ul class="roadmap-lead__list">
-          <li><b>Box-to-box and box-to-ATAK.</b> Push-to-talk between your netTAK boxes, and straight into ATAK's voice clients on the same channels — both directions, no gateway or translation.</li>
+          <li><b>netTAK-to-netTAK and netTAK-to-ATAK.</b> Push-to-talk from netTAK to netTAK, and straight into ATAK's voice clients on the same channels — both directions, no gateway or translation.</li>
           <li><b>Real radio ergonomics.</b> A wired PTT button, mic, and speaker through a Codec Zero HAT — half-duplex, speaker auto-ducked while you transmit, just like a handheld.</li>
           <li><b>Multi-channel, switch live.</b> A fleet channel table (Alpha, Bravo…) flips on the fly with no reboot and no dropped audio.</li>
-          <li><b>Reaches every segment automatically.</b> Voice binds to all of the box's interfaces at once — Wi-Fi AP, wired, and HaLow mesh — and adapts as links come and go.</li>
+          <li><b>Reaches every segment automatically.</b> Voice binds to all of the node's interfaces at once — Wi-Fi AP, wired, and HaLow mesh — and adapts as links come and go.</li>
           <li><b>Self-checking.</b> The engine supervises its own audio pipeline and publishes a live health signal — a green/red Voice chip on the netTAK dashboard, so you know it's up without keying up to test.</li>
-          <li><b>Runs on a node or standalone.</b> Put it on a netTAK node (AP + mesh + voice in one box) or a dedicated PTT box; either way it's crash-isolated — a voice hiccup never touches the mesh.</li>
+          <li><b>Runs on a node or standalone.</b> Put it on a netTAK node (AP + mesh + voice together) or a dedicated PTT node; either way it's crash-isolated — a voice hiccup never touches the mesh.</li>
         </ul>
       </div>
       <p class="comingsoon-foot reveal">Available now — the netTAK Voice bundle ships in your xTAK downloads; runs on a Raspberry Pi with a Codec Zero HAT. <a href="/docs/nettak-voice-install.html" class="text-cyan">Install guide &rarr;</a></p>
