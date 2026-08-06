@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Installation guide for netTAK on x86-64 (amd64) — a standalone Wi-Fi access point node on Ubuntu Server 24.04. Offline install, NetworkManager baseline, and verification." />
+  <title>netTAK amd64 Install Guide — xTAK</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/styles.css?v=7" />
+  <style>
+    .prose pre { background: #0d0f14; border: 1px solid var(--rule); border-radius: 6px; padding: 0.9rem 1.1rem; overflow-x: auto; margin: 1rem 0; }
+    .prose pre code { color: var(--ink-bright); font-family: var(--font-mono); font-size: 0.85rem; background: none; padding: 0; border: none; white-space: pre; }
+    .prose code { font-family: var(--font-mono); font-size: 0.85em; background: rgba(0,217,255,0.1); color: var(--cyan-pop); padding: 0.05em 0.35em; border-radius: 4px; }
+    .prose blockquote { border-left: 3px solid var(--cyan-faint); margin: 1.2rem 0; padding: 0.6rem 1.1rem; color: var(--ink-body); background: var(--cyan-trace); border-radius: 0 4px 4px 0; }
+    .prose blockquote p { margin: 0; }
+    .prose blockquote.warn { border-left-color: #ffb020; background: rgba(255,176,32,0.08); }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+    .prose th, .prose td { text-align: left; vertical-align: top; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--rule); }
+    .prose th { color: var(--ink-bright); font-weight: 600; }
+    .prose hr { border: none; border-top: 1px solid var(--rule); margin: 2.25rem 0; }
+    .tablewrap { overflow-x: auto; }
+    .doc-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 0; }
+  </style>
+</head>
+<body>
+
+  <div class="readout">
+    <div class="readout__inner">
+      <div class="readout__group">
+        <span class="readout__item readout__item--ok">DOCS / NETTAK</span>
+        <span class="readout__item">amd64 INSTALL GUIDE</span>
+      </div>
+      <div class="readout__group">
+        <span class="readout__item">PUBLIC BETA</span>
+        <span class="readout__item"><span data-clock>&mdash;</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!--#include virtual="/partials/header.html" -->
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="pagehead__bread"><a href="/">xTAK</a> / <a href="/products/netTAK.html">netTAK</a> / <span class="text-cyan">amd64 Install Guide</span></div>
+      <h1 class="pagehead__title">netTAK<br><em>amd64 Install Guide.</em></h1>
+      <div class="doc-cta">
+        <a href="/docs/nettak-install.html" class="btn btn--ghost">Raspberry Pi (arm64) guide</a>
+        <a href="/products/netTAK.html" class="btn btn--ghost">netTAK product</a>
+        <a href="https://activate.xtak.ai/downloads" class="btn btn--ghost">Your downloads</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow prose">
+<p>netTAK on <strong>x86-64 (amd64)</strong> is a <strong>standalone</strong> node: a single-node Wi-Fi
+access point with DHCP, local DNS, and the netTAK web dashboard. There is
+<strong>no HaLow radio, no mesh, and no cluster on x86</strong> &mdash; those remain
+Raspberry Pi features. If you want a HaLow mesh, use the
+<a href="/docs/nettak-install.html">Raspberry Pi (arm64) guide</a> instead.</p>
+<blockquote>
+<p><strong>Validated end-to-end</strong> on a Beelink SER3 running Ubuntu Server 24.04:
+backend cutover, offline install, AP up, client association + DHCP + UI.</p>
+</blockquote>
+<hr />
+<h2>Requirements</h2>
+<ul>
+<li><strong>Ubuntu Server 24.04 LTS (Noble), amd64.</strong> Headless &mdash; no desktop GUI needed.</li>
+<li>A <strong>wired Ethernet</strong> connection for admin/SSH (the Wi-Fi radio becomes the AP).</li>
+<li><strong>Console access</strong> (monitor + keyboard) for Phase A &mdash; the backend switch can
+  drop the network, so it must not be done over SSH.</li>
+<li><strong>No internet needed</strong> on the box &mdash; the bundle is 100% self-contained.</li>
+</ul>
+<hr />
+<h2>0. Get the bundle</h2>
+<p>Download <code>nettak-install-0.28.1-amd64.tar.gz</code> from your
+<strong>netTAK download page at activate.xtak.ai</strong> (or the
+<a href="https://github.com/adamstern2000/meshtak/releases/tag/v0.28.1" target="_blank" rel="noopener">v0.28.1 release</a>),
+verify it against <code>SHA256SUMS.txt</code>, copy it to the target box, then:</p>
+<pre><code class="language-bash">tar xzf nettak-install-0.28.1-amd64.tar.gz
+cd nettak-install-0.28.1-amd64</code></pre>
+<hr />
+<h2>Phase A &mdash; NetworkManager baseline</h2>
+<blockquote class="warn">
+<p><strong>&#9888; Run this from the console, not over SSH.</strong> netTAK drives
+NetworkManager; Ubuntu Server defaults to <code>systemd-networkd</code>. This one-time
+step converts the box onto NetworkManager (offline, one reboot). It stops networkd
+and flips the backend on reboot &mdash; over SSH a bad flip locks you out.</p>
+</blockquote>
+<pre><code class="language-bash">sudo ./nm-baseline.sh
+sudo reboot</code></pre>
+<p>After it reboots, confirm the switch (SSH is fine from here on):</p>
+<pre><code class="language-bash">cd nettak-install-0.28.1-amd64
+sudo ./nm-baseline.sh --verify</code></pre>
+<p>Expect: <code>NetworkManager: active</code> and your wired NIC listed <code>connected</code>
+with its IP. Only continue once verify is green.</p>
+<p><strong>Recovery</strong> (only if the box loses its wired IP after reboot &mdash; run at the console):</p>
+<pre><code class="language-bash">sudo systemctl unmask systemd-networkd
+sudo systemctl enable --now systemd-networkd
+sudo rm -f /etc/netplan/99-nettak-nm.yaml
+sudo netplan apply</code></pre>
+<hr />
+<h2>Phase B &mdash; Install netTAK</h2>
+<p>SSH is fine from here on.</p>
+<pre><code class="language-bash">sudo ./install.sh &lt;hostname&gt; --mode=standalone --ap-password=&lt;8+ char passphrase&gt;</code></pre>
+<ul>
+<li><code>&lt;hostname&gt;</code> must end in a number <strong>1&ndash;254</strong> (e.g. <code>node-7</code>); the
+  trailing number becomes the node's subnet third octet (<code>node-7</code> &rarr; <code>10.1.7.0/24</code>).</li>
+<li><code>--mode=standalone</code> is required (no HaLow radio on x86).</li>
+<li><code>--ap-password=</code> sets the WPA2 passphrase (omit &rarr; defaults to <code>password</code>,
+  with a warning to change it). The AP is always WPA2, never open.</li>
+<li>The AP claims the box's Wi-Fi radio &mdash; keep the wired Ethernet as your admin path.</li>
+</ul>
+<p>If NetworkManager isn't active, <code>install.sh</code> refuses immediately (before any
+change) and points you back to Phase A.</p>
+<hr />
+<h2>Verify</h2>
+<pre><code class="language-bash">systemctl is-active nettak.service                 # -&gt; active
+iw dev &lt;wifi-iface&gt; info                            # -&gt; type AP (broadcasting)
+curl -sk https://&lt;wired-nic-ip&gt;:5103/v1/health      # -&gt; {"version":"0.28.1",...}</code></pre>
+<p>Then connect a client to the SSID &mdash; it should get a DHCP lease and reach the web UI
+at <code>https://&lt;wired-nic-ip&gt;:5103/</code> (admin side) or
+<code>https://10.1.&lt;N&gt;.1:5103/</code> (AP side). The bootstrap admin password is printed in
+the install banner and in <code>journalctl -u nettak -b 0</code>.</p>
+<blockquote>
+<p>Note: the install banner currently labels the admin URL &ldquo;eth0/admin&rdquo; and shows the
+AP-side IP; on a box whose NIC isn't <code>eth0</code> (e.g. <code>eno1</code>) use the wired NIC's own
+IP. Cosmetic only, tracked as issue #119.</p>
+</blockquote>
+<hr />
+<h2>Uninstall</h2>
+<pre><code class="language-bash">sudo ./uninstall.sh --purge   # removes netTAK, reclaims the Wi-Fi NIC; reboot after</code></pre>
+<p>The Phase-A NetworkManager change is intentionally <strong>not</strong> reverted by uninstall
+(it's a baseline-layer change, like the Pi's Phase-1 HaLow prerequisite).</p>
+<hr />
+      <p class="mono" style="color: var(--ink-faint); margin-top: 2.5rem;">netTAK is a product of xTAK (Altay Corporation). Support &amp; licensing: <a href="/support.html">Support</a>.</p>
+    </div>
+  </section>
+
+  <!--#include virtual="/partials/footer.html" -->
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
